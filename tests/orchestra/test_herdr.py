@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from orchestra.herdr import Herdr, WorktreeExists
+from orchestra.herdr import AgentNotReady, Herdr, WorktreeExists
 from orchestra.runner import CommandError
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -114,3 +114,41 @@ def test_wait_agent_other_error_maps_to_error():
     runner = FakeRunner([error])
 
     assert Herdr(runner).wait_agent("ghost", timeout_ms=1) == "error"
+
+
+NOT_READY = '{"error":{"code":"agent_not_ready","message":"agent hello-a is blocked during startup"},"id":"cli:agent:start"}'
+TRUST_SCREEN = """ Accessing workspace:
+ {path}
+ Quick safety check: Is this a project you created or one you trust? (Like your own code,
+ ❯ No, exit
+   Yes, I trust this folder
+"""
+
+
+def test_start_agent_not_ready_raises():
+    runner = FakeRunner([CommandError(["herdr"], 1, stdout="", stderr=NOT_READY)])
+
+    with pytest.raises(AgentNotReady):
+        Herdr(runner).start_agent("hello-a", "w3:p1H", [])
+
+
+def test_accept_trust_dialog_for_own_worktree(tmp_path):
+    runner = FakeRunner([TRUST_SCREEN.format(path=tmp_path), ""])
+
+    assert Herdr(runner).accept_trust_dialog("w3:p1H", tmp_path) is True
+    assert runner.calls[0][0] == ["herdr", "pane", "read", "w3:p1H", "--source", "visible", "--lines", "40"]
+    assert runner.calls[1][0] == ["herdr", "pane", "send-keys", "w3:p1H", "down", "enter"]
+
+
+def test_refuses_trust_dialog_for_other_folder(tmp_path):
+    runner = FakeRunner([TRUST_SCREEN.format(path="/home/someone/else"), ""])
+
+    assert Herdr(runner).accept_trust_dialog("w3:p1H", tmp_path) is False
+    assert len(runner.calls) == 1
+
+
+def test_refuses_other_dialogs(tmp_path):
+    runner = FakeRunner([f"{tmp_path}\n Bypass Permissions mode\n ❯ No, exit\n   Yes, I accept\n"])
+
+    assert Herdr(runner).accept_trust_dialog("w3:p1H", tmp_path) is False
+    assert len(runner.calls) == 1

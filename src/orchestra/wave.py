@@ -4,6 +4,7 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 
+from orchestra.herdr import AgentNotReady
 from orchestra.manifest import TaskSpec, Wave
 from orchestra.worker import worker_argv, write_worker_settings
 
@@ -20,6 +21,7 @@ class WorkerResult:
     status: str  # done | idle | blocked | timeout | error
     result_md: str | None = None
     error: str | None = None
+    pane_id: str | None = None
 
 
 def branch_name(wave: Wave, task: TaskSpec) -> str:
@@ -58,10 +60,14 @@ def _run_batch(wave, batch, batch_number, repo, herdr, timeout_ms) -> list[Worke
     for index, result in enumerate(pending):
         if index > 0:
             pane = herdr.split(pane, result.worktree, SPLIT_DIRECTIONS[(index - 1) % 2])
+        result.pane_id = pane
         task = tasks_by_id[result.task_id]
         settings = result.worktree / ".worker" / "settings.json"
         try:
             herdr.start_agent(task.id, pane, worker_argv(task, result.worktree, settings))
+        except AgentNotReady as exc:
+            if not herdr.accept_trust_dialog(pane, result.worktree):
+                result.status, result.error = "error", str(exc)
         except Exception as exc:
             result.status, result.error = "error", str(exc)
 
@@ -69,9 +75,10 @@ def _run_batch(wave, batch, batch_number, repo, herdr, timeout_ms) -> list[Worke
     for result in pending:
         if result.status == "error":
             continue
-        herdr.wait_started(result.task_id, START_TIMEOUT_MS)
+        # Wait by pane id: an agent that needed the trust dialog never got its Herdr name.
+        herdr.wait_started(result.pane_id, START_TIMEOUT_MS)
         remaining = max(1, timeout_ms - int((time.monotonic() - started_at) * 1000))
-        result.status = herdr.wait_agent(result.task_id, remaining)
+        result.status = herdr.wait_agent(result.pane_id, remaining)
         result_file = result.worktree / ".worker" / "RESULT.md"
         if result_file.is_file():
             result.result_md = result_file.read_text()

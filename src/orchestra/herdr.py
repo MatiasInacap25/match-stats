@@ -9,8 +9,17 @@ WORKTREES_DIR_SUFFIX = "-worktrees"
 SETTLED_STATUSES = ("idle", "done", "blocked")
 
 
+# Claude Code asks to trust every new folder. orchestra only answers it for worktrees it created.
+TRUST_PROMPT = "Is this a project you created or one you trust?"
+TRUST_ACCEPT_KEYS = ("down", "enter")  # cursor starts on "No, exit"; the next option is "Yes, I trust this folder"
+
+
 class WorktreeExists(RuntimeError):
     pass
+
+
+class AgentNotReady(RuntimeError):
+    """The agent process started but is stuck on a startup dialog."""
 
 
 def worktree_path(repo: Path, task_id: str) -> Path:
@@ -46,7 +55,23 @@ class Herdr:
         return json.loads(out)["result"]["pane"]["pane_id"]
 
     def start_agent(self, name: str, pane_id: str, args: list[str]) -> None:
-        self.runner.run(["herdr", "agent", "start", name, "--kind", "claude", "--pane", pane_id, "--", *args])
+        try:
+            self.runner.run(["herdr", "agent", "start", name, "--kind", "claude", "--pane", pane_id, "--", *args])
+        except CommandError as exc:
+            if (_error_code(exc.stderr) or _error_code(exc.stdout)) == "agent_not_ready":
+                raise AgentNotReady(str(exc)) from exc
+            raise
+
+    def read_pane(self, pane_id: str, lines: int = 40) -> str:
+        return self.runner.run(["herdr", "pane", "read", pane_id, "--source", "visible", "--lines", str(lines)])
+
+    def accept_trust_dialog(self, pane_id: str, worktree: Path) -> bool:
+        """Answer "trust this folder" only when the pane shows that exact dialog for `worktree`."""
+        screen = self.read_pane(pane_id)
+        if TRUST_PROMPT not in screen or str(worktree) not in screen:
+            return False
+        self.runner.run(["herdr", "pane", "send-keys", pane_id, *TRUST_ACCEPT_KEYS])
+        return True
 
     def wait_started(self, name: str, timeout_ms: int) -> str:
         """A freshly started agent is idle before it picks up its prompt; wait until it works."""

@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from orchestra.herdr import AgentNotReady
 from orchestra.manifest import TaskSpec, Wave
 from orchestra.wave import run_wave
 
@@ -7,8 +8,18 @@ from orchestra.wave import run_wave
 class FakeHerdr:
     """Records the orchestration sequence; worktrees are real directories under tmp_path."""
 
-    def __init__(self, root: Path, statuses: dict[str, str] | None = None, failing_starts: set[str] = frozenset()):
+    def __init__(
+        self,
+        root: Path,
+        statuses: dict[str, str] | None = None,
+        failing_starts: set[str] = frozenset(),
+        not_ready: set[str] = frozenset(),
+        trust_dialog: bool = True,
+    ):
         self.root = root
+        self.not_ready = not_ready
+        self.trust_dialog = trust_dialog
+        self.pane_names: dict[str, str] = {}
         self.events: list[tuple] = []
         self.statuses = statuses or {}
         self.failing_starts = failing_starts
@@ -31,13 +42,21 @@ class FakeHerdr:
     def start_agent(self, name, pane_id, args):
         if name in self.failing_starts:
             raise RuntimeError(f"cannot start {name}")
+        self.pane_names[pane_id] = name
+        if name in self.not_ready:
+            raise AgentNotReady(f"agent {name} is blocked during startup")
         self.events.append(("start", name, pane_id))
 
-    def wait_started(self, name, timeout_ms):
-        self.events.append(("started", name))
+    def accept_trust_dialog(self, pane_id, worktree):
+        self.events.append(("trust", self.pane_names[pane_id], worktree.name))
+        return self.trust_dialog
+
+    def wait_started(self, target, timeout_ms):
+        self.events.append(("started", self.pane_names.get(target, target)))
         return "working"
 
-    def wait_agent(self, name, timeout_ms):
+    def wait_agent(self, target, timeout_ms):
+        name = self.pane_names.get(target, target)
         self.events.append(("wait", name))
         return self.statuses.get(name, "idle")
 
@@ -92,11 +111,12 @@ def test_reads_result_md(tmp_path):
     wave = make_wave(tmp_path, 1)
     original = herdr.wait_agent
 
-    def wait_and_write(name, timeout_ms):
+    def wait_and_write(target, timeout_ms):
+        name = herdr.pane_names[target]
         result = tmp_path / "worktrees" / name / ".worker" / "RESULT.md"
         result.parent.mkdir(parents=True, exist_ok=True)
         result.write_text("status: done\n")
-        return original(name, timeout_ms)
+        return original(target, timeout_ms)
 
     herdr.wait_agent = wait_and_write
 
@@ -120,3 +140,23 @@ def test_writes_worker_settings_in_each_worktree(tmp_path):
 
     for i in range(2):
         assert (tmp_path / "worktrees" / f"task-{i}" / ".worker" / "settings.json").is_file()
+
+
+def test_accepts_trust_dialog_for_own_worktree(tmp_path):
+    herdr = FakeHerdr(tmp_path, not_ready={"task-0"})
+
+    [result] = run_wave(make_wave(tmp_path, 1), tmp_path / "repo", herdr)
+
+    assert ("trust", "task-0", "task-0") in herdr.events
+    assert ("wait", "task-0") in herdr.events
+    assert result.status == "idle"
+
+
+def test_unknown_startup_dialog_is_an_error(tmp_path):
+    herdr = FakeHerdr(tmp_path, not_ready={"task-0"}, trust_dialog=False)
+
+    [result] = run_wave(make_wave(tmp_path, 1), tmp_path / "repo", herdr)
+
+    assert result.status == "error"
+    assert "blocked during startup" in result.error
+    assert ("wait", "task-0") not in herdr.events
