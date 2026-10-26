@@ -18,7 +18,7 @@ class WorkerResult:
     task_id: str
     branch: str
     worktree: Path | None
-    status: str  # done | idle | blocked | timeout | error
+    status: str  # done | idle | blocked | timeout | not_started | error
     result_md: str | None = None
     error: str | None = None
     pane_id: str | None = None
@@ -76,9 +76,16 @@ def _run_batch(wave, batch, batch_number, repo, herdr, timeout_ms) -> list[Worke
         if result.status == "error":
             continue
         # Wait by pane id: an agent that needed the trust dialog never got its Herdr name.
-        herdr.wait_started(result.pane_id, START_TIMEOUT_MS)
+        if herdr.wait_started(result.pane_id, START_TIMEOUT_MS) != "working":
+            # Another startup dialog or a dropped prompt: idle here would look like success.
+            result.status, result.error = "not_started", "agent never reached the working state"
+            continue
         remaining = max(1, timeout_ms - int((time.monotonic() - started_at) * 1000))
         result.status = herdr.wait_agent(result.pane_id, remaining)
+        if result.status == "timeout":
+            # Stop it so the next batch never runs more than max_parallel workers.
+            herdr.close_pane(result.pane_id)
+            result.error = "timed out; pane closed, commits so far are kept on the branch"
         result_file = result.worktree / ".worker" / "RESULT.md"
         if result_file.is_file():
             result.result_md = result_file.read_text()

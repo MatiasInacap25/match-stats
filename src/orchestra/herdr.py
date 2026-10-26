@@ -62,6 +62,9 @@ class Herdr:
                 raise AgentNotReady(str(exc)) from exc
             raise
 
+    def close_pane(self, pane_id: str) -> None:
+        self.runner.run(["herdr", "pane", "close", pane_id])
+
     def read_pane(self, pane_id: str, lines: int = 40) -> str:
         return self.runner.run(["herdr", "pane", "read", pane_id, "--source", "visible", "--lines", str(lines)])
 

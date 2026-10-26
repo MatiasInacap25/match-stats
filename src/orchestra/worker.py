@@ -33,6 +33,8 @@ def write_worker_settings(worktree: Path, repo: Path) -> Path:
     command = (
         f"ORCHESTRA_WORKTREE_ROOT={shlex.quote(str(worktree))} "
         f"uv run --quiet --project {shlex.quote(str(repo))} python -m orchestra.guard"
+        # If uv or Python itself fails, block instead of letting Claude Code treat it as "allow".
+        " || exit 2"
     )
     settings = {
         "hooks": {

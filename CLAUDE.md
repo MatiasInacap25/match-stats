@@ -19,7 +19,8 @@ These rules override the global `~/.claude/CLAUDE.md` for this repository.
 ## Guardrails
 
 - At most 4 workers at once.
-- Workers cannot `git push`, use `git remote`, write outside their worktree, or install system software (guard hook `orchestra.guard`).
+- The guard hook (`orchestra.guard`, fails closed) blocks workers from: `git push`/`git remote`; rewriting shared refs (`git update-ref`, `symbolic-ref`, `worktree`, `branch -f/-d/-D/-m`); writing outside their worktree **with the file tools** (Write/Edit/MultiEdit/NotebookEdit); and installing system software.
+- Not covered: shell redirections or `cp`/`rm`/`tee` targeting paths outside the worktree. Check during review that a worker's diff and the main checkout are untouched outside its worktree.
 - Only Opus merges, and only into the local feature branch. Pushing and opening PRs remain the user's decision. The nightly data job's automatic commit (product spec) is the only automated push.
 
 ## Docs

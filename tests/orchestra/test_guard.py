@@ -90,3 +90,45 @@ def test_main_exit_codes(root, monkeypatch, capsys):
 
     monkeypatch.setattr("sys.stdin", io.StringIO(json.dumps(bash_event("git status", str(root)))))
     assert guard.main() == 0
+
+
+@pytest.mark.parametrize(
+    "command",
+    [
+        "ls & git push",
+        'bash -c "git push"',
+        "sh -c 'cd x && git push'",
+        "GIT_DIR=.git git push",
+        "env git push",
+        "command git push",
+        "(git push)",
+        "echo $(git push)",
+        "echo `git push`",
+        "git -c alias.p=push p",
+        "git update-ref refs/heads/main HEAD",
+        "git branch -f feat/worker-orchestra HEAD",
+        "git branch -D other",
+        "git worktree remove ../x",
+        "git symbolic-ref HEAD refs/heads/main",
+    ],
+)
+def test_blocks_evasive_push_and_ref_rewrites(root, command):
+    assert guard.check(bash_event(command, str(root)), root) is not None
+
+
+@pytest.mark.parametrize("command", ["git branch", "git branch --show-current", "git checkout -- src/a.py", "sleep 1 &"])
+def test_allows_safe_git_and_background(root, command):
+    assert guard.check(bash_event(command, str(root)), root) is None
+
+
+def test_main_fails_closed_on_bad_input(root, monkeypatch):
+    monkeypatch.setenv("ORCHESTRA_WORKTREE_ROOT", str(root))
+    monkeypatch.setattr("sys.stdin", io.StringIO("not json"))
+    assert guard.main() == 2
+
+
+def test_main_fails_closed_on_crash(root, monkeypatch):
+    monkeypatch.setenv("ORCHESTRA_WORKTREE_ROOT", str(root))
+    monkeypatch.setattr("sys.stdin", io.StringIO(json.dumps(bash_event("ls", str(root)))))
+    monkeypatch.setattr(guard, "check", lambda event, root: 1 / 0)
+    assert guard.main() == 2

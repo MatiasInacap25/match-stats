@@ -20,6 +20,7 @@ class FakeHerdr:
         self.not_ready = not_ready
         self.trust_dialog = trust_dialog
         self.pane_names: dict[str, str] = {}
+        self.never_working: set[str] = set()
         self.events: list[tuple] = []
         self.statuses = statuses or {}
         self.failing_starts = failing_starts
@@ -52,8 +53,12 @@ class FakeHerdr:
         return self.trust_dialog
 
     def wait_started(self, target, timeout_ms):
-        self.events.append(("started", self.pane_names.get(target, target)))
-        return "working"
+        name = self.pane_names.get(target, target)
+        self.events.append(("started", name))
+        return "timeout" if name in self.never_working else "working"
+
+    def close_pane(self, pane_id):
+        self.events.append(("close", self.pane_names.get(pane_id, pane_id)))
 
     def wait_agent(self, target, timeout_ms):
         name = self.pane_names.get(target, target)
@@ -160,3 +165,22 @@ def test_unknown_startup_dialog_is_an_error(tmp_path):
     assert result.status == "error"
     assert "blocked during startup" in result.error
     assert ("wait", "task-0") not in herdr.events
+
+
+def test_worker_that_never_starts_is_not_success(tmp_path):
+    herdr = FakeHerdr(tmp_path)
+    herdr.never_working = {"task-0"}
+
+    [result] = run_wave(make_wave(tmp_path, 1), tmp_path / "repo", herdr)
+
+    assert result.status == "not_started"
+    assert ("wait", "task-0") not in herdr.events
+
+
+def test_timed_out_worker_is_stopped_before_next_batch(tmp_path):
+    herdr = FakeHerdr(tmp_path, statuses={"task-0": "timeout"})
+
+    run_wave(make_wave(tmp_path, 5), tmp_path / "repo", herdr)
+
+    kinds = [(e[0], e[1]) for e in herdr.events]
+    assert kinds.index(("close", "task-0")) < kinds.index(("tab", "w1 #2"))

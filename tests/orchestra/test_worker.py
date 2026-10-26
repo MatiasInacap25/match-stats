@@ -42,6 +42,14 @@ def test_worker_prompt_file_exists():
 def test_result_file_is_git_ignored():
     gitignore = (Path(__file__).parents[2] / ".gitignore").read_text().splitlines()
     assert ".worker/" in gitignore
+    assert "__pycache__/" in gitignore
+
+
+def test_hook_command_fails_closed(tmp_path):
+    worktree = tmp_path / "wt"
+    worktree.mkdir()
+    settings = json.loads(write_worker_settings(worktree, tmp_path / "repo").read_text())
+    assert settings["hooks"]["PreToolUse"][0]["hooks"][0]["command"].endswith("|| exit 2")
 
 
 def test_worker_settings_hook(tmp_path):
