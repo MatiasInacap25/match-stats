@@ -1,3 +1,2 @@
 .superpowers/
-.worker/*
-!.worker/RESULT.md
+.worker/

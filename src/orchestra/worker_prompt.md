@@ -12,9 +12,9 @@ Rules:
 
 When you finish (or are blocked):
 
-1. Write `.worker/RESULT.md` with:
+1. Write `.worker/RESULT.md` (git-ignored on purpose: never force-add or commit it) with:
    - `status: done` or `status: blocked`
    - the test commands you ran and their results
    - any open questions or decisions you made
-2. Run `git add -A && git commit -m "<conventional commit message>"`.
+2. Commit your code changes: `git add -A && git commit -m "<conventional commit message>"`.
 3. Stop. Do not start other work.

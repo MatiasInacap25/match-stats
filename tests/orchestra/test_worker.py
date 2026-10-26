@@ -36,6 +36,12 @@ def test_worker_prompt_file_exists():
     text = WORKER_PROMPT_FILE.read_text()
     assert "RESULT.md" in text
     assert "push" in text
+    assert "never force-add or commit it" in text
+
+
+def test_result_file_is_git_ignored():
+    gitignore = (Path(__file__).parents[2] / ".gitignore").read_text().splitlines()
+    assert ".worker/" in gitignore
 
 
 def test_worker_settings_hook(tmp_path):
