@@ -1,0 +1,469 @@
+{
+  "league": "E0",
+  "season": "2026/27",
+  "goals": {
+    "home_advantage": 0.25,
+    "rho": -0.05,
+    "teams": {
+      "Arsenal": {
+        "attack": 0.35,
+        "defense": -0.3
+      },
+      "Brighton": {
+        "attack": 0.0,
+        "defense": 0.05
+      },
+      "Chelsea": {
+        "attack": 0.1,
+        "defense": -0.1
+      }
+    }
+  },
+  "stats": {
+    "corners": {
+      "avg_home": 5.6,
+      "avg_away": 4.6,
+      "dispersion_team": 12.0,
+      "dispersion_total": 15.0,
+      "teams": {
+        "Arsenal": {
+          "home_for": 1.2,
+          "home_against": 0.8,
+          "away_for": 1.1,
+          "away_against": 0.9
+        },
+        "Brighton": {
+          "home_for": 1.0,
+          "home_against": 1.0,
+          "away_for": 0.9,
+          "away_against": 1.1
+        },
+        "Chelsea": {
+          "home_for": 0.9,
+          "home_against": 1.1,
+          "away_for": 1.0,
+          "away_against": 1.0
+        }
+      }
+    },
+    "cards": {
+      "avg_home": 2.0,
+      "avg_away": 2.2,
+      "dispersion_team": null,
+      "dispersion_total": null,
+      "teams": {
+        "Arsenal": {
+          "home_for": 1.2,
+          "home_against": 0.8,
+          "away_for": 1.1,
+          "away_against": 0.9
+        },
+        "Brighton": {
+          "home_for": 1.0,
+          "home_against": 1.0,
+          "away_for": 0.9,
+          "away_against": 1.1
+        },
+        "Chelsea": {
+          "home_for": 0.9,
+          "home_against": 1.1,
+          "away_for": 1.0,
+          "away_against": 1.0
+        }
+      }
+    },
+    "shots": {
+      "avg_home": 13.5,
+      "avg_away": 11.2,
+      "dispersion_team": 12.0,
+      "dispersion_total": 15.0,
+      "teams": {
+        "Arsenal": {
+          "home_for": 1.2,
+          "home_against": 0.8,
+          "away_for": 1.1,
+          "away_against": 0.9
+        },
+        "Brighton": {
+          "home_for": 1.0,
+          "home_against": 1.0,
+          "away_for": 0.9,
+          "away_against": 1.1
+        },
+        "Chelsea": {
+          "home_for": 0.9,
+          "home_against": 1.1,
+          "away_for": 1.0,
+          "away_against": 1.0
+        }
+      }
+    },
+    "shots_on_target": {
+      "avg_home": 4.7,
+      "avg_away": 3.9,
+      "dispersion_team": 12.0,
+      "dispersion_total": 15.0,
+      "teams": {
+        "Arsenal": {
+          "home_for": 1.2,
+          "home_against": 0.8,
+          "away_for": 1.1,
+          "away_against": 0.9
+        },
+        "Brighton": {
+          "home_for": 1.0,
+          "home_against": 1.0,
+          "away_for": 0.9,
+          "away_against": 1.1
+        },
+        "Chelsea": {
+          "home_for": 0.9,
+          "home_against": 1.1,
+          "away_for": 1.0,
+          "away_against": 1.0
+        }
+      }
+    }
+  },
+  "teams": {
+    "Arsenal": {
+      "season": {
+        "all": {
+          "matches": 9,
+          "position": 1,
+          "points": 22,
+          "won": 7,
+          "drawn": 1,
+          "lost": 1,
+          "goals_for": 2.1,
+          "goals_against": 0.7,
+          "xg_for": 1.9,
+          "xg_against": 0.8,
+          "shots_for": 15.2,
+          "shots_against": 8.9,
+          "shots_on_target_for": 5.9,
+          "shots_on_target_against": 2.8,
+          "corners_for": 6.8,
+          "corners_against": 3.2,
+          "yellow_cards": 1.6,
+          "red_cards": 0.1,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 5
+        },
+        "home": {
+          "matches": 5,
+          "position": 1,
+          "points": 22,
+          "won": 7,
+          "drawn": 1,
+          "lost": 1,
+          "goals_for": 2.1,
+          "goals_against": 0.7,
+          "xg_for": 1.9,
+          "xg_against": 0.8,
+          "shots_for": 15.2,
+          "shots_against": 8.9,
+          "shots_on_target_for": 5.9,
+          "shots_on_target_against": 2.8,
+          "corners_for": 6.8,
+          "corners_against": 3.2,
+          "yellow_cards": 1.6,
+          "red_cards": 0.1,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 2
+        },
+        "away": {
+          "matches": 4,
+          "position": 1,
+          "points": 22,
+          "won": 7,
+          "drawn": 1,
+          "lost": 1,
+          "goals_for": 2.1,
+          "goals_against": 0.7,
+          "xg_for": 1.9,
+          "xg_against": 0.8,
+          "shots_for": 15.2,
+          "shots_against": 8.9,
+          "shots_on_target_for": 5.9,
+          "shots_on_target_against": 2.8,
+          "corners_for": 6.8,
+          "corners_against": 3.2,
+          "yellow_cards": 1.6,
+          "red_cards": 0.1,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 2
+        }
+      },
+      "last6": [
+        {
+          "date": "2026-10-25",
+          "league": "E0",
+          "venue": "H",
+          "opponent": "Brighton",
+          "goals_for": 2,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 1.8,
+          "xg_against": 0.9,
+          "shots_for": 17,
+          "shots_against": 9,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 3,
+          "corners_for": 7,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 4
+        },
+        {
+          "date": "2026-10-25",
+          "league": "E0",
+          "venue": "H",
+          "opponent": "Chelsea",
+          "goals_for": 2,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 1.8,
+          "xg_against": 0.9,
+          "shots_for": 17,
+          "shots_against": 9,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 3,
+          "corners_for": 7,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 4
+        }
+      ]
+    },
+    "Brighton": {
+      "season": {
+        "all": {
+          "matches": 9,
+          "position": 2,
+          "points": 17,
+          "won": 5,
+          "drawn": 1,
+          "lost": 3,
+          "goals_for": 2.1,
+          "goals_against": 0.7,
+          "xg_for": 1.9,
+          "xg_against": 0.8,
+          "shots_for": 15.2,
+          "shots_against": 8.9,
+          "shots_on_target_for": 5.9,
+          "shots_on_target_against": 2.8,
+          "corners_for": 6.8,
+          "corners_against": 3.2,
+          "yellow_cards": 1.6,
+          "red_cards": 0.1,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 5
+        },
+        "home": {
+          "matches": 5,
+          "position": 2,
+          "points": 17,
+          "won": 5,
+          "drawn": 1,
+          "lost": 3,
+          "goals_for": 2.1,
+          "goals_against": 0.7,
+          "xg_for": 1.9,
+          "xg_against": 0.8,
+          "shots_for": 15.2,
+          "shots_against": 8.9,
+          "shots_on_target_for": 5.9,
+          "shots_on_target_against": 2.8,
+          "corners_for": 6.8,
+          "corners_against": 3.2,
+          "yellow_cards": 1.6,
+          "red_cards": 0.1,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 2
+        },
+        "away": {
+          "matches": 4,
+          "position": 2,
+          "points": 17,
+          "won": 5,
+          "drawn": 1,
+          "lost": 3,
+          "goals_for": 2.1,
+          "goals_against": 0.7,
+          "xg_for": 1.9,
+          "xg_against": 0.8,
+          "shots_for": 15.2,
+          "shots_against": 8.9,
+          "shots_on_target_for": 5.9,
+          "shots_on_target_against": 2.8,
+          "corners_for": 6.8,
+          "corners_against": 3.2,
+          "yellow_cards": 1.6,
+          "red_cards": 0.1,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 2
+        }
+      },
+      "last6": [
+        {
+          "date": "2026-10-25",
+          "league": "E0",
+          "venue": "H",
+          "opponent": "Arsenal",
+          "goals_for": 2,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 1.8,
+          "xg_against": 0.9,
+          "shots_for": 17,
+          "shots_against": 9,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 3,
+          "corners_for": 7,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 4
+        },
+        {
+          "date": "2026-10-25",
+          "league": "E0",
+          "venue": "H",
+          "opponent": "Chelsea",
+          "goals_for": 2,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 1.8,
+          "xg_against": 0.9,
+          "shots_for": 17,
+          "shots_against": 9,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 3,
+          "corners_for": 7,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 4
+        }
+      ]
+    },
+    "Chelsea": {
+      "season": {
+        "all": {
+          "matches": 9,
+          "position": 3,
+          "points": 12,
+          "won": 3,
+          "drawn": 1,
+          "lost": 5,
+          "goals_for": 2.1,
+          "goals_against": 0.7,
+          "xg_for": 1.9,
+          "xg_against": 0.8,
+          "shots_for": 15.2,
+          "shots_against": 8.9,
+          "shots_on_target_for": 5.9,
+          "shots_on_target_against": 2.8,
+          "corners_for": 6.8,
+          "corners_against": 3.2,
+          "yellow_cards": 1.6,
+          "red_cards": 0.1,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 5
+        },
+        "home": {
+          "matches": 5,
+          "position": 3,
+          "points": 12,
+          "won": 3,
+          "drawn": 1,
+          "lost": 5,
+          "goals_for": 2.1,
+          "goals_against": 0.7,
+          "xg_for": 1.9,
+          "xg_against": 0.8,
+          "shots_for": 15.2,
+          "shots_against": 8.9,
+          "shots_on_target_for": 5.9,
+          "shots_on_target_against": 2.8,
+          "corners_for": 6.8,
+          "corners_against": 3.2,
+          "yellow_cards": 1.6,
+          "red_cards": 0.1,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 2
+        },
+        "away": {
+          "matches": 4,
+          "position": 3,
+          "points": 12,
+          "won": 3,
+          "drawn": 1,
+          "lost": 5,
+          "goals_for": 2.1,
+          "goals_against": 0.7,
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": 15.2,
+          "shots_against": 8.9,
+          "shots_on_target_for": 5.9,
+          "shots_on_target_against": 2.8,
+          "corners_for": 6.8,
+          "corners_against": 3.2,
+          "yellow_cards": 1.6,
+          "red_cards": 0.1,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 2
+        }
+      },
+      "last6": [
+        {
+          "date": "2026-10-25",
+          "league": "E0",
+          "venue": "H",
+          "opponent": "Arsenal",
+          "goals_for": 2,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 1.8,
+          "xg_against": 0.9,
+          "shots_for": 17,
+          "shots_against": 9,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 3,
+          "corners_for": 7,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 4
+        },
+        {
+          "date": "2026-10-25",
+          "league": "E0",
+          "venue": "H",
+          "opponent": "Brighton",
+          "goals_for": 2,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 1.8,
+          "xg_against": 0.9,
+          "shots_for": 17,
+          "shots_against": 9,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 3,
+          "corners_for": 7,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 4
+        }
+      ]
+    }
+  }
+}

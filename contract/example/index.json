@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-10-26T02:05:00Z",
+  "season": "2026/27",
+  "leagues": [
+    {
+      "code": "E0",
+      "name": "Premier League",
+      "teams": [
+        "Arsenal",
+        "Brighton",
+        "Chelsea"
+      ]
+    }
+  ],
+  "today": [
+    {
+      "league": "E0",
+      "date": "2026-10-26",
+      "time": "20:00",
+      "home": "Arsenal",
+      "away": "Brighton"
+    }
+  ]
+}
