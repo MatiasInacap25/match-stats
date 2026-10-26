@@ -48,9 +48,16 @@ class Herdr:
     def start_agent(self, name: str, pane_id: str, args: list[str]) -> None:
         self.runner.run(["herdr", "agent", "start", name, "--kind", "claude", "--pane", pane_id, "--", *args])
 
+    def wait_started(self, name: str, timeout_ms: int) -> str:
+        """A freshly started agent is idle before it picks up its prompt; wait until it works."""
+        return self._wait(name, ("working",), timeout_ms)
+
     def wait_agent(self, name: str, timeout_ms: int) -> str:
+        return self._wait(name, SETTLED_STATUSES, timeout_ms)
+
+    def _wait(self, name: str, statuses: tuple[str, ...], timeout_ms: int) -> str:
         argv = ["herdr", "agent", "wait", name]
-        for status in SETTLED_STATUSES:
+        for status in statuses:
             argv += ["--until", status]
         argv += ["--timeout", str(timeout_ms)]
         try:

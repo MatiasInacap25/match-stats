@@ -95,6 +95,13 @@ def test_wait_agent_returns_status():
     ]
 
 
+def test_wait_started_waits_for_working():
+    runner = FakeRunner([fixture("agent_wait_ok.json")])
+
+    assert Herdr(runner).wait_started("hello-a", timeout_ms=5000) == "working"
+    assert runner.calls[0][0] == ["herdr", "agent", "wait", "hello-a", "--until", "working", "--timeout", "5000"]
+
+
 def test_wait_agent_timeout_maps_to_timeout():
     error = CommandError(["herdr"], 1, stdout="", stderr=fixture("agent_wait_timeout.json"))
     runner = FakeRunner([error])
