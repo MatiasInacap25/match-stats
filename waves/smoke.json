@@ -1,0 +1,8 @@
+{
+  "name": "smoke",
+  "base": "feat/worker-orchestra",
+  "tasks": [
+    {"id": "hello-a", "title": "Create smoke/a.txt", "prompt_file": "smoke/hello-a.md"},
+    {"id": "hello-b", "title": "Create smoke/b.txt", "prompt_file": "smoke/hello-b.md"}
+  ]
+}
