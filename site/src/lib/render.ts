@@ -39,6 +39,16 @@ export function formatMatchDate(isoDay: string): string {
   return formatDayLabel(new Date(year, month - 1, day));
 }
 
+/** Day, short month and year for an ISO calendar date, such as "26 abr 2026". */
+function formatMeetingDate(isoDay: string): string {
+  const [year, month, day] = isoDay.split("-").map(Number);
+  return new Intl.DateTimeFormat("es", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(year, month - 1, day));
+}
+
 /** League display name from the index; falls back to the code when it is not listed. */
 export function leagueName(leagues: IndexLeague[], code: string): string {
   return leagues.find((league) => league.code === code)?.name ?? code;
@@ -236,7 +246,7 @@ export function renderHeadToHead(meetings: Meeting[], home: string, away: string
     .map(
       (meeting) => `<li class="recent-item">
   <div class="recent-main">
-    <span class="recent-date">${formatMatchDate(meeting.date)}</span>
+    <span class="recent-date">${formatMeetingDate(meeting.date)}</span>
     <span class="recent-opp">${escapeHtml(meeting.home)} <strong class="recent-score num">${meeting.home_goals}${DASH_SEP}${meeting.away_goals}</strong> ${escapeHtml(meeting.away)}</span>
   </div>
   <p class="recent-detail num">Tiros ${meeting.home_shots}${DASH_SEP}${meeting.away_shots} · Al arco ${meeting.home_shots_on_target}${DASH_SEP}${meeting.away_shots_on_target} · Córners ${meeting.home_corners}${DASH_SEP}${meeting.away_corners} · Tarjetas ${meeting.home_cards}${DASH_SEP}${meeting.away_cards}</p>
