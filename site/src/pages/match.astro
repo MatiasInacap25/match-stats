@@ -1,0 +1,139 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Match Stats</title>
+  </head>
+  <body>
+    <main class="page">
+      <div id="app" aria-live="polite">
+        <p class="status">Loading…</p>
+      </div>
+    </main>
+
+    <script>
+      import { loadHeadToHead, loadLeague } from "../lib/data";
+      import { TeamNotFoundError, matchMarkets } from "../lib/markets";
+      import type { Market } from "../lib/markets";
+      import {
+        escapeHtml,
+        renderHeadToHead,
+        renderLastMatches,
+        renderMarkets,
+        renderSeasonTable,
+      } from "../lib/render";
+      import type { H2HData, LeagueData } from "../lib/types";
+
+      type Side = "all" | "home" | "away";
+
+      const base = import.meta.env.BASE_URL;
+      const app = document.getElementById("app");
+      if (!app) throw new Error("Missing #app");
+
+      function homeLink(): string {
+        return `<p><a href="${base}">Back to home</a></p>`;
+      }
+
+      function teamNotFound(team: string): string {
+        document.title = "Team not found · Match Stats";
+        return `<h1>Team not found</h1>
+<p>${escapeHtml(team)} has no data in this league.</p>
+${homeLink()}`;
+      }
+
+      function seasonHtml(league: LeagueData, home: string, away: string, side: Side): string {
+        return renderSeasonTable(
+          league.teams[home].season,
+          league.teams[away].season,
+          side,
+          [home, away],
+        );
+      }
+
+      async function main(): Promise<void> {
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("league") ?? "";
+        const home = params.get("home") ?? "";
+        const away = params.get("away") ?? "";
+
+        if (!code || !home || !away) {
+          app.innerHTML = `<h1>Match Stats</h1><p>Pick a league and two teams on the home page.</p>${homeLink()}`;
+          return;
+        }
+
+        const loaded = await Promise.all([loadLeague(code), loadHeadToHead(code)]).catch((error) => {
+          console.error(error);
+          return null;
+        });
+        if (!loaded) {
+          app.innerHTML = `<p class="status">Could not load data for ${escapeHtml(code)}.</p>${homeLink()}`;
+          return;
+        }
+        const [league, h2h]: [LeagueData, H2HData] = loaded;
+
+        let markets: Market[];
+        try {
+          markets = matchMarkets(league, home, away);
+        } catch (error) {
+          if (!(error instanceof TeamNotFoundError)) throw error;
+          app.innerHTML = teamNotFound(error.team);
+          return;
+        }
+        const missing = [home, away].find((team) => !Object.hasOwn(league.teams, team));
+        if (missing) {
+          app.innerHTML = teamNotFound(missing);
+          return;
+        }
+
+        document.title = `${home} vs ${away} · Match Stats`;
+        const meetings = h2h.pairs[[home, away].sort().join("|")] ?? [];
+        let side: Side = "all";
+
+        app.innerHTML = `<h1>${escapeHtml(home)} vs ${escapeHtml(away)}</h1>
+<p class="status">${escapeHtml(league.league)} · Season ${escapeHtml(league.season)}</p>
+${renderMarkets(markets, home, away)}
+<section>
+  <h2>Season stats</h2>
+  <div class="toggle" role="group" aria-label="Season split">
+    <button type="button" data-side="all" aria-pressed="true">All</button>
+    <button type="button" data-side="home" aria-pressed="false">Home</button>
+    <button type="button" data-side="away" aria-pressed="false">Away</button>
+  </div>
+  <div id="season" class="scroll">${seasonHtml(league, home, away, side)}</div>
+</section>
+<section>
+  <h2>Last 6 · ${escapeHtml(home)}</h2>
+  ${renderLastMatches(home, league.teams[home].last6)}
+</section>
+<section>
+  <h2>Last 6 · ${escapeHtml(away)}</h2>
+  ${renderLastMatches(away, league.teams[away].last6)}
+</section>
+<section>
+  <h2>Head to head</h2>
+  ${renderHeadToHead(meetings, home, away)}
+</section>
+${homeLink()}`;
+
+        app.addEventListener("click", (event) => {
+          const target = event.target instanceof Element ? event.target : null;
+          const button = target?.closest<HTMLButtonElement>("button[data-side]");
+          if (!button) return;
+          side = button.dataset.side as Side;
+          app.querySelectorAll<HTMLButtonElement>("button[data-side]").forEach((toggle) => {
+            toggle.setAttribute("aria-pressed", String(toggle === button));
+          });
+          const season = document.getElementById("season");
+          if (season) season.innerHTML = seasonHtml(league, home, away, side);
+        });
+      }
+
+      main();
+    </script>
+  </body>
+</html>
