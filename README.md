@@ -36,6 +36,20 @@ cd site && npm test
 A failed build (for example, one CSV download returns garbage) fails validation
 and leaves the previously published files untouched.
 
+## Goals model backtest (season 2025/26, walk-forward, 1X2)
+
+Run on 2026-10-27. Baseline = home/draw/away frequencies seen before each match. Lower is better.
+
+| League | Matches | Log loss | Baseline log loss | Brier | Baseline Brier |
+|--------|--------:|---------:|------------------:|------:|---------------:|
+| E0 Premier League | 378 | 1.0241 | 1.0855 | 0.6146 | 0.6571 |
+| SP1 La Liga | 376 | 0.9910 | 1.0493 | 0.5882 | 0.6320 |
+| I1 Serie A | 379 | 0.9953 | 1.0887 | 0.5939 | 0.6603 |
+| D1 Bundesliga | 305 | 0.9782 | 1.0705 | 0.5781 | 0.6477 |
+| F1 Ligue 1 | 304 | 1.0020 | 1.0667 | 0.6000 | 0.6446 |
+
+The model beats the baseline in every league. That says its probabilities are sane, not that they beat bookmaker odds.
+
 ## Agent workflow
 
 Parallel Claude Code workers are launched with `orchestra`. See
