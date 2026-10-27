@@ -93,6 +93,25 @@ describe("matchMarkets", () => {
     expectClose(find(markets, "cards_home_over").probability, probOver(1.5, cardsHome, null));
   });
 
+  it("uses Spanish market labels without the team name in team rows", () => {
+    const markets = matchMarkets(league, "Arsenal", "Brighton");
+
+    expect(find(markets, "1").label).toBe("Gana local");
+    expect(find(markets, "X").label).toBe("Empate");
+    expect(find(markets, "2").label).toBe("Gana visita");
+    expect(find(markets, "btts").label).toBe("Ambos marcan");
+    expect(find(markets, "goals_over").label).toBe("Más de 2.5 goles");
+    expect(find(markets, "goals_home_over").label).toBe("Más de 1.5 goles");
+    expect(find(markets, "corners_over").label).toBe("Más de 9.5 córners");
+    expect(find(markets, "corners_away_over").label).toBe("Más de 4.5 córners");
+    expect(find(markets, "cards_over").label).toBe("Más de 4.5 tarjetas");
+    expect(find(markets, "cards_home_over").label).toBe("Más de 1.5 tarjetas");
+    expect(find(markets, "shots_over").label).toBe("Más de 24.5 tiros");
+    expect(find(markets, "shots_home_over").label).toBe("Más de 12.5 tiros");
+    expect(find(markets, "shots_on_target_over").label).toBe("Más de 8.5 tiros al arco");
+    expect(find(markets, "shots_on_target_away_over").label).toBe("Más de 4.5 tiros al arco");
+  });
+
   it("throws TeamNotFoundError for a team missing from the league", () => {
     expect(() => matchMarkets(league, "Arsenal", "Nowhere FC")).toThrow(TeamNotFoundError);
     expect(() => matchMarkets(league, "Nowhere FC", "Brighton")).toThrow(TeamNotFoundError);

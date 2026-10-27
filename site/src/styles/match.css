@@ -1,0 +1,298 @@
+/*
+ * Match page. Every color comes from the tokens in tokens.css. Legacy rules in
+ * global.css for the old match markup are overridden here where they still apply.
+ */
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  padding-right: 8px;
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--text);
+}
+
+.match-head {
+  margin-bottom: 16px;
+}
+
+.match-title {
+  font-size: 1.625rem;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.vs {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.75em;
+  margin: 0 0.25em;
+}
+
+.match-sub {
+  margin: 6px 0 0;
+  font-size: 0.875rem;
+}
+
+/* 1X2 cards */
+
+.outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.outcome {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.outcome-label {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.outcome-pct {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.outcome.is-accent {
+  border-color: var(--accent);
+}
+
+.outcome.is-accent .outcome-pct {
+  color: var(--accent);
+}
+
+/* Market tabs and rows */
+
+.market-tabs {
+  margin: 20px 0 8px;
+}
+
+.market-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.market-list li.market {
+  display: block;
+  padding: 10px 0;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.market-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.market-name {
+  min-width: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.market-pct {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.market-exp {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.market-bar {
+  display: block;
+  height: 4px;
+  margin-top: 6px;
+  border-radius: 2px;
+  background: var(--bar);
+  overflow: hidden;
+}
+
+.market-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--text);
+  opacity: 0.55;
+  transition: width 220ms var(--ease-out);
+}
+
+.market.is-accent .market-pct {
+  color: var(--accent);
+}
+
+.market.is-accent .market-bar > span {
+  background: var(--accent);
+  opacity: 1;
+}
+
+/* Season comparison */
+
+.compare {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.compare-head,
+.compare-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 8px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9375rem;
+}
+
+.compare-head {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.compare-head > :first-child,
+.compare-row > :first-child {
+  text-align: left;
+}
+
+.compare-head > :last-child,
+.compare-row > :last-child {
+  text-align: right;
+}
+
+.compare-team {
+  overflow-wrap: anywhere;
+}
+
+.compare-value {
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-value.is-better {
+  font-weight: 700;
+}
+
+.compare-label {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* Recent matches and head to head */
+
+.recent {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recent-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.recent-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: 0.9375rem;
+}
+
+.recent-date {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.recent-opp {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.recent-score {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.recent-detail {
+  margin: 4px 0 0 32px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.chip {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  color: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.chip.W {
+  background: var(--win);
+}
+
+.chip.L {
+  background: var(--loss);
+}
+
+.chip.D {
+  background: var(--draw);
+}
+
+.summary {
+  margin: 0 0 8px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.note,
+.empty,
+.status {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
