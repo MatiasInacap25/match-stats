@@ -2,19 +2,19 @@
   "league": "F1",
   "season": "2026/27",
   "goals": {
-    "home_advantage": 0.2075,
-    "rho": -0.0585,
+    "home_advantage": 0.2076,
+    "rho": -0.0584,
     "teams": {
       "Angers": {
         "attack": -0.342,
         "defense": 0.2285
       },
       "Auxerre": {
-        "attack": -0.0449,
+        "attack": -0.045,
         "defense": 0.1912
       },
       "Brest": {
-        "attack": 0.1099,
+        "attack": 0.11,
         "defense": 0.2793
       },
       "Le Havre": {
@@ -22,20 +22,20 @@
         "defense": 0.2487
       },
       "Le Mans": {
-        "attack": 0.1009,
-        "defense": 0.3896
+        "attack": 0.101,
+        "defense": 0.3898
       },
       "Lens": {
         "attack": 0.3141,
         "defense": -0.0363
       },
       "Lille": {
-        "attack": 0.0978,
+        "attack": 0.0979,
         "defense": -0.2259
       },
       "Lorient": {
         "attack": -0.0163,
-        "defense": 0.005
+        "defense": 0.0049
       },
       "Lyon": {
         "attack": 0.2658,
@@ -50,15 +50,15 @@
         "defense": 0.5557
       },
       "Monaco": {
-        "attack": 0.3002,
+        "attack": 0.3003,
         "defense": 0.0681
       },
       "Montpellier": {
-        "attack": -0.7065,
-        "defense": 0.6055
+        "attack": -0.7062,
+        "defense": 0.6056
       },
       "Nantes": {
-        "attack": -0.3119,
+        "attack": -0.3121,
         "defense": 0.1681
       },
       "Nice": {
@@ -67,15 +67,15 @@
       },
       "Paris FC": {
         "attack": 0.1428,
-        "defense": 0.0535
+        "defense": 0.0534
       },
       "Paris SG": {
-        "attack": 0.5505,
-        "defense": -0.2762
+        "attack": 0.5504,
+        "defense": -0.2763
       },
       "Reims": {
-        "attack": -0.3867,
-        "defense": 0.1008
+        "attack": -0.3868,
+        "defense": 0.1007
       },
       "Rennes": {
         "attack": 0.339,
@@ -94,8 +94,8 @@
         "defense": 0.085
       },
       "Troyes": {
-        "attack": -0.6205,
-        "defense": 0.4578
+        "attack": -0.6207,
+        "defense": 0.4581
       }
     }
   },
