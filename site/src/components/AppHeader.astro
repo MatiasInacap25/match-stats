@@ -1,0 +1,30 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
+<header class="app-header">
+  <div class="app-start"><slot /></div>
+  <ThemeToggle />
+</header>
+
+<style>
+  .app-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 60px;
+    padding: 8px 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .app-start {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+  }
+</style>
