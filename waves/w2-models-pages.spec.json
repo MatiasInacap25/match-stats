@@ -1,0 +1,24 @@
+{
+  "name": "w2-models-pages",
+  "base": "feat/match-stats-site",
+  "notes": [
+    "Match.season holds the season code (e.g. \"2627\"), not the label; use leagues.season_label() for display.",
+    "ingest.parse_season_csv skips played rows with blank or invalid count stats (logged warning); blank HxG/AxG is None.",
+    "Contract update: in season.<all|home|away>, when matches == 0 every per-match average and *_pct is null; counts are 0; position/points keep the table values. site/src/lib/types.ts SeasonSide already reflects this.",
+    "site/src/lib/probability.ts goalLambdas throws Error('Unknown team: <name>') for a team not in goals.teams; check membership first.",
+    "site/src/lib/probability.ts teamGoalsOver uses goals > line (exact for half-lines).",
+    "Python: uv run pytest -q runs everything. Site: cd site && npm ci first in a fresh worktree, then npm test.",
+    "site/public/data/ is produced by the nightly job: never commit files there (dev:example copies example data into it for local use only)."
+  ],
+  "tasks": [
+    {"plan_task": 3, "id": "goals-model", "title": "Dixon-Coles goals model",
+     "files": ["src/matchstats/goals_model.py", "tests/matchstats/test_goals_model.py"], "test": "uv run pytest -q"},
+    {"plan_task": 4, "id": "stat-model", "title": "Stat rate models",
+     "files": ["src/matchstats/stat_model.py", "tests/matchstats/test_stat_model.py"], "test": "uv run pytest -q"},
+    {"plan_task": 5, "id": "team-stats", "title": "Season stats, last six, head to head",
+     "files": ["src/matchstats/team_stats.py", "tests/matchstats/test_team_stats.py"], "test": "uv run pytest -q"},
+    {"plan_task": 6, "id": "site-pages", "title": "Markets, match page, home page",
+     "files": ["site/src/lib/markets.ts", "site/src/lib/render.ts", "site/src/lib/data.ts", "site/src/pages/**", "site/src/styles/**", "site/scripts/**", "site/package.json", "site/package-lock.json", "site/test/markets.test.ts", "site/test/render.test.ts"],
+     "test": "cd site && npm test && npm run build"}
+  ]
+}

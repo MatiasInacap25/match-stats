@@ -1,0 +1,26 @@
+{
+  "name": "w2-models-pages",
+  "base": "feat/match-stats-site",
+  "tasks": [
+    {
+      "id": "goals-model",
+      "title": "Dixon-Coles goals model",
+      "prompt_file": "w2-models-pages/goals-model.md"
+    },
+    {
+      "id": "stat-model",
+      "title": "Stat rate models",
+      "prompt_file": "w2-models-pages/stat-model.md"
+    },
+    {
+      "id": "team-stats",
+      "title": "Season stats, last six, head to head",
+      "prompt_file": "w2-models-pages/team-stats.md"
+    },
+    {
+      "id": "site-pages",
+      "title": "Markets, match page, home page",
+      "prompt_file": "w2-models-pages/site-pages.md"
+    }
+  ]
+}
