@@ -20,5 +20,19 @@
       "home": "Arsenal",
       "away": "Brighton"
     }
+  ],
+  "upcoming": [
+    {
+      "league": "E0",
+      "kickoff_utc": "2026-10-26T20:00:00Z",
+      "home": "Arsenal",
+      "away": "Brighton"
+    },
+    {
+      "league": "E0",
+      "kickoff_utc": "2026-10-27T15:00:00Z",
+      "home": "Chelsea",
+      "away": "Arsenal"
+    }
   ]
 }
