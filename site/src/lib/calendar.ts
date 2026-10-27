@@ -19,6 +19,11 @@ function nextDayKey(key: string): string {
   return new Date(Date.UTC(year, month - 1, day + 1)).toISOString().slice(0, 10);
 }
 
+/** True when one top-5 league has both teams, so the match has probabilities and an analysis page. */
+export function isAnalyzable(match: UpcomingMatch): boolean {
+  return match.league !== null;
+}
+
 /** Splits fixtures into the viewer's today and tomorrow, each sorted by kickoff. */
 export function groupByLocalDay(
   matches: UpcomingMatch[],
