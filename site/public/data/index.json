@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T00:55:29Z",
+  "generated_at": "2026-10-27T02:20:21Z",
   "season": "2026/27",
   "leagues": [
     {
@@ -129,5 +129,231 @@
       ]
     }
   ],
-  "today": []
+  "today": [],
+  "upcoming": [
+    {
+      "competition": "F1",
+      "competition_name": "Ligue 1",
+      "kickoff_utc": "2026-10-26T19:30:00Z",
+      "home": "Paris SG",
+      "away": "Lyon",
+      "league": "F1"
+    },
+    {
+      "competition": "SP1",
+      "competition_name": "La Liga",
+      "kickoff_utc": "2026-10-26T20:00:00Z",
+      "home": "Sevilla",
+      "away": "Osasuna",
+      "league": "SP1"
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T17:00:00Z",
+      "home": "Hamburg",
+      "away": "Ein Frankfurt",
+      "league": "D1"
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T17:00:00Z",
+      "home": "Rot-Weiss Essen",
+      "away": "RB Leipzig",
+      "league": null
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T17:00:00Z",
+      "home": "SG Sonnenhof Großaspach",
+      "away": "Augsburg",
+      "league": null
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T17:00:00Z",
+      "home": "VfL Bochum",
+      "away": "Mainz",
+      "league": null
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-27T17:30:00Z",
+      "home": "Sassuolo",
+      "away": "Lazio",
+      "league": "I1"
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-27T19:45:00Z",
+      "home": "Roma",
+      "away": "Cagliari",
+      "league": "I1"
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-27T19:45:00Z",
+      "home": "Torino",
+      "away": "Como",
+      "league": "I1"
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T19:45:00Z",
+      "home": "Dortmund",
+      "away": "Werder Bremen",
+      "league": "D1"
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T19:45:00Z",
+      "home": "Elversberg",
+      "away": "SV Darmstadt 98",
+      "league": null
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T19:45:00Z",
+      "home": "FC Koln",
+      "away": "Union Berlin",
+      "league": "D1"
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T19:45:00Z",
+      "home": "M'gladbach",
+      "away": "Karlsruher SC",
+      "league": null
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-28T17:00:00Z",
+      "home": "Dynamo Dresden",
+      "away": "Schalke 04",
+      "league": null
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-28T17:00:00Z",
+      "home": "Freiburg",
+      "away": "VfL Wolfsburg",
+      "league": null
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-28T17:00:00Z",
+      "home": "Paderborn",
+      "away": "Stuttgart",
+      "league": "D1"
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-28T17:00:00Z",
+      "home": "SSV Jeddeloh II",
+      "away": "Hertha BSC",
+      "league": null
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-28T17:30:00Z",
+      "home": "Milan",
+      "away": "Bologna",
+      "league": "I1"
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-28T17:30:00Z",
+      "home": "Parma",
+      "away": "Udinese",
+      "league": "I1"
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-28T17:30:00Z",
+      "home": "Venezia",
+      "away": "Inter",
+      "league": "I1"
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-28T19:45:00Z",
+      "home": "Genoa",
+      "away": "Juventus",
+      "league": "I1"
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-28T19:45:00Z",
+      "home": "Monza",
+      "away": "Napoli",
+      "league": "I1"
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-28T19:45:00Z",
+      "home": "Bayern Munich",
+      "away": "1. FC Magdeburg",
+      "league": null
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-28T19:45:00Z",
+      "home": "Hannover 96",
+      "away": "1. FC Kaiserslautern",
+      "league": null
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-28T19:45:00Z",
+      "home": "Holstein Kiel",
+      "away": "Hoffenheim",
+      "league": null
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-28T19:45:00Z",
+      "home": "Leverkusen",
+      "away": "1. FC Nürnberg",
+      "league": null
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-29T17:30:00Z",
+      "home": "Frosinone",
+      "away": "Lecce",
+      "league": "I1"
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-10-29T19:45:00Z",
+      "home": "Fiorentina",
+      "away": "Atalanta",
+      "league": "I1"
+    }
+  ]
 }
