@@ -1,5 +1,5 @@
 import type { Market } from "./markets";
-import type { LastMatch, Meeting, SeasonSide, TeamSeason } from "./types";
+import type { IndexLeague, LastMatch, Meeting, SeasonSide, TeamSeason } from "./types";
 
 const DASH = "—";
 
@@ -25,6 +25,11 @@ export function formatValue(value: number | null, digits = 2): string {
 export function formatPct(fraction: number | null): string {
   if (fraction === null || !Number.isFinite(fraction)) return DASH;
   return `${Math.round(fraction * 100)}%`;
+}
+
+/** League display name from the index; falls back to the code when it is not listed. */
+export function leagueName(leagues: IndexLeague[], code: string): string {
+  return leagues.find((league) => league.code === code)?.name ?? code;
 }
 
 function plural(count: number, singular: string, pluralForm: string): string {
@@ -131,6 +136,7 @@ export function renderLastMatches(team: string, matches: LastMatch[]): string {
   <td>${escapeHtml(match.result)}</td>
   <td>${formatValue(match.xg_for, 1)}-${formatValue(match.xg_against, 1)}</td>
   <td>${match.shots_for}-${match.shots_against}</td>
+  <td>${match.shots_on_target_for}-${match.shots_on_target_against}</td>
   <td>${match.corners_for}-${match.corners_against}</td>
   <td>${match.cards_for}-${match.cards_against}</td>
 </tr>`,
@@ -139,7 +145,7 @@ export function renderLastMatches(team: string, matches: LastMatch[]): string {
 
   return `<div class="scroll">
 <table class="last-table">
-<thead><tr><th scope="col">Date</th><th scope="col">Opponent</th><th scope="col">Score</th><th scope="col">Result</th><th scope="col">xG</th><th scope="col">Shots</th><th scope="col">Corners</th><th scope="col">Cards</th></tr></thead>
+<thead><tr><th scope="col">Date</th><th scope="col">Opponent</th><th scope="col">Score</th><th scope="col">Result</th><th scope="col">xG</th><th scope="col">Shots</th><th scope="col">SoT</th><th scope="col">Corners</th><th scope="col">Cards</th></tr></thead>
 <tbody>
 ${rows}
 </tbody>
@@ -184,6 +190,10 @@ BTTS ${btts}/${count}</p>`;
   <td>${escapeHtml(meeting.home)}</td>
   <td>${meeting.home_goals}-${meeting.away_goals}</td>
   <td>${escapeHtml(meeting.away)}</td>
+  <td>${meeting.home_shots}-${meeting.away_shots}</td>
+  <td>${meeting.home_shots_on_target}-${meeting.away_shots_on_target}</td>
+  <td>${meeting.home_corners}-${meeting.away_corners}</td>
+  <td>${meeting.home_cards}-${meeting.away_cards}</td>
 </tr>`,
     )
     .join("\n");
@@ -191,7 +201,7 @@ BTTS ${btts}/${count}</p>`;
   return `${summary}
 <div class="scroll">
 <table class="h2h-table">
-<thead><tr><th scope="col">Date</th><th scope="col">League</th><th scope="col">Home</th><th scope="col">Score</th><th scope="col">Away</th></tr></thead>
+<thead><tr><th scope="col">Date</th><th scope="col">League</th><th scope="col">Home</th><th scope="col">Score</th><th scope="col">Away</th><th scope="col">Shots</th><th scope="col">SoT</th><th scope="col">Corners</th><th scope="col">Cards</th></tr></thead>
 <tbody>
 ${rows}
 </tbody>

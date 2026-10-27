@@ -17,17 +17,18 @@ import "../styles/global.css";
     </main>
 
     <script>
-      import { loadHeadToHead, loadLeague } from "../lib/data";
+      import { loadHeadToHead, loadIndex, loadLeague } from "../lib/data";
       import { TeamNotFoundError, matchMarkets } from "../lib/markets";
       import type { Market } from "../lib/markets";
       import {
         escapeHtml,
+        leagueName,
         renderHeadToHead,
         renderLastMatches,
         renderMarkets,
         renderSeasonTable,
       } from "../lib/render";
-      import type { H2HData, LeagueData } from "../lib/types";
+      import type { H2HData, IndexData, LeagueData } from "../lib/types";
 
       type Side = "all" | "home" | "away";
 
@@ -66,7 +67,11 @@ ${homeLink()}`;
           return;
         }
 
-        const loaded = await Promise.all([loadLeague(code), loadHeadToHead(code)]).catch((error) => {
+        const loaded = await Promise.all([
+          loadLeague(code),
+          loadHeadToHead(code),
+          loadIndex().catch(() => null),
+        ]).catch((error) => {
           console.error(error);
           return null;
         });
@@ -74,7 +79,8 @@ ${homeLink()}`;
           app.innerHTML = `<p class="status">Could not load data for ${escapeHtml(code)}.</p>${homeLink()}`;
           return;
         }
-        const [league, h2h]: [LeagueData, H2HData] = loaded;
+        const [league, h2h, index]: [LeagueData, H2HData, IndexData | null] = loaded;
+        const name = leagueName(index?.leagues ?? [], code);
 
         let markets: Market[];
         try {
@@ -95,7 +101,7 @@ ${homeLink()}`;
         let side: Side = "all";
 
         app.innerHTML = `<h1>${escapeHtml(home)} vs ${escapeHtml(away)}</h1>
-<p class="status">${escapeHtml(league.league)} · Season ${escapeHtml(league.season)}</p>
+<p class="status">${escapeHtml(name)} · Season ${escapeHtml(league.season)}</p>
 ${renderMarkets(markets, home, away)}
 <section>
   <h2>Season stats</h2>

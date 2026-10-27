@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
 import E0 from "../../contract/example/leagues/E0.json";
 import H2H from "../../contract/example/h2h/E0.json";
-import type { LeagueData, H2HData } from "../src/lib/types";
+import type { H2HData, IndexLeague, LeagueData } from "../src/lib/types";
 import {
   formatPct,
   formatValue,
+  leagueName,
   renderHeadToHead,
   renderLastMatches,
   renderMarkets,
@@ -76,6 +77,13 @@ describe("renderLastMatches", () => {
   it("says so when there are no matches", () => {
     expect(renderLastMatches("Arsenal", [])).toContain("No recent matches");
   });
+
+  it("shows shots on target right after shots", () => {
+    const html = renderLastMatches("Arsenal", league.teams.Arsenal.last6);
+    expect(html).toContain('<th scope="col">SoT</th>');
+    expect(html).toContain("<th scope=\"col\">Shots</th><th scope=\"col\">SoT</th>");
+    expect(html).toContain("<td>17-9</td>\n  <td>6-3</td>");
+  });
 });
 
 describe("renderHeadToHead", () => {
@@ -91,5 +99,32 @@ describe("renderHeadToHead", () => {
     expect(html).toContain("1 draw");
     expect(html).toContain("Avg goals 2.50");
     expect(html).toContain("BTTS 2/2");
+  });
+
+  it("shows shots, shots on target, corners and cards per meeting", () => {
+    const html = renderHeadToHead(h2h.pairs["Arsenal|Brighton"], "Arsenal", "Brighton");
+    const row = html.split("<tr>").find((segment) => segment.includes("2026-03-01"));
+    if (!row) throw new Error("missing 2026-03-01 row");
+    expect(row).toContain("10-15");
+    expect(row).toContain("3-6");
+    expect(row).toContain("4-6");
+    expect(row).toContain("3-1");
+    expect(html).toContain('<th scope="col">Shots</th>');
+    expect(html).toContain('<th scope="col">SoT</th>');
+    expect(html).toContain('<th scope="col">Corners</th>');
+    expect(html).toContain('<th scope="col">Cards</th>');
+  });
+});
+
+describe("leagueName", () => {
+  const leagues: IndexLeague[] = [{ code: "E0", name: "Premier League", teams: [] }];
+
+  it("returns the league name from the index", () => {
+    expect(leagueName(leagues, "E0")).toBe("Premier League");
+  });
+
+  it("falls back to the code when the league is missing", () => {
+    expect(leagueName(leagues, "SP1")).toBe("SP1");
+    expect(leagueName([], "E0")).toBe("E0");
   });
 });
