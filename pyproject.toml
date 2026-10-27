@@ -7,6 +7,7 @@ dependencies = ["numpy>=2", "scipy>=1.14"]
 
 [project.scripts]
 orchestra = "orchestra.cli:main"
+matchstats = "matchstats.cli:main"
 
 [build-system]
 requires = ["hatchling"]
