@@ -103,6 +103,17 @@ describe("renderMarketRows", () => {
     expect(itemFor(html, "Ambos marcan")).not.toContain("Esperad");
   });
 
+  it("omits the 1X2 outcomes from the match rows, which the outcome cards already show", () => {
+    const markets = matchMarkets(league, "Arsenal", "Brighton");
+    const html = renderMarketRows(markets, "match");
+    expect(html).not.toContain("Gana local");
+    expect(html).not.toContain("Empate");
+    expect(html).not.toContain("Gana visita");
+    expect(html).toContain("Ambos marcan");
+    expect(html).toContain("Más de 2.5 goles");
+    expect(renderOutcomes(markets)).toContain("Gana local");
+  });
+
   it("renders only the markets of the requested scope", () => {
     const markets = matchMarkets(league, "Arsenal", "Brighton");
     const html = renderMarketRows(markets, "home");

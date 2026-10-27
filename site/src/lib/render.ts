@@ -72,10 +72,13 @@ function expectedWord(market: Market): string {
   return market.id.startsWith("cards") ? "Esperadas" : "Esperados";
 }
 
+/** 1X2 market ids; already shown as the outcome cards, so they are left out of the market rows. */
+const OUTCOME_IDS = new Set(["1", "X", "2"]);
+
 /** Market rows for one scope (match, home or away), each with a probability bar. */
 export function renderMarketRows(markets: Market[], scope: Market["scope"]): string {
   const items = markets
-    .filter((market) => market.scope === scope)
+    .filter((market) => market.scope === scope && !OUTCOME_IDS.has(market.id))
     .map((market) => {
       const accent = market.probability >= ACCENT_FROM;
       const expected =
