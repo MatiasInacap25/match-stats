@@ -54,6 +54,7 @@ export interface StatModel {
 }
 
 /** One side (all, home or away) of a team's season. Per-match averages unless noted. */
+/** Per-match averages and fractions are null when `matches` is 0 (e.g. no away games yet). */
 export interface SeasonSide {
   matches: number;
   position: number;
@@ -61,22 +62,22 @@ export interface SeasonSide {
   won: number;
   drawn: number;
   lost: number;
-  goals_for: number;
-  goals_against: number;
+  goals_for: number | null;
+  goals_against: number | null;
   xg_for: number | null;
   xg_against: number | null;
-  shots_for: number;
-  shots_against: number;
-  shots_on_target_for: number;
-  shots_on_target_against: number;
-  corners_for: number;
-  corners_against: number;
-  yellow_cards: number;
-  red_cards: number;
+  shots_for: number | null;
+  shots_against: number | null;
+  shots_on_target_for: number | null;
+  shots_on_target_against: number | null;
+  corners_for: number | null;
+  corners_against: number | null;
+  yellow_cards: number | null;
+  red_cards: number | null;
   /** 0–1 fraction */
-  btts_pct: number;
+  btts_pct: number | null;
   /** 0–1 fraction */
-  over_2_5_pct: number;
+  over_2_5_pct: number | null;
   clean_sheets: number;
 }
 

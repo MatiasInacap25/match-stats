@@ -74,7 +74,7 @@ Meanings (the TypeScript side relies on these exactly):
 - **Count distribution**: negative binomial with mean `mu` and size `dispersion` (`p = size / (size + mu)`). `dispersion_team` applies to one team's count, `dispersion_total` to the match total, where the total's mean is the sum of both teams' means. `null` dispersion means Poisson.
 - **Cards** are card points: yellow = 1, red = 2 (Betano settlement). `cards_for`/`cards_against` in `last6` use the same points. `season.*.yellow_cards`/`red_cards` are raw per-match counts.
 - **Shots** include shots on target (football-data `HS` already does).
-- `season.*` values are per-match averages, except `matches`, `position`, `points`, `won`, `drawn`, `lost`, `clean_sheets` (counts) and `*_pct` (0–1 fractions). `position` and `points` are the same in `all`, `home` and `away` (league table). `xg_*` are `null` when football-data has no xG for those matches.
+- `season.*` values are per-match averages, except `matches`, `position`, `points`, `won`, `drawn`, `lost`, `clean_sheets` (counts) and `*_pct` (0–1 fractions). `position` and `points` are the same in `all`, `home` and `away` (league table). `xg_*` are `null` when football-data has no xG for those matches. When a side has `matches: 0` (e.g. no away games yet), every per-match average and `*_pct` is `null`; counts are `0`; `position` and `points` keep their table values.
 - `last6`: the team's 6 most recent matches in its own league's data, newest first. `venue` is `H` or `A`. `result` is `W`, `D` or `L`.
 
 ## `h2h/<code>.json`
