@@ -1,0 +1,21 @@
+{
+  "name": "w3-build-ship",
+  "base": "feat/match-stats-site",
+  "tasks": [
+    {
+      "id": "build-cli",
+      "title": "Build command with validation",
+      "prompt_file": "w3-build-ship/build-cli.md"
+    },
+    {
+      "id": "backtest",
+      "title": "Walk-forward backtest",
+      "prompt_file": "w3-build-ship/backtest.md"
+    },
+    {
+      "id": "nightly-deploy",
+      "title": "Nightly job, Vercel config, README",
+      "prompt_file": "w3-build-ship/nightly-deploy.md"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "w3-build-ship",
+  "base": "feat/match-stats-site",
+  "notes": [
+    "Match.season holds the season code (e.g. \"2627\"); use leagues.season_label() for the JSON 'season' field (\"2026/27\").",
+    "Existing signatures: fit_goals_model(matches, ref_date, xi=0.002, l2=0.1) -> dict (raises ValueError on empty input); fit_stat_model(matches, stat, current_season, shrink=5.0) -> dict (raises ValueError on empty input or unknown stat); STAT_FIELDS in stat_model; league_table(matches); season_stats(matches, team, table); last_matches(matches, team, n=6); pair_key(a, b); head_to_head(matches, a, b); load_matches(divs, seasons, cache_dir, current_season); download(url, cache_file, refresh) -> str | None; parse_fixtures_csv(text); FIXTURES_URL; season_code(d); season_label(code); recent_seasons(current, n); TOP_LEAGUES; SECOND_DIVISION.",
+    "fit_stat_model only returns teams that appear in the matches it gets; season_stats returns position/points None for a team missing from the table. The build must pass the right matches so every current-season team is present; validate_output catches gaps.",
+    "Contract: when a season side has matches == 0, its per-match averages and *_pct are null.",
+    "site/public/data/ is written by the build and committed only by the nightly job. Tests must write to tmp_path, never into site/public/data.",
+    "Python: uv run pytest -q runs everything."
+  ],
+  "tasks": [
+    {"plan_task": 7, "id": "build-cli", "title": "Build command with validation",
+     "files": ["src/matchstats/build.py", "src/matchstats/cli.py", "pyproject.toml", "uv.lock", "tests/matchstats/test_build.py"], "test": "uv run pytest -q"},
+    {"plan_task": 8, "id": "backtest", "title": "Walk-forward backtest",
+     "files": ["src/matchstats/backtest.py", "tests/matchstats/test_backtest.py"], "test": "uv run pytest -q"},
+    {"plan_task": 9, "id": "nightly-deploy", "title": "Nightly job, Vercel config, README",
+     "files": [".github/workflows/nightly.yml", "site/vercel.json", "README.md", "tests/test_workflow.py"], "test": "uv run pytest -q"}
+  ]
+}
