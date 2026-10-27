@@ -1,3 +1,4 @@
+import logging
 import urllib.error
 import urllib.request
 from datetime import date
@@ -65,6 +66,25 @@ def test_parse_season_csv_real_sample():
     assert first.home_yellow == 1
     assert first.home_red == 0
     assert first.home_xg == pytest.approx(1.88)
+
+
+def test_skips_played_row_with_blank_stats(caplog):
+    text = (
+        "Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,HxG,AxG,HS,AS,HST,AST,HC,AC,HY,AY,HR,AR\n"
+        "E0,21/08/2026,20:00,Arsenal,Coventry,1,0,,,10,5,4,2,6,3,2,0,0,0\n"
+        "E0,22/08/2026,15:00,Everton,Crystal Palace,2,1,,,8,6,3,2,,4,1,1,0,0\n"
+        "E0,23/08/2026,15:00,Ipswich,Sunderland,0,0,,,7,7,2,2,5,5,2,2,0,0\n"
+    )
+
+    with caplog.at_level(logging.WARNING, logger="matchstats.ingest"):
+        matches = parse_season_csv(text, "E0", "2627")
+
+    assert [(m.home, m.away) for m in matches] == [
+        ("Arsenal", "Coventry"),
+        ("Ipswich", "Sunderland"),
+    ]
+    assert "E0 2627" in caplog.text
+    assert "Everton" in caplog.text
 
 
 def test_cards_are_points():

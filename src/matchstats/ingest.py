@@ -1,5 +1,6 @@
 import csv
 import io
+import logging
 import time
 import urllib.error
 import urllib.request
@@ -15,6 +16,8 @@ TIMEOUT_SECONDS = 30
 ATTEMPTS = 3
 BACKOFF_SECONDS = 2
 PAUSE_SECONDS = 1
+
+logger = logging.getLogger(__name__)
 
 _SEASON_COLUMNS = (
     "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG",
@@ -41,6 +44,9 @@ def parse_season_csv(text: str, div: str, season: str) -> list[Match]:
         if not row["FTHG"].strip() or not row["FTAG"].strip():
             continue
         where = f"{div} {season} {row['Date']} {row['HomeTeam']} v {row['AwayTeam']}"
+        stats = _count_stats(row, where)
+        if stats is None:
+            continue
         matches.append(
             Match(
                 div=div,
@@ -52,16 +58,7 @@ def parse_season_csv(text: str, div: str, season: str) -> list[Match]:
                 away_goals=_int(row, "FTAG", where),
                 home_xg=_optional_float(row, "HxG", where),
                 away_xg=_optional_float(row, "AxG", where),
-                home_shots=_int(row, "HS", where),
-                away_shots=_int(row, "AS", where),
-                home_sot=_int(row, "HST", where),
-                away_sot=_int(row, "AST", where),
-                home_corners=_int(row, "HC", where),
-                away_corners=_int(row, "AC", where),
-                home_yellow=_int(row, "HY", where),
-                away_yellow=_int(row, "AY", where),
-                home_red=_int(row, "HR", where),
-                away_red=_int(row, "AR", where),
+                **stats,
             )
         )
     return matches
@@ -167,6 +164,34 @@ def _parse_date(value: str, where: str) -> date:
         except ValueError:
             continue
     raise IngestError(f"{where}: unparseable date {value!r}")
+
+
+_COUNT_COLUMNS = {
+    "HS": "home_shots",
+    "AS": "away_shots",
+    "HST": "home_sot",
+    "AST": "away_sot",
+    "HC": "home_corners",
+    "AC": "away_corners",
+    "HY": "home_yellow",
+    "AY": "away_yellow",
+    "HR": "home_red",
+    "AR": "away_red",
+}
+
+
+def _count_stats(row: dict[str, str], where: str) -> dict[str, int] | None:
+    # A played row with a blank or non-integer count is skipped, so one half-filled row
+    # never fails the whole load. Returns None when the row must be skipped.
+    counts = {}
+    for column, field in _COUNT_COLUMNS.items():
+        value = row[column].strip()
+        try:
+            counts[field] = int(value)
+        except ValueError:
+            logger.warning("skipping %s: %s is not an integer (%r)", where, column, value)
+            return None
+    return counts
 
 
 def _int(row: dict[str, str], column: str, where: str) -> int:
