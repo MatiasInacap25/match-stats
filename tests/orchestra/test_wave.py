@@ -197,3 +197,13 @@ def test_startup_timeout_still_tracks_the_worker(tmp_path):
 
     assert ("wait", "task-0") in herdr.events
     assert result.status == "idle"
+
+
+def test_checks_every_start_before_waiting_for_completion(tmp_path):
+    # Seen live: worker 2 finished while orchestra waited for worker 1, so it never looked "working".
+    herdr = FakeHerdr(tmp_path)
+
+    run_wave(make_wave(tmp_path, 3), tmp_path / "repo", herdr)
+
+    kinds = [e[0] for e in herdr.events if e[0] in {"started", "wait"}]
+    assert kinds == ["started", "started", "started", "wait", "wait", "wait"]

@@ -95,7 +95,8 @@ class Herdr:
             remaining_ms = int((deadline - time.monotonic()) * 1000)
             if remaining_ms <= 0:
                 return "error"
-            status = self._wait(name, ("working",), remaining_ms)
+            # "done" also proves it started: a fast worker can finish before we look.
+            status = self._wait(name, ("working", "done"), remaining_ms)
             if status != "error":
                 return status
             time.sleep(2)
