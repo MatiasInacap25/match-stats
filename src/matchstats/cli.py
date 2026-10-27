@@ -16,6 +16,7 @@ def main(
     *,
     loader: Callable | None = None,
     fixtures_text: Callable[[], str] | None = None,
+    feed_text: Callable[[str, str], str | None] | None = None,
 ) -> int:
     parser = argparse.ArgumentParser(prog="matchstats")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -34,6 +35,7 @@ def main(
             today=today,
             loader=loader or load_matches,
             fixtures_text=fixtures_text,
+            feed_text=feed_text,
         )
     except BuildError as error:
         print(f"build failed: {error}", file=sys.stderr)

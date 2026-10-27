@@ -2,7 +2,7 @@
 
 The nightly job (Python, `uv run matchstats build --out site/public/data`) writes these files. The site (Astro, client-side TypeScript) reads them and computes every probability in the browser. Both sides test against the examples in `contract/example/`.
 
-All numbers are plain JSON numbers. Missing values are `null`. Dates are ISO `YYYY-MM-DD`. Team names are exactly as football-data.co.uk writes them (single source, so no aliasing).
+All numbers are plain JSON numbers. Missing values are `null`. Dates are ISO `YYYY-MM-DD`. Team names are football-data.co.uk names (the same names as `leagues[].teams`) wherever a team resolves; `upcoming` keeps the source name for a team that does not (see `upcoming`).
 
 ## `index.json`
 
@@ -12,16 +12,19 @@ All numbers are plain JSON numbers. Missing values are `null`. Dates are ISO `YY
   "season": "2026/27",
   "leagues": [{"code": "E0", "name": "Premier League", "teams": ["Arsenal", "..."]}],
   "today": [{"league": "E0", "date": "2026-10-26", "time": "20:00", "home": "Arsenal", "away": "Brighton"}],
-  "upcoming": [{"league": "E0", "kickoff_utc": "2026-10-26T20:00:00Z", "home": "Arsenal", "away": "Brighton"}]
+  "upcoming": [{"competition": "E0", "competition_name": "Premier League", "kickoff_utc": "2026-10-26T20:00:00Z", "home": "Arsenal", "away": "Brighton", "league": "E0"}]
 }
 ```
 
 - `leagues`: exactly the 5 top leagues, in this order: `E0` Premier League, `SP1` La Liga, `I1` Serie A, `D1` Bundesliga, `F1` Ligue 1. `teams` is the sorted list of the current season's teams.
 - `today`: matches of these 5 leagues dated today (Europe/Madrid) in football-data's `fixtures.csv`. Empty list when there are none. Kept for compatibility.
-- `upcoming`: matches of these 5 leagues whose Europe/Madrid date is from today − 1 to today + 2 (inclusive), from football-data's `fixtures.csv`, sorted by kickoff. Empty list when there are none. Each item has:
-  - `league`: league code (one of the 5 above).
-  - `kickoff_utc`: kickoff as an ISO 8601 UTC timestamp, `YYYY-MM-DDTHH:MM:SSZ`. `fixtures.csv` gives UK local time (Europe/London), so the build converts it with `zoneinfo` (GMT or BST by date).
-  - `home`, `away`: team names exactly as in the data.
+- `upcoming`: league matches of the 5 leagues and DFB-Pokal matches whose Europe/Madrid date is from today − 1 to today + 2 (inclusive). Sorted by kickoff, then competition order (E0, SP1, I1, D1, F1, DFB), then `home`. Empty list when there are none. Each item has:
+  - `competition`: league code (one of the 5 above) or `DFB` for DFB-Pokal.
+  - `competition_name`: `Premier League`, `La Liga`, `Serie A`, `Bundesliga`, `Ligue 1` or `DFB-Pokal`.
+  - `kickoff_utc`: kickoff as an ISO 8601 UTC timestamp, `YYYY-MM-DDTHH:MM:SSZ`. fixturedownload gives UTC. OpenLigaDB gives German local time (Europe/Berlin), and `fixtures.csv` gives UK local time (Europe/London); the build converts both with `zoneinfo` (by date).
+  - `home`, `away`: the football-data name when the team resolves in the league's current-season teams, otherwise the source name. Aliases are in `src/matchstats/team_names.py`.
+  - `league`: the league whose data has both teams. For a league match it is the league itself. For a DFB-Pokal match it is the one top league whose current teams include both sides, or `null` when there is no such league (the site shows no probabilities and no analysis link).
+  - Sources: league matches come from fixturedownload (`epl`, `la-liga`, `serie-a`, `bundesliga`, `ligue-1`, season year 2026). A league whose feed fails falls back to `fixtures.csv` for that league. DFB-Pokal comes from `https://api.openligadb.de/getmatchdata/dfb/2026`. A failed source is skipped with a warning and never fails the build.
   The site groups `upcoming` into Hoy / Mañana by the viewer's local date of `kickoff_utc`, which is why the build ships four days (west of Madrid, the viewer's today can still be Madrid's yesterday).
 
 ## `leagues/<code>.json`

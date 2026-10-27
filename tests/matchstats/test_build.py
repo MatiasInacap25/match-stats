@@ -1,4 +1,5 @@
 import json
+import logging
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -7,6 +8,7 @@ import pytest
 
 from matchstats.build import BuildError, build, validate_output
 from matchstats.cli import main
+from matchstats.ingest import IngestError
 from matchstats.match import Match
 
 CONTRACT_EXAMPLE = Path(__file__).parents[2] / "contract" / "example"
@@ -14,6 +16,7 @@ CURRENT = "2627"
 PREVIOUS = "2526"
 TODAY = date(2026, 10, 26)
 LEAGUES = ["E0", "SP1", "I1", "D1", "F1"]
+TEAMS = json.loads((Path(__file__).parent / "fixtures" / "teams_2627.json").read_text(encoding="utf-8"))
 
 FIXTURES = (
     "Div,Date,Time,HomeTeam,AwayTeam\n"
@@ -24,8 +27,8 @@ FIXTURES = (
 )
 
 
-def synthetic_loader(short_div: str | None = None):
-    """18 teams per division and 2 seasons; `short_div` gets only 3 teams."""
+def synthetic_loader(short_div: str | None = None, teams: dict[str, list[str]] | None = None):
+    """18 teams per division and 2 seasons; `short_div` gets only 3 teams; `teams` gives real names per division."""
 
     def load(divs, seasons, cache_dir, current_season):
         rng = np.random.default_rng(3)
@@ -35,11 +38,11 @@ def synthetic_loader(short_div: str | None = None):
                 continue
             start = date(2025, 8, 1) if season == PREVIOUS else date(2026, 8, 1)
             for div in divs:
-                count = 3 if div == short_div else 18
-                teams = [f"{div} Team {i:02d}" for i in range(count)]
+                names = (teams or {}).get(div) or [f"{div} Team {i:02d}" for i in range(18)]
+                teams_of_div = names[:3] if div == short_div else names
                 day = 0
-                for home in teams:
-                    for away in teams:
+                for home in teams_of_div:
+                    for away in teams_of_div:
                         if home == away:
                             continue
                         matches.append(_match(div, season, start + timedelta(days=day % 280), home, away, rng))
@@ -74,6 +77,8 @@ def _match(div: str, season: str, when: date, home: str, away: str, rng) -> Matc
     )
 
 
+HEADER_ONLY = "Div,Date,Time,HomeTeam,AwayTeam\n"
+
 UPCOMING_FIXTURES = (
     "Div,Date,Time,HomeTeam,AwayTeam\n"
     "E0,25/10/2026,20:00,Yesterday Home,Yesterday Away\n"
@@ -85,13 +90,50 @@ UPCOMING_FIXTURES = (
 )
 
 
-def run_build(out: Path, loader=None, fixtures: str = FIXTURES, today: date = TODAY) -> None:
+def feed_from(texts: dict[str, object]):
+    """Feed stub keyed by competition code. A value that is an exception is raised; a missing key is a 404."""
+
+    def feed_text(name: str, url: str):
+        value = texts.get(name)
+        if isinstance(value, Exception):
+            raise value
+        return value
+
+    return feed_text
+
+
+NO_FEEDS = feed_from({})
+
+
+def fd_feed(*rows: tuple[str, str, str]) -> str:
+    return json.dumps(
+        [{"DateUtc": when, "HomeTeam": home, "AwayTeam": away, "RoundNumber": 1} for when, home, away in rows]
+    )
+
+
+def dfb_feed(*rows: tuple[str, str, str]) -> str:
+    return json.dumps(
+        [
+            {"matchDateTime": when, "team1": {"teamName": home}, "team2": {"teamName": away}}
+            for when, home, away in rows
+        ]
+    )
+
+
+def run_build(
+    out: Path,
+    loader=None,
+    fixtures: str = FIXTURES,
+    today: date = TODAY,
+    feeds=NO_FEEDS,
+) -> None:
     build(
         out_dir=out,
         cache_dir=out.parent / "cache",
         today=today,
         loader=loader or synthetic_loader(),
         fixtures_text=lambda: fixtures,
+        feed_text=feeds,
     )
 
 
@@ -149,10 +191,22 @@ def test_upcoming_covers_yesterday_to_day_after_tomorrow_sorted(tmp_path):
 
     index = read_json(out / "index.json")
     assert index["upcoming"] == [
-        {"league": "E0", "kickoff_utc": "2026-10-25T20:00:00Z", "home": "Yesterday Home", "away": "Yesterday Away"},
-        {"league": "E0", "kickoff_utc": "2026-10-26T20:00:00Z", "home": "E0 Team 00", "away": "E0 Team 01"},
-        {"league": "SP1", "kickoff_utc": "2026-10-27T21:00:00Z", "home": "SP1 Team 00", "away": "SP1 Team 01"},
-        {"league": "E0", "kickoff_utc": "2026-10-28T15:00:00Z", "home": "Late Home", "away": "Late Away"},
+        {
+            "competition": "E0", "competition_name": "Premier League", "kickoff_utc": "2026-10-25T20:00:00Z",
+            "home": "Yesterday Home", "away": "Yesterday Away", "league": "E0",
+        },
+        {
+            "competition": "E0", "competition_name": "Premier League", "kickoff_utc": "2026-10-26T20:00:00Z",
+            "home": "E0 Team 00", "away": "E0 Team 01", "league": "E0",
+        },
+        {
+            "competition": "SP1", "competition_name": "La Liga", "kickoff_utc": "2026-10-27T21:00:00Z",
+            "home": "SP1 Team 00", "away": "SP1 Team 01", "league": "SP1",
+        },
+        {
+            "competition": "E0", "competition_name": "Premier League", "kickoff_utc": "2026-10-28T15:00:00Z",
+            "home": "Late Home", "away": "Late Away", "league": "E0",
+        },
     ]
 
 
@@ -168,6 +222,100 @@ def test_kickoff_converted_from_uk_time(tmp_path):
 
     kickoffs = {row["home"]: row["kickoff_utc"] for row in read_json(out / "index.json")["upcoming"]}
     assert kickoffs == {"Bst Home": "2026-10-24T19:00:00Z", "Gmt Home": "2026-10-26T20:00:00Z"}
+
+
+def test_league_feed_rows_use_feed_names_and_league_itself(tmp_path):
+    feeds = feed_from({"E0": fd_feed(("2026-10-27 15:00:00Z", "Man Utd", "Spurs"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), feeds=feeds)
+
+    rows = [row for row in read_json(out / "index.json")["upcoming"] if row["competition"] == "E0"]
+    assert rows == [
+        {
+            "competition": "E0", "competition_name": "Premier League", "kickoff_utc": "2026-10-27T15:00:00Z",
+            "home": "Man United", "away": "Tottenham", "league": "E0",
+        }
+    ]
+
+
+def test_dfb_match_between_teams_of_one_league_gets_that_league(tmp_path):
+    feeds = feed_from({"DFB": dfb_feed(("2026-10-27T18:00:00", "Hamburger SV", "Eintracht Frankfurt"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), feeds=feeds)
+
+    cups = [row for row in read_json(out / "index.json")["upcoming"] if row["competition"] == "DFB"]
+    assert cups == [
+        {
+            "competition": "DFB", "competition_name": "DFB-Pokal", "kickoff_utc": "2026-10-27T17:00:00Z",
+            "home": "Hamburg", "away": "Ein Frankfurt", "league": "D1",
+        }
+    ]
+
+
+def test_dfb_match_with_a_lower_division_team_has_no_league(tmp_path):
+    feeds = feed_from({"DFB": dfb_feed(("2026-10-27T18:00:00", "SG Sonnenhof Großaspach", "FC Augsburg"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), feeds=feeds)
+
+    cups = [row for row in read_json(out / "index.json")["upcoming"] if row["competition"] == "DFB"]
+    assert cups == [
+        {
+            "competition": "DFB", "competition_name": "DFB-Pokal", "kickoff_utc": "2026-10-27T17:00:00Z",
+            "home": "SG Sonnenhof Großaspach", "away": "Augsburg", "league": None,
+        }
+    ]
+
+
+def test_failed_league_feed_falls_back_to_fixtures_csv(tmp_path):
+    fixtures = "Div,Date,Time,HomeTeam,AwayTeam\nI1,27/10/2026,20:45,Milan,Inter\n"
+    feeds = feed_from({"I1": IngestError("download failed after 3 attempts")})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=fixtures, feeds=feeds)
+
+    rows = read_json(out / "index.json")["upcoming"]
+    assert rows == [
+        {
+            "competition": "I1", "competition_name": "Serie A", "kickoff_utc": "2026-10-27T20:45:00Z",
+            "home": "Milan", "away": "Inter", "league": "I1",
+        }
+    ]
+
+
+def test_missing_league_feed_falls_back_to_fixtures_csv(tmp_path):
+    fixtures = "Div,Date,Time,HomeTeam,AwayTeam\nI1,27/10/2026,20:45,Milan,Inter\n"
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=fixtures, feeds=NO_FEEDS)
+
+    assert [row["home"] for row in read_json(out / "index.json")["upcoming"]] == ["Milan"]
+
+
+def test_failing_cup_source_is_skipped_and_rest_still_builds(tmp_path, caplog):
+    feeds = feed_from(
+        {
+            "DFB": IngestError("download failed after 3 attempts"),
+            "E0": fd_feed(("2026-10-27 15:00:00Z", "Arsenal", "Chelsea")),
+        }
+    )
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    upcoming = read_json(out / "index.json")["upcoming"]
+    assert [row["competition"] for row in upcoming] == ["E0"]
+    assert "DFB" in caplog.text
+
+
+def test_upcoming_sorted_by_kickoff_then_competition_order(tmp_path):
+    feeds = feed_from(
+        {
+            "E0": fd_feed(("2026-10-27 17:00:00Z", "Chelsea", "Arsenal")),
+            "DFB": dfb_feed(("2026-10-27T18:00:00", "Hamburger SV", "Eintracht Frankfurt")),
+        }
+    )
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures="Div,Date,Time,HomeTeam,AwayTeam\n", feeds=feeds)
+
+    assert [row["competition"] for row in read_json(out / "index.json")["upcoming"]] == ["E0", "DFB"]
 
 
 def test_validate_output_requires_upcoming_list(tmp_path):
@@ -211,9 +359,9 @@ def test_validate_output_flags_team_missing_from_league(tmp_path):
 
 def test_cli_exit_codes(tmp_path, capsys):
     good = ["build", "--out", str(tmp_path / "good" / "data"), "--cache", str(tmp_path / "cache"), "--today", "2026-10-26"]
-    assert main(good, loader=synthetic_loader(), fixtures_text=lambda: FIXTURES) == 0
+    assert main(good, loader=synthetic_loader(), fixtures_text=lambda: FIXTURES, feed_text=NO_FEEDS) == 0
     assert (tmp_path / "good" / "data" / "index.json").is_file()
 
     bad = ["build", "--out", str(tmp_path / "bad" / "data"), "--cache", str(tmp_path / "cache"), "--today", "2026-10-26"]
-    assert main(bad, loader=synthetic_loader(short_div="E0"), fixtures_text=lambda: FIXTURES) == 1
+    assert main(bad, loader=synthetic_loader(short_div="E0"), fixtures_text=lambda: FIXTURES, feed_text=NO_FEEDS) == 1
     assert "E0" in capsys.readouterr().err

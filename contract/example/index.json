@@ -23,16 +23,36 @@
   ],
   "upcoming": [
     {
-      "league": "E0",
+      "competition": "E0",
+      "competition_name": "Premier League",
       "kickoff_utc": "2026-10-26T20:00:00Z",
       "home": "Arsenal",
-      "away": "Brighton"
+      "away": "Brighton",
+      "league": "E0"
     },
     {
-      "league": "E0",
+      "competition": "E0",
+      "competition_name": "Premier League",
       "kickoff_utc": "2026-10-27T15:00:00Z",
       "home": "Chelsea",
-      "away": "Arsenal"
+      "away": "Arsenal",
+      "league": "E0"
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T17:00:00Z",
+      "home": "Hamburg",
+      "away": "Ein Frankfurt",
+      "league": "D1"
+    },
+    {
+      "competition": "DFB",
+      "competition_name": "DFB-Pokal",
+      "kickoff_utc": "2026-10-27T17:00:00Z",
+      "home": "SG Sonnenhof Großaspach",
+      "away": "Augsburg",
+      "league": null
     }
   ]
 }
