@@ -36,11 +36,11 @@ export const TEAM_LINES: Record<MarketStat, number> = {
 };
 
 const STAT_LABELS: Record<MarketStat, string> = {
-  goals: "goals",
-  corners: "corners",
-  cards: "cards",
-  shots: "shots",
-  shots_on_target: "shots on target",
+  goals: "goles",
+  corners: "córners",
+  cards: "tarjetas",
+  shots: "tiros",
+  shots_on_target: "tiros al arco",
 };
 
 const STAT_NAMES: StatName[] = ["corners", "cards", "shots", "shots_on_target"];
@@ -59,8 +59,9 @@ function requireTeam(teams: Record<string, unknown>, team: string): void {
   if (!Object.hasOwn(teams, team)) throw new TeamNotFoundError(team);
 }
 
+/** "Más de 2.5 goles". Team rows share this label; the tab already names the team. */
 function overLabel(line: number, stat: string): string {
-  return `Over ${line} ${stat}`;
+  return `Más de ${line} ${stat}`;
 }
 
 /** Expected count for the home and away side of a stat, from the multiplicative model. */
@@ -99,10 +100,10 @@ export function matchMarkets(league: LeagueData, home: string, away: string): Ma
   const outcomes = goalMarkets(matrix);
 
   const markets: Market[] = [
-    { id: "1", label: `${home} win`, scope: "match", line: null, expected: null, probability: outcomes.home },
-    { id: "X", label: "Draw", scope: "match", line: null, expected: null, probability: outcomes.draw },
-    { id: "2", label: `${away} win`, scope: "match", line: null, expected: null, probability: outcomes.away },
-    { id: "btts", label: "Both teams to score", scope: "match", line: null, expected: null, probability: outcomes.btts },
+    { id: "1", label: "Gana local", scope: "match", line: null, expected: null, probability: outcomes.home },
+    { id: "X", label: "Empate", scope: "match", line: null, expected: null, probability: outcomes.draw },
+    { id: "2", label: "Gana visita", scope: "match", line: null, expected: null, probability: outcomes.away },
+    { id: "btts", label: "Ambos marcan", scope: "match", line: null, expected: null, probability: outcomes.btts },
     {
       id: "goals_over",
       label: overLabel(MATCH_LINES.goals, STAT_LABELS.goals),
@@ -113,7 +114,7 @@ export function matchMarkets(league: LeagueData, home: string, away: string): Ma
     },
     {
       id: "goals_home_over",
-      label: `${home} ${overLabel(TEAM_LINES.goals, STAT_LABELS.goals)}`,
+      label: overLabel(TEAM_LINES.goals, STAT_LABELS.goals),
       scope: "home",
       line: TEAM_LINES.goals,
       expected: lambdas.home,
@@ -121,7 +122,7 @@ export function matchMarkets(league: LeagueData, home: string, away: string): Ma
     },
     {
       id: "goals_away_over",
-      label: `${away} ${overLabel(TEAM_LINES.goals, STAT_LABELS.goals)}`,
+      label: overLabel(TEAM_LINES.goals, STAT_LABELS.goals),
       scope: "away",
       line: TEAM_LINES.goals,
       expected: lambdas.away,
@@ -147,7 +148,7 @@ export function matchMarkets(league: LeagueData, home: string, away: string): Ma
       },
       {
         id: `${stat}_home_over`,
-        label: `${home} ${overLabel(teamLine, STAT_LABELS[stat])}`,
+        label: overLabel(teamLine, STAT_LABELS[stat]),
         scope: "home",
         line: teamLine,
         expected: means.home,
@@ -155,7 +156,7 @@ export function matchMarkets(league: LeagueData, home: string, away: string): Ma
       },
       {
         id: `${stat}_away_over`,
-        label: `${away} ${overLabel(teamLine, STAT_LABELS[stat])}`,
+        label: overLabel(teamLine, STAT_LABELS[stat]),
         scope: "away",
         line: teamLine,
         expected: means.away,

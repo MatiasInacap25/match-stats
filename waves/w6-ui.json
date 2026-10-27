@@ -1,0 +1,5 @@
+{
+  "name": "w6-ui",
+  "base": "feat/ui-es-redesign",
+  "tasks": [{"id": "ui-match-page", "title": "Spanish redesigned match page", "prompt_file": "w6-ui/ui-match-page.md"}]
+}

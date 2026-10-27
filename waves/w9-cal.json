@@ -1,0 +1,16 @@
+{
+  "name": "w9-cal",
+  "base": "feat/ui-es-redesign",
+  "tasks": [
+    {
+      "id": "fixture-sources",
+      "title": "Full league fixtures and DFB-Pokal",
+      "prompt_file": "w9-cal/fixture-sources.md"
+    },
+    {
+      "id": "calendar-cups-ui",
+      "title": "Cup matches in the calendar",
+      "prompt_file": "w9-cal/calendar-cups-ui.md"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+/*
+ * Design tokens. Components use these variables only, never raw colors.
+ * Light is the base; dark applies by system preference unless a stored
+ * choice sets data-theme, and an explicit data-theme always wins.
+ */
+
+:root {
+  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Barlow Semi Condensed", "Barlow", system-ui, sans-serif;
+  --radius: 10px;
+  --radius-sm: 8px;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --bg: #f5f3ee;
+  --surface: #fffdf8;
+  --surface-2: #efece4;
+  --line: #dcd7cb;
+  --text: #18201c;
+  --muted: #5b655f;
+  --accent: #8a5a00;
+  --accent-ink: #fff8e8;
+  --win: #1d7a45;
+  --loss: #b3362b;
+  --draw: #5b655f;
+  --bar: #e4dfd3;
+  --focus: #8a5a00;
+  --shadow: 0 1px 3px rgba(24, 32, 28, 0.08);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1311;
+    --surface: #151b18;
+    --surface-2: #1c2420;
+    --line: #26302b;
+    --text: #e9ece8;
+    --muted: #9aa69f;
+    --accent: #f2b84b;
+    --accent-ink: #1a1305;
+    --win: #7fd19b;
+    --loss: #f08a7e;
+    --draw: #c9cfca;
+    --bar: #2b3530;
+    --focus: #f2b84b;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0e1311;
+  --surface: #151b18;
+  --surface-2: #1c2420;
+  --line: #26302b;
+  --text: #e9ece8;
+  --muted: #9aa69f;
+  --accent: #f2b84b;
+  --accent-ink: #1a1305;
+  --win: #7fd19b;
+  --loss: #f08a7e;
+  --draw: #c9cfca;
+  --bar: #2b3530;
+  --focus: #f2b84b;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f5f3ee;
+  --surface: #fffdf8;
+  --surface-2: #efece4;
+  --line: #dcd7cb;
+  --text: #18201c;
+  --muted: #5b655f;
+  --accent: #8a5a00;
+  --accent-ink: #fff8e8;
+  --win: #1d7a45;
+  --loss: #b3362b;
+  --draw: #5b655f;
+  --bar: #e4dfd3;
+  --focus: #8a5a00;
+  --shadow: 0 1px 3px rgba(24, 32, 28, 0.08);
+  color-scheme: light;
+}

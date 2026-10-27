@@ -1,0 +1,16 @@
+{
+  "name": "w5-ui",
+  "base": "feat/ui-es-redesign",
+  "tasks": [
+    {
+      "id": "data-upcoming",
+      "title": "Upcoming fixtures with UTC kickoff",
+      "prompt_file": "w5-ui/data-upcoming.md"
+    },
+    {
+      "id": "ui-foundation-home",
+      "title": "Spanish themed foundation and home calendar",
+      "prompt_file": "w5-ui/ui-foundation-home.md"
+    }
+  ]
+}

@@ -17,12 +17,28 @@ export interface TodayMatch {
   away: string;
 }
 
+/**
+ * One fixture in index.json → upcoming. `kickoff_utc` is an ISO 8601 UTC instant.
+ * `competition` is a top-5 league code, or "DFB" for DFB-Pokal.
+ * `league` is the top-5 league whose data has both teams, or null when none does.
+ */
+export interface UpcomingMatch {
+  competition: string;
+  competition_name: string;
+  kickoff_utc: string;
+  home: string;
+  away: string;
+  league: string | null;
+}
+
 /** index.json */
 export interface IndexData {
   generated_at: string;
   season: string;
   leagues: IndexLeague[];
   today: TodayMatch[];
+  /** Optional until the nightly job publishes it. */
+  upcoming?: UpcomingMatch[];
 }
 
 export interface TeamGoalRatings {

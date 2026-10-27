@@ -100,7 +100,7 @@ def test_wait_started_waits_for_working():
 
     assert Herdr(runner).wait_started("hello-a", timeout_ms=5000) == "working"
     argv = runner.calls[0][0]
-    assert argv[:-1] == ["herdr", "agent", "wait", "hello-a", "--until", "working", "--timeout"]
+    assert argv[:-1] == ["herdr", "agent", "wait", "hello-a", "--until", "working", "--until", "done", "--timeout"]
     assert 0 < int(argv[-1]) <= 5000
 
 

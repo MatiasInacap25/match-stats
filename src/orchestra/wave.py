@@ -76,13 +76,17 @@ def _run_batch(wave, batch, batch_number, repo, herdr, timeout_ms) -> list[Worke
             result.status, result.error = "error", str(exc)
 
     started_at = time.monotonic()
+    # Check every start first: waiting for worker 1 to finish before looking at worker 2
+    # let a fast worker 2 finish unseen and be misreported as not started.
     for result in pending:
         if result.status == "error":
             continue
         # Wait by pane id: an agent that needed the trust dialog never got its Herdr name.
-        if herdr.wait_started(result.pane_id, START_TIMEOUT_MS) != "working":
+        if herdr.wait_started(result.pane_id, START_TIMEOUT_MS) not in {"working", "done"}:
             # Another startup dialog or a dropped prompt: idle here would look like success.
             result.status, result.error = "not_started", "agent never reached the working state"
+    for result in pending:
+        if result.status in {"error", "not_started"}:
             continue
         remaining = max(1, timeout_ms - int((time.monotonic() - started_at) * 1000))
         result.status = herdr.wait_agent(result.pane_id, remaining)
