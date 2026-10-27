@@ -3,14 +3,15 @@
 import json
 import shutil
 from collections.abc import Callable
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from itertools import combinations
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from matchstats.goals_model import fit_goals_model
 from matchstats.ingest import FIXTURES_URL, IngestError, download, load_matches, parse_fixtures_csv
 from matchstats.leagues import SECOND_DIVISION, TOP_LEAGUES, recent_seasons, season_code, season_label
-from matchstats.match import Match
+from matchstats.match import Fixture, Match
 from matchstats.stat_model import STAT_FIELDS, fit_stat_model
 from matchstats.team_stats import head_to_head, last_matches, league_table, pair_key, season_stats
 
@@ -19,6 +20,9 @@ MIN_TEAMS = 16
 GOAL_SEASONS = 3
 STAT_SEASONS = 2
 HEAD_TO_HEAD_SEASONS = 10
+UPCOMING_DAYS = 3  # today, tomorrow and the day after, by the viewer's Madrid date
+KICKOFF_ZONE = ZoneInfo("Europe/London")  # football-data writes UK local kickoff times
+VIEWER_ZONE = ZoneInfo("Europe/Madrid")
 
 
 class BuildError(RuntimeError):
@@ -75,6 +79,8 @@ def validate_output(directory: Path) -> list[str]:
     codes = [entry.get("code") for entry in leagues]
     if codes != list(TOP_LEAGUES):
         problems.append(f"index.json: leagues must be {', '.join(TOP_LEAGUES)} in that order, found {codes}")
+    if not isinstance(index.get("upcoming"), list):
+        problems.append("index.json: upcoming must be a list")
 
     for entry in leagues:
         code = entry.get("code")
@@ -117,6 +123,7 @@ def _write_files(
         "season": season_label(current),
         "leagues": index_leagues,
         "today": _today_fixtures(fixtures, today),
+        "upcoming": _upcoming_fixtures(fixtures, today),
     }
     _write_json(directory / "index.json", index)
 
@@ -153,6 +160,37 @@ def _today_fixtures(fixtures, today: date) -> list[dict]:
         {"league": f.div, "date": f.date.isoformat(), "time": f.time, "home": f.home, "away": f.away}
         for f in selected
     ]
+
+
+def _upcoming_fixtures(fixtures: list[Fixture], today: date) -> list[dict]:
+    """Top-league fixtures whose Madrid date is today..today+2, in UTC kickoff order."""
+    order = {code: position for position, code in enumerate(TOP_LEAGUES)}
+    last = today + timedelta(days=UPCOMING_DAYS - 1)
+    rows = []
+    for fixture in fixtures:
+        if fixture.div not in order:
+            continue
+        kickoff = _kickoff_utc(fixture)
+        if not today <= kickoff.astimezone(VIEWER_ZONE).date() <= last:
+            continue
+        entry = {
+            "league": fixture.div,
+            "kickoff_utc": kickoff.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "home": fixture.home,
+            "away": fixture.away,
+        }
+        rows.append(((kickoff, order[fixture.div], fixture.home), entry))
+    rows.sort(key=lambda row: row[0])
+    return [entry for _, entry in rows]
+
+
+def _kickoff_utc(fixture: Fixture) -> datetime:
+    local = datetime.combine(
+        fixture.date,
+        datetime.strptime(fixture.time, "%H:%M").time(),
+        tzinfo=KICKOFF_ZONE,
+    )
+    return local.astimezone(timezone.utc)
 
 
 def _read_fixtures(cache_dir: Path, fixtures_text: Callable[[], str] | None) -> str:

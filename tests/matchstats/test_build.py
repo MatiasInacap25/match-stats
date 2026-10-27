@@ -74,11 +74,22 @@ def _match(div: str, season: str, when: date, home: str, away: str, rng) -> Matc
     )
 
 
-def run_build(out: Path, loader=None, fixtures: str = FIXTURES) -> None:
+UPCOMING_FIXTURES = (
+    "Div,Date,Time,HomeTeam,AwayTeam\n"
+    "E0,25/10/2026,20:00,Yesterday Home,Yesterday Away\n"
+    "E0,28/10/2026,15:00,Late Home,Late Away\n"
+    "SP1,27/10/2026,21:00,SP1 Team 00,SP1 Team 01\n"
+    "E0,29/10/2026,12:00,Too Late Home,Too Late Away\n"
+    "D2,26/10/2026,18:00,D2 Team 00,D2 Team 01\n"
+    "E0,26/10/2026,20:00,E0 Team 00,E0 Team 01\n"
+)
+
+
+def run_build(out: Path, loader=None, fixtures: str = FIXTURES, today: date = TODAY) -> None:
     build(
         out_dir=out,
         cache_dir=out.parent / "cache",
-        today=TODAY,
+        today=today,
         loader=loader or synthetic_loader(),
         fixtures_text=lambda: fixtures,
     )
@@ -129,6 +140,44 @@ def test_today_filtered_to_top_leagues_and_date(tmp_path):
         {"league": "E0", "date": "2026-10-26", "time": "20:00", "home": "E0 Team 00", "away": "E0 Team 01"},
         {"league": "SP1", "date": "2026-10-26", "time": "21:00", "home": "SP1 Team 00", "away": "SP1 Team 01"},
     ]
+
+
+def test_upcoming_covers_three_days_sorted(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, fixtures=UPCOMING_FIXTURES)
+
+    index = read_json(out / "index.json")
+    assert index["upcoming"] == [
+        {"league": "E0", "kickoff_utc": "2026-10-26T20:00:00Z", "home": "E0 Team 00", "away": "E0 Team 01"},
+        {"league": "SP1", "kickoff_utc": "2026-10-27T21:00:00Z", "home": "SP1 Team 00", "away": "SP1 Team 01"},
+        {"league": "E0", "kickoff_utc": "2026-10-28T15:00:00Z", "home": "Late Home", "away": "Late Away"},
+    ]
+
+
+def test_kickoff_converted_from_uk_time(tmp_path):
+    # 24/10 is still British Summer Time (UTC+1); 26/10 is GMT (UTC+0).
+    fixtures = (
+        "Div,Date,Time,HomeTeam,AwayTeam\n"
+        "E0,26/10/2026,20:00,Gmt Home,Gmt Away\n"
+        "E0,24/10/2026,20:00,Bst Home,Bst Away\n"
+    )
+    out = tmp_path / "data"
+    run_build(out, fixtures=fixtures, today=date(2026, 10, 24))
+
+    kickoffs = {row["home"]: row["kickoff_utc"] for row in read_json(out / "index.json")["upcoming"]}
+    assert kickoffs == {"Bst Home": "2026-10-24T19:00:00Z", "Gmt Home": "2026-10-26T20:00:00Z"}
+
+
+def test_validate_output_requires_upcoming_list(tmp_path):
+    out = tmp_path / "data"
+    run_build(out)
+    index_path = out / "index.json"
+    index = read_json(index_path)
+    index["upcoming"] = "not a list"
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+
+    problems = validate_output(out)
+    assert any("upcoming" in problem for problem in problems)
 
 
 def test_failed_validation_keeps_previous_output(tmp_path):

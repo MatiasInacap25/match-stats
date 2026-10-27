@@ -11,12 +11,18 @@ All numbers are plain JSON numbers. Missing values are `null`. Dates are ISO `YY
   "generated_at": "2026-10-26T02:05:00Z",
   "season": "2026/27",
   "leagues": [{"code": "E0", "name": "Premier League", "teams": ["Arsenal", "..."]}],
-  "today": [{"league": "E0", "date": "2026-10-26", "time": "20:00", "home": "Arsenal", "away": "Brighton"}]
+  "today": [{"league": "E0", "date": "2026-10-26", "time": "20:00", "home": "Arsenal", "away": "Brighton"}],
+  "upcoming": [{"league": "E0", "kickoff_utc": "2026-10-26T20:00:00Z", "home": "Arsenal", "away": "Brighton"}]
 }
 ```
 
 - `leagues`: exactly the 5 top leagues, in this order: `E0` Premier League, `SP1` La Liga, `I1` Serie A, `D1` Bundesliga, `F1` Ligue 1. `teams` is the sorted list of the current season's teams.
-- `today`: matches of these 5 leagues dated today (Europe/Madrid) in football-data's `fixtures.csv`. Empty list when there are none.
+- `today`: matches of these 5 leagues dated today (Europe/Madrid) in football-data's `fixtures.csv`. Empty list when there are none. Kept for compatibility.
+- `upcoming`: matches of these 5 leagues whose Europe/Madrid date is from today to today + 2 (inclusive), from football-data's `fixtures.csv`, sorted by kickoff. Empty list when there are none. Each item has:
+  - `league`: league code (one of the 5 above).
+  - `kickoff_utc`: kickoff as an ISO 8601 UTC timestamp, `YYYY-MM-DDTHH:MM:SSZ`. `fixtures.csv` gives UK local time (Europe/London), so the build converts it with `zoneinfo` (GMT or BST by date).
+  - `home`, `away`: team names exactly as in the data.
+  The site groups `upcoming` into Hoy / Mañana by the viewer's local date of `kickoff_utc`, which is why the build ships three days.
 
 ## `leagues/<code>.json`
 
