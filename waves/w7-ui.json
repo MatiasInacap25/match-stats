@@ -1,0 +1,5 @@
+{
+  "name": "w7-ui",
+  "base": "feat/ui-es-redesign",
+  "tasks": [{"id": "match-dedupe-1x2", "title": "Remove duplicated 1X2 rows", "prompt_file": "w7-ui/match-dedupe-1x2.md"}]
+}
