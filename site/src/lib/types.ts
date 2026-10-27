@@ -53,8 +53,10 @@ export interface StatModel {
   teams: Record<string, StatTeamRatios>;
 }
 
-/** One side (all, home or away) of a team's season. Per-match averages unless noted. */
-/** Per-match averages and fractions are null when `matches` is 0 (e.g. no away games yet). */
+/**
+ * One side (all, home or away) of a team's season. Per-match averages unless noted.
+ * Averages and fractions are null when `matches` is 0 (e.g. no away games yet).
+ */
 export interface SeasonSide {
   matches: number;
   position: number;
