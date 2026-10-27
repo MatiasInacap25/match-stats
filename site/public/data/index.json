@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-10-27T00:43:42Z",
+  "season": "2026/27",
+  "leagues": [
+    {
+      "code": "E0",
+      "name": "Premier League",
+      "teams": [
+        "Arsenal",
+        "Aston Villa",
+        "Bournemouth",
+        "Brentford",
+        "Brighton",
+        "Chelsea",
+        "Coventry",
+        "Crystal Palace",
+        "Everton",
+        "Fulham",
+        "Hull",
+        "Ipswich",
+        "Leeds",
+        "Liverpool",
+        "Man City",
+        "Man United",
+        "Newcastle",
+        "Nott'm Forest",
+        "Sunderland",
+        "Tottenham"
+      ]
+    },
+    {
+      "code": "SP1",
+      "name": "La Liga",
+      "teams": [
+        "Alaves",
+        "Ath Bilbao",
+        "Ath Madrid",
+        "Barcelona",
+        "Betis",
+        "Celta",
+        "Elche",
+        "Espanol",
+        "Getafe",
+        "La Coruna",
+        "Levante",
+        "Malaga",
+        "Osasuna",
+        "Real Madrid",
+        "Santander",
+        "Sevilla",
+        "Sociedad",
+        "Valencia",
+        "Vallecano",
+        "Villarreal"
+      ]
+    },
+    {
+      "code": "I1",
+      "name": "Serie A",
+      "teams": [
+        "Atalanta",
+        "Bologna",
+        "Cagliari",
+        "Como",
+        "Fiorentina",
+        "Frosinone",
+        "Genoa",
+        "Inter",
+        "Juventus",
+        "Lazio",
+        "Lecce",
+        "Milan",
+        "Monza",
+        "Napoli",
+        "Parma",
+        "Roma",
+        "Sassuolo",
+        "Torino",
+        "Udinese",
+        "Venezia"
+      ]
+    },
+    {
+      "code": "D1",
+      "name": "Bundesliga",
+      "teams": [
+        "Augsburg",
+        "Bayern Munich",
+        "Dortmund",
+        "Ein Frankfurt",
+        "Elversberg",
+        "FC Koln",
+        "Freiburg",
+        "Hamburg",
+        "Hoffenheim",
+        "Leverkusen",
+        "M'gladbach",
+        "Mainz",
+        "Paderborn",
+        "RB Leipzig",
+        "Schalke 04",
+        "Stuttgart",
+        "Union Berlin",
+        "Werder Bremen"
+      ]
+    },
+    {
+      "code": "F1",
+      "name": "Ligue 1",
+      "teams": [
+        "Angers",
+        "Auxerre",
+        "Brest",
+        "Le Havre",
+        "Le Mans",
+        "Lens",
+        "Lille",
+        "Lorient",
+        "Lyon",
+        "Marseille",
+        "Monaco",
+        "Nice",
+        "Paris FC",
+        "Paris SG",
+        "Rennes",
+        "Strasbourg",
+        "Toulouse",
+        "Troyes"
+      ]
+    }
+  ],
+  "today": []
+}
