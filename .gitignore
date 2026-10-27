@@ -2,3 +2,5 @@
 .worker/
 __pycache__/
 data/raw/
+.claude/skills/impeccable/
+.claude/skills/ui-ux-pro-max/
