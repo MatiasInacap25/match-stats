@@ -1,12 +1,41 @@
 import { describe, expect, it } from "vitest";
-import { formatDayLabel, formatKickoff, groupByLocalDay } from "../src/lib/calendar";
+import { formatDayLabel, formatKickoff, groupByLocalDay, isAnalyzable } from "../src/lib/calendar";
 import type { UpcomingMatch } from "../src/lib/types";
 
 const NOW = new Date("2026-10-27T12:00:00Z");
 
 function match(kickoff_utc: string, home = "Arsenal", away = "Brighton"): UpcomingMatch {
-  return { league: "E0", kickoff_utc, home, away };
+  return {
+    competition: "E0",
+    competition_name: "Premier League",
+    kickoff_utc,
+    home,
+    away,
+    league: "E0",
+  };
 }
+
+function cupMatch(kickoff_utc: string, league: string | null): UpcomingMatch {
+  return {
+    competition: "DFB",
+    competition_name: "DFB-Pokal",
+    kickoff_utc,
+    home: "Hamburg",
+    away: "Ein Frankfurt",
+    league,
+  };
+}
+
+describe("isAnalyzable", () => {
+  it("is true when one top-5 league has both teams", () => {
+    expect(isAnalyzable(match("2026-10-27T18:00:00Z"))).toBe(true);
+    expect(isAnalyzable(cupMatch("2026-10-27T18:00:00Z", "D1"))).toBe(true);
+  });
+
+  it("is false when no single league has both teams", () => {
+    expect(isAnalyzable(cupMatch("2026-10-27T18:00:00Z", null))).toBe(false);
+  });
+});
 
 describe("groupByLocalDay", () => {
   it("splits matches into today and tomorrow in the given time zone", () => {
@@ -54,6 +83,17 @@ describe("groupByLocalDay", () => {
     const groups = groupByLocalDay(matches, NOW, "Europe/Madrid");
 
     expect(groups.today.map((m) => m.home)).toEqual(["Early", "Late"]);
+  });
+
+  it("keeps cup matches without an analysis league in their day", () => {
+    const groups = groupByLocalDay(
+      [cupMatch("2026-10-27T18:00:00Z", null), cupMatch("2026-10-28T18:00:00Z", "D1")],
+      NOW,
+      "Europe/Madrid",
+    );
+
+    expect(groups.today.map((m) => m.league)).toEqual([null]);
+    expect(groups.tomorrow.map((m) => m.league)).toEqual(["D1"]);
   });
 
   it("returns empty groups when there are no matches", () => {

@@ -118,7 +118,7 @@ const LEAGUES = [
     transition: border-color 180ms var(--ease-out);
   }
 
-  .fixture-row:hover {
+  a.fixture-row:hover {
     border-color: var(--muted);
   }
 
@@ -183,7 +183,7 @@ const LEAGUES = [
 </style>
 
 <script>
-  import { formatDayLabel, formatKickoff, groupByLocalDay } from "../lib/calendar";
+  import { formatDayLabel, formatKickoff, groupByLocalDay, isAnalyzable } from "../lib/calendar";
   import { loadIndex, loadLeague } from "../lib/data";
   import { MATCH_LINES, TeamNotFoundError, matchMarkets } from "../lib/markets";
   import type { Market } from "../lib/markets";
@@ -197,6 +197,7 @@ const LEAGUES = [
   const ACCENT_FROM = 0.6;
   const EMPTY_DAY = "Todavía no hay partidos publicados para este día.";
   const LOAD_ERROR = "No se pudieron cargar los datos. Intenta de nuevo más tarde.";
+  const NO_ANALYSIS = "Sin análisis: equipos de distintas categorías.";
 
   function byId<T extends HTMLElement>(id: string): T {
     const element = document.getElementById(id);
@@ -233,8 +234,8 @@ const LEAGUES = [
     return pending;
   }
 
-  function matchHref(match: UpcomingMatch): string {
-    const params = new URLSearchParams({ league: match.league, home: match.home, away: match.away });
+  function matchHref(match: UpcomingMatch, league: string): string {
+    const params = new URLSearchParams({ league, home: match.home, away: match.away });
     return `${base}match?${params.toString()}`;
   }
 
@@ -270,7 +271,7 @@ const LEAGUES = [
 
   /** Probabilities for the "1" and "Más de 2.5" rows; empty when the teams are not in the data. */
   function probabilityHtml(match: UpcomingMatch, league: LeagueData | undefined): string {
-    if (!league) return "";
+    if (!league || !isAnalyzable(match)) return "";
     let markets: Market[];
     try {
       markets = matchMarkets(league, match.home, match.away);
@@ -295,11 +296,25 @@ const LEAGUES = [
   }
 
   function rowHtml(match: UpcomingMatch, league: LeagueData | undefined): string {
-    return `<li><a class="fixture-row" href="${escapeHtml(matchHref(match))}">
-  <span class="kickoff num">${escapeHtml(formatKickoff(match.kickoff_utc))}</span>
+    const kickoff = `<span class="kickoff num">${escapeHtml(formatKickoff(match.kickoff_utc))}</span>`;
+    const name = escapeHtml(shortNames.get(match.competition) ?? match.competition_name);
+
+    if (!isAnalyzable(match) || !match.league) {
+      return `<li><div class="fixture-row">
+  ${kickoff}
   <span class="fixture-main">
     <span class="fixture">${escapeHtml(match.home)} vs ${escapeHtml(match.away)}</span>
-    <span class="muted league-name">${escapeHtml(shortNames.get(match.league) ?? match.league)}</span>
+    <span class="muted league-name">${name}</span>
+    <span class="muted league-name">${escapeHtml(NO_ANALYSIS)}</span>
+  </span>
+</div></li>`;
+    }
+
+    return `<li><a class="fixture-row" href="${escapeHtml(matchHref(match, match.league))}">
+  ${kickoff}
+  <span class="fixture-main">
+    <span class="fixture">${escapeHtml(match.home)} vs ${escapeHtml(match.away)}</span>
+    <span class="muted league-name">${name}</span>
   </span>
   ${probabilityHtml(match, league)}
 </a></li>`;
@@ -319,7 +334,7 @@ const LEAGUES = [
     showStatus("");
     dayPanel.setAttribute("aria-busy", "true");
 
-    const codes = [...new Set(matches.map((match) => match.league))];
+    const codes = [...new Set(matches.flatMap((match) => (match.league && isAnalyzable(match) ? [match.league] : [])))];
     const leagues = new Map<string, LeagueData>();
     await Promise.all(
       codes.map(async (code) => {
@@ -332,7 +347,9 @@ const LEAGUES = [
     );
     if (id !== renderId) return;
 
-    fixtureList.innerHTML = matches.map((match) => rowHtml(match, leagues.get(match.league))).join("");
+    fixtureList.innerHTML = matches
+      .map((match) => rowHtml(match, match.league ? leagues.get(match.league) : undefined))
+      .join("");
     dayPanel.removeAttribute("aria-busy");
   }
 
