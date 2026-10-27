@@ -1,0 +1,5 @@
+{
+  "name": "w8-ui",
+  "base": "feat/ui-es-redesign",
+  "tasks": [{"id": "h2h-year", "title": "Year in head-to-head dates", "prompt_file": "w8-ui/h2h-year.md"}]
+}
