@@ -1,6 +1,7 @@
 """Thin adapter over the git and herdr CLIs. Herdr returns JSON on stdout, errors included."""
 
 import json
+import time
 from pathlib import Path
 
 from orchestra.runner import CommandError, Runner
@@ -20,6 +21,10 @@ class WorktreeExists(RuntimeError):
 
 class AgentNotReady(RuntimeError):
     """The agent process started but is stuck on a startup dialog."""
+
+
+class AgentStartTimeout(RuntimeError):
+    """Herdr gave up waiting to see the agent idle; it may already be working on its prompt."""
 
 
 def worktree_path(repo: Path, task_id: str) -> Path:
@@ -58,8 +63,11 @@ class Herdr:
         try:
             self.runner.run(["herdr", "agent", "start", name, "--kind", "claude", "--pane", pane_id, "--", *args])
         except CommandError as exc:
-            if (_error_code(exc.stderr) or _error_code(exc.stdout)) == "agent_not_ready":
+            code = _error_code(exc.stderr) or _error_code(exc.stdout)
+            if code == "agent_not_ready":
                 raise AgentNotReady(str(exc)) from exc
+            if code == "timeout":
+                raise AgentStartTimeout(str(exc)) from exc
             raise
 
     def close_pane(self, pane_id: str) -> None:
@@ -77,8 +85,20 @@ class Herdr:
         return True
 
     def wait_started(self, name: str, timeout_ms: int) -> str:
-        """A freshly started agent is idle before it picks up its prompt; wait until it works."""
-        return self._wait(name, ("working",), timeout_ms)
+        """A freshly started agent is idle before it picks up its prompt; wait until it works.
+
+        Right after a slow startup Herdr may not have registered the agent yet (agent_not_found),
+        so an "error" is retried until the timeout instead of being final.
+        """
+        deadline = time.monotonic() + timeout_ms / 1000
+        while True:
+            remaining_ms = int((deadline - time.monotonic()) * 1000)
+            if remaining_ms <= 0:
+                return "error"
+            status = self._wait(name, ("working",), remaining_ms)
+            if status != "error":
+                return status
+            time.sleep(2)
 
     def wait_agent(self, name: str, timeout_ms: int) -> str:
         return self._wait(name, SETTLED_STATUSES, timeout_ms)

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from orchestra.herdr import AgentNotReady
+from orchestra.herdr import AgentNotReady, AgentStartTimeout
 from orchestra.manifest import TaskSpec, Wave
 from orchestra.wave import run_wave
 
@@ -14,10 +14,12 @@ class FakeHerdr:
         statuses: dict[str, str] | None = None,
         failing_starts: set[str] = frozenset(),
         not_ready: set[str] = frozenset(),
+        slow_start: set[str] = frozenset(),
         trust_dialog: bool = True,
     ):
         self.root = root
         self.not_ready = not_ready
+        self.slow_start = slow_start
         self.trust_dialog = trust_dialog
         self.pane_names: dict[str, str] = {}
         self.never_working: set[str] = set()
@@ -46,6 +48,8 @@ class FakeHerdr:
         self.pane_names[pane_id] = name
         if name in self.not_ready:
             raise AgentNotReady(f"agent {name} is blocked during startup")
+        if name in self.slow_start:
+            raise AgentStartTimeout(f"timed out waiting for {name} startup")
         self.events.append(("start", name, pane_id))
 
     def accept_trust_dialog(self, pane_id, worktree):
@@ -184,3 +188,12 @@ def test_timed_out_worker_is_stopped_before_next_batch(tmp_path):
 
     kinds = [(e[0], e[1]) for e in herdr.events]
     assert kinds.index(("close", "task-0")) < kinds.index(("tab", "w1 #2"))
+
+
+def test_startup_timeout_still_tracks_the_worker(tmp_path):
+    herdr = FakeHerdr(tmp_path, slow_start={"task-0"})
+
+    [result] = run_wave(make_wave(tmp_path, 1), tmp_path / "repo", herdr)
+
+    assert ("wait", "task-0") in herdr.events
+    assert result.status == "idle"

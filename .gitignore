@@ -1,3 +1,4 @@
 .superpowers/
 .worker/
 __pycache__/
+data/raw/

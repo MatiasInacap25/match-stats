@@ -4,7 +4,7 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 
-from orchestra.herdr import AgentNotReady
+from orchestra.herdr import AgentNotReady, AgentStartTimeout
 from orchestra.manifest import TaskSpec, Wave
 from orchestra.worker import worker_argv, write_worker_settings
 
@@ -68,6 +68,10 @@ def _run_batch(wave, batch, batch_number, repo, herdr, timeout_ms) -> list[Worke
         except AgentNotReady as exc:
             if not herdr.accept_trust_dialog(pane, result.worktree):
                 result.status, result.error = "error", str(exc)
+        except AgentStartTimeout:
+            # Observed live: the worker starts on its prompt before Herdr sees it idle.
+            # wait_started below decides whether it really runs.
+            pass
         except Exception as exc:
             result.status, result.error = "error", str(exc)
 

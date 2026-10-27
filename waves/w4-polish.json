@@ -1,0 +1,5 @@
+{
+  "name": "w4-polish",
+  "base": "feat/match-stats-site",
+  "tasks": [{"id": "site-polish", "title": "Match page polish", "prompt_file": "w4-polish/site-polish.md"}]
+}

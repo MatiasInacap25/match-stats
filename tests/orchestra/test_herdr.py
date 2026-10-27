@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from orchestra.herdr import AgentNotReady, Herdr, WorktreeExists
+from orchestra.herdr import AgentNotReady, AgentStartTimeout, Herdr, WorktreeExists
 from orchestra.runner import CommandError
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -99,7 +99,9 @@ def test_wait_started_waits_for_working():
     runner = FakeRunner([fixture("agent_wait_ok.json")])
 
     assert Herdr(runner).wait_started("hello-a", timeout_ms=5000) == "working"
-    assert runner.calls[0][0] == ["herdr", "agent", "wait", "hello-a", "--until", "working", "--timeout", "5000"]
+    argv = runner.calls[0][0]
+    assert argv[:-1] == ["herdr", "agent", "wait", "hello-a", "--until", "working", "--timeout"]
+    assert 0 < int(argv[-1]) <= 5000
 
 
 def test_wait_agent_timeout_maps_to_timeout():
@@ -152,3 +154,32 @@ def test_refuses_other_dialogs(tmp_path):
 
     assert Herdr(runner).accept_trust_dialog("w3:p1H", tmp_path) is False
     assert len(runner.calls) == 1
+
+
+START_TIMEOUT = '{"error":{"code":"timeout","message":"timed out waiting for agent startup"},"id":"cli:agent:start"}'
+
+
+def test_start_agent_startup_timeout_raises_specific_error():
+    runner = FakeRunner([CommandError(["herdr"], 1, stdout="", stderr=START_TIMEOUT)])
+
+    with pytest.raises(AgentStartTimeout):
+        Herdr(runner).start_agent("ingest", "w3:p1V", [])
+
+
+def test_wait_started_retries_while_agent_not_registered(monkeypatch):
+    missing = CommandError(["herdr"], 1, stdout="", stderr=fixture("agent_wait_missing.json"))
+    runner = FakeRunner([missing, missing, fixture("agent_wait_ok.json")])
+    monkeypatch.setattr("orchestra.herdr.time.sleep", lambda s: None)
+
+    assert Herdr(runner).wait_started("w3:p1X", timeout_ms=60_000) == "working"
+    assert len(runner.calls) == 3
+
+
+def test_wait_started_gives_up_after_timeout(monkeypatch):
+    missing = CommandError(["herdr"], 1, stdout="", stderr=fixture("agent_wait_missing.json"))
+    runner = FakeRunner([missing] * 50)
+    clock = iter(range(0, 10_000, 5))
+    monkeypatch.setattr("orchestra.herdr.time.sleep", lambda s: None)
+    monkeypatch.setattr("orchestra.herdr.time.monotonic", lambda: next(clock))
+
+    assert Herdr(runner).wait_started("w3:p1X", timeout_ms=20_000) == "error"

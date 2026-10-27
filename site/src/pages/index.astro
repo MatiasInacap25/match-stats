@@ -1,0 +1,178 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Match Stats</title>
+  </head>
+  <body>
+    <main class="page">
+      <h1>Match Stats</h1>
+
+      <form id="picker" class="card">
+        <label class="field">
+          League
+          <select id="league"></select>
+        </label>
+        <label class="field">
+          Home team
+          <select id="home"></select>
+        </label>
+        <label class="field">
+          Away team
+          <select id="away"></select>
+        </label>
+        <button id="analyze" type="submit" class="primary" disabled>Analyze</button>
+      </form>
+
+      <section aria-labelledby="today-title">
+        <h2 id="today-title">Today</h2>
+        <p id="status" class="status">Loading fixtures…</p>
+        <ul id="today" class="list"></ul>
+      </section>
+    </main>
+
+    <script>
+      import { loadIndex, loadLeague } from "../lib/data";
+      import { MATCH_LINES, TeamNotFoundError, matchMarkets } from "../lib/markets";
+      import { escapeHtml, formatPct } from "../lib/render";
+      import type { IndexData, LeagueData, TodayMatch } from "../lib/types";
+
+      const base = import.meta.env.BASE_URL;
+
+      function byId<T extends HTMLElement>(id: string): T {
+        const element = document.getElementById(id);
+        if (!element) throw new Error(`Missing #${id}`);
+        return element as T;
+      }
+
+      const leagueSelect = byId<HTMLSelectElement>("league");
+      const homeSelect = byId<HTMLSelectElement>("home");
+      const awaySelect = byId<HTMLSelectElement>("away");
+      const analyze = byId<HTMLButtonElement>("analyze");
+      const picker = byId<HTMLFormElement>("picker");
+      const todayTitle = byId<HTMLHeadingElement>("today-title");
+      const todayList = byId<HTMLUListElement>("today");
+      const status = byId<HTMLParagraphElement>("status");
+
+      const timeFormat = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Europe/Madrid",
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23",
+      });
+
+      function matchHref(league: string, home: string, away: string): string {
+        const params = new URLSearchParams({ league, home, away });
+        return `${base}match?${params.toString()}`;
+      }
+
+      function fillTeamSelects(index: IndexData): void {
+        const teams = index.leagues.find((league) => league.code === leagueSelect.value)?.teams ?? [];
+        for (const select of [homeSelect, awaySelect]) {
+          select.replaceChildren(
+            new Option("Choose a team", ""),
+            ...teams.map((team) => new Option(team, team)),
+          );
+          select.disabled = teams.length === 0;
+        }
+        updateAnalyze();
+      }
+
+      function updateAnalyze(): void {
+        const home = homeSelect.value;
+        const away = awaySelect.value;
+        analyze.disabled = !home || !away || home === away;
+      }
+
+      function probabilityLine(match: TodayMatch, league: LeagueData | undefined): string {
+        if (!league) return "";
+        try {
+          const markets = matchMarkets(league, match.home, match.away);
+          const one = markets.find((market) => market.id === "1");
+          const over = markets.find((market) => market.id === "goals_over");
+          if (!one || !over) return "";
+          return `<span class="probs">1 ${formatPct(one.probability)} · Over ${MATCH_LINES.goals} ${formatPct(over.probability)}</span>`;
+        } catch (error) {
+          if (!(error instanceof TeamNotFoundError)) console.error(error);
+          return "";
+        }
+      }
+
+      async function renderToday(index: IndexData): Promise<void> {
+        todayTitle.textContent = `Today · updated ${timeFormat.format(new Date(index.generated_at))}`;
+
+        if (index.today.length === 0) {
+          status.textContent = "No fixtures data for today";
+          return;
+        }
+        status.hidden = true;
+
+        const codes = [...new Set(index.today.map((match) => match.league))];
+        const leagues = new Map<string, LeagueData>();
+        await Promise.all(
+          codes.map(async (code) => {
+            try {
+              leagues.set(code, await loadLeague(code));
+            } catch (error) {
+              console.error(error);
+            }
+          }),
+        );
+
+        todayList.innerHTML = index.today
+          .map((match) => {
+            const name = index.leagues.find((league) => league.code === match.league)?.name ?? match.league;
+            const href = matchHref(match.league, match.home, match.away);
+            return `<li><a href="${escapeHtml(href)}">
+  <span class="fixture">${escapeHtml(match.home)} vs ${escapeHtml(match.away)}</span>
+  <span class="meta">${escapeHtml(match.time)} · ${escapeHtml(name)}</span>
+  ${probabilityLine(match, leagues.get(match.league))}
+</a></li>`;
+          })
+          .join("");
+      }
+
+      async function main(): Promise<void> {
+        let index: IndexData;
+        try {
+          index = await loadIndex();
+        } catch (error) {
+          console.error(error);
+          status.textContent = "Could not load fixtures data.";
+          return;
+        }
+
+        leagueSelect.replaceChildren(
+          ...index.leagues.map((league) => new Option(league.name, league.code)),
+        );
+        leagueSelect.addEventListener("change", () => {
+          homeSelect.value = "";
+          awaySelect.value = "";
+          fillTeamSelects(index);
+        });
+        homeSelect.addEventListener("change", updateAnalyze);
+        awaySelect.addEventListener("change", updateAnalyze);
+        picker.addEventListener("submit", (event) => {
+          event.preventDefault();
+          if (analyze.disabled) return;
+          const params = new URLSearchParams({
+            league: leagueSelect.value,
+            home: homeSelect.value,
+            away: awaySelect.value,
+          });
+          window.location.href = `${base}match?${params.toString()}`;
+        });
+
+        fillTeamSelects(index);
+        await renderToday(index);
+      }
+
+      main();
+    </script>
+  </body>
+</html>
