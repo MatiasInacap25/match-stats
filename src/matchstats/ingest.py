@@ -83,19 +83,24 @@ def parse_fixtures_csv(text: str) -> list[Fixture]:
     return fixtures
 
 
+def _decode(body: bytes) -> str:
+    """Recent files are UTF-8 with a BOM; some older seasons are Windows-1252."""
+    try:
+        return body.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        return body.decode("cp1252", errors="replace")
+
+
 def download(url: str, cache_file: Path, refresh: bool) -> str | None:
     """Return the CSV text, from cache unless refresh is set. None when the server answers 404."""
     if cache_file.exists() and not refresh:
-        return cache_file.read_bytes().decode("utf-8-sig")
+        return _decode(cache_file.read_bytes())
 
     body = _fetch(url)
     if body is None:
         return None
 
-    try:
-        text = body.decode("utf-8-sig")
-    except UnicodeDecodeError as error:
-        raise IngestError(f"not UTF-8 text: {url}: {error}") from error
+    text = _decode(body)
 
     # Cache only what was read successfully; a failed read must not leave a partial file.
     cache_file.parent.mkdir(parents=True, exist_ok=True)

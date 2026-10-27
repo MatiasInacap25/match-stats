@@ -226,3 +226,13 @@ def test_load_matches_uses_cache_for_past_seasons(monkeypatch, tmp_path):
     load_matches(["E0"], ["2526", "2627"], tmp_path, current_season="2627")
 
     assert calls == ["https://www.football-data.co.uk/mmz4281/2627/E0.csv"]
+
+
+def test_download_decodes_windows_1252_files(monkeypatch, tmp_path):
+    # Seen live: football-data's I2 2018/19 file is not UTF-8 (byte 0xa0 = no-break space).
+    body = "Div,HomeTeam\nI2,Virtus\xa0Entella\n".encode("cp1252")
+    monkeypatch.setattr(urllib.request, "urlopen", lambda request, timeout: FakeResponse(body))
+    cache_file = tmp_path / "1819" / "I2.csv"
+
+    assert download("https://example.test/I2.csv", cache_file, refresh=True) == "Div,HomeTeam\nI2,Virtus\xa0Entella\n"
+    assert download("https://example.test/I2.csv", cache_file, refresh=False) == "Div,HomeTeam\nI2,Virtus\xa0Entella\n"
