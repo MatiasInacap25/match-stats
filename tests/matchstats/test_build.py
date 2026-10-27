@@ -142,12 +142,14 @@ def test_today_filtered_to_top_leagues_and_date(tmp_path):
     ]
 
 
-def test_upcoming_covers_three_days_sorted(tmp_path):
+def test_upcoming_covers_yesterday_to_day_after_tomorrow_sorted(tmp_path):
+    # Starts one Madrid day early: in the Americas "today" is still yesterday in Madrid.
     out = tmp_path / "data"
     run_build(out, fixtures=UPCOMING_FIXTURES)
 
     index = read_json(out / "index.json")
     assert index["upcoming"] == [
+        {"league": "E0", "kickoff_utc": "2026-10-25T20:00:00Z", "home": "Yesterday Home", "away": "Yesterday Away"},
         {"league": "E0", "kickoff_utc": "2026-10-26T20:00:00Z", "home": "E0 Team 00", "away": "E0 Team 01"},
         {"league": "SP1", "kickoff_utc": "2026-10-27T21:00:00Z", "home": "SP1 Team 00", "away": "SP1 Team 01"},
         {"league": "E0", "kickoff_utc": "2026-10-28T15:00:00Z", "home": "Late Home", "away": "Late Away"},

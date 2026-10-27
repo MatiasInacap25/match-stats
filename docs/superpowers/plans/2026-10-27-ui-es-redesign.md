@@ -45,7 +45,7 @@ Match page: back link `Inicio`; subtitle `<Liga> · Temporada 2026/27`; 1X2 card
 
 ## Data contract change (Task A owns the contract files)
 
-`index.json` gains `upcoming`: the 5 leagues' fixtures from football-data's `fixtures.csv` dated from today to today + 2 (Europe/Madrid dates, inclusive), sorted by kickoff:
+`index.json` gains `upcoming`: the 5 leagues' fixtures from football-data's `fixtures.csv` dated from today − 1 to today + 2 (Europe/Madrid dates, inclusive; changed during integration so viewers west of Madrid still get their today), sorted by kickoff:
 
 ```json
 "upcoming": [{"league": "E0", "kickoff_utc": "2026-10-27T20:00:00Z", "home": "Arsenal", "away": "Brighton"}]

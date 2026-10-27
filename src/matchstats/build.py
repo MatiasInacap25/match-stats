@@ -20,7 +20,8 @@ MIN_TEAMS = 16
 GOAL_SEASONS = 3
 STAT_SEASONS = 2
 HEAD_TO_HEAD_SEASONS = 10
-UPCOMING_DAYS = 3  # today, tomorrow and the day after, by the viewer's Madrid date
+UPCOMING_DAYS = 3  # today, tomorrow and the day after, by Madrid date
+UPCOMING_DAYS_BEFORE = 1  # plus yesterday: west of Madrid (the Americas) it can still be that day
 KICKOFF_ZONE = ZoneInfo("Europe/London")  # football-data writes UK local kickoff times
 VIEWER_ZONE = ZoneInfo("Europe/Madrid")
 
@@ -163,15 +164,19 @@ def _today_fixtures(fixtures, today: date) -> list[dict]:
 
 
 def _upcoming_fixtures(fixtures: list[Fixture], today: date) -> list[dict]:
-    """Top-league fixtures whose Madrid date is today..today+2, in UTC kickoff order."""
+    """Top-league fixtures whose Madrid date is today-1..today+2, in UTC kickoff order.
+
+    The site picks Hoy / Mañana by the viewer's local date, so the window is wider than two days.
+    """
     order = {code: position for position, code in enumerate(TOP_LEAGUES)}
+    first = today - timedelta(days=UPCOMING_DAYS_BEFORE)
     last = today + timedelta(days=UPCOMING_DAYS - 1)
     rows = []
     for fixture in fixtures:
         if fixture.div not in order:
             continue
         kickoff = _kickoff_utc(fixture)
-        if not today <= kickoff.astimezone(VIEWER_ZONE).date() <= last:
+        if not first <= kickoff.astimezone(VIEWER_ZONE).date() <= last:
             continue
         entry = {
             "league": fixture.div,
