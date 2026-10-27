@@ -17,12 +17,22 @@ export interface TodayMatch {
   away: string;
 }
 
+/** One fixture in index.json → upcoming. `kickoff_utc` is an ISO 8601 UTC instant. */
+export interface UpcomingMatch {
+  league: string;
+  kickoff_utc: string;
+  home: string;
+  away: string;
+}
+
 /** index.json */
 export interface IndexData {
   generated_at: string;
   season: string;
   leagues: IndexLeague[];
   today: TodayMatch[];
+  /** Optional until the nightly job publishes it. */
+  upcoming?: UpcomingMatch[];
 }
 
 export interface TeamGoalRatings {

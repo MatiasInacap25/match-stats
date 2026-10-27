@@ -1,0 +1,88 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<!-- The icon shows the current theme; the label names the switch. Client script keeps both in sync. -->
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Cambiar a tema claro">
+  <span id="theme-icon-dark"><Icon name="moon" size={20} /></span>
+  <span id="theme-icon-light" hidden><Icon name="sun" size={20} /></span>
+</button>
+
+<script>
+  import { THEME_STORAGE_KEY, resolveTheme } from "../lib/theme";
+  import type { Theme } from "../lib/theme";
+
+  const root = document.documentElement;
+  const button = document.getElementById("theme-toggle") as HTMLButtonElement;
+  const darkIcon = document.getElementById("theme-icon-dark") as HTMLElement;
+  const lightIcon = document.getElementById("theme-icon-light") as HTMLElement;
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function readStored(): string | null {
+    try {
+      return localStorage.getItem(THEME_STORAGE_KEY);
+    } catch {
+      return null;
+    }
+  }
+
+  function writeStored(theme: Theme): void {
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch {
+      // Storage can be blocked; the theme still applies for this page view.
+    }
+  }
+
+  function currentTheme(): Theme {
+    const applied = root.dataset.theme;
+    if (applied === "dark" || applied === "light") return applied;
+    return resolveTheme(readStored(), systemDark.matches);
+  }
+
+  function sync(): void {
+    const theme = currentTheme();
+    button.setAttribute("aria-label", theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
+    darkIcon.hidden = theme !== "dark";
+    lightIcon.hidden = theme === "dark";
+  }
+
+  button.addEventListener("click", () => {
+    const next: Theme = currentTheme() === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    writeStored(next);
+    sync();
+  });
+
+  // Without a stored choice the theme follows the system, including changes while the page is open.
+  systemDark.addEventListener("change", () => {
+    if (readStored() !== null) return;
+    root.dataset.theme = resolveTheme(null, systemDark.matches);
+    sync();
+  });
+
+  sync();
+</script>
+
+<style>
+  .theme-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+    transition:
+      color 180ms var(--ease-out),
+      border-color 180ms var(--ease-out);
+  }
+
+  .theme-toggle:hover {
+    color: var(--text);
+    border-color: var(--muted);
+  }
+</style>
