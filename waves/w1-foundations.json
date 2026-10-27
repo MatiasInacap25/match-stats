@@ -1,0 +1,16 @@
+{
+  "name": "w1-foundations",
+  "base": "feat/match-stats-site",
+  "tasks": [
+    {
+      "id": "ingest",
+      "title": "Ingest football-data CSVs",
+      "prompt_file": "w1-foundations/ingest.md"
+    },
+    {
+      "id": "site-core",
+      "title": "Astro scaffold, types, probability",
+      "prompt_file": "w1-foundations/site-core.md"
+    }
+  ]
+}
