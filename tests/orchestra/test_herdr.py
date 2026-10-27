@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from orchestra.herdr import AgentNotReady, Herdr, WorktreeExists
+from orchestra.herdr import AgentNotReady, AgentStartTimeout, Herdr, WorktreeExists
 from orchestra.runner import CommandError
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -152,3 +152,13 @@ def test_refuses_other_dialogs(tmp_path):
 
     assert Herdr(runner).accept_trust_dialog("w3:p1H", tmp_path) is False
     assert len(runner.calls) == 1
+
+
+START_TIMEOUT = '{"error":{"code":"timeout","message":"timed out waiting for agent startup"},"id":"cli:agent:start"}'
+
+
+def test_start_agent_startup_timeout_raises_specific_error():
+    runner = FakeRunner([CommandError(["herdr"], 1, stdout="", stderr=START_TIMEOUT)])
+
+    with pytest.raises(AgentStartTimeout):
+        Herdr(runner).start_agent("ingest", "w3:p1V", [])

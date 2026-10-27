@@ -22,6 +22,10 @@ class AgentNotReady(RuntimeError):
     """The agent process started but is stuck on a startup dialog."""
 
 
+class AgentStartTimeout(RuntimeError):
+    """Herdr gave up waiting to see the agent idle; it may already be working on its prompt."""
+
+
 def worktree_path(repo: Path, task_id: str) -> Path:
     return repo.parent / f"{repo.name}{WORKTREES_DIR_SUFFIX}" / task_id
 
@@ -58,8 +62,11 @@ class Herdr:
         try:
             self.runner.run(["herdr", "agent", "start", name, "--kind", "claude", "--pane", pane_id, "--", *args])
         except CommandError as exc:
-            if (_error_code(exc.stderr) or _error_code(exc.stdout)) == "agent_not_ready":
+            code = _error_code(exc.stderr) or _error_code(exc.stdout)
+            if code == "agent_not_ready":
                 raise AgentNotReady(str(exc)) from exc
+            if code == "timeout":
+                raise AgentStartTimeout(str(exc)) from exc
             raise
 
     def close_pane(self, pane_id: str) -> None:
