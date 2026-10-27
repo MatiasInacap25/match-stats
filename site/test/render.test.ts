@@ -238,6 +238,12 @@ describe("renderHeadToHead", () => {
     expect(row).toContain("Córners 4–6");
     expect(row).toContain("Tarjetas 3–1");
   });
+
+  it("shows the year next to each meeting date", () => {
+    const html = renderHeadToHead(h2h.pairs["Arsenal|Brighton"], "Arsenal", "Brighton");
+    expect(html).toContain("1 mar 2026");
+    expect(html).toContain("14 sept 2025");
+  });
 });
 
 describe("leagueName", () => {
