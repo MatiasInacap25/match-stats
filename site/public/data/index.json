@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T07:18:28Z",
+  "generated_at": "2026-10-28T07:55:20Z",
   "season": "2026/27",
   "leagues": [
     {
@@ -129,24 +129,44 @@
       ]
     }
   ],
-  "today": [],
+  "today": [
+    {
+      "league": "I1",
+      "date": "2026-10-28",
+      "time": "17:30",
+      "home": "Milan",
+      "away": "Bologna"
+    },
+    {
+      "league": "I1",
+      "date": "2026-10-28",
+      "time": "17:30",
+      "home": "Parma",
+      "away": "Udinese"
+    },
+    {
+      "league": "I1",
+      "date": "2026-10-28",
+      "time": "17:30",
+      "home": "Venezia",
+      "away": "Inter"
+    },
+    {
+      "league": "I1",
+      "date": "2026-10-28",
+      "time": "19:45",
+      "home": "Genoa",
+      "away": "Juventus"
+    },
+    {
+      "league": "I1",
+      "date": "2026-10-28",
+      "time": "19:45",
+      "home": "Monza",
+      "away": "Napoli"
+    }
+  ],
   "upcoming": [
-    {
-      "competition": "F1",
-      "competition_name": "Ligue 1",
-      "kickoff_utc": "2026-10-26T19:30:00Z",
-      "home": "Paris SG",
-      "away": "Lyon",
-      "league": "F1"
-    },
-    {
-      "competition": "SP1",
-      "competition_name": "La Liga",
-      "kickoff_utc": "2026-10-26T20:00:00Z",
-      "home": "Sevilla",
-      "away": "Osasuna",
-      "league": "SP1"
-    },
     {
       "competition": "DFB",
       "competition_name": "DFB-Pokal",
@@ -354,6 +374,38 @@
       "home": "Fiorentina",
       "away": "Atalanta",
       "league": "I1"
+    },
+    {
+      "competition": "F1",
+      "competition_name": "Ligue 1",
+      "kickoff_utc": "2026-10-30T18:00:00Z",
+      "home": "Le Havre",
+      "away": "Paris SG",
+      "league": "F1"
+    },
+    {
+      "competition": "D1",
+      "competition_name": "Bundesliga",
+      "kickoff_utc": "2026-10-30T19:30:00Z",
+      "home": "Elversberg",
+      "away": "Mainz",
+      "league": "D1"
+    },
+    {
+      "competition": "SP1",
+      "competition_name": "La Liga",
+      "kickoff_utc": "2026-10-30T20:00:00Z",
+      "home": "Villarreal",
+      "away": "Espanol",
+      "league": "SP1"
+    },
+    {
+      "competition": "F1",
+      "competition_name": "Ligue 1",
+      "kickoff_utc": "2026-10-30T20:05:00Z",
+      "home": "Lille",
+      "away": "Lens",
+      "league": "F1"
     }
   ]
 }

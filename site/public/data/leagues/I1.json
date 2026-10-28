@@ -34,8 +34,8 @@
         "defense": 0.2159
       },
       "Frosinone": {
-        "attack": 0.6264,
-        "defense": 0.3575
+        "attack": 0.6263,
+        "defense": 0.3574
       },
       "Genoa": {
         "attack": -0.1789,
@@ -62,7 +62,7 @@
         "defense": -0.0962
       },
       "Monza": {
-        "attack": 0.0056,
+        "attack": 0.0057,
         "defense": 0.6048
       },
       "Napoli": {

@@ -7,7 +7,7 @@
     "teams": {
       "Augsburg": {
         "attack": 0.0114,
-        "defense": 0.2753
+        "defense": 0.2754
       },
       "Bayern Munich": {
         "attack": 0.842,
@@ -46,7 +46,7 @@
         "defense": 0.4372
       },
       "Hoffenheim": {
-        "attack": 0.2158,
+        "attack": 0.2157,
         "defense": 0.3396
       },
       "Holstein Kiel": {
@@ -74,8 +74,8 @@
         "defense": 0.1119
       },
       "Schalke 04": {
-        "attack": -0.884,
-        "defense": -0.3084
+        "attack": -0.8839,
+        "defense": -0.3083
       },
       "St Pauli": {
         "attack": -0.5547,
