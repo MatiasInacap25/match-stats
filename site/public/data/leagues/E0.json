@@ -18,7 +18,7 @@
         "defense": 0.1232
       },
       "Brentford": {
-        "attack": 0.226,
+        "attack": 0.2261,
         "defense": 0.1237
       },
       "Brighton": {
@@ -34,8 +34,8 @@
         "defense": 0.1699
       },
       "Coventry": {
-        "attack": -0.3969,
-        "defense": 0.3623
+        "attack": -0.3968,
+        "defense": 0.3622
       },
       "Crystal Palace": {
         "attack": -0.0698,
@@ -50,7 +50,7 @@
         "defense": 0.1081
       },
       "Hull": {
-        "attack": -0.1305,
+        "attack": -0.1306,
         "defense": -0.1336
       },
       "Ipswich": {
@@ -62,16 +62,16 @@
         "defense": 0.0313
       },
       "Leicester": {
-        "attack": -0.45,
-        "defense": 0.5395
+        "attack": -0.4501,
+        "defense": 0.5394
       },
       "Liverpool": {
-        "attack": 0.3224,
+        "attack": 0.3223,
         "defense": 0.0362
       },
       "Man City": {
         "attack": 0.4568,
-        "defense": -0.1455
+        "defense": -0.1456
       },
       "Man United": {
         "attack": 0.1872,
@@ -79,11 +79,11 @@
       },
       "Newcastle": {
         "attack": 0.1857,
-        "defense": 0.2142
+        "defense": 0.2141
       },
       "Nott'm Forest": {
         "attack": -0.019,
-        "defense": 0.0637
+        "defense": 0.0636
       },
       "Southampton": {
         "attack": -0.6273,
@@ -98,7 +98,7 @@
         "defense": 0.2458
       },
       "West Ham": {
-        "attack": -0.0355,
+        "attack": -0.0354,
         "defense": 0.3018
       },
       "Wolves": {

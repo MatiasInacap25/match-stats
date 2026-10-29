@@ -62,7 +62,7 @@
         "defense": -0.0962
       },
       "Monza": {
-        "attack": 0.0057,
+        "attack": 0.0056,
         "defense": 0.6048
       },
       "Napoli": {
@@ -94,7 +94,7 @@
         "defense": 0.2779
       },
       "Venezia": {
-        "attack": -0.378,
+        "attack": -0.3779,
         "defense": 0.3847
       },
       "Verona": {
