@@ -18,7 +18,7 @@
         "defense": 0.4125
       },
       "Dortmund": {
-        "attack": 0.307,
+        "attack": 0.3069,
         "defense": -0.1695
       },
       "Ein Frankfurt": {
@@ -27,14 +27,14 @@
       },
       "Elversberg": {
         "attack": 0.2882,
-        "defense": 0.4892
+        "defense": 0.4891
       },
       "FC Koln": {
         "attack": -0.0635,
         "defense": 0.3668
       },
       "Freiburg": {
-        "attack": 0.1378,
+        "attack": 0.1377,
         "defense": 0.2151
       },
       "Hamburg": {
@@ -74,11 +74,11 @@
         "defense": 0.1119
       },
       "Schalke 04": {
-        "attack": -0.8839,
+        "attack": -0.8838,
         "defense": -0.3083
       },
       "St Pauli": {
-        "attack": -0.5547,
+        "attack": -0.5546,
         "defense": 0.19
       },
       "Stuttgart": {

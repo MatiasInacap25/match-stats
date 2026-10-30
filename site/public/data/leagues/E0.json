@@ -2,11 +2,11 @@
   "league": "E0",
   "season": "2026/27",
   "goals": {
-    "home_advantage": 0.166,
-    "rho": -0.1084,
+    "home_advantage": 0.1661,
+    "rho": -0.1083,
     "teams": {
       "Arsenal": {
-        "attack": 0.3234,
+        "attack": 0.3233,
         "defense": -0.4601
       },
       "Aston Villa": {
@@ -18,7 +18,7 @@
         "defense": 0.1232
       },
       "Brentford": {
-        "attack": 0.2261,
+        "attack": 0.226,
         "defense": 0.1237
       },
       "Brighton": {
@@ -26,7 +26,7 @@
         "defense": 0.0457
       },
       "Burnley": {
-        "attack": -0.2179,
+        "attack": -0.218,
         "defense": 0.477
       },
       "Chelsea": {
@@ -35,7 +35,7 @@
       },
       "Coventry": {
         "attack": -0.3968,
-        "defense": 0.3622
+        "defense": 0.3623
       },
       "Crystal Palace": {
         "attack": -0.0698,
@@ -50,8 +50,8 @@
         "defense": 0.1081
       },
       "Hull": {
-        "attack": -0.1306,
-        "defense": -0.1336
+        "attack": -0.1305,
+        "defense": -0.1335
       },
       "Ipswich": {
         "attack": -0.0756,
@@ -62,7 +62,7 @@
         "defense": 0.0313
       },
       "Leicester": {
-        "attack": -0.4501,
+        "attack": -0.45,
         "defense": 0.5394
       },
       "Liverpool": {
@@ -71,7 +71,7 @@
       },
       "Man City": {
         "attack": 0.4568,
-        "defense": -0.1456
+        "defense": -0.1455
       },
       "Man United": {
         "attack": 0.1872,
@@ -79,19 +79,19 @@
       },
       "Newcastle": {
         "attack": 0.1857,
-        "defense": 0.2141
+        "defense": 0.2142
       },
       "Nott'm Forest": {
         "attack": -0.019,
-        "defense": 0.0636
+        "defense": 0.0637
       },
       "Southampton": {
-        "attack": -0.6273,
+        "attack": -0.6272,
         "defense": 0.6244
       },
       "Sunderland": {
         "attack": -0.1815,
-        "defense": 0.123
+        "defense": 0.1229
       },
       "Tottenham": {
         "attack": 0.0133,

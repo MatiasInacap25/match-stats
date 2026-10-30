@@ -649,6 +649,22 @@
     ],
     "Atalanta|Fiorentina": [
       {
+        "date": "2026-10-29",
+        "league": "I1",
+        "home": "Fiorentina",
+        "away": "Atalanta",
+        "home_goals": 2,
+        "away_goals": 2,
+        "home_shots": 14,
+        "away_shots": 2,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 5,
+        "home_corners": 8,
+        "away_corners": 2,
+        "home_cards": 3,
+        "away_cards": 2
+      },
+      {
         "date": "2026-05-22",
         "league": "I1",
         "home": "Fiorentina",
@@ -6459,6 +6475,22 @@
     ],
     "Bologna|Milan": [
       {
+        "date": "2026-10-28",
+        "league": "I1",
+        "home": "Milan",
+        "away": "Bologna",
+        "home_goals": 2,
+        "away_goals": 4,
+        "home_shots": 8,
+        "away_shots": 9,
+        "home_shots_on_target": 3,
+        "away_shots_on_target": 5,
+        "home_corners": 2,
+        "away_corners": 3,
+        "home_cards": 0,
+        "away_cards": 2
+      },
+      {
         "date": "2026-02-03",
         "league": "I1",
         "home": "Bologna",
@@ -11045,6 +11077,22 @@
     ],
     "Cagliari|Roma": [
       {
+        "date": "2026-10-27",
+        "league": "I1",
+        "home": "Roma",
+        "away": "Cagliari",
+        "home_goals": 4,
+        "away_goals": 2,
+        "home_shots": 20,
+        "away_shots": 19,
+        "home_shots_on_target": 8,
+        "away_shots_on_target": 8,
+        "home_corners": 7,
+        "away_corners": 8,
+        "home_cards": 0,
+        "away_cards": 1
+      },
+      {
         "date": "2026-02-09",
         "league": "I1",
         "home": "Roma",
@@ -13256,6 +13304,22 @@
       }
     ],
     "Como|Torino": [
+      {
+        "date": "2026-10-27",
+        "league": "I1",
+        "home": "Torino",
+        "away": "Como",
+        "home_goals": 1,
+        "away_goals": 3,
+        "home_shots": 11,
+        "away_shots": 18,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 5,
+        "home_corners": 5,
+        "away_corners": 6,
+        "home_cards": 1,
+        "away_cards": 0
+      },
       {
         "date": "2026-01-24",
         "league": "I1",
@@ -17333,6 +17397,22 @@
     ],
     "Frosinone|Lecce": [
       {
+        "date": "2026-10-29",
+        "league": "I1",
+        "home": "Frosinone",
+        "away": "Lecce",
+        "home_goals": 5,
+        "away_goals": 1,
+        "home_shots": 26,
+        "away_shots": 15,
+        "home_shots_on_target": 9,
+        "away_shots_on_target": 6,
+        "home_corners": 10,
+        "away_corners": 3,
+        "home_cards": 0,
+        "away_cards": 3
+      },
+      {
         "date": "2024-03-03",
         "league": "I1",
         "home": "Frosinone",
@@ -18586,6 +18666,22 @@
       }
     ],
     "Genoa|Juventus": [
+      {
+        "date": "2026-10-28",
+        "league": "I1",
+        "home": "Genoa",
+        "away": "Juventus",
+        "home_goals": 2,
+        "away_goals": 0,
+        "home_shots": 14,
+        "away_shots": 17,
+        "home_shots_on_target": 2,
+        "away_shots_on_target": 4,
+        "home_corners": 6,
+        "away_corners": 9,
+        "home_cards": 0,
+        "away_cards": 1
+      },
       {
         "date": "2026-04-06",
         "league": "I1",
@@ -23977,6 +24073,22 @@
     ],
     "Inter|Venezia": [
       {
+        "date": "2026-10-28",
+        "league": "I1",
+        "home": "Venezia",
+        "away": "Inter",
+        "home_goals": 0,
+        "away_goals": 2,
+        "home_shots": 12,
+        "away_shots": 16,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 2,
+        "home_corners": 3,
+        "away_corners": 6,
+        "home_cards": 0,
+        "away_cards": 2
+      },
+      {
         "date": "2025-01-12",
         "league": "I1",
         "home": "Venezia",
@@ -27948,6 +28060,22 @@
       }
     ],
     "Lazio|Sassuolo": [
+      {
+        "date": "2026-10-27",
+        "league": "I1",
+        "home": "Sassuolo",
+        "away": "Lazio",
+        "home_goals": 2,
+        "away_goals": 6,
+        "home_shots": 9,
+        "away_shots": 16,
+        "home_shots_on_target": 1,
+        "away_shots_on_target": 8,
+        "home_corners": 2,
+        "away_corners": 1,
+        "home_cards": 3,
+        "away_cards": 1
+      },
       {
         "date": "2026-03-09",
         "league": "I1",
@@ -32103,6 +32231,22 @@
     ],
     "Monza|Napoli": [
       {
+        "date": "2026-10-28",
+        "league": "I1",
+        "home": "Monza",
+        "away": "Napoli",
+        "home_goals": 1,
+        "away_goals": 4,
+        "home_shots": 12,
+        "away_shots": 16,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 7,
+        "home_corners": 2,
+        "away_corners": 2,
+        "home_cards": 3,
+        "away_cards": 0
+      },
+      {
         "date": "2025-04-19",
         "league": "I1",
         "home": "Monza",
@@ -34646,6 +34790,22 @@
       }
     ],
     "Parma|Udinese": [
+      {
+        "date": "2026-10-28",
+        "league": "I1",
+        "home": "Parma",
+        "away": "Udinese",
+        "home_goals": 0,
+        "away_goals": 0,
+        "home_shots": 8,
+        "away_shots": 20,
+        "home_shots_on_target": 2,
+        "away_shots_on_target": 5,
+        "home_corners": 3,
+        "away_corners": 6,
+        "home_cards": 1,
+        "away_cards": 2
+      },
       {
         "date": "2026-04-18",
         "league": "I1",
