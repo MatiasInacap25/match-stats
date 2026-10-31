@@ -1,0 +1,5 @@
+{
+  "name": "w11",
+  "base": "feat/leagues-filters",
+  "tasks": [{"id": "comparator-top", "title": "Comparator under the title", "prompt_file": "w11/comparator-top.md"}]
+}
