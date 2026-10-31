@@ -184,6 +184,10 @@ ${rows}
 }
 
 const RESULT_CHIPS: Record<string, string> = { W: "G", D: "E", L: "P" };
+const VENUE_BADGES: Record<string, { letter: string; label: string }> = {
+  H: { letter: "L", label: "Local" },
+  A: { letter: "V", label: "Visitante" },
+};
 
 /** A team's recent matches as compact two-line rows: result, date, opponent and score, then the detail line. */
 export function renderLastMatches(team: string, matches: LastMatch[]): string {
@@ -192,7 +196,7 @@ export function renderLastMatches(team: string, matches: LastMatch[]): string {
   const items = matches
     .map((match) => {
       const chip = RESULT_CHIPS[match.result] ?? DASH;
-      const venue = match.venue === "H" ? "vs" : "en";
+      const venue = VENUE_BADGES[match.venue] ?? VENUE_BADGES.A;
       const detail = [
         `xG ${formatValue(match.xg_for, 1)}${DASH_SEP}${formatValue(match.xg_against, 1)}`,
         `Tiros ${match.shots_for}${DASH_SEP}${match.shots_against}`,
@@ -204,7 +208,8 @@ export function renderLastMatches(team: string, matches: LastMatch[]): string {
   <div class="recent-main">
     <span class="chip ${escapeHtml(match.result)}">${chip}</span>
     <span class="recent-date">${formatMatchDate(match.date)}</span>
-    <span class="recent-opp">${venue} ${escapeHtml(match.opponent)}</span>
+    <span class="venue" role="img" aria-label="${venue.label}" title="${venue.label}"><span aria-hidden="true">${venue.letter}</span></span>
+    <span class="recent-opp">${escapeHtml(match.opponent)}</span>
     <strong class="recent-score num">${match.goals_for}${DASH_SEP}${match.goals_against}</strong>
   </div>
   <p class="recent-detail num">${detail}</p>
