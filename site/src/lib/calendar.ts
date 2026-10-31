@@ -1,4 +1,15 @@
+import { COMPETITION_ORDER } from "./leagues";
 import type { UpcomingMatch } from "./types";
+
+/** Position of a competition in the display order; unknown codes sort after the known ones. */
+function orderOf(competition: string): number {
+  const position = COMPETITION_ORDER.indexOf(competition);
+  return position === -1 ? COMPETITION_ORDER.length : position;
+}
+
+function byKickoff(a: UpcomingMatch, b: UpcomingMatch): number {
+  return Date.parse(a.kickoff_utc) - Date.parse(b.kickoff_utc);
+}
 
 function localTimeZone(): string {
   return Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -34,13 +45,33 @@ export function groupByLocalDay(
   const tomorrow = nextDayKey(today);
   const groups = { today: [] as UpcomingMatch[], tomorrow: [] as UpcomingMatch[] };
 
-  const sorted = [...matches].sort((a, b) => Date.parse(a.kickoff_utc) - Date.parse(b.kickoff_utc));
+  const sorted = [...matches].sort(byKickoff);
   for (const match of sorted) {
     const key = dayKey(new Date(match.kickoff_utc), timeZone);
     if (key === today) groups.today.push(match);
     else if (key === tomorrow) groups.tomorrow.push(match);
   }
   return groups;
+}
+
+/** Competitions present in `matches`, in league order then the cup. */
+export function competitionsOf(matches: UpcomingMatch[]): string[] {
+  const present = new Set(matches.map((match) => match.competition));
+  return [...present].sort((a, b) => orderOf(a) - orderOf(b));
+}
+
+/** Matches of the selected competitions, keeping their order. An empty selection keeps every match. */
+export function filterByCompetitions(matches: UpcomingMatch[], selected: Set<string>): UpcomingMatch[] {
+  if (selected.size === 0) return matches;
+  return matches.filter((match) => selected.has(match.competition));
+}
+
+/** One group per competition in league order, each sorted by kickoff. */
+export function groupByCompetition(matches: UpcomingMatch[]): { competition: string; matches: UpcomingMatch[] }[] {
+  return competitionsOf(matches).map((competition) => ({
+    competition,
+    matches: matches.filter((match) => match.competition === competition).sort(byKickoff),
+  }));
 }
 
 /** Day heading such as "mar 27 oct". */
