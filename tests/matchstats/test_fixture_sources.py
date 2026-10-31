@@ -17,13 +17,15 @@ def read(name: str) -> str:
     return (FIXTURES / name).read_text(encoding="utf-8")
 
 
-def test_league_fixture_urls_use_season_year_and_top_five_slugs():
+def test_league_fixture_urls_use_season_year_and_seven_league_slugs():
     assert league_fixture_urls("2627") == {
         "E0": "https://fixturedownload.com/feed/json/epl-2026",
         "SP1": "https://fixturedownload.com/feed/json/la-liga-2026",
         "I1": "https://fixturedownload.com/feed/json/serie-a-2026",
         "D1": "https://fixturedownload.com/feed/json/bundesliga-2026",
         "F1": "https://fixturedownload.com/feed/json/ligue-1-2026",
+        "E1": "https://fixturedownload.com/feed/json/championship-2026",
+        "P1": "https://fixturedownload.com/feed/json/primeira-liga-2026",
     }
 
 
@@ -52,6 +54,20 @@ def test_parse_fixturedownload_recorded_sample_has_every_round_match():
     assert len(rows) == 40
     assert all(row.competition == "I1" for row in rows)
     assert all(row.kickoff_utc.tzinfo is UTC for row in rows)
+
+
+def test_parse_fixturedownload_recorded_championship_sample_has_every_round_match():
+    rows = parse_fixturedownload(read("fd_championship-2026_sample.json"), "E1")
+
+    assert len(rows) == 552  # 24 teams, home and away
+    assert all(row.competition == "E1" for row in rows)
+
+
+def test_parse_fixturedownload_recorded_primeira_liga_sample_has_every_round_match():
+    rows = parse_fixturedownload(read("fd_primeira-liga-2026_sample.json"), "P1")
+
+    assert len(rows) == 306  # 18 teams, home and away
+    assert all(row.competition == "P1" for row in rows)
 
 
 def test_parse_openligadb_converts_berlin_winter_time_to_utc():

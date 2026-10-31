@@ -14,6 +14,8 @@ _LEAGUE_SLUGS = {
     "I1": "serie-a",
     "D1": "bundesliga",
     "F1": "ligue-1",
+    "E1": "championship",
+    "P1": "primeira-liga",
 }
 
 

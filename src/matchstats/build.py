@@ -26,7 +26,7 @@ from matchstats.ingest import (
     parse_fixtures_csv,
 )
 from matchstats.leagues import (
-    SECOND_DIVISION,
+    COUNTRY_DIVISIONS,
     TOP_LEAGUES,
     recent_seasons,
     season_code,
@@ -143,18 +143,18 @@ def _write_files(
     feed_text: FeedText,
 ) -> None:
     current = season_code(today)
-    divisions = [div for code in TOP_LEAGUES for div in (code, SECOND_DIVISION[code])]
+    divisions = list(dict.fromkeys(div for code in TOP_LEAGUES for div in COUNTRY_DIVISIONS[code]))
     matches = loader(divisions, recent_seasons(current, HEAD_TO_HEAD_SEASONS), cache_dir, current)
     fixtures = parse_fixtures_csv(_read_fixtures(cache_dir, fixtures_text))
 
     index_leagues = []
     for code in TOP_LEAGUES:
         top = [m for m in matches if m.div == code]
-        second = [m for m in matches if m.div == SECOND_DIVISION[code]]
+        country = [m for m in matches if m.div in COUNTRY_DIVISIONS[code]]
         league = _league_file(code, top, today, current)
         teams = sorted(league["teams"])
         _write_json(directory / "leagues" / f"{code}.json", league)
-        _write_json(directory / "h2h" / f"{code}.json", {"league": code, "pairs": _head_to_head(teams, top + second)})
+        _write_json(directory / "h2h" / f"{code}.json", {"league": code, "pairs": _head_to_head(teams, country)})
         index_leagues.append({"code": code, "name": TOP_LEAGUES[code], "teams": teams})
 
     known = {entry["code"]: set(entry["teams"]) for entry in index_leagues}

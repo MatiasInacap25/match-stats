@@ -16,15 +16,15 @@ All numbers are plain JSON numbers. Missing values are `null`. Dates are ISO `YY
 }
 ```
 
-- `leagues`: exactly the 5 top leagues, in this order: `E0` Premier League, `SP1` La Liga, `I1` Serie A, `D1` Bundesliga, `F1` Ligue 1. `teams` is the sorted list of the current season's teams.
-- `today`: matches of these 5 leagues dated today (Europe/Madrid) in football-data's `fixtures.csv`. Empty list when there are none. Kept for compatibility.
-- `upcoming`: league matches of the 5 leagues and DFB-Pokal matches whose Europe/Madrid date is from today − 1 to today + 2 (inclusive). Sorted by kickoff, then competition order (E0, SP1, I1, D1, F1, DFB), then `home`. Empty list when there are none. Each item has:
-  - `competition`: league code (one of the 5 above) or `DFB` for DFB-Pokal.
-  - `competition_name`: `Premier League`, `La Liga`, `Serie A`, `Bundesliga`, `Ligue 1` or `DFB-Pokal`.
+- `leagues`: exactly the 7 leagues, in this order: `E0` Premier League, `SP1` La Liga, `I1` Serie A, `D1` Bundesliga, `F1` Ligue 1, `E1` Championship, `P1` Primeira Liga. `teams` is the sorted list of the current season's teams. Every league has at least 16 teams.
+- `today`: matches of these 7 leagues dated today (Europe/Madrid) in football-data's `fixtures.csv`. Empty list when there are none. Kept for compatibility.
+- `upcoming`: league matches of the 7 leagues and DFB-Pokal matches whose Europe/Madrid date is from today − 1 to today + 2 (inclusive). Sorted by kickoff, then competition order (E0, SP1, I1, D1, F1, E1, P1, DFB), then `home`. Empty list when there are none. Each item has:
+  - `competition`: league code (one of the 7 above) or `DFB` for DFB-Pokal.
+  - `competition_name`: `Premier League`, `La Liga`, `Serie A`, `Bundesliga`, `Ligue 1`, `Championship`, `Primeira Liga` or `DFB-Pokal`.
   - `kickoff_utc`: kickoff as an ISO 8601 UTC timestamp, `YYYY-MM-DDTHH:MM:SSZ`. fixturedownload gives UTC. OpenLigaDB gives German local time (Europe/Berlin), and `fixtures.csv` gives UK local time (Europe/London); the build converts both with `zoneinfo` (by date).
   - `home`, `away`: the football-data name when the team resolves in the league's current-season teams, otherwise the source name. Aliases are in `src/matchstats/team_names.py`.
-  - `league`: the league whose data has both teams. For a league match it is the league itself. For a DFB-Pokal match it is the one top league whose current teams include both sides, or `null` when there is no such league (the site shows no probabilities and no analysis link).
-  - Sources: league matches come from fixturedownload (`epl`, `la-liga`, `serie-a`, `bundesliga`, `ligue-1`, season year 2026). A league whose feed fails falls back to `fixtures.csv` for that league. DFB-Pokal comes from `https://api.openligadb.de/getmatchdata/dfb/2026`. A failed source is skipped with a warning and never fails the build.
+  - `league`: the league whose data has both teams. For a league match it is the league itself. For a DFB-Pokal match it is the one top league (of the 7) whose current teams include both sides, or `null` when there is no such league (the site shows no probabilities and no analysis link).
+  - Sources: league matches come from fixturedownload (`epl`, `la-liga`, `serie-a`, `bundesliga`, `ligue-1`, `championship`, `primeira-liga`, season year 2026). A league whose feed fails falls back to `fixtures.csv` for that league. DFB-Pokal comes from `https://api.openligadb.de/getmatchdata/dfb/2026`. A failed source is skipped with a warning and never fails the build.
   The site groups `upcoming` into Hoy / Mañana by the viewer's local date of `kickoff_utc`, which is why the build ships four days (west of Madrid, the viewer's today can still be Madrid's yesterday).
 
 ## `leagues/<code>.json`
@@ -104,4 +104,4 @@ Meanings (the TypeScript side relies on these exactly):
 
 - Key: the two team names sorted alphabetically, joined by `|`.
 - Every pair of current-season teams in that league, including pairs with no meetings (empty list).
-- Meetings come from the top division and the second division (`E1`, `SP2`, `I2`, `D2`, `F2`) of that country, for the 10 most recent seasons, newest first.
+- Meetings come from every division of the league's country, for the 10 most recent seasons, newest first: `E0`, `E1`, `E2` for England (`E0` and `E1` leagues); `SP1`, `SP2` for Spain; `I1`, `I2` for Italy; `D1`, `D2` for Germany; `F1`, `F2` for France; `P1` for Portugal. The list is `COUNTRY_DIVISIONS` in `src/matchstats/leagues.py`.

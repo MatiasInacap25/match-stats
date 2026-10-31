@@ -6,14 +6,19 @@ TOP_LEAGUES: dict[str, str] = {
     "I1": "Serie A",
     "D1": "Bundesliga",
     "F1": "Ligue 1",
+    "E1": "Championship",
+    "P1": "Primeira Liga",
 }
 
-SECOND_DIVISION: dict[str, str] = {
-    "E0": "E1",
-    "SP1": "SP2",
-    "I1": "I2",
-    "D1": "D2",
-    "F1": "F2",
+# League -> every division of its country, top first. Head to head uses all of them, since teams move between divisions.
+COUNTRY_DIVISIONS: dict[str, tuple[str, ...]] = {
+    "E0": ("E0", "E1", "E2"),
+    "SP1": ("SP1", "SP2"),
+    "I1": ("I1", "I2"),
+    "D1": ("D1", "D2"),
+    "F1": ("F1", "F2"),
+    "E1": ("E0", "E1", "E2"),
+    "P1": ("P1",),
 }
 
 

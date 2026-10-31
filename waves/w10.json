@@ -1,0 +1,16 @@
+{
+  "name": "w10",
+  "base": "feat/leagues-filters",
+  "tasks": [
+    {
+      "id": "leagues-e1-p1",
+      "title": "Championship and Primeira Liga",
+      "prompt_file": "w10/leagues-e1-p1.md"
+    },
+    {
+      "id": "home-collapse-filters",
+      "title": "Collapsible comparator and calendar filters",
+      "prompt_file": "w10/home-collapse-filters.md"
+    }
+  ]
+}

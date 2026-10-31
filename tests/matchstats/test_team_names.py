@@ -10,6 +10,8 @@ CURRENT_TEAMS: dict[str, list[str]] = json.loads((FIXTURES / "teams_2627.json").
 SAMPLE_LEAGUES = {
     "I1": "fd_serie-a-2026_sample.json",
     "D1": "fd_bundesliga-2026_sample.json",
+    "E1": "fd_championship-2026_sample.json",
+    "P1": "fd_primeira-liga-2026_sample.json",
 }
 
 # Team names from the fixturedownload feeds for the leagues whose samples are not recorded.
