@@ -15,7 +15,7 @@ CONTRACT_EXAMPLE = Path(__file__).parents[2] / "contract" / "example"
 CURRENT = "2627"
 PREVIOUS = "2526"
 TODAY = date(2026, 10, 26)
-LEAGUES = ["E0", "SP1", "I1", "D1", "F1"]
+LEAGUES = ["E0", "SP1", "I1", "D1", "F1", "E1", "P1"]
 TEAMS = json.loads((Path(__file__).parent / "fixtures" / "teams_2627.json").read_text(encoding="utf-8"))
 
 FIXTURES = (
@@ -118,6 +118,20 @@ def dfb_feed(*rows: tuple[str, str, str]) -> str:
             for when, home, away in rows
         ]
     )
+
+
+def loader_with(*extra: Match):
+    """The synthetic loader plus `extra` matches, for the divisions the build asks for."""
+    base = synthetic_loader(teams=TEAMS)
+
+    def load(divs, seasons, cache_dir, current_season):
+        return base(divs, seasons, cache_dir, current_season) + [m for m in extra if m.div in divs]
+
+    return load
+
+
+def past_meeting(div: str, home: str, away: str) -> Match:
+    return _match(div, PREVIOUS, date(2026, 3, 1), home, away, np.random.default_rng(5))
 
 
 def run_build(
@@ -264,6 +278,56 @@ def test_dfb_match_with_a_lower_division_team_has_no_league(tmp_path):
             "home": "SG Sonnenhof Großaspach", "away": "Augsburg", "league": None,
         }
     ]
+
+
+def test_championship_and_primeira_liga_feed_names_resolve(tmp_path):
+    feeds = feed_from(
+        {
+            "E1": fd_feed(("2026-10-27 15:00:00Z", "Queens Park Rangers", "Birmingham City")),
+            "P1": fd_feed(("2026-10-27 18:00:00Z", "Sporting CP", "SL Benfica")),
+        }
+    )
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "E1", "competition_name": "Championship", "kickoff_utc": "2026-10-27T15:00:00Z",
+            "home": "QPR", "away": "Birmingham", "league": "E1",
+        },
+        {
+            "competition": "P1", "competition_name": "Primeira Liga", "kickoff_utc": "2026-10-27T18:00:00Z",
+            "home": "Sp Lisbon", "away": "Benfica", "league": "P1",
+        },
+    ]
+
+
+def test_head_to_head_uses_every_division_of_the_country(tmp_path):
+    out = tmp_path / "data"
+    loader = loader_with(
+        past_meeting("E1", "Arsenal", "Leeds"),
+        past_meeting("E2", "Arsenal", "Leeds"),
+        past_meeting("E0", "Burnley", "Millwall"),
+    )
+    run_build(out, loader=loader)
+
+    e0_pairs = read_json(out / "h2h" / "E0.json")["pairs"]
+    assert {meeting["league"] for meeting in e0_pairs["Arsenal|Leeds"]} >= {"E0", "E1", "E2"}
+
+    e1_pairs = read_json(out / "h2h" / "E1.json")["pairs"]
+    assert any(meeting["league"] == "E0" for meeting in e1_pairs["Burnley|Millwall"])
+
+
+def test_validate_output_requires_the_seven_leagues_in_order(tmp_path):
+    out = tmp_path / "data"
+    run_build(out)
+    index_path = out / "index.json"
+    index = read_json(index_path)
+    index["leagues"] = [league for league in index["leagues"] if league["code"] != "P1"]
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+
+    problems = validate_output(out)
+    assert any("leagues must be" in problem and "P1" in problem for problem in problems)
 
 
 def test_failed_league_feed_falls_back_to_fixtures_csv(tmp_path):

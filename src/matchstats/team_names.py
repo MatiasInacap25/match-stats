@@ -51,6 +51,31 @@ ALIASES: dict[str, str] = {
     "FC Bayern München": "Bayern Munich",
     "Hamburger SV": "Hamburg",
     "Sport-Club Freiburg": "Freiburg",
+    # Championship
+    "Birmingham City": "Birmingham",
+    "Blackburn Rovers": "Blackburn",
+    "Bolton Wanderers": "Bolton",
+    "Cardiff City": "Cardiff",
+    "Charlton Athletic": "Charlton",
+    "Derby County": "Derby",
+    "Lincoln City": "Lincoln",
+    "Norwich City": "Norwich",
+    "Preston North End": "Preston",
+    "Queens Park Rangers": "QPR",
+    "Stoke City": "Stoke",
+    "Swansea City": "Swansea",
+    "West Bromwich Albion": "West Brom",
+    "West Ham United": "West Ham",
+    "Wolverhampton Wanderers": "Wolves",
+    # Primeira Liga
+    "Académico": "Academico Viseu",
+    "Estoril Praia": "Estoril",
+    "Estrela Amadora": "Estrela",
+    "Marítimo M.": "Maritimo",
+    "SC Braga": "Sp Braga",
+    "SL Benfica": "Benfica",
+    "Sporting CP": "Sp Lisbon",
+    "Vitória SC": "Guimaraes",
 }
 
 
