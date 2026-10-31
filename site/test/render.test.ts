@@ -188,7 +188,7 @@ describe("renderLastMatches", () => {
 
   it("renders the result chip, date, venue, score and detail line", () => {
     const html = renderLastMatches("Arsenal", league.teams.Arsenal.last6);
-    expect(html).toContain("vs Brighton");
+    expect(html).toContain("Brighton");
     expect(html).toContain("2–1");
     expect(html).toContain('chip W">G</span>');
     expect(html).toContain("25 oct");
@@ -197,9 +197,29 @@ describe("renderLastMatches", () => {
     expect(html).toContain("Tarjetas en puntos: amarilla 1, roja 2.");
   });
 
-  it("uses 'en' for away matches", () => {
-    const away: LastMatch = { ...first, venue: "A" };
-    expect(renderLastMatches("Arsenal", [away])).toContain("en Brighton");
+  it("circles L for home matches, labelled Local", () => {
+    const html = renderLastMatches("Arsenal", [{ ...first, venue: "H" }]);
+    expect(html).toContain('<span class="venue" role="img" aria-label="Local" title="Local">');
+    expect(html).toContain('<span aria-hidden="true">L</span></span>');
+  });
+
+  it("circles V for away matches, labelled Visitante", () => {
+    const html = renderLastMatches("Arsenal", [{ ...first, venue: "A" }]);
+    expect(html).toContain('<span class="venue" role="img" aria-label="Visitante" title="Visitante">');
+    expect(html).toContain('<span aria-hidden="true">V</span></span>');
+  });
+
+  it("no longer prefixes the opponent with 'vs' or 'en'", () => {
+    const home = renderLastMatches("Arsenal", [{ ...first, venue: "H" }]);
+    const away = renderLastMatches("Arsenal", [{ ...first, venue: "A" }]);
+    expect(home).not.toMatch(/>(vs|en) /);
+    expect(away).not.toMatch(/>(vs|en) /);
+  });
+
+  it("keeps the square result chip next to the venue circle", () => {
+    const html = renderLastMatches("Arsenal", [{ ...first, venue: "A" }]);
+    expect(html).toContain('chip W">G</span>');
+    expect(html).toContain('class="venue"');
   });
 
   it("renders a dash when xG is missing", () => {
@@ -213,6 +233,13 @@ describe("renderLastMatches", () => {
 });
 
 describe("renderHeadToHead", () => {
+  it("has no venue circle", () => {
+    const html = renderHeadToHead(h2h.pairs["Arsenal|Chelsea"], "Arsenal", "Chelsea");
+    expect(html).not.toContain('class="venue"');
+    expect(html).not.toContain("aria-label=\"Local\"");
+    expect(html).not.toContain("aria-label=\"Visitante\"");
+  });
+
   it("shows an empty message when there are no meetings", () => {
     const html = renderHeadToHead(h2h.pairs["Arsenal|Chelsea"], "Arsenal", "Chelsea");
     expect(html).toContain("Sin enfrentamientos previos.");
