@@ -6,6 +6,38 @@ import Icon from "../components/Icon.astro";
 <Base title="Match Stats">
   <h1>Match Stats</h1>
 
+  <div class="compare-block">
+    <button id="compare-toggle" type="button" class="compare-toggle" aria-expanded="false" aria-controls="compare-panel">
+      <span>Comparar equipos</span>
+      <span class="compare-chevron"><Icon name="chevron-left" size={18} /></span>
+    </button>
+    <div id="compare-panel" class="compare-panel" data-open="false" inert>
+      <div class="compare-inner">
+        <form id="picker" class="card">
+          <label class="field">
+            Liga
+            <select id="league" disabled>
+              <option value="">Cargando ligas…</option>
+            </select>
+          </label>
+          <label class="field">
+            Local
+            <select id="home" disabled>
+              <option value="">Elige un equipo</option>
+            </select>
+          </label>
+          <label class="field">
+            Visitante
+            <select id="away" disabled>
+              <option value="">Elige un equipo</option>
+            </select>
+          </label>
+          <button id="analyze" type="submit" class="btn" disabled>Analizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <section class="calendar">
     <div class="seg" role="tablist" aria-label="Día">
       <button
@@ -46,38 +78,6 @@ import Icon from "../components/Icon.astro";
       <ul id="fixtures" class="fixtures"></ul>
     </div>
   </section>
-
-  <div class="compare-block">
-    <button id="compare-toggle" type="button" class="compare-toggle" aria-expanded="false" aria-controls="compare-panel">
-      <span>Comparar equipos</span>
-      <span class="compare-chevron"><Icon name="chevron-left" size={18} /></span>
-    </button>
-    <div id="compare-panel" class="compare-panel" data-open="false" inert>
-      <div class="compare-inner">
-        <form id="picker" class="card">
-          <label class="field">
-            Liga
-            <select id="league" disabled>
-              <option value="">Cargando ligas…</option>
-            </select>
-          </label>
-          <label class="field">
-            Local
-            <select id="home" disabled>
-              <option value="">Elige un equipo</option>
-            </select>
-          </label>
-          <label class="field">
-            Visitante
-            <select id="away" disabled>
-              <option value="">Elige un equipo</option>
-            </select>
-          </label>
-          <button id="analyze" type="submit" class="btn" disabled>Analizar</button>
-        </form>
-      </div>
-    </div>
-  </div>
 </Base>
 
 <style is:global>
