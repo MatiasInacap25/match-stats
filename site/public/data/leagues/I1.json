@@ -30,7 +30,7 @@
         "defense": 0.365
       },
       "Fiorentina": {
-        "attack": 0.037,
+        "attack": 0.0369,
         "defense": 0.2234
       },
       "Frosinone": {
@@ -94,7 +94,7 @@
         "defense": 0.2637
       },
       "Venezia": {
-        "attack": -0.437,
+        "attack": -0.4369,
         "defense": 0.352
       },
       "Verona": {

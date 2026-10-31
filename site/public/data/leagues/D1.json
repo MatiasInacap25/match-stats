@@ -27,7 +27,7 @@
       },
       "Elversberg": {
         "attack": 0.2882,
-        "defense": 0.4891
+        "defense": 0.4892
       },
       "FC Koln": {
         "attack": -0.0635,
@@ -67,22 +67,22 @@
       },
       "Paderborn": {
         "attack": -0.4827,
-        "defense": 0.0229
+        "defense": 0.023
       },
       "RB Leipzig": {
         "attack": 0.3132,
         "defense": 0.1119
       },
       "Schalke 04": {
-        "attack": -0.8838,
-        "defense": -0.3083
+        "attack": -0.8837,
+        "defense": -0.3082
       },
       "St Pauli": {
         "attack": -0.5546,
         "defense": 0.19
       },
       "Stuttgart": {
-        "attack": 0.3016,
+        "attack": 0.3015,
         "defense": 0.1874
       },
       "Union Berlin": {

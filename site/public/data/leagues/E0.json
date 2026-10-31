@@ -3,10 +3,10 @@
   "season": "2026/27",
   "goals": {
     "home_advantage": 0.1661,
-    "rho": -0.1083,
+    "rho": -0.1084,
     "teams": {
       "Arsenal": {
-        "attack": 0.3233,
+        "attack": 0.3234,
         "defense": -0.4601
       },
       "Aston Villa": {
@@ -26,20 +26,20 @@
         "defense": 0.0457
       },
       "Burnley": {
-        "attack": -0.218,
-        "defense": 0.477
+        "attack": -0.2179,
+        "defense": 0.4771
       },
       "Chelsea": {
         "attack": 0.2692,
-        "defense": 0.1699
+        "defense": 0.17
       },
       "Coventry": {
-        "attack": -0.3968,
-        "defense": 0.3623
+        "attack": -0.3964,
+        "defense": 0.3621
       },
       "Crystal Palace": {
-        "attack": -0.0698,
-        "defense": 0.2649
+        "attack": -0.0699,
+        "defense": 0.265
       },
       "Everton": {
         "attack": -0.0914,
@@ -50,20 +50,20 @@
         "defense": 0.1081
       },
       "Hull": {
-        "attack": -0.1305,
-        "defense": -0.1335
+        "attack": -0.1306,
+        "defense": -0.1337
       },
       "Ipswich": {
         "attack": -0.0756,
-        "defense": 0.5666
+        "defense": 0.5667
       },
       "Leeds": {
-        "attack": 0.0158,
+        "attack": 0.0157,
         "defense": 0.0313
       },
       "Leicester": {
-        "attack": -0.45,
-        "defense": 0.5394
+        "attack": -0.4502,
+        "defense": 0.5395
       },
       "Liverpool": {
         "attack": 0.3223,
@@ -86,12 +86,12 @@
         "defense": 0.0637
       },
       "Southampton": {
-        "attack": -0.6272,
+        "attack": -0.6273,
         "defense": 0.6244
       },
       "Sunderland": {
         "attack": -0.1815,
-        "defense": 0.1229
+        "defense": 0.123
       },
       "Tottenham": {
         "attack": 0.0133,
@@ -99,7 +99,7 @@
       },
       "West Ham": {
         "attack": -0.0354,
-        "defense": 0.3018
+        "defense": 0.3019
       },
       "Wolves": {
         "attack": -0.2969,
