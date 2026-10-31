@@ -1,53 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
-
-// The five leagues in the data contract, in contract order.
-const LEAGUES = [
-  { code: "E0", short: "Premier" },
-  { code: "SP1", short: "LaLiga" },
-  { code: "I1", short: "Serie A" },
-  { code: "D1", short: "Bundesliga" },
-  { code: "F1", short: "Ligue 1" },
-];
+import Icon from "../components/Icon.astro";
 ---
 
 <Base title="Match Stats">
   <h1>Match Stats</h1>
-
-  <form id="picker" class="card">
-    <div class="field">
-      <span id="league-label">Liga</span>
-      <div id="leagues" class="seg" role="radiogroup" aria-labelledby="league-label">
-        {
-          LEAGUES.map((league, i) => (
-            <button
-              type="button"
-              role="radio"
-              class="seg-btn"
-              data-league={league.code}
-              aria-checked={i === 0 ? "true" : "false"}
-              tabindex={i === 0 ? 0 : -1}
-            >
-              {league.short}
-            </button>
-          ))
-        }
-      </div>
-    </div>
-    <label class="field">
-      Local
-      <select id="home" disabled>
-        <option value="">Elige un equipo</option>
-      </select>
-    </label>
-    <label class="field">
-      Visitante
-      <select id="away" disabled>
-        <option value="">Elige un equipo</option>
-      </select>
-    </label>
-    <button id="analyze" type="submit" class="btn" disabled>Analizar</button>
-  </form>
 
   <section class="calendar">
     <div class="seg" role="tablist" aria-label="Día">
@@ -73,11 +30,54 @@ const LEAGUES = [
       >
     </div>
     <p id="updated" class="muted updated"></p>
+    <div class="cal-controls">
+      <div id="competition-filter" class="chip-row" role="group" aria-label="Filtrar por liga"></div>
+      <div class="seg" role="radiogroup" aria-label="Orden de los partidos">
+        <button type="button" role="radio" class="seg-btn" data-order="time" aria-checked="true" tabindex="0">Por hora</button>
+        <button type="button" role="radio" class="seg-btn" data-order="league" aria-checked="false" tabindex="-1">Por liga</button>
+      </div>
+    </div>
     <div id="day-panel" role="tabpanel" aria-labelledby="tab-today" tabindex="0">
       <p id="status" class="muted" aria-live="polite" hidden></p>
+      <div id="filter-empty" class="filter-empty" hidden>
+        <p class="muted">No hay partidos de estas ligas este día.</p>
+        <button id="reset-filter" type="button" class="reset-filter">Ver todas</button>
+      </div>
       <ul id="fixtures" class="fixtures"></ul>
     </div>
   </section>
+
+  <div class="compare-block">
+    <button id="compare-toggle" type="button" class="compare-toggle" aria-expanded="false" aria-controls="compare-panel">
+      <span>Comparar equipos</span>
+      <span class="compare-chevron"><Icon name="chevron-left" size={18} /></span>
+    </button>
+    <div id="compare-panel" class="compare-panel" data-open="false" inert>
+      <div class="compare-inner">
+        <form id="picker" class="card">
+          <label class="field">
+            Liga
+            <select id="league" disabled>
+              <option value="">Cargando ligas…</option>
+            </select>
+          </label>
+          <label class="field">
+            Local
+            <select id="home" disabled>
+              <option value="">Elige un equipo</option>
+            </select>
+          </label>
+          <label class="field">
+            Visitante
+            <select id="away" disabled>
+              <option value="">Elige un equipo</option>
+            </select>
+          </label>
+          <button id="analyze" type="submit" class="btn" disabled>Analizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </Base>
 
 <style is:global>
@@ -88,6 +88,87 @@ const LEAGUES = [
   .updated {
     margin: 10px 0 8px;
     font-size: 0.875rem;
+  }
+
+  .cal-controls {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+    margin: 10px 0 12px;
+  }
+
+  .chip-row {
+    display: flex;
+    gap: 8px;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 2px;
+    scrollbar-width: none;
+  }
+
+  .chip-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 180ms var(--ease-out),
+      border-color 180ms var(--ease-out),
+      color 180ms var(--ease-out);
+  }
+
+  .filter-chip:hover {
+    color: var(--text);
+    border-color: var(--muted);
+  }
+
+  .filter-chip[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .filter-empty {
+    display: grid;
+    justify-items: start;
+    gap: 8px;
+    padding: 12px 0;
+  }
+
+  .reset-filter {
+    min-height: 36px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .group {
+    display: grid;
+    gap: 8px;
+  }
+
+  .group-title {
+    margin: 8px 0 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--muted);
   }
 
   .fixtures {
@@ -167,6 +248,75 @@ const LEAGUES = [
     color: var(--accent);
   }
 
+  .compare-block {
+    margin-top: 24px;
+  }
+
+  .compare-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--text);
+    font: inherit;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 180ms var(--ease-out);
+  }
+
+  .compare-toggle:hover {
+    border-color: var(--muted);
+  }
+
+  .compare-chevron {
+    display: inline-flex;
+    transform: rotate(-90deg);
+    transition: transform 180ms var(--ease-out);
+  }
+
+  .compare-toggle[aria-expanded="true"] .compare-chevron {
+    transform: rotate(90deg);
+  }
+
+  .compare-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 180ms var(--ease-out),
+      opacity 180ms var(--ease-out);
+  }
+
+  .compare-panel[data-open="true"] {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .compare-inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .compare-inner > .card {
+    margin-top: 12px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .compare-panel,
+    .compare-chevron,
+    .compare-toggle,
+    .filter-chip {
+      transition: none;
+    }
+  }
+
   @media (max-width: 400px) {
     .fixture-row {
       grid-template-columns: 48px minmax(0, 1fr);
@@ -183,18 +333,30 @@ const LEAGUES = [
 </style>
 
 <script>
-  import { formatDayLabel, formatKickoff, groupByLocalDay, isAnalyzable } from "../lib/calendar";
+  import {
+    competitionsOf,
+    filterByCompetitions,
+    formatDayLabel,
+    formatKickoff,
+    groupByCompetition,
+    groupByLocalDay,
+    isAnalyzable,
+  } from "../lib/calendar";
   import { loadIndex, loadLeague } from "../lib/data";
+  import { shortName } from "../lib/leagues";
   import { MATCH_LINES, TeamNotFoundError, matchMarkets } from "../lib/markets";
   import type { Market } from "../lib/markets";
   import { escapeHtml, formatPct } from "../lib/render";
   import type { IndexData, LeagueData, UpcomingMatch } from "../lib/types";
 
   type Day = "today" | "tomorrow";
+  type Order = "time" | "league";
 
   const base = import.meta.env.BASE_URL;
   const DAY_MS = 24 * 60 * 60 * 1000;
   const ACCENT_FROM = 0.6;
+  const COMPETITIONS_KEY = "ms-cal-leagues";
+  const ORDER_KEY = "ms-cal-order";
   const EMPTY_DAY = "Todavía no hay partidos publicados para este día.";
   const LOAD_ERROR = "No se pudieron cargar los datos. Intenta de nuevo más tarde.";
   const NO_ANALYSIS = "Sin análisis: equipos de distintas categorías.";
@@ -205,13 +367,18 @@ const LEAGUES = [
     return element as T;
   }
 
-  const leagueButtons = [...document.querySelectorAll<HTMLButtonElement>("#leagues [data-league]")];
-  const shortNames = new Map(leagueButtons.map((button) => [button.dataset.league ?? "", button.textContent ?? ""]));
+  const leagueSelect = byId<HTMLSelectElement>("league");
   const homeSelect = byId<HTMLSelectElement>("home");
   const awaySelect = byId<HTMLSelectElement>("away");
   const analyze = byId<HTMLButtonElement>("analyze");
   const picker = byId<HTMLFormElement>("picker");
+  const compareToggle = byId<HTMLButtonElement>("compare-toggle");
+  const comparePanel = byId<HTMLDivElement>("compare-panel");
   const dayTabs = [...document.querySelectorAll<HTMLButtonElement>("[role='tab'][data-day]")];
+  const orderButtons = [...document.querySelectorAll<HTMLButtonElement>("[role='radio'][data-order]")];
+  const chipRow = byId<HTMLDivElement>("competition-filter");
+  const filterEmpty = byId<HTMLDivElement>("filter-empty");
+  const resetFilter = byId<HTMLButtonElement>("reset-filter");
   const dayPanel = byId<HTMLDivElement>("day-panel");
   const fixtureList = byId<HTMLUListElement>("fixtures");
   const status = byId<HTMLParagraphElement>("status");
@@ -221,9 +388,44 @@ const LEAGUES = [
   const leagueCache = new Map<string, Promise<LeagueData>>();
   let index: IndexData | null = null;
   let groups: Record<Day, UpcomingMatch[]> = { today: [], tomorrow: [] };
-  let selectedLeague = leagueButtons.find((button) => button.getAttribute("aria-checked") === "true")?.dataset.league ?? "";
+  let selectedLeague = "";
   let selectedDay: Day = "today";
+  const selectedCompetitions = loadCompetitions();
+  let order: Order = loadOrder();
   let renderId = 0;
+
+  function loadCompetitions(): Set<string> {
+    try {
+      const parsed: unknown = JSON.parse(localStorage.getItem(COMPETITIONS_KEY) ?? "[]");
+      return new Set(Array.isArray(parsed) ? parsed.filter((code): code is string => typeof code === "string") : []);
+    } catch {
+      return new Set();
+    }
+  }
+
+  function saveCompetitions(): void {
+    try {
+      localStorage.setItem(COMPETITIONS_KEY, JSON.stringify([...selectedCompetitions]));
+    } catch {
+      // Storage can be blocked (private window): the filter still works for this visit.
+    }
+  }
+
+  function loadOrder(): Order {
+    try {
+      return localStorage.getItem(ORDER_KEY) === "league" ? "league" : "time";
+    } catch {
+      return "time";
+    }
+  }
+
+  function saveOrder(): void {
+    try {
+      localStorage.setItem(ORDER_KEY, order);
+    } catch {
+      // Storage can be blocked (private window): the order still works for this visit.
+    }
+  }
 
   function loadLeagueOnce(code: string): Promise<LeagueData> {
     let pending = leagueCache.get(code);
@@ -261,12 +463,14 @@ const LEAGUES = [
 
   function selectLeague(code: string): void {
     selectedLeague = code;
-    for (const button of leagueButtons) {
-      const active = button.dataset.league === code;
-      button.setAttribute("aria-checked", String(active));
-      button.tabIndex = active ? 0 : -1;
-    }
+    leagueSelect.value = code;
     fillTeamSelects();
+  }
+
+  function setCompareOpen(open: boolean): void {
+    compareToggle.setAttribute("aria-expanded", String(open));
+    comparePanel.dataset.open = String(open);
+    comparePanel.inert = !open;
   }
 
   /** Probabilities for the "1" and "Más de 2.5" rows; empty when the teams are not in the data. */
@@ -297,7 +501,7 @@ const LEAGUES = [
 
   function rowHtml(match: UpcomingMatch, league: LeagueData | undefined): string {
     const kickoff = `<span class="kickoff num">${escapeHtml(formatKickoff(match.kickoff_utc))}</span>`;
-    const name = escapeHtml(shortNames.get(match.competition) ?? match.competition_name);
+    const name = escapeHtml(shortName(match.competition, match.competition_name));
 
     if (!isAnalyzable(match) || !match.league) {
       return `<li><div class="fixture-row">
@@ -320,11 +524,36 @@ const LEAGUES = [
 </a></li>`;
   }
 
+  /** One chip per competition of the day, with "Todas" first. Chips show the active selection. */
+  function renderChips(matches: UpcomingMatch[]): void {
+    const chip = (code: string | null, label: string, pressed: boolean): string => {
+      const attribute = code === null ? "data-all" : `data-competition="${escapeHtml(code)}"`;
+      return `<button type="button" class="filter-chip" ${attribute} aria-pressed="${pressed}">${escapeHtml(label)}</button>`;
+    };
+    const names = new Map(matches.map((match) => [match.competition, shortName(match.competition, match.competition_name)]));
+    chipRow.innerHTML = [
+      chip(null, "Todas", selectedCompetitions.size === 0),
+      ...competitionsOf(matches).map((code) => chip(code, names.get(code) ?? code, selectedCompetitions.has(code))),
+    ].join("");
+  }
+
+  function groupsHtml(matches: UpcomingMatch[], leagues: Map<string, LeagueData>): string {
+    return groupByCompetition(matches)
+      .map(({ competition, matches: group }) => {
+        const title = escapeHtml(`${shortName(competition, group[0].competition_name)} · ${group.length}`);
+        const rows = group.map((match) => rowHtml(match, match.league ? leagues.get(match.league) : undefined));
+        return `<li class="group"><h3 class="group-title">${title}</h3><ul class="fixtures">${rows.join("")}</ul></li>`;
+      })
+      .join("");
+  }
+
   async function renderDay(): Promise<void> {
     if (!index) return;
     const id = ++renderId;
     const matches = groups[selectedDay];
     fixtureList.innerHTML = "";
+    filterEmpty.hidden = true;
+    renderChips(matches);
 
     if (matches.length === 0) {
       dayPanel.removeAttribute("aria-busy");
@@ -332,9 +561,16 @@ const LEAGUES = [
       return;
     }
     showStatus("");
+
+    const visible = filterByCompetitions(matches, selectedCompetitions);
+    if (visible.length === 0) {
+      dayPanel.removeAttribute("aria-busy");
+      filterEmpty.hidden = false;
+      return;
+    }
     dayPanel.setAttribute("aria-busy", "true");
 
-    const codes = [...new Set(matches.flatMap((match) => (match.league && isAnalyzable(match) ? [match.league] : [])))];
+    const codes = [...new Set(visible.flatMap((match) => (match.league && isAnalyzable(match) ? [match.league] : [])))];
     const leagues = new Map<string, LeagueData>();
     await Promise.all(
       codes.map(async (code) => {
@@ -347,9 +583,10 @@ const LEAGUES = [
     );
     if (id !== renderId) return;
 
-    fixtureList.innerHTML = matches
-      .map((match) => rowHtml(match, match.league ? leagues.get(match.league) : undefined))
-      .join("");
+    fixtureList.innerHTML =
+      order === "league"
+        ? groupsHtml(visible, leagues)
+        : visible.map((match) => rowHtml(match, match.league ? leagues.get(match.league) : undefined)).join("");
     dayPanel.removeAttribute("aria-busy");
   }
 
@@ -362,6 +599,21 @@ const LEAGUES = [
       if (active && focus) tab.focus();
     }
     dayPanel.setAttribute("aria-labelledby", `tab-${day}`);
+    void renderDay();
+  }
+
+  function paintOrder(): void {
+    for (const button of orderButtons) {
+      const active = button.dataset.order === order;
+      button.setAttribute("aria-checked", String(active));
+      button.tabIndex = active ? 0 : -1;
+    }
+  }
+
+  function selectOrder(next: Order): void {
+    order = next;
+    paintOrder();
+    saveOrder();
     void renderDay();
   }
 
@@ -385,14 +637,36 @@ const LEAGUES = [
     todayTab.textContent = `Hoy · ${formatDayLabel(now)}`;
     tomorrowTab.textContent = `Mañana · ${formatDayLabel(new Date(now.getTime() + DAY_MS))}`;
 
-    leagueButtons.forEach((button) => {
-      button.addEventListener("click", () => selectLeague(button.dataset.league ?? ""));
+    compareToggle.addEventListener("click", () => {
+      setCompareOpen(compareToggle.getAttribute("aria-expanded") !== "true");
     });
-    bindArrowKeys(leagueButtons, (button) => selectLeague(button.dataset.league ?? ""));
+    leagueSelect.addEventListener("change", () => selectLeague(leagueSelect.value));
     dayTabs.forEach((tab) => {
       tab.addEventListener("click", () => selectDay(tab.dataset.day as Day));
     });
     bindArrowKeys(dayTabs, (tab) => selectDay(tab.dataset.day as Day, true));
+    orderButtons.forEach((button) => {
+      button.addEventListener("click", () => selectOrder(button.dataset.order as Order));
+    });
+    bindArrowKeys(orderButtons, (button) => selectOrder(button.dataset.order as Order));
+    chipRow.addEventListener("click", (event) => {
+      const chip = event.target instanceof Element ? event.target.closest<HTMLButtonElement>("[data-all], [data-competition]") : null;
+      if (!chip) return;
+      if (chip.hasAttribute("data-all")) {
+        selectedCompetitions.clear();
+      } else {
+        const code = chip.dataset.competition ?? "";
+        if (selectedCompetitions.has(code)) selectedCompetitions.delete(code);
+        else selectedCompetitions.add(code);
+      }
+      saveCompetitions();
+      void renderDay();
+    });
+    resetFilter.addEventListener("click", () => {
+      selectedCompetitions.clear();
+      saveCompetitions();
+      void renderDay();
+    });
 
     homeSelect.addEventListener("change", updateAnalyze);
     awaySelect.addEventListener("change", updateAnalyze);
@@ -407,6 +681,9 @@ const LEAGUES = [
       window.location.href = `${base}match?${params.toString()}`;
     });
 
+    paintOrder();
+    setCompareOpen(false);
+
     try {
       index = await loadIndex();
     } catch (error) {
@@ -415,9 +692,12 @@ const LEAGUES = [
       return;
     }
 
+    leagueSelect.replaceChildren(...index.leagues.map((league) => new Option(shortName(league.code, league.name), league.code)));
+    leagueSelect.disabled = index.leagues.length === 0;
+    selectLeague(index.leagues[0]?.code ?? "");
+
     groups = groupByLocalDay(index.upcoming ?? [], now);
     updated.textContent = `Actualizado a las ${formatKickoff(index.generated_at)}`;
-    selectLeague(selectedLeague);
     selectDay(selectedDay);
   }
 

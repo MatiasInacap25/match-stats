@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { formatDayLabel, formatKickoff, groupByLocalDay, isAnalyzable } from "../src/lib/calendar";
+import {
+  competitionsOf,
+  filterByCompetitions,
+  formatDayLabel,
+  formatKickoff,
+  groupByCompetition,
+  groupByLocalDay,
+  isAnalyzable,
+} from "../src/lib/calendar";
 import type { UpcomingMatch } from "../src/lib/types";
 
 const NOW = new Date("2026-10-27T12:00:00Z");
@@ -110,6 +118,77 @@ describe("formatDayLabel", () => {
   it("uses the given time zone for the calendar day", () => {
     // Midnight UTC on Oct 27 is still Oct 26 in Santiago (UTC-3).
     expect(formatDayLabel(new Date("2026-10-27T00:30:00Z"), "America/Santiago")).toBe("lun 26 oct");
+  });
+});
+
+function inCompetition(competition: string, kickoff_utc: string, home = competition): UpcomingMatch {
+  return {
+    competition,
+    competition_name: competition,
+    kickoff_utc,
+    home,
+    away: "Opponent",
+    league: competition === "DFB" ? null : competition,
+  };
+}
+
+describe("competitionsOf", () => {
+  it("returns the competitions present, in league order with the cup last", () => {
+    const matches = [
+      inCompetition("DFB", "2026-10-27T18:00:00Z"),
+      inCompetition("P1", "2026-10-27T19:00:00Z"),
+      inCompetition("I1", "2026-10-27T17:00:00Z"),
+      inCompetition("I1", "2026-10-27T20:00:00Z"),
+      inCompetition("E0", "2026-10-27T16:00:00Z"),
+    ];
+
+    expect(competitionsOf(matches)).toEqual(["E0", "I1", "P1", "DFB"]);
+  });
+
+  it("returns an empty list when there are no matches", () => {
+    expect(competitionsOf([])).toEqual([]);
+  });
+});
+
+describe("filterByCompetitions", () => {
+  const matches = [
+    inCompetition("E0", "2026-10-27T16:00:00Z"),
+    inCompetition("I1", "2026-10-27T17:00:00Z"),
+    inCompetition("DFB", "2026-10-27T18:00:00Z"),
+  ];
+
+  it("keeps every match when the selection is empty", () => {
+    expect(filterByCompetitions(matches, new Set())).toEqual(matches);
+  });
+
+  it("keeps only the matches of the selected competitions, in their order", () => {
+    const result = filterByCompetitions(matches, new Set(["DFB", "E0"]));
+
+    expect(result.map((m) => m.competition)).toEqual(["E0", "DFB"]);
+  });
+
+  it("returns an empty list when no match belongs to the selection", () => {
+    expect(filterByCompetitions(matches, new Set(["P1"]))).toEqual([]);
+  });
+});
+
+describe("groupByCompetition", () => {
+  it("groups by competition in league order, with kickoff order inside each group", () => {
+    const matches = [
+      inCompetition("DFB", "2026-10-27T18:00:00Z"),
+      inCompetition("I1", "2026-10-27T20:00:00Z", "Late"),
+      inCompetition("E0", "2026-10-27T19:00:00Z"),
+      inCompetition("I1", "2026-10-27T15:00:00Z", "Early"),
+    ];
+
+    const groups = groupByCompetition(matches);
+
+    expect(groups.map((group) => group.competition)).toEqual(["E0", "I1", "DFB"]);
+    expect(groups[1].matches.map((m) => m.home)).toEqual(["Early", "Late"]);
+  });
+
+  it("returns no groups when there are no matches", () => {
+    expect(groupByCompetition([])).toEqual([]);
   });
 });
 
