@@ -10,6 +10,15 @@
         "Brighton",
         "Chelsea"
       ]
+    },
+    {
+      "code": "E1",
+      "name": "Championship",
+      "teams": [
+        "Birmingham",
+        "Blackburn",
+        "Bristol City"
+      ]
     }
   ],
   "today": [
