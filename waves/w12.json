@@ -1,0 +1,5 @@
+{
+  "name": "w12",
+  "base": "feat/last6-venue-badge",
+  "tasks": [{"id": "last6-venue-badge", "title": "L/V circle in last six", "prompt_file": "w12/last6-venue-badge.md"}]
+}
