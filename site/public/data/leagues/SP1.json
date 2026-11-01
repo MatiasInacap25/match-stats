@@ -54,7 +54,7 @@
         "defense": 0.2135
       },
       "Leganes": {
-        "attack": -0.1588,
+        "attack": -0.1587,
         "defense": 0.1303
       },
       "Levante": {
@@ -62,7 +62,7 @@
         "defense": 0.2389
       },
       "Malaga": {
-        "attack": -0.4898,
+        "attack": -0.4899,
         "defense": 0.3627
       },
       "Mallorca": {
@@ -75,7 +75,7 @@
       },
       "Oviedo": {
         "attack": -0.5309,
-        "defense": 0.1643
+        "defense": 0.1642
       },
       "Real Madrid": {
         "attack": 0.5296,

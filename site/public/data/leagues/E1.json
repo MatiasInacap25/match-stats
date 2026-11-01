@@ -3,7 +3,7 @@
   "season": "2026/27",
   "goals": {
     "home_advantage": 0.2118,
-    "rho": -0.044,
+    "rho": -0.0441,
     "teams": {
       "Birmingham": {
         "attack": 0.025,
@@ -51,7 +51,7 @@
       },
       "Leeds": {
         "attack": 0.4366,
-        "defense": -0.4778
+        "defense": -0.4777
       },
       "Leicester": {
         "attack": -0.0533,
@@ -66,7 +66,7 @@
         "defense": 0.2819
       },
       "Middlesbrough": {
-        "attack": 0.234,
+        "attack": 0.2339,
         "defense": 0.0656
       },
       "Millwall": {
@@ -106,12 +106,12 @@
         "defense": 0.4645
       },
       "Southampton": {
-        "attack": 0.348,
+        "attack": 0.3481,
         "defense": 0.0118
       },
       "Stoke": {
         "attack": -0.1396,
-        "defense": 0.161
+        "defense": 0.1609
       },
       "Sunderland": {
         "attack": -0.1131,
