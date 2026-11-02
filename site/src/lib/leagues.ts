@@ -1,4 +1,7 @@
-/** Short competition names, keyed by the codes used in the data (`competition` and `league`). */
+/**
+ * Short competition names, keyed by the codes used in the data (`competition` and `league`).
+ * NOR and AUT are data-only leagues: they have names here for match pages but no chip or calendar slot.
+ */
 export const LEAGUE_SHORT_NAMES: Record<string, string> = {
   E0: "Premier",
   SP1: "LaLiga",
@@ -7,13 +10,22 @@ export const LEAGUE_SHORT_NAMES: Record<string, string> = {
   F1: "Ligue 1",
   E1: "Championship",
   P1: "Liga Portugal",
+  N1: "Eredivisie",
+  B1: "Pro League",
+  T1: "Süper Lig",
+  G1: "Super League",
+  NOR: "Eliteserien",
+  AUT: "Bundesliga AT",
   UCL: "Champions",
   UEL: "Europa League",
   UECL: "Conference",
   DFB: "DFB-Pokal",
 };
 
-/** Display order everywhere: the leagues in contract order, then the UEFA cups, then the DFB-Pokal. */
+/**
+ * Display order everywhere: the site leagues in registry order, then the UEFA cups, then the DFB-Pokal.
+ * Data-only leagues (NOR, AUT) are deliberately absent.
+ */
 export const COMPETITION_ORDER: readonly string[] = [
   "E0",
   "SP1",
@@ -22,6 +34,10 @@ export const COMPETITION_ORDER: readonly string[] = [
   "F1",
   "E1",
   "P1",
+  "N1",
+  "B1",
+  "T1",
+  "G1",
   "UCL",
   "UEL",
   "UECL",
