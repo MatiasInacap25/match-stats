@@ -84,6 +84,12 @@ export function competitionsOf(matches: UpcomingMatch[]): string[] {
   return [...present].sort((a, b) => orderOf(a) - orderOf(b));
 }
 
+/** Competitions present in `matches` plus every selected code, so an active filter stays visible and removable. */
+export function chipCompetitions(matches: UpcomingMatch[], selected: Set<string>): string[] {
+  const present = new Set([...matches.map((match) => match.competition), ...selected]);
+  return [...present].sort((a, b) => orderOf(a) - orderOf(b));
+}
+
 /** Matches of the selected competitions, keeping their order. An empty selection keeps every match. */
 export function filterByCompetitions(matches: UpcomingMatch[], selected: Set<string>): UpcomingMatch[] {
   if (selected.size === 0) return matches;
