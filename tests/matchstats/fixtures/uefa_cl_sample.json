@@ -1,0 +1,86 @@
+[
+  {
+    "MatchNumber": 1,
+    "RoundNumber": 1,
+    "DateUtc": "2025-09-16 16:45:00Z",
+    "Location": "PSV Stadion",
+    "HomeTeam": "PSV",
+    "AwayTeam": "Union SG",
+    "Group": null,
+    "HomeTeamScore": 1,
+    "AwayTeamScore": 3,
+    "Winner": "Union SG"
+  },
+  {
+    "MatchNumber": 2,
+    "RoundNumber": 1,
+    "DateUtc": "2025-09-16 16:45:00Z",
+    "Location": "Estadio de San Mamés",
+    "HomeTeam": "Athletic Club",
+    "AwayTeam": "Arsenal",
+    "Group": null,
+    "HomeTeamScore": 0,
+    "AwayTeamScore": 2,
+    "Winner": "Arsenal"
+  },
+  {
+    "MatchNumber": 3,
+    "RoundNumber": 1,
+    "DateUtc": "2025-09-16 19:00:00Z",
+    "Location": "Estadio Santiago Bernabéu",
+    "HomeTeam": "Real Madrid",
+    "AwayTeam": "Marseille",
+    "Group": null,
+    "HomeTeamScore": 2,
+    "AwayTeamScore": 1,
+    "Winner": "Real Madrid"
+  },
+  {
+    "MatchNumber": 4,
+    "RoundNumber": 1,
+    "DateUtc": "2025-09-16 19:00:00Z",
+    "Location": "Estádio do SL Benfica",
+    "HomeTeam": "Benfica",
+    "AwayTeam": "Qarabag",
+    "Group": null,
+    "HomeTeamScore": 2,
+    "AwayTeamScore": 3,
+    "Winner": "Qarabag"
+  },
+  {
+    "MatchNumber": 5,
+    "RoundNumber": 1,
+    "DateUtc": "2025-09-16 19:00:00Z",
+    "Location": "Juventus Stadium",
+    "HomeTeam": "Juventus",
+    "AwayTeam": "B. Dortmund",
+    "Group": null,
+    "HomeTeamScore": 4,
+    "AwayTeamScore": 4,
+    "Winner": "Draw"
+  },
+  {
+    "MatchNumber": 6,
+    "RoundNumber": 1,
+    "DateUtc": "2025-09-16 19:00:00Z",
+    "Location": "Tottenham Hotspur Stadium",
+    "HomeTeam": "Tottenham",
+    "AwayTeam": "Villarreal",
+    "Group": null,
+    "HomeTeamScore": 1,
+    "AwayTeamScore": 0,
+    "Winner": "Tottenham"
+  },
+  {
+    "MatchNumber": 999,
+    "RoundNumber": 1,
+    "DateUtc": "2025-09-16 16:45:00Z",
+    "Location": "PSV Stadion",
+    "HomeTeam": "PSV",
+    "AwayTeam": "Union SG",
+    "Group": null,
+    "HomeTeamScore": null,
+    "AwayTeamScore": null,
+    "Winner": null
+  }
+]

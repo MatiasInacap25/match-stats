@@ -912,3 +912,87 @@ def test_league_rows_team_leagues_equal_their_code(tmp_path):
 
     row = read_json(out / "index.json")["upcoming"][0]
     assert (row["league"], row["home_league"], row["away_league"]) == ("E0", "E0", "E0")
+
+
+def uefa_history_loader(teams: dict[str, list[str]]):
+    """Full-league matches for every season from 2021/22 on, for the divisions given in `teams`."""
+
+    def load(divs, seasons, cache_dir, current_season):
+        rng = np.random.default_rng(3)
+        matches = []
+        for season in seasons:
+            if int(season[:2]) < 21:
+                continue
+            start = date(2000 + int(season[:2]), 8, 1)
+            for div in divs:
+                names = teams.get(div)
+                if not names:
+                    continue
+                day = 0
+                for home in names:
+                    for away in names:
+                        if home == away:
+                            continue
+                        matches.append(_match(div, season, start + timedelta(days=day % 280), home, away, rng))
+                        day += 1
+        return matches
+
+    return load
+
+
+def fd_results(*rows: tuple[str, str, str, int, int]) -> str:
+    return json.dumps(
+        [
+            {"DateUtc": when, "HomeTeam": home, "AwayTeam": away, "HomeTeamScore": hg, "AwayTeamScore": ag}
+            for when, home, away, hg, ag in rows
+        ]
+    )
+
+
+def uefa_results_feed(year: int) -> str:
+    """Finished UCL matches of one season between E0 and SP1 clubs, both ways round."""
+    rng = np.random.default_rng(year)
+    rows = []
+    for i in range(40):
+        home, away = (TEAMS["E0"][i % 20], TEAMS["SP1"][(i * 7) % 20])
+        if i % 2:
+            home, away = away, home
+        rows.append((f"{year}-10-{1 + i % 28:02d} 18:00:00Z", home, away, int(rng.poisson(1.5)), int(rng.poisson(1.1))))
+    return fd_results(*rows)
+
+
+def uefa_past_feeds(years: tuple[int, ...] = (2023, 2024, 2025)):
+    return feed_from({f"UCL-{year}": uefa_results_feed(year) for year in years})
+
+
+def test_build_writes_uefa_json(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, loader=uefa_history_loader(TEAMS), feeds=uefa_past_feeds())
+
+    document = read_json(out / "uefa.json")
+    assert set(document) == {"calibrated", "home_advantage", "offsets", "seasons", "backtest"}
+    assert document["seasons"] == [2023, 2024, 2025]
+    assert set(document["backtest"]) == {"held_out", "matches", "log_loss", "log_loss_unadjusted", "log_loss_baseline"}
+    assert document["backtest"]["held_out"] == 2025
+    assert document["calibrated"] is (document["backtest"]["log_loss"] < document["backtest"]["log_loss_unadjusted"])
+    assert document["offsets"]["E0"] == {"attack": 0.0, "defense": 0.0}
+    assert {"attack", "defense"} == set(document["offsets"]["SP1"])
+    assert validate_output(out) == []
+
+
+def test_build_keeps_previous_uefa_json_when_feeds_fail(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, loader=uefa_history_loader(TEAMS), feeds=uefa_past_feeds())
+    previous = (out / "uefa.json").read_bytes()
+
+    run_build(out, loader=uefa_history_loader(TEAMS), feeds=NO_FEEDS)
+
+    assert (out / "uefa.json").read_bytes() == previous
+
+
+def test_build_without_previous_uefa_json_and_failed_feeds(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, feeds=NO_FEEDS)
+
+    assert not (out / "uefa.json").exists()
+    assert validate_output(out) == []

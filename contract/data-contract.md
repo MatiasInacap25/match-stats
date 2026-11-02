@@ -119,3 +119,32 @@ Meanings (the TypeScript side relies on these exactly):
 - Key: the two team names sorted alphabetically, joined by `|`.
 - Every pair of current-season teams in that league, including pairs with no meetings (empty list).
 - Meetings come from every division of the league's country, for the 10 most recent seasons, newest first: `E0`, `E1`, `E2` for England (`E0` and `E1` leagues); `SP1`, `SP2` for Spain; `I1`, `I2` for Italy; `D1`, `D2` for Germany; `F1`, `F2` for France; `P1` for Portugal. The list is the `divisions` of each league in `LEAGUES` in `src/matchstats/leagues.py`. `N1`, `B1`, `T1`, `G1`, `NOR` and `AUT` have only their own division.
+
+## `uefa.json`
+
+Optional. The strength of clubs across leagues, fitted on the finished matches of the Champions, Europa and Conference League in the last 3 completed UEFA seasons (`seasons`). It is written only when at least two of those seasons have usable matches. Otherwise the previous build's `uefa.json` is kept, and when there is none the file is absent.
+
+```json
+{
+  "calibrated": true,
+  "home_advantage": 0.21,
+  "offsets": {"E0": {"attack": 0.0, "defense": 0.0}, "T1": {"attack": -0.18, "defense": 0.15}},
+  "seasons": [2023, 2024, 2025],
+  "backtest": {"held_out": 2025, "matches": 189, "log_loss": 0.99, "log_loss_unadjusted": 1.02, "log_loss_baseline": 1.07}
+}
+```
+
+- `seasons`: UEFA season start years used for the fit, oldest first. `2025` is 2025/26.
+- `home_advantage`: the home advantage of the cross-league goals model below.
+- `offsets`: for each league code with a domestic goals model, the `attack` and `defense` added when a club of that league plays a club of another league. `E0` is the reference and is always `0.0`. A league missing from `offsets` has no probabilities for its UEFA matches.
+- `calibrated`: `true` only when `backtest.log_loss` is below `backtest.log_loss_unadjusted`. When it is `false`, or the file is missing or unreadable, the site shows UEFA matches without probabilities.
+- `backtest`: a walk-forward check on the last season in `seasons` (`held_out`). The fit uses the earlier seasons only. `matches` is the number of held-out matches scored. `log_loss` is the offsets model's 1X2 log loss on them, `log_loss_unadjusted` the same model with no offsets, and `log_loss_baseline` the outcome frequencies of the earlier seasons. Lower is better.
+
+**Cross-league goals model** (site). For home club H in league `LH` and away club A in `LA`:
+`lambda_home = exp(attack[H] + offsets[LH].attack + defense[A] + offsets[LA].defense + home_advantage)`,
+`lambda_away = exp(attack[A] + offsets[LA].attack + defense[H] + offsets[LH].defense)`,
+`rho` = mean of the two leagues' `rho`. `attack` and `defense` are the clubs' values in their league's `goals` object (`leagues/<code>.json`).
+
+**Fit.** Each league's `goals` object is fitted on its matches dated in the 3 seasons before 1 July of the UEFA season start, so a season never sees its own results. The offsets and `home_advantage` are fitted by maximum likelihood (Poisson, Dixon-Coles correction), with an L2 penalty of 5.0 on the squared offsets. Only matches between two different leagues count; same-league UEFA matches are ignored.
+
+**Team names.** A UEFA feed name is resolved to a league and to a football-data name against that league's teams in that season. A name that resolves to no league, or to more than one, gives no league, and the match is left out of the fit and the backtest.

@@ -48,8 +48,19 @@ from matchstats.team_stats import (
     pair_key,
     season_stats,
 )
+from matchstats.uefa_strength import (
+    REFERENCE,
+    UEFA_SEASONS,
+    UefaResult,
+    completed_years,
+    domestic_fits,
+    parse_uefa_results,
+    uefa_document,
+    uefa_result_urls,
+)
 
 TEMP_DIR_NAME = ".data-tmp"
+UEFA_FILE = "uefa.json"
 REQUIRED_LEAGUES = [spec for spec in LEAGUES if spec.required]
 # Optional site leagues are built inside a try: a league without usable data or failing its checks is dropped.
 OPTIONAL_LEAGUES = [spec for spec in LEAGUES if spec.in_site and not spec.required and spec.source == "full"]
@@ -113,6 +124,7 @@ def build(
                 goals_loader or load_goals_only,
                 fixtures_text,
                 feed_text or _cached_feed(cache_dir),
+                previous_uefa=out_dir / UEFA_FILE,
             )
         except (IngestError, ValueError) as error:
             raise BuildError(str(error)) from error
@@ -170,7 +182,25 @@ def validate_output(directory: Path) -> list[str]:
         league = documents.get(f"leagues/{spec.code}.json")
         if league is not None:
             problems.extend(_spec_problems(spec, league, documents.get(f"h2h/{spec.code}.json")))
+
+    # uefa.json is optional: a build with no usable UEFA results and no previous file has none.
+    if UEFA_FILE in documents:
+        problems.extend(_uefa_problems(documents[UEFA_FILE]))
     return problems
+
+
+def _uefa_problems(uefa) -> list[str]:
+    if not isinstance(uefa, dict):
+        return [f"{UEFA_FILE}: invalid"]
+    required = ("calibrated", "home_advantage", "offsets", "seasons", "backtest")
+    missing = [key for key in required if key not in uefa]
+    if missing:
+        return [f"{UEFA_FILE}: missing {', '.join(missing)}"]
+    if not isinstance(uefa["calibrated"], bool):
+        return [f"{UEFA_FILE}: calibrated must be a boolean"]
+    if not isinstance(uefa["offsets"], dict) or uefa["offsets"].get(REFERENCE) != {"attack": 0.0, "defense": 0.0}:
+        return [f"{UEFA_FILE}: offsets must give {REFERENCE} zero attack and defense"]
+    return []
 
 
 def _reject_constant(name: str) -> None:
@@ -185,6 +215,7 @@ def _write_files(
     goals_loader: GoalsLoader,
     fixtures_text: Callable[[], str] | None,
     feed_text: FeedText,
+    previous_uefa: Path,
 ) -> None:
     current = season_code(today)
     seasons = recent_seasons(current, HEAD_TO_HEAD_SEASONS)
@@ -193,21 +224,26 @@ def _write_files(
     fixtures = parse_fixtures_csv(_read_fixtures(cache_dir, fixtures_text))
 
     index_leagues = []
+    # The matches of every league written, by league code: the UEFA strength model fits on them.
+    league_matches: dict[str, list[Match]] = {}
     for spec in REQUIRED_LEAGUES:
         league, h2h = _league_documents(spec, matches, today, current)
         index_leagues.append(_write_league(directory, spec, league, h2h))
+        league_matches[spec.code] = [m for m in matches if m.div == spec.code]
     for spec in OPTIONAL_LEAGUES:
-        entry = _optional_league(directory, spec, loader, seasons, cache_dir, today, current)
+        entry, optional_matches = _optional_league(directory, spec, loader, seasons, cache_dir, today, current)
         if entry is not None:
             index_leagues.append(entry)
+            league_matches[spec.code] = optional_matches
 
     known = {entry["code"]: set(entry["teams"]) for entry in index_leagues}
     # Every league whose files are written: the site leagues plus the goals-only ones. UEFA rows link to these.
     data_known = dict(known)
     for spec in GOALS_ONLY_LEAGUES:
-        teams = _goals_only_league(directory, spec, goals_loader, cache_dir, today)
+        teams, goals_matches = _goals_only_league(directory, spec, goals_loader, cache_dir, today)
         if teams is not None:
             data_known[spec.code] = teams
+            league_matches[spec.code] = goals_matches
     data_known = {spec.code: data_known[spec.code] for spec in LEAGUES if spec.code in data_known}
 
     index = {
@@ -219,6 +255,78 @@ def _write_files(
     }
     _write_json(directory / "index.json", index)
 
+    document = _uefa_document(league_matches, feed_text, current)
+    if document is not None:
+        _write_json(directory / UEFA_FILE, document)
+    else:
+        _keep_previous_uefa(directory, previous_uefa)
+
+
+def uefa_report(
+    cache_dir: Path,
+    today: date,
+    loader: Callable[..., list[Match]] = load_matches,
+    feed_text: FeedText | None = None,
+) -> dict | None:
+    """The uefa.json object a build would write today, for `matchstats uefa-backtest`. None when no usable results."""
+    current = season_code(today)
+    seasons = recent_seasons(current, HEAD_TO_HEAD_SEASONS)
+    full_divisions = list(dict.fromkeys(div for spec in LEAGUES if spec.source == "full" for div in spec.divisions))
+    matches = loader(full_divisions, seasons, cache_dir, current)
+    league_matches: dict[str, list[Match]] = {}
+    for spec in LEAGUES:
+        if spec.source == "full":
+            league_matches[spec.code] = [m for m in matches if m.div == spec.code]
+        else:
+            league_matches[spec.code] = load_goals_only(spec.new_csv, spec.code, cache_dir)
+    return _uefa_document(league_matches, feed_text or _cached_feed(cache_dir), current)
+
+
+def _uefa_document(league_matches: dict[str, list[Match]], feed_text: FeedText, current: str) -> dict | None:
+    """The uefa.json object from the past UEFA results; None when no two seasons of results are usable."""
+    years = completed_years(current, UEFA_SEASONS)
+    domestic = domestic_fits(league_matches, years)
+    results: list[UefaResult] = []
+    for year in years:
+        pool = {code: set(fit["teams"]) for (code, fit_year), fit in domestic.items() if fit_year == year}
+        for name, url in uefa_result_urls([year]).items():
+            results.extend(_uefa_results(name, url, year, feed_text, pool))
+    document = uefa_document(results, domestic)
+    if document is None:
+        logger.warning("%s: no usable past UEFA results", UEFA_FILE)
+    return document
+
+
+def _uefa_results(
+    name: str, url: str, year: int, feed_text: FeedText, pool: dict[str, set[str]]
+) -> list[UefaResult]:
+    """Finished matches of one UEFA feed; a failed feed gives none, never a failed build."""
+    try:
+        text = feed_text(name, url)
+    except IngestError as error:
+        logger.warning("%s: feed skipped: %s", name, error)
+        return []
+    if text is None:
+        logger.warning("%s: feed not found: %s", name, url)
+        return []
+    try:
+        return parse_uefa_results(text, year, lambda team: _team_league(team, pool))
+    except (ValueError, KeyError, TypeError) as error:
+        logger.warning("%s: feed skipped, unreadable: %s", name, error)
+        return []
+
+
+def _keep_previous_uefa(directory: Path, previous: Path) -> None:
+    """Carries the previous uefa.json over when this build has no usable one; a missing or unreadable copy is skipped."""
+    if not previous.is_file():
+        return
+    try:
+        json.loads(previous.read_bytes())
+    except ValueError as error:
+        logger.warning("%s: previous file unreadable, not kept: %s", UEFA_FILE, error)
+        return
+    shutil.copyfile(previous, directory / UEFA_FILE)
+
 
 def _goals_only_league(
     directory: Path,
@@ -226,25 +334,25 @@ def _goals_only_league(
     goals_loader: GoalsLoader,
     cache_dir: Path,
     today: date,
-) -> set[str] | None:
-    """Writes a goals-only league's files and returns its teams; None when it is dropped with a warning."""
+) -> tuple[set[str] | None, list[Match]]:
+    """Writes a goals-only league's files; returns its teams and matches, or (None, []) when it is dropped."""
     try:
         matches = goals_loader(spec.new_csv, spec.code, cache_dir)
     except (IngestError, ValueError) as error:
         logger.warning("%s: league dropped: %s", spec.code, error)
-        return None
+        return None, []
     if not matches:
         logger.warning("%s: league dropped: no usable data", spec.code)
-        return None
+        return None, []
 
     league, h2h = _goals_only_documents(spec.code, matches, today)
     problems = _spec_problems(spec, league, h2h)
     if problems:
         logger.warning("%s: league dropped: %s", spec.code, "; ".join(problems))
-        return None
+        return None, []
     _write_json(directory / "leagues" / f"{spec.code}.json", league)
     _write_json(directory / "h2h" / f"{spec.code}.json", h2h)
-    return set(league["teams"])
+    return set(league["teams"]), matches
 
 
 def _goals_only_documents(code: str, matches: list[Match], today: date) -> tuple[dict, dict]:
@@ -297,23 +405,23 @@ def _optional_league(
     cache_dir: Path,
     today: date,
     current: str,
-) -> dict | None:
-    """Writes an optional league and returns its index entry; None when it is dropped with a warning."""
+) -> tuple[dict | None, list[Match]]:
+    """Writes an optional league; returns its index entry and matches, or (None, []) when it is dropped with a warning."""
     try:
         matches = _optional_matches(loader, spec, seasons, cache_dir, current)
         if not any(m.div == spec.code for m in matches):
             logger.warning("%s: league dropped: no usable data", spec.code)
-            return None
+            return None, []
         league, h2h = _league_documents(spec, matches, today, current)
     except ValueError as error:
         logger.warning("%s: league dropped: %s", spec.code, error)
-        return None
+        return None, []
 
     problems = _spec_problems(spec, league, h2h)
     if problems:
         logger.warning("%s: league dropped: %s", spec.code, "; ".join(problems))
-        return None
-    return _write_league(directory, spec, league, h2h)
+        return None, []
+    return _write_league(directory, spec, league, h2h), [m for m in matches if m.div == spec.code]
 
 
 def _spec_problems(spec: LeagueSpec, league: dict, h2h) -> list[str]:
