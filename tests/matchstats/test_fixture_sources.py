@@ -18,7 +18,8 @@ def read(name: str) -> str:
     return (FIXTURES / name).read_text(encoding="utf-8")
 
 
-def test_league_fixture_urls_use_season_year_and_seven_league_slugs():
+def test_league_fixture_urls_use_season_year_and_nine_league_slugs():
+    # B1 and G1 have no fixturedownload slug: their fixtures come from fixtures.csv only.
     assert league_fixture_urls("2627") == {
         "E0": "https://fixturedownload.com/feed/json/epl-2026",
         "SP1": "https://fixturedownload.com/feed/json/la-liga-2026",
@@ -27,6 +28,8 @@ def test_league_fixture_urls_use_season_year_and_seven_league_slugs():
         "F1": "https://fixturedownload.com/feed/json/ligue-1-2026",
         "E1": "https://fixturedownload.com/feed/json/championship-2026",
         "P1": "https://fixturedownload.com/feed/json/primeira-liga-2026",
+        "N1": "https://fixturedownload.com/feed/json/eredivisie-2026",
+        "T1": "https://fixturedownload.com/feed/json/super-lig-2026",
     }
 
 

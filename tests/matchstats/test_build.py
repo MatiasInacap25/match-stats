@@ -16,6 +16,8 @@ CURRENT = "2627"
 PREVIOUS = "2526"
 TODAY = date(2026, 10, 26)
 LEAGUES = ["E0", "SP1", "I1", "D1", "F1", "E1", "P1"]
+OPTIONAL_CODES = ["N1", "B1", "T1", "G1"]
+SITE_CODES = LEAGUES + OPTIONAL_CODES
 TEAMS = json.loads((Path(__file__).parent / "fixtures" / "teams_2627.json").read_text(encoding="utf-8"))
 
 FIXTURES = (
@@ -78,6 +80,7 @@ def _match(div: str, season: str, when: date, home: str, away: str, rng) -> Matc
 
 
 HEADER_ONLY = "Div,Date,Time,HomeTeam,AwayTeam\n"
+FIXTURES_HEADER = HEADER_ONLY
 
 UPCOMING_FIXTURES = (
     "Div,Date,Time,HomeTeam,AwayTeam\n"
@@ -180,7 +183,7 @@ def test_build_writes_contract_files(tmp_path):
     example_h2h = read_json(CONTRACT_EXAMPLE / "h2h" / "E0.json")
 
     index = read_json(out / "index.json")
-    assert [league["code"] for league in index["leagues"]] == LEAGUES
+    assert [league["code"] for league in index["leagues"]] == SITE_CODES
     assert shape(index) == shape(example_index)
     assert shape(read_json(out / "leagues" / "E0.json")) == shape(example_league)
     assert shape(read_json(out / "h2h" / "E0.json")) == shape(example_h2h)
@@ -516,3 +519,168 @@ def test_cli_exit_codes(tmp_path, capsys):
     bad = ["build", "--out", str(tmp_path / "bad" / "data"), "--cache", str(tmp_path / "cache"), "--today", "2026-10-26"]
     assert main(bad, loader=synthetic_loader(short_div="E0"), fixtures_text=lambda: FIXTURES, feed_text=NO_FEEDS) == 1
     assert "E0" in capsys.readouterr().err
+
+
+NEW_TEAMS = {
+    "N1": [
+        "AZ Alkmaar", "Ajax", "Cambuur", "Den Haag", "Excelsior", "Feyenoord", "For Sittard",
+        "Go Ahead Eagles", "Groningen", "Heerenveen", "Nijmegen", "PSV Eindhoven", "Sparta Rotterdam",
+        "Telstar", "Twente", "Utrecht", "Willem II", "Zwolle",
+    ],
+    "B1": [
+        "Anderlecht", "Antwerp", "Beveren", "Cercle Brugge", "Charleroi", "Club Brugge", "Genk", "Gent",
+        "Kortrijk", "Lommel SK", "Mechelen", "Oud-Heverlee Leuven", "RAAL La Louviere", "St Truiden",
+        "St. Gilloise", "Standard", "Waregem", "Westerlo",
+    ],
+    "T1": [
+        "Alanyaspor", "Amedspor", "Besiktas", "Buyuksehyr", "Corum", "Erzurumspor", "Eyupspor", "Fenerbahce",
+        "Galatasaray", "Gaziantep", "Genclerbirligi", "Goztep", "Kasimpasa", "Kocaelispor", "Konyaspor",
+        "Rizespor", "Samsunspor", "Trabzonspor",
+    ],
+    "G1": [
+        "AEK", "Aris", "Asteras Tripolis", "Atromitos", "Iraklis", "Kalamata", "Kifisia", "Levadeiakos",
+        "OFI Crete", "Olympiakos", "PAOK", "Panathinaikos", "Panetolikos", "Volos NFC",
+    ],
+}
+
+
+def without_league(code: str):
+    """The synthetic loader with no matches for `code`, as when its source has no usable data."""
+    base = synthetic_loader(teams=TEAMS | NEW_TEAMS)
+
+    def load(divs, seasons, cache_dir, current_season):
+        return [m for m in base(divs, seasons, cache_dir, current_season) if m.div != code]
+
+    return load
+
+
+def index_codes(out: Path) -> list[str]:
+    return [league["code"] for league in read_json(out / "index.json")["leagues"]]
+
+
+def test_new_leagues_written(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS))
+
+    assert index_codes(out) == SITE_CODES
+    example_league = read_json(CONTRACT_EXAMPLE / "leagues" / "E0.json")
+    for code in OPTIONAL_CODES:
+        assert (out / "leagues" / f"{code}.json").is_file()
+        assert (out / "h2h" / f"{code}.json").is_file()
+        assert shape(read_json(out / "leagues" / f"{code}.json")) == shape(example_league)
+
+
+def test_optional_league_without_data_is_dropped(tmp_path, caplog):
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=without_league("B1"))
+
+    assert index_codes(out) == [code for code in SITE_CODES if code != "B1"]
+    assert not (out / "leagues" / "B1.json").exists()
+    assert "B1" in caplog.text
+
+
+def test_optional_league_failing_validation_is_dropped(tmp_path, caplog):
+    short_greece = {"G1": [f"G1 Team {i:02d}" for i in range(10)]}
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=synthetic_loader(teams=TEAMS | short_greece))
+
+    assert "G1" not in index_codes(out)
+    assert "G1" in caplog.text
+
+
+def test_required_league_still_fails_build(tmp_path):
+    with pytest.raises(BuildError):
+        run_build(tmp_path / "data", loader=without_league("E0"))
+
+
+def test_upcoming_includes_new_league_matches(tmp_path):
+    feeds = feed_from({"N1": fd_feed(("2026-10-27 15:00:00Z", "PSV", "Ajax"))})
+    fixtures = FIXTURES_HEADER + "B1,27/10/2026,20:45,Anderlecht,Westerlo\n"
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS), fixtures=fixtures, feeds=feeds)
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "N1", "competition_name": "Eredivisie", "kickoff_utc": "2026-10-27T15:00:00Z",
+            "home": "PSV Eindhoven", "away": "Ajax", "league": "N1",
+        },
+        {
+            "competition": "B1", "competition_name": "Jupiler Pro League", "kickoff_utc": "2026-10-27T20:45:00Z",
+            "home": "Anderlecht", "away": "Westerlo", "league": "B1",
+        },
+    ]
+
+
+def test_dropped_league_row_stays_without_league(tmp_path):
+    fixtures = FIXTURES_HEADER + "B1,27/10/2026,20:45,Anderlecht,Westerlo\n"
+    out = tmp_path / "data"
+    run_build(out, loader=without_league("B1"), fixtures=fixtures)
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "B1", "competition_name": "Jupiler Pro League", "kickoff_utc": "2026-10-27T20:45:00Z",
+            "home": "Anderlecht", "away": "Westerlo", "league": None,
+        }
+    ]
+
+
+def cached_csv(div: str, teams: list[str]) -> str:
+    """A football-data season CSV with one round robin of results, as the downloader caches it."""
+    rows = []
+    day = 0
+    for home in teams:
+        for away in teams:
+            if home == away:
+                continue
+            when = date(2026, 8, 1) + timedelta(days=day % 280)
+            rows.append(f"{when:%d/%m/%Y},{home},{away},1,0,10,8,4,3,5,4,2,1,0,0")
+            day += 1
+    return "Date,HomeTeam,AwayTeam,FTHG,FTAG,HS,AS,HST,AST,HC,AC,HY,AY,HR,AR\n" + "\n".join(rows) + "\n"
+
+
+def unreachable_for(divs_down: set[str]):
+    """The synthetic loader, except that the given divisions fail like an unreachable source."""
+    base = synthetic_loader(teams=TEAMS | NEW_TEAMS)
+
+    def load(divs, seasons, cache_dir, current_season):
+        if divs_down & set(divs):
+            raise IngestError("download failed after 3 attempts")
+        return base(divs, seasons, cache_dir, current_season)
+
+    return load
+
+
+def test_unreachable_optional_source_falls_back_to_cached_csv(tmp_path, caplog):
+    cache = tmp_path / "cache"
+    (cache / "2627").mkdir(parents=True)
+    (cache / "2627" / "N1.csv").write_text(cached_csv("N1", NEW_TEAMS["N1"]), encoding="utf-8")
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        build(
+            out_dir=out,
+            cache_dir=cache,
+            today=TODAY,
+            loader=unreachable_for({"N1"}),
+            fixtures_text=lambda: FIXTURES,
+            feed_text=NO_FEEDS,
+        )
+
+    assert "N1" in index_codes(out)
+    assert read_json(out / "h2h" / "N1.json")["pairs"]["Ajax|Feyenoord"] != []
+    assert "N1" in caplog.text
+
+
+def test_unreachable_optional_source_without_cache_is_dropped(tmp_path, caplog):
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=unreachable_for({"N1"}))
+
+    assert "N1" not in index_codes(out)
+    assert "N1" in caplog.text
+
+
+def test_unreachable_required_source_still_fails_build(tmp_path):
+    with pytest.raises(BuildError):
+        run_build(tmp_path / "data", loader=unreachable_for({"E0"}))

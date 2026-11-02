@@ -25,10 +25,14 @@ from matchstats.ingest import (
     download,
     load_matches,
     parse_fixtures_csv,
+    parse_season_csv,
+    season_url,
 )
 from matchstats.leagues import (
-    COUNTRY_DIVISIONS,
+    LEAGUES,
+    SITE_LEAGUES,
     TOP_LEAGUES,
+    LeagueSpec,
     recent_seasons,
     season_code,
     season_label,
@@ -45,7 +49,11 @@ from matchstats.team_stats import (
 )
 
 TEMP_DIR_NAME = ".data-tmp"
-MIN_TEAMS = 16
+REQUIRED_LEAGUES = [spec for spec in LEAGUES if spec.required]
+# Optional site leagues are built inside a try: a league without usable data or failing its checks is dropped.
+OPTIONAL_LEAGUES = [spec for spec in LEAGUES if spec.in_site and not spec.required and spec.source == "full"]
+OPTIONAL_CODES = [spec.code for spec in OPTIONAL_LEAGUES]
+SPECS = {spec.code: spec for spec in LEAGUES}
 GOAL_SEASONS = 3
 STAT_SEASONS = 2
 HEAD_TO_HEAD_SEASONS = 10
@@ -55,7 +63,7 @@ KICKOFF_ZONE = ZoneInfo("Europe/London")  # football-data writes UK local kickof
 VIEWER_ZONE = ZoneInfo("Europe/Madrid")
 CUP_NAME = "DFB-Pokal"
 COMPETITION_NAMES = {
-    **TOP_LEAGUES,
+    **SITE_LEAGUES,
     "UCL": "Champions League",
     "UEL": "Europa League",
     "UECL": "Conference League",
@@ -122,16 +130,22 @@ def validate_output(directory: Path) -> list[str]:
 
     leagues = index.get("leagues") or []
     codes = [entry.get("code") for entry in leagues]
-    if codes != list(TOP_LEAGUES):
-        problems.append(f"index.json: leagues must be {', '.join(TOP_LEAGUES)} in that order, found {codes}")
+    required_codes, optional_codes = codes[: len(TOP_LEAGUES)], codes[len(TOP_LEAGUES) :]
+    if required_codes != list(TOP_LEAGUES) or optional_codes != [c for c in OPTIONAL_CODES if c in optional_codes]:
+        problems.append(
+            f"index.json: leagues must be {', '.join(TOP_LEAGUES)}, then optional leagues in order "
+            f"({', '.join(OPTIONAL_CODES)}), found {codes}"
+        )
     if not isinstance(index.get("upcoming"), list):
         problems.append("index.json: upcoming must be a list")
 
     for entry in leagues:
         code = entry.get("code")
         teams = entry.get("teams") or []
-        if len(teams) < MIN_TEAMS:
-            problems.append(f"index.json: {code} has {len(teams)} teams, expected at least {MIN_TEAMS}")
+        spec = SPECS.get(code)
+        minimum = spec.min_teams if spec is not None else 0
+        if len(teams) < minimum:
+            problems.append(f"index.json: {code} has {len(teams)} teams, expected at least {minimum}")
         problems.extend(_league_problems(code, teams, documents.get(f"leagues/{code}.json")))
         problems.extend(_h2h_problems(code, teams, documents.get(f"h2h/{code}.json")))
     return problems
@@ -150,19 +164,19 @@ def _write_files(
     feed_text: FeedText,
 ) -> None:
     current = season_code(today)
-    divisions = list(dict.fromkeys(div for code in TOP_LEAGUES for div in COUNTRY_DIVISIONS[code]))
-    matches = loader(divisions, recent_seasons(current, HEAD_TO_HEAD_SEASONS), cache_dir, current)
+    seasons = recent_seasons(current, HEAD_TO_HEAD_SEASONS)
+    divisions = list(dict.fromkeys(div for spec in REQUIRED_LEAGUES for div in spec.divisions))
+    matches = loader(divisions, seasons, cache_dir, current)
     fixtures = parse_fixtures_csv(_read_fixtures(cache_dir, fixtures_text))
 
     index_leagues = []
-    for code in TOP_LEAGUES:
-        top = [m for m in matches if m.div == code]
-        country = [m for m in matches if m.div in COUNTRY_DIVISIONS[code]]
-        league = _league_file(code, top, today, current)
-        teams = sorted(league["teams"])
-        _write_json(directory / "leagues" / f"{code}.json", league)
-        _write_json(directory / "h2h" / f"{code}.json", {"league": code, "pairs": _head_to_head(teams, country)})
-        index_leagues.append({"code": code, "name": TOP_LEAGUES[code], "teams": teams})
+    for spec in REQUIRED_LEAGUES:
+        league, h2h = _league_documents(spec, matches, today, current)
+        index_leagues.append(_write_league(directory, spec, league, h2h))
+    for spec in OPTIONAL_LEAGUES:
+        entry = _optional_league(directory, spec, loader, seasons, cache_dir, today, current)
+        if entry is not None:
+            index_leagues.append(entry)
 
     known = {entry["code"]: set(entry["teams"]) for entry in index_leagues}
     index = {
@@ -173,6 +187,89 @@ def _write_files(
         "upcoming": _upcoming_fixtures(fixtures, today, current, known, feed_text),
     }
     _write_json(directory / "index.json", index)
+
+
+def _league_documents(spec: LeagueSpec, matches: list[Match], today: date, current: str) -> tuple[dict, dict]:
+    """The league file and the head-to-head file of one league, from the matches of its divisions."""
+    top = [m for m in matches if m.div == spec.code]
+    country = [m for m in matches if m.div in spec.divisions]
+    league = _league_file(spec.code, top, today, current)
+    return league, {"league": spec.code, "pairs": _head_to_head(sorted(league["teams"]), country)}
+
+
+def _write_league(directory: Path, spec: LeagueSpec, league: dict, h2h: dict) -> dict:
+    _write_json(directory / "leagues" / f"{spec.code}.json", league)
+    _write_json(directory / "h2h" / f"{spec.code}.json", h2h)
+    return {"code": spec.code, "name": spec.name, "teams": sorted(league["teams"])}
+
+
+def _optional_league(
+    directory: Path,
+    spec: LeagueSpec,
+    loader: Callable[..., list[Match]],
+    seasons: list[str],
+    cache_dir: Path,
+    today: date,
+    current: str,
+) -> dict | None:
+    """Writes an optional league and returns its index entry; None when it is dropped with a warning."""
+    try:
+        matches = _optional_matches(loader, spec, seasons, cache_dir, current)
+        if not any(m.div == spec.code for m in matches):
+            logger.warning("%s: league dropped: no usable data", spec.code)
+            return None
+        league, h2h = _league_documents(spec, matches, today, current)
+    except ValueError as error:
+        logger.warning("%s: league dropped: %s", spec.code, error)
+        return None
+
+    problems = _optional_problems(spec, league, h2h)
+    if problems:
+        logger.warning("%s: league dropped: %s", spec.code, "; ".join(problems))
+        return None
+    return _write_league(directory, spec, league, h2h)
+
+
+def _optional_problems(spec: LeagueSpec, league: dict, h2h: dict) -> list[str]:
+    teams = sorted(league["teams"])
+    problems = []
+    if len(teams) < spec.min_teams:
+        problems.append(f"{len(teams)} teams, expected at least {spec.min_teams}")
+    problems.extend(_league_problems(spec.code, teams, league))
+    problems.extend(_h2h_problems(spec.code, teams, h2h))
+    return problems
+
+
+def _optional_matches(
+    loader: Callable[..., list[Match]],
+    spec: LeagueSpec,
+    seasons: list[str],
+    cache_dir: Path,
+    current: str,
+) -> list[Match]:
+    """Matches of an optional league. An unreachable source falls back to the cached CSVs it already has."""
+    try:
+        return loader(list(spec.divisions), seasons, cache_dir, current)
+    except IngestError as error:
+        logger.warning("%s: source unreachable, using cached CSVs: %s", spec.code, error)
+    return _cached_matches(spec.divisions, seasons, cache_dir)
+
+
+def _cached_matches(divisions: tuple[str, ...], seasons: list[str], cache_dir: Path) -> list[Match]:
+    matches = []
+    for season in seasons:
+        for div in divisions:
+            cache_file = cache_dir / season / f"{div}.csv"
+            if not cache_file.exists():
+                continue
+            text = download(season_url(season, div), cache_file, refresh=False)
+            if text is None:
+                continue
+            try:
+                matches.extend(parse_season_csv(text, div, season))
+            except IngestError as error:
+                logger.warning("%s %s: cached CSV skipped: %s", div, season, error)
+    return matches
 
 
 def _league_file(code: str, top: list[Match], today: date, current: str) -> dict:
@@ -224,7 +321,12 @@ def _upcoming_fixtures(
     by the viewer's local date, so the window is wider than two days.
     """
     found: list[UpcomingFixture] = []
-    for code, url in league_fixture_urls(current).items():
+    feeds = league_fixture_urls(current)
+    for code in SITE_LEAGUES:
+        url = feeds.get(code)
+        if url is None:
+            found.extend(_csv_rows(fixtures, code))
+            continue
         rows = _feed_rows(code, url, feed_text, parse_fixturedownload)
         if rows is None:
             logger.info("%s: using fixtures.csv instead of the feed", code)
@@ -278,15 +380,15 @@ def _csv_rows(fixtures: list[Fixture], code: str) -> list[UpcomingFixture]:
 
 
 def _upcoming_entry(fixture: UpcomingFixture, known: dict[str, set[str]]) -> dict:
-    if fixture.competition in TOP_LEAGUES:
-        league = fixture.competition
-        home = _football_data_name(fixture.home, [league], known)
-        away = _football_data_name(fixture.away, [league], known)
+    """`known` holds only the leagues present in the output: a league dropped by the build has no link."""
+    if fixture.competition in SITE_LEAGUES:
+        league = fixture.competition if fixture.competition in known else None
+        scope = [league] if league is not None else []
     else:
         league = _shared_league(fixture, known)
-        scope = [league] if league is not None else list(TOP_LEAGUES)
-        home = _football_data_name(fixture.home, scope, known)
-        away = _football_data_name(fixture.away, scope, known)
+        scope = [league] if league is not None else list(known)
+    home = _football_data_name(fixture.home, scope, known)
+    away = _football_data_name(fixture.away, scope, known)
     return {
         "competition": fixture.competition,
         "competition_name": COMPETITION_NAMES[fixture.competition],
@@ -298,11 +400,11 @@ def _upcoming_entry(fixture: UpcomingFixture, known: dict[str, set[str]]) -> dic
 
 
 def _shared_league(fixture: UpcomingFixture, known: dict[str, set[str]]) -> str | None:
-    """The one top league whose current teams include both sides; None when there is not exactly one."""
+    """The one site league whose current teams include both sides; None when there is not exactly one."""
     shared = [
         code
-        for code in TOP_LEAGUES
-        if resolve(fixture.home, known[code]) is not None and resolve(fixture.away, known[code]) is not None
+        for code, teams in known.items()
+        if resolve(fixture.home, teams) is not None and resolve(fixture.away, teams) is not None
     ]
     return shared[0] if len(shared) == 1 else None
 
@@ -310,7 +412,7 @@ def _shared_league(fixture: UpcomingFixture, known: dict[str, set[str]]) -> str 
 def _football_data_name(name: str, leagues: list[str], known: dict[str, set[str]]) -> str:
     """The football-data name in the first of `leagues` that knows it, else the source name."""
     for code in leagues:
-        resolved = resolve(name, known[code])
+        resolved = resolve(name, known.get(code, set()))
         if resolved is not None:
             return resolved
     return name

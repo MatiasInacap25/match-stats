@@ -5,6 +5,8 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from zoneinfo import ZoneInfo
 
+from matchstats.leagues import LEAGUES
+
 GERMAN_ZONE = ZoneInfo("Europe/Berlin")  # OpenLigaDB gives German local time without an offset
 CUP_CODE = "DFB"
 _UEFA_SLUGS = {
@@ -13,15 +15,6 @@ _UEFA_SLUGS = {
     "UECL": "conference-league",
 }
 
-_LEAGUE_SLUGS = {
-    "E0": "epl",
-    "SP1": "la-liga",
-    "I1": "serie-a",
-    "D1": "bundesliga",
-    "F1": "ligue-1",
-    "E1": "championship",
-    "P1": "primeira-liga",
-}
 
 
 @dataclass(frozen=True)
@@ -38,8 +31,13 @@ def _season_year(season: str) -> int:
 
 
 def league_fixture_urls(season: str) -> dict[str, str]:
+    """fixturedownload feed of every site league that has a slug. B1 and G1 have none: their fixtures come from fixtures.csv."""
     year = _season_year(season)
-    return {code: f"https://fixturedownload.com/feed/json/{slug}-{year}" for code, slug in _LEAGUE_SLUGS.items()}
+    return {
+        spec.code: f"https://fixturedownload.com/feed/json/{spec.fixture_slug}-{year}"
+        for spec in LEAGUES
+        if spec.in_site and spec.fixture_slug is not None
+    }
 
 
 def cup_fixture_urls(season: str) -> dict[str, str]:

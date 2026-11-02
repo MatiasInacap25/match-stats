@@ -34,7 +34,41 @@ EXTRA_FEED_TEAMS = {
         "Paris FC", "Paris Saint-Germain", "RC Lens", "RC Strasbourg Alsace", "Stade Brestois 29",
         "Stade Rennais FC", "Toulouse FC",
     ],
+    "N1": [
+        "ADO Den Haag", "AZ", "Ajax", "Excelsior Rotterdam", "FC Groningen", "FC Twente", "FC Utrecht",
+        "Feyenoord", "Fortuna Sittard", "Go Ahead Eagles", "N.E.C. Nijmegen", "PEC Zwolle", "PSV",
+        "SC Cambuur", "Sparta Rotterdam", "Telstar", "Willem II", "sc Heerenveen",
+    ],
+    "T1": [
+        "Alanyaspor", "Amedspor", "Besiktas", "Erzurumspor", "Eyüpspor", "Fenerbahçe", "Galatasaray",
+        "Gaziantep", "Gençlerbirligi", "Göztepe", "Istanbul Basaksehir", "Kasimpasa", "Kocaelispor",
+        "Konyaspor", "Samsunspor", "Trabzonspor", "Çaykur Rizespor", "Çorum",
+    ],
 }
+
+# football-data.co.uk names of the new leagues, from their 2026/27 season files. B1 and G1 have no feed of their own.
+NEW_LEAGUE_TEAMS: dict[str, list[str]] = {
+    "N1": [
+        "AZ Alkmaar", "Ajax", "Cambuur", "Den Haag", "Excelsior", "Feyenoord", "For Sittard",
+        "Go Ahead Eagles", "Groningen", "Heerenveen", "Nijmegen", "PSV Eindhoven", "Sparta Rotterdam",
+        "Telstar", "Twente", "Utrecht", "Willem II", "Zwolle",
+    ],
+    "B1": [
+        "Anderlecht", "Antwerp", "Beveren", "Cercle Brugge", "Charleroi", "Club Brugge", "Genk", "Gent",
+        "Kortrijk", "Lommel SK", "Mechelen", "Oud-Heverlee Leuven", "RAAL La Louviere", "St Truiden",
+        "St. Gilloise", "Standard", "Waregem", "Westerlo",
+    ],
+    "T1": [
+        "Alanyaspor", "Amedspor", "Besiktas", "Buyuksehyr", "Corum", "Erzurumspor", "Eyupspor", "Fenerbahce",
+        "Galatasaray", "Gaziantep", "Genclerbirligi", "Goztep", "Kasimpasa", "Kocaelispor", "Konyaspor",
+        "Rizespor", "Samsunspor", "Trabzonspor",
+    ],
+    "G1": [
+        "AEK", "Aris", "Asteras Tripolis", "Atromitos", "Iraklis", "Kalamata", "Kifisia", "Levadeiakos",
+        "OFI Crete", "Olympiakos", "PAOK", "Panathinaikos", "Panetolikos", "Volos NFC",
+    ],
+}
+ALL_CURRENT_TEAMS: dict[str, list[str]] = {**CURRENT_TEAMS, **NEW_LEAGUE_TEAMS}
 
 
 def feed_team_names(filename: str) -> set[str]:
@@ -92,11 +126,11 @@ def test_every_team_in_recorded_league_sample_resolves(league):
 
 @pytest.mark.parametrize("league", sorted(EXTRA_FEED_TEAMS))
 def test_every_team_in_other_top_league_feed_resolves(league):
-    known = set(CURRENT_TEAMS[league])
+    known = set(ALL_CURRENT_TEAMS[league])
     unresolved = sorted(name for name in EXTRA_FEED_TEAMS[league] if resolve(name, known) is None)
     assert unresolved == []
 
 
 def test_every_alias_targets_a_current_team():
-    current = {team for teams in CURRENT_TEAMS.values() for team in teams}
+    current = {team for teams in ALL_CURRENT_TEAMS.values() for team in teams}
     assert sorted(target for target in set(ALIASES.values()) if target not in current) == []
