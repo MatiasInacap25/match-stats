@@ -19,7 +19,7 @@
       },
       "Dortmund": {
         "attack": 0.3069,
-        "defense": -0.1695
+        "defense": -0.1694
       },
       "Ein Frankfurt": {
         "attack": 0.1954,
@@ -35,7 +35,7 @@
       },
       "Freiburg": {
         "attack": 0.1377,
-        "defense": 0.2151
+        "defense": 0.2152
       },
       "Hamburg": {
         "attack": -0.2241,
@@ -54,7 +54,7 @@
         "defense": 0.584
       },
       "Leverkusen": {
-        "attack": 0.3482,
+        "attack": 0.3481,
         "defense": 0.1068
       },
       "M'gladbach": {
@@ -63,10 +63,10 @@
       },
       "Mainz": {
         "attack": 0.0957,
-        "defense": 0.2206
+        "defense": 0.2207
       },
       "Paderborn": {
-        "attack": -0.4827,
+        "attack": -0.4826,
         "defense": 0.023
       },
       "RB Leipzig": {

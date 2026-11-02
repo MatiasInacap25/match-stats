@@ -7,15 +7,15 @@
     "teams": {
       "Arsenal": {
         "attack": 0.3234,
-        "defense": -0.46
+        "defense": -0.4601
       },
       "Aston Villa": {
         "attack": 0.1466,
-        "defense": 0.0941
+        "defense": 0.094
       },
       "Bournemouth": {
-        "attack": 0.186,
-        "defense": 0.1233
+        "attack": 0.1861,
+        "defense": 0.1232
       },
       "Brentford": {
         "attack": 0.226,
@@ -26,16 +26,16 @@
         "defense": 0.0457
       },
       "Burnley": {
-        "attack": -0.2178,
+        "attack": -0.2179,
         "defense": 0.477
       },
       "Chelsea": {
         "attack": 0.2692,
-        "defense": 0.17
+        "defense": 0.1699
       },
       "Coventry": {
-        "attack": -0.3965,
-        "defense": 0.3623
+        "attack": -0.3966,
+        "defense": 0.3622
       },
       "Crystal Palace": {
         "attack": -0.0699,
@@ -58,12 +58,12 @@
         "defense": 0.5666
       },
       "Leeds": {
-        "attack": 0.0157,
+        "attack": 0.0158,
         "defense": 0.0313
       },
       "Leicester": {
         "attack": -0.45,
-        "defense": 0.5396
+        "defense": 0.5395
       },
       "Liverpool": {
         "attack": 0.3224,
@@ -99,7 +99,7 @@
       },
       "West Ham": {
         "attack": -0.0355,
-        "defense": 0.3019
+        "defense": 0.3018
       },
       "Wolves": {
         "attack": -0.2969,

@@ -3,7 +3,7 @@
   "season": "2026/27",
   "goals": {
     "home_advantage": 0.2118,
-    "rho": -0.0441,
+    "rho": -0.044,
     "teams": {
       "Birmingham": {
         "attack": 0.025,
@@ -66,7 +66,7 @@
         "defense": 0.2819
       },
       "Middlesbrough": {
-        "attack": 0.2339,
+        "attack": 0.234,
         "defense": 0.0656
       },
       "Millwall": {
@@ -106,12 +106,12 @@
         "defense": 0.4645
       },
       "Southampton": {
-        "attack": 0.3481,
+        "attack": 0.348,
         "defense": 0.0118
       },
       "Stoke": {
         "attack": -0.1396,
-        "defense": 0.1609
+        "defense": 0.161
       },
       "Sunderland": {
         "attack": -0.1131,
@@ -135,7 +135,7 @@
       },
       "Wolves": {
         "attack": 0.2039,
-        "defense": 0.0939
+        "defense": 0.0938
       },
       "Wrexham": {
         "attack": 0.1011,

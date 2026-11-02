@@ -10,7 +10,7 @@
         "defense": 0.2285
       },
       "Auxerre": {
-        "attack": -0.0449,
+        "attack": -0.045,
         "defense": 0.1912
       },
       "Brest": {
@@ -51,10 +51,10 @@
       },
       "Monaco": {
         "attack": 0.3002,
-        "defense": 0.0681
+        "defense": 0.0682
       },
       "Montpellier": {
-        "attack": -0.7063,
+        "attack": -0.7062,
         "defense": 0.6054
       },
       "Nantes": {
@@ -83,18 +83,18 @@
       },
       "St Etienne": {
         "attack": -0.0759,
-        "defense": 0.6055
+        "defense": 0.6054
       },
       "Strasbourg": {
         "attack": 0.2647,
         "defense": 0.1996
       },
       "Toulouse": {
-        "attack": 0.0626,
+        "attack": 0.0625,
         "defense": 0.085
       },
       "Troyes": {
-        "attack": -0.6203,
+        "attack": -0.6202,
         "defense": 0.4578
       }
     }

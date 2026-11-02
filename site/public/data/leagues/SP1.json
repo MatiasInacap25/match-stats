@@ -62,7 +62,7 @@
         "defense": 0.2389
       },
       "Malaga": {
-        "attack": -0.4899,
+        "attack": -0.4898,
         "defense": 0.3627
       },
       "Mallorca": {
@@ -75,7 +75,7 @@
       },
       "Oviedo": {
         "attack": -0.5309,
-        "defense": 0.1642
+        "defense": 0.1643
       },
       "Real Madrid": {
         "attack": 0.5296,
@@ -91,10 +91,10 @@
       },
       "Sociedad": {
         "attack": 0.2055,
-        "defense": 0.2069
+        "defense": 0.207
       },
       "Valencia": {
-        "attack": -0.1076,
+        "attack": -0.1077,
         "defense": 0.1044
       },
       "Valladolid": {
