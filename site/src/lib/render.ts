@@ -189,6 +189,11 @@ const VENUE_BADGES: Record<string, { letter: string; label: string }> = {
   A: { letter: "V", label: "Visitante" },
 };
 
+/** `for–against` pair with a dash for each missing side, e.g. "2–null" → "2–—". */
+function pairText(forValue: number | null, againstValue: number | null, digits = 0): string {
+  return `${formatValue(forValue, digits)}${DASH_SEP}${formatValue(againstValue, digits)}`;
+}
+
 /** A team's recent matches as compact two-line rows: result, date, opponent and score, then the detail line. */
 export function renderLastMatches(team: string, matches: LastMatch[]): string {
   if (matches.length === 0) return `<p class="empty">Sin partidos recientes.</p>`;
@@ -197,12 +202,25 @@ export function renderLastMatches(team: string, matches: LastMatch[]): string {
     .map((match) => {
       const chip = RESULT_CHIPS[match.result] ?? DASH;
       const venue = VENUE_BADGES[match.venue] ?? VENUE_BADGES.A;
+      // Goals-only rows carry no stats at all: the stat line is left out rather than filled with dashes.
+      const hasStats = [
+        match.xg_for,
+        match.xg_against,
+        match.shots_for,
+        match.shots_against,
+        match.shots_on_target_for,
+        match.shots_on_target_against,
+        match.corners_for,
+        match.corners_against,
+        match.cards_for,
+        match.cards_against,
+      ].some((value) => value !== null);
       const detail = [
-        `xG ${formatValue(match.xg_for, 1)}${DASH_SEP}${formatValue(match.xg_against, 1)}`,
-        `Tiros ${match.shots_for}${DASH_SEP}${match.shots_against}`,
-        `Al arco ${match.shots_on_target_for}${DASH_SEP}${match.shots_on_target_against}`,
-        `Córners ${match.corners_for}${DASH_SEP}${match.corners_against}`,
-        `Tarjetas ${match.cards_for}${DASH_SEP}${match.cards_against}`,
+        `xG ${pairText(match.xg_for, match.xg_against, 1)}`,
+        `Tiros ${pairText(match.shots_for, match.shots_against)}`,
+        `Al arco ${pairText(match.shots_on_target_for, match.shots_on_target_against)}`,
+        `Córners ${pairText(match.corners_for, match.corners_against)}`,
+        `Tarjetas ${pairText(match.cards_for, match.cards_against)}`,
       ].join(" · ");
       return `<li class="recent-item">
   <div class="recent-main">
@@ -211,8 +229,7 @@ export function renderLastMatches(team: string, matches: LastMatch[]): string {
     <span class="venue" role="img" aria-label="${venue.label}" title="${venue.label}"><span aria-hidden="true">${venue.letter}</span></span>
     <span class="recent-opp">${escapeHtml(match.opponent)}</span>
     <strong class="recent-score num">${match.goals_for}${DASH_SEP}${match.goals_against}</strong>
-  </div>
-  <p class="recent-detail num">${detail}</p>
+  </div>${hasStats ? `\n  <p class="recent-detail num">${detail}</p>` : ""}
 </li>`;
     })
     .join("\n");

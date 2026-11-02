@@ -15,6 +15,7 @@ const base = import.meta.env.BASE_URL;
 
   <script>
     import { loadHeadToHead, loadIndex, loadLeague } from "../lib/data";
+    import { shortName } from "../lib/leagues";
     import { TeamNotFoundError, matchMarkets } from "../lib/markets";
     import type { Market } from "../lib/markets";
     import {
@@ -62,8 +63,100 @@ const base = import.meta.env.BASE_URL;
       });
     }
 
+    /** Names of the UEFA competitions a cross-league match can come from. */
+    const UEFA_NAMES: Record<string, string> = {
+      UCL: "Champions League",
+      UEL: "Europa League",
+      UECL: "Conference League",
+    };
+
+    const SEASON_CONTROLS = `<div class="seg" role="radiogroup" aria-label="Temporada por condición">
+    <button type="button" role="radio" class="seg-btn" data-side="all" aria-checked="true" tabindex="0">Todo</button>
+    <button type="button" role="radio" class="seg-btn" data-side="home" aria-checked="false" tabindex="-1">Local</button>
+    <button type="button" role="radio" class="seg-btn" data-side="away" aria-checked="false" tabindex="-1">Visitante</button>
+  </div>`;
+
+    /**
+     * UEFA match between teams of different leagues: each team comes from its own league file.
+     * No head to head and no markets yet.
+     */
+    async function mainUefa(params: URLSearchParams): Promise<void> {
+      const competition = params.get("competition") ?? "";
+      const home = params.get("home") ?? "";
+      const away = params.get("away") ?? "";
+      const homeCode = params.get("home_league") ?? "";
+      const awayCode = params.get("away_league") ?? "";
+
+      if (!Object.hasOwn(UEFA_NAMES, competition) || !home || !away || !homeCode || !awayCode) {
+        fail(SELECT_ERROR);
+        return;
+      }
+
+      let homeLeague: LeagueData;
+      let awayLeague: LeagueData;
+      try {
+        [homeLeague, awayLeague] = await Promise.all([loadLeague(homeCode), loadLeague(awayCode)]);
+      } catch (error) {
+        console.error(error);
+        fail(LOAD_ERROR);
+        return;
+      }
+
+      if (!Object.hasOwn(homeLeague.teams, home) || !Object.hasOwn(awayLeague.teams, away)) {
+        fail(NOT_FOUND);
+        return;
+      }
+
+      const homeTeam = homeLeague.teams[home];
+      const awayTeam = awayLeague.teams[away];
+      const homeLeagueName = shortName(homeCode, homeCode);
+      const awayLeagueName = shortName(awayCode, awayCode);
+      let side: SeasonSideName = "all";
+
+      document.title = `${home} vs ${away} · Match Stats`;
+      app!.innerHTML = `<header class="match-head">
+  <h1 class="match-title">${escapeHtml(home)} <span class="team-league muted">${escapeHtml(homeLeagueName)}</span> <span class="vs">vs</span> ${escapeHtml(away)} <span class="team-league muted">${escapeHtml(awayLeagueName)}</span></h1>
+  <p class="match-sub muted">${escapeHtml(UEFA_NAMES[competition])}</p>
+</header>
+<section>
+  <h2>Temporada</h2>
+  ${SEASON_CONTROLS}
+  <div id="season">${renderSeasonComparison(homeTeam.season, awayTeam.season, side, [home, away])}</div>
+</section>
+<section>
+  <h2>Últimos 6 · ${escapeHtml(home)}</h2>
+  ${renderLastMatches(home, homeTeam.last6)}
+</section>
+<section>
+  <h2>Últimos 6 · ${escapeHtml(away)}</h2>
+  ${renderLastMatches(away, awayTeam.last6)}
+</section>
+${backHome()}`;
+
+      const sideButtons = [...app!.querySelectorAll<HTMLButtonElement>("[role='radio'][data-side]")];
+
+      function selectSide(next: HTMLButtonElement): void {
+        side = next.dataset.side as SeasonSideName;
+        for (const button of sideButtons) {
+          const active = button === next;
+          button.setAttribute("aria-checked", String(active));
+          button.tabIndex = active ? 0 : -1;
+        }
+        const season = document.getElementById("season");
+        if (season) season.innerHTML = renderSeasonComparison(homeTeam.season, awayTeam.season, side, [home, away]);
+      }
+
+      sideButtons.forEach((button) => button.addEventListener("click", () => selectSide(button)));
+      bindArrowKeys(sideButtons, selectSide);
+    }
+
     async function main(): Promise<void> {
       const params = new URLSearchParams(window.location.search);
+      if (params.has("competition")) {
+        await mainUefa(params);
+        return;
+      }
+
       const code = params.get("league") ?? "";
       const home = params.get("home") ?? "";
       const away = params.get("away") ?? "";
@@ -122,11 +215,7 @@ ${renderOutcomes(markets)}
 <div id="market-panel" role="tabpanel" aria-labelledby="market-tab-match" tabindex="0">${renderMarketRows(markets, scope)}</div>
 <section>
   <h2>Temporada</h2>
-  <div class="seg" role="radiogroup" aria-label="Temporada por condición">
-    <button type="button" role="radio" class="seg-btn" data-side="all" aria-checked="true" tabindex="0">Todo</button>
-    <button type="button" role="radio" class="seg-btn" data-side="home" aria-checked="false" tabindex="-1">Local</button>
-    <button type="button" role="radio" class="seg-btn" data-side="away" aria-checked="false" tabindex="-1">Visitante</button>
-  </div>
+  ${SEASON_CONTROLS}
   <div id="season">${renderSeasonComparison(league.teams[home].season, league.teams[away].season, side, [home, away])}</div>
 </section>
 <section>
