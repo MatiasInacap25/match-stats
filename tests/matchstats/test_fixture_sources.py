@@ -8,6 +8,7 @@ from matchstats.fixture_sources import (
     league_fixture_urls,
     parse_fixturedownload,
     parse_openligadb,
+    uefa_fixture_urls,
 )
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -31,6 +32,14 @@ def test_league_fixture_urls_use_season_year_and_seven_league_slugs():
 
 def test_cup_fixture_urls_point_to_dfb_pokal_for_the_season_year():
     assert cup_fixture_urls("2627") == {"DFB": "https://api.openligadb.de/getmatchdata/dfb/2026"}
+
+
+def test_uefa_fixture_urls_use_season_year_and_three_competition_slugs():
+    assert uefa_fixture_urls("2627") == {
+        "UCL": "https://fixturedownload.com/feed/json/champions-league-2026",
+        "UEL": "https://fixturedownload.com/feed/json/europa-league-2026",
+        "UECL": "https://fixturedownload.com/feed/json/conference-league-2026",
+    }
 
 
 def test_parse_fixturedownload_reads_utc_dates_and_names():
