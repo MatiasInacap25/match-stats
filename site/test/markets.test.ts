@@ -1,14 +1,18 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import E0 from "../../contract/example/leagues/E0.json";
+import { loadUefa } from "../src/lib/data";
 import { probOver } from "../src/lib/probability";
 import {
   MATCH_LINES,
   TEAM_LINES,
   TeamNotFoundError,
+  crossLeagueAvailable,
+  crossLeagueMarkets,
   matchMarkets,
+  type CrossLeagueSide,
   type Market,
 } from "../src/lib/markets";
-import type { LeagueData } from "../src/lib/types";
+import type { LeagueData, UefaData, UefaOffset } from "../src/lib/types";
 
 const league: LeagueData = E0;
 
@@ -115,5 +119,149 @@ describe("matchMarkets", () => {
   it("throws TeamNotFoundError for a team missing from the league", () => {
     expect(() => matchMarkets(league, "Arsenal", "Nowhere FC")).toThrow(TeamNotFoundError);
     expect(() => matchMarkets(league, "Nowhere FC", "Brighton")).toThrow(TeamNotFoundError);
+  });
+});
+
+/** A copy of the example league under another code; `cornersScale` multiplies its corner averages. */
+function leagueAs(code: string, cornersScale = 1): LeagueData {
+  const copy: LeagueData = structuredClone(E0);
+  copy.league = code;
+  if (copy.stats) {
+    copy.stats.corners.avg_home *= cornersScale;
+    copy.stats.corners.avg_away *= cornersScale;
+  }
+  return copy;
+}
+
+function uefaWith(offsets: Record<string, UefaOffset> = {}): UefaData {
+  return {
+    calibrated: true,
+    home_advantage: E0.goals.home_advantage,
+    offsets: { E0: { attack: 0, defense: 0 }, SP1: { attack: 0, defense: 0 }, ...offsets },
+    seasons: [2025],
+    backtest: {
+      held_out: 2025,
+      matches: 189,
+      log_loss: 0.99,
+      log_loss_unadjusted: 1.02,
+      log_loss_baseline: 1.07,
+    },
+  };
+}
+
+function side(name: string, code: string, league: LeagueData): CrossLeagueSide {
+  return { name, code, league };
+}
+
+describe("crossLeagueMarkets", () => {
+  it("matches the league model when offsets are zero and both teams share the league", () => {
+    const markets = crossLeagueMarkets(side("Arsenal", "E0", E0), side("Brighton", "E0", E0), uefaWith());
+    const expected = matchMarkets(E0, "Arsenal", "Brighton");
+
+    for (const id of ["1", "X", "2", "btts", "goals_over", "corners_over", "shots_home_over"]) {
+      expectClose(find(markets, id).probability, find(expected, id).probability);
+    }
+  });
+
+  it("raises the home win probability when the home league's attack offset is positive", () => {
+    const away = leagueAs("SP1");
+    const base = crossLeagueMarkets(side("Arsenal", "E0", E0), side("Brighton", "SP1", away), uefaWith());
+    const boosted = crossLeagueMarkets(
+      side("Arsenal", "E0", E0),
+      side("Brighton", "SP1", away),
+      uefaWith({ E0: { attack: 0.2, defense: 0 } }),
+    );
+
+    expect(find(boosted, "1").probability).toBeGreaterThan(find(base, "1").probability);
+  });
+
+  it("builds corners from each team's own league, pooled by geometric mean", () => {
+    const awayLeague = leagueAs("SP1", 2);
+    const markets = crossLeagueMarkets(side("Arsenal", "E0", E0), side("Brighton", "SP1", awayLeague), uefaWith());
+
+    const homeCorners = E0.stats.corners;
+    const awayCorners = awayLeague.stats!.corners;
+    const expectedHome =
+      Math.sqrt(homeCorners.avg_home * awayCorners.avg_home) *
+      homeCorners.teams.Arsenal.home_for *
+      awayCorners.teams.Brighton.away_against;
+    const expectedAway =
+      Math.sqrt(homeCorners.avg_away * awayCorners.avg_away) *
+      awayCorners.teams.Brighton.away_for *
+      homeCorners.teams.Arsenal.home_against;
+
+    expectClose(find(markets, "corners_home_over").expected ?? NaN, expectedHome);
+    expectClose(find(markets, "corners_away_over").expected ?? NaN, expectedAway);
+    expectClose(find(markets, "corners_over").expected ?? NaN, expectedHome + expectedAway);
+    // Both leagues share dispersion 15.0 for the match total, so the pooled value is 15.0.
+    expectClose(find(markets, "corners_over").probability, probOver(9.5, expectedHome + expectedAway, 15.0));
+  });
+
+  it("hides stat markets when either league has no stats and keeps the goal markets", () => {
+    const goalsOnly = leagueAs("NOR");
+    delete goalsOnly.stats;
+
+    const markets = crossLeagueMarkets(
+      side("Arsenal", "E0", E0),
+      side("Brighton", "NOR", goalsOnly),
+      uefaWith({ NOR: { attack: 0, defense: 0 } }),
+    );
+
+    expect(markets.some((market) => /^(corners|shots|cards)/.test(market.id))).toBe(false);
+    expect(find(markets, "1").probability).toBeGreaterThan(0);
+    expect(find(markets, "goals_over").probability).toBeGreaterThan(0);
+  });
+
+  it("throws TeamNotFoundError for a team missing from its league", () => {
+    expect(() =>
+      crossLeagueMarkets(side("Nowhere FC", "E0", E0), side("Brighton", "SP1", leagueAs("SP1")), uefaWith()),
+    ).toThrow(TeamNotFoundError);
+  });
+});
+
+describe("crossLeagueAvailable", () => {
+  it("is true for a calibrated model whose offsets hold both leagues", () => {
+    expect(crossLeagueAvailable(uefaWith(), "E0", "SP1")).toBe(true);
+  });
+
+  it("is false without uefa data", () => {
+    expect(crossLeagueAvailable(null, "E0", "SP1")).toBe(false);
+  });
+
+  it("is false when the model is not calibrated", () => {
+    expect(crossLeagueAvailable({ ...uefaWith(), calibrated: false }, "E0", "SP1")).toBe(false);
+  });
+
+  it("is false when either league is missing from the offsets", () => {
+    const uefa = uefaWith();
+    expect(crossLeagueAvailable(uefa, "E0", "T1")).toBe(false);
+    expect(crossLeagueAvailable(uefa, "T1", "E0")).toBe(false);
+  });
+});
+
+describe("loadUefa", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it("returns null on a 404", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response("", { status: 404 })));
+    expect(await loadUefa()).toBeNull();
+  });
+
+  it("returns null on invalid JSON", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response("{not json")));
+    expect(await loadUefa()).toBeNull();
+  });
+
+  it("returns null when the JSON has no offsets", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify({ calibrated: true }))));
+    expect(await loadUefa()).toBeNull();
+  });
+
+  it("returns the parsed model", async () => {
+    const uefa = uefaWith();
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify(uefa))));
+    expect(await loadUefa()).toEqual(uefa);
   });
 });
