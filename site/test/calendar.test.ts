@@ -43,6 +43,19 @@ describe("isAnalyzable", () => {
   it("is false when no single league has both teams", () => {
     expect(isAnalyzable(cupMatch("2026-10-27T18:00:00Z", null))).toBe(false);
   });
+
+  it("is false for a UEFA match with no league having both teams", () => {
+    const ucl: UpcomingMatch = {
+      competition: "UCL",
+      competition_name: "Champions League",
+      kickoff_utc: "2026-10-27T18:00:00Z",
+      home: "Benfica",
+      away: "Galatasaray",
+      league: null,
+    };
+
+    expect(isAnalyzable(ucl)).toBe(false);
+  });
 });
 
 describe("groupByLocalDay", () => {
@@ -145,6 +158,18 @@ describe("competitionsOf", () => {
     expect(competitionsOf(matches)).toEqual(["E0", "I1", "P1", "DFB"]);
   });
 
+  it("puts the UEFA cups after the leagues and before the DFB-Pokal", () => {
+    const matches = [
+      inCompetition("DFB", "2026-10-27T18:00:00Z"),
+      inCompetition("UECL", "2026-10-27T18:00:00Z"),
+      inCompetition("E0", "2026-10-27T16:00:00Z"),
+      inCompetition("UCL", "2026-10-27T21:00:00Z"),
+      inCompetition("UEL", "2026-10-27T21:00:00Z"),
+    ];
+
+    expect(competitionsOf(matches)).toEqual(["E0", "UCL", "UEL", "UECL", "DFB"]);
+  });
+
   it("returns an empty list when there are no matches", () => {
     expect(competitionsOf([])).toEqual([]);
   });
@@ -169,6 +194,18 @@ describe("filterByCompetitions", () => {
 
   it("returns an empty list when no match belongs to the selection", () => {
     expect(filterByCompetitions(matches, new Set(["P1"]))).toEqual([]);
+  });
+
+  it("keeps only the matches of the selected UEFA and league competitions", () => {
+    const withCup = [
+      inCompetition("UCL", "2026-10-27T21:00:00Z"),
+      inCompetition("E0", "2026-10-27T16:00:00Z"),
+      inCompetition("UEL", "2026-10-27T18:00:00Z"),
+    ];
+
+    const result = filterByCompetitions(withCup, new Set(["UCL", "E0"]));
+
+    expect(result.map((m) => m.competition)).toEqual(["UCL", "E0"]);
   });
 });
 

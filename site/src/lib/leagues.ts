@@ -7,11 +7,26 @@ export const LEAGUE_SHORT_NAMES: Record<string, string> = {
   F1: "Ligue 1",
   E1: "Championship",
   P1: "Liga Portugal",
+  UCL: "Champions",
+  UEL: "Europa League",
+  UECL: "Conference",
   DFB: "DFB-Pokal",
 };
 
-/** Display order everywhere: the leagues in contract order, then the cup. */
-export const COMPETITION_ORDER: readonly string[] = ["E0", "SP1", "I1", "D1", "F1", "E1", "P1", "DFB"];
+/** Display order everywhere: the leagues in contract order, then the UEFA cups, then the DFB-Pokal. */
+export const COMPETITION_ORDER: readonly string[] = [
+  "E0",
+  "SP1",
+  "I1",
+  "D1",
+  "F1",
+  "E1",
+  "P1",
+  "UCL",
+  "UEL",
+  "UECL",
+  "DFB",
+];
 
 /** Short name for a competition code, or `fallback` when the code is unknown. */
 export function shortName(code: string, fallback: string): string {
