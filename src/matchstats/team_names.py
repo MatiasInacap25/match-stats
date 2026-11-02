@@ -95,6 +95,12 @@ ALIASES: dict[str, str] = {
     "Leipzig": "RB Leipzig",
     "Braga": "Sp Braga",
     "Paris": "Paris SG",
+    "Bodø/Glimt": "Bodo/Glimt",
+    "Lillestrøm": "Lillestrom",
+    "N.E.C.": "Nijmegen",
+    "AEK Athens": "AEK",
+    "Olympiacos": "Olympiakos",
+    "Sint-Truidense": "St Truiden",
 }
 
 

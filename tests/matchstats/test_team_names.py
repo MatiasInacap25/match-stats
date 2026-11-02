@@ -67,8 +67,45 @@ NEW_LEAGUE_TEAMS: dict[str, list[str]] = {
         "AEK", "Aris", "Asteras Tripolis", "Atromitos", "Iraklis", "Kalamata", "Kifisia", "Levadeiakos",
         "OFI Crete", "Olympiakos", "PAOK", "Panathinaikos", "Panetolikos", "Volos NFC",
     ],
+    # Goals-only leagues: teams of their newest season in the file (NOR 2026, AUT 2026/2027).
+    "NOR": [
+        "Aalesund", "Bodo/Glimt", "Brann", "Fredrikstad", "HamKam", "KFUM Oslo", "Kristiansund", "Lillestrom",
+        "Molde", "Rosenborg", "Sandefjord", "Sarpsborg 08", "Start", "Tromso", "Valerenga", "Viking",
+    ],
+    "AUT": [
+        "A. Lustenau", "Altach", "Austria Vienna", "Grazer AK", "Hartberg", "LASK", "Ried", "SK Rapid",
+        "Salzburg", "Sturm Graz", "Tirol", "Wolfsberger AC",
+    ],
 }
 ALL_CURRENT_TEAMS: dict[str, list[str]] = {**CURRENT_TEAMS, **NEW_LEAGUE_TEAMS}
+
+# UEFA feed names (2026 UCL, UEL and UECL feeds) of teams in one of our leagues -> that league.
+UEFA_FEED_LEAGUES: dict[str, str] = {
+    "Bodø/Glimt": "NOR",
+    "Lillestrøm": "NOR",
+    "Viking": "NOR",
+    "Brann": "NOR",
+    "LASK": "AUT",
+    "Salzburg": "AUT",
+    "Sturm Graz": "AUT",
+    "PSV": "N1",
+    "AZ": "N1",
+    "N.E.C.": "N1",
+    "Feyenoord": "N1",
+    "Twente": "N1",
+    "Club Brugge": "B1",
+    "Anderlecht": "B1",
+    "Gent": "B1",
+    "Sint-Truidense": "B1",
+    "Galatasaray": "T1",
+    "Fenerbahçe": "T1",
+    "Besiktas": "T1",
+    "Trabzonspor": "T1",
+    "Olympiacos": "G1",
+    "AEK Athens": "G1",
+    "Panathinaikos": "G1",
+    "OFI Crete": "G1",
+}
 
 
 def feed_team_names(filename: str) -> set[str]:
@@ -129,6 +166,17 @@ def test_every_team_in_other_top_league_feed_resolves(league):
     known = set(ALL_CURRENT_TEAMS[league])
     unresolved = sorted(name for name in EXTRA_FEED_TEAMS[league] if resolve(name, known) is None)
     assert unresolved == []
+
+
+@pytest.mark.parametrize(("name", "league"), sorted(UEFA_FEED_LEAGUES.items()))
+def test_uefa_feed_name_resolves_in_its_league_only(name, league):
+    leagues = [code for code, teams in ALL_CURRENT_TEAMS.items() if resolve(name, set(teams)) is not None]
+    assert leagues == [league]
+
+
+def test_uefa_name_outside_our_leagues_resolves_nowhere():
+    # Shakhtar plays in no league we build, so no league may claim it.
+    assert [code for code, teams in ALL_CURRENT_TEAMS.items() if resolve("Shakhtar", set(teams)) is not None] == []
 
 
 def test_every_alias_targets_a_current_team():
