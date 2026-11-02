@@ -11,15 +11,27 @@ from matchstats.ingest import (
     FIXTURES_URL,
     IngestError,
     download,
+    goals_only_url,
+    load_goals_only,
     load_matches,
     parse_fixtures_csv,
+    parse_goals_only_csv,
     parse_season_csv,
     season_url,
 )
+from matchstats.match import Match
+from matchstats.team_stats import league_table, season_stats
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures"
 SEASON_CSV = (FIXTURES_DIR / "E0_2627_sample.csv").read_text(encoding="utf-8-sig")
 FIXTURES_CSV = (FIXTURES_DIR / "fixtures_sample.csv").read_text(encoding="utf-8-sig")
+NOR_CSV = (FIXTURES_DIR / "new_nor_sample.csv").read_text(encoding="utf-8-sig")
+AUT_CSV = (FIXTURES_DIR / "new_aut_sample.csv").read_text(encoding="utf-8-sig")
+
+GOALS_ONLY_STAT_FIELDS = (
+    "home_xg", "away_xg", "home_shots", "away_shots", "home_sot", "away_sot",
+    "home_corners", "away_corners", "home_yellow", "away_yellow", "home_red", "away_red",
+)
 
 
 class FakeResponse:
@@ -236,3 +248,150 @@ def test_download_decodes_windows_1252_files(monkeypatch, tmp_path):
 
     assert download("https://example.test/I2.csv", cache_file, refresh=True) == "Div,HomeTeam\nI2,Virtus\xa0Entella\n"
     assert download("https://example.test/I2.csv", cache_file, refresh=False) == "Div,HomeTeam\nI2,Virtus\xa0Entella\n"
+
+
+def test_goals_only_url():
+    assert goals_only_url("NOR") == "https://www.football-data.co.uk/new/NOR.csv"
+
+
+def test_parse_goals_only_csv_nor():
+    matches = parse_goals_only_csv(NOR_CSV, "NOR")
+
+    # The sample holds 2025 and 2026 rows; only the 2026 rows are season "2026".
+    season_2026 = [m for m in matches if m.season == "2026"]
+    assert len(season_2026) == 3
+    kristiansund = next(m for m in season_2026 if m.home == "Kristiansund")
+    assert kristiansund == Match(
+        div="NOR",
+        season="2026",
+        date=date(2026, 3, 15),
+        home="Kristiansund",
+        away="Brann",
+        home_goals=3,
+        away_goals=2,
+        home_xg=None,
+        away_xg=None,
+        home_shots=None,
+        away_shots=None,
+        home_sot=None,
+        away_sot=None,
+        home_corners=None,
+        away_corners=None,
+        home_yellow=None,
+        away_yellow=None,
+        home_red=None,
+        away_red=None,
+    )
+
+
+def test_parse_goals_only_csv_all_stats_are_none():
+    matches = parse_goals_only_csv(NOR_CSV, "NOR")
+
+    assert matches
+    for match in matches:
+        assert all(getattr(match, field) is None for field in GOALS_ONLY_STAT_FIELDS)
+        assert match.home_cards is None
+        assert match.away_cards is None
+
+
+def test_parse_goals_only_csv_skips_rows_without_goals():
+    text = (
+        "Country,League,Season,Date,Time,Home,Away,HG,AG,Res\n"
+        "Norway,Eliteserien,2026,14/03/2026,15:00,HamKam,Viking,2,1,H\n"
+        "Norway,Eliteserien,2026,15/03/2026,13:30,Molde,Rosenborg,,,\n"
+        "Norway,Eliteserien,2026,16/03/2026,13:30,Brann,Bodo/Glimt,1,,\n"
+    )
+
+    matches = parse_goals_only_csv(text, "NOR")
+
+    assert [(m.home, m.away) for m in matches] == [("HamKam", "Viking")]
+    assert matches[0].date == date(2026, 3, 14)
+
+
+def test_goals_only_newest_season_in_file_renders_season_stats():
+    matches = parse_goals_only_csv(NOR_CSV, "NOR")
+    newest = max(m.season for m in matches)
+
+    # Between seasons the file's newest season is already finished; it still gives season stats.
+    assert newest == "2026"
+    stats = season_stats(matches, "Brann", league_table(matches))
+    assert stats["all"]["matches"] > 0
+    assert stats["all"]["goals_for"] is not None
+    assert stats["all"]["xg_for"] is None
+
+
+def test_parse_goals_only_csv_aut_season_code():
+    matches = parse_goals_only_csv(AUT_CSV, "AUT")
+
+    assert {m.season for m in matches} == {"2526", "2627"}
+    assert all(m.div == "AUT" for m in matches)
+
+
+def test_parse_goals_only_csv_keeps_plain_year_season():
+    text = (
+        "Country,League,Season,Date,Time,Home,Away,HG,AG,Res\n"
+        "Norway,Eliteserien,2025,29/03/2025,15:00,Stromsgodset,Rosenborg,1,2,A\n"
+    )
+
+    (match,) = parse_goals_only_csv(text, "NOR")
+
+    assert match.season == "2025"
+
+
+def test_load_goals_only_downloads_and_caches(monkeypatch, tmp_path):
+    calls = []
+
+    def fake_urlopen(request, timeout):
+        calls.append(request.full_url)
+        return FakeResponse(NOR_CSV.encode("utf-8"))
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+
+    matches = load_goals_only("NOR", "NOR", tmp_path)
+
+    assert calls == ["https://www.football-data.co.uk/new/NOR.csv"]
+    assert len(matches) == len(parse_goals_only_csv(NOR_CSV, "NOR"))
+    assert (tmp_path / "new" / "NOR.csv").read_bytes() == NOR_CSV.encode("utf-8")
+
+
+def test_load_goals_only_uses_cache_when_source_unreachable(monkeypatch, tmp_path):
+    cached = tmp_path / "new" / "NOR.csv"
+    cached.parent.mkdir(parents=True)
+    cached.write_bytes(NOR_CSV.encode("utf-8"))
+
+    def fake_urlopen(request, timeout):
+        raise urllib.error.URLError("network down")
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+
+    matches = load_goals_only("NOR", "NOR", tmp_path)
+
+    assert matches == parse_goals_only_csv(NOR_CSV, "NOR")
+    assert cached.read_bytes() == NOR_CSV.encode("utf-8")
+
+
+def test_load_goals_only_empty_when_unreachable_and_no_cache(monkeypatch, tmp_path):
+    def fake_urlopen(request, timeout):
+        raise urllib.error.URLError("network down")
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+
+    assert load_goals_only("NOR", "NOR", tmp_path) == []
+
+
+def test_load_goals_only_empty_on_404(monkeypatch, tmp_path):
+    def fake_urlopen(request, timeout):
+        raise urllib.error.HTTPError(request.full_url, 404, "Not Found", None, None)
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+
+    assert load_goals_only("CZE", "CZE", tmp_path) == []
+    assert not (tmp_path / "new" / "CZE.csv").exists()
+
+
+def test_load_goals_only_drops_invalid_csv(monkeypatch, tmp_path):
+    body = b"Country,League\nNorway,Eliteserien\n"
+    monkeypatch.setattr(urllib.request, "urlopen", lambda request, timeout: FakeResponse(body))
+
+    assert load_goals_only("NOR", "NOR", tmp_path) == []
+    assert not (tmp_path / "new" / "NOR.csv").exists()

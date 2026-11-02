@@ -1,5 +1,7 @@
 from datetime import date
 
+import pytest
+
 from matchstats.match import Match
 from matchstats.team_stats import (
     head_to_head,
@@ -270,3 +272,106 @@ def test_head_to_head_both_venues_newest_first():
         "away_cards": 4,  # yellow 2 + 2 × red 1
     }
     assert rows[2]["league"] == "E1"
+
+
+def goals_only_match(
+    home: str, away: str, hg: int, ag: int, on: date = date(2026, 8, 1), *, div: str = "NOR"
+) -> Match:
+    """A goals-only row: score and teams only, every stat field None."""
+    return Match(
+        div=div,
+        season="2026",
+        date=on,
+        home=home,
+        away=away,
+        home_goals=hg,
+        away_goals=ag,
+        home_xg=None,
+        away_xg=None,
+        home_shots=None,
+        away_shots=None,
+        home_sot=None,
+        away_sot=None,
+        home_corners=None,
+        away_corners=None,
+        home_yellow=None,
+        away_yellow=None,
+        home_red=None,
+        away_red=None,
+    )
+
+
+def test_season_stats_goals_only():
+    matches = [
+        goals_only_match("Bodo/Glimt", "Brann", 2, 0, date(2026, 3, 1)),
+        goals_only_match("Molde", "Bodo/Glimt", 1, 1, date(2026, 3, 8)),
+        goals_only_match("Bodo/Glimt", "Viking", 0, 3, date(2026, 3, 15)),
+    ]
+    table = league_table(matches)
+
+    stats = season_stats(matches, "Bodo/Glimt", table)["all"]
+
+    assert stats["matches"] == 3
+    assert stats["won"] == 1
+    assert stats["drawn"] == 1
+    assert stats["lost"] == 1
+    assert stats["points"] == 4
+    assert stats["goals_for"] == pytest.approx(1.0)
+    assert stats["goals_against"] == pytest.approx(1.33, abs=0.01)
+    assert stats["clean_sheets"] == 1
+    assert stats["btts_pct"] == pytest.approx(1 / 3, abs=0.001)
+    assert stats["over_2_5_pct"] == pytest.approx(1 / 3, abs=0.001)
+    for field in (
+        "xg_for", "xg_against", "shots_for", "corners_for", "yellow_cards", "red_cards"
+    ):
+        assert stats[field] is None
+
+
+def test_last_matches_goals_only():
+    matches = [goals_only_match("Bodo/Glimt", "Brann", 2, 0, date(2026, 3, 1))]
+
+    (row,) = last_matches(matches, "Bodo/Glimt")
+
+    assert row["goals_for"] == 2
+    assert row["goals_against"] == 0
+    assert row["result"] == "W"
+    assert row["cards_for"] is None
+    assert row["cards_against"] is None
+    for field in (
+        "xg_for", "xg_against", "shots_for", "shots_against", "shots_on_target_for",
+        "shots_on_target_against", "corners_for", "corners_against",
+    ):
+        assert row[field] is None
+
+
+def test_head_to_head_goals_only():
+    matches = [
+        goals_only_match("Bodo/Glimt", "Brann", 2, 0, date(2026, 3, 1)),
+        goals_only_match("Brann", "Bodo/Glimt", 1, 1, date(2026, 9, 1)),
+    ]
+
+    rows = head_to_head(matches, "Bodo/Glimt", "Brann")
+
+    assert [(r["home_goals"], r["away_goals"]) for r in rows] == [(1, 1), (2, 0)]
+    assert rows[0]["home_shots"] is None
+    assert rows[0]["home_cards"] is None
+    assert rows[0]["away_cards"] is None
+
+
+def test_cards_property_none_when_card_counts_missing():
+    match = goals_only_match("Bodo/Glimt", "Brann", 2, 0)
+
+    assert match.home_cards is None
+    assert match.away_cards is None
+
+
+def test_average_skips_missing_values():
+    matches = [
+        match("A", "B", 1, 0, hs=10, aws=4),
+        goals_only_match("A", "C", 0, 0),
+    ]
+
+    stats = season_stats(matches, "A", league_table(matches))["all"]
+
+    assert stats["shots_for"] == 10.0
+    assert stats["matches"] == 2

@@ -50,16 +50,16 @@ class _Row:
     goals_against: int
     xg_for: float | None
     xg_against: float | None
-    shots_for: int
-    shots_against: int
-    shots_on_target_for: int
-    shots_on_target_against: int
-    corners_for: int
-    corners_against: int
-    yellow_for: int
-    red_for: int
-    yellow_against: int
-    red_against: int
+    shots_for: int | None
+    shots_against: int | None
+    shots_on_target_for: int | None
+    shots_on_target_against: int | None
+    corners_for: int | None
+    corners_against: int | None
+    yellow_for: int | None
+    red_for: int | None
+    yellow_against: int | None
+    red_against: int | None
 
     @property
     def result(self) -> str:
@@ -70,11 +70,15 @@ class _Row:
         return "L"
 
     @property
-    def cards_for(self) -> int:
+    def cards_for(self) -> int | None:
+        if self.yellow_for is None or self.red_for is None:
+            return None
         return self.yellow_for + 2 * self.red_for
 
     @property
-    def cards_against(self) -> int:
+    def cards_against(self) -> int | None:
+        if self.yellow_against is None or self.red_against is None:
+            return None
         return self.yellow_against + 2 * self.red_against
 
 
@@ -146,10 +150,8 @@ def season_stats(
 def _side(rows: list[_Row], position: int | None, points: int | None) -> dict:
     n = len(rows)
 
-    def avg(values: list[int]) -> float | None:
-        return round(sum(values) / n, 2) if n else None
-
-    def xg_avg(values: list[float | None]) -> float | None:
+    def avg(values: list[float | None]) -> float | None:
+        # Missing values (goals-only leagues) are skipped; None when nothing is known.
         known = [v for v in values if v is not None]
         return round(sum(known) / len(known), 2) if known else None
 
@@ -165,8 +167,8 @@ def _side(rows: list[_Row], position: int | None, points: int | None) -> dict:
         "lost": sum(1 for r in rows if r.result == "L"),
         "goals_for": avg([r.goals_for for r in rows]),
         "goals_against": avg([r.goals_against for r in rows]),
-        "xg_for": xg_avg([r.xg_for for r in rows]),
-        "xg_against": xg_avg([r.xg_against for r in rows]),
+        "xg_for": avg([r.xg_for for r in rows]),
+        "xg_against": avg([r.xg_against for r in rows]),
         "shots_for": avg([r.shots_for for r in rows]),
         "shots_against": avg([r.shots_against for r in rows]),
         "shots_on_target_for": avg([r.shots_on_target_for for r in rows]),

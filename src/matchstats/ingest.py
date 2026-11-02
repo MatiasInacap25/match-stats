@@ -11,6 +11,7 @@ from matchstats.match import Fixture, Match
 
 FIXTURES_URL = "https://www.football-data.co.uk/fixtures.csv"
 _SEASON_BASE_URL = "https://www.football-data.co.uk/mmz4281"
+_GOALS_ONLY_BASE_URL = "https://www.football-data.co.uk/new"
 USER_AGENT = "matchstats/0.1"
 TIMEOUT_SECONDS = 30
 ATTEMPTS = 3
@@ -24,6 +25,7 @@ _SEASON_COLUMNS = (
     "HS", "AS", "HST", "AST", "HC", "AC", "HY", "AY", "HR", "AR",
 )
 _FIXTURE_COLUMNS = ("Div", "Date", "Time", "HomeTeam", "AwayTeam")
+_GOALS_ONLY_COLUMNS = ("Season", "Date", "Home", "Away", "HG", "AG")
 
 
 class IngestError(RuntimeError):
@@ -81,6 +83,88 @@ def parse_fixtures_csv(text: str) -> list[Fixture]:
             )
         )
     return fixtures
+
+
+def goals_only_url(country: str) -> str:
+    return f"{_GOALS_ONLY_BASE_URL}/{country}.csv"
+
+
+def parse_goals_only_csv(text: str, div: str) -> list[Match]:
+    """Results-only leagues (football-data `new/<CC>.csv`): score and teams, no match stats."""
+    reader = csv.DictReader(io.StringIO(_strip_bom(text)))
+    _require_columns(reader.fieldnames, _GOALS_ONLY_COLUMNS, div)
+
+    matches = []
+    for row in reader:
+        # Rows without a final score are not matches yet.
+        if not row["HG"].strip() or not row["AG"].strip():
+            continue
+        where = f"{div} {row['Date']} {row['Home']} v {row['Away']}"
+        matches.append(
+            Match(
+                div=div,
+                season=_goals_only_season(row["Season"]),
+                date=_parse_date(row["Date"], where),
+                home=row["Home"].strip(),
+                away=row["Away"].strip(),
+                home_goals=_int(row, "HG", where),
+                away_goals=_int(row, "AG", where),
+                home_xg=None,
+                away_xg=None,
+                home_shots=None,
+                away_shots=None,
+                home_sot=None,
+                away_sot=None,
+                home_corners=None,
+                away_corners=None,
+                home_yellow=None,
+                away_yellow=None,
+                home_red=None,
+                away_red=None,
+            )
+        )
+    return matches
+
+
+def load_goals_only(country: str, div: str, cache_dir: Path) -> list[Match]:
+    """Refresh a goals-only league; fall back to the cached copy, then to [] (league dropped)."""
+    cache_file = cache_dir / "new" / f"{country}.csv"
+    try:
+        text = download(goals_only_url(country), cache_file, refresh=True)
+    except IngestError as error:
+        logger.warning("%s: source unreachable, using cached copy if present: %s", div, error)
+        text = None
+    else:
+        if text is None:
+            logger.warning("%s: source has no file (404), using cached copy if present", div)
+
+    if text is None:
+        text = _read_cache(cache_file)
+    if text is None:
+        logger.warning("%s: no usable data, league skipped", div)
+        return []
+
+    try:
+        return parse_goals_only_csv(text, div)
+    except IngestError as error:
+        # Drop a bad copy so the next run downloads it again.
+        logger.warning("%s: invalid CSV, league skipped: %s", div, error)
+        cache_file.unlink(missing_ok=True)
+        return []
+
+
+def _read_cache(cache_file: Path) -> str | None:
+    if not cache_file.exists():
+        return None
+    return _decode(cache_file.read_bytes())
+
+
+def _goals_only_season(value: str) -> str:
+    """'2026/2027' -> '2627' (football-data style); a plain year such as '2026' is kept."""
+    start, slash, end = value.strip().partition("/")
+    if slash:
+        return start[-2:] + end[-2:]
+    return start
 
 
 def _decode(body: bytes) -> str:
