@@ -19,9 +19,11 @@ export interface TodayMatch {
 
 /**
  * One fixture in index.json → upcoming. `kickoff_utc` is an ISO 8601 UTC instant.
- * `competition` is a top-5 league code, "UCL" (Champions League), "UEL" (Europa League),
+ * `competition` is a league code, "UCL" (Champions League), "UEL" (Europa League),
  * "UECL" (Conference League), or "DFB" for DFB-Pokal.
  * `league` is the top-5 league whose data has both teams, or null when none does.
+ * `home_league` / `away_league` are the league code whose current teams uniquely contain that
+ * team, or null when none or more than one does. Missing on files written before they existed.
  */
 export interface UpcomingMatch {
   competition: string;
@@ -30,6 +32,8 @@ export interface UpcomingMatch {
   home: string;
   away: string;
   league: string | null;
+  home_league?: string | null;
+  away_league?: string | null;
 }
 
 /** index.json */
@@ -134,13 +138,40 @@ export interface TeamData {
   last6: LastMatch[];
 }
 
-/** leagues/<code>.json */
+/**
+ * leagues/<code>.json. Goals-only leagues (NOR, AUT) have no `stats` key, and their season-side
+ * stat fields and `last6` stat fields are null. Check `stats` before reading it.
+ */
 export interface LeagueData {
   league: string;
   season: string;
   goals: GoalsModel;
-  stats: Record<StatName, StatModel>;
+  stats?: Record<StatName, StatModel>;
   teams: Record<string, TeamData>;
+}
+
+/** One league's cross-league offsets, as used by the UEFA goals model. */
+export interface UefaOffset {
+  attack: number;
+  defense: number;
+}
+
+/**
+ * uefa.json. `calibrated: false` means the cross-league model is not usable; UEFA matches then
+ * show data without probabilities. A league missing from `offsets` has no probabilities either.
+ */
+export interface UefaData {
+  calibrated: boolean;
+  home_advantage: number;
+  offsets: Record<string, UefaOffset>;
+  seasons: number[];
+  backtest: {
+    held_out: number;
+    matches: number;
+    log_loss: number;
+    log_loss_unadjusted: number;
+    log_loss_baseline: number;
+  };
 }
 
 /** One past meeting between two teams. */

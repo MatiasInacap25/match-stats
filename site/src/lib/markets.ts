@@ -131,7 +131,9 @@ export function matchMarkets(league: LeagueData, home: string, away: string): Ma
   ];
 
   for (const stat of STAT_NAMES) {
-    const model = league.stats[stat];
+    // Goals-only leagues have no stats; their stat markets are hidden, never computed as NaN.
+    const model = league.stats?.[stat];
+    if (!model) continue;
     const means = statMeans(model, home, away);
     const total = means.home + means.away;
     const matchLine = MATCH_LINES[stat];
