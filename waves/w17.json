@@ -1,0 +1,5 @@
+{
+  "name": "w17",
+  "base": "feat/uefa-cups",
+  "tasks": [{"id": "calendar-selected-chips", "title": "Keep selected league chips visible", "prompt_file": "w17/calendar-selected-chips.md"}]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "w15",
+  "base": "feat/uefa-cups",
+  "tasks": [
+    {"id": "goals-only-leagues", "title": "NOR/AUT data and UEFA team leagues", "prompt_file": "w15/goals-only-leagues.md"},
+    {"id": "uefa-match-page", "title": "UEFA match page with team data", "prompt_file": "w15/uefa-match-page.md"}
+  ]
+}

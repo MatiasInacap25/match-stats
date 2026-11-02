@@ -67,6 +67,18 @@ ALIASES: dict[str, str] = {
     "West Bromwich Albion": "West Brom",
     "West Ham United": "West Ham",
     "Wolverhampton Wanderers": "Wolves",
+    # Eredivisie
+    "ADO Den Haag": "Den Haag",
+    "AZ": "AZ Alkmaar",
+    "Excelsior Rotterdam": "Excelsior",
+    "Fortuna Sittard": "For Sittard",
+    "N.E.C. Nijmegen": "Nijmegen",
+    "PEC Zwolle": "Zwolle",
+    "PSV": "PSV Eindhoven",
+    # Süper Lig
+    "Istanbul Basaksehir": "Buyuksehyr",
+    "Göztepe": "Goztep",
+    "Çaykur Rizespor": "Rizespor",
     # Primeira Liga
     "Académico": "Academico Viseu",
     "Estoril Praia": "Estoril",
@@ -76,6 +88,19 @@ ALIASES: dict[str, str] = {
     "SL Benfica": "Benfica",
     "Sporting CP": "Sp Lisbon",
     "Vitória SC": "Guimaraes",
+    # UEFA competitions
+    "Atleti": "Ath Madrid",
+    "B. Dortmund": "Dortmund",
+    "Bayern München": "Bayern Munich",
+    "Leipzig": "RB Leipzig",
+    "Braga": "Sp Braga",
+    "Paris": "Paris SG",
+    "Bodø/Glimt": "Bodo/Glimt",
+    "Lillestrøm": "Lillestrom",
+    "N.E.C.": "Nijmegen",
+    "AEK Athens": "AEK",
+    "Olympiacos": "Olympiakos",
+    "Sint-Truidense": "St Truiden",
 }
 
 

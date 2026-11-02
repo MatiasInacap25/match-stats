@@ -1,13 +1,16 @@
 import json
 import logging
+from dataclasses import replace
 from datetime import date, timedelta
 from pathlib import Path
 
 import numpy as np
 import pytest
 
+from matchstats import build as build_module
 from matchstats.build import BuildError, build, validate_output
 from matchstats.cli import main
+from matchstats.goals_model import fit_goals_model
 from matchstats.ingest import IngestError
 from matchstats.match import Match
 
@@ -16,6 +19,8 @@ CURRENT = "2627"
 PREVIOUS = "2526"
 TODAY = date(2026, 10, 26)
 LEAGUES = ["E0", "SP1", "I1", "D1", "F1", "E1", "P1"]
+OPTIONAL_CODES = ["N1", "B1", "T1", "G1"]
+SITE_CODES = LEAGUES + OPTIONAL_CODES
 TEAMS = json.loads((Path(__file__).parent / "fixtures" / "teams_2627.json").read_text(encoding="utf-8"))
 
 FIXTURES = (
@@ -78,6 +83,7 @@ def _match(div: str, season: str, when: date, home: str, away: str, rng) -> Matc
 
 
 HEADER_ONLY = "Div,Date,Time,HomeTeam,AwayTeam\n"
+FIXTURES_HEADER = HEADER_ONLY
 
 UPCOMING_FIXTURES = (
     "Div,Date,Time,HomeTeam,AwayTeam\n"
@@ -140,6 +146,7 @@ def run_build(
     fixtures: str = FIXTURES,
     today: date = TODAY,
     feeds=NO_FEEDS,
+    goals_loader=None,
 ) -> None:
     build(
         out_dir=out,
@@ -148,7 +155,13 @@ def run_build(
         loader=loader or synthetic_loader(),
         fixtures_text=lambda: fixtures,
         feed_text=feeds,
+        goals_loader=goals_loader or no_goals_only,
     )
+
+
+def no_goals_only(country, div, cache_dir):
+    """A goals-only source with no usable data, so the league is dropped."""
+    return []
 
 
 def shape(value, key=None):
@@ -166,6 +179,11 @@ def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def without_team_leagues(index: dict) -> dict:
+    upcoming = [{k: v for k, v in row.items() if k not in ("home_league", "away_league")} for row in index["upcoming"]]
+    return {**index, "upcoming": upcoming}
+
+
 def test_build_writes_contract_files(tmp_path):
     out = tmp_path / "data"
     run_build(out)
@@ -180,8 +198,9 @@ def test_build_writes_contract_files(tmp_path):
     example_h2h = read_json(CONTRACT_EXAMPLE / "h2h" / "E0.json")
 
     index = read_json(out / "index.json")
-    assert [league["code"] for league in index["leagues"]] == LEAGUES
-    assert shape(index) == shape(example_index)
+    assert [league["code"] for league in index["leagues"]] == SITE_CODES
+    # contract/example/index.json does not carry upcoming[].home_league/away_league yet.
+    assert shape(without_team_leagues(index)) == shape(example_index)
     assert shape(read_json(out / "leagues" / "E0.json")) == shape(example_league)
     assert shape(read_json(out / "h2h" / "E0.json")) == shape(example_h2h)
 
@@ -207,19 +226,19 @@ def test_upcoming_covers_yesterday_to_day_after_tomorrow_sorted(tmp_path):
     assert index["upcoming"] == [
         {
             "competition": "E0", "competition_name": "Premier League", "kickoff_utc": "2026-10-25T20:00:00Z",
-            "home": "Yesterday Home", "away": "Yesterday Away", "league": "E0",
+            "home": "Yesterday Home", "away": "Yesterday Away", "league": "E0", "home_league": "E0", "away_league": "E0",
         },
         {
             "competition": "E0", "competition_name": "Premier League", "kickoff_utc": "2026-10-26T20:00:00Z",
-            "home": "E0 Team 00", "away": "E0 Team 01", "league": "E0",
+            "home": "E0 Team 00", "away": "E0 Team 01", "league": "E0", "home_league": "E0", "away_league": "E0",
         },
         {
             "competition": "SP1", "competition_name": "La Liga", "kickoff_utc": "2026-10-27T21:00:00Z",
-            "home": "SP1 Team 00", "away": "SP1 Team 01", "league": "SP1",
+            "home": "SP1 Team 00", "away": "SP1 Team 01", "league": "SP1", "home_league": "SP1", "away_league": "SP1",
         },
         {
             "competition": "E0", "competition_name": "Premier League", "kickoff_utc": "2026-10-28T15:00:00Z",
-            "home": "Late Home", "away": "Late Away", "league": "E0",
+            "home": "Late Home", "away": "Late Away", "league": "E0", "home_league": "E0", "away_league": "E0",
         },
     ]
 
@@ -247,7 +266,7 @@ def test_league_feed_rows_use_feed_names_and_league_itself(tmp_path):
     assert rows == [
         {
             "competition": "E0", "competition_name": "Premier League", "kickoff_utc": "2026-10-27T15:00:00Z",
-            "home": "Man United", "away": "Tottenham", "league": "E0",
+            "home": "Man United", "away": "Tottenham", "league": "E0", "home_league": "E0", "away_league": "E0",
         }
     ]
 
@@ -261,7 +280,7 @@ def test_dfb_match_between_teams_of_one_league_gets_that_league(tmp_path):
     assert cups == [
         {
             "competition": "DFB", "competition_name": "DFB-Pokal", "kickoff_utc": "2026-10-27T17:00:00Z",
-            "home": "Hamburg", "away": "Ein Frankfurt", "league": "D1",
+            "home": "Hamburg", "away": "Ein Frankfurt", "league": "D1", "home_league": None, "away_league": None,
         }
     ]
 
@@ -276,6 +295,7 @@ def test_dfb_match_with_a_lower_division_team_has_no_league(tmp_path):
         {
             "competition": "DFB", "competition_name": "DFB-Pokal", "kickoff_utc": "2026-10-27T17:00:00Z",
             "home": "SG Sonnenhof Großaspach", "away": "Augsburg", "league": None,
+            "home_league": None, "away_league": None,
         }
     ]
 
@@ -293,11 +313,11 @@ def test_championship_and_primeira_liga_feed_names_resolve(tmp_path):
     assert read_json(out / "index.json")["upcoming"] == [
         {
             "competition": "E1", "competition_name": "Championship", "kickoff_utc": "2026-10-27T15:00:00Z",
-            "home": "QPR", "away": "Birmingham", "league": "E1",
+            "home": "QPR", "away": "Birmingham", "league": "E1", "home_league": "E1", "away_league": "E1",
         },
         {
             "competition": "P1", "competition_name": "Primeira Liga", "kickoff_utc": "2026-10-27T18:00:00Z",
-            "home": "Sp Lisbon", "away": "Benfica", "league": "P1",
+            "home": "Sp Lisbon", "away": "Benfica", "league": "P1", "home_league": "P1", "away_league": "P1",
         },
     ]
 
@@ -340,7 +360,7 @@ def test_failed_league_feed_falls_back_to_fixtures_csv(tmp_path):
     assert rows == [
         {
             "competition": "I1", "competition_name": "Serie A", "kickoff_utc": "2026-10-27T20:45:00Z",
-            "home": "Milan", "away": "Inter", "league": "I1",
+            "home": "Milan", "away": "Inter", "league": "I1", "home_league": "I1", "away_league": "I1",
         }
     ]
 
@@ -382,6 +402,93 @@ def test_upcoming_sorted_by_kickoff_then_competition_order(tmp_path):
     assert [row["competition"] for row in read_json(out / "index.json")["upcoming"]] == ["E0", "DFB"]
 
 
+def test_ucl_match_between_teams_of_two_leagues_has_no_league(tmp_path):
+    feeds = feed_from({"UCL": fd_feed(("2026-10-27 18:00:00Z", "Barcelona", "Aston Villa"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "UCL", "competition_name": "Champions League", "kickoff_utc": "2026-10-27T18:00:00Z",
+            "home": "Barcelona", "away": "Aston Villa", "league": None, "home_league": "SP1", "away_league": "E0",
+        }
+    ]
+
+
+def test_uel_match_between_teams_of_one_league_gets_that_league(tmp_path):
+    feeds = feed_from({"UEL": fd_feed(("2026-10-27 18:45:00Z", "Chelsea", "Arsenal"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "UEL", "competition_name": "Europa League", "kickoff_utc": "2026-10-27T18:45:00Z",
+            "home": "Chelsea", "away": "Arsenal", "league": "E0", "home_league": "E0", "away_league": "E0",
+        }
+    ]
+
+
+def test_uefa_feed_names_resolve_to_football_data_names(tmp_path):
+    feeds = feed_from(
+        {
+            "UCL": fd_feed(("2026-10-27 18:00:00Z", "Paris", "Atleti")),
+            "UEL": fd_feed(("2026-10-27 19:00:00Z", "Leipzig", "B. Dortmund")),
+            "UECL": fd_feed(("2026-10-27 19:00:00Z", "Bayern München", "Braga")),
+        }
+    )
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    rows = read_json(out / "index.json")["upcoming"]
+    assert [(row["home"], row["away"]) for row in rows] == [
+        ("Paris SG", "Ath Madrid"),
+        ("RB Leipzig", "Dortmund"),
+        ("Bayern Munich", "Sp Braga"),
+    ]
+
+
+def test_paris_fc_in_ligue_1_still_resolves_to_paris_fc(tmp_path):
+    feeds = feed_from({"F1": fd_feed(("2026-10-27 19:00:00Z", "Paris FC", "Lyon"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    assert [row["home"] for row in read_json(out / "index.json")["upcoming"]] == ["Paris FC"]
+
+
+def test_failing_uefa_feed_is_skipped_with_warning_and_rest_still_builds(tmp_path, caplog):
+    feeds = feed_from(
+        {
+            "UECL": IngestError("download failed after 3 attempts"),
+            "E0": fd_feed(("2026-10-27 15:00:00Z", "Arsenal", "Chelsea")),
+        }
+    )
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    upcoming = read_json(out / "index.json")["upcoming"]
+    assert [row["competition"] for row in upcoming] == ["E0"]
+    assert "UECL" in caplog.text
+
+
+def test_uefa_rows_sort_after_leagues_and_before_dfb_at_the_same_kickoff(tmp_path):
+    feeds = feed_from(
+        {
+            "E0": fd_feed(("2026-10-27 18:00:00Z", "Chelsea", "Arsenal")),
+            "UCL": fd_feed(("2026-10-27 18:00:00Z", "Barcelona", "Aston Villa")),
+            "UEL": fd_feed(("2026-10-27 18:00:00Z", "Chelsea", "Brighton")),
+            "UECL": fd_feed(("2026-10-27 18:00:00Z", "Sp Braga", "Lille")),
+            "DFB": dfb_feed(("2026-10-27T19:00:00", "Hamburger SV", "Eintracht Frankfurt")),
+        }
+    )
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    assert [row["competition"] for row in read_json(out / "index.json")["upcoming"]] == [
+        "E0", "UCL", "UEL", "UECL", "DFB",
+    ]
+
+
 def test_validate_output_requires_upcoming_list(tmp_path):
     out = tmp_path / "data"
     run_build(out)
@@ -421,7 +528,9 @@ def test_validate_output_flags_team_missing_from_league(tmp_path):
     assert any("Ghost FC" in problem for problem in problems)
 
 
-def test_cli_exit_codes(tmp_path, capsys):
+def test_cli_exit_codes(tmp_path, capsys, monkeypatch):
+    # The CLI has no goals-only loader option: keep its build off the network.
+    monkeypatch.setattr(build_module, "load_goals_only", no_goals_only)
     good = ["build", "--out", str(tmp_path / "good" / "data"), "--cache", str(tmp_path / "cache"), "--today", "2026-10-26"]
     assert main(good, loader=synthetic_loader(), fixtures_text=lambda: FIXTURES, feed_text=NO_FEEDS) == 0
     assert (tmp_path / "good" / "data" / "index.json").is_file()
@@ -429,3 +538,461 @@ def test_cli_exit_codes(tmp_path, capsys):
     bad = ["build", "--out", str(tmp_path / "bad" / "data"), "--cache", str(tmp_path / "cache"), "--today", "2026-10-26"]
     assert main(bad, loader=synthetic_loader(short_div="E0"), fixtures_text=lambda: FIXTURES, feed_text=NO_FEEDS) == 1
     assert "E0" in capsys.readouterr().err
+
+
+NEW_TEAMS = {
+    "N1": [
+        "AZ Alkmaar", "Ajax", "Cambuur", "Den Haag", "Excelsior", "Feyenoord", "For Sittard",
+        "Go Ahead Eagles", "Groningen", "Heerenveen", "Nijmegen", "PSV Eindhoven", "Sparta Rotterdam",
+        "Telstar", "Twente", "Utrecht", "Willem II", "Zwolle",
+    ],
+    "B1": [
+        "Anderlecht", "Antwerp", "Beveren", "Cercle Brugge", "Charleroi", "Club Brugge", "Genk", "Gent",
+        "Kortrijk", "Lommel SK", "Mechelen", "Oud-Heverlee Leuven", "RAAL La Louviere", "St Truiden",
+        "St. Gilloise", "Standard", "Waregem", "Westerlo",
+    ],
+    "T1": [
+        "Alanyaspor", "Amedspor", "Besiktas", "Buyuksehyr", "Corum", "Erzurumspor", "Eyupspor", "Fenerbahce",
+        "Galatasaray", "Gaziantep", "Genclerbirligi", "Goztep", "Kasimpasa", "Kocaelispor", "Konyaspor",
+        "Rizespor", "Samsunspor", "Trabzonspor",
+    ],
+    "G1": [
+        "AEK", "Aris", "Asteras Tripolis", "Atromitos", "Iraklis", "Kalamata", "Kifisia", "Levadeiakos",
+        "OFI Crete", "Olympiakos", "PAOK", "Panathinaikos", "Panetolikos", "Volos NFC",
+    ],
+}
+
+
+def without_league(code: str):
+    """The synthetic loader with no matches for `code`, as when its source has no usable data."""
+    base = synthetic_loader(teams=TEAMS | NEW_TEAMS)
+
+    def load(divs, seasons, cache_dir, current_season):
+        return [m for m in base(divs, seasons, cache_dir, current_season) if m.div != code]
+
+    return load
+
+
+def index_codes(out: Path) -> list[str]:
+    return [league["code"] for league in read_json(out / "index.json")["leagues"]]
+
+
+def test_new_leagues_written(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS))
+
+    assert index_codes(out) == SITE_CODES
+    example_league = read_json(CONTRACT_EXAMPLE / "leagues" / "E0.json")
+    for code in OPTIONAL_CODES:
+        assert (out / "leagues" / f"{code}.json").is_file()
+        assert (out / "h2h" / f"{code}.json").is_file()
+        assert shape(read_json(out / "leagues" / f"{code}.json")) == shape(example_league)
+
+
+def test_optional_league_without_data_is_dropped(tmp_path, caplog):
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=without_league("B1"))
+
+    assert index_codes(out) == [code for code in SITE_CODES if code != "B1"]
+    assert not (out / "leagues" / "B1.json").exists()
+    assert "B1" in caplog.text
+
+
+def test_optional_league_failing_validation_is_dropped(tmp_path, caplog):
+    short_greece = {"G1": [f"G1 Team {i:02d}" for i in range(10)]}
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=synthetic_loader(teams=TEAMS | short_greece))
+
+    assert "G1" not in index_codes(out)
+    assert "G1" in caplog.text
+
+
+def test_required_league_still_fails_build(tmp_path):
+    with pytest.raises(BuildError):
+        run_build(tmp_path / "data", loader=without_league("E0"))
+
+
+def test_upcoming_includes_new_league_matches(tmp_path):
+    feeds = feed_from({"N1": fd_feed(("2026-10-27 15:00:00Z", "PSV", "Ajax"))})
+    fixtures = FIXTURES_HEADER + "B1,27/10/2026,20:45,Anderlecht,Westerlo\n"
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS), fixtures=fixtures, feeds=feeds)
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "N1", "competition_name": "Eredivisie", "kickoff_utc": "2026-10-27T15:00:00Z",
+            "home": "PSV Eindhoven", "away": "Ajax", "league": "N1", "home_league": "N1", "away_league": "N1",
+        },
+        {
+            "competition": "B1", "competition_name": "Jupiler Pro League", "kickoff_utc": "2026-10-27T20:45:00Z",
+            "home": "Anderlecht", "away": "Westerlo", "league": "B1", "home_league": "B1", "away_league": "B1",
+        },
+    ]
+
+
+def test_dropped_league_row_stays_without_league(tmp_path):
+    fixtures = FIXTURES_HEADER + "B1,27/10/2026,20:45,Anderlecht,Westerlo\n"
+    out = tmp_path / "data"
+    run_build(out, loader=without_league("B1"), fixtures=fixtures)
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "B1", "competition_name": "Jupiler Pro League", "kickoff_utc": "2026-10-27T20:45:00Z",
+            "home": "Anderlecht", "away": "Westerlo", "league": None, "home_league": None, "away_league": None,
+        }
+    ]
+
+
+def cached_csv(div: str, teams: list[str]) -> str:
+    """A football-data season CSV with one round robin of results, as the downloader caches it."""
+    rows = []
+    day = 0
+    for home in teams:
+        for away in teams:
+            if home == away:
+                continue
+            when = date(2026, 8, 1) + timedelta(days=day % 280)
+            rows.append(f"{when:%d/%m/%Y},{home},{away},1,0,10,8,4,3,5,4,2,1,0,0")
+            day += 1
+    return "Date,HomeTeam,AwayTeam,FTHG,FTAG,HS,AS,HST,AST,HC,AC,HY,AY,HR,AR\n" + "\n".join(rows) + "\n"
+
+
+def unreachable_for(divs_down: set[str]):
+    """The synthetic loader, except that the given divisions fail like an unreachable source."""
+    base = synthetic_loader(teams=TEAMS | NEW_TEAMS)
+
+    def load(divs, seasons, cache_dir, current_season):
+        if divs_down & set(divs):
+            raise IngestError("download failed after 3 attempts")
+        return base(divs, seasons, cache_dir, current_season)
+
+    return load
+
+
+def test_unreachable_optional_source_falls_back_to_cached_csv(tmp_path, caplog):
+    cache = tmp_path / "cache"
+    (cache / "2627").mkdir(parents=True)
+    (cache / "2627" / "N1.csv").write_text(cached_csv("N1", NEW_TEAMS["N1"]), encoding="utf-8")
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        build(
+            out_dir=out,
+            cache_dir=cache,
+            today=TODAY,
+            loader=unreachable_for({"N1"}),
+            fixtures_text=lambda: FIXTURES,
+            feed_text=NO_FEEDS,
+            goals_loader=no_goals_only,
+        )
+
+    assert "N1" in index_codes(out)
+    assert read_json(out / "h2h" / "N1.json")["pairs"]["Ajax|Feyenoord"] != []
+    assert "N1" in caplog.text
+
+
+def test_unreachable_optional_source_without_cache_is_dropped(tmp_path, caplog):
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=unreachable_for({"N1"}))
+
+    assert "N1" not in index_codes(out)
+    assert "N1" in caplog.text
+
+
+def test_unreachable_required_source_still_fails_build(tmp_path):
+    with pytest.raises(BuildError):
+        run_build(tmp_path / "data", loader=unreachable_for({"E0"}))
+
+
+NOR_TEAMS = [
+    "Aalesund", "Bodo/Glimt", "Brann", "Fredrikstad", "HamKam", "KFUM Oslo", "Kristiansund", "Lillestrom",
+    "Molde", "Rosenborg", "Sandefjord", "Sarpsborg 08", "Start", "Tromso", "Valerenga", "Viking",
+]
+AUT_TEAMS = [
+    "A. Lustenau", "Altach", "Austria Vienna", "Grazer AK", "Hartberg", "LASK", "Ried", "SK Rapid",
+    "Salzburg", "Sturm Graz", "Tirol", "Wolfsberger AC",
+]
+# Stats a goals-only source does not have: parse_goals_only_csv leaves them None.
+NULL_STATS = dict.fromkeys(
+    [
+        "home_xg", "away_xg", "home_shots", "away_shots", "home_sot", "away_sot",
+        "home_corners", "away_corners", "home_yellow", "away_yellow", "home_red", "away_red",
+    ]
+)
+
+
+def goals_only_season(div: str, season: str, teams: list[str], start: date) -> list[Match]:
+    """A round robin of results-only matches for one season."""
+    rng = np.random.default_rng(11)
+    matches = []
+    day = 0
+    for home in teams:
+        for away in teams:
+            if home == away:
+                continue
+            base = _match(div, season, start + timedelta(days=day % 280), home, away, rng)
+            matches.append(replace(base, **NULL_STATS))
+            day += 1
+    return matches
+
+
+def goals_only_loader(matches_by_div: dict[str, list[Match]]):
+    """Stub of load_goals_only: the given matches per division; a division not given has no usable data."""
+
+    def load(country, div, cache_dir):
+        return list(matches_by_div.get(div, []))
+
+    return load
+
+
+def norway(teams: list[str] = NOR_TEAMS, *seasons: tuple[str, date]):
+    """Eliteserien matches for the given (season, start) pairs; default is the 2026 season alone."""
+    seasons = seasons or (("2026", date(2026, 3, 1)),)
+    matches = []
+    for season, start in seasons:
+        matches += goals_only_season("NOR", season, teams, start)
+    return goals_only_loader({"NOR": matches})
+
+
+def test_goals_only_league_files(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS), goals_loader=norway())
+
+    league = read_json(out / "leagues" / "NOR.json")
+    assert "stats" not in league
+    assert league["season"] == "2026"
+    assert sorted(league["teams"]) == sorted(NOR_TEAMS)
+    assert sorted(league["goals"]["teams"]) == sorted(NOR_TEAMS)
+    viking = league["teams"]["Viking"]
+    assert viking["season"]["all"]["matches"] == 30
+    assert viking["season"]["all"]["shots_for"] is None
+    assert viking["season"]["all"]["goals_for"] is not None
+    assert viking["last6"][0]["shots_for"] is None
+    assert viking["last6"][0]["goals_for"] is not None
+    assert (out / "h2h" / "NOR.json").is_file()
+    assert "NOR" not in index_codes(out)
+
+
+def test_goals_only_current_season_is_newest_in_file(tmp_path):
+    out = tmp_path / "data"
+    loader = norway(NOR_TEAMS, ("2025", date(2025, 3, 1)), ("2026", date(2026, 3, 1)))
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS), goals_loader=loader)
+
+    league = read_json(out / "leagues" / "NOR.json")
+    assert league["season"] == "2026"
+    # One season of round robin is 30 matches per team; the 2025 season is not counted in the table.
+    assert all(team["season"]["all"]["matches"] == 30 for team in league["teams"].values())
+
+
+def test_goals_only_goals_model_uses_three_newest_seasons(tmp_path):
+    out = tmp_path / "data"
+    seasons = [(year, date(int(year), 3, 1)) for year in ("2023", "2024", "2025", "2026")]
+    matches = [m for season, start in seasons for m in goals_only_season("NOR", season, NOR_TEAMS, start)]
+    run_build(
+        out,
+        loader=synthetic_loader(teams=TEAMS | NEW_TEAMS),
+        goals_loader=goals_only_loader({"NOR": matches}),
+    )
+
+    newest_three = [m for m in matches if m.season >= "2024"]
+    assert read_json(out / "leagues" / "NOR.json")["goals"] == fit_goals_model(newest_three, ref_date=TODAY)
+
+
+@pytest.mark.parametrize(
+    ("code", "season", "teams", "label"),
+    [("NOR", "2026", NOR_TEAMS, "2026"), ("AUT", "2627", AUT_TEAMS, "2026/27")],
+)
+def test_goals_only_season_label(tmp_path, code, season, teams, label):
+    out = tmp_path / "data"
+    loader = goals_only_loader({code: goals_only_season(code, season, teams, date(2026, 3, 1))})
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS), goals_loader=loader)
+
+    assert read_json(out / "leagues" / f"{code}.json")["season"] == label
+
+
+def test_goals_only_league_below_its_minimum_is_dropped(tmp_path):
+    out = tmp_path / "data"
+    short_austria = goals_only_loader({"AUT": goals_only_season("AUT", "2627", AUT_TEAMS[:11], date(2026, 8, 1))})
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS), goals_loader=short_austria)
+
+    assert not (out / "leagues" / "AUT.json").exists()
+    assert not (out / "h2h" / "AUT.json").exists()
+
+
+def failing_goals_loader(failure: str):
+    def load(country, div, cache_dir):
+        if failure == "unreachable":
+            raise IngestError("download failed after 3 attempts")
+        return []
+
+    return load
+
+
+@pytest.mark.parametrize("failure", ["no_data", "unreachable"])
+def test_goals_only_league_dropped_on_failure(tmp_path, caplog, failure):
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS), goals_loader=failing_goals_loader(failure))
+
+    assert index_codes(out) == SITE_CODES
+    assert not (out / "leagues" / "NOR.json").exists()
+    assert not (out / "h2h" / "NOR.json").exists()
+    assert "NOR" in caplog.text
+
+
+def test_validate_output_flags_goals_only_file_with_stats(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS), goals_loader=norway())
+    assert validate_output(out) == []
+
+    league_path = out / "leagues" / "NOR.json"
+    league = read_json(league_path)
+    league["stats"] = {}
+    league_path.write_text(json.dumps(league), encoding="utf-8")
+
+    assert any("NOR" in problem and "stats" in problem for problem in validate_output(out))
+
+
+def test_uefa_rows_carry_team_leagues(tmp_path):
+    feeds = feed_from({"UCL": fd_feed(("2026-10-27 18:00:00Z", "Galatasaray", "Bodø/Glimt"))})
+    out = tmp_path / "data"
+    run_build(
+        out,
+        loader=synthetic_loader(teams=TEAMS | NEW_TEAMS),
+        fixtures=HEADER_ONLY,
+        feeds=feeds,
+        goals_loader=norway(),
+    )
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "UCL", "competition_name": "Champions League", "kickoff_utc": "2026-10-27T18:00:00Z",
+            "home": "Galatasaray", "away": "Bodo/Glimt", "league": None, "home_league": "T1", "away_league": "NOR",
+        }
+    ]
+
+
+def test_uefa_ambiguous_name_has_null_league(tmp_path):
+    # "Galatasaray" is also a team in the Norwegian data here, so it resolves in two leagues and gets no league.
+    feeds = feed_from({"UCL": fd_feed(("2026-10-27 18:00:00Z", "Galatasaray", "Viking"))})
+    out = tmp_path / "data"
+    run_build(
+        out,
+        loader=synthetic_loader(teams=TEAMS | NEW_TEAMS),
+        fixtures=HEADER_ONLY,
+        feeds=feeds,
+        goals_loader=norway(NOR_TEAMS + ["Galatasaray"]),
+    )
+
+    row = read_json(out / "index.json")["upcoming"][0]
+    assert (row["home_league"], row["away_league"]) == (None, "NOR")
+
+
+def test_uefa_unknown_team_null_league(tmp_path):
+    feeds = feed_from({"UCL": fd_feed(("2026-10-27 18:00:00Z", "Shakhtar", "Bodø/Glimt"))})
+    out = tmp_path / "data"
+    run_build(
+        out,
+        loader=synthetic_loader(teams=TEAMS | NEW_TEAMS),
+        fixtures=HEADER_ONLY,
+        feeds=feeds,
+        goals_loader=norway(),
+    )
+
+    row = read_json(out / "index.json")["upcoming"][0]
+    assert (row["home_league"], row["away_league"]) == (None, "NOR")
+
+
+def test_league_rows_team_leagues_equal_their_code(tmp_path):
+    feeds = feed_from({"E0": fd_feed(("2026-10-27 15:00:00Z", "Arsenal", "Chelsea"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS | NEW_TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    row = read_json(out / "index.json")["upcoming"][0]
+    assert (row["league"], row["home_league"], row["away_league"]) == ("E0", "E0", "E0")
+
+
+def uefa_history_loader(teams: dict[str, list[str]]):
+    """Full-league matches for every season from 2021/22 on, for the divisions given in `teams`."""
+
+    def load(divs, seasons, cache_dir, current_season):
+        rng = np.random.default_rng(3)
+        matches = []
+        for season in seasons:
+            if int(season[:2]) < 21:
+                continue
+            start = date(2000 + int(season[:2]), 8, 1)
+            for div in divs:
+                names = teams.get(div)
+                if not names:
+                    continue
+                day = 0
+                for home in names:
+                    for away in names:
+                        if home == away:
+                            continue
+                        matches.append(_match(div, season, start + timedelta(days=day % 280), home, away, rng))
+                        day += 1
+        return matches
+
+    return load
+
+
+def fd_results(*rows: tuple[str, str, str, int, int]) -> str:
+    return json.dumps(
+        [
+            {"DateUtc": when, "HomeTeam": home, "AwayTeam": away, "HomeTeamScore": hg, "AwayTeamScore": ag}
+            for when, home, away, hg, ag in rows
+        ]
+    )
+
+
+def uefa_results_feed(year: int) -> str:
+    """Finished UCL matches of one season between E0 and SP1 clubs, both ways round."""
+    rng = np.random.default_rng(year)
+    rows = []
+    for i in range(40):
+        home, away = (TEAMS["E0"][i % 20], TEAMS["SP1"][(i * 7) % 20])
+        if i % 2:
+            home, away = away, home
+        rows.append((f"{year}-10-{1 + i % 28:02d} 18:00:00Z", home, away, int(rng.poisson(1.5)), int(rng.poisson(1.1))))
+    return fd_results(*rows)
+
+
+def uefa_past_feeds(years: tuple[int, ...] = (2023, 2024, 2025)):
+    return feed_from({f"UCL-{year}": uefa_results_feed(year) for year in years})
+
+
+def test_build_writes_uefa_json(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, loader=uefa_history_loader(TEAMS), feeds=uefa_past_feeds())
+
+    document = read_json(out / "uefa.json")
+    assert set(document) == {"calibrated", "home_advantage", "offsets", "seasons", "backtest"}
+    assert document["seasons"] == [2023, 2024, 2025]
+    assert set(document["backtest"]) == {"held_out", "matches", "log_loss", "log_loss_unadjusted", "log_loss_baseline"}
+    assert document["backtest"]["held_out"] == 2025
+    assert document["calibrated"] is (document["backtest"]["log_loss"] < document["backtest"]["log_loss_unadjusted"])
+    assert document["offsets"]["E0"] == {"attack": 0.0, "defense": 0.0}
+    assert {"attack", "defense"} == set(document["offsets"]["SP1"])
+    assert validate_output(out) == []
+
+
+def test_build_keeps_previous_uefa_json_when_feeds_fail(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, loader=uefa_history_loader(TEAMS), feeds=uefa_past_feeds())
+    previous = (out / "uefa.json").read_bytes()
+
+    run_build(out, loader=uefa_history_loader(TEAMS), feeds=NO_FEEDS)
+
+    assert (out / "uefa.json").read_bytes() == previous
+
+
+def test_build_without_previous_uefa_json_and_failed_feeds(tmp_path):
+    out = tmp_path / "data"
+    run_build(out, feeds=NO_FEEDS)
+
+    assert not (out / "uefa.json").exists()
+    assert validate_output(out) == []

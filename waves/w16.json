@@ -1,0 +1,8 @@
+{
+  "name": "w16",
+  "base": "feat/uefa-cups",
+  "tasks": [
+    {"id": "uefa-strength", "title": "UEFA league strength model", "prompt_file": "w16/uefa-strength.md"},
+    {"id": "cross-league-markets", "title": "Cross-league market probabilities", "prompt_file": "w16/cross-league-markets.md"}
+  ]
+}

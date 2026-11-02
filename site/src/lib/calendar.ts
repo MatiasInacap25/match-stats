@@ -35,6 +35,30 @@ export function isAnalyzable(match: UpcomingMatch): boolean {
   return match.league !== null;
 }
 
+const UEFA_COMPETITIONS = new Set(["UCL", "UEL", "UECL"]);
+
+/** True when both teams were matched to a league, so the match page can show each team's own data. */
+export function hasTeamData(match: UpcomingMatch): boolean {
+  return typeof match.home_league === "string" && typeof match.away_league === "string";
+}
+
+/** A UEFA match whose teams play in different leagues: its page shows each team from its own league. */
+export function isCrossLeagueUefa(match: UpcomingMatch): boolean {
+  return UEFA_COMPETITIONS.has(match.competition) && hasTeamData(match) && match.home_league !== match.away_league;
+}
+
+/** Match page URL for a cross-league UEFA match. Call only when `hasTeamData` is true. */
+export function uefaMatchUrl(base: string, match: UpcomingMatch): string {
+  const params = new URLSearchParams({
+    competition: match.competition,
+    home: match.home,
+    home_league: match.home_league ?? "",
+    away: match.away,
+    away_league: match.away_league ?? "",
+  });
+  return `${base}match?${params.toString()}`;
+}
+
 /** Splits fixtures into the viewer's today and tomorrow, each sorted by kickoff. */
 export function groupByLocalDay(
   matches: UpcomingMatch[],
@@ -57,6 +81,12 @@ export function groupByLocalDay(
 /** Competitions present in `matches`, in league order then the cup. */
 export function competitionsOf(matches: UpcomingMatch[]): string[] {
   const present = new Set(matches.map((match) => match.competition));
+  return [...present].sort((a, b) => orderOf(a) - orderOf(b));
+}
+
+/** Competitions present in `matches` plus every selected code, so an active filter stays visible and removable. */
+export function chipCompetitions(matches: UpcomingMatch[], selected: Set<string>): string[] {
+  const present = new Set([...matches.map((match) => match.competition), ...selected]);
   return [...present].sort((a, b) => orderOf(a) - orderOf(b));
 }
 

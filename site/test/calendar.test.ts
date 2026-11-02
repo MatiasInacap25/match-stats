@@ -1,12 +1,16 @@
 import { describe, expect, it } from "vitest";
 import {
+  chipCompetitions,
   competitionsOf,
   filterByCompetitions,
   formatDayLabel,
   formatKickoff,
   groupByCompetition,
   groupByLocalDay,
+  hasTeamData,
   isAnalyzable,
+  isCrossLeagueUefa,
+  uefaMatchUrl,
 } from "../src/lib/calendar";
 import type { UpcomingMatch } from "../src/lib/types";
 
@@ -42,6 +46,19 @@ describe("isAnalyzable", () => {
 
   it("is false when no single league has both teams", () => {
     expect(isAnalyzable(cupMatch("2026-10-27T18:00:00Z", null))).toBe(false);
+  });
+
+  it("is false for a UEFA match with no league having both teams", () => {
+    const ucl: UpcomingMatch = {
+      competition: "UCL",
+      competition_name: "Champions League",
+      kickoff_utc: "2026-10-27T18:00:00Z",
+      home: "Benfica",
+      away: "Galatasaray",
+      league: null,
+    };
+
+    expect(isAnalyzable(ucl)).toBe(false);
   });
 });
 
@@ -145,8 +162,44 @@ describe("competitionsOf", () => {
     expect(competitionsOf(matches)).toEqual(["E0", "I1", "P1", "DFB"]);
   });
 
+  it("puts the UEFA cups after the leagues and before the DFB-Pokal", () => {
+    const matches = [
+      inCompetition("DFB", "2026-10-27T18:00:00Z"),
+      inCompetition("UECL", "2026-10-27T18:00:00Z"),
+      inCompetition("E0", "2026-10-27T16:00:00Z"),
+      inCompetition("UCL", "2026-10-27T21:00:00Z"),
+      inCompetition("UEL", "2026-10-27T21:00:00Z"),
+    ];
+
+    expect(competitionsOf(matches)).toEqual(["E0", "UCL", "UEL", "UECL", "DFB"]);
+  });
+
   it("returns an empty list when there are no matches", () => {
     expect(competitionsOf([])).toEqual([]);
+  });
+});
+
+describe("chipCompetitions", () => {
+  it("adds selected competitions that have no match that day, in league order", () => {
+    const matches = [inCompetition("E0", "2026-10-27T16:00:00Z"), inCompetition("SP1", "2026-10-27T19:00:00Z")];
+
+    expect(chipCompetitions(matches, new Set(["UCL"]))).toEqual(["E0", "SP1", "UCL"]);
+  });
+
+  it("does not duplicate a selected competition that has matches", () => {
+    const matches = [inCompetition("E0", "2026-10-27T16:00:00Z"), inCompetition("SP1", "2026-10-27T19:00:00Z")];
+
+    expect(chipCompetitions(matches, new Set(["SP1"]))).toEqual(["E0", "SP1"]);
+  });
+
+  it("equals competitionsOf when nothing is selected", () => {
+    const matches = [
+      inCompetition("DFB", "2026-10-27T18:00:00Z"),
+      inCompetition("UCL", "2026-10-27T21:00:00Z"),
+      inCompetition("E0", "2026-10-27T16:00:00Z"),
+    ];
+
+    expect(chipCompetitions(matches, new Set())).toEqual(competitionsOf(matches));
   });
 });
 
@@ -169,6 +222,18 @@ describe("filterByCompetitions", () => {
 
   it("returns an empty list when no match belongs to the selection", () => {
     expect(filterByCompetitions(matches, new Set(["P1"]))).toEqual([]);
+  });
+
+  it("keeps only the matches of the selected UEFA and league competitions", () => {
+    const withCup = [
+      inCompetition("UCL", "2026-10-27T21:00:00Z"),
+      inCompetition("E0", "2026-10-27T16:00:00Z"),
+      inCompetition("UEL", "2026-10-27T18:00:00Z"),
+    ];
+
+    const result = filterByCompetitions(withCup, new Set(["UCL", "E0"]));
+
+    expect(result.map((m) => m.competition)).toEqual(["UCL", "E0"]);
   });
 });
 
@@ -200,5 +265,53 @@ describe("formatKickoff", () => {
   it("keeps two-digit hours and minutes", () => {
     expect(formatKickoff("2026-10-27T20:00:00Z", "Europe/London")).toBe("20:00");
     expect(formatKickoff("2026-10-27T08:05:00Z", "Europe/London")).toBe("08:05");
+  });
+});
+
+function uefa(overrides: Partial<UpcomingMatch> = {}): UpcomingMatch {
+  return {
+    competition: "UCL",
+    competition_name: "Champions League",
+    kickoff_utc: "2026-10-27T18:00:00Z",
+    home: "Barcelona",
+    away: "Aston Villa",
+    league: null,
+    home_league: "SP1",
+    away_league: "E0",
+    ...overrides,
+  };
+}
+
+describe("hasTeamData", () => {
+  it("is true when both teams have a league", () => {
+    expect(hasTeamData(uefa())).toBe(true);
+  });
+
+  it("is false when either league is null or missing", () => {
+    expect(hasTeamData(uefa({ home_league: null }))).toBe(false);
+    expect(hasTeamData(uefa({ away_league: null }))).toBe(false);
+    expect(hasTeamData({ ...uefa(), home_league: undefined, away_league: undefined })).toBe(false);
+  });
+});
+
+describe("isCrossLeagueUefa", () => {
+  it("is true for a UEFA match whose teams come from different leagues", () => {
+    expect(isCrossLeagueUefa(uefa())).toBe(true);
+  });
+
+  it("is false for a UEFA match between teams of the same league", () => {
+    expect(isCrossLeagueUefa(uefa({ home_league: "E0", away_league: "E0" }))).toBe(false);
+  });
+
+  it("is false for a domestic or cup match", () => {
+    expect(isCrossLeagueUefa(cupMatch("2026-10-27T18:00:00Z", "D1"))).toBe(false);
+  });
+});
+
+describe("uefaMatchUrl", () => {
+  it("builds the UEFA match page URL with each team and its league", () => {
+    expect(uefaMatchUrl("/", uefa())).toBe(
+      "/match?competition=UCL&home=Barcelona&home_league=SP1&away=Aston+Villa&away_league=E0",
+    );
   });
 });

@@ -14,8 +14,14 @@ const base = import.meta.env.BASE_URL;
   </div>
 
   <script>
-    import { loadHeadToHead, loadIndex, loadLeague } from "../lib/data";
-    import { TeamNotFoundError, matchMarkets } from "../lib/markets";
+    import { loadHeadToHead, loadIndex, loadLeague, loadUefa } from "../lib/data";
+    import { shortName } from "../lib/leagues";
+    import {
+      TeamNotFoundError,
+      crossLeagueAvailable,
+      crossLeagueMarkets,
+      matchMarkets,
+    } from "../lib/markets";
     import type { Market } from "../lib/markets";
     import {
       escapeHtml,
@@ -27,7 +33,7 @@ const base = import.meta.env.BASE_URL;
       renderSeasonComparison,
     } from "../lib/render";
     import type { SeasonSideName } from "../lib/render";
-    import type { H2HData, IndexData, LeagueData } from "../lib/types";
+    import type { H2HData, IndexData, LeagueData, UefaData } from "../lib/types";
 
     type Scope = Market["scope"];
 
@@ -38,6 +44,8 @@ const base = import.meta.env.BASE_URL;
     const SELECT_ERROR = "Elige una liga y dos equipos en el inicio.";
     const NOT_FOUND = "Equipo no encontrado.";
     const LOAD_ERROR = "No se pudieron cargar los datos. Intenta de nuevo más tarde.";
+    const CROSS_LEAGUE_NOTE =
+      "Córners, tiros y tarjetas salen de los números de cada equipo en su liga, sin ajuste por nivel de liga.";
 
     function backHome(): string {
       return `<p><a class="back" href="${base}">Volver al inicio</a></p>`;
@@ -62,8 +70,165 @@ const base = import.meta.env.BASE_URL;
       });
     }
 
+    /** Names of the UEFA competitions a cross-league match can come from. */
+    const UEFA_NAMES: Record<string, string> = {
+      UCL: "Champions League",
+      UEL: "Europa League",
+      UECL: "Conference League",
+    };
+
+    const SEASON_CONTROLS = `<div class="seg" role="radiogroup" aria-label="Temporada por condición">
+    <button type="button" role="radio" class="seg-btn" data-side="all" aria-checked="true" tabindex="0">Todo</button>
+    <button type="button" role="radio" class="seg-btn" data-side="home" aria-checked="false" tabindex="-1">Local</button>
+    <button type="button" role="radio" class="seg-btn" data-side="away" aria-checked="false" tabindex="-1">Visitante</button>
+  </div>`;
+
+    /** Outcome cards, the market tabs and the market rows of the match scope. */
+    function marketsHtml(markets: Market[], home: string, away: string): string {
+      return `${renderOutcomes(markets)}
+<div class="seg market-tabs" role="tablist" aria-label="Mercados">
+  <button type="button" role="tab" id="market-tab-match" class="seg-btn" data-scope="match" aria-selected="true" aria-controls="market-panel" tabindex="0">Partido</button>
+  <button type="button" role="tab" id="market-tab-home" class="seg-btn" data-scope="home" aria-selected="false" aria-controls="market-panel" tabindex="-1">${escapeHtml(home)}</button>
+  <button type="button" role="tab" id="market-tab-away" class="seg-btn" data-scope="away" aria-selected="false" aria-controls="market-panel" tabindex="-1">${escapeHtml(away)}</button>
+</div>
+<div id="market-panel" role="tabpanel" aria-labelledby="market-tab-match" tabindex="0">${renderMarketRows(markets, "match")}</div>`;
+    }
+
+    /** Wires the market tabs rendered by marketsHtml. The match scope is the first tab. */
+    function bindMarkets(markets: Market[]): void {
+      let scope: Scope = "match";
+      const panel = document.getElementById("market-panel") as HTMLDivElement;
+      const marketTabs = [...app!.querySelectorAll<HTMLButtonElement>("[role='tab'][data-scope]")];
+
+      function selectScope(next: HTMLButtonElement, focus = false): void {
+        scope = next.dataset.scope as Scope;
+        for (const tab of marketTabs) {
+          const active = tab === next;
+          tab.setAttribute("aria-selected", String(active));
+          tab.tabIndex = active ? 0 : -1;
+        }
+        panel.setAttribute("aria-labelledby", next.id);
+        panel.innerHTML = renderMarketRows(markets, scope);
+        if (focus) next.focus();
+      }
+
+      marketTabs.forEach((tab) => tab.addEventListener("click", () => selectScope(tab)));
+      bindArrowKeys(marketTabs, (tab) => selectScope(tab, true));
+    }
+
+    /** True when the markets include a corners, shots or cards market (not only goals and 1X2). */
+    function hasStatMarkets(markets: Market[]): boolean {
+      return markets.some((market) => /^(corners|shots|cards)/.test(market.id));
+    }
+
+    /**
+     * UEFA match between teams of different leagues: each team comes from its own league file.
+     * Probabilities appear only when uefa.json can price the pair; otherwise the data shows alone.
+     */
+    async function mainUefa(params: URLSearchParams): Promise<void> {
+      const competition = params.get("competition") ?? "";
+      const home = params.get("home") ?? "";
+      const away = params.get("away") ?? "";
+      const homeCode = params.get("home_league") ?? "";
+      const awayCode = params.get("away_league") ?? "";
+
+      if (!Object.hasOwn(UEFA_NAMES, competition) || !home || !away || !homeCode || !awayCode) {
+        fail(SELECT_ERROR);
+        return;
+      }
+
+      let homeLeague: LeagueData;
+      let awayLeague: LeagueData;
+      let uefa: UefaData | null;
+      try {
+        [homeLeague, awayLeague, uefa] = await Promise.all([loadLeague(homeCode), loadLeague(awayCode), loadUefa()]);
+      } catch (error) {
+        console.error(error);
+        fail(LOAD_ERROR);
+        return;
+      }
+
+      if (!Object.hasOwn(homeLeague.teams, home) || !Object.hasOwn(awayLeague.teams, away)) {
+        fail(NOT_FOUND);
+        return;
+      }
+
+      let markets: Market[] = [];
+      if (uefa && crossLeagueAvailable(uefa, homeCode, awayCode)) {
+        try {
+          markets = crossLeagueMarkets(
+            { name: home, code: homeCode, league: homeLeague },
+            { name: away, code: awayCode, league: awayLeague },
+            uefa,
+          );
+        } catch (error) {
+          if (!(error instanceof TeamNotFoundError)) throw error;
+          fail(NOT_FOUND);
+          return;
+        }
+      }
+
+      const homeTeam = homeLeague.teams[home];
+      const awayTeam = awayLeague.teams[away];
+      const homeLeagueName = shortName(homeCode, homeCode);
+      const awayLeagueName = shortName(awayCode, awayCode);
+      let side: SeasonSideName = "all";
+
+      const marketsBlock =
+        markets.length === 0
+          ? ""
+          : `<section>
+  ${marketsHtml(markets, home, away)}
+  ${hasStatMarkets(markets) ? `<p class="muted">${escapeHtml(CROSS_LEAGUE_NOTE)}</p>` : ""}
+</section>`;
+
+      document.title = `${home} vs ${away} · Match Stats`;
+      app!.innerHTML = `<header class="match-head">
+  <h1 class="match-title">${escapeHtml(home)} <span class="team-league muted">${escapeHtml(homeLeagueName)}</span> <span class="vs">vs</span> ${escapeHtml(away)} <span class="team-league muted">${escapeHtml(awayLeagueName)}</span></h1>
+  <p class="match-sub muted">${escapeHtml(UEFA_NAMES[competition])}</p>
+</header>
+${marketsBlock}
+<section>
+  <h2>Temporada</h2>
+  ${SEASON_CONTROLS}
+  <div id="season">${renderSeasonComparison(homeTeam.season, awayTeam.season, side, [home, away])}</div>
+</section>
+<section>
+  <h2>Últimos 6 · ${escapeHtml(home)}</h2>
+  ${renderLastMatches(home, homeTeam.last6)}
+</section>
+<section>
+  <h2>Últimos 6 · ${escapeHtml(away)}</h2>
+  ${renderLastMatches(away, awayTeam.last6)}
+</section>
+${backHome()}`;
+
+      if (markets.length > 0) bindMarkets(markets);
+
+      const sideButtons = [...app!.querySelectorAll<HTMLButtonElement>("[role='radio'][data-side]")];
+
+      function selectSide(next: HTMLButtonElement): void {
+        side = next.dataset.side as SeasonSideName;
+        for (const button of sideButtons) {
+          const active = button === next;
+          button.setAttribute("aria-checked", String(active));
+          button.tabIndex = active ? 0 : -1;
+        }
+        const season = document.getElementById("season");
+        if (season) season.innerHTML = renderSeasonComparison(homeTeam.season, awayTeam.season, side, [home, away]);
+      }
+
+      sideButtons.forEach((button) => button.addEventListener("click", () => selectSide(button)));
+      bindArrowKeys(sideButtons, selectSide);
+    }
+
     async function main(): Promise<void> {
       const params = new URLSearchParams(window.location.search);
+      if (params.has("competition")) {
+        await mainUefa(params);
+        return;
+      }
+
       const code = params.get("league") ?? "";
       const home = params.get("home") ?? "";
       const away = params.get("away") ?? "";
@@ -105,7 +270,6 @@ const base = import.meta.env.BASE_URL;
 
       const name = leagueName(index?.leagues ?? [], code);
       const meetings = h2h.pairs[[home, away].sort().join("|")] ?? [];
-      let scope: Scope = "match";
       let side: SeasonSideName = "all";
 
       document.title = `${home} vs ${away} · Match Stats`;
@@ -113,20 +277,10 @@ const base = import.meta.env.BASE_URL;
   <h1 class="match-title">${escapeHtml(home)} <span class="vs">vs</span> ${escapeHtml(away)}</h1>
   <p class="match-sub muted">${escapeHtml(name)} · Temporada ${escapeHtml(league.season)}</p>
 </header>
-${renderOutcomes(markets)}
-<div class="seg market-tabs" role="tablist" aria-label="Mercados">
-  <button type="button" role="tab" id="market-tab-match" class="seg-btn" data-scope="match" aria-selected="true" aria-controls="market-panel" tabindex="0">Partido</button>
-  <button type="button" role="tab" id="market-tab-home" class="seg-btn" data-scope="home" aria-selected="false" aria-controls="market-panel" tabindex="-1">${escapeHtml(home)}</button>
-  <button type="button" role="tab" id="market-tab-away" class="seg-btn" data-scope="away" aria-selected="false" aria-controls="market-panel" tabindex="-1">${escapeHtml(away)}</button>
-</div>
-<div id="market-panel" role="tabpanel" aria-labelledby="market-tab-match" tabindex="0">${renderMarketRows(markets, scope)}</div>
+${marketsHtml(markets, home, away)}
 <section>
   <h2>Temporada</h2>
-  <div class="seg" role="radiogroup" aria-label="Temporada por condición">
-    <button type="button" role="radio" class="seg-btn" data-side="all" aria-checked="true" tabindex="0">Todo</button>
-    <button type="button" role="radio" class="seg-btn" data-side="home" aria-checked="false" tabindex="-1">Local</button>
-    <button type="button" role="radio" class="seg-btn" data-side="away" aria-checked="false" tabindex="-1">Visitante</button>
-  </div>
+  ${SEASON_CONTROLS}
   <div id="season">${renderSeasonComparison(league.teams[home].season, league.teams[away].season, side, [home, away])}</div>
 </section>
 <section>
@@ -143,21 +297,9 @@ ${renderOutcomes(markets)}
 </section>
 ${backHome()}`;
 
-      const panel = document.getElementById("market-panel") as HTMLDivElement;
-      const marketTabs = [...app!.querySelectorAll<HTMLButtonElement>("[role='tab'][data-scope]")];
-      const sideButtons = [...app!.querySelectorAll<HTMLButtonElement>("[role='radio'][data-side]")];
+      bindMarkets(markets);
 
-      function selectScope(next: HTMLButtonElement, focus = false): void {
-        scope = next.dataset.scope as Scope;
-        for (const tab of marketTabs) {
-          const active = tab === next;
-          tab.setAttribute("aria-selected", String(active));
-          tab.tabIndex = active ? 0 : -1;
-        }
-        panel.setAttribute("aria-labelledby", next.id);
-        panel.innerHTML = renderMarketRows(markets, scope);
-        if (focus) next.focus();
-      }
+      const sideButtons = [...app!.querySelectorAll<HTMLButtonElement>("[role='radio'][data-side]")];
 
       function selectSide(next: HTMLButtonElement): void {
         side = next.dataset.side as SeasonSideName;
@@ -172,8 +314,6 @@ ${backHome()}`;
         }
       }
 
-      marketTabs.forEach((tab) => tab.addEventListener("click", () => selectScope(tab)));
-      bindArrowKeys(marketTabs, (tab) => selectScope(tab, true));
       sideButtons.forEach((button) => button.addEventListener("click", () => selectSide(button)));
       bindArrowKeys(sideButtons, selectSide);
     }

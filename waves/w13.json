@@ -1,0 +1,8 @@
+{
+  "name": "w13",
+  "base": "feat/uefa-cups",
+  "tasks": [
+    {"id": "uefa-cups-data", "title": "UEFA cups in upcoming data", "prompt_file": "w13/uefa-cups-data.md"},
+    {"id": "uefa-cups-site", "title": "UEFA cups in calendar", "prompt_file": "w13/uefa-cups-site.md"}
+  ]
+}

@@ -40,6 +40,13 @@
   font-size: 0.875rem;
 }
 
+/* Cross-league UEFA match: each team's league, next to its name */
+.team-league {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 /* 1X2 cards */
 
 .outcomes {

@@ -1,0 +1,9 @@
+{
+  "name": "w14",
+  "base": "feat/uefa-cups",
+  "tasks": [
+    {"id": "league-registry", "title": "League registry and 4 new leagues", "prompt_file": "w14/league-registry.md"},
+    {"id": "goals-only-ingest", "title": "Goals-only league ingest", "prompt_file": "w14/goals-only-ingest.md"},
+    {"id": "site-new-leagues", "title": "Site codes for new leagues", "prompt_file": "w14/site-new-leagues.md"}
+  ]
+}
