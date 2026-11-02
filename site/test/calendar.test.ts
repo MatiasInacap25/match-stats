@@ -6,7 +6,10 @@ import {
   formatKickoff,
   groupByCompetition,
   groupByLocalDay,
+  hasTeamData,
   isAnalyzable,
+  isCrossLeagueUefa,
+  uefaMatchUrl,
 } from "../src/lib/calendar";
 import type { UpcomingMatch } from "../src/lib/types";
 
@@ -237,5 +240,53 @@ describe("formatKickoff", () => {
   it("keeps two-digit hours and minutes", () => {
     expect(formatKickoff("2026-10-27T20:00:00Z", "Europe/London")).toBe("20:00");
     expect(formatKickoff("2026-10-27T08:05:00Z", "Europe/London")).toBe("08:05");
+  });
+});
+
+function uefa(overrides: Partial<UpcomingMatch> = {}): UpcomingMatch {
+  return {
+    competition: "UCL",
+    competition_name: "Champions League",
+    kickoff_utc: "2026-10-27T18:00:00Z",
+    home: "Barcelona",
+    away: "Aston Villa",
+    league: null,
+    home_league: "SP1",
+    away_league: "E0",
+    ...overrides,
+  };
+}
+
+describe("hasTeamData", () => {
+  it("is true when both teams have a league", () => {
+    expect(hasTeamData(uefa())).toBe(true);
+  });
+
+  it("is false when either league is null or missing", () => {
+    expect(hasTeamData(uefa({ home_league: null }))).toBe(false);
+    expect(hasTeamData(uefa({ away_league: null }))).toBe(false);
+    expect(hasTeamData({ ...uefa(), home_league: undefined, away_league: undefined })).toBe(false);
+  });
+});
+
+describe("isCrossLeagueUefa", () => {
+  it("is true for a UEFA match whose teams come from different leagues", () => {
+    expect(isCrossLeagueUefa(uefa())).toBe(true);
+  });
+
+  it("is false for a UEFA match between teams of the same league", () => {
+    expect(isCrossLeagueUefa(uefa({ home_league: "E0", away_league: "E0" }))).toBe(false);
+  });
+
+  it("is false for a domestic or cup match", () => {
+    expect(isCrossLeagueUefa(cupMatch("2026-10-27T18:00:00Z", "D1"))).toBe(false);
+  });
+});
+
+describe("uefaMatchUrl", () => {
+  it("builds the UEFA match page URL with each team and its league", () => {
+    expect(uefaMatchUrl("/", uefa())).toBe(
+      "/match?competition=UCL&home=Barcelona&home_league=SP1&away=Aston+Villa&away_league=E0",
+    );
   });
 });

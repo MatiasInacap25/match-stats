@@ -232,6 +232,73 @@ describe("renderLastMatches", () => {
   });
 });
 
+/** A goals-only team (Bodø/Glimt style): every season and last-6 stat is null. */
+function goalsOnlySeason(): TeamSeason {
+  const season = structuredClone(league.teams.Arsenal.season);
+  for (const side of [season.all, season.home, season.away]) {
+    Object.assign(side, {
+      xg_for: null,
+      xg_against: null,
+      shots_for: null,
+      shots_against: null,
+      shots_on_target_for: null,
+      shots_on_target_against: null,
+      corners_for: null,
+      corners_against: null,
+      yellow_cards: null,
+      red_cards: null,
+    });
+  }
+  return season;
+}
+
+/** Goals-only last-6 row. The contract says its stats are null; types.ts still types them as numbers. */
+function goalsOnlyMatch(match: LastMatch): LastMatch {
+  return {
+    ...match,
+    xg_for: null,
+    xg_against: null,
+    shots_for: null,
+    shots_against: null,
+    shots_on_target_for: null,
+    shots_on_target_against: null,
+    corners_for: null,
+    corners_against: null,
+    cards_for: null,
+    cards_against: null,
+  } as unknown as LastMatch;
+}
+
+describe("goals-only teams", () => {
+  const [first] = league.teams.Arsenal.last6;
+
+  it("shows a dash for every missing season stat and never NaN", () => {
+    const html = renderSeasonComparison(goalsOnlySeason(), league.teams.Arsenal.season, "all", ["Bodø/Glimt", "Arsenal"]);
+    expect(html).not.toContain("NaN");
+    expect(itemFor(html, "xG a favor")).toContain('compare-value num">—</span>');
+    expect(itemFor(html, "Tiros a favor")).toContain('compare-value num">—</span>');
+    expect(itemFor(html, "Córners a favor")).toContain('compare-value num">—</span>');
+    expect(itemFor(html, "Amarillas por partido")).toContain('compare-value num">—</span>');
+    expect(itemFor(html, "Goles a favor")).not.toContain("—");
+  });
+
+  it("keeps the score and result of a last-6 row with no stat data, and hides the stat line", () => {
+    const html = renderLastMatches("Bodø/Glimt", [goalsOnlyMatch(first)]);
+    expect(html).not.toContain("NaN");
+    expect(html).toContain(`${first.goals_for}–${first.goals_against}`);
+    expect(html).toContain('chip W">G</span>');
+    expect(html).not.toContain("xG ");
+    expect(html).not.toContain("Tiros ");
+  });
+
+  it("renders a dash for each missing stat in a partly filled row", () => {
+    const partial: LastMatch = { ...first, xg_for: null };
+    const html = renderLastMatches("Arsenal", [partial]);
+    expect(html).toContain("xG —–0.9");
+    expect(html).not.toContain("NaN");
+  });
+});
+
 describe("renderHeadToHead", () => {
   it("has no venue circle", () => {
     const html = renderHeadToHead(h2h.pairs["Arsenal|Chelsea"], "Arsenal", "Chelsea");
