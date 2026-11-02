@@ -252,7 +252,7 @@ function goalsOnlySeason(): TeamSeason {
   return season;
 }
 
-/** Goals-only last-6 row. The contract says its stats are null; types.ts still types them as numbers. */
+/** Goals-only last-6 row: every stat is null, as the contract says. */
 function goalsOnlyMatch(match: LastMatch): LastMatch {
   return {
     ...match,
@@ -266,7 +266,7 @@ function goalsOnlyMatch(match: LastMatch): LastMatch {
     corners_against: null,
     cards_for: null,
     cards_against: null,
-  } as unknown as LastMatch;
+  };
 }
 
 describe("goals-only teams", () => {

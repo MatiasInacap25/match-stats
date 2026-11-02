@@ -344,12 +344,18 @@ import Icon from "../components/Icon.astro";
     isCrossLeagueUefa,
     uefaMatchUrl,
   } from "../lib/calendar";
-  import { loadIndex, loadLeague } from "../lib/data";
+  import { loadIndex, loadLeague, loadUefa } from "../lib/data";
   import { shortName } from "../lib/leagues";
-  import { MATCH_LINES, TeamNotFoundError, matchMarkets } from "../lib/markets";
+  import {
+    MATCH_LINES,
+    TeamNotFoundError,
+    crossLeagueAvailable,
+    crossLeagueMarkets,
+    matchMarkets,
+  } from "../lib/markets";
   import type { Market } from "../lib/markets";
   import { escapeHtml, formatPct } from "../lib/render";
-  import type { IndexData, LeagueData, UpcomingMatch } from "../lib/types";
+  import type { IndexData, LeagueData, UefaData, UpcomingMatch } from "../lib/types";
 
   type Day = "today" | "tomorrow";
   type Order = "time" | "league";
@@ -389,6 +395,8 @@ import Icon from "../components/Icon.astro";
   // Each league's JSON is fetched at most once, and only when a listed day needs it.
   const leagueCache = new Map<string, Promise<LeagueData>>();
   let index: IndexData | null = null;
+  // Null when uefa.json is missing or unusable: UEFA matches then show no probabilities.
+  let uefa: UefaData | null = null;
   let groups: Record<Day, UpcomingMatch[]> = { today: [], tomorrow: [] };
   let selectedLeague = "";
   let selectedDay: Day = "today";
@@ -475,16 +483,53 @@ import Icon from "../components/Icon.astro";
     comparePanel.inert = !open;
   }
 
-  /** Probabilities for the "1" and "Más de 2.5" rows; empty when the teams are not in the data. */
-  function probabilityHtml(match: UpcomingMatch, league: LeagueData | undefined): string {
-    if (!league || !isAnalyzable(match)) return "";
-    let markets: Market[];
+  /** Markets from `compute`, or null when a team is not in the data. Other errors are logged. */
+  function marketsOrNull(compute: () => Market[]): Market[] | null {
     try {
-      markets = matchMarkets(league, match.home, match.away);
+      return compute();
     } catch (error) {
       if (!(error instanceof TeamNotFoundError)) console.error(error);
-      return "";
+      return null;
     }
+  }
+
+  /** Markets of a league match; null when its league is not loaded. */
+  function leagueMarketsOf(match: UpcomingMatch, leagues: Map<string, LeagueData>): Market[] | null {
+    const league = match.league && isAnalyzable(match) ? leagues.get(match.league) : undefined;
+    if (!league) return null;
+    return marketsOrNull(() => matchMarkets(league, match.home, match.away));
+  }
+
+  /** Markets of a cross-league UEFA match; null unless uefa.json prices the pair and both leagues are loaded. */
+  function crossLeagueMarketsOf(match: UpcomingMatch, leagues: Map<string, LeagueData>): Market[] | null {
+    const { home_league: homeCode, away_league: awayCode } = match;
+    const data = uefa;
+    if (!isCrossLeagueUefa(match) || !homeCode || !awayCode || !data) return null;
+    const homeLeague = leagues.get(homeCode);
+    const awayLeague = leagues.get(awayCode);
+    if (!homeLeague || !awayLeague || !crossLeagueAvailable(data, homeCode, awayCode)) return null;
+    return marketsOrNull(() =>
+      crossLeagueMarkets(
+        { name: match.home, code: homeCode, league: homeLeague },
+        { name: match.away, code: awayCode, league: awayLeague },
+        data,
+      ),
+    );
+  }
+
+  /** League codes whose data a row needs: its own league, or both teams' leagues for a priced UEFA match. */
+  function neededLeagues(match: UpcomingMatch): string[] {
+    if (isCrossLeagueUefa(match) && match.home_league && match.away_league) {
+      return crossLeagueAvailable(uefa, match.home_league, match.away_league)
+        ? [match.home_league, match.away_league]
+        : [];
+    }
+    return match.league && isAnalyzable(match) ? [match.league] : [];
+  }
+
+  /** Probabilities for the "1" and "Más de 2.5" rows; empty when there are no markets. */
+  function probabilityHtml(markets: Market[] | null): string {
+    if (!markets) return "";
     const find = (id: string): Market | undefined => markets.find((market) => market.id === id);
     const one = find("1");
     const draw = find("X");
@@ -501,7 +546,7 @@ import Icon from "../components/Icon.astro";
   </span>`;
   }
 
-  function rowHtml(match: UpcomingMatch, league: LeagueData | undefined): string {
+  function rowHtml(match: UpcomingMatch, leagues: Map<string, LeagueData>): string {
     const kickoff = `<span class="kickoff num">${escapeHtml(formatKickoff(match.kickoff_utc))}</span>`;
     const name = escapeHtml(shortName(match.competition, match.competition_name));
 
@@ -512,6 +557,7 @@ import Icon from "../components/Icon.astro";
     <span class="fixture">${escapeHtml(match.home)} vs ${escapeHtml(match.away)}</span>
     <span class="muted league-name">${name}</span>
   </span>
+  ${probabilityHtml(crossLeagueMarketsOf(match, leagues))}
 </a></li>`;
     }
 
@@ -532,7 +578,7 @@ import Icon from "../components/Icon.astro";
     <span class="fixture">${escapeHtml(match.home)} vs ${escapeHtml(match.away)}</span>
     <span class="muted league-name">${name}</span>
   </span>
-  ${probabilityHtml(match, league)}
+  ${probabilityHtml(leagueMarketsOf(match, leagues))}
 </a></li>`;
   }
 
@@ -553,7 +599,7 @@ import Icon from "../components/Icon.astro";
     return groupByCompetition(matches)
       .map(({ competition, matches: group }) => {
         const title = escapeHtml(`${shortName(competition, group[0].competition_name)} · ${group.length}`);
-        const rows = group.map((match) => rowHtml(match, match.league ? leagues.get(match.league) : undefined));
+        const rows = group.map((match) => rowHtml(match, leagues));
         return `<li class="group"><h3 class="group-title">${title}</h3><ul class="fixtures">${rows.join("")}</ul></li>`;
       })
       .join("");
@@ -582,7 +628,7 @@ import Icon from "../components/Icon.astro";
     }
     dayPanel.setAttribute("aria-busy", "true");
 
-    const codes = [...new Set(visible.flatMap((match) => (match.league && isAnalyzable(match) ? [match.league] : [])))];
+    const codes = [...new Set(visible.flatMap(neededLeagues))];
     const leagues = new Map<string, LeagueData>();
     await Promise.all(
       codes.map(async (code) => {
@@ -598,7 +644,7 @@ import Icon from "../components/Icon.astro";
     fixtureList.innerHTML =
       order === "league"
         ? groupsHtml(visible, leagues)
-        : visible.map((match) => rowHtml(match, match.league ? leagues.get(match.league) : undefined)).join("");
+        : visible.map((match) => rowHtml(match, leagues)).join("");
     dayPanel.removeAttribute("aria-busy");
   }
 
@@ -703,6 +749,8 @@ import Icon from "../components/Icon.astro";
       showStatus(LOAD_ERROR);
       return;
     }
+
+    uefa = await loadUefa();
 
     leagueSelect.replaceChildren(...index.leagues.map((league) => new Option(shortName(league.code, league.name), league.code)));
     leagueSelect.disabled = index.leagues.length === 0;

@@ -110,7 +110,10 @@ export interface TeamSeason {
   away: SeasonSide;
 }
 
-/** One of a team's most recent matches. Cards are card points (yellow = 1, red = 2). */
+/**
+ * One of a team's most recent matches. Cards are card points (yellow = 1, red = 2).
+ * Stat fields are null for goals-only leagues (NOR, AUT).
+ */
 export interface LastMatch {
   date: string;
   league: string;
@@ -123,14 +126,14 @@ export interface LastMatch {
   result: string;
   xg_for: number | null;
   xg_against: number | null;
-  shots_for: number;
-  shots_against: number;
-  shots_on_target_for: number;
-  shots_on_target_against: number;
-  corners_for: number;
-  corners_against: number;
-  cards_for: number;
-  cards_against: number;
+  shots_for: number | null;
+  shots_against: number | null;
+  shots_on_target_for: number | null;
+  shots_on_target_against: number | null;
+  corners_for: number | null;
+  corners_against: number | null;
+  cards_for: number | null;
+  cards_against: number | null;
 }
 
 export interface TeamData {
