@@ -1,25 +1,45 @@
+from dataclasses import dataclass
 from datetime import date
+from typing import Literal
 
-TOP_LEAGUES: dict[str, str] = {
-    "E0": "Premier League",
-    "SP1": "La Liga",
-    "I1": "Serie A",
-    "D1": "Bundesliga",
-    "F1": "Ligue 1",
-    "E1": "Championship",
-    "P1": "Primeira Liga",
-}
 
-# League -> every division of its country, top first. Head to head uses all of them, since teams move between divisions.
-COUNTRY_DIVISIONS: dict[str, tuple[str, ...]] = {
-    "E0": ("E0", "E1", "E2"),
-    "SP1": ("SP1", "SP2"),
-    "I1": ("I1", "I2"),
-    "D1": ("D1", "D2"),
-    "F1": ("F1", "F2"),
-    "E1": ("E0", "E1", "E2"),
-    "P1": ("P1",),
-}
+@dataclass(frozen=True)
+class LeagueSpec:
+    code: str  # "N1", "NOR"
+    name: str  # "Eredivisie"
+    divisions: tuple[str, ...]  # head-to-head divisions, top first
+    source: Literal["full", "goals_only"]
+    min_teams: int
+    in_site: bool  # full league in the site: chip, calendar, comparator
+    required: bool  # True only for the original 7
+    fixture_slug: str | None  # fixturedownload slug; None -> fixtures.csv
+    new_csv: str | None  # football-data "new/<CODE>.csv" for goals-only leagues
+
+
+# Order is the site order (in_site leagues first), then the data-only leagues.
+LEAGUES: tuple[LeagueSpec, ...] = (
+    LeagueSpec("E0", "Premier League", ("E0", "E1", "E2"), "full", 16, True, True, "epl", None),
+    LeagueSpec("SP1", "La Liga", ("SP1", "SP2"), "full", 16, True, True, "la-liga", None),
+    LeagueSpec("I1", "Serie A", ("I1", "I2"), "full", 16, True, True, "serie-a", None),
+    LeagueSpec("D1", "Bundesliga", ("D1", "D2"), "full", 16, True, True, "bundesliga", None),
+    LeagueSpec("F1", "Ligue 1", ("F1", "F2"), "full", 16, True, True, "ligue-1", None),
+    LeagueSpec("E1", "Championship", ("E0", "E1", "E2"), "full", 16, True, True, "championship", None),
+    LeagueSpec("P1", "Primeira Liga", ("P1",), "full", 16, True, True, "primeira-liga", None),
+    LeagueSpec("N1", "Eredivisie", ("N1",), "full", 16, True, False, "eredivisie", None),
+    LeagueSpec("B1", "Jupiler Pro League", ("B1",), "full", 16, True, False, None, None),
+    LeagueSpec("T1", "Süper Lig", ("T1",), "full", 16, True, False, "super-lig", None),
+    LeagueSpec("G1", "Super League Greece", ("G1",), "full", 14, True, False, None, None),
+    LeagueSpec("NOR", "Eliteserien", ("NOR",), "goals_only", 16, False, False, None, "NOR"),
+    LeagueSpec("AUT", "Austrian Bundesliga", ("AUT",), "goals_only", 12, False, False, None, "AUT"),
+)
+
+TOP_LEAGUES: dict[str, str] = {spec.code: spec.name for spec in LEAGUES if spec.required}
+SITE_LEAGUES: dict[str, str] = {spec.code: spec.name for spec in LEAGUES if spec.in_site}
+DATA_LEAGUES: dict[str, str] = {spec.code: spec.name for spec in LEAGUES}
+
+# League -> every division of its country, top first, for the 7 required leagues. Head to head uses all of them,
+# since teams move between divisions. The other leagues carry their divisions on their LeagueSpec.
+COUNTRY_DIVISIONS: dict[str, tuple[str, ...]] = {spec.code: spec.divisions for spec in LEAGUES if spec.required}
 
 
 def season_code(d: date) -> str:
