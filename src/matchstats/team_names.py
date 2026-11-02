@@ -76,6 +76,13 @@ ALIASES: dict[str, str] = {
     "SL Benfica": "Benfica",
     "Sporting CP": "Sp Lisbon",
     "Vitória SC": "Guimaraes",
+    # UEFA competitions
+    "Atleti": "Ath Madrid",
+    "B. Dortmund": "Dortmund",
+    "Bayern München": "Bayern Munich",
+    "Leipzig": "RB Leipzig",
+    "Braga": "Sp Braga",
+    "Paris": "Paris SG",
 }
 
 

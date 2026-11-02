@@ -382,6 +382,93 @@ def test_upcoming_sorted_by_kickoff_then_competition_order(tmp_path):
     assert [row["competition"] for row in read_json(out / "index.json")["upcoming"]] == ["E0", "DFB"]
 
 
+def test_ucl_match_between_teams_of_two_leagues_has_no_league(tmp_path):
+    feeds = feed_from({"UCL": fd_feed(("2026-10-27 18:00:00Z", "Barcelona", "Aston Villa"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "UCL", "competition_name": "Champions League", "kickoff_utc": "2026-10-27T18:00:00Z",
+            "home": "Barcelona", "away": "Aston Villa", "league": None,
+        }
+    ]
+
+
+def test_uel_match_between_teams_of_one_league_gets_that_league(tmp_path):
+    feeds = feed_from({"UEL": fd_feed(("2026-10-27 18:45:00Z", "Chelsea", "Arsenal"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    assert read_json(out / "index.json")["upcoming"] == [
+        {
+            "competition": "UEL", "competition_name": "Europa League", "kickoff_utc": "2026-10-27T18:45:00Z",
+            "home": "Chelsea", "away": "Arsenal", "league": "E0",
+        }
+    ]
+
+
+def test_uefa_feed_names_resolve_to_football_data_names(tmp_path):
+    feeds = feed_from(
+        {
+            "UCL": fd_feed(("2026-10-27 18:00:00Z", "Paris", "Atleti")),
+            "UEL": fd_feed(("2026-10-27 19:00:00Z", "Leipzig", "B. Dortmund")),
+            "UECL": fd_feed(("2026-10-27 19:00:00Z", "Bayern München", "Braga")),
+        }
+    )
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    rows = read_json(out / "index.json")["upcoming"]
+    assert [(row["home"], row["away"]) for row in rows] == [
+        ("Paris SG", "Ath Madrid"),
+        ("RB Leipzig", "Dortmund"),
+        ("Bayern Munich", "Sp Braga"),
+    ]
+
+
+def test_paris_fc_in_ligue_1_still_resolves_to_paris_fc(tmp_path):
+    feeds = feed_from({"F1": fd_feed(("2026-10-27 19:00:00Z", "Paris FC", "Lyon"))})
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    assert [row["home"] for row in read_json(out / "index.json")["upcoming"]] == ["Paris FC"]
+
+
+def test_failing_uefa_feed_is_skipped_with_warning_and_rest_still_builds(tmp_path, caplog):
+    feeds = feed_from(
+        {
+            "UECL": IngestError("download failed after 3 attempts"),
+            "E0": fd_feed(("2026-10-27 15:00:00Z", "Arsenal", "Chelsea")),
+        }
+    )
+    out = tmp_path / "data"
+    with caplog.at_level(logging.WARNING):
+        run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    upcoming = read_json(out / "index.json")["upcoming"]
+    assert [row["competition"] for row in upcoming] == ["E0"]
+    assert "UECL" in caplog.text
+
+
+def test_uefa_rows_sort_after_leagues_and_before_dfb_at_the_same_kickoff(tmp_path):
+    feeds = feed_from(
+        {
+            "E0": fd_feed(("2026-10-27 18:00:00Z", "Chelsea", "Arsenal")),
+            "UCL": fd_feed(("2026-10-27 18:00:00Z", "Barcelona", "Aston Villa")),
+            "UEL": fd_feed(("2026-10-27 18:00:00Z", "Chelsea", "Brighton")),
+            "UECL": fd_feed(("2026-10-27 18:00:00Z", "Sp Braga", "Lille")),
+            "DFB": dfb_feed(("2026-10-27T19:00:00", "Hamburger SV", "Eintracht Frankfurt")),
+        }
+    )
+    out = tmp_path / "data"
+    run_build(out, loader=synthetic_loader(teams=TEAMS), fixtures=HEADER_ONLY, feeds=feeds)
+
+    assert [row["competition"] for row in read_json(out / "index.json")["upcoming"]] == [
+        "E0", "UCL", "UEL", "UECL", "DFB",
+    ]
+
+
 def test_validate_output_requires_upcoming_list(tmp_path):
     out = tmp_path / "data"
     run_build(out)

@@ -1,4 +1,4 @@
-"""Upcoming fixtures from the free feeds: fixturedownload.com for the top leagues, OpenLigaDB for the DFB-Pokal."""
+"""Upcoming fixtures from the free feeds: fixturedownload.com for the top leagues and UEFA cups, OpenLigaDB for the DFB-Pokal."""
 
 import json
 from dataclasses import dataclass
@@ -7,6 +7,11 @@ from zoneinfo import ZoneInfo
 
 GERMAN_ZONE = ZoneInfo("Europe/Berlin")  # OpenLigaDB gives German local time without an offset
 CUP_CODE = "DFB"
+_UEFA_SLUGS = {
+    "UCL": "champions-league",
+    "UEL": "europa-league",
+    "UECL": "conference-league",
+}
 
 _LEAGUE_SLUGS = {
     "E0": "epl",
@@ -39,6 +44,11 @@ def league_fixture_urls(season: str) -> dict[str, str]:
 
 def cup_fixture_urls(season: str) -> dict[str, str]:
     return {CUP_CODE: f"https://api.openligadb.de/getmatchdata/dfb/{_season_year(season)}"}
+
+
+def uefa_fixture_urls(season: str) -> dict[str, str]:
+    year = _season_year(season)
+    return {code: f"https://fixturedownload.com/feed/json/{slug}-{year}" for code, slug in _UEFA_SLUGS.items()}
 
 
 def parse_fixturedownload(text: str, competition: str) -> list[UpcomingFixture]:

@@ -16,6 +16,7 @@ from matchstats.fixture_sources import (
     league_fixture_urls,
     parse_fixturedownload,
     parse_openligadb,
+    uefa_fixture_urls,
 )
 from matchstats.goals_model import fit_goals_model
 from matchstats.ingest import (
@@ -53,7 +54,13 @@ UPCOMING_DAYS_BEFORE = 1  # plus yesterday: west of Madrid (the Americas) it can
 KICKOFF_ZONE = ZoneInfo("Europe/London")  # football-data writes UK local kickoff times
 VIEWER_ZONE = ZoneInfo("Europe/Madrid")
 CUP_NAME = "DFB-Pokal"
-COMPETITION_NAMES = {**TOP_LEAGUES, CUP_CODE: CUP_NAME}
+COMPETITION_NAMES = {
+    **TOP_LEAGUES,
+    "UCL": "Champions League",
+    "UEL": "Europa League",
+    "UECL": "Conference League",
+    CUP_CODE: CUP_NAME,
+}
 COMPETITION_ORDER = {code: position for position, code in enumerate(COMPETITION_NAMES)}
 
 logger = logging.getLogger(__name__)
@@ -209,10 +216,11 @@ def _upcoming_fixtures(
     known: dict[str, set[str]],
     feed_text: FeedText,
 ) -> list[dict]:
-    """League and DFB-Pokal fixtures whose Madrid date is today-1..today+2, in UTC kickoff order.
+    """League, UEFA and DFB-Pokal fixtures whose Madrid date is today-1..today+2, in UTC kickoff order.
 
     Each league comes from its fixturedownload feed, or from fixtures.csv when that feed fails.
-    The cup comes from OpenLigaDB only; a failed cup feed is skipped. The site picks Hoy / Mañana
+    The UEFA cups (UCL, UEL, UECL) come from fixturedownload only; a failed UEFA feed is skipped.
+    The DFB-Pokal comes from OpenLigaDB only; a failed cup feed is skipped. The site picks Hoy / Mañana
     by the viewer's local date, so the window is wider than two days.
     """
     found: list[UpcomingFixture] = []
@@ -222,6 +230,8 @@ def _upcoming_fixtures(
             logger.info("%s: using fixtures.csv instead of the feed", code)
             rows = _csv_rows(fixtures, code)
         found.extend(rows)
+    for code, url in uefa_fixture_urls(current).items():
+        found.extend(_feed_rows(code, url, feed_text, parse_fixturedownload) or [])
     found.extend(_feed_rows(CUP_CODE, cup_fixture_urls(current)[CUP_CODE], feed_text, parse_openligadb) or [])
 
     first = today - timedelta(days=UPCOMING_DAYS_BEFORE)
