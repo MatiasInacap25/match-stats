@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  chipCompetitions,
   competitionsOf,
   filterByCompetitions,
   formatDayLabel,
@@ -175,6 +176,30 @@ describe("competitionsOf", () => {
 
   it("returns an empty list when there are no matches", () => {
     expect(competitionsOf([])).toEqual([]);
+  });
+});
+
+describe("chipCompetitions", () => {
+  it("adds selected competitions that have no match that day, in league order", () => {
+    const matches = [inCompetition("E0", "2026-10-27T16:00:00Z"), inCompetition("SP1", "2026-10-27T19:00:00Z")];
+
+    expect(chipCompetitions(matches, new Set(["UCL"]))).toEqual(["E0", "SP1", "UCL"]);
+  });
+
+  it("does not duplicate a selected competition that has matches", () => {
+    const matches = [inCompetition("E0", "2026-10-27T16:00:00Z"), inCompetition("SP1", "2026-10-27T19:00:00Z")];
+
+    expect(chipCompetitions(matches, new Set(["SP1"]))).toEqual(["E0", "SP1"]);
+  });
+
+  it("equals competitionsOf when nothing is selected", () => {
+    const matches = [
+      inCompetition("DFB", "2026-10-27T18:00:00Z"),
+      inCompetition("UCL", "2026-10-27T21:00:00Z"),
+      inCompetition("E0", "2026-10-27T16:00:00Z"),
+    ];
+
+    expect(chipCompetitions(matches, new Set())).toEqual(competitionsOf(matches));
   });
 });
 
