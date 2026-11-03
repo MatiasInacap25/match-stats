@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T08:53:11Z",
+  "generated_at": "2026-11-03T09:02:13Z",
   "season": "2026/27",
   "leagues": [
     {
@@ -181,219 +181,121 @@
         "Sp Braga",
         "Sp Lisbon"
       ]
+    },
+    {
+      "code": "N1",
+      "name": "Eredivisie",
+      "teams": [
+        "AZ Alkmaar",
+        "Ajax",
+        "Cambuur",
+        "Den Haag",
+        "Excelsior",
+        "Feyenoord",
+        "For Sittard",
+        "Go Ahead Eagles",
+        "Groningen",
+        "Heerenveen",
+        "Nijmegen",
+        "PSV Eindhoven",
+        "Sparta Rotterdam",
+        "Telstar",
+        "Twente",
+        "Utrecht",
+        "Willem II",
+        "Zwolle"
+      ]
+    },
+    {
+      "code": "B1",
+      "name": "Jupiler Pro League",
+      "teams": [
+        "Anderlecht",
+        "Antwerp",
+        "Beveren",
+        "Cercle Brugge",
+        "Charleroi",
+        "Club Brugge",
+        "Genk",
+        "Gent",
+        "Kortrijk",
+        "Lommel SK",
+        "Mechelen",
+        "Oud-Heverlee Leuven",
+        "RAAL La Louviere",
+        "St Truiden",
+        "St. Gilloise",
+        "Standard",
+        "Waregem",
+        "Westerlo"
+      ]
+    },
+    {
+      "code": "T1",
+      "name": "Süper Lig",
+      "teams": [
+        "Alanyaspor",
+        "Amedspor",
+        "Besiktas",
+        "Buyuksehyr",
+        "Corum",
+        "Erzurumspor",
+        "Eyupspor",
+        "Fenerbahce",
+        "Galatasaray",
+        "Gaziantep",
+        "Genclerbirligi",
+        "Goztep",
+        "Kasimpasa",
+        "Kocaelispor",
+        "Konyaspor",
+        "Rizespor",
+        "Samsunspor",
+        "Trabzonspor"
+      ]
+    },
+    {
+      "code": "G1",
+      "name": "Super League Greece",
+      "teams": [
+        "AEK",
+        "Aris",
+        "Asteras Tripolis",
+        "Atromitos",
+        "Iraklis",
+        "Kalamata",
+        "Kifisia",
+        "Levadeiakos",
+        "OFI Crete",
+        "Olympiakos",
+        "PAOK",
+        "Panathinaikos",
+        "Panetolikos",
+        "Volos NFC"
+      ]
     }
   ],
-  "today": [
-    {
-      "league": "E0",
-      "date": "2026-11-02",
-      "time": "20:00",
-      "home": "Newcastle",
-      "away": "Everton"
-    },
-    {
-      "league": "SP1",
-      "date": "2026-11-02",
-      "time": "20:00",
-      "home": "La Coruna",
-      "away": "Osasuna"
-    },
-    {
-      "league": "I1",
-      "date": "2026-11-02",
-      "time": "17:30",
-      "home": "Sassuolo",
-      "away": "Fiorentina"
-    },
-    {
-      "league": "I1",
-      "date": "2026-11-02",
-      "time": "19:45",
-      "home": "Atalanta",
-      "away": "Parma"
-    },
-    {
-      "league": "F1",
-      "date": "2026-11-02",
-      "time": "19:45",
-      "home": "Lorient",
-      "away": "Brest"
-    },
-    {
-      "league": "P1",
-      "date": "2026-11-02",
-      "time": "20:15",
-      "home": "Benfica",
-      "away": "Alverca"
-    },
-    {
-      "league": "P1",
-      "date": "2026-11-02",
-      "time": "20:15",
-      "home": "Gil Vicente",
-      "away": "Guimaraes"
-    }
-  ],
+  "today": [],
   "upcoming": [
     {
-      "competition": "I1",
-      "competition_name": "Serie A",
-      "kickoff_utc": "2026-11-01T11:30:00Z",
-      "home": "Como",
-      "away": "Venezia",
-      "league": "I1"
+      "competition": "G1",
+      "competition_name": "Super League Greece",
+      "kickoff_utc": "2026-11-02T16:00:00Z",
+      "home": "Atromitos",
+      "away": "Volos NFC",
+      "league": "G1",
+      "home_league": "G1",
+      "away_league": "G1"
     },
     {
-      "competition": "SP1",
-      "competition_name": "La Liga",
-      "kickoff_utc": "2026-11-01T13:00:00Z",
-      "home": "Getafe",
-      "away": "Sevilla",
-      "league": "SP1"
-    },
-    {
-      "competition": "I1",
-      "competition_name": "Serie A",
-      "kickoff_utc": "2026-11-01T14:00:00Z",
-      "home": "Frosinone",
-      "away": "Torino",
-      "league": "I1"
-    },
-    {
-      "competition": "I1",
-      "competition_name": "Serie A",
-      "kickoff_utc": "2026-11-01T14:00:00Z",
-      "home": "Lazio",
-      "away": "Cagliari",
-      "league": "I1"
-    },
-    {
-      "competition": "F1",
-      "competition_name": "Ligue 1",
-      "kickoff_utc": "2026-11-01T14:00:00Z",
-      "home": "Strasbourg",
-      "away": "Auxerre",
-      "league": "F1"
-    },
-    {
-      "competition": "D1",
-      "competition_name": "Bundesliga",
-      "kickoff_utc": "2026-11-01T14:30:00Z",
-      "home": "Union Berlin",
-      "away": "FC Koln",
-      "league": "D1"
-    },
-    {
-      "competition": "SP1",
-      "competition_name": "La Liga",
-      "kickoff_utc": "2026-11-01T15:15:00Z",
-      "home": "Santander",
-      "away": "Real Madrid",
-      "league": "SP1"
-    },
-    {
-      "competition": "P1",
-      "competition_name": "Primeira Liga",
-      "kickoff_utc": "2026-11-01T15:30:00Z",
-      "home": "Arouca",
-      "away": "Nacional",
-      "league": "P1"
-    },
-    {
-      "competition": "F1",
-      "competition_name": "Ligue 1",
-      "kickoff_utc": "2026-11-01T16:15:00Z",
-      "home": "Lyon",
-      "away": "Angers",
-      "league": "F1"
-    },
-    {
-      "competition": "F1",
-      "competition_name": "Ligue 1",
-      "kickoff_utc": "2026-11-01T16:15:00Z",
-      "home": "Paris FC",
-      "away": "Monaco",
-      "league": "F1"
-    },
-    {
-      "competition": "E0",
-      "competition_name": "Premier League",
-      "kickoff_utc": "2026-11-01T16:30:00Z",
-      "home": "Liverpool",
-      "away": "Arsenal",
-      "league": "E0"
-    },
-    {
-      "competition": "D1",
-      "competition_name": "Bundesliga",
-      "kickoff_utc": "2026-11-01T16:30:00Z",
-      "home": "Ein Frankfurt",
-      "away": "Hamburg",
-      "league": "D1"
-    },
-    {
-      "competition": "I1",
-      "competition_name": "Serie A",
-      "kickoff_utc": "2026-11-01T17:00:00Z",
-      "home": "Lecce",
-      "away": "Genoa",
-      "league": "I1"
-    },
-    {
-      "competition": "SP1",
-      "competition_name": "La Liga",
-      "kickoff_utc": "2026-11-01T17:30:00Z",
-      "home": "Elche",
-      "away": "Valencia",
-      "league": "SP1"
-    },
-    {
-      "competition": "P1",
-      "competition_name": "Primeira Liga",
-      "kickoff_utc": "2026-11-01T18:00:00Z",
-      "home": "Academico Viseu",
-      "away": "Rio Ave",
-      "league": "P1"
-    },
-    {
-      "competition": "P1",
-      "competition_name": "Primeira Liga",
-      "kickoff_utc": "2026-11-01T18:00:00Z",
-      "home": "Maritimo",
-      "away": "Santa Clara",
-      "league": "P1"
-    },
-    {
-      "competition": "I1",
-      "competition_name": "Serie A",
-      "kickoff_utc": "2026-11-01T19:45:00Z",
-      "home": "Juventus",
-      "away": "Napoli",
-      "league": "I1"
-    },
-    {
-      "competition": "F1",
-      "competition_name": "Ligue 1",
-      "kickoff_utc": "2026-11-01T19:45:00Z",
-      "home": "Marseille",
-      "away": "Toulouse",
-      "league": "F1"
-    },
-    {
-      "competition": "SP1",
-      "competition_name": "La Liga",
-      "kickoff_utc": "2026-11-01T20:00:00Z",
-      "home": "Ath Bilbao",
-      "away": "Sociedad",
-      "league": "SP1"
-    },
-    {
-      "competition": "P1",
-      "competition_name": "Primeira Liga",
-      "kickoff_utc": "2026-11-01T20:30:00Z",
-      "home": "Sp Braga",
-      "away": "Famalicao",
-      "league": "P1"
+      "competition": "T1",
+      "competition_name": "Süper Lig",
+      "kickoff_utc": "2026-11-02T17:00:00Z",
+      "home": "Genclerbirligi",
+      "away": "Alanyaspor",
+      "league": "T1",
+      "home_league": "T1",
+      "away_league": "T1"
     },
     {
       "competition": "I1",
@@ -401,7 +303,19 @@
       "kickoff_utc": "2026-11-02T17:30:00Z",
       "home": "Sassuolo",
       "away": "Fiorentina",
-      "league": "I1"
+      "league": "I1",
+      "home_league": "I1",
+      "away_league": "I1"
+    },
+    {
+      "competition": "G1",
+      "competition_name": "Super League Greece",
+      "kickoff_utc": "2026-11-02T17:30:00Z",
+      "home": "Kalamata",
+      "away": "Iraklis",
+      "league": "G1",
+      "home_league": "G1",
+      "away_league": "G1"
     },
     {
       "competition": "I1",
@@ -409,7 +323,9 @@
       "kickoff_utc": "2026-11-02T19:45:00Z",
       "home": "Atalanta",
       "away": "Parma",
-      "league": "I1"
+      "league": "I1",
+      "home_league": "I1",
+      "away_league": "I1"
     },
     {
       "competition": "F1",
@@ -417,7 +333,9 @@
       "kickoff_utc": "2026-11-02T19:45:00Z",
       "home": "Lorient",
       "away": "Brest",
-      "league": "F1"
+      "league": "F1",
+      "home_league": "F1",
+      "away_league": "F1"
     },
     {
       "competition": "E0",
@@ -425,7 +343,9 @@
       "kickoff_utc": "2026-11-02T20:00:00Z",
       "home": "Newcastle",
       "away": "Everton",
-      "league": "E0"
+      "league": "E0",
+      "home_league": "E0",
+      "away_league": "E0"
     },
     {
       "competition": "SP1",
@@ -433,7 +353,9 @@
       "kickoff_utc": "2026-11-02T20:00:00Z",
       "home": "La Coruna",
       "away": "Osasuna",
-      "league": "SP1"
+      "league": "SP1",
+      "home_league": "SP1",
+      "away_league": "SP1"
     },
     {
       "competition": "P1",
@@ -441,7 +363,9 @@
       "kickoff_utc": "2026-11-02T20:15:00Z",
       "home": "Benfica",
       "away": "Alverca",
-      "league": "P1"
+      "league": "P1",
+      "home_league": "P1",
+      "away_league": "P1"
     },
     {
       "competition": "P1",
@@ -449,7 +373,29 @@
       "kickoff_utc": "2026-11-02T20:15:00Z",
       "home": "Gil Vicente",
       "away": "Guimaraes",
-      "league": "P1"
+      "league": "P1",
+      "home_league": "P1",
+      "away_league": "P1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-03T17:45:00Z",
+      "home": "Galatasaray",
+      "away": "Stuttgart",
+      "league": null,
+      "home_league": "T1",
+      "away_league": "D1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-03T17:45:00Z",
+      "home": "Shakhtar",
+      "away": "Sp Lisbon",
+      "league": null,
+      "home_league": null,
+      "away_league": "P1"
     },
     {
       "competition": "E1",
@@ -457,7 +403,9 @@
       "kickoff_utc": "2026-11-03T19:45:00Z",
       "home": "Blackburn",
       "away": "Stoke",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -465,7 +413,9 @@
       "kickoff_utc": "2026-11-03T19:45:00Z",
       "home": "Charlton",
       "away": "Bolton",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -473,7 +423,9 @@
       "kickoff_utc": "2026-11-03T19:45:00Z",
       "home": "Derby",
       "away": "Norwich",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -481,7 +433,9 @@
       "kickoff_utc": "2026-11-03T19:45:00Z",
       "home": "Portsmouth",
       "away": "Swansea",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -489,7 +443,9 @@
       "kickoff_utc": "2026-11-03T19:45:00Z",
       "home": "Preston",
       "away": "Sheffield United",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -497,7 +453,9 @@
       "kickoff_utc": "2026-11-03T19:45:00Z",
       "home": "QPR",
       "away": "Burnley",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -505,7 +463,9 @@
       "kickoff_utc": "2026-11-03T19:45:00Z",
       "home": "Watford",
       "away": "Lincoln",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -513,7 +473,9 @@
       "kickoff_utc": "2026-11-03T20:00:00Z",
       "home": "Birmingham",
       "away": "Millwall",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -521,7 +483,109 @@
       "kickoff_utc": "2026-11-03T20:00:00Z",
       "home": "West Brom",
       "away": "Southampton",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-03T20:00:00Z",
+      "home": "Ath Madrid",
+      "away": "Bayern Munich",
+      "league": null,
+      "home_league": "SP1",
+      "away_league": "D1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-03T20:00:00Z",
+      "home": "Barcelona",
+      "away": "Aston Villa",
+      "league": null,
+      "home_league": "SP1",
+      "away_league": "E0"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-03T20:00:00Z",
+      "home": "Bodo/Glimt",
+      "away": "Lille",
+      "league": null,
+      "home_league": "NOR",
+      "away_league": "F1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-03T20:00:00Z",
+      "home": "Feyenoord",
+      "away": "Inter",
+      "league": null,
+      "home_league": "N1",
+      "away_league": "I1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-03T20:00:00Z",
+      "home": "LASK",
+      "away": "S. Bratislava",
+      "league": null,
+      "home_league": "AUT",
+      "away_league": null
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-03T20:00:00Z",
+      "home": "Man United",
+      "away": "Roma",
+      "league": null,
+      "home_league": "E0",
+      "away_league": "I1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-03T20:00:00Z",
+      "home": "Villarreal",
+      "away": "Paris SG",
+      "league": null,
+      "home_league": "SP1",
+      "away_league": "F1"
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-04T15:30:00Z",
+      "home": "Rennes",
+      "away": "Olympiakos",
+      "league": null,
+      "home_league": "F1",
+      "away_league": "G1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-04T17:45:00Z",
+      "home": "AEK",
+      "away": "Real Madrid",
+      "league": null,
+      "home_league": "G1",
+      "away_league": "SP1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-04T17:45:00Z",
+      "home": "Fenerbahce",
+      "away": "Liverpool",
+      "league": null,
+      "home_league": "T1",
+      "away_league": "E0"
     },
     {
       "competition": "E1",
@@ -529,7 +593,9 @@
       "kickoff_utc": "2026-11-04T19:45:00Z",
       "home": "Cardiff",
       "away": "West Ham",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -537,7 +603,9 @@
       "kickoff_utc": "2026-11-04T19:45:00Z",
       "home": "Wrexham",
       "away": "Middlesbrough",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
     },
     {
       "competition": "E1",
@@ -545,7 +613,429 @@
       "kickoff_utc": "2026-11-04T20:00:00Z",
       "home": "Bristol City",
       "away": "Wolves",
-      "league": "E1"
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-04T20:00:00Z",
+      "home": "Dortmund",
+      "away": "Betis",
+      "league": null,
+      "home_league": "D1",
+      "away_league": "SP1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-04T20:00:00Z",
+      "home": "Lens",
+      "away": "Como",
+      "league": null,
+      "home_league": "F1",
+      "away_league": "I1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-04T20:00:00Z",
+      "home": "PSV Eindhoven",
+      "away": "Club Brugge",
+      "league": null,
+      "home_league": "N1",
+      "away_league": "B1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-04T20:00:00Z",
+      "home": "Porto",
+      "away": "Napoli",
+      "league": null,
+      "home_league": "P1",
+      "away_league": "I1"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-04T20:00:00Z",
+      "home": "RB Leipzig",
+      "away": "Man City",
+      "league": null,
+      "home_league": "D1",
+      "away_league": "E0"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-04T20:00:00Z",
+      "home": "Slavia Praha",
+      "away": "Arsenal",
+      "league": null,
+      "home_league": null,
+      "away_league": "E0"
+    },
+    {
+      "competition": "UCL",
+      "competition_name": "Champions League",
+      "kickoff_utc": "2026-11-04T20:00:00Z",
+      "home": "Viking",
+      "away": "Sabah",
+      "league": null,
+      "home_league": "NOR",
+      "away_league": null
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Anderlecht",
+      "away": "Salzburg",
+      "league": null,
+      "home_league": "B1",
+      "away_league": "AUT"
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Crystal Palace",
+      "away": "Hoffenheim",
+      "league": null,
+      "home_league": "E0",
+      "away_league": "D1"
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Levski Sofia",
+      "away": "Jagiellonia",
+      "league": null,
+      "home_league": null,
+      "away_league": null
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Lillestrom",
+      "away": "Viktoria Plzen",
+      "league": null,
+      "home_league": "NOR",
+      "away_league": null
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Milan",
+      "away": "Ferencváros",
+      "league": null,
+      "home_league": "I1",
+      "away_league": null
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Nijmegen",
+      "away": "Omonia",
+      "league": null,
+      "home_league": "N1",
+      "away_league": null
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Sociedad",
+      "away": "Lyon",
+      "league": null,
+      "home_league": "SP1",
+      "away_league": "F1"
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Sparta Praha",
+      "away": "Bournemouth",
+      "league": null,
+      "home_league": null,
+      "away_league": "E0"
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Aarhus",
+      "away": "Sp Braga",
+      "league": null,
+      "home_league": null,
+      "away_league": "P1"
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Atalanta",
+      "away": "Kairat Almaty",
+      "league": null,
+      "home_league": "I1",
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Crvena Zvezda",
+      "away": "Inter Escaldes",
+      "league": null,
+      "home_league": null,
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "KuPS Kuopio",
+      "away": "Gent",
+      "league": null,
+      "home_league": null,
+      "away_league": "B1"
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "L. Red Imps",
+      "away": "Hajduk Split",
+      "league": null,
+      "home_league": null,
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Midtjylland",
+      "away": "Ajax",
+      "league": null,
+      "home_league": null,
+      "away_league": "N1"
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Mjällby",
+      "away": "Borac",
+      "league": null,
+      "home_league": null,
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Thun",
+      "away": "Hearts",
+      "league": null,
+      "home_league": null,
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T17:45:00Z",
+      "home": "Trabzonspor",
+      "away": "Freiburg",
+      "league": null,
+      "home_league": "T1",
+      "away_league": "D1"
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "AZ Alkmaar",
+      "away": "Juventus",
+      "league": null,
+      "home_league": "N1",
+      "away_league": "I1"
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Benfica",
+      "away": "Lech Poznan",
+      "league": null,
+      "home_league": "P1",
+      "away_league": null
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Celta",
+      "away": "Union SG",
+      "league": null,
+      "home_league": "SP1",
+      "away_league": null
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Celtic",
+      "away": "Besiktas",
+      "league": null,
+      "home_league": null,
+      "away_league": "T1"
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "H. Beer-Sheva",
+      "away": "OFI Crete",
+      "league": null,
+      "home_league": null,
+      "away_league": "G1"
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Leverkusen",
+      "away": "Marseille",
+      "league": null,
+      "home_league": "D1",
+      "away_league": "F1"
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Sturm Graz",
+      "away": "Celje",
+      "league": null,
+      "home_league": "AUT",
+      "away_league": null
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Sunderland",
+      "away": "GNK Dinamo",
+      "league": null,
+      "home_league": "E0",
+      "away_league": null
+    },
+    {
+      "competition": "UEL",
+      "competition_name": "Europa League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Torreense",
+      "away": "Ararat-Armenia",
+      "league": null,
+      "home_league": null,
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Copenhagen",
+      "away": "Iberia Tbilisi",
+      "league": null,
+      "home_league": null,
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Getafe",
+      "away": "Brighton",
+      "league": null,
+      "home_league": "SP1",
+      "away_league": "E0"
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Lugano",
+      "away": "Kauno Žalgiris",
+      "league": null,
+      "home_league": null,
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Monaco",
+      "away": "Nordsjælland",
+      "league": null,
+      "home_league": "F1",
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Panathinaikos",
+      "away": "CSKA Sofia",
+      "league": null,
+      "home_league": "G1",
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Riga",
+      "away": "Jablonec",
+      "league": null,
+      "home_league": null,
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "St Truiden",
+      "away": "Brann",
+      "league": null,
+      "home_league": "B1",
+      "away_league": "NOR"
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "Twente",
+      "away": "Pafos",
+      "league": null,
+      "home_league": "N1",
+      "away_league": null
+    },
+    {
+      "competition": "UECL",
+      "competition_name": "Conference League",
+      "kickoff_utc": "2026-11-05T20:00:00Z",
+      "home": "U. Craiova",
+      "away": "Egnatia",
+      "league": null,
+      "home_league": null,
+      "away_league": null
     }
   ]
 }

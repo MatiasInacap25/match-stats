@@ -2234,6 +2234,22 @@
     ],
     "Arsenal|Liverpool": [
       {
+        "date": "2026-11-01",
+        "league": "E0",
+        "home": "Liverpool",
+        "away": "Arsenal",
+        "home_goals": 0,
+        "away_goals": 1,
+        "home_shots": 17,
+        "away_shots": 10,
+        "home_shots_on_target": 0,
+        "away_shots_on_target": 3,
+        "home_corners": 7,
+        "away_corners": 4,
+        "home_cards": 4,
+        "away_cards": 4
+      },
+      {
         "date": "2026-01-08",
         "league": "E0",
         "home": "Arsenal",
@@ -5204,6 +5220,22 @@
       }
     ],
     "Aston Villa|Fulham": [
+      {
+        "date": "2026-10-31",
+        "league": "E0",
+        "home": "Aston Villa",
+        "away": "Fulham",
+        "home_goals": 1,
+        "away_goals": 1,
+        "home_shots": 16,
+        "away_shots": 14,
+        "home_shots_on_target": 3,
+        "away_shots_on_target": 5,
+        "home_corners": 7,
+        "away_corners": 7,
+        "home_cards": 1,
+        "away_cards": 3
+      },
       {
         "date": "2026-04-25",
         "league": "E0",
@@ -8668,6 +8700,22 @@
       }
     ],
     "Bournemouth|Leeds": [
+      {
+        "date": "2026-10-31",
+        "league": "E0",
+        "home": "Bournemouth",
+        "away": "Leeds",
+        "home_goals": 2,
+        "away_goals": 0,
+        "home_shots": 11,
+        "away_shots": 10,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 1,
+        "home_corners": 4,
+        "away_corners": 4,
+        "home_cards": 2,
+        "away_cards": 2
+      },
       {
         "date": "2026-04-22",
         "league": "E0",
@@ -12151,6 +12199,22 @@
     ],
     "Brentford|Nott'm Forest": [
       {
+        "date": "2026-10-31",
+        "league": "E0",
+        "home": "Brentford",
+        "away": "Nott'm Forest",
+        "home_goals": 2,
+        "away_goals": 0,
+        "home_shots": 7,
+        "away_shots": 15,
+        "home_shots_on_target": 1,
+        "away_shots_on_target": 1,
+        "home_corners": 3,
+        "away_corners": 4,
+        "home_cards": 1,
+        "away_cards": 3
+      },
+      {
         "date": "2026-01-25",
         "league": "E0",
         "home": "Brentford",
@@ -14269,6 +14333,22 @@
       }
     ],
     "Brighton|Man City": [
+      {
+        "date": "2026-10-31",
+        "league": "E0",
+        "home": "Man City",
+        "away": "Brighton",
+        "home_goals": 0,
+        "away_goals": 1,
+        "home_shots": 21,
+        "away_shots": 7,
+        "home_shots_on_target": 6,
+        "away_shots_on_target": 3,
+        "home_corners": 8,
+        "away_corners": 2,
+        "home_cards": 0,
+        "away_cards": 3
+      },
       {
         "date": "2026-01-07",
         "league": "E0",
@@ -17179,6 +17259,22 @@
     ],
     "Chelsea|Man United": [
       {
+        "date": "2026-10-31",
+        "league": "E0",
+        "home": "Chelsea",
+        "away": "Man United",
+        "home_goals": 2,
+        "away_goals": 0,
+        "home_shots": 19,
+        "away_shots": 12,
+        "home_shots_on_target": 10,
+        "away_shots_on_target": 5,
+        "home_corners": 8,
+        "away_corners": 7,
+        "home_cards": 1,
+        "away_cards": 8
+      },
+      {
         "date": "2026-04-18",
         "league": "E0",
         "home": "Chelsea",
@@ -18742,6 +18838,22 @@
       }
     ],
     "Coventry|Sunderland": [
+      {
+        "date": "2026-10-31",
+        "league": "E0",
+        "home": "Coventry",
+        "away": "Sunderland",
+        "home_goals": 3,
+        "away_goals": 1,
+        "home_shots": 12,
+        "away_shots": 17,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 2,
+        "home_corners": 4,
+        "away_corners": 4,
+        "home_cards": 2,
+        "away_cards": 4
+      },
       {
         "date": "2025-03-15",
         "league": "E1",
@@ -21007,6 +21119,22 @@
       }
     ],
     "Crystal Palace|Tottenham": [
+      {
+        "date": "2026-10-31",
+        "league": "E0",
+        "home": "Tottenham",
+        "away": "Crystal Palace",
+        "home_goals": 2,
+        "away_goals": 0,
+        "home_shots": 34,
+        "away_shots": 2,
+        "home_shots_on_target": 9,
+        "away_shots_on_target": 1,
+        "home_corners": 19,
+        "away_corners": 0,
+        "home_cards": 1,
+        "away_cards": 3
+      },
       {
         "date": "2026-03-05",
         "league": "E0",
@@ -25003,6 +25131,22 @@
       }
     ],
     "Hull|Ipswich": [
+      {
+        "date": "2026-10-31",
+        "league": "E0",
+        "home": "Hull",
+        "away": "Ipswich",
+        "home_goals": 2,
+        "away_goals": 2,
+        "home_shots": 9,
+        "away_shots": 15,
+        "home_shots_on_target": 3,
+        "away_shots_on_target": 3,
+        "home_corners": 6,
+        "away_corners": 3,
+        "home_cards": 3,
+        "away_cards": 3
+      },
       {
         "date": "2026-03-03",
         "league": "E1",

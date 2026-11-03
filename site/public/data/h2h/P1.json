@@ -133,7 +133,24 @@
         "away_cards": 0
       }
     ],
-    "Academico Viseu|Rio Ave": [],
+    "Academico Viseu|Rio Ave": [
+      {
+        "date": "2026-11-01",
+        "league": "P1",
+        "home": "Academico Viseu",
+        "away": "Rio Ave",
+        "home_goals": 2,
+        "away_goals": 1,
+        "home_shots": 13,
+        "away_shots": 12,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 5,
+        "home_corners": 5,
+        "away_corners": 6,
+        "home_cards": 1,
+        "away_cards": 4
+      }
+    ],
     "Academico Viseu|Santa Clara": [
       {
         "date": "2026-08-15",
@@ -2141,6 +2158,22 @@
       }
     ],
     "Arouca|Nacional": [
+      {
+        "date": "2026-11-01",
+        "league": "P1",
+        "home": "Arouca",
+        "away": "Nacional",
+        "home_goals": 1,
+        "away_goals": 0,
+        "home_shots": 12,
+        "away_shots": 5,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 1,
+        "home_corners": 8,
+        "away_corners": 2,
+        "home_cards": 2,
+        "away_cards": 2
+      },
       {
         "date": "2026-02-21",
         "league": "P1",
@@ -7662,6 +7695,22 @@
     ],
     "Casa Pia|Sp Lisbon": [
       {
+        "date": "2026-10-30",
+        "league": "P1",
+        "home": "Casa Pia",
+        "away": "Sp Lisbon",
+        "home_goals": 0,
+        "away_goals": 2,
+        "home_shots": 12,
+        "away_shots": 23,
+        "home_shots_on_target": 2,
+        "away_shots_on_target": 11,
+        "home_corners": 3,
+        "away_corners": 4,
+        "home_cards": 2,
+        "away_cards": 2
+      },
+      {
         "date": "2026-01-16",
         "league": "P1",
         "home": "Sp Lisbon",
@@ -8781,6 +8830,22 @@
       }
     ],
     "Estoril|Porto": [
+      {
+        "date": "2026-10-31",
+        "league": "P1",
+        "home": "Porto",
+        "away": "Estoril",
+        "home_goals": 4,
+        "away_goals": 0,
+        "home_shots": 24,
+        "away_shots": 7,
+        "home_shots_on_target": 11,
+        "away_shots_on_target": 0,
+        "home_corners": 8,
+        "away_corners": 0,
+        "home_cards": 1,
+        "away_cards": 0
+      },
       {
         "date": "2026-04-12",
         "league": "P1",
@@ -9998,6 +10063,22 @@
     ],
     "Estrela|Maritimo": [],
     "Estrela|Moreirense": [
+      {
+        "date": "2026-10-31",
+        "league": "P1",
+        "home": "Moreirense",
+        "away": "Estrela",
+        "home_goals": 2,
+        "away_goals": 1,
+        "home_shots": 11,
+        "away_shots": 11,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 1,
+        "home_corners": 3,
+        "away_corners": 3,
+        "home_cards": 0,
+        "away_cards": 1
+      },
       {
         "date": "2026-05-02",
         "league": "P1",
@@ -12252,6 +12333,22 @@
       }
     ],
     "Famalicao|Sp Braga": [
+      {
+        "date": "2026-11-01",
+        "league": "P1",
+        "home": "Sp Braga",
+        "away": "Famalicao",
+        "home_goals": 3,
+        "away_goals": 0,
+        "home_shots": 15,
+        "away_shots": 4,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 1,
+        "home_corners": 7,
+        "away_corners": 1,
+        "home_cards": 5,
+        "away_cards": 7
+      },
       {
         "date": "2026-04-19",
         "league": "P1",
@@ -17146,6 +17243,22 @@
       }
     ],
     "Maritimo|Santa Clara": [
+      {
+        "date": "2026-11-01",
+        "league": "P1",
+        "home": "Maritimo",
+        "away": "Santa Clara",
+        "home_goals": 0,
+        "away_goals": 2,
+        "home_shots": 17,
+        "away_shots": 11,
+        "home_shots_on_target": 6,
+        "away_shots_on_target": 5,
+        "home_corners": 5,
+        "away_corners": 2,
+        "home_cards": 3,
+        "away_cards": 3
+      },
       {
         "date": "2023-02-25",
         "league": "P1",

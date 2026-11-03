@@ -2,897 +2,897 @@
   "league": "E1",
   "season": "2026/27",
   "goals": {
-    "home_advantage": 0.2118,
-    "rho": -0.044,
+    "home_advantage": 0.2198,
+    "rho": -0.0418,
     "teams": {
       "Birmingham": {
-        "attack": 0.025,
-        "defense": 0.0127
+        "attack": 0.0549,
+        "defense": 0.0033
       },
       "Blackburn": {
-        "attack": -0.1707,
-        "defense": 0.0711
+        "attack": -0.1846,
+        "defense": 0.1076
       },
       "Bolton": {
-        "attack": 0.0093,
-        "defense": 0.4145
+        "attack": 0.0291,
+        "defense": 0.4797
       },
       "Bristol City": {
-        "attack": -0.0948,
-        "defense": 0.1384
+        "attack": -0.0698,
+        "defense": 0.1407
       },
       "Burnley": {
-        "attack": 0.1204,
-        "defense": 0.0501
+        "attack": 0.0662,
+        "defense": 0.0112
       },
       "Cardiff": {
-        "attack": -0.0169,
-        "defense": 0.3213
+        "attack": -0.0524,
+        "defense": 0.3379
       },
       "Charlton": {
-        "attack": -0.3432,
-        "defense": 0.1783
+        "attack": -0.3663,
+        "defense": 0.195
       },
       "Coventry": {
-        "attack": 0.3357,
-        "defense": -0.0208
+        "attack": 0.3366,
+        "defense": -0.0293
       },
       "Derby": {
-        "attack": -0.0858,
-        "defense": 0.1864
+        "attack": -0.083,
+        "defense": 0.2185
       },
       "Hull": {
-        "attack": -0.0009,
-        "defense": 0.1894
+        "attack": -0.0001,
+        "defense": 0.1812
       },
       "Ipswich": {
-        "attack": 0.2743,
-        "defense": -0.0618
+        "attack": 0.2749,
+        "defense": -0.0721
       },
       "Leeds": {
-        "attack": 0.4366,
-        "defense": -0.4777
+        "attack": 0.4375,
+        "defense": -0.4837
       },
       "Leicester": {
-        "attack": -0.0533,
-        "defense": 0.2947
+        "attack": -0.053,
+        "defense": 0.2848
       },
       "Lincoln": {
-        "attack": -0.1469,
-        "defense": 0.3096
+        "attack": -0.1641,
+        "defense": 0.3854
       },
       "Luton": {
-        "attack": -0.2869,
-        "defense": 0.2819
+        "attack": -0.2865,
+        "defense": 0.2765
       },
       "Middlesbrough": {
-        "attack": 0.234,
-        "defense": 0.0656
+        "attack": 0.2441,
+        "defense": 0.0448
       },
       "Millwall": {
-        "attack": 0.0173,
-        "defense": 0.0495
+        "attack": 0.0474,
+        "defense": 0.0453
       },
       "Norwich": {
-        "attack": 0.1282,
-        "defense": 0.2453
+        "attack": 0.1453,
+        "defense": 0.2507
       },
       "Oxford": {
-        "attack": -0.2707,
-        "defense": 0.1662
+        "attack": -0.2703,
+        "defense": 0.1577
       },
       "Plymouth": {
-        "attack": -0.1348,
-        "defense": 0.5396
+        "attack": -0.134,
+        "defense": 0.5339
       },
       "Portsmouth": {
-        "attack": -0.0976,
-        "defense": 0.2209
+        "attack": -0.1159,
+        "defense": 0.1884
       },
       "Preston": {
-        "attack": -0.2038,
-        "defense": 0.3304
+        "attack": -0.2245,
+        "defense": 0.3266
       },
       "QPR": {
-        "attack": 0.0389,
-        "defense": 0.241
+        "attack": 0.0348,
+        "defense": 0.2589
       },
       "Sheffield United": {
-        "attack": 0.0591,
-        "defense": 0.1203
+        "attack": 0.0455,
+        "defense": 0.0901
       },
       "Sheffield Weds": {
-        "attack": -0.4323,
-        "defense": 0.4645
+        "attack": -0.4316,
+        "defense": 0.4559
       },
       "Southampton": {
-        "attack": 0.348,
-        "defense": 0.0118
+        "attack": 0.366,
+        "defense": 0.0042
       },
       "Stoke": {
-        "attack": -0.1396,
-        "defense": 0.161
+        "attack": -0.133,
+        "defense": 0.1368
       },
       "Sunderland": {
-        "attack": -0.1131,
-        "defense": -0.1071
+        "attack": -0.1129,
+        "defense": -0.1133
       },
       "Swansea": {
-        "attack": -0.0616,
-        "defense": 0.0828
+        "attack": -0.0228,
+        "defense": 0.0641
       },
       "Watford": {
-        "attack": -0.2274,
-        "defense": 0.2698
+        "attack": -0.2077,
+        "defense": 0.2798
       },
       "West Brom": {
-        "attack": -0.1341,
-        "defense": 0.0463
+        "attack": -0.1022,
+        "defense": 0.0154
       },
       "West Ham": {
-        "attack": 0.6826,
-        "defense": 0.0908
+        "attack": 0.6223,
+        "defense": 0.2098
       },
       "Wolves": {
-        "attack": 0.2039,
-        "defense": 0.0938
+        "attack": 0.2362,
+        "defense": 0.0316
       },
       "Wrexham": {
-        "attack": 0.1011,
-        "defense": 0.256
+        "attack": 0.0739,
+        "defense": 0.2363
       }
     }
   },
   "stats": {
     "corners": {
-      "avg_home": 5.7714,
-      "avg_away": 4.6393,
-      "dispersion_team": 16.2745,
-      "dispersion_total": 177.1988,
+      "avg_home": 5.7894,
+      "avg_away": 4.6123,
+      "dispersion_team": 16.3488,
+      "dispersion_total": 161.8708,
       "teams": {
         "Birmingham": {
-          "home_for": 1.027,
-          "home_against": 0.8593,
-          "away_for": 1.1227,
-          "away_against": 0.8537
+          "home_for": 1.0245,
+          "home_against": 0.863,
+          "away_for": 1.1077,
+          "away_against": 0.8375
         },
         "Blackburn": {
-          "home_for": 1.0154,
-          "home_against": 1.1036,
-          "away_for": 1.1323,
-          "away_against": 0.9692
+          "home_for": 1.0129,
+          "home_against": 1.1087,
+          "away_for": 1.1077,
+          "away_against": 0.9331
         },
         "Bolton": {
-          "home_for": 1.0374,
-          "home_against": 1.1208,
-          "away_for": 0.9248,
-          "away_against": 1.0059
+          "home_for": 1.1076,
+          "home_against": 1.1032,
+          "away_for": 0.9276,
+          "away_against": 1.0041
         },
         "Bristol City": {
-          "home_for": 0.9191,
-          "home_against": 1.094,
-          "away_for": 1.0557,
-          "away_against": 0.9076
+          "home_for": 0.917,
+          "home_against": 1.0991,
+          "away_for": 1.0523,
+          "away_against": 0.9478
         },
         "Burnley": {
-          "home_for": 0.9113,
-          "home_against": 1.1208,
-          "away_for": 0.9836,
-          "away_against": 0.7853
+          "home_for": 0.9061,
+          "home_against": 1.0671,
+          "away_for": 0.9867,
+          "away_against": 0.7843
         },
         "Cardiff": {
-          "home_for": 1.1476,
-          "home_against": 0.8661,
-          "away_for": 1.1992,
-          "away_against": 1.0689
+          "home_for": 1.1455,
+          "home_against": 0.8685,
+          "away_for": 1.1936,
+          "away_against": 1.0212
         },
         "Charlton": {
-          "home_for": 0.9191,
-          "home_against": 1.0461,
-          "away_for": 0.7731,
-          "away_against": 1.1194
+          "home_for": 0.917,
+          "home_against": 1.0509,
+          "away_for": 0.7802,
+          "away_against": 1.1279
         },
         "Coventry": {
-          "home_for": 1.0224,
-          "home_against": 0.8386,
-          "away_for": 1.0085,
-          "away_against": 0.8963
+          "home_for": 1.0201,
+          "home_against": 0.8418,
+          "away_for": 1.0126,
+          "away_against": 0.8945
         },
         "Derby": {
-          "home_for": 1.0193,
-          "home_against": 1.0126,
-          "away_for": 0.888,
-          "away_against": 1.0424
+          "home_for": 1.0168,
+          "home_against": 1.0172,
+          "away_for": 0.9001,
+          "away_against": 1.025
         },
         "Hull": {
-          "home_for": 0.8543,
-          "home_against": 0.9889,
-          "away_for": 0.9758,
-          "away_against": 1.1956
+          "home_for": 0.8526,
+          "home_against": 0.9929,
+          "away_for": 0.9797,
+          "away_against": 1.1929
         },
         "Ipswich": {
-          "home_for": 1.0486,
-          "home_against": 0.8778,
-          "away_for": 1.0869,
-          "away_against": 0.7913
+          "home_for": 1.0463,
+          "home_against": 0.8812,
+          "away_for": 1.0914,
+          "away_against": 0.7898
         },
         "Leicester": {
-          "home_for": 1.0486,
-          "home_against": 1.1326,
-          "away_for": 0.9693,
-          "away_against": 1.0434
+          "home_for": 1.0463,
+          "home_against": 1.1374,
+          "away_for": 0.9732,
+          "away_against": 1.0411
         },
         "Lincoln": {
-          "home_for": 0.8326,
-          "home_against": 1.1012,
-          "away_for": 0.8073,
-          "away_against": 1.4311
+          "home_for": 0.8053,
+          "home_against": 1.0671,
+          "away_for": 0.8093,
+          "away_against": 1.4281
         },
         "Middlesbrough": {
-          "home_for": 1.2387,
-          "home_against": 0.9695,
-          "away_for": 1.1898,
-          "away_against": 0.8113
+          "home_for": 1.2418,
+          "home_against": 0.9693,
+          "away_for": 1.1955,
+          "away_against": 0.8095
         },
         "Millwall": {
-          "home_for": 1.0809,
-          "home_against": 1.0317,
-          "away_for": 1.0748,
-          "away_against": 1.0847
+          "home_for": 1.0617,
+          "home_against": 1.0385,
+          "away_for": 1.0798,
+          "away_against": 1.082
         },
         "Norwich": {
-          "home_for": 0.9345,
-          "home_against": 0.8785,
-          "away_for": 1.0269,
-          "away_against": 0.9307
+          "home_for": 0.9588,
+          "home_against": 0.8632,
+          "away_for": 1.0317,
+          "away_against": 0.9285
         },
         "Oxford": {
-          "home_for": 0.8596,
-          "home_against": 1.1718,
-          "away_for": 0.8125,
-          "away_against": 1.3374
+          "home_for": 0.8579,
+          "home_against": 1.1769,
+          "away_for": 0.8155,
+          "away_against": 1.3342
         },
         "Portsmouth": {
-          "home_for": 1.1309,
-          "home_against": 0.9886,
-          "away_for": 1.0126,
-          "away_against": 0.9422
+          "home_for": 1.1281,
+          "home_against": 0.9931,
+          "away_for": 0.9924,
+          "away_against": 0.9368
         },
         "Preston": {
-          "home_for": 0.9884,
-          "home_against": 1.2233,
-          "away_for": 0.797,
-          "away_against": 1.077
+          "home_for": 0.9861,
+          "home_against": 1.2292,
+          "away_for": 0.8309,
+          "away_against": 1.0948
         },
         "QPR": {
-          "home_for": 1.0077,
-          "home_against": 0.8641,
-          "away_for": 0.9407,
-          "away_against": 0.9846
+          "home_for": 1.0053,
+          "home_against": 0.8678,
+          "away_for": 0.9416,
+          "away_against": 1.0066
         },
         "Sheffield United": {
-          "home_for": 1.0693,
-          "home_against": 1.0222,
-          "away_for": 1.0509,
-          "away_against": 1.0924
+          "home_for": 1.0727,
+          "home_against": 0.9831,
+          "away_for": 1.0557,
+          "away_against": 1.0897
         },
         "Sheffield Weds": {
-          "home_for": 0.8806,
-          "home_against": 1.1652,
-          "away_for": 0.8844,
-          "away_against": 1.0854
+          "home_for": 0.8788,
+          "home_against": 1.1703,
+          "away_for": 0.8878,
+          "away_against": 1.0829
         },
         "Southampton": {
-          "home_for": 1.0116,
-          "home_against": 0.9838,
-          "away_for": 1.094,
-          "away_against": 0.9114
+          "home_for": 1.0323,
+          "home_against": 0.9831,
+          "away_for": 1.0991,
+          "away_against": 0.9093
         },
         "Stoke": {
-          "home_for": 1.0116,
-          "home_against": 0.9072,
-          "away_for": 1.0653,
-          "away_against": 1.0039
+          "home_for": 1.0323,
+          "home_against": 0.937,
+          "away_for": 1.0702,
+          "away_against": 1.0014
         },
         "Swansea": {
-          "home_for": 0.896,
-          "home_against": 0.9359,
-          "away_for": 0.888,
-          "away_against": 1.0193
+          "home_for": 0.8633,
+          "home_against": 0.9186,
+          "away_for": 0.8919,
+          "away_against": 1.0168
         },
         "Watford": {
-          "home_for": 0.8883,
-          "home_against": 1.0892,
-          "away_for": 0.888,
-          "away_against": 1.0501
+          "home_for": 0.8863,
+          "home_against": 1.0943,
+          "away_for": 0.8724,
+          "away_against": 1.0691
         },
         "West Brom": {
-          "home_for": 1.0385,
-          "home_against": 0.8401,
-          "away_for": 1.0174,
-          "away_against": 0.973
+          "home_for": 1.036,
+          "home_against": 0.8438,
+          "away_for": 1.0339,
+          "away_against": 0.9882
         },
         "West Ham": {
-          "home_for": 1.0531,
-          "home_against": 1.0424,
-          "away_for": 1.3167,
-          "away_against": 0.8326
+          "home_for": 1.0788,
+          "home_against": 1.0671,
+          "away_for": 1.3218,
+          "away_against": 0.8314
         },
         "Wolves": {
-          "home_for": 1.2264,
-          "home_against": 0.8465,
-          "away_for": 1.16,
-          "away_against": 0.8641
+          "home_for": 1.1652,
+          "home_against": 0.8684,
+          "away_for": 1.1641,
+          "away_against": 0.8628
         },
         "Wrexham": {
-          "home_for": 0.9114,
-          "home_against": 0.9743,
-          "away_for": 0.9838,
-          "away_against": 0.9769
+          "home_for": 0.9093,
+          "home_against": 0.9787,
+          "away_for": 0.9462,
+          "away_against": 0.9845
         }
       }
     },
     "cards": {
-      "avg_home": 1.7893,
-      "avg_away": 2.2048,
+      "avg_home": 1.7905,
+      "avg_away": 2.1852,
       "dispersion_team": null,
-      "dispersion_total": 85.7909,
+      "dispersion_total": 89.3338,
       "teams": {
         "Birmingham": {
-          "home_for": 1.0792,
-          "home_against": 1.0185,
-          "away_for": 0.9681,
-          "away_against": 0.8929
+          "home_for": 1.0786,
+          "home_against": 1.0256,
+          "away_for": 0.9722,
+          "away_against": 0.9257
         },
         "Blackburn": {
-          "home_for": 1.2282,
-          "home_against": 0.827,
-          "away_for": 1.0588,
-          "away_against": 0.9426
+          "home_for": 1.2275,
+          "home_against": 0.8324,
+          "away_for": 1.0404,
+          "away_against": 0.902
         },
         "Bolton": {
-          "home_for": 0.9118,
-          "home_against": 1.0318,
-          "away_for": 0.9906,
-          "away_against": 0.861
+          "home_for": 0.8821,
+          "home_against": 0.9887,
+          "away_for": 0.9954,
+          "away_against": 0.8607
         },
         "Bristol City": {
-          "home_for": 0.9674,
-          "home_against": 0.9479,
-          "away_for": 0.7967,
-          "away_against": 1.0916
+          "home_for": 0.9669,
+          "home_against": 0.9544,
+          "away_for": 0.7872,
+          "away_against": 1.0683
         },
         "Burnley": {
-          "home_for": 1.1659,
-          "home_against": 0.8669,
-          "away_for": 0.9493,
-          "away_against": 0.9626
+          "home_for": 1.1148,
+          "home_against": 0.8362,
+          "away_for": 0.9538,
+          "away_against": 0.9623
         },
         "Cardiff": {
-          "home_for": 0.9626,
-          "home_against": 1.073,
-          "away_for": 0.9906,
-          "away_against": 1.0134
+          "home_for": 0.9623,
+          "home_against": 1.0786,
+          "away_for": 0.9887,
+          "away_against": 1.1148
         },
         "Charlton": {
-          "home_for": 1.0543,
-          "home_against": 0.8471,
-          "away_for": 1.079,
-          "away_against": 0.9674
+          "home_for": 1.0538,
+          "home_against": 0.8527,
+          "away_for": 1.0599,
+          "away_against": 0.9733
         },
         "Coventry": {
-          "home_for": 0.828,
-          "home_against": 1.1277,
-          "away_for": 0.9078,
-          "away_against": 1.0821
+          "home_for": 0.8277,
+          "home_against": 1.1351,
+          "away_for": 0.9132,
+          "away_against": 1.0815
         },
         "Derby": {
-          "home_for": 1.1785,
-          "home_against": 0.9681,
-          "away_for": 1.2301,
-          "away_against": 0.8805
+          "home_for": 1.1779,
+          "home_against": 0.9748,
+          "away_for": 1.2254,
+          "away_against": 0.9139
         },
         "Hull": {
-          "home_for": 1.1668,
-          "home_against": 0.949,
-          "away_for": 1.2376,
-          "away_against": 0.9466
+          "home_for": 1.1662,
+          "home_against": 0.9548,
+          "away_for": 1.246,
+          "away_against": 0.9462
         },
         "Ipswich": {
-          "home_for": 0.845,
-          "home_against": 1.1277,
-          "away_for": 1.0727,
-          "away_against": 1.2514
+          "home_for": 0.8446,
+          "home_against": 1.1351,
+          "away_for": 1.0796,
+          "away_against": 1.2508
         },
         "Leicester": {
-          "home_for": 0.9805,
-          "home_against": 0.949,
-          "away_for": 0.9902,
-          "away_against": 0.8788
+          "home_for": 0.98,
+          "home_against": 0.9548,
+          "away_for": 0.9964,
+          "away_against": 0.8785
         },
         "Lincoln": {
-          "home_for": 1.1659,
-          "home_against": 0.9081,
-          "away_for": 1.2792,
-          "away_against": 1.115
+          "home_for": 1.2079,
+          "home_against": 0.9124,
+          "away_for": 1.2866,
+          "away_against": 1.1146
         },
         "Middlesbrough": {
-          "home_for": 0.6693,
-          "home_against": 0.9782,
-          "away_for": 0.8371,
-          "away_against": 1.1661
+          "home_for": 0.6881,
+          "home_against": 0.9625,
+          "away_for": 0.8426,
+          "away_against": 1.1655
         },
         "Millwall": {
-          "home_for": 1.0171,
-          "home_against": 1.1193,
-          "away_for": 1.0185,
-          "away_against": 1.0668
+          "home_for": 1.0446,
+          "home_against": 1.1183,
+          "away_for": 1.0256,
+          "away_against": 1.0662
         },
         "Norwich": {
-          "home_for": 1.0543,
-          "home_against": 1.0286,
-          "away_for": 1.0386,
-          "away_against": 0.9922
+          "home_for": 1.0327,
+          "home_against": 1.0112,
+          "away_for": 1.046,
+          "away_against": 0.9917
         },
         "Oxford": {
-          "home_for": 0.8111,
-          "home_against": 0.9078,
-          "away_for": 0.9078,
-          "away_against": 1.0143
+          "home_for": 0.8108,
+          "home_against": 0.9132,
+          "away_for": 0.9132,
+          "away_against": 1.0138
         },
         "Portsmouth": {
-          "home_for": 0.9301,
-          "home_against": 1.1394,
-          "away_for": 0.9177,
-          "away_against": 1.1164
+          "home_for": 0.9297,
+          "home_against": 1.1476,
+          "away_for": 0.9041,
+          "away_against": 1.0921
         },
         "Preston": {
-          "home_for": 1.1785,
-          "home_against": 0.7363,
-          "away_for": 1.0286,
-          "away_against": 0.7687
+          "home_for": 1.1779,
+          "home_against": 0.7409,
+          "away_for": 1.0307,
+          "away_against": 0.7831
         },
         "QPR": {
-          "home_for": 1.0543,
-          "home_against": 0.958,
-          "away_for": 0.9177,
-          "away_against": 0.955
+          "home_for": 1.0538,
+          "home_against": 0.9646,
+          "away_for": 0.943,
+          "away_against": 0.9139
         },
         "Sheffield United": {
-          "home_for": 0.9426,
-          "home_against": 1.1898,
-          "away_for": 1.0588,
-          "away_against": 1.0792
+          "home_for": 0.9495,
+          "home_against": 1.167,
+          "away_for": 1.0663,
+          "away_against": 1.0786
         },
         "Sheffield Weds": {
-          "home_for": 0.8958,
-          "home_against": 0.7978,
-          "away_for": 0.8528,
-          "away_against": 0.8111
+          "home_for": 0.8954,
+          "home_against": 0.8023,
+          "away_for": 0.8577,
+          "away_against": 0.8108
         },
         "Southampton": {
-          "home_for": 0.955,
-          "home_against": 1.1495,
-          "away_for": 0.9983,
-          "away_against": 1.2034
+          "home_for": 0.9139,
+          "home_against": 1.167,
+          "away_for": 1.0053,
+          "away_against": 1.2027
         },
         "Stoke": {
-          "home_for": 1.0668,
-          "home_against": 1.0689,
-          "away_for": 1.089,
-          "away_against": 0.955
+          "home_for": 1.0683,
+          "home_against": 1.0696,
+          "away_for": 1.0968,
+          "away_against": 0.9545
         },
         "Swansea": {
-          "home_for": 0.9798,
-          "home_against": 1.0185,
-          "away_for": 0.9378,
-          "away_against": 1.0171
+          "home_for": 0.9376,
+          "home_against": 1.0014,
+          "away_for": 0.9443,
+          "away_against": 1.0165
         },
         "Watford": {
-          "home_for": 1.1289,
-          "home_against": 1.0588,
-          "away_for": 1.1797,
-          "away_against": 1.2034
+          "home_for": 1.1282,
+          "home_against": 1.0663,
+          "away_for": 1.1572,
+          "away_against": 1.1753
         },
         "West Brom": {
-          "home_for": 0.955,
-          "home_against": 1.0588,
-          "away_for": 0.9681,
-          "away_against": 0.6693
+          "home_for": 0.9545,
+          "home_against": 1.0663,
+          "away_for": 0.9528,
+          "away_against": 0.7119
         },
         "West Ham": {
-          "home_for": 0.861,
-          "home_against": 0.9493,
-          "away_for": 1.1967,
-          "away_against": 0.9118
+          "home_for": 0.9286,
+          "home_against": 0.9124,
+          "away_for": 1.2034,
+          "away_against": 0.9115
         },
         "Wolves": {
-          "home_for": 1.115,
-          "home_against": 1.1555,
-          "away_for": 0.7844,
-          "away_against": 1.2167
+          "home_for": 1.2079,
+          "home_against": 1.1412,
+          "away_for": 0.7874,
+          "away_against": 1.2161
         },
         "Wrexham": {
-          "home_for": 0.8184,
-          "home_against": 0.9983,
-          "away_for": 0.8068,
-          "away_against": 1.0047
+          "home_for": 0.818,
+          "home_against": 1.0053,
+          "away_for": 0.797,
+          "away_against": 1.0089
         }
       }
     },
     "shots": {
-      "avg_home": 14.3155,
-      "avg_away": 11.631,
-      "dispersion_team": 29.0407,
-      "dispersion_total": 190.6806,
+      "avg_home": 14.3738,
+      "avg_away": 11.5833,
+      "dispersion_team": 29.214,
+      "dispersion_total": 198.6948,
       "teams": {
         "Birmingham": {
-          "home_for": 1.1024,
-          "home_against": 0.8948,
-          "away_for": 0.9406,
-          "away_against": 0.9006
+          "home_for": 1.0988,
+          "home_against": 0.8975,
+          "away_for": 0.9659,
+          "away_against": 0.8952
         },
         "Blackburn": {
-          "home_for": 0.9099,
-          "home_against": 1.04,
-          "away_for": 0.9196,
-          "away_against": 1.0403
+          "home_for": 0.9071,
+          "home_against": 1.0433,
+          "away_for": 0.9053,
+          "away_against": 1.0491
         },
         "Bolton": {
-          "home_for": 1.0769,
-          "home_against": 1.1267,
-          "away_for": 0.9704,
-          "away_against": 1.0007
+          "home_for": 1.095,
+          "home_against": 1.1361,
+          "away_for": 0.9725,
+          "away_against": 0.9985
         },
         "Bristol City": {
-          "home_for": 0.9223,
-          "home_against": 1.1298,
-          "away_for": 1.0495,
-          "away_against": 0.8726
+          "home_for": 0.9195,
+          "home_against": 1.1335,
+          "away_for": 1.0595,
+          "away_against": 0.8892
         },
         "Burnley": {
-          "home_for": 0.9372,
-          "home_against": 1.0955,
-          "away_for": 1.1502,
-          "away_against": 1.0515
+          "home_for": 0.9616,
+          "home_against": 1.0426,
+          "away_for": 1.153,
+          "away_against": 1.0491
         },
         "Cardiff": {
-          "home_for": 1.2801,
-          "home_against": 0.947,
-          "away_for": 1.0408,
-          "away_against": 1.1531
+          "home_for": 1.2767,
+          "home_against": 0.949,
+          "away_for": 1.0498,
+          "away_against": 1.1298
         },
         "Charlton": {
-          "home_for": 0.8882,
-          "home_against": 1.0935,
-          "away_for": 0.826,
-          "away_against": 1.2825
+          "home_for": 0.8855,
+          "home_against": 1.097,
+          "away_for": 0.8189,
+          "away_against": 1.2711
         },
         "Coventry": {
-          "home_for": 1.1794,
-          "home_against": 0.8918,
-          "away_for": 1.181,
-          "away_against": 0.9592
+          "home_for": 1.1758,
+          "home_against": 0.8943,
+          "away_for": 1.1847,
+          "away_against": 0.9566
         },
         "Derby": {
-          "home_for": 0.899,
-          "home_against": 1.0419,
-          "away_for": 0.9311,
-          "away_against": 1.0279
+          "home_for": 0.8963,
+          "home_against": 1.0452,
+          "away_for": 0.942,
+          "away_against": 1.0432
         },
         "Hull": {
-          "home_for": 0.8661,
-          "home_against": 1.043,
-          "away_for": 0.9518,
-          "away_against": 1.1455
+          "home_for": 0.8638,
+          "home_against": 1.046,
+          "away_for": 0.9544,
+          "away_against": 1.1421
         },
         "Ipswich": {
-          "home_for": 1.1053,
-          "home_against": 0.8762,
-          "away_for": 1.1211,
-          "away_against": 0.8661
+          "home_for": 1.102,
+          "home_against": 0.8786,
+          "away_for": 1.1245,
+          "away_against": 0.8638
         },
         "Leicester": {
-          "home_for": 0.9741,
-          "home_against": 0.9961,
-          "away_for": 1.0195,
-          "away_against": 0.9868
+          "home_for": 0.9713,
+          "home_against": 0.9989,
+          "away_for": 1.0225,
+          "away_against": 0.984
         },
         "Lincoln": {
-          "home_for": 1.0324,
-          "home_against": 1.1345,
-          "away_for": 0.9001,
-          "away_against": 1.0959
+          "home_for": 1.0138,
+          "home_against": 1.1649,
+          "away_for": 0.9019,
+          "away_against": 1.0933
         },
         "Middlesbrough": {
-          "home_for": 1.2266,
-          "home_against": 0.912,
-          "away_for": 1.3266,
-          "away_against": 0.8028
+          "home_for": 1.2178,
+          "home_against": 0.9016,
+          "away_for": 1.3311,
+          "away_against": 0.8004
         },
         "Millwall": {
-          "home_for": 0.9611,
-          "home_against": 0.9578,
-          "away_for": 1.0916,
-          "away_against": 1.0124
+          "home_for": 0.9795,
+          "home_against": 0.9677,
+          "away_for": 1.0951,
+          "away_against": 1.0091
         },
         "Norwich": {
-          "home_for": 0.9782,
-          "home_against": 0.9502,
-          "away_for": 1.0457,
-          "away_against": 0.9223
+          "home_for": 0.978,
+          "home_against": 0.942,
+          "away_for": 1.0491,
+          "away_against": 0.9195
         },
         "Oxford": {
-          "home_for": 0.9889,
-          "home_against": 0.9622,
-          "away_for": 0.884,
-          "away_against": 1.1307
+          "home_for": 0.9861,
+          "home_against": 0.9649,
+          "away_for": 0.8864,
+          "away_against": 1.1273
         },
         "Portsmouth": {
-          "home_for": 1.1008,
-          "home_against": 0.9406,
-          "away_for": 0.8833,
-          "away_against": 0.8757
+          "home_for": 1.0973,
+          "home_against": 0.9436,
+          "away_for": 0.8667,
+          "away_against": 0.8892
         },
         "Preston": {
-          "home_for": 0.8757,
-          "home_against": 1.1393,
-          "away_for": 0.954,
-          "away_against": 1.1133
+          "home_for": 0.8731,
+          "home_against": 1.1431,
+          "away_for": 0.9273,
+          "away_against": 1.1157
         },
         "QPR": {
-          "home_for": 1.0605,
-          "home_against": 0.9177,
-          "away_for": 0.9788,
-          "away_against": 0.9409
+          "home_for": 1.0571,
+          "home_against": 0.9205,
+          "away_for": 0.9842,
+          "away_against": 0.9544
         },
         "Sheffield United": {
-          "home_for": 0.9829,
-          "home_against": 1.0266,
-          "away_for": 0.9521,
-          "away_against": 1.0294
+          "home_for": 0.9766,
+          "home_against": 1.0191,
+          "away_for": 0.9551,
+          "away_against": 1.0262
         },
         "Sheffield Weds": {
-          "home_for": 0.7581,
-          "home_against": 1.1941,
-          "away_for": 0.7798,
-          "away_against": 1.1074
+          "home_for": 0.7563,
+          "home_against": 1.1977,
+          "away_for": 0.7818,
+          "away_against": 1.1041
         },
         "Southampton": {
-          "home_for": 1.045,
-          "home_against": 1.0457,
-          "away_for": 1.1794,
-          "away_against": 1.031
+          "home_for": 1.0535,
+          "home_against": 1.0485,
+          "away_for": 1.1834,
+          "away_against": 1.0277
         },
         "Stoke": {
-          "home_for": 0.8618,
-          "home_against": 0.9846,
-          "away_for": 0.9444,
-          "away_against": 1.1024
+          "home_for": 0.8759,
+          "home_against": 0.9567,
+          "away_for": 0.9474,
+          "away_against": 1.0988
         },
         "Swansea": {
-          "home_for": 0.9223,
-          "home_against": 0.9979,
-          "away_for": 0.9807,
-          "away_against": 0.899
+          "home_for": 0.9366,
+          "home_against": 0.9806,
+          "away_for": 0.9839,
+          "away_against": 0.8963
         },
         "Watford": {
-          "home_for": 1.062,
-          "home_against": 1.0858,
-          "away_for": 0.9712,
+          "home_for": 1.0586,
+          "home_against": 1.0894,
+          "away_for": 0.9622,
           "away_against": 0.9751
         },
         "West Brom": {
-          "home_for": 1.0279,
-          "home_against": 0.8241,
-          "away_for": 0.9693,
-          "away_against": 0.9394
+          "home_for": 1.0246,
+          "home_against": 0.8265,
+          "away_for": 0.975,
+          "away_against": 0.9381
         },
         "West Ham": {
-          "home_for": 1.1912,
-          "home_against": 0.9157,
-          "away_for": 1.1658,
-          "away_against": 0.9753
+          "home_for": 1.1704,
+          "home_against": 0.9275,
+          "away_for": 1.1687,
+          "away_against": 0.9732
         },
         "Wolves": {
-          "home_for": 1.1467,
-          "home_against": 0.8375,
-          "away_for": 1.1814,
-          "away_against": 0.9308
+          "home_for": 1.124,
+          "home_against": 0.8627,
+          "away_for": 1.1844,
+          "away_against": 0.9289
         },
         "Wrexham": {
-          "home_for": 0.9425,
-          "home_against": 1.017,
-          "away_for": 0.9024,
-          "away_against": 0.9875
+          "home_for": 0.9396,
+          "home_against": 1.0203,
+          "away_for": 0.8997,
+          "away_against": 0.981
         }
       }
     },
     "shots_on_target": {
-      "avg_home": 4.5298,
-      "avg_away": 3.7583,
-      "dispersion_team": 125.7338,
+      "avg_home": 4.5729,
+      "avg_away": 3.7512,
+      "dispersion_team": 117.8374,
       "dispersion_total": null,
       "teams": {
         "Birmingham": {
-          "home_for": 1.1347,
-          "home_against": 0.8667,
-          "away_for": 0.8963,
-          "away_against": 0.9188
+          "home_for": 1.1261,
+          "home_against": 0.8679,
+          "away_for": 0.9388,
+          "away_against": 0.9293
         },
         "Blackburn": {
-          "home_for": 0.8698,
-          "home_against": 0.9081,
-          "away_for": 0.8845,
-          "away_against": 0.9041
+          "home_for": 0.8637,
+          "home_against": 0.9094,
+          "away_for": 0.8594,
+          "away_against": 0.9432
         },
         "Bolton": {
-          "home_for": 1.0968,
-          "home_against": 1.3737,
-          "away_for": 1.0351,
-          "away_against": 1.0366
+          "home_for": 1.1091,
+          "home_against": 1.4608,
+          "away_for": 1.0362,
+          "away_against": 1.0311
         },
         "Bristol City": {
-          "home_for": 0.8894,
-          "home_against": 0.9791,
-          "away_for": 1.0973,
-          "away_against": 0.8747
+          "home_for": 0.8831,
+          "home_against": 0.9805,
+          "away_for": 1.1543,
+          "away_against": 0.8874
         },
         "Burnley": {
-          "home_for": 0.876,
-          "home_against": 1.1076,
-          "away_for": 1.156,
-          "away_against": 1.1971
+          "home_for": 0.8722,
+          "home_against": 1.0165,
+          "away_for": 1.1574,
+          "away_against": 1.1901
         },
         "Cardiff": {
-          "home_for": 1.2975,
-          "home_against": 1.0593,
-          "away_for": 1.156,
-          "away_against": 1.2774
+          "home_for": 1.2895,
+          "home_against": 1.0604,
+          "away_for": 1.2609,
+          "away_against": 1.2367
         },
         "Charlton": {
-          "home_for": 0.8404,
-          "home_against": 0.9495,
-          "away_for": 0.8608,
-          "away_against": 1.1592
+          "home_for": 0.8345,
+          "home_against": 0.9509,
+          "away_for": 0.8253,
+          "away_against": 1.1573
         },
         "Coventry": {
-          "home_for": 1.1928,
-          "home_against": 0.8916,
-          "away_for": 1.2948,
-          "away_against": 0.9319
+          "home_for": 1.1844,
+          "home_against": 0.8927,
+          "away_for": 1.2967,
+          "away_against": 0.9259
         },
         "Derby": {
-          "home_for": 0.8502,
-          "home_against": 1.1091,
-          "away_for": 0.985,
-          "away_against": 1.1151
+          "home_for": 0.8442,
+          "home_against": 1.1108,
+          "away_for": 0.9898,
+          "away_against": 1.1433
         },
         "Hull": {
-          "home_for": 0.9185,
-          "home_against": 1.1013,
-          "away_for": 1.0851,
-          "away_against": 1.1125
+          "home_for": 0.9127,
+          "home_against": 1.1028,
+          "away_for": 1.0866,
+          "away_against": 1.1049
         },
         "Ipswich": {
-          "home_for": 1.1727,
-          "home_against": 0.8594,
-          "away_for": 1.1416,
-          "away_against": 0.9452
+          "home_for": 1.1645,
+          "home_against": 0.8604,
+          "away_for": 1.1432,
+          "away_against": 0.9392
         },
         "Leicester": {
-          "home_for": 0.9118,
-          "home_against": 0.9561,
-          "away_for": 1.1093,
-          "away_against": 1.0121
+          "home_for": 0.9061,
+          "home_against": 0.9574,
+          "away_for": 1.1109,
+          "away_against": 1.0055
         },
         "Lincoln": {
-          "home_for": 0.876,
-          "home_against": 1.2528,
-          "away_for": 0.8416,
-          "away_against": 1.0767
+          "home_for": 0.9087,
+          "home_against": 1.3053,
+          "away_for": 0.8423,
+          "away_against": 1.0708
         },
         "Middlesbrough": {
-          "home_for": 1.2377,
-          "home_against": 0.8608,
-          "away_for": 1.2983,
-          "away_against": 0.8502
+          "home_for": 1.2317,
+          "home_against": 0.8253,
+          "away_for": 1.3004,
+          "away_against": 0.8442
         },
         "Millwall": {
-          "home_for": 1.0268,
-          "home_against": 0.9909,
-          "away_for": 0.9495,
-          "away_against": 0.8551
+          "home_for": 1.0596,
+          "home_against": 0.9955,
+          "away_for": 0.9509,
+          "away_against": 0.8491
         },
         "Norwich": {
-          "home_for": 1.0121,
-          "home_against": 0.985,
-          "away_for": 1.1919,
-          "away_against": 0.9728
+          "home_for": 1.0084,
+          "home_against": 1.0012,
+          "away_for": 1.1938,
+          "away_against": 0.9657
         },
         "Oxford": {
-          "home_for": 0.9519,
-          "home_against": 0.9239,
-          "away_for": 0.7787,
-          "away_against": 1.0724
+          "home_for": 0.9458,
+          "home_against": 0.9251,
+          "away_for": 0.7797,
+          "away_against": 1.0651
         },
         "Portsmouth": {
-          "home_for": 1.0072,
-          "home_against": 0.9968,
-          "away_for": 0.8312,
-          "away_against": 0.8894
+          "home_for": 0.9997,
+          "home_against": 0.9983,
+          "away_for": 0.797,
+          "away_against": 0.8828
         },
         "Preston": {
-          "home_for": 0.7717,
-          "home_against": 1.0796,
-          "away_for": 0.914,
-          "away_against": 1.066
+          "home_for": 0.7665,
+          "home_against": 1.0812,
+          "away_for": 0.8764,
+          "away_against": 1.0689
         },
         "QPR": {
-          "home_for": 1.1494,
-          "home_against": 1.0204,
-          "away_for": 0.9318,
-          "away_against": 0.9287
+          "home_for": 1.1407,
+          "home_against": 1.022,
+          "away_for": 0.9161,
+          "away_against": 0.9665
         },
         "Sheffield United": {
-          "home_for": 1.0268,
-          "home_against": 1.0678,
-          "away_for": 0.9554,
-          "away_against": 1.0219
+          "home_for": 1.013,
+          "home_against": 1.0466,
+          "away_for": 0.9568,
+          "away_against": 1.0143
         },
         "Sheffield Weds": {
-          "home_for": 0.691,
-          "home_against": 1.3512,
-          "away_for": 0.7546,
-          "away_against": 1.273
+          "home_for": 0.6874,
+          "home_against": 1.3532,
+          "away_for": 0.7554,
+          "away_against": 1.2639
         },
         "Southampton": {
-          "home_for": 1.0807,
-          "home_against": 0.9258,
-          "away_for": 1.2865,
-          "away_against": 0.9924
+          "home_for": 1.1107,
+          "home_against": 0.9104,
+          "away_for": 1.2886,
+          "away_against": 0.9852
         },
         "Stoke": {
-          "home_for": 0.9483,
-          "home_against": 1.0086,
-          "away_for": 0.8726,
-          "away_against": 0.9826
+          "home_for": 0.9572,
+          "home_against": 0.9671,
+          "away_for": 0.8739,
+          "away_against": 0.9754
         },
         "Swansea": {
-          "home_for": 0.9041,
-          "home_against": 0.9613,
-          "away_for": 1.0737,
-          "away_against": 1.0121
+          "home_for": 0.9432,
+          "home_against": 0.9331,
+          "away_for": 1.0753,
+          "away_against": 1.0046
         },
         "Watford": {
-          "home_for": 1.1347,
-          "home_against": 1.05,
-          "away_for": 0.8963,
-          "away_against": 1.0562
+          "home_for": 1.1261,
+          "home_against": 1.0516,
+          "away_for": 0.9161,
+          "away_against": 1.0503
         },
         "West Brom": {
-          "home_for": 0.9826,
-          "home_against": 0.8372,
-          "away_for": 0.9258,
-          "away_against": 0.9139
+          "home_for": 0.9754,
+          "home_against": 0.8383,
+          "away_for": 0.9218,
+          "away_against": 0.9153
         },
         "West Ham": {
-          "home_for": 1.3978,
-          "home_against": 0.9141,
-          "away_for": 1.2286,
-          "away_against": 0.9362
+          "home_for": 1.3643,
+          "home_against": 0.9054,
+          "away_for": 1.2301,
+          "away_against": 0.9317
         },
         "Wolves": {
-          "home_for": 0.9563,
-          "home_against": 0.8658,
-          "away_for": 1.0593,
-          "away_against": 0.9563
+          "home_for": 0.9451,
+          "home_against": 0.9943,
+          "away_for": 1.0604,
+          "away_against": 0.9515
         },
         "Wrexham": {
-          "home_for": 1.0072,
-          "home_against": 1.0618,
-          "away_for": 0.7958,
-          "away_against": 0.9973
+          "home_for": 0.9997,
+          "home_against": 1.0634,
+          "away_for": 0.7856,
+          "away_against": 0.9851
         }
       }
     }
@@ -901,32 +901,32 @@
     "Birmingham": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 7,
-          "points": 20,
-          "won": 5,
+          "matches": 13,
+          "position": 6,
+          "points": 23,
+          "won": 6,
           "drawn": 5,
           "lost": 2,
-          "goals_for": 1.67,
+          "goals_for": 1.77,
           "goals_against": 1.0,
-          "xg_for": 1.7,
-          "xg_against": 1.38,
-          "shots_for": 13.17,
+          "xg_for": 1.73,
+          "xg_against": 1.4,
+          "shots_for": 13.46,
           "shots_against": 12.08,
-          "shots_on_target_for": 4.58,
-          "shots_on_target_against": 3.67,
-          "corners_for": 5.5,
-          "corners_against": 4.42,
+          "shots_on_target_for": 4.77,
+          "shots_on_target_against": 3.85,
+          "corners_for": 5.31,
+          "corners_against": 4.31,
           "yellow_cards": 2.08,
           "red_cards": 0.0,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.667,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.692,
           "clean_sheets": 4
         },
         "home": {
           "matches": 6,
-          "position": 7,
-          "points": 20,
+          "position": 6,
+          "points": 23,
           "won": 2,
           "drawn": 4,
           "lost": 0,
@@ -947,30 +947,49 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 6,
-          "position": 7,
-          "points": 20,
-          "won": 3,
+          "matches": 7,
+          "position": 6,
+          "points": 23,
+          "won": 4,
           "drawn": 1,
           "lost": 2,
-          "goals_for": 1.0,
-          "goals_against": 0.83,
-          "xg_for": 1.79,
-          "xg_against": 1.31,
-          "shots_for": 12.33,
-          "shots_against": 12.5,
-          "shots_on_target_for": 4.5,
-          "shots_on_target_against": 3.5,
-          "corners_for": 6.17,
-          "corners_against": 5.17,
-          "yellow_cards": 2.17,
+          "goals_for": 1.29,
+          "goals_against": 0.86,
+          "xg_for": 1.83,
+          "xg_against": 1.35,
+          "shots_for": 13.0,
+          "shots_against": 12.43,
+          "shots_on_target_for": 4.86,
+          "shots_on_target_against": 3.86,
+          "corners_for": 5.71,
+          "corners_against": 4.86,
+          "yellow_cards": 2.14,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.5,
+          "btts_pct": 0.571,
+          "over_2_5_pct": 0.571,
           "clean_sheets": 2
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Lincoln",
+          "goals_for": 3,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 2.07,
+          "xg_against": 1.59,
+          "shots_for": 17,
+          "shots_against": 12,
+          "shots_on_target_for": 7,
+          "shots_on_target_against": 6,
+          "corners_for": 3,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -1065,56 +1084,37 @@
           "corners_against": 3,
           "cards_for": 2,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "A",
-          "opponent": "Derby",
-          "goals_for": 2,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": 3.17,
-          "xg_against": 1.12,
-          "shots_for": 19,
-          "shots_against": 18,
-          "shots_on_target_for": 9,
-          "shots_on_target_against": 4,
-          "corners_for": 4,
-          "corners_against": 10,
-          "cards_for": 3,
-          "cards_against": 1
         }
       ]
     },
     "Blackburn": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 10,
+          "matches": 13,
+          "position": 13,
           "points": 18,
           "won": 5,
           "drawn": 3,
-          "lost": 4,
-          "goals_for": 1.58,
-          "goals_against": 1.33,
-          "xg_for": 1.02,
-          "xg_against": 1.75,
-          "shots_for": 11.58,
-          "shots_against": 17.42,
-          "shots_on_target_for": 4.08,
-          "shots_on_target_against": 3.5,
-          "corners_for": 6.25,
-          "corners_against": 6.08,
-          "yellow_cards": 2.5,
+          "lost": 5,
+          "goals_for": 1.46,
+          "goals_against": 1.54,
+          "xg_for": 0.98,
+          "xg_against": 1.83,
+          "shots_for": 11.15,
+          "shots_against": 17.54,
+          "shots_on_target_for": 3.85,
+          "shots_on_target_against": 3.92,
+          "corners_for": 5.92,
+          "corners_against": 5.69,
+          "yellow_cards": 2.38,
           "red_cards": 0.08,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.692,
+          "over_2_5_pct": 0.769,
           "clean_sheets": 3
         },
         "home": {
           "matches": 6,
-          "position": 10,
+          "position": 13,
           "points": 18,
           "won": 4,
           "drawn": 0,
@@ -1136,30 +1136,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 6,
-          "position": 10,
+          "matches": 7,
+          "position": 13,
           "points": 18,
           "won": 1,
           "drawn": 3,
-          "lost": 2,
-          "goals_for": 1.33,
-          "goals_against": 1.5,
-          "xg_for": 0.62,
-          "xg_against": 2.22,
-          "shots_for": 8.5,
-          "shots_against": 18.5,
-          "shots_on_target_for": 3.33,
-          "shots_on_target_against": 4.17,
-          "corners_for": 6.5,
-          "corners_against": 6.67,
-          "yellow_cards": 2.17,
-          "red_cards": 0.17,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
+          "lost": 3,
+          "goals_for": 1.14,
+          "goals_against": 1.86,
+          "xg_for": 0.61,
+          "xg_against": 2.3,
+          "shots_for": 8.14,
+          "shots_against": 18.57,
+          "shots_on_target_for": 3.0,
+          "shots_on_target_against": 4.86,
+          "corners_for": 5.86,
+          "corners_against": 5.86,
+          "yellow_cards": 2.0,
+          "red_cards": 0.14,
+          "btts_pct": 0.571,
+          "over_2_5_pct": 0.714,
           "clean_sheets": 2
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Swansea",
+          "goals_for": 0,
+          "goals_against": 4,
+          "result": "L",
+          "xg_for": 0.53,
+          "xg_against": 2.78,
+          "shots_for": 6,
+          "shots_against": 19,
+          "shots_on_target_for": 1,
+          "shots_on_target_against": 9,
+          "corners_for": 2,
+          "corners_against": 1,
+          "cards_for": 1,
+          "cards_against": 0
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -1254,79 +1273,60 @@
           "corners_against": 9,
           "cards_for": 1,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Millwall",
-          "goals_for": 3,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": 1.23,
-          "xg_against": 1.66,
-          "shots_for": 18,
-          "shots_against": 16,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 2,
-          "corners_for": 6,
-          "corners_against": 2,
-          "cards_for": 5,
-          "cards_against": 3
         }
       ]
     },
     "Bolton": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 18,
+          "matches": 13,
+          "position": 19,
           "points": 14,
           "won": 4,
           "drawn": 2,
-          "lost": 6,
-          "goals_for": 1.33,
-          "goals_against": 1.92,
+          "lost": 7,
+          "goals_for": 1.38,
+          "goals_against": 2.0,
           "xg_for": 1.36,
-          "xg_against": 1.91,
-          "shots_for": 13.67,
-          "shots_against": 14.33,
-          "shots_on_target_for": 4.67,
-          "shots_on_target_against": 5.58,
-          "corners_for": 5.08,
-          "corners_against": 5.75,
-          "yellow_cards": 1.67,
+          "xg_against": 2.01,
+          "shots_for": 14.08,
+          "shots_against": 14.31,
+          "shots_on_target_for": 4.77,
+          "shots_on_target_against": 5.85,
+          "corners_for": 5.54,
+          "corners_against": 5.62,
+          "yellow_cards": 1.62,
           "red_cards": 0.08,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.667,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.692,
           "clean_sheets": 3
         },
         "home": {
-          "matches": 6,
-          "position": 18,
+          "matches": 7,
+          "position": 19,
           "points": 14,
           "won": 2,
           "drawn": 0,
-          "lost": 4,
-          "goals_for": 1.17,
-          "goals_against": 2.0,
-          "xg_for": 1.47,
-          "xg_against": 1.85,
-          "shots_for": 16.33,
-          "shots_against": 14.33,
-          "shots_on_target_for": 5.33,
-          "shots_on_target_against": 6.33,
-          "corners_for": 6.17,
-          "corners_against": 5.67,
-          "yellow_cards": 1.5,
+          "lost": 5,
+          "goals_for": 1.29,
+          "goals_against": 2.14,
+          "xg_for": 1.46,
+          "xg_against": 2.06,
+          "shots_for": 16.71,
+          "shots_against": 14.29,
+          "shots_on_target_for": 5.43,
+          "shots_on_target_against": 6.71,
+          "corners_for": 6.86,
+          "corners_against": 5.43,
+          "yellow_cards": 1.43,
           "red_cards": 0.0,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
+          "btts_pct": 0.714,
+          "over_2_5_pct": 0.714,
           "clean_sheets": 1
         },
         "away": {
           "matches": 6,
-          "position": 18,
+          "position": 19,
           "points": 14,
           "won": 2,
           "drawn": 2,
@@ -1349,6 +1349,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Bristol City",
+          "goals_for": 2,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 1.38,
+          "xg_against": 3.33,
+          "shots_for": 19,
+          "shots_against": 14,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 9,
+          "corners_for": 11,
+          "corners_against": 4,
+          "cards_for": 1,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-23",
           "league": "E1",
@@ -1443,57 +1462,38 @@
           "corners_against": 4,
           "cards_for": 0,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Cardiff",
-          "goals_for": 1,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 0.49,
-          "xg_against": 1.78,
-          "shots_for": 7,
-          "shots_against": 17,
-          "shots_on_target_for": 5,
-          "shots_on_target_against": 10,
-          "corners_for": 2,
-          "corners_against": 10,
-          "cards_for": 5,
-          "cards_against": 2
         }
       ]
     },
     "Bristol City": {
       "season": {
         "all": {
-          "matches": 12,
+          "matches": 13,
           "position": 14,
-          "points": 15,
-          "won": 4,
+          "points": 18,
+          "won": 5,
           "drawn": 3,
           "lost": 5,
-          "goals_for": 1.0,
-          "goals_against": 1.25,
-          "xg_for": 1.3,
+          "goals_for": 1.15,
+          "goals_against": 1.31,
+          "xg_for": 1.46,
           "xg_against": 1.34,
-          "shots_for": 13.5,
-          "shots_against": 11.92,
-          "shots_on_target_for": 4.0,
-          "shots_on_target_against": 2.5,
-          "corners_for": 5.5,
-          "corners_against": 5.33,
-          "yellow_cards": 1.33,
+          "shots_for": 13.54,
+          "shots_against": 12.46,
+          "shots_on_target_for": 4.38,
+          "shots_on_target_against": 2.77,
+          "corners_for": 5.38,
+          "corners_against": 5.77,
+          "yellow_cards": 1.31,
           "red_cards": 0.08,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.417,
+          "btts_pct": 0.538,
+          "over_2_5_pct": 0.462,
           "clean_sheets": 2
         },
         "home": {
           "matches": 6,
           "position": 14,
-          "points": 15,
+          "points": 18,
           "won": 2,
           "drawn": 0,
           "lost": 4,
@@ -1514,30 +1514,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 6,
+          "matches": 7,
           "position": 14,
-          "points": 15,
-          "won": 2,
+          "points": 18,
+          "won": 3,
           "drawn": 3,
           "lost": 1,
-          "goals_for": 1.5,
-          "goals_against": 1.5,
-          "xg_for": 1.47,
-          "xg_against": 1.45,
-          "shots_for": 13.83,
-          "shots_against": 11.17,
-          "shots_on_target_for": 4.33,
-          "shots_on_target_against": 3.0,
-          "corners_for": 4.83,
-          "corners_against": 4.83,
+          "goals_for": 1.71,
+          "goals_against": 1.57,
+          "xg_for": 1.74,
+          "xg_against": 1.44,
+          "shots_for": 13.86,
+          "shots_against": 12.29,
+          "shots_on_target_for": 5.0,
+          "shots_on_target_against": 3.43,
+          "corners_for": 4.71,
+          "corners_against": 5.71,
           "yellow_cards": 1.0,
           "red_cards": 0.0,
-          "btts_pct": 0.833,
-          "over_2_5_pct": 0.667,
+          "btts_pct": 0.857,
+          "over_2_5_pct": 0.714,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Bolton",
+          "goals_for": 3,
+          "goals_against": 2,
+          "result": "W",
+          "xg_for": 3.33,
+          "xg_against": 1.38,
+          "shots_for": 14,
+          "shots_against": 19,
+          "shots_on_target_for": 9,
+          "shots_on_target_against": 6,
+          "corners_for": 4,
+          "corners_against": 11,
+          "cards_for": 1,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -1632,80 +1651,61 @@
           "corners_against": 5,
           "cards_for": 2,
           "cards_against": 5
-        },
-        {
-          "date": "2026-09-15",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Lincoln",
-          "goals_for": 0,
-          "goals_against": 1,
-          "result": "L",
-          "xg_for": 1.53,
-          "xg_against": 0.54,
-          "shots_for": 18,
-          "shots_against": 9,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 3,
-          "corners_for": 13,
-          "corners_against": 4,
-          "cards_for": 2,
-          "cards_against": 5
         }
       ]
     },
     "Burnley": {
       "season": {
         "all": {
-          "matches": 12,
+          "matches": 13,
           "position": 22,
-          "points": 8,
+          "points": 9,
           "won": 1,
-          "drawn": 5,
+          "drawn": 6,
           "lost": 6,
-          "goals_for": 1.42,
-          "goals_against": 2.08,
-          "xg_for": 1.29,
-          "xg_against": 1.64,
-          "shots_for": 13.75,
-          "shots_against": 14.67,
-          "shots_on_target_for": 4.17,
-          "shots_on_target_against": 5.33,
-          "corners_for": 4.67,
-          "corners_against": 4.58,
-          "yellow_cards": 2.0,
+          "goals_for": 1.31,
+          "goals_against": 1.92,
+          "xg_for": 1.34,
+          "xg_against": 1.53,
+          "shots_for": 14.08,
+          "shots_against": 13.92,
+          "shots_on_target_for": 4.15,
+          "shots_on_target_against": 4.92,
+          "corners_for": 4.69,
+          "corners_against": 4.38,
+          "yellow_cards": 1.92,
           "red_cards": 0.08,
-          "btts_pct": 0.917,
-          "over_2_5_pct": 0.75,
-          "clean_sheets": 1
+          "btts_pct": 0.846,
+          "over_2_5_pct": 0.692,
+          "clean_sheets": 2
         },
         "home": {
-          "matches": 6,
+          "matches": 7,
           "position": 22,
-          "points": 8,
+          "points": 9,
           "won": 0,
-          "drawn": 4,
+          "drawn": 5,
           "lost": 2,
-          "goals_for": 1.33,
-          "goals_against": 1.67,
-          "xg_for": 0.96,
-          "xg_against": 1.55,
-          "shots_for": 12.67,
-          "shots_against": 13.67,
-          "shots_on_target_for": 3.5,
-          "shots_on_target_against": 4.5,
-          "corners_for": 4.83,
-          "corners_against": 5.67,
-          "yellow_cards": 2.33,
+          "goals_for": 1.14,
+          "goals_against": 1.43,
+          "xg_for": 1.09,
+          "xg_against": 1.37,
+          "shots_for": 13.43,
+          "shots_against": 12.43,
+          "shots_on_target_for": 3.57,
+          "shots_on_target_against": 3.86,
+          "corners_for": 4.86,
+          "corners_against": 5.14,
+          "yellow_cards": 2.14,
           "red_cards": 0.0,
-          "btts_pct": 1.0,
-          "over_2_5_pct": 0.667,
-          "clean_sheets": 0
+          "btts_pct": 0.857,
+          "over_2_5_pct": 0.571,
+          "clean_sheets": 1
         },
         "away": {
           "matches": 6,
           "position": 22,
-          "points": 8,
+          "points": 9,
           "won": 1,
           "drawn": 1,
           "lost": 4,
@@ -1727,6 +1727,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Portsmouth",
+          "goals_for": 0,
+          "goals_against": 0,
+          "result": "D",
+          "xg_for": 1.89,
+          "xg_against": 0.25,
+          "shots_for": 18,
+          "shots_against": 5,
+          "shots_on_target_for": 4,
+          "shots_on_target_against": 0,
+          "corners_for": 5,
+          "corners_against": 2,
+          "cards_for": 1,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -1821,56 +1840,37 @@
           "corners_against": 6,
           "cards_for": 4,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "A",
-          "opponent": "Swansea",
-          "goals_for": 1,
-          "goals_against": 3,
-          "result": "L",
-          "xg_for": 1.72,
-          "xg_against": 2.63,
-          "shots_for": 18,
-          "shots_against": 13,
-          "shots_on_target_for": 6,
-          "shots_on_target_against": 6,
-          "corners_for": 6,
-          "corners_against": 3,
-          "cards_for": 1,
-          "cards_against": 2
         }
       ]
     },
     "Cardiff": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 16,
+          "matches": 13,
+          "position": 17,
           "points": 14,
           "won": 3,
           "drawn": 5,
-          "lost": 4,
-          "goals_for": 1.58,
-          "goals_against": 1.42,
-          "xg_for": 1.93,
-          "xg_against": 1.67,
-          "shots_for": 17.08,
-          "shots_against": 14.42,
-          "shots_on_target_for": 5.92,
-          "shots_on_target_against": 5.5,
-          "corners_for": 6.83,
-          "corners_against": 5.0,
-          "yellow_cards": 1.75,
+          "lost": 5,
+          "goals_for": 1.46,
+          "goals_against": 1.54,
+          "xg_for": 1.85,
+          "xg_against": 1.66,
+          "shots_for": 16.77,
+          "shots_against": 14.31,
+          "shots_on_target_for": 6.15,
+          "shots_on_target_against": 5.38,
+          "corners_for": 6.69,
+          "corners_against": 4.85,
+          "yellow_cards": 1.77,
           "red_cards": 0.08,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.692,
+          "over_2_5_pct": 0.615,
           "clean_sheets": 1
         },
         "home": {
           "matches": 6,
-          "position": 16,
+          "position": 17,
           "points": 14,
           "won": 3,
           "drawn": 3,
@@ -1892,30 +1892,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 6,
-          "position": 16,
+          "matches": 7,
+          "position": 17,
           "points": 14,
           "won": 0,
           "drawn": 2,
-          "lost": 4,
-          "goals_for": 1.0,
-          "goals_against": 1.83,
-          "xg_for": 1.27,
-          "xg_against": 2.02,
-          "shots_for": 12.5,
-          "shots_against": 18.33,
-          "shots_on_target_for": 4.83,
-          "shots_on_target_against": 6.83,
-          "corners_for": 6.33,
-          "corners_against": 6.5,
-          "yellow_cards": 1.83,
-          "red_cards": 0.17,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
+          "lost": 5,
+          "goals_for": 0.86,
+          "goals_against": 2.0,
+          "xg_for": 1.22,
+          "xg_against": 1.96,
+          "shots_for": 12.57,
+          "shots_against": 17.57,
+          "shots_on_target_for": 5.43,
+          "shots_on_target_against": 6.43,
+          "corners_for": 6.14,
+          "corners_against": 6.0,
+          "yellow_cards": 1.86,
+          "red_cards": 0.14,
+          "btts_pct": 0.571,
+          "over_2_5_pct": 0.714,
           "clean_sheets": 0
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Wolves",
+          "goals_for": 0,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 0.9,
+          "xg_against": 1.58,
+          "shots_for": 13,
+          "shots_against": 13,
+          "shots_on_target_for": 9,
+          "shots_on_target_against": 4,
+          "corners_for": 5,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 4
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -2010,56 +2029,37 @@
           "corners_against": 1,
           "cards_for": 5,
           "cards_against": 3
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "A",
-          "opponent": "Bolton",
-          "goals_for": 0,
-          "goals_against": 1,
-          "result": "L",
-          "xg_for": 1.78,
-          "xg_against": 0.49,
-          "shots_for": 17,
-          "shots_against": 7,
-          "shots_on_target_for": 10,
-          "shots_on_target_against": 5,
-          "corners_for": 10,
-          "corners_against": 2,
-          "cards_for": 2,
-          "cards_against": 5
         }
       ]
     },
     "Charlton": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 19,
+          "matches": 13,
+          "position": 20,
           "points": 14,
           "won": 3,
           "drawn": 5,
-          "lost": 4,
-          "goals_for": 0.92,
-          "goals_against": 1.5,
-          "xg_for": 0.99,
-          "xg_against": 1.55,
-          "shots_for": 10.0,
-          "shots_against": 17.0,
-          "shots_on_target_for": 3.0,
-          "shots_on_target_against": 5.0,
-          "corners_for": 4.42,
-          "corners_against": 6.17,
-          "yellow_cards": 2.08,
+          "lost": 5,
+          "goals_for": 0.85,
+          "goals_against": 1.62,
+          "xg_for": 0.94,
+          "xg_against": 1.57,
+          "shots_for": 9.77,
+          "shots_against": 16.92,
+          "shots_on_target_for": 2.77,
+          "shots_on_target_against": 5.08,
+          "corners_for": 4.38,
+          "corners_against": 6.31,
+          "yellow_cards": 2.0,
           "red_cards": 0.08,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.5,
+          "btts_pct": 0.538,
+          "over_2_5_pct": 0.538,
           "clean_sheets": 3
         },
         "home": {
           "matches": 6,
-          "position": 19,
+          "position": 20,
           "points": 14,
           "won": 2,
           "drawn": 3,
@@ -2081,30 +2081,49 @@
           "clean_sheets": 3
         },
         "away": {
-          "matches": 6,
-          "position": 19,
+          "matches": 7,
+          "position": 20,
           "points": 14,
           "won": 1,
           "drawn": 2,
-          "lost": 3,
-          "goals_for": 1.0,
-          "goals_against": 2.17,
-          "xg_for": 1.04,
-          "xg_against": 2.0,
-          "shots_for": 8.83,
-          "shots_against": 20.67,
-          "shots_on_target_for": 3.33,
-          "shots_on_target_against": 7.0,
-          "corners_for": 3.5,
-          "corners_against": 6.17,
-          "yellow_cards": 2.83,
-          "red_cards": 0.17,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
+          "lost": 4,
+          "goals_for": 0.86,
+          "goals_against": 2.29,
+          "xg_for": 0.95,
+          "xg_against": 1.96,
+          "shots_for": 8.57,
+          "shots_against": 20.0,
+          "shots_on_target_for": 2.86,
+          "shots_on_target_against": 6.86,
+          "corners_for": 3.57,
+          "corners_against": 6.43,
+          "yellow_cards": 2.57,
+          "red_cards": 0.14,
+          "btts_pct": 0.571,
+          "over_2_5_pct": 0.714,
           "clean_sheets": 0
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Middlesbrough",
+          "goals_for": 0,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 0.4,
+          "xg_against": 1.71,
+          "shots_for": 7,
+          "shots_against": 16,
+          "shots_on_target_for": 0,
+          "shots_on_target_against": 6,
+          "corners_for": 4,
+          "corners_against": 8,
+          "cards_for": 1,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -2199,51 +2218,32 @@
           "corners_against": 6,
           "cards_for": 3,
           "cards_against": 5
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Portsmouth",
-          "goals_for": 0,
-          "goals_against": 0,
-          "result": "D",
-          "xg_for": 0.82,
-          "xg_against": 0.39,
-          "shots_for": 10,
-          "shots_against": 9,
-          "shots_on_target_for": 3,
-          "shots_on_target_against": 3,
-          "corners_for": 7,
-          "corners_against": 5,
-          "cards_for": 1,
-          "cards_against": 1
         }
       ]
     },
     "Derby": {
       "season": {
         "all": {
-          "matches": 12,
+          "matches": 13,
           "position": 23,
           "points": 7,
           "won": 1,
           "drawn": 4,
-          "lost": 7,
-          "goals_for": 0.83,
-          "goals_against": 1.75,
-          "xg_for": 0.98,
-          "xg_against": 1.76,
-          "shots_for": 12.58,
-          "shots_against": 15.08,
-          "shots_on_target_for": 3.83,
-          "shots_on_target_against": 5.75,
-          "corners_for": 5.67,
-          "corners_against": 5.42,
-          "yellow_cards": 2.42,
+          "lost": 8,
+          "goals_for": 0.85,
+          "goals_against": 1.92,
+          "xg_for": 1.0,
+          "xg_against": 1.91,
+          "shots_for": 12.62,
+          "shots_against": 15.54,
+          "shots_on_target_for": 3.85,
+          "shots_on_target_against": 6.0,
+          "corners_for": 5.62,
+          "corners_against": 5.31,
+          "yellow_cards": 2.38,
           "red_cards": 0.08,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.5,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.538,
           "clean_sheets": 1
         },
         "home": {
@@ -2270,30 +2270,49 @@
           "clean_sheets": 0
         },
         "away": {
-          "matches": 6,
+          "matches": 7,
           "position": 23,
           "points": 7,
           "won": 1,
           "drawn": 2,
-          "lost": 3,
+          "lost": 4,
           "goals_for": 1.0,
-          "goals_against": 1.83,
-          "xg_for": 0.9,
-          "xg_against": 1.76,
-          "shots_for": 11.67,
-          "shots_against": 15.67,
-          "shots_on_target_for": 4.17,
-          "shots_on_target_against": 5.5,
-          "corners_for": 4.67,
-          "corners_against": 5.5,
-          "yellow_cards": 2.67,
-          "red_cards": 0.17,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.5,
+          "goals_against": 2.14,
+          "xg_for": 0.95,
+          "xg_against": 2.04,
+          "shots_for": 11.86,
+          "shots_against": 16.43,
+          "shots_on_target_for": 4.14,
+          "shots_on_target_against": 6.0,
+          "corners_for": 4.71,
+          "corners_against": 5.29,
+          "yellow_cards": 2.57,
+          "red_cards": 0.14,
+          "btts_pct": 0.714,
+          "over_2_5_pct": 0.571,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Millwall",
+          "goals_for": 1,
+          "goals_against": 4,
+          "result": "L",
+          "xg_for": 1.25,
+          "xg_against": 3.73,
+          "shots_for": 13,
+          "shots_against": 21,
+          "shots_on_target_for": 4,
+          "shots_on_target_against": 9,
+          "corners_for": 5,
+          "corners_against": 4,
+          "cards_for": 2,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -2388,79 +2407,60 @@
           "corners_against": 4,
           "cards_for": 2,
           "cards_against": 4
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Birmingham",
-          "goals_for": 1,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": 1.12,
-          "xg_against": 3.17,
-          "shots_for": 18,
-          "shots_against": 19,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 9,
-          "corners_for": 10,
-          "corners_against": 4,
-          "cards_for": 1,
-          "cards_against": 3
         }
       ]
     },
     "Lincoln": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 15,
+          "matches": 13,
+          "position": 16,
           "points": 15,
           "won": 4,
           "drawn": 3,
-          "lost": 5,
+          "lost": 6,
           "goals_for": 1.08,
-          "goals_against": 1.67,
-          "xg_for": 1.32,
-          "xg_against": 1.46,
-          "shots_for": 12.33,
-          "shots_against": 15.67,
-          "shots_on_target_for": 3.08,
-          "shots_on_target_against": 5.33,
-          "corners_for": 3.5,
-          "corners_against": 7.92,
-          "yellow_cards": 2.33,
-          "red_cards": 0.25,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.583,
+          "goals_against": 1.77,
+          "xg_for": 1.34,
+          "xg_against": 1.5,
+          "shots_for": 12.31,
+          "shots_against": 15.77,
+          "shots_on_target_for": 3.31,
+          "shots_on_target_against": 5.46,
+          "corners_for": 3.46,
+          "corners_against": 7.54,
+          "yellow_cards": 2.38,
+          "red_cards": 0.23,
+          "btts_pct": 0.538,
+          "over_2_5_pct": 0.615,
           "clean_sheets": 4
         },
         "home": {
-          "matches": 6,
-          "position": 15,
+          "matches": 7,
+          "position": 16,
           "points": 15,
           "won": 1,
           "drawn": 2,
-          "lost": 3,
-          "goals_for": 1.17,
-          "goals_against": 2.17,
-          "xg_for": 1.72,
-          "xg_against": 1.45,
-          "shots_for": 15.17,
-          "shots_against": 14.5,
-          "shots_on_target_for": 3.5,
-          "shots_on_target_against": 5.5,
-          "corners_for": 4.0,
-          "corners_against": 5.5,
-          "yellow_cards": 1.67,
-          "red_cards": 0.33,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
+          "lost": 4,
+          "goals_for": 1.14,
+          "goals_against": 2.29,
+          "xg_for": 1.7,
+          "xg_against": 1.54,
+          "shots_for": 14.71,
+          "shots_against": 14.86,
+          "shots_on_target_for": 3.86,
+          "shots_on_target_against": 5.71,
+          "corners_for": 3.86,
+          "corners_against": 5.14,
+          "yellow_cards": 1.86,
+          "red_cards": 0.29,
+          "btts_pct": 0.714,
+          "over_2_5_pct": 0.714,
           "clean_sheets": 1
         },
         "away": {
           "matches": 6,
-          "position": 15,
+          "position": 16,
           "points": 15,
           "won": 3,
           "drawn": 1,
@@ -2483,6 +2483,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Birmingham",
+          "goals_for": 1,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 1.59,
+          "xg_against": 2.07,
+          "shots_for": 12,
+          "shots_against": 17,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 7,
+          "corners_for": 3,
+          "corners_against": 3,
+          "cards_for": 3,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -2577,80 +2596,61 @@
           "corners_against": 1,
           "cards_for": 2,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-15",
-          "league": "E1",
-          "venue": "A",
-          "opponent": "Bristol City",
-          "goals_for": 1,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 0.54,
-          "xg_against": 1.53,
-          "shots_for": 9,
-          "shots_against": 18,
-          "shots_on_target_for": 3,
-          "shots_on_target_against": 4,
-          "corners_for": 4,
-          "corners_against": 13,
-          "cards_for": 5,
-          "cards_against": 2
         }
       ]
     },
     "Middlesbrough": {
       "season": {
         "all": {
-          "matches": 12,
+          "matches": 13,
           "position": 1,
-          "points": 25,
-          "won": 7,
+          "points": 28,
+          "won": 8,
           "drawn": 4,
           "lost": 1,
-          "goals_for": 2.25,
-          "goals_against": 1.42,
-          "xg_for": 2.17,
-          "xg_against": 1.01,
-          "shots_for": 20.08,
-          "shots_against": 11.08,
-          "shots_on_target_for": 6.67,
-          "shots_on_target_against": 3.58,
-          "corners_for": 6.33,
-          "corners_against": 4.75,
-          "yellow_cards": 1.0,
+          "goals_for": 2.31,
+          "goals_against": 1.31,
+          "xg_for": 2.13,
+          "xg_against": 0.97,
+          "shots_for": 19.77,
+          "shots_against": 10.77,
+          "shots_on_target_for": 6.62,
+          "shots_on_target_against": 3.31,
+          "corners_for": 6.46,
+          "corners_against": 4.69,
+          "yellow_cards": 1.08,
           "red_cards": 0.0,
-          "btts_pct": 0.833,
-          "over_2_5_pct": 0.75,
-          "clean_sheets": 2
+          "btts_pct": 0.769,
+          "over_2_5_pct": 0.769,
+          "clean_sheets": 3
         },
         "home": {
-          "matches": 6,
+          "matches": 7,
           "position": 1,
-          "points": 25,
-          "won": 4,
+          "points": 28,
+          "won": 5,
           "drawn": 2,
           "lost": 0,
-          "goals_for": 2.33,
-          "goals_against": 1.5,
-          "xg_for": 1.99,
-          "xg_against": 1.14,
-          "shots_for": 21.17,
-          "shots_against": 10.83,
-          "shots_on_target_for": 7.33,
-          "shots_on_target_against": 3.33,
-          "corners_for": 7.33,
-          "corners_against": 4.5,
-          "yellow_cards": 1.0,
+          "goals_for": 2.43,
+          "goals_against": 1.29,
+          "xg_for": 1.95,
+          "xg_against": 1.03,
+          "shots_for": 20.43,
+          "shots_against": 10.29,
+          "shots_on_target_for": 7.14,
+          "shots_on_target_against": 2.86,
+          "corners_for": 7.43,
+          "corners_against": 4.43,
+          "yellow_cards": 1.14,
           "red_cards": 0.0,
-          "btts_pct": 0.833,
-          "over_2_5_pct": 0.833,
-          "clean_sheets": 1
+          "btts_pct": 0.714,
+          "over_2_5_pct": 0.857,
+          "clean_sheets": 2
         },
         "away": {
           "matches": 6,
           "position": 1,
-          "points": 25,
+          "points": 28,
           "won": 3,
           "drawn": 2,
           "lost": 1,
@@ -2672,6 +2672,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Charlton",
+          "goals_for": 3,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 1.71,
+          "xg_against": 0.4,
+          "shots_for": 16,
+          "shots_against": 7,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 0,
+          "corners_for": 8,
+          "corners_against": 4,
+          "cards_for": 2,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-23",
           "league": "E1",
@@ -2766,80 +2785,61 @@
           "corners_against": 5,
           "cards_for": 0,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-15",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Millwall",
-          "goals_for": 2,
-          "goals_against": 2,
-          "result": "D",
-          "xg_for": 1.52,
-          "xg_against": 1.69,
-          "shots_for": 22,
-          "shots_against": 11,
-          "shots_on_target_for": 7,
-          "shots_on_target_against": 4,
-          "corners_for": 14,
-          "corners_against": 1,
-          "cards_for": 1,
-          "cards_against": 1
         }
       ]
     },
     "Millwall": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 13,
-          "points": 15,
-          "won": 4,
+          "matches": 13,
+          "position": 12,
+          "points": 18,
+          "won": 5,
           "drawn": 3,
           "lost": 5,
-          "goals_for": 1.58,
-          "goals_against": 1.67,
-          "xg_for": 1.77,
-          "xg_against": 1.33,
-          "shots_for": 13.92,
+          "goals_for": 1.77,
+          "goals_against": 1.62,
+          "xg_for": 1.92,
+          "xg_against": 1.32,
+          "shots_for": 14.46,
           "shots_against": 13.0,
-          "shots_on_target_for": 3.92,
-          "shots_on_target_against": 3.42,
-          "corners_for": 5.75,
-          "corners_against": 5.92,
-          "yellow_cards": 2.0,
+          "shots_on_target_for": 4.31,
+          "shots_on_target_against": 3.46,
+          "corners_for": 5.62,
+          "corners_against": 5.85,
+          "yellow_cards": 2.08,
           "red_cards": 0.08,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.538,
+          "over_2_5_pct": 0.769,
           "clean_sheets": 4
         },
         "home": {
-          "matches": 6,
-          "position": 13,
-          "points": 15,
-          "won": 2,
+          "matches": 7,
+          "position": 12,
+          "points": 18,
+          "won": 3,
           "drawn": 2,
           "lost": 2,
-          "goals_for": 1.83,
-          "goals_against": 1.33,
-          "xg_for": 1.9,
-          "xg_against": 1.34,
-          "shots_for": 13.33,
-          "shots_against": 11.33,
-          "shots_on_target_for": 4.83,
-          "shots_on_target_against": 3.33,
-          "corners_for": 6.67,
-          "corners_against": 4.67,
-          "yellow_cards": 2.17,
-          "red_cards": 0.17,
-          "btts_pct": 0.333,
-          "over_2_5_pct": 0.833,
+          "goals_for": 2.14,
+          "goals_against": 1.29,
+          "xg_for": 2.16,
+          "xg_against": 1.33,
+          "shots_for": 14.43,
+          "shots_against": 11.57,
+          "shots_on_target_for": 5.43,
+          "shots_on_target_against": 3.43,
+          "corners_for": 6.29,
+          "corners_against": 4.71,
+          "yellow_cards": 2.29,
+          "red_cards": 0.14,
+          "btts_pct": 0.429,
+          "over_2_5_pct": 0.857,
           "clean_sheets": 2
         },
         "away": {
           "matches": 6,
-          "position": 13,
-          "points": 15,
+          "position": 12,
+          "points": 18,
           "won": 2,
           "drawn": 1,
           "lost": 3,
@@ -2861,6 +2861,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Derby",
+          "goals_for": 4,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 3.73,
+          "xg_against": 1.25,
+          "shots_for": 21,
+          "shots_against": 13,
+          "shots_on_target_for": 9,
+          "shots_on_target_against": 4,
+          "corners_for": 4,
+          "corners_against": 5,
+          "cards_for": 3,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -2955,80 +2974,61 @@
           "corners_against": 11,
           "cards_for": 1,
           "cards_against": 6
-        },
-        {
-          "date": "2026-09-15",
-          "league": "E1",
-          "venue": "A",
-          "opponent": "Middlesbrough",
-          "goals_for": 2,
-          "goals_against": 2,
-          "result": "D",
-          "xg_for": 1.69,
-          "xg_against": 1.52,
-          "shots_for": 11,
-          "shots_against": 22,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 7,
-          "corners_for": 1,
-          "corners_against": 14,
-          "cards_for": 1,
-          "cards_against": 1
         }
       ]
     },
     "Norwich": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 20,
-          "points": 12,
-          "won": 4,
+          "matches": 13,
+          "position": 15,
+          "points": 15,
+          "won": 5,
           "drawn": 0,
           "lost": 8,
-          "goals_for": 1.67,
-          "goals_against": 1.83,
-          "xg_for": 1.44,
-          "xg_against": 1.49,
-          "shots_for": 14.08,
-          "shots_against": 12.08,
+          "goals_for": 1.77,
+          "goals_against": 1.85,
+          "xg_for": 1.41,
+          "xg_against": 1.45,
+          "shots_for": 14.15,
+          "shots_against": 11.77,
           "shots_on_target_for": 5.0,
-          "shots_on_target_against": 4.33,
-          "corners_for": 4.42,
-          "corners_against": 3.92,
-          "yellow_cards": 2.25,
+          "shots_on_target_against": 4.38,
+          "corners_for": 4.77,
+          "corners_against": 3.77,
+          "yellow_cards": 2.15,
           "red_cards": 0.08,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.692,
+          "over_2_5_pct": 0.769,
           "clean_sheets": 0
         },
         "home": {
-          "matches": 6,
-          "position": 20,
-          "points": 12,
-          "won": 2,
+          "matches": 7,
+          "position": 15,
+          "points": 15,
+          "won": 3,
           "drawn": 0,
           "lost": 4,
-          "goals_for": 1.67,
-          "goals_against": 1.67,
-          "xg_for": 1.32,
-          "xg_against": 1.51,
-          "shots_for": 14.33,
-          "shots_against": 12.0,
-          "shots_on_target_for": 4.83,
-          "shots_on_target_against": 3.67,
-          "corners_for": 4.5,
-          "corners_against": 3.33,
-          "yellow_cards": 2.5,
+          "goals_for": 1.86,
+          "goals_against": 1.71,
+          "xg_for": 1.29,
+          "xg_against": 1.44,
+          "shots_for": 14.43,
+          "shots_against": 11.43,
+          "shots_on_target_for": 4.86,
+          "shots_on_target_against": 3.86,
+          "corners_for": 5.14,
+          "corners_against": 3.14,
+          "yellow_cards": 2.29,
           "red_cards": 0.0,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
+          "btts_pct": 0.714,
+          "over_2_5_pct": 0.714,
           "clean_sheets": 0
         },
         "away": {
           "matches": 6,
-          "position": 20,
-          "points": 12,
+          "position": 15,
+          "points": 15,
           "won": 2,
           "drawn": 0,
           "lost": 4,
@@ -3050,6 +3050,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Watford",
+          "goals_for": 3,
+          "goals_against": 2,
+          "result": "W",
+          "xg_for": 1.08,
+          "xg_against": 1.06,
+          "shots_for": 15,
+          "shots_against": 8,
+          "shots_on_target_for": 5,
+          "shots_on_target_against": 5,
+          "corners_for": 9,
+          "corners_against": 2,
+          "cards_for": 1,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -3144,57 +3163,38 @@
           "corners_against": 2,
           "cards_for": 0,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "A",
-          "opponent": "Middlesbrough",
-          "goals_for": 3,
-          "goals_against": 4,
-          "result": "L",
-          "xg_for": 1.62,
-          "xg_against": 2.07,
-          "shots_for": 13,
-          "shots_against": 17,
-          "shots_on_target_for": 5,
-          "shots_on_target_against": 6,
-          "corners_for": 5,
-          "corners_against": 3,
-          "cards_for": 1,
-          "cards_against": 2
         }
       ]
     },
     "Portsmouth": {
       "season": {
         "all": {
-          "matches": 12,
+          "matches": 13,
           "position": 11,
-          "points": 18,
+          "points": 19,
           "won": 5,
-          "drawn": 3,
+          "drawn": 4,
           "lost": 4,
-          "goals_for": 1.33,
-          "goals_against": 1.25,
-          "xg_for": 1.31,
-          "xg_against": 1.14,
-          "shots_for": 14.58,
-          "shots_against": 10.92,
-          "shots_on_target_for": 3.92,
-          "shots_on_target_against": 3.58,
-          "corners_for": 5.92,
-          "corners_against": 4.75,
-          "yellow_cards": 1.5,
+          "goals_for": 1.23,
+          "goals_against": 1.15,
+          "xg_for": 1.23,
+          "xg_against": 1.19,
+          "shots_for": 13.85,
+          "shots_against": 11.46,
+          "shots_on_target_for": 3.62,
+          "shots_on_target_against": 3.62,
+          "corners_for": 5.62,
+          "corners_against": 4.77,
+          "yellow_cards": 1.46,
           "red_cards": 0.0,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.5,
-          "clean_sheets": 3
+          "btts_pct": 0.538,
+          "over_2_5_pct": 0.462,
+          "clean_sheets": 4
         },
         "home": {
           "matches": 6,
           "position": 11,
-          "points": 18,
+          "points": 19,
           "won": 3,
           "drawn": 1,
           "lost": 2,
@@ -3215,30 +3215,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 6,
+          "matches": 7,
           "position": 11,
-          "points": 18,
+          "points": 19,
           "won": 2,
-          "drawn": 2,
+          "drawn": 3,
           "lost": 2,
-          "goals_for": 1.0,
-          "goals_against": 0.83,
-          "xg_for": 1.01,
-          "xg_against": 1.03,
-          "shots_for": 11.5,
-          "shots_against": 10.83,
-          "shots_on_target_for": 2.83,
-          "shots_on_target_against": 2.83,
-          "corners_for": 4.17,
-          "corners_against": 4.5,
-          "yellow_cards": 1.67,
+          "goals_for": 0.86,
+          "goals_against": 0.71,
+          "xg_for": 0.9,
+          "xg_against": 1.16,
+          "shots_for": 10.57,
+          "shots_against": 11.86,
+          "shots_on_target_for": 2.43,
+          "shots_on_target_against": 3.0,
+          "corners_for": 3.86,
+          "corners_against": 4.57,
+          "yellow_cards": 1.57,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.333,
-          "clean_sheets": 2
+          "btts_pct": 0.429,
+          "over_2_5_pct": 0.286,
+          "clean_sheets": 3
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Burnley",
+          "goals_for": 0,
+          "goals_against": 0,
+          "result": "D",
+          "xg_for": 0.25,
+          "xg_against": 1.89,
+          "shots_for": 5,
+          "shots_against": 18,
+          "shots_on_target_for": 0,
+          "shots_on_target_against": 4,
+          "corners_for": 2,
+          "corners_against": 5,
+          "cards_for": 1,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -3333,51 +3352,32 @@
           "corners_against": 2,
           "cards_for": 3,
           "cards_against": 5
-        },
-        {
-          "date": "2026-09-19",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Blackburn",
-          "goals_for": 2,
-          "goals_against": 2,
-          "result": "D",
-          "xg_for": 1.6,
-          "xg_against": 0.59,
-          "shots_for": 22,
-          "shots_against": 8,
-          "shots_on_target_for": 7,
-          "shots_on_target_against": 5,
-          "corners_for": 9,
-          "corners_against": 7,
-          "cards_for": 2,
-          "cards_against": 1
         }
       ]
     },
     "Preston": {
       "season": {
         "all": {
-          "matches": 12,
+          "matches": 13,
           "position": 24,
           "points": 5,
           "won": 1,
           "drawn": 2,
-          "lost": 9,
-          "goals_for": 0.83,
+          "lost": 10,
+          "goals_for": 0.77,
           "goals_against": 2.08,
-          "xg_for": 1.24,
-          "xg_against": 1.48,
-          "shots_for": 12.58,
-          "shots_against": 16.0,
-          "shots_on_target_for": 2.67,
-          "shots_on_target_against": 5.0,
-          "corners_for": 4.75,
-          "corners_against": 5.83,
-          "yellow_cards": 2.25,
+          "xg_for": 1.16,
+          "xg_against": 1.54,
+          "shots_for": 11.85,
+          "shots_against": 16.15,
+          "shots_on_target_for": 2.46,
+          "shots_on_target_against": 5.08,
+          "corners_for": 4.92,
+          "corners_against": 6.08,
+          "yellow_cards": 2.23,
           "red_cards": 0.08,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.615,
           "clean_sheets": 0
         },
         "home": {
@@ -3404,30 +3404,49 @@
           "clean_sheets": 0
         },
         "away": {
-          "matches": 6,
+          "matches": 7,
           "position": 24,
           "points": 5,
           "won": 0,
           "drawn": 1,
-          "lost": 5,
-          "goals_for": 0.83,
-          "goals_against": 2.5,
-          "xg_for": 1.19,
-          "xg_against": 1.57,
-          "shots_for": 11.67,
-          "shots_against": 18.67,
-          "shots_on_target_for": 2.5,
-          "shots_on_target_against": 5.33,
-          "corners_for": 3.0,
-          "corners_against": 6.17,
-          "yellow_cards": 2.33,
-          "red_cards": 0.17,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.833,
+          "lost": 6,
+          "goals_for": 0.71,
+          "goals_against": 2.43,
+          "xg_for": 1.03,
+          "xg_against": 1.67,
+          "shots_for": 10.43,
+          "shots_against": 18.57,
+          "shots_on_target_for": 2.14,
+          "shots_on_target_against": 5.43,
+          "corners_for": 3.57,
+          "corners_against": 6.57,
+          "yellow_cards": 2.29,
+          "red_cards": 0.14,
+          "btts_pct": 0.571,
+          "over_2_5_pct": 0.714,
           "clean_sheets": 0
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Stoke",
+          "goals_for": 0,
+          "goals_against": 2,
+          "result": "L",
+          "xg_for": 0.1,
+          "xg_against": 2.22,
+          "shots_for": 3,
+          "shots_against": 18,
+          "shots_on_target_for": 0,
+          "shots_on_target_against": 6,
+          "corners_for": 7,
+          "corners_against": 9,
+          "cards_for": 2,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -3522,56 +3541,37 @@
           "corners_against": 9,
           "cards_for": 2,
           "cards_against": 4
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Lincoln",
-          "goals_for": 0,
-          "goals_against": 1,
-          "result": "L",
-          "xg_for": 0.59,
-          "xg_against": 0.66,
-          "shots_for": 11,
-          "shots_against": 9,
-          "shots_on_target_for": 3,
-          "shots_on_target_against": 3,
-          "corners_for": 16,
-          "corners_against": 3,
-          "cards_for": 1,
-          "cards_against": 1
         }
       ]
     },
     "QPR": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 8,
+          "matches": 13,
+          "position": 9,
           "points": 20,
           "won": 5,
           "drawn": 5,
-          "lost": 2,
-          "goals_for": 1.67,
-          "goals_against": 1.0,
-          "xg_for": 1.74,
-          "xg_against": 1.13,
-          "shots_for": 14.58,
-          "shots_against": 11.33,
-          "shots_on_target_for": 5.08,
-          "shots_on_target_against": 3.67,
-          "corners_for": 5.5,
-          "corners_against": 3.83,
-          "yellow_cards": 1.92,
+          "lost": 3,
+          "goals_for": 1.62,
+          "goals_against": 1.23,
+          "xg_for": 1.66,
+          "xg_against": 1.14,
+          "shots_for": 14.38,
+          "shots_against": 11.92,
+          "shots_on_target_for": 4.85,
+          "shots_on_target_against": 4.08,
+          "corners_for": 5.38,
+          "corners_against": 4.23,
+          "yellow_cards": 2.0,
           "red_cards": 0.08,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.615,
           "clean_sheets": 3
         },
         "home": {
           "matches": 6,
-          "position": 8,
+          "position": 9,
           "points": 20,
           "won": 3,
           "drawn": 2,
@@ -3593,30 +3593,49 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 6,
-          "position": 8,
+          "matches": 7,
+          "position": 9,
           "points": 20,
           "won": 2,
           "drawn": 3,
-          "lost": 1,
-          "goals_for": 1.17,
-          "goals_against": 1.17,
-          "xg_for": 1.25,
-          "xg_against": 1.28,
-          "shots_for": 11.67,
-          "shots_against": 12.17,
-          "shots_on_target_for": 4.0,
-          "shots_on_target_against": 3.83,
-          "corners_for": 4.33,
-          "corners_against": 3.83,
-          "yellow_cards": 2.5,
+          "lost": 2,
+          "goals_for": 1.14,
+          "goals_against": 1.57,
+          "xg_for": 1.18,
+          "xg_against": 1.27,
+          "shots_for": 11.71,
+          "shots_against": 13.14,
+          "shots_on_target_for": 3.71,
+          "shots_on_target_against": 4.57,
+          "corners_for": 4.29,
+          "corners_against": 4.57,
+          "yellow_cards": 2.57,
           "red_cards": 0.0,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.5,
+          "btts_pct": 0.714,
+          "over_2_5_pct": 0.571,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Southampton",
+          "goals_for": 1,
+          "goals_against": 4,
+          "result": "L",
+          "xg_for": 0.76,
+          "xg_against": 1.21,
+          "shots_for": 12,
+          "shots_against": 19,
+          "shots_on_target_for": 2,
+          "shots_on_target_against": 9,
+          "corners_for": 4,
+          "corners_against": 9,
+          "cards_for": 3,
+          "cards_against": 0
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -3711,80 +3730,61 @@
           "corners_against": 3,
           "cards_for": 4,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "A",
-          "opponent": "West Brom",
-          "goals_for": 1,
-          "goals_against": 1,
-          "result": "D",
-          "xg_for": 0.63,
-          "xg_against": 1.22,
-          "shots_for": 4,
-          "shots_against": 12,
-          "shots_on_target_for": 3,
-          "shots_on_target_against": 5,
-          "corners_for": 3,
-          "corners_against": 5,
-          "cards_for": 4,
-          "cards_against": 1
         }
       ]
     },
     "Sheffield United": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 12,
-          "points": 16,
-          "won": 4,
+          "matches": 13,
+          "position": 10,
+          "points": 19,
+          "won": 5,
           "drawn": 4,
           "lost": 4,
-          "goals_for": 1.33,
-          "goals_against": 1.25,
+          "goals_for": 1.31,
+          "goals_against": 1.15,
           "xg_for": 1.26,
-          "xg_against": 1.47,
-          "shots_for": 10.67,
-          "shots_against": 15.5,
-          "shots_on_target_for": 3.83,
-          "shots_on_target_against": 4.58,
-          "corners_for": 3.58,
-          "corners_against": 6.83,
+          "xg_against": 1.4,
+          "shots_for": 10.85,
+          "shots_against": 15.0,
+          "shots_on_target_for": 3.85,
+          "shots_on_target_against": 4.38,
+          "corners_for": 3.85,
+          "corners_against": 6.31,
           "yellow_cards": 2.0,
           "red_cards": 0.08,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.583,
-          "clean_sheets": 4
+          "btts_pct": 0.538,
+          "over_2_5_pct": 0.538,
+          "clean_sheets": 5
         },
         "home": {
-          "matches": 6,
-          "position": 12,
-          "points": 16,
-          "won": 2,
+          "matches": 7,
+          "position": 10,
+          "points": 19,
+          "won": 3,
           "drawn": 2,
           "lost": 2,
-          "goals_for": 1.33,
-          "goals_against": 1.17,
+          "goals_for": 1.29,
+          "goals_against": 1.0,
           "xg_for": 1.26,
-          "xg_against": 1.69,
-          "shots_for": 11.33,
-          "shots_against": 14.5,
-          "shots_on_target_for": 4.5,
-          "shots_on_target_against": 4.33,
-          "corners_for": 3.83,
-          "corners_against": 5.83,
-          "yellow_cards": 1.67,
+          "xg_against": 1.54,
+          "shots_for": 11.57,
+          "shots_against": 13.71,
+          "shots_on_target_for": 4.43,
+          "shots_on_target_against": 4.0,
+          "corners_for": 4.29,
+          "corners_against": 5.0,
+          "yellow_cards": 1.71,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.5,
-          "clean_sheets": 2
+          "btts_pct": 0.429,
+          "over_2_5_pct": 0.429,
+          "clean_sheets": 3
         },
         "away": {
           "matches": 6,
-          "position": 12,
-          "points": 16,
+          "position": 10,
+          "points": 19,
           "won": 2,
           "drawn": 2,
           "lost": 2,
@@ -3806,6 +3806,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-30",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Wrexham",
+          "goals_for": 1,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 1.25,
+          "xg_against": 0.64,
+          "shots_for": 13,
+          "shots_against": 9,
+          "shots_on_target_for": 4,
+          "shots_on_target_against": 2,
+          "corners_for": 7,
+          "corners_against": 0,
+          "cards_for": 2,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -3900,80 +3919,61 @@
           "corners_against": 8,
           "cards_for": 4,
           "cards_against": 4
-        },
-        {
-          "date": "2026-09-13",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Wolves",
-          "goals_for": 0,
-          "goals_against": 1,
-          "result": "L",
-          "xg_for": 0.63,
-          "xg_against": 1.86,
-          "shots_for": 6,
-          "shots_against": 17,
-          "shots_on_target_for": 2,
-          "shots_on_target_against": 3,
-          "corners_for": 0,
-          "corners_against": 9,
-          "cards_for": 2,
-          "cards_against": 1
         }
       ]
     },
     "Southampton": {
       "season": {
         "all": {
-          "matches": 12,
+          "matches": 13,
           "position": 2,
-          "points": 24,
-          "won": 7,
+          "points": 27,
+          "won": 8,
           "drawn": 3,
           "lost": 2,
-          "goals_for": 2.0,
+          "goals_for": 2.15,
           "goals_against": 1.0,
-          "xg_for": 1.77,
-          "xg_against": 1.3,
-          "shots_for": 15.17,
-          "shots_against": 15.83,
-          "shots_on_target_for": 4.58,
-          "shots_on_target_against": 4.33,
-          "corners_for": 5.08,
-          "corners_against": 4.92,
-          "yellow_cards": 1.92,
+          "xg_for": 1.73,
+          "xg_against": 1.26,
+          "shots_for": 15.46,
+          "shots_against": 15.54,
+          "shots_on_target_for": 4.92,
+          "shots_on_target_against": 4.15,
+          "corners_for": 5.38,
+          "corners_against": 4.85,
+          "yellow_cards": 1.77,
           "red_cards": 0.08,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.769,
+          "over_2_5_pct": 0.615,
           "clean_sheets": 3
         },
         "home": {
-          "matches": 6,
+          "matches": 7,
           "position": 2,
-          "points": 24,
-          "won": 5,
+          "points": 27,
+          "won": 6,
           "drawn": 1,
           "lost": 0,
-          "goals_for": 2.67,
-          "goals_against": 0.67,
-          "xg_for": 1.98,
-          "xg_against": 1.37,
-          "shots_for": 14.33,
-          "shots_against": 15.17,
-          "shots_on_target_for": 4.33,
-          "shots_on_target_against": 3.5,
-          "corners_for": 5.0,
-          "corners_against": 4.67,
-          "yellow_cards": 1.67,
-          "red_cards": 0.17,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
+          "goals_for": 2.86,
+          "goals_against": 0.71,
+          "xg_for": 1.87,
+          "xg_against": 1.28,
+          "shots_for": 15.0,
+          "shots_against": 14.71,
+          "shots_on_target_for": 5.0,
+          "shots_on_target_against": 3.29,
+          "corners_for": 5.57,
+          "corners_against": 4.57,
+          "yellow_cards": 1.43,
+          "red_cards": 0.14,
+          "btts_pct": 0.714,
+          "over_2_5_pct": 0.714,
           "clean_sheets": 2
         },
         "away": {
           "matches": 6,
           "position": 2,
-          "points": 24,
+          "points": 27,
           "won": 2,
           "drawn": 2,
           "lost": 2,
@@ -3995,6 +3995,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "QPR",
+          "goals_for": 4,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 1.21,
+          "xg_against": 0.76,
+          "shots_for": 19,
+          "shots_against": 12,
+          "shots_on_target_for": 9,
+          "shots_on_target_against": 2,
+          "corners_for": 9,
+          "corners_against": 4,
+          "cards_for": 0,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -4089,80 +4108,61 @@
           "corners_against": 2,
           "cards_for": 4,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Bristol City",
-          "goals_for": 4,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": 1.71,
-          "xg_against": 2.24,
-          "shots_for": 10,
-          "shots_against": 21,
-          "shots_on_target_for": 5,
-          "shots_on_target_against": 6,
-          "corners_for": 2,
-          "corners_against": 5,
-          "cards_for": 0,
-          "cards_against": 2
         }
       ]
     },
     "Stoke": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 9,
-          "points": 20,
-          "won": 6,
+          "matches": 13,
+          "position": 7,
+          "points": 23,
+          "won": 7,
           "drawn": 2,
           "lost": 4,
-          "goals_for": 1.5,
-          "goals_against": 1.33,
-          "xg_for": 0.92,
-          "xg_against": 1.61,
-          "shots_for": 11.33,
-          "shots_against": 15.5,
-          "shots_on_target_for": 3.5,
-          "shots_on_target_against": 4.5,
-          "corners_for": 4.42,
-          "corners_against": 5.17,
+          "goals_for": 1.54,
+          "goals_against": 1.23,
+          "xg_for": 1.02,
+          "xg_against": 1.49,
+          "shots_for": 11.85,
+          "shots_against": 14.54,
+          "shots_on_target_for": 3.69,
+          "shots_on_target_against": 4.15,
+          "corners_for": 4.77,
+          "corners_against": 5.31,
           "yellow_cards": 2.0,
-          "red_cards": 0.17,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
-          "clean_sheets": 4
+          "red_cards": 0.15,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.615,
+          "clean_sheets": 5
         },
         "home": {
-          "matches": 6,
-          "position": 9,
-          "points": 20,
-          "won": 3,
+          "matches": 7,
+          "position": 7,
+          "points": 23,
+          "won": 4,
           "drawn": 1,
           "lost": 2,
-          "goals_for": 1.67,
-          "goals_against": 1.0,
-          "xg_for": 0.87,
-          "xg_against": 1.04,
-          "shots_for": 10.0,
-          "shots_against": 11.83,
-          "shots_on_target_for": 3.17,
-          "shots_on_target_against": 4.0,
-          "corners_for": 4.83,
-          "corners_against": 3.83,
-          "yellow_cards": 1.67,
+          "goals_for": 1.71,
+          "goals_against": 0.86,
+          "xg_for": 1.06,
+          "xg_against": 0.91,
+          "shots_for": 11.14,
+          "shots_against": 10.57,
+          "shots_on_target_for": 3.57,
+          "shots_on_target_against": 3.43,
+          "corners_for": 5.43,
+          "corners_against": 4.29,
+          "yellow_cards": 1.71,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.667,
-          "clean_sheets": 3
+          "btts_pct": 0.429,
+          "over_2_5_pct": 0.571,
+          "clean_sheets": 4
         },
         "away": {
           "matches": 6,
-          "position": 9,
-          "points": 20,
+          "position": 7,
+          "points": 23,
           "won": 3,
           "drawn": 1,
           "lost": 2,
@@ -4184,6 +4184,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Preston",
+          "goals_for": 2,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 2.22,
+          "xg_against": 0.1,
+          "shots_for": 18,
+          "shots_against": 3,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 0,
+          "corners_for": 9,
+          "corners_against": 7,
+          "cards_for": 2,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -4278,80 +4297,61 @@
           "corners_against": 1,
           "cards_for": 4,
           "cards_against": 4
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "A",
-          "opponent": "Watford",
-          "goals_for": 2,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": 1.5,
-          "xg_against": 0.39,
-          "shots_for": 18,
-          "shots_against": 6,
-          "shots_on_target_for": 6,
-          "shots_on_target_against": 2,
-          "corners_for": 8,
-          "corners_against": 5,
-          "cards_for": 2,
-          "cards_against": 2
         }
       ]
     },
     "Swansea": {
       "season": {
         "all": {
-          "matches": 12,
+          "matches": 13,
           "position": 3,
-          "points": 23,
-          "won": 7,
+          "points": 26,
+          "won": 8,
           "drawn": 2,
           "lost": 3,
-          "goals_for": 1.33,
-          "goals_against": 1.08,
-          "xg_for": 1.51,
-          "xg_against": 1.35,
-          "shots_for": 11.75,
-          "shots_against": 10.92,
-          "shots_on_target_for": 4.33,
-          "shots_on_target_against": 3.33,
-          "corners_for": 4.33,
-          "corners_against": 4.67,
-          "yellow_cards": 1.67,
+          "goals_for": 1.54,
+          "goals_against": 1.0,
+          "xg_for": 1.61,
+          "xg_against": 1.28,
+          "shots_for": 12.31,
+          "shots_against": 10.54,
+          "shots_on_target_for": 4.69,
+          "shots_on_target_against": 3.15,
+          "corners_for": 4.08,
+          "corners_against": 4.46,
+          "yellow_cards": 1.54,
           "red_cards": 0.0,
-          "btts_pct": 0.417,
-          "over_2_5_pct": 0.583,
-          "clean_sheets": 5
+          "btts_pct": 0.385,
+          "over_2_5_pct": 0.615,
+          "clean_sheets": 6
         },
         "home": {
-          "matches": 6,
+          "matches": 7,
           "position": 3,
-          "points": 23,
-          "won": 3,
+          "points": 26,
+          "won": 4,
           "drawn": 2,
           "lost": 1,
-          "goals_for": 1.17,
-          "goals_against": 0.5,
-          "xg_for": 1.68,
-          "xg_against": 1.09,
-          "shots_for": 11.5,
-          "shots_against": 11.33,
-          "shots_on_target_for": 4.33,
-          "shots_on_target_against": 3.5,
-          "corners_for": 4.67,
-          "corners_against": 2.83,
-          "yellow_cards": 1.33,
+          "goals_for": 1.57,
+          "goals_against": 0.43,
+          "xg_for": 1.84,
+          "xg_against": 1.01,
+          "shots_for": 12.57,
+          "shots_against": 10.57,
+          "shots_on_target_for": 5.0,
+          "shots_on_target_against": 3.14,
+          "corners_for": 4.14,
+          "corners_against": 2.71,
+          "yellow_cards": 1.14,
           "red_cards": 0.0,
-          "btts_pct": 0.333,
-          "over_2_5_pct": 0.333,
-          "clean_sheets": 3
+          "btts_pct": 0.286,
+          "over_2_5_pct": 0.429,
+          "clean_sheets": 4
         },
         "away": {
           "matches": 6,
           "position": 3,
-          "points": 23,
+          "points": 26,
           "won": 4,
           "drawn": 0,
           "lost": 2,
@@ -4373,6 +4373,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Blackburn",
+          "goals_for": 4,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 2.78,
+          "xg_against": 0.53,
+          "shots_for": 19,
+          "shots_against": 6,
+          "shots_on_target_for": 9,
+          "shots_on_target_against": 1,
+          "corners_for": 1,
+          "corners_against": 2,
+          "cards_for": 0,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -4467,51 +4486,32 @@
           "corners_against": 2,
           "cards_for": 1,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Burnley",
-          "goals_for": 3,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": 2.63,
-          "xg_against": 1.72,
-          "shots_for": 13,
-          "shots_against": 18,
-          "shots_on_target_for": 6,
-          "shots_on_target_against": 6,
-          "corners_for": 3,
-          "corners_against": 6,
-          "cards_for": 2,
-          "cards_against": 1
         }
       ]
     },
     "Watford": {
       "season": {
         "all": {
-          "matches": 12,
+          "matches": 13,
           "position": 21,
           "points": 11,
           "won": 3,
           "drawn": 2,
-          "lost": 7,
-          "goals_for": 0.83,
-          "goals_against": 1.67,
-          "xg_for": 1.03,
-          "xg_against": 1.89,
-          "shots_for": 12.25,
-          "shots_against": 16.58,
-          "shots_on_target_for": 4.0,
+          "lost": 8,
+          "goals_for": 0.92,
+          "goals_against": 1.77,
+          "xg_for": 1.04,
+          "xg_against": 1.83,
+          "shots_for": 11.92,
+          "shots_against": 16.46,
+          "shots_on_target_for": 4.08,
           "shots_on_target_against": 5.08,
-          "corners_for": 3.5,
-          "corners_against": 6.5,
-          "yellow_cards": 2.75,
+          "corners_for": 3.38,
+          "corners_against": 6.69,
+          "yellow_cards": 2.62,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.417,
+          "btts_pct": 0.538,
+          "over_2_5_pct": 0.462,
           "clean_sheets": 1
         },
         "home": {
@@ -4538,30 +4538,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 6,
+          "matches": 7,
           "position": 21,
           "points": 11,
           "won": 0,
           "drawn": 1,
-          "lost": 5,
-          "goals_for": 0.33,
-          "goals_against": 1.83,
-          "xg_for": 0.82,
-          "xg_against": 2.16,
-          "shots_for": 9.67,
-          "shots_against": 17.0,
-          "shots_on_target_for": 2.83,
-          "shots_on_target_against": 5.67,
-          "corners_for": 3.0,
-          "corners_against": 7.0,
-          "yellow_cards": 3.17,
+          "lost": 6,
+          "goals_for": 0.57,
+          "goals_against": 2.0,
+          "xg_for": 0.86,
+          "xg_against": 2.01,
+          "shots_for": 9.43,
+          "shots_against": 16.71,
+          "shots_on_target_for": 3.14,
+          "shots_on_target_against": 5.57,
+          "corners_for": 2.86,
+          "corners_against": 7.29,
+          "yellow_cards": 2.86,
           "red_cards": 0.0,
-          "btts_pct": 0.333,
-          "over_2_5_pct": 0.167,
+          "btts_pct": 0.429,
+          "over_2_5_pct": 0.286,
           "clean_sheets": 0
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Norwich",
+          "goals_for": 2,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 1.06,
+          "xg_against": 1.08,
+          "shots_for": 8,
+          "shots_against": 15,
+          "shots_on_target_for": 5,
+          "shots_on_target_against": 5,
+          "corners_for": 2,
+          "corners_against": 9,
+          "cards_for": 1,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -4656,57 +4675,38 @@
           "corners_against": 2,
           "cards_for": 5,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Stoke",
-          "goals_for": 1,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": 0.39,
-          "xg_against": 1.5,
-          "shots_for": 6,
-          "shots_against": 18,
-          "shots_on_target_for": 2,
-          "shots_on_target_against": 6,
-          "corners_for": 5,
-          "corners_against": 8,
-          "cards_for": 2,
-          "cards_against": 2
         }
       ]
     },
     "West Brom": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 6,
-          "points": 21,
-          "won": 6,
+          "matches": 13,
+          "position": 5,
+          "points": 24,
+          "won": 7,
           "drawn": 3,
           "lost": 3,
-          "goals_for": 1.33,
+          "goals_for": 1.46,
           "goals_against": 1.08,
-          "xg_for": 1.39,
-          "xg_against": 1.47,
-          "shots_for": 12.25,
-          "shots_against": 12.08,
-          "shots_on_target_for": 3.67,
-          "shots_on_target_against": 4.0,
-          "corners_for": 5.83,
-          "corners_against": 5.92,
-          "yellow_cards": 2.0,
+          "xg_for": 1.45,
+          "xg_against": 1.43,
+          "shots_for": 12.23,
+          "shots_against": 12.23,
+          "shots_on_target_for": 3.62,
+          "shots_on_target_against": 4.08,
+          "corners_for": 5.85,
+          "corners_against": 6.08,
+          "yellow_cards": 1.92,
           "red_cards": 0.08,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.417,
+          "btts_pct": 0.692,
+          "over_2_5_pct": 0.462,
           "clean_sheets": 2
         },
         "home": {
           "matches": 6,
-          "position": 6,
-          "points": 21,
+          "position": 5,
+          "points": 24,
           "won": 3,
           "drawn": 2,
           "lost": 1,
@@ -4727,30 +4727,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 6,
-          "position": 6,
-          "points": 21,
-          "won": 3,
+          "matches": 7,
+          "position": 5,
+          "points": 24,
+          "won": 4,
           "drawn": 1,
           "lost": 2,
-          "goals_for": 1.17,
-          "goals_against": 1.17,
-          "xg_for": 1.16,
-          "xg_against": 1.8,
-          "shots_for": 10.17,
-          "shots_against": 15.0,
-          "shots_on_target_for": 3.17,
+          "goals_for": 1.43,
+          "goals_against": 1.14,
+          "xg_for": 1.29,
+          "xg_against": 1.67,
+          "shots_for": 10.43,
+          "shots_against": 14.86,
+          "shots_on_target_for": 3.14,
           "shots_on_target_against": 5.0,
-          "corners_for": 5.67,
-          "corners_against": 7.17,
-          "yellow_cards": 2.0,
-          "red_cards": 0.17,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.5,
+          "corners_for": 5.71,
+          "corners_against": 7.29,
+          "yellow_cards": 1.86,
+          "red_cards": 0.14,
+          "btts_pct": 0.714,
+          "over_2_5_pct": 0.571,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "West Ham",
+          "goals_for": 3,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 2.06,
+          "xg_against": 0.9,
+          "shots_for": 12,
+          "shots_against": 14,
+          "shots_on_target_for": 3,
+          "shots_on_target_against": 5,
+          "corners_for": 6,
+          "corners_against": 8,
+          "cards_for": 1,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -4845,79 +4864,60 @@
           "corners_against": 8,
           "cards_for": 2,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-12",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "QPR",
-          "goals_for": 1,
-          "goals_against": 1,
-          "result": "D",
-          "xg_for": 1.22,
-          "xg_against": 0.63,
-          "shots_for": 12,
-          "shots_against": 4,
-          "shots_on_target_for": 5,
-          "shots_on_target_against": 3,
-          "corners_for": 5,
-          "corners_against": 3,
-          "cards_for": 1,
-          "cards_against": 4
         }
       ]
     },
     "West Ham": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 4,
+          "matches": 13,
+          "position": 8,
           "points": 22,
           "won": 6,
           "drawn": 4,
-          "lost": 2,
-          "goals_for": 2.67,
-          "goals_against": 1.25,
-          "xg_for": 2.12,
-          "xg_against": 1.2,
-          "shots_for": 17.25,
-          "shots_against": 11.75,
-          "shots_on_target_for": 6.58,
-          "shots_on_target_against": 3.58,
-          "corners_for": 6.83,
-          "corners_against": 4.5,
-          "yellow_cards": 2.0,
+          "lost": 3,
+          "goals_for": 2.54,
+          "goals_against": 1.38,
+          "xg_for": 2.02,
+          "xg_against": 1.27,
+          "shots_for": 17.0,
+          "shots_against": 11.77,
+          "shots_on_target_for": 6.46,
+          "shots_on_target_against": 3.54,
+          "corners_for": 6.92,
+          "corners_against": 4.62,
+          "yellow_cards": 2.08,
           "red_cards": 0.08,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.692,
+          "over_2_5_pct": 0.769,
           "clean_sheets": 4
         },
         "home": {
-          "matches": 6,
-          "position": 4,
+          "matches": 7,
+          "position": 8,
           "points": 22,
           "won": 3,
           "drawn": 1,
-          "lost": 2,
-          "goals_for": 2.83,
-          "goals_against": 1.33,
-          "xg_for": 2.46,
-          "xg_against": 0.81,
-          "shots_for": 19.33,
-          "shots_against": 9.83,
-          "shots_on_target_for": 7.83,
-          "shots_on_target_against": 3.17,
-          "corners_for": 6.33,
-          "corners_against": 5.0,
-          "yellow_cards": 1.33,
+          "lost": 3,
+          "goals_for": 2.57,
+          "goals_against": 1.57,
+          "xg_for": 2.24,
+          "xg_against": 0.99,
+          "shots_for": 18.57,
+          "shots_against": 10.14,
+          "shots_on_target_for": 7.43,
+          "shots_on_target_against": 3.14,
+          "corners_for": 6.57,
+          "corners_against": 5.14,
+          "yellow_cards": 1.57,
           "red_cards": 0.0,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.833,
+          "btts_pct": 0.714,
+          "over_2_5_pct": 0.857,
           "clean_sheets": 2
         },
         "away": {
           "matches": 6,
-          "position": 4,
+          "position": 8,
           "points": 22,
           "won": 3,
           "drawn": 3,
@@ -4940,6 +4940,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "West Brom",
+          "goals_for": 1,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 0.9,
+          "xg_against": 2.06,
+          "shots_for": 14,
+          "shots_against": 12,
+          "shots_on_target_for": 5,
+          "shots_on_target_against": 3,
+          "corners_for": 8,
+          "corners_against": 6,
+          "cards_for": 3,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -5034,80 +5053,61 @@
           "corners_against": 3,
           "cards_for": 6,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-11",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "Wrexham",
-          "goals_for": 6,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 2.97,
-          "xg_against": 0.44,
-          "shots_for": 19,
-          "shots_against": 8,
-          "shots_on_target_for": 9,
-          "shots_on_target_against": 1,
-          "corners_for": 3,
-          "corners_against": 6,
-          "cards_for": 1,
-          "cards_against": 0
         }
       ]
     },
     "Wolves": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 5,
-          "points": 21,
-          "won": 6,
+          "matches": 13,
+          "position": 4,
+          "points": 24,
+          "won": 7,
           "drawn": 3,
           "lost": 3,
-          "goals_for": 1.67,
-          "goals_against": 1.33,
-          "xg_for": 1.74,
+          "goals_for": 1.77,
+          "goals_against": 1.23,
+          "xg_for": 1.73,
           "xg_against": 0.93,
-          "shots_for": 16.83,
-          "shots_against": 10.33,
-          "shots_on_target_for": 4.17,
-          "shots_on_target_against": 3.5,
-          "corners_for": 7.08,
-          "corners_against": 3.83,
-          "yellow_cards": 1.75,
+          "shots_for": 16.54,
+          "shots_against": 10.54,
+          "shots_on_target_for": 4.15,
+          "shots_on_target_against": 3.92,
+          "corners_for": 6.77,
+          "corners_against": 3.92,
+          "yellow_cards": 1.92,
           "red_cards": 0.0,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.583,
-          "clean_sheets": 3
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.615,
+          "clean_sheets": 4
         },
         "home": {
-          "matches": 6,
-          "position": 5,
-          "points": 21,
-          "won": 3,
+          "matches": 7,
+          "position": 4,
+          "points": 24,
+          "won": 4,
           "drawn": 2,
           "lost": 1,
-          "goals_for": 1.67,
-          "goals_against": 1.17,
-          "xg_for": 1.93,
-          "xg_against": 0.75,
-          "shots_for": 18.17,
-          "shots_against": 8.17,
-          "shots_on_target_for": 4.17,
-          "shots_on_target_against": 2.83,
-          "corners_for": 8.17,
-          "corners_against": 3.33,
-          "yellow_cards": 2.17,
+          "goals_for": 1.86,
+          "goals_against": 1.0,
+          "xg_for": 1.88,
+          "xg_against": 0.77,
+          "shots_for": 17.43,
+          "shots_against": 8.86,
+          "shots_on_target_for": 4.14,
+          "shots_on_target_against": 3.71,
+          "corners_for": 7.43,
+          "corners_against": 3.57,
+          "yellow_cards": 2.43,
           "red_cards": 0.0,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.5,
-          "clean_sheets": 2
+          "btts_pct": 0.571,
+          "over_2_5_pct": 0.571,
+          "clean_sheets": 3
         },
         "away": {
           "matches": 6,
-          "position": 5,
-          "points": 21,
+          "position": 4,
+          "points": 24,
           "won": 3,
           "drawn": 1,
           "lost": 2,
@@ -5129,6 +5129,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "E1",
+          "venue": "H",
+          "opponent": "Cardiff",
+          "goals_for": 3,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 1.58,
+          "xg_against": 0.9,
+          "shots_for": 13,
+          "shots_against": 13,
+          "shots_on_target_for": 4,
+          "shots_on_target_against": 9,
+          "corners_for": 3,
+          "corners_against": 5,
+          "cards_for": 4,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -5223,56 +5242,37 @@
           "corners_against": 4,
           "cards_for": 3,
           "cards_against": 3
-        },
-        {
-          "date": "2026-09-20",
-          "league": "E1",
-          "venue": "H",
-          "opponent": "West Brom",
-          "goals_for": 1,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 1.95,
-          "xg_against": 0.29,
-          "shots_for": 15,
-          "shots_against": 7,
-          "shots_on_target_for": 6,
-          "shots_on_target_against": 2,
-          "corners_for": 8,
-          "corners_against": 7,
-          "cards_for": 1,
-          "cards_against": 2
         }
       ]
     },
     "Wrexham": {
       "season": {
         "all": {
-          "matches": 12,
-          "position": 17,
+          "matches": 13,
+          "position": 18,
           "points": 14,
           "won": 3,
           "drawn": 5,
-          "lost": 4,
-          "goals_for": 1.25,
-          "goals_against": 1.5,
-          "xg_for": 1.16,
+          "lost": 5,
+          "goals_for": 1.15,
+          "goals_against": 1.46,
+          "xg_for": 1.12,
           "xg_against": 1.21,
-          "shots_for": 12.5,
-          "shots_against": 12.0,
-          "shots_on_target_for": 3.5,
+          "shots_for": 12.23,
+          "shots_against": 12.08,
+          "shots_on_target_for": 3.38,
           "shots_on_target_against": 4.08,
-          "corners_for": 5.5,
-          "corners_against": 4.25,
-          "yellow_cards": 1.33,
+          "corners_for": 5.08,
+          "corners_against": 4.46,
+          "yellow_cards": 1.31,
           "red_cards": 0.0,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.5,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.462,
           "clean_sheets": 2
         },
         "home": {
           "matches": 6,
-          "position": 17,
+          "position": 18,
           "points": 14,
           "won": 2,
           "drawn": 2,
@@ -5294,30 +5294,49 @@
           "clean_sheets": 0
         },
         "away": {
-          "matches": 6,
-          "position": 17,
+          "matches": 7,
+          "position": 18,
           "points": 14,
           "won": 1,
           "drawn": 3,
-          "lost": 2,
-          "goals_for": 0.83,
-          "goals_against": 1.67,
-          "xg_for": 1.1,
-          "xg_against": 1.14,
-          "shots_for": 13.33,
-          "shots_against": 11.0,
-          "shots_on_target_for": 2.83,
+          "lost": 3,
+          "goals_for": 0.71,
+          "goals_against": 1.57,
+          "xg_for": 1.03,
+          "xg_against": 1.15,
+          "shots_for": 12.71,
+          "shots_against": 11.29,
+          "shots_on_target_for": 2.71,
           "shots_on_target_against": 4.0,
-          "corners_for": 6.0,
-          "corners_against": 4.33,
-          "yellow_cards": 1.17,
+          "corners_for": 5.14,
+          "corners_against": 4.71,
+          "yellow_cards": 1.14,
           "red_cards": 0.0,
-          "btts_pct": 0.333,
-          "over_2_5_pct": 0.333,
+          "btts_pct": 0.286,
+          "over_2_5_pct": 0.286,
           "clean_sheets": 2
         }
       },
       "last6": [
+        {
+          "date": "2026-10-30",
+          "league": "E1",
+          "venue": "A",
+          "opponent": "Sheffield United",
+          "goals_for": 0,
+          "goals_against": 1,
+          "result": "L",
+          "xg_for": 0.64,
+          "xg_against": 1.25,
+          "shots_for": 9,
+          "shots_against": 13,
+          "shots_on_target_for": 2,
+          "shots_on_target_against": 4,
+          "corners_for": 0,
+          "corners_against": 7,
+          "cards_for": 1,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-24",
           "league": "E1",
@@ -5412,25 +5431,6 @@
           "corners_against": 3,
           "cards_for": 1,
           "cards_against": 4
-        },
-        {
-          "date": "2026-09-11",
-          "league": "E1",
-          "venue": "A",
-          "opponent": "West Ham",
-          "goals_for": 0,
-          "goals_against": 6,
-          "result": "L",
-          "xg_for": 0.44,
-          "xg_against": 2.97,
-          "shots_for": 8,
-          "shots_against": 19,
-          "shots_on_target_for": 1,
-          "shots_on_target_against": 9,
-          "corners_for": 6,
-          "corners_against": 3,
-          "cards_for": 0,
-          "cards_against": 1
         }
       ]
     }

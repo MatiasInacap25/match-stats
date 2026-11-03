@@ -1,0 +1,70 @@
+{
+  "calibrated": true,
+  "home_advantage": 0.3489,
+  "offsets": {
+    "E0": {
+      "attack": 0.0,
+      "defense": 0.0
+    },
+    "SP1": {
+      "attack": -0.0375,
+      "defense": 0.2853
+    },
+    "I1": {
+      "attack": -0.2253,
+      "defense": 0.1101
+    },
+    "D1": {
+      "attack": -0.156,
+      "defense": -0.0442
+    },
+    "F1": {
+      "attack": -0.2223,
+      "defense": 0.0383
+    },
+    "E1": {
+      "attack": 0.0,
+      "defense": 0.0
+    },
+    "P1": {
+      "attack": -0.5483,
+      "defense": 0.3739
+    },
+    "N1": {
+      "attack": -0.4784,
+      "defense": 0.3843
+    },
+    "B1": {
+      "attack": -0.3028,
+      "defense": 0.5388
+    },
+    "T1": {
+      "attack": -0.4198,
+      "defense": 0.3423
+    },
+    "G1": {
+      "attack": -0.62,
+      "defense": 0.7254
+    },
+    "NOR": {
+      "attack": -0.4095,
+      "defense": 0.2943
+    },
+    "AUT": {
+      "attack": -0.8652,
+      "defense": 0.5778
+    }
+  },
+  "seasons": [
+    2023,
+    2024,
+    2025
+  ],
+  "backtest": {
+    "held_out": 2025,
+    "matches": 236,
+    "log_loss": 0.982,
+    "log_loss_unadjusted": 1.0766,
+    "log_loss_baseline": 0.9864
+  }
+}

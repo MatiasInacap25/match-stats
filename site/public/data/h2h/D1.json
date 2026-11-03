@@ -1149,6 +1149,22 @@
     ],
     "Augsburg|Freiburg": [
       {
+        "date": "2026-10-31",
+        "league": "D1",
+        "home": "Augsburg",
+        "away": "Freiburg",
+        "home_goals": 1,
+        "away_goals": 2,
+        "home_shots": 15,
+        "away_shots": 10,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 2,
+        "home_corners": 1,
+        "away_corners": 2,
+        "home_cards": 0,
+        "away_cards": 3
+      },
+      {
         "date": "2026-01-18",
         "league": "D1",
         "home": "Augsburg",
@@ -3956,6 +3972,22 @@
       }
     ],
     "Bayern Munich|Dortmund": [
+      {
+        "date": "2026-10-31",
+        "league": "D1",
+        "home": "Bayern Munich",
+        "away": "Dortmund",
+        "home_goals": 2,
+        "away_goals": 2,
+        "home_shots": 23,
+        "away_shots": 12,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 6,
+        "home_corners": 5,
+        "away_corners": 2,
+        "home_cards": 2,
+        "away_cards": 1
+      },
       {
         "date": "2026-02-28",
         "league": "D1",
@@ -11527,6 +11559,22 @@
     ],
     "Ein Frankfurt|Hamburg": [
       {
+        "date": "2026-11-01",
+        "league": "D1",
+        "home": "Ein Frankfurt",
+        "away": "Hamburg",
+        "home_goals": 3,
+        "away_goals": 1,
+        "home_shots": 15,
+        "away_shots": 12,
+        "home_shots_on_target": 10,
+        "away_shots_on_target": 3,
+        "home_corners": 6,
+        "away_corners": 6,
+        "home_cards": 2,
+        "away_cards": 4
+      },
+      {
         "date": "2026-05-02",
         "league": "D1",
         "home": "Ein Frankfurt",
@@ -14165,7 +14213,24 @@
         "away_cards": 1
       }
     ],
-    "Elversberg|Mainz": [],
+    "Elversberg|Mainz": [
+      {
+        "date": "2026-10-30",
+        "league": "D1",
+        "home": "Elversberg",
+        "away": "Mainz",
+        "home_goals": 4,
+        "away_goals": 1,
+        "home_shots": 13,
+        "away_shots": 10,
+        "home_shots_on_target": 6,
+        "away_shots_on_target": 2,
+        "home_corners": 5,
+        "away_corners": 11,
+        "home_cards": 0,
+        "away_cards": 7
+      }
+    ],
     "Elversberg|Paderborn": [
       {
         "date": "2026-05-03",
@@ -16437,6 +16502,22 @@
       }
     ],
     "FC Koln|Union Berlin": [
+      {
+        "date": "2026-11-01",
+        "league": "D1",
+        "home": "Union Berlin",
+        "away": "FC Koln",
+        "home_goals": 1,
+        "away_goals": 1,
+        "home_shots": 5,
+        "away_shots": 14,
+        "home_shots_on_target": 2,
+        "away_shots_on_target": 2,
+        "home_corners": 2,
+        "away_corners": 6,
+        "home_cards": 4,
+        "away_cards": 3
+      },
       {
         "date": "2026-05-02",
         "league": "D1",
@@ -22308,6 +22389,22 @@
     ],
     "Hoffenheim|Werder Bremen": [
       {
+        "date": "2026-10-31",
+        "league": "D1",
+        "home": "Werder Bremen",
+        "away": "Hoffenheim",
+        "home_goals": 2,
+        "away_goals": 0,
+        "home_shots": 17,
+        "away_shots": 16,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 2,
+        "home_corners": 8,
+        "away_corners": 4,
+        "home_cards": 3,
+        "away_cards": 0
+      },
+      {
         "date": "2026-05-09",
         "league": "D1",
         "home": "Hoffenheim",
@@ -23664,6 +23761,22 @@
     ],
     "Leverkusen|Stuttgart": [
       {
+        "date": "2026-10-31",
+        "league": "D1",
+        "home": "Leverkusen",
+        "away": "Stuttgart",
+        "home_goals": 2,
+        "away_goals": 4,
+        "home_shots": 24,
+        "away_shots": 15,
+        "home_shots_on_target": 8,
+        "away_shots_on_target": 7,
+        "home_corners": 12,
+        "away_corners": 3,
+        "home_cards": 4,
+        "away_cards": 4
+      },
+      {
         "date": "2026-05-09",
         "league": "D1",
         "home": "Stuttgart",
@@ -24727,6 +24840,22 @@
       }
     ],
     "M'gladbach|Paderborn": [
+      {
+        "date": "2026-10-31",
+        "league": "D1",
+        "home": "M'gladbach",
+        "away": "Paderborn",
+        "home_goals": 0,
+        "away_goals": 0,
+        "home_shots": 12,
+        "away_shots": 13,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 4,
+        "home_corners": 4,
+        "away_corners": 7,
+        "home_cards": 2,
+        "away_cards": 3
+      },
       {
         "date": "2020-06-20",
         "league": "D1",
@@ -27625,6 +27754,22 @@
       }
     ],
     "RB Leipzig|Schalke 04": [
+      {
+        "date": "2026-10-31",
+        "league": "D1",
+        "home": "Schalke 04",
+        "away": "RB Leipzig",
+        "home_goals": 0,
+        "away_goals": 2,
+        "home_shots": 6,
+        "away_shots": 18,
+        "home_shots_on_target": 1,
+        "away_shots_on_target": 10,
+        "home_corners": 3,
+        "away_corners": 7,
+        "home_cards": 2,
+        "away_cards": 0
+      },
       {
         "date": "2023-05-27",
         "league": "D1",

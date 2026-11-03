@@ -1153,6 +1153,22 @@
     ],
     "Birmingham|Lincoln": [
       {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Lincoln",
+        "away": "Birmingham",
+        "home_goals": 1,
+        "away_goals": 3,
+        "home_shots": 12,
+        "away_shots": 17,
+        "home_shots_on_target": 6,
+        "away_shots_on_target": 7,
+        "home_corners": 3,
+        "away_corners": 3,
+        "home_cards": 3,
+        "away_cards": 2
+      },
+      {
         "date": "2025-03-08",
         "league": "E2",
         "home": "Birmingham",
@@ -6496,6 +6512,22 @@
     ],
     "Blackburn|Swansea": [
       {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Swansea",
+        "away": "Blackburn",
+        "home_goals": 4,
+        "away_goals": 0,
+        "home_shots": 19,
+        "away_shots": 6,
+        "home_shots_on_target": 9,
+        "away_shots_on_target": 1,
+        "home_corners": 1,
+        "away_corners": 2,
+        "home_cards": 0,
+        "away_cards": 1
+      },
+      {
         "date": "2026-01-20",
         "league": "E1",
         "home": "Swansea",
@@ -7226,6 +7258,22 @@
       }
     ],
     "Bolton|Bristol City": [
+      {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Bolton",
+        "away": "Bristol City",
+        "home_goals": 2,
+        "away_goals": 3,
+        "home_shots": 19,
+        "away_shots": 14,
+        "home_shots_on_target": 6,
+        "away_shots_on_target": 9,
+        "home_corners": 11,
+        "away_corners": 4,
+        "home_cards": 1,
+        "away_cards": 1
+      },
       {
         "date": "2019-01-12",
         "league": "E1",
@@ -12600,6 +12648,22 @@
     ],
     "Burnley|Portsmouth": [
       {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Burnley",
+        "away": "Portsmouth",
+        "home_goals": 0,
+        "away_goals": 0,
+        "home_shots": 18,
+        "away_shots": 5,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 0,
+        "home_corners": 5,
+        "away_corners": 2,
+        "home_cards": 1,
+        "away_cards": 1
+      },
+      {
         "date": "2025-02-01",
         "league": "E1",
         "home": "Portsmouth",
@@ -16528,6 +16592,22 @@
     ],
     "Cardiff|Wolves": [
       {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Wolves",
+        "away": "Cardiff",
+        "home_goals": 3,
+        "away_goals": 0,
+        "home_shots": 13,
+        "away_shots": 13,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 9,
+        "home_corners": 3,
+        "away_corners": 5,
+        "home_cards": 4,
+        "away_cards": 2
+      },
+      {
         "date": "2019-03-02",
         "league": "E0",
         "home": "Wolves",
@@ -16919,6 +16999,22 @@
       }
     ],
     "Charlton|Middlesbrough": [
+      {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Middlesbrough",
+        "away": "Charlton",
+        "home_goals": 3,
+        "away_goals": 0,
+        "home_shots": 16,
+        "away_shots": 7,
+        "home_shots_on_target": 6,
+        "away_shots_on_target": 0,
+        "home_corners": 8,
+        "away_corners": 4,
+        "home_cards": 2,
+        "away_cards": 1
+      },
       {
         "date": "2026-03-11",
         "league": "E1",
@@ -18232,6 +18328,22 @@
       }
     ],
     "Derby|Millwall": [
+      {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Millwall",
+        "away": "Derby",
+        "home_goals": 4,
+        "away_goals": 1,
+        "home_shots": 21,
+        "away_shots": 13,
+        "home_shots_on_target": 9,
+        "away_shots_on_target": 4,
+        "home_corners": 4,
+        "away_corners": 5,
+        "home_cards": 3,
+        "away_cards": 2
+      },
       {
         "date": "2026-03-10",
         "league": "E1",
@@ -26608,6 +26720,22 @@
     ],
     "Norwich|Watford": [
       {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Norwich",
+        "away": "Watford",
+        "home_goals": 3,
+        "away_goals": 2,
+        "home_shots": 15,
+        "away_shots": 8,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 5,
+        "home_corners": 9,
+        "away_corners": 2,
+        "home_cards": 1,
+        "away_cards": 1
+      },
+      {
         "date": "2025-12-29",
         "league": "E1",
         "home": "Norwich",
@@ -28373,6 +28501,22 @@
     ],
     "Preston|Stoke": [
       {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Stoke",
+        "away": "Preston",
+        "home_goals": 2,
+        "away_goals": 0,
+        "home_shots": 18,
+        "away_shots": 3,
+        "home_shots_on_target": 6,
+        "away_shots_on_target": 0,
+        "home_corners": 9,
+        "away_corners": 7,
+        "home_cards": 2,
+        "away_cards": 2
+      },
+      {
         "date": "2026-03-20",
         "league": "E1",
         "home": "Preston",
@@ -29603,6 +29747,22 @@
       }
     ],
     "QPR|Southampton": [
+      {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "Southampton",
+        "away": "QPR",
+        "home_goals": 4,
+        "away_goals": 1,
+        "home_shots": 19,
+        "away_shots": 12,
+        "home_shots_on_target": 9,
+        "away_shots_on_target": 2,
+        "home_corners": 9,
+        "away_corners": 4,
+        "home_cards": 0,
+        "away_cards": 3
+      },
       {
         "date": "2026-02-24",
         "league": "E1",
@@ -31713,6 +31873,22 @@
       }
     ],
     "Sheffield United|Wrexham": [
+      {
+        "date": "2026-10-30",
+        "league": "E1",
+        "home": "Sheffield United",
+        "away": "Wrexham",
+        "home_goals": 1,
+        "away_goals": 0,
+        "home_shots": 13,
+        "away_shots": 9,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 2,
+        "home_corners": 7,
+        "away_corners": 0,
+        "home_cards": 2,
+        "away_cards": 1
+      },
       {
         "date": "2026-03-21",
         "league": "E1",
@@ -34718,6 +34894,22 @@
       }
     ],
     "West Brom|West Ham": [
+      {
+        "date": "2026-10-31",
+        "league": "E1",
+        "home": "West Ham",
+        "away": "West Brom",
+        "home_goals": 1,
+        "away_goals": 3,
+        "home_shots": 14,
+        "away_shots": 12,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 3,
+        "home_corners": 8,
+        "away_corners": 6,
+        "home_cards": 3,
+        "away_cards": 1
+      },
       {
         "date": "2021-05-19",
         "league": "E0",

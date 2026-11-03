@@ -2,697 +2,697 @@
   "league": "SP1",
   "season": "2026/27",
   "goals": {
-    "home_advantage": 0.2951,
-    "rho": -0.0484,
+    "home_advantage": 0.2953,
+    "rho": -0.027,
     "teams": {
       "Alaves": {
-        "attack": -0.0585,
-        "defense": 0.0531
+        "attack": -0.0476,
+        "defense": 0.1009
       },
       "Ath Bilbao": {
-        "attack": 0.0262,
-        "defense": -0.0616
+        "attack": 0.0296,
+        "defense": -0.0667
       },
       "Ath Madrid": {
-        "attack": 0.3375,
-        "defense": -0.2289
+        "attack": 0.3404,
+        "defense": -0.2567
       },
       "Barcelona": {
-        "attack": 0.8163,
-        "defense": -0.2189
+        "attack": 0.8405,
+        "defense": -0.2088
       },
       "Betis": {
-        "attack": 0.2555,
-        "defense": 0.0032
+        "attack": 0.2484,
+        "defense": 0.0096
       },
       "Celta": {
-        "attack": 0.0662,
-        "defense": -0.0538
+        "attack": 0.0467,
+        "defense": -0.0205
       },
       "Elche": {
-        "attack": 0.1022,
-        "defense": 0.1423
+        "attack": 0.0615,
+        "defense": 0.14
       },
       "Espanol": {
-        "attack": -0.1169,
-        "defense": 0.0753
+        "attack": -0.1144,
+        "defense": 0.0408
       },
       "Getafe": {
-        "attack": -0.4858,
-        "defense": -0.1747
+        "attack": -0.4224,
+        "defense": -0.1704
       },
       "Girona": {
-        "attack": -0.1417,
+        "attack": -0.1396,
         "defense": 0.1035
       },
       "La Coruna": {
-        "attack": -0.0152,
-        "defense": 0.0308
+        "attack": -0.009,
+        "defense": 0.0331
       },
       "Las Palmas": {
-        "attack": -0.2034,
-        "defense": 0.2135
+        "attack": -0.2002,
+        "defense": 0.2097
       },
       "Leganes": {
-        "attack": -0.1587,
-        "defense": 0.1303
+        "attack": -0.1595,
+        "defense": 0.1282
       },
       "Levante": {
-        "attack": 0.1252,
-        "defense": 0.2389
+        "attack": 0.0952,
+        "defense": 0.2385
       },
       "Malaga": {
-        "attack": -0.4898,
-        "defense": 0.3627
+        "attack": -0.4445,
+        "defense": 0.3386
       },
       "Mallorca": {
-        "attack": -0.0676,
-        "defense": 0.0624
+        "attack": -0.0665,
+        "defense": 0.0611
       },
       "Osasuna": {
         "attack": -0.0683,
-        "defense": 0.1474
+        "defense": 0.1464
       },
       "Oviedo": {
-        "attack": -0.5309,
+        "attack": -0.5326,
         "defense": 0.1643
       },
       "Real Madrid": {
-        "attack": 0.5296,
-        "defense": -0.3047
+        "attack": 0.5264,
+        "defense": -0.3339
       },
       "Santander": {
-        "attack": 0.2059,
-        "defense": 0.6829
+        "attack": 0.1252,
+        "defense": 0.6646
       },
       "Sevilla": {
-        "attack": 0.0382,
-        "defense": 0.149
+        "attack": 0.0462,
+        "defense": 0.1802
       },
       "Sociedad": {
-        "attack": 0.2055,
-        "defense": 0.207
+        "attack": 0.2066,
+        "defense": 0.2118
       },
       "Valencia": {
-        "attack": -0.1077,
-        "defense": 0.1044
+        "attack": -0.1106,
+        "defense": 0.079
       },
       "Valladolid": {
-        "attack": -0.5473,
-        "defense": 0.6146
+        "attack": -0.5458,
+        "defense": 0.6113
       },
       "Vallecano": {
-        "attack": -0.0825,
-        "defense": 0.0376
+        "attack": -0.0457,
+        "defense": 0.0187
       },
       "Villarreal": {
-        "attack": 0.366,
-        "defense": -0.0022
+        "attack": 0.34,
+        "defense": -0.0003
       }
     }
   },
   "stats": {
     "corners": {
-      "avg_home": 5.3564,
-      "avg_away": 4.3304,
-      "dispersion_team": 14.926,
-      "dispersion_total": 69.4967,
+      "avg_home": 5.349,
+      "avg_away": 4.3104,
+      "dispersion_team": 14.8556,
+      "dispersion_total": 68.0497,
       "teams": {
         "Alaves": {
-          "home_for": 0.9861,
-          "home_against": 1.0381,
-          "away_for": 0.963,
-          "away_against": 1.0019
+          "home_for": 0.9871,
+          "home_against": 1.0417,
+          "away_for": 0.9524,
+          "away_against": 0.9802
         },
         "Ath Bilbao": {
-          "home_for": 1.0893,
-          "home_against": 0.8722,
-          "away_for": 1.2252,
-          "away_against": 0.8657
+          "home_for": 1.0829,
+          "home_against": 0.9229,
+          "away_for": 1.2296,
+          "away_against": 0.8665
         },
         "Ath Madrid": {
-          "home_for": 1.2042,
-          "home_against": 0.7893,
-          "away_for": 1.2512,
-          "away_against": 0.8835
+          "home_for": 1.2055,
+          "home_against": 0.7918,
+          "away_for": 1.2285,
+          "away_against": 0.8868
         },
         "Barcelona": {
-          "home_for": 1.4196,
-          "home_against": 0.9196,
-          "away_for": 1.2215,
-          "away_against": 0.7926
+          "home_for": 1.3793,
+          "home_against": 0.9116,
+          "away_for": 1.226,
+          "away_against": 0.7933
         },
         "Betis": {
-          "home_for": 0.9074,
-          "home_against": 1.0854,
-          "away_for": 1.0202,
-          "away_against": 1.1037
+          "home_for": 0.9552,
+          "home_against": 1.07,
+          "away_for": 1.0238,
+          "away_against": 1.1049
         },
         "Celta": {
-          "home_for": 0.7812,
-          "home_against": 0.9479,
-          "away_for": 0.782,
-          "away_against": 0.9868
+          "home_for": 0.782,
+          "home_against": 0.9512,
+          "away_for": 0.7799,
+          "away_against": 0.9755
         },
         "Elche": {
-          "home_for": 0.8909,
-          "home_against": 0.8819,
-          "away_for": 0.8578,
-          "away_against": 0.9861
+          "home_for": 0.9035,
+          "home_against": 0.8632,
+          "away_for": 0.8607,
+          "away_against": 0.9871
         },
         "Espanol": {
-          "home_for": 0.7926,
-          "home_against": 1.1209,
-          "away_for": 0.9433,
-          "away_against": 0.9936
+          "home_for": 0.7933,
+          "home_against": 1.1249,
+          "away_for": 0.9342,
+          "away_against": 1.0099
         },
         "Getafe": {
-          "home_for": 0.8931,
-          "home_against": 1.1031,
-          "away_for": 0.9314,
-          "away_against": 0.9505
+          "home_for": 0.8686,
+          "home_against": 1.0757,
+          "away_for": 0.9346,
+          "away_against": 0.9515
         },
         "Girona": {
-          "home_for": 0.9307,
-          "home_against": 0.9341,
-          "away_for": 0.8863,
-          "away_against": 1.1367
+          "home_for": 0.9315,
+          "home_against": 0.9368,
+          "away_for": 0.8888,
+          "away_against": 1.1378
         },
         "La Coruna": {
-          "home_for": 0.9667,
-          "home_against": 1.0773,
-          "away_for": 1.1004,
-          "away_against": 1.0041
+          "home_for": 0.9674,
+          "home_against": 1.08,
+          "away_for": 1.1032,
+          "away_against": 1.0048
         },
         "Levante": {
-          "home_for": 0.9313,
-          "home_against": 1.1316,
-          "away_for": 0.8015,
-          "away_against": 1.1045
+          "home_for": 0.9323,
+          "home_against": 1.113,
+          "away_for": 0.8041,
+          "away_against": 1.1057
         },
         "Malaga": {
-          "home_for": 1.0414,
-          "home_against": 1.0311,
-          "away_for": 1.0311,
-          "away_against": 1.0227
+          "home_for": 1.0422,
+          "home_against": 1.0336,
+          "away_for": 1.0029,
+          "away_against": 1.1004
         },
         "Mallorca": {
-          "home_for": 0.8341,
-          "home_against": 1.2367,
-          "away_for": 0.8545,
-          "away_against": 1.1624
+          "home_for": 0.8348,
+          "home_against": 1.2408,
+          "away_for": 0.8568,
+          "away_against": 1.1635
         },
         "Osasuna": {
-          "home_for": 0.9027,
-          "home_against": 0.9137,
-          "away_for": 0.7301,
-          "away_against": 1.0893
+          "home_for": 0.9035,
+          "home_against": 0.9167,
+          "away_for": 0.7323,
+          "away_against": 1.0905
         },
         "Oviedo": {
-          "home_for": 0.9113,
-          "home_against": 1.0774,
-          "away_for": 0.8385,
-          "away_against": 1.1109
+          "home_for": 0.9121,
+          "home_against": 1.0808,
+          "away_for": 0.8408,
+          "away_against": 1.112
         },
         "Real Madrid": {
-          "home_for": 1.1707,
-          "home_against": 0.8663,
-          "away_for": 1.2985,
-          "away_against": 0.8117
+          "home_for": 1.172,
+          "home_against": 0.8691,
+          "away_for": 1.3077,
+          "away_against": 0.8093
         },
         "Santander": {
-          "home_for": 1.0974,
-          "home_against": 1.262,
-          "away_for": 0.9388,
-          "away_against": 1.3401
+          "home_for": 1.0664,
+          "home_against": 1.2771,
+          "away_for": 0.9408,
+          "away_against": 1.3413
         },
         "Sevilla": {
-          "home_for": 0.8548,
-          "home_against": 0.8485,
-          "away_for": 0.9965,
-          "away_against": 0.9409
+          "home_for": 0.8556,
+          "home_against": 0.8513,
+          "away_for": 0.9738,
+          "away_against": 0.9142
         },
         "Sociedad": {
-          "home_for": 1.142,
-          "home_against": 1.0202,
-          "away_for": 1.1801,
-          "away_against": 0.9074
+          "home_for": 1.1432,
+          "home_against": 1.0238,
+          "away_for": 1.2172,
+          "away_against": 0.9096
         },
         "Valencia": {
-          "home_for": 0.9907,
-          "home_against": 1.0212,
-          "away_for": 0.9755,
-          "away_against": 0.9868
+          "home_for": 0.9917,
+          "home_against": 1.0248,
+          "away_for": 0.9524,
+          "away_against": 0.9946
         },
         "Vallecano": {
-          "home_for": 1.1482,
-          "home_against": 1.1128,
-          "away_for": 1.0735,
-          "away_against": 1.0798
+          "home_for": 1.1288,
+          "home_against": 1.0952,
+          "away_for": 1.0773,
+          "away_against": 1.0809
         },
         "Villarreal": {
-          "home_for": 1.0978,
-          "home_against": 0.9568,
-          "away_for": 1.0381,
-          "away_against": 1.0089
+          "home_for": 1.1097,
+          "home_against": 0.9465,
+          "away_for": 1.0417,
+          "away_against": 1.0099
         }
       }
     },
     "cards": {
-      "avg_home": 2.3564,
-      "avg_away": 2.5969,
-      "dispersion_team": 18.1203,
-      "dispersion_total": 14.8767,
+      "avg_home": 2.3456,
+      "avg_away": 2.5889,
+      "dispersion_team": 18.4888,
+      "dispersion_total": 14.8444,
       "teams": {
         "Alaves": {
-          "home_for": 0.9891,
-          "home_against": 1.0328,
-          "away_for": 1.0092,
-          "away_against": 0.9126
+          "home_for": 0.9926,
+          "home_against": 1.0353,
+          "away_for": 1.019,
+          "away_against": 0.9123
         },
         "Ath Bilbao": {
-          "home_for": 0.9528,
-          "home_against": 1.0167,
-          "away_for": 1.0092,
-          "away_against": 0.7864
+          "home_for": 0.951,
+          "home_against": 1.0447,
+          "away_for": 1.0115,
+          "away_against": 0.7888
         },
         "Ath Madrid": {
-          "home_for": 0.9746,
-          "home_against": 0.8883,
-          "away_for": 0.9969,
-          "away_against": 0.8875
+          "home_for": 0.9779,
+          "home_against": 0.8903,
+          "away_for": 0.9505,
+          "away_against": 0.847
         },
         "Barcelona": {
-          "home_for": 0.6917,
-          "home_against": 0.8982,
-          "away_for": 0.7896,
-          "away_against": 1.1813
+          "home_for": 0.7014,
+          "home_against": 0.9128,
+          "away_for": 0.7912,
+          "away_against": 1.1856
         },
         "Betis": {
-          "home_for": 0.9311,
-          "home_against": 1.1154,
-          "away_for": 0.7402,
-          "away_against": 0.8549
+          "home_for": 0.9302,
+          "home_against": 1.1012,
+          "away_for": 0.7417,
+          "away_against": 0.8576
         },
         "Celta": {
-          "home_for": 0.7407,
-          "home_against": 0.9577,
-          "away_for": 0.9468,
-          "away_against": 1.0961
+          "home_for": 0.743,
+          "home_against": 0.9599,
+          "away_for": 0.92,
+          "away_against": 1.0872
         },
         "Elche": {
-          "home_for": 0.947,
-          "home_against": 0.9884,
-          "away_for": 1.0516,
-          "away_against": 0.927
+          "home_for": 0.9669,
+          "home_against": 0.9794,
+          "away_for": 1.0541,
+          "away_against": 0.9302
         },
         "Espanol": {
-          "home_for": 1.0725,
-          "home_against": 1.1154,
-          "away_for": 1.1648,
-          "away_against": 1.0725
+          "home_for": 1.0763,
+          "home_against": 1.1181,
+          "away_for": 1.1672,
+          "away_against": 1.0862
         },
         "Getafe": {
-          "home_for": 1.2901,
-          "home_against": 0.9574,
-          "away_for": 1.3623,
-          "away_against": 1.0508
+          "home_for": 1.2733,
+          "home_against": 1.0258,
+          "away_for": 1.3657,
+          "away_against": 1.0544
         },
         "Girona": {
-          "home_for": 1.1497,
-          "home_against": 0.9689,
-          "away_for": 0.8494,
-          "away_against": 0.857
+          "home_for": 1.1534,
+          "home_against": 0.9708,
+          "away_for": 0.851,
+          "away_against": 0.8594
         },
         "La Coruna": {
-          "home_for": 1.0093,
-          "home_against": 0.8851,
-          "away_for": 1.0006,
-          "away_against": 1.0517
+          "home_for": 1.0116,
+          "home_against": 0.8863,
+          "away_for": 1.0021,
+          "away_against": 1.0542
         },
         "Levante": {
-          "home_for": 0.9814,
-          "home_against": 1.0508,
-          "away_for": 0.8262,
-          "away_against": 1.0513
+          "home_for": 0.9342,
+          "home_against": 0.9992,
+          "away_for": 0.828,
+          "away_against": 1.055
         },
         "Malaga": {
-          "home_for": 0.9244,
-          "home_against": 1.0006,
-          "away_for": 0.8466,
-          "away_against": 0.8819
+          "home_for": 0.9263,
+          "home_against": 1.0021,
+          "away_for": 0.8408,
+          "away_against": 0.8809
         },
         "Mallorca": {
-          "home_for": 0.9448,
-          "home_against": 0.9689,
-          "away_for": 1.0088,
-          "away_against": 1.0765
+          "home_for": 0.9476,
+          "home_against": 0.9708,
+          "away_for": 1.0108,
+          "away_against": 1.0799
         },
         "Osasuna": {
-          "home_for": 1.1052,
-          "home_against": 1.0957,
-          "away_for": 1.0167,
-          "away_against": 0.8767
+          "home_for": 1.1091,
+          "home_against": 1.0983,
+          "away_for": 1.019,
+          "away_against": 0.8795
         },
         "Oviedo": {
-          "home_for": 1.0911,
-          "home_against": 0.783,
-          "away_for": 1.0088,
-          "away_against": 0.7985
+          "home_for": 1.0946,
+          "home_against": 0.7844,
+          "away_for": 1.0108,
+          "away_against": 0.8006
         },
         "Real Madrid": {
-          "home_for": 1.0616,
-          "home_against": 1.0068,
-          "away_for": 0.8785,
-          "away_against": 1.2249
+          "home_for": 1.0653,
+          "home_against": 1.0091,
+          "away_for": 0.8374,
+          "away_against": 1.2109
         },
         "Santander": {
-          "home_for": 1.0941,
-          "home_against": 1.0776,
-          "away_for": 1.0776,
-          "away_against": 1.1366
+          "home_for": 1.0747,
+          "home_against": 0.9813,
+          "away_for": 1.0794,
+          "away_against": 1.1395
         },
         "Sevilla": {
-          "home_for": 1.214,
-          "home_against": 0.9377,
-          "away_for": 1.2142,
-          "away_against": 0.9637
+          "home_for": 1.2184,
+          "home_against": 0.9398,
+          "away_for": 1.2708,
+          "away_against": 0.9614
         },
         "Sociedad": {
-          "home_for": 0.9963,
-          "home_against": 1.0858,
-          "away_for": 1.0266,
-          "away_against": 1.0725
+          "home_for": 0.9997,
+          "home_against": 1.0884,
+          "away_for": 1.0541,
+          "away_against": 1.0654
         },
         "Valencia": {
-          "home_for": 0.9477,
-          "home_against": 1.1737,
-          "away_for": 0.9259,
-          "away_against": 0.9355
+          "home_for": 0.951,
+          "home_against": 1.1766,
+          "away_for": 0.92,
+          "away_against": 0.956
         },
         "Vallecano": {
-          "home_for": 1.1878,
-          "home_against": 1.0092,
-          "away_for": 1.1845,
-          "away_against": 1.0943
+          "home_for": 1.1746,
+          "home_against": 0.9794,
+          "away_for": 1.1874,
+          "away_against": 1.0981
         },
         "Villarreal": {
-          "home_for": 0.7749,
-          "home_against": 0.8843,
-          "away_for": 0.9953,
-          "away_against": 1.1548
+          "home_for": 0.803,
+          "home_against": 0.9002,
+          "away_for": 0.9976,
+          "away_against": 1.1589
         }
       }
     },
     "shots": {
-      "avg_home": 14.2266,
-      "avg_away": 11.4619,
-      "dispersion_team": 24.5381,
-      "dispersion_total": 205.9358,
+      "avg_home": 14.25,
+      "avg_away": 11.4413,
+      "dispersion_team": 24.8875,
+      "dispersion_total": 219.6686,
       "teams": {
         "Alaves": {
-          "home_for": 0.9382,
-          "home_against": 0.9866,
-          "away_for": 1.0319,
-          "away_against": 0.9637
+          "home_for": 0.9371,
+          "home_against": 0.9879,
+          "away_for": 1.0117,
+          "away_against": 0.96
         },
         "Ath Bilbao": {
-          "home_for": 1.0711,
-          "home_against": 0.7284,
-          "away_for": 1.072,
-          "away_against": 0.9048
+          "home_for": 1.062,
+          "home_against": 0.7534,
+          "away_for": 1.0734,
+          "away_against": 0.9037
         },
         "Ath Madrid": {
-          "home_for": 1.1414,
-          "home_against": 0.8671,
-          "away_for": 1.0774,
-          "away_against": 0.9251
+          "home_for": 1.1399,
+          "home_against": 0.8682,
+          "away_for": 1.0732,
+          "away_against": 0.9474
         },
         "Barcelona": {
-          "home_for": 1.3144,
-          "home_against": 0.7329,
-          "away_for": 1.4264,
-          "away_against": 0.7539
+          "home_for": 1.2931,
+          "home_against": 0.7278,
+          "away_for": 1.4285,
+          "away_against": 0.753
         },
         "Betis": {
-          "home_for": 1.0747,
-          "home_against": 1.0685,
-          "away_for": 1.1781,
-          "away_against": 0.9918
+          "home_for": 1.1031,
+          "home_against": 1.0604,
+          "away_for": 1.1797,
+          "away_against": 0.9906
         },
         "Celta": {
-          "home_for": 0.8234,
-          "home_against": 1.0823,
-          "away_for": 0.8338,
-          "away_against": 0.9428
+          "home_for": 0.8224,
+          "home_against": 1.0838,
+          "away_for": 0.8413,
+          "away_against": 0.9438
         },
         "Elche": {
-          "home_for": 0.9466,
-          "home_against": 1.0838,
-          "away_for": 0.8482,
-          "away_against": 1.0754
+          "home_for": 0.9546,
+          "home_against": 1.052,
+          "away_for": 0.8493,
+          "away_against": 1.074
         },
         "Espanol": {
-          "home_for": 0.9665,
-          "home_against": 1.017,
-          "away_for": 1.0103,
-          "away_against": 1.0891
+          "home_for": 0.9654,
+          "home_against": 1.0184,
+          "away_for": 0.9836,
+          "away_against": 1.0826
         },
         "Getafe": {
-          "home_for": 0.8115,
-          "home_against": 0.9566,
-          "away_for": 0.8224,
-          "away_against": 0.9827
+          "home_for": 0.8087,
+          "home_against": 0.9623,
+          "away_for": 0.8234,
+          "away_against": 0.9816
         },
         "Girona": {
-          "home_for": 0.8805,
-          "home_against": 1.106,
-          "away_for": 0.9586,
-          "away_against": 1.072
+          "home_for": 0.8796,
+          "home_against": 1.1073,
+          "away_for": 0.9597,
+          "away_against": 1.0708
         },
         "La Coruna": {
-          "home_for": 0.9217,
-          "home_against": 0.9886,
-          "away_for": 1.0235,
-          "away_against": 1.0412
+          "home_for": 0.9211,
+          "home_against": 0.9895,
+          "away_for": 1.0244,
+          "away_against": 1.0404
         },
         "Levante": {
-          "home_for": 1.0435,
-          "home_against": 1.2394,
-          "away_for": 0.8738,
-          "away_against": 1.0874
+          "home_for": 1.0607,
+          "home_against": 1.2268,
+          "away_for": 0.8749,
+          "away_against": 1.086
         },
         "Malaga": {
-          "home_for": 0.9217,
-          "home_against": 1.0496,
-          "away_for": 0.9275,
-          "away_against": 1.1256
+          "home_for": 0.9211,
+          "home_against": 1.0506,
+          "away_for": 0.9233,
+          "away_against": 1.1754
         },
         "Mallorca": {
-          "home_for": 0.9435,
-          "home_against": 1.0849,
-          "away_for": 0.8472,
-          "away_against": 1.0599
+          "home_for": 0.9425,
+          "home_against": 1.0862,
+          "away_for": 0.8481,
+          "away_against": 1.0587
         },
         "Osasuna": {
-          "home_for": 0.99,
-          "home_against": 0.9365,
-          "away_for": 0.8336,
-          "away_against": 1.0512
+          "home_for": 0.9888,
+          "home_against": 0.9377,
+          "away_for": 0.8346,
+          "away_against": 1.0499
         },
         "Oviedo": {
-          "home_for": 0.815,
-          "home_against": 1.1,
-          "away_for": 0.9044,
-          "away_against": 1.1059
+          "home_for": 0.8143,
+          "home_against": 1.1013,
+          "away_for": 0.9054,
+          "away_against": 1.1047
         },
         "Real Madrid": {
-          "home_for": 1.2279,
-          "home_against": 0.9946,
-          "away_for": 1.2877,
-          "away_against": 0.8782
+          "home_for": 1.2263,
+          "home_against": 0.996,
+          "away_for": 1.3204,
+          "away_against": 0.8686
         },
         "Santander": {
-          "home_for": 1.0904,
-          "home_against": 1.0845,
-          "away_for": 0.849,
-          "away_against": 1.1396
+          "home_for": 1.0542,
+          "home_against": 1.1617,
+          "away_for": 0.8496,
+          "away_against": 1.1386
         },
         "Sevilla": {
-          "home_for": 0.9215,
-          "home_against": 0.9253,
-          "away_for": 0.9588,
-          "away_against": 0.8908
+          "home_for": 0.9204,
+          "home_against": 0.9265,
+          "away_for": 0.9644,
+          "away_against": 0.884
         },
         "Sociedad": {
-          "home_for": 0.9539,
-          "home_against": 1.0237,
-          "away_for": 1.0886,
-          "away_against": 1.1504
+          "home_for": 0.9528,
+          "home_against": 1.0251,
+          "away_for": 1.0966,
+          "away_against": 1.1374
         },
         "Valencia": {
-          "home_for": 0.9468,
-          "home_against": 1.0461,
-          "away_for": 0.8763,
-          "away_against": 0.9941
+          "home_for": 0.9457,
+          "home_against": 1.0476,
+          "away_for": 0.8548,
+          "away_against": 0.9996
         },
         "Vallecano": {
-          "home_for": 1.0853,
-          "home_against": 1.0602,
-          "away_for": 1.0774,
-          "away_against": 1.0098
+          "home_for": 1.0787,
+          "home_against": 1.0565,
+          "away_for": 1.0789,
+          "away_against": 1.0085
         },
         "Villarreal": {
-          "home_for": 1.0682,
-          "home_against": 0.9847,
-          "away_for": 1.0249,
-          "away_against": 0.9588
+          "home_for": 1.0625,
+          "home_against": 0.9579,
+          "away_for": 1.0263,
+          "away_against": 0.9576
         }
       }
     },
     "shots_on_target": {
-      "avg_home": 5.0467,
-      "avg_away": 3.8824,
+      "avg_home": 5.0319,
+      "avg_away": 3.8826,
       "dispersion_team": null,
       "dispersion_total": null,
       "teams": {
         "Alaves": {
-          "home_for": 0.9157,
+          "home_for": 0.9177,
           "home_against": 1.0229,
-          "away_for": 1.0221,
-          "away_against": 0.8808
+          "away_for": 1.0093,
+          "away_against": 0.9087
         },
         "Ath Bilbao": {
-          "home_for": 0.988,
-          "home_against": 0.831,
+          "home_for": 0.971,
+          "home_against": 0.8533,
           "away_for": 0.9873,
-          "away_against": 1.02
+          "away_against": 1.0222
         },
         "Ath Madrid": {
-          "home_for": 1.2065,
+          "home_for": 1.2093,
           "home_against": 0.831,
-          "away_for": 1.115,
-          "away_against": 0.8712
+          "away_for": 1.1234,
+          "away_against": 0.8692
         },
         "Barcelona": {
-          "home_for": 1.3996,
-          "home_against": 0.7451,
-          "away_for": 1.5509,
-          "away_against": 0.8864
+          "home_for": 1.4024,
+          "home_against": 0.7465,
+          "away_for": 1.5508,
+          "away_against": 0.8883
         },
         "Betis": {
-          "home_for": 1.0947,
-          "home_against": 1.148,
+          "home_for": 1.1018,
+          "home_against": 1.1548,
           "away_for": 1.1546,
-          "away_against": 1.049
+          "away_against": 1.0513
         },
         "Celta": {
-          "home_for": 0.8867,
-          "home_against": 1.0795,
-          "away_for": 0.869,
-          "away_against": 0.854
+          "home_for": 0.8886,
+          "home_against": 1.0794,
+          "away_for": 0.8244,
+          "away_against": 0.8934
         },
         "Elche": {
-          "home_for": 0.9343,
-          "home_against": 1.0708,
-          "away_for": 0.9664,
-          "away_against": 1.0075
+          "home_for": 0.9189,
+          "home_against": 1.0555,
+          "away_for": 0.9663,
+          "away_against": 1.0098
         },
         "Espanol": {
-          "home_for": 0.9067,
+          "home_for": 0.9087,
           "home_against": 1.115,
-          "away_for": 0.9037,
-          "away_against": 1.1455
+          "away_for": 0.8972,
+          "away_against": 1.1309
         },
         "Getafe": {
-          "home_for": 0.7188,
-          "home_against": 0.9433,
+          "home_for": 0.7335,
+          "home_against": 0.9475,
           "away_for": 0.6791,
-          "away_against": 0.9982
+          "away_against": 1.0004
         },
         "Girona": {
-          "home_for": 0.8778,
+          "home_for": 0.8794,
           "home_against": 1.0376,
           "away_for": 1.0465,
-          "away_against": 1.0418
+          "away_against": 1.0438
         },
         "La Coruna": {
-          "home_for": 0.9359,
+          "home_for": 0.9372,
           "home_against": 1.1182,
-          "away_for": 1.0667,
-          "away_against": 0.8765
+          "away_for": 1.0666,
+          "away_against": 0.8776
         },
         "Levante": {
-          "home_for": 1.0254,
-          "home_against": 1.1822,
-          "away_for": 0.8282,
-          "away_against": 1.0607
+          "home_for": 1.0157,
+          "home_against": 1.1876,
+          "away_for": 0.8281,
+          "away_against": 1.0631
         },
         "Malaga": {
-          "home_for": 0.8765,
-          "home_against": 1.1955,
-          "away_for": 0.7833,
-          "away_against": 1.0944
+          "home_for": 0.8776,
+          "home_against": 1.1954,
+          "away_for": 0.8292,
+          "away_against": 1.1049
         },
         "Mallorca": {
-          "home_for": 0.9871,
-          "home_against": 1.0199,
-          "away_for": 0.9133,
-          "away_against": 0.9871
+          "home_for": 0.989,
+          "home_against": 1.0198,
+          "away_for": 0.9132,
+          "away_against": 0.989
         },
         "Osasuna": {
-          "home_for": 0.9982,
+          "home_for": 1.0004,
           "home_against": 0.8574,
           "away_for": 0.8376,
-          "away_against": 1.0897
+          "away_against": 1.0921
         },
         "Oviedo": {
-          "home_for": 0.748,
+          "home_for": 0.7491,
           "home_against": 1.082,
           "away_for": 0.8777,
-          "away_against": 1.2126
+          "away_against": 1.2151
         },
         "Real Madrid": {
-          "home_for": 1.425,
-          "home_against": 0.9037,
-          "away_for": 1.3329,
-          "away_against": 0.8458
+          "home_for": 1.4284,
+          "home_against": 0.9036,
+          "away_for": 1.3558,
+          "away_against": 0.8159
         },
         "Santander": {
-          "home_for": 1.1539,
-          "home_against": 1.1439,
+          "home_for": 1.0688,
+          "home_against": 1.2038,
           "away_for": 0.9121,
-          "away_against": 1.2133
+          "away_against": 1.2154
         },
         "Sevilla": {
-          "home_for": 0.8712,
-          "home_against": 0.9433,
-          "away_for": 0.9697,
-          "away_against": 1.0185
+          "home_for": 0.873,
+          "home_against": 0.9432,
+          "away_for": 0.9726,
+          "away_against": 1.0194
         },
         "Sociedad": {
-          "home_for": 0.988,
+          "home_for": 0.9902,
           "home_against": 1.0093,
-          "away_for": 1.148,
-          "away_against": 1.1252
+          "away_for": 1.1548,
+          "away_against": 1.1018
         },
         "Valencia": {
-          "home_for": 0.7514,
-          "home_against": 0.9727,
-          "away_for": 0.7993,
-          "away_against": 1.0254
+          "home_for": 0.7529,
+          "home_against": 0.9726,
+          "away_for": 0.798,
+          "away_against": 1.0055
         },
         "Vallecano": {
-          "home_for": 1.0736,
-          "home_against": 1.05,
+          "home_for": 1.1023,
+          "home_against": 0.9961,
           "away_for": 1.0291,
-          "away_against": 1.0236
+          "away_against": 1.0259
         },
         "Villarreal": {
-          "home_for": 1.1539,
-          "home_against": 0.9664,
-          "away_for": 1.0418,
-          "away_against": 0.819
+          "home_for": 1.138,
+          "home_against": 0.9565,
+          "away_for": 1.0417,
+          "away_against": 0.8207
         }
       }
     }
@@ -701,31 +701,31 @@
     "Alaves": {
       "season": {
         "all": {
-          "matches": 10,
-          "position": 7,
+          "matches": 11,
+          "position": 10,
           "points": 12,
           "won": 3,
           "drawn": 3,
-          "lost": 4,
-          "goals_for": 1.4,
-          "goals_against": 1.1,
-          "xg_for": 1.32,
-          "xg_against": 1.17,
-          "shots_for": 13.3,
-          "shots_against": 12.0,
-          "shots_on_target_for": 4.7,
-          "shots_on_target_against": 4.2,
-          "corners_for": 4.1,
-          "corners_against": 4.8,
-          "yellow_cards": 1.7,
-          "red_cards": 0.1,
-          "btts_pct": 0.6,
-          "over_2_5_pct": 0.5,
+          "lost": 5,
+          "goals_for": 1.36,
+          "goals_against": 1.55,
+          "xg_for": 1.27,
+          "xg_against": 1.36,
+          "shots_for": 12.73,
+          "shots_against": 12.09,
+          "shots_on_target_for": 4.55,
+          "shots_on_target_against": 4.45,
+          "corners_for": 4.0,
+          "corners_against": 4.64,
+          "yellow_cards": 1.82,
+          "red_cards": 0.09,
+          "btts_pct": 0.636,
+          "over_2_5_pct": 0.545,
           "clean_sheets": 3
         },
         "home": {
           "matches": 6,
-          "position": 7,
+          "position": 10,
           "points": 12,
           "won": 3,
           "drawn": 1,
@@ -747,30 +747,49 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 4,
-          "position": 7,
+          "matches": 5,
+          "position": 10,
           "points": 12,
           "won": 0,
           "drawn": 2,
-          "lost": 2,
-          "goals_for": 0.75,
-          "goals_against": 1.25,
-          "xg_for": 1.27,
-          "xg_against": 1.26,
-          "shots_for": 13.25,
-          "shots_against": 12.25,
-          "shots_on_target_for": 5.0,
-          "shots_on_target_against": 4.0,
-          "corners_for": 4.5,
-          "corners_against": 4.5,
-          "yellow_cards": 1.5,
+          "lost": 3,
+          "goals_for": 0.8,
+          "goals_against": 2.2,
+          "xg_for": 1.17,
+          "xg_against": 1.66,
+          "shots_for": 12.0,
+          "shots_against": 12.4,
+          "shots_on_target_for": 4.6,
+          "shots_on_target_against": 4.6,
+          "corners_for": 4.2,
+          "corners_against": 4.2,
+          "yellow_cards": 1.8,
           "red_cards": 0.0,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.5,
+          "btts_pct": 0.8,
+          "over_2_5_pct": 0.6,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "Barcelona",
+          "goals_for": 1,
+          "goals_against": 6,
+          "result": "L",
+          "xg_for": 0.76,
+          "xg_against": 3.26,
+          "shots_for": 7,
+          "shots_against": 13,
+          "shots_on_target_for": 3,
+          "shots_on_target_against": 7,
+          "corners_for": 3,
+          "corners_against": 3,
+          "cards_for": 3,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-23",
           "league": "SP1",
@@ -865,80 +884,61 @@
           "corners_against": 5,
           "cards_for": 1,
           "cards_against": 4
-        },
-        {
-          "date": "2026-09-12",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Santander",
-          "goals_for": 1,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": 1.98,
-          "xg_against": 2.02,
-          "shots_for": 16,
-          "shots_against": 11,
-          "shots_on_target_for": 8,
-          "shots_on_target_against": 4,
-          "corners_for": 6,
-          "corners_against": 4,
-          "cards_for": 3,
-          "cards_against": 4
         }
       ]
     },
     "Ath Bilbao": {
       "season": {
         "all": {
-          "matches": 9,
-          "position": 8,
-          "points": 12,
-          "won": 3,
+          "matches": 10,
+          "position": 7,
+          "points": 15,
+          "won": 4,
           "drawn": 3,
           "lost": 3,
-          "goals_for": 1.33,
+          "goals_for": 1.4,
           "goals_against": 1.0,
-          "xg_for": 1.42,
+          "xg_for": 1.59,
           "xg_against": 1.18,
-          "shots_for": 15.0,
-          "shots_against": 10.22,
-          "shots_on_target_for": 4.22,
-          "shots_on_target_against": 3.67,
-          "corners_for": 6.0,
-          "corners_against": 4.22,
-          "yellow_cards": 1.89,
-          "red_cards": 0.22,
-          "btts_pct": 0.333,
-          "over_2_5_pct": 0.444,
+          "shots_for": 14.8,
+          "shots_against": 10.6,
+          "shots_on_target_for": 4.1,
+          "shots_on_target_against": 3.8,
+          "corners_for": 5.9,
+          "corners_against": 4.6,
+          "yellow_cards": 1.9,
+          "red_cards": 0.2,
+          "btts_pct": 0.4,
+          "over_2_5_pct": 0.5,
           "clean_sheets": 5
         },
         "home": {
-          "matches": 5,
-          "position": 8,
-          "points": 12,
-          "won": 2,
+          "matches": 6,
+          "position": 7,
+          "points": 15,
+          "won": 3,
           "drawn": 2,
           "lost": 1,
-          "goals_for": 1.8,
-          "goals_against": 0.8,
-          "xg_for": 1.48,
-          "xg_against": 0.55,
-          "shots_for": 16.6,
-          "shots_against": 6.8,
-          "shots_on_target_for": 5.0,
-          "shots_on_target_against": 2.2,
-          "corners_for": 5.4,
-          "corners_against": 3.4,
-          "yellow_cards": 1.6,
-          "red_cards": 0.2,
-          "btts_pct": 0.4,
-          "over_2_5_pct": 0.6,
+          "goals_for": 1.83,
+          "goals_against": 0.83,
+          "xg_for": 1.75,
+          "xg_against": 0.65,
+          "shots_for": 16.0,
+          "shots_against": 8.0,
+          "shots_on_target_for": 4.67,
+          "shots_on_target_against": 2.67,
+          "corners_for": 5.33,
+          "corners_against": 4.17,
+          "yellow_cards": 1.67,
+          "red_cards": 0.17,
+          "btts_pct": 0.5,
+          "over_2_5_pct": 0.667,
           "clean_sheets": 3
         },
         "away": {
           "matches": 4,
-          "position": 8,
-          "points": 12,
+          "position": 7,
+          "points": 15,
           "won": 1,
           "drawn": 1,
           "lost": 2,
@@ -960,6 +960,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Sociedad",
+          "goals_for": 2,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 3.08,
+          "xg_against": 1.15,
+          "shots_for": 13,
+          "shots_against": 14,
+          "shots_on_target_for": 3,
+          "shots_on_target_against": 5,
+          "corners_for": 5,
+          "corners_against": 8,
+          "cards_for": 2,
+          "cards_against": 4
+        },
         {
           "date": "2026-10-25",
           "league": "SP1",
@@ -1054,57 +1073,38 @@
           "corners_against": 1,
           "cards_for": 3,
           "cards_against": 3
-        },
-        {
-          "date": "2026-09-05",
-          "league": "SP1",
-          "venue": "H",
-          "opponent": "Ath Madrid",
-          "goals_for": 3,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 1.41,
-          "xg_against": 1.03,
-          "shots_for": 11,
-          "shots_against": 15,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 5,
-          "corners_for": 3,
-          "corners_against": 8,
-          "cards_for": 0,
-          "cards_against": 1
         }
       ]
     },
     "Ath Madrid": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 2,
-          "points": 25,
-          "won": 8,
+          "points": 28,
+          "won": 9,
           "drawn": 1,
           "lost": 1,
           "goals_for": 2.0,
-          "goals_against": 0.8,
-          "xg_for": 1.7,
-          "xg_against": 1.06,
-          "shots_for": 18.0,
-          "shots_against": 10.1,
-          "shots_on_target_for": 6.2,
-          "shots_on_target_against": 3.3,
-          "corners_for": 6.0,
-          "corners_against": 2.9,
-          "yellow_cards": 2.4,
-          "red_cards": 0.1,
-          "btts_pct": 0.4,
-          "over_2_5_pct": 0.7,
-          "clean_sheets": 5
+          "goals_against": 0.73,
+          "xg_for": 1.61,
+          "xg_against": 1.09,
+          "shots_for": 17.36,
+          "shots_against": 11.0,
+          "shots_on_target_for": 6.09,
+          "shots_on_target_against": 3.36,
+          "corners_for": 5.73,
+          "corners_against": 3.09,
+          "yellow_cards": 2.18,
+          "red_cards": 0.09,
+          "btts_pct": 0.364,
+          "over_2_5_pct": 0.636,
+          "clean_sheets": 6
         },
         "home": {
           "matches": 5,
           "position": 2,
-          "points": 25,
+          "points": 28,
           "won": 4,
           "drawn": 1,
           "lost": 0,
@@ -1125,30 +1125,49 @@
           "clean_sheets": 3
         },
         "away": {
-          "matches": 5,
+          "matches": 6,
           "position": 2,
-          "points": 25,
-          "won": 4,
+          "points": 28,
+          "won": 5,
           "drawn": 0,
           "lost": 1,
-          "goals_for": 1.8,
-          "goals_against": 1.0,
-          "xg_for": 1.51,
-          "xg_against": 0.88,
-          "shots_for": 16.2,
-          "shots_against": 11.4,
-          "shots_on_target_for": 5.6,
-          "shots_on_target_against": 3.4,
-          "corners_for": 7.0,
-          "corners_against": 4.0,
-          "yellow_cards": 2.4,
+          "goals_for": 1.83,
+          "goals_against": 0.83,
+          "xg_for": 1.37,
+          "xg_against": 0.96,
+          "shots_for": 15.33,
+          "shots_against": 12.83,
+          "shots_on_target_for": 5.5,
+          "shots_on_target_against": 3.5,
+          "corners_for": 6.33,
+          "corners_against": 4.17,
+          "yellow_cards": 2.0,
           "red_cards": 0.0,
-          "btts_pct": 0.4,
-          "over_2_5_pct": 0.8,
-          "clean_sheets": 2
+          "btts_pct": 0.333,
+          "over_2_5_pct": 0.667,
+          "clean_sheets": 3
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "Levante",
+          "goals_for": 2,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 0.7,
+          "xg_against": 1.4,
+          "shots_for": 11,
+          "shots_against": 20,
+          "shots_on_target_for": 5,
+          "shots_on_target_against": 4,
+          "corners_for": 3,
+          "corners_against": 5,
+          "cards_for": 0,
+          "cards_against": 0
+        },
         {
           "date": "2026-10-24",
           "league": "SP1",
@@ -1243,80 +1262,61 @@
           "corners_against": 0,
           "cards_for": 1,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-13",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Sociedad",
-          "goals_for": 3,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 2.05,
-          "xg_against": 0.27,
-          "shots_for": 13,
-          "shots_against": 8,
-          "shots_on_target_for": 5,
-          "shots_on_target_against": 3,
-          "corners_for": 3,
-          "corners_against": 9,
-          "cards_for": 1,
-          "cards_against": 3
         }
       ]
     },
     "Barcelona": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 1,
-          "points": 27,
-          "won": 9,
+          "points": 30,
+          "won": 10,
           "drawn": 0,
           "lost": 1,
-          "goals_for": 4.0,
-          "goals_against": 1.1,
-          "xg_for": 3.4,
-          "xg_against": 1.09,
-          "shots_for": 20.9,
-          "shots_against": 7.1,
-          "shots_on_target_for": 8.2,
-          "shots_on_target_against": 3.3,
-          "corners_for": 7.2,
-          "corners_against": 2.8,
-          "yellow_cards": 1.5,
+          "goals_for": 4.18,
+          "goals_against": 1.09,
+          "xg_for": 3.39,
+          "xg_against": 1.06,
+          "shots_for": 20.18,
+          "shots_against": 7.09,
+          "shots_on_target_for": 8.09,
+          "shots_on_target_against": 3.27,
+          "corners_for": 6.82,
+          "corners_against": 2.82,
+          "yellow_cards": 1.55,
           "red_cards": 0.0,
-          "btts_pct": 0.6,
-          "over_2_5_pct": 0.9,
+          "btts_pct": 0.636,
+          "over_2_5_pct": 0.909,
           "clean_sheets": 4
         },
         "home": {
-          "matches": 5,
+          "matches": 6,
           "position": 1,
-          "points": 27,
-          "won": 4,
+          "points": 30,
+          "won": 5,
           "drawn": 0,
           "lost": 1,
-          "goals_for": 3.6,
-          "goals_against": 1.2,
-          "xg_for": 3.32,
-          "xg_against": 1.08,
-          "shots_for": 23.8,
+          "goals_for": 4.0,
+          "goals_against": 1.17,
+          "xg_for": 3.31,
+          "xg_against": 1.03,
+          "shots_for": 22.0,
           "shots_against": 7.0,
-          "shots_on_target_for": 8.4,
-          "shots_on_target_against": 2.8,
-          "corners_for": 10.8,
-          "corners_against": 3.6,
-          "yellow_cards": 1.8,
+          "shots_on_target_for": 8.17,
+          "shots_on_target_against": 2.83,
+          "corners_for": 9.5,
+          "corners_against": 3.5,
+          "yellow_cards": 1.83,
           "red_cards": 0.0,
-          "btts_pct": 0.6,
-          "over_2_5_pct": 0.8,
+          "btts_pct": 0.667,
+          "over_2_5_pct": 0.833,
           "clean_sheets": 2
         },
         "away": {
           "matches": 5,
           "position": 1,
-          "points": 27,
+          "points": 30,
           "won": 5,
           "drawn": 0,
           "lost": 0,
@@ -1338,6 +1338,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Alaves",
+          "goals_for": 6,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 3.26,
+          "xg_against": 0.76,
+          "shots_for": 13,
+          "shots_against": 7,
+          "shots_on_target_for": 7,
+          "shots_on_target_against": 3,
+          "corners_for": 3,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-25",
           "league": "SP1",
@@ -1432,80 +1451,61 @@
           "corners_against": 0,
           "cards_for": 3,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-13",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Levante",
-          "goals_for": 4,
-          "goals_against": 2,
-          "result": "W",
-          "xg_for": 2.59,
-          "xg_against": 2.42,
-          "shots_for": 12,
-          "shots_against": 13,
-          "shots_on_target_for": 6,
-          "shots_on_target_against": 7,
-          "corners_for": 5,
-          "corners_against": 3,
-          "cards_for": 1,
-          "cards_against": 1
         }
       ]
     },
     "Betis": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 4,
-          "points": 20,
-          "won": 6,
+          "points": 23,
+          "won": 7,
           "drawn": 2,
           "lost": 2,
-          "goals_for": 1.6,
-          "goals_against": 1.4,
-          "xg_for": 1.59,
-          "xg_against": 1.88,
-          "shots_for": 16.3,
-          "shots_against": 15.1,
-          "shots_on_target_for": 5.9,
-          "shots_on_target_against": 6.0,
-          "corners_for": 4.7,
-          "corners_against": 6.1,
-          "yellow_cards": 1.5,
-          "red_cards": 0.1,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.4,
+          "goals_for": 1.64,
+          "goals_against": 1.36,
+          "xg_for": 1.61,
+          "xg_against": 1.82,
+          "shots_for": 17.0,
+          "shots_against": 14.64,
+          "shots_on_target_for": 5.91,
+          "shots_on_target_against": 5.91,
+          "corners_for": 5.18,
+          "corners_against": 5.82,
+          "yellow_cards": 1.55,
+          "red_cards": 0.09,
+          "btts_pct": 0.545,
+          "over_2_5_pct": 0.455,
           "clean_sheets": 5
         },
         "home": {
-          "matches": 5,
+          "matches": 6,
           "position": 4,
-          "points": 20,
-          "won": 4,
+          "points": 23,
+          "won": 5,
           "drawn": 0,
           "lost": 1,
           "goals_for": 2.0,
-          "goals_against": 1.4,
-          "xg_for": 1.57,
-          "xg_against": 2.04,
-          "shots_for": 15.2,
-          "shots_against": 13.2,
-          "shots_on_target_for": 6.4,
-          "shots_on_target_against": 5.6,
-          "corners_for": 4.8,
-          "corners_against": 5.4,
-          "yellow_cards": 2.2,
-          "red_cards": 0.2,
-          "btts_pct": 0.4,
-          "over_2_5_pct": 0.4,
+          "goals_against": 1.33,
+          "xg_for": 1.61,
+          "xg_against": 1.89,
+          "shots_for": 16.67,
+          "shots_against": 12.67,
+          "shots_on_target_for": 6.33,
+          "shots_on_target_against": 5.5,
+          "corners_for": 5.67,
+          "corners_against": 5.0,
+          "yellow_cards": 2.17,
+          "red_cards": 0.17,
+          "btts_pct": 0.5,
+          "over_2_5_pct": 0.5,
           "clean_sheets": 3
         },
         "away": {
           "matches": 5,
           "position": 4,
-          "points": 20,
+          "points": 23,
           "won": 2,
           "drawn": 2,
           "lost": 1,
@@ -1527,6 +1527,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Malaga",
+          "goals_for": 2,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 1.8,
+          "xg_against": 1.16,
+          "shots_for": 24,
+          "shots_against": 10,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 5,
+          "corners_for": 10,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-25",
           "league": "SP1",
@@ -1621,51 +1640,32 @@
           "corners_against": 3,
           "cards_for": 0,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-14",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Villarreal",
-          "goals_for": 2,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": 3.52,
-          "xg_against": 1.9,
-          "shots_for": 26,
-          "shots_against": 14,
-          "shots_on_target_for": 12,
-          "shots_on_target_against": 8,
-          "corners_for": 4,
-          "corners_against": 7,
-          "cards_for": 0,
-          "cards_against": 1
         }
       ]
     },
     "Celta": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 9,
           "points": 12,
           "won": 2,
           "drawn": 6,
-          "lost": 2,
-          "goals_for": 1.0,
-          "goals_against": 0.7,
-          "xg_for": 0.89,
-          "xg_against": 1.17,
-          "shots_for": 9.7,
-          "shots_against": 13.5,
-          "shots_on_target_for": 3.3,
-          "shots_on_target_against": 4.1,
-          "corners_for": 2.8,
-          "corners_against": 4.6,
-          "yellow_cards": 1.7,
-          "red_cards": 0.1,
-          "btts_pct": 0.4,
-          "over_2_5_pct": 0.3,
+          "lost": 3,
+          "goals_for": 0.91,
+          "goals_against": 0.91,
+          "xg_for": 0.93,
+          "xg_against": 1.16,
+          "shots_for": 9.82,
+          "shots_against": 13.55,
+          "shots_on_target_for": 3.0,
+          "shots_on_target_against": 4.45,
+          "corners_for": 2.82,
+          "corners_against": 4.55,
+          "yellow_cards": 1.64,
+          "red_cards": 0.09,
+          "btts_pct": 0.364,
+          "over_2_5_pct": 0.364,
           "clean_sheets": 5
         },
         "home": {
@@ -1692,30 +1692,49 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 4,
+          "matches": 5,
           "position": 9,
           "points": 12,
           "won": 0,
           "drawn": 4,
-          "lost": 0,
-          "goals_for": 0.25,
-          "goals_against": 0.25,
-          "xg_for": 0.61,
-          "xg_against": 0.79,
-          "shots_for": 9.25,
-          "shots_against": 11.75,
-          "shots_on_target_for": 2.0,
-          "shots_on_target_against": 2.75,
+          "lost": 1,
+          "goals_for": 0.2,
+          "goals_against": 0.8,
+          "xg_for": 0.77,
+          "xg_against": 0.85,
+          "shots_for": 9.6,
+          "shots_against": 12.2,
+          "shots_on_target_for": 1.6,
+          "shots_on_target_against": 3.8,
           "corners_for": 3.0,
-          "corners_against": 5.0,
-          "yellow_cards": 2.75,
+          "corners_against": 4.8,
+          "yellow_cards": 2.4,
           "red_cards": 0.0,
-          "btts_pct": 0.25,
-          "over_2_5_pct": 0.0,
+          "btts_pct": 0.2,
+          "over_2_5_pct": 0.2,
           "clean_sheets": 3
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "Vallecano",
+          "goals_for": 0,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 1.39,
+          "xg_against": 1.09,
+          "shots_for": 11,
+          "shots_against": 14,
+          "shots_on_target_for": 0,
+          "shots_on_target_against": 8,
+          "corners_for": 3,
+          "corners_against": 4,
+          "cards_for": 1,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-25",
           "league": "SP1",
@@ -1810,79 +1829,60 @@
           "corners_against": 5,
           "cards_for": 1,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-07",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Getafe",
-          "goals_for": 1,
-          "goals_against": 1,
-          "result": "D",
-          "xg_for": 0.96,
-          "xg_against": 0.81,
-          "shots_for": 16,
-          "shots_against": 10,
-          "shots_on_target_for": 3,
-          "shots_on_target_against": 2,
-          "corners_for": 5,
-          "corners_against": 3,
-          "cards_for": 2,
-          "cards_against": 6
         }
       ]
     },
     "Elche": {
       "season": {
         "all": {
-          "matches": 10,
-          "position": 15,
+          "matches": 11,
+          "position": 17,
           "points": 10,
           "won": 2,
           "drawn": 4,
-          "lost": 4,
-          "goals_for": 1.4,
-          "goals_against": 1.7,
+          "lost": 5,
+          "goals_for": 1.27,
+          "goals_against": 1.64,
           "xg_for": 1.23,
-          "xg_against": 1.85,
-          "shots_for": 11.5,
-          "shots_against": 15.2,
-          "shots_on_target_for": 4.7,
-          "shots_on_target_against": 4.5,
-          "corners_for": 4.4,
-          "corners_against": 4.5,
-          "yellow_cards": 2.5,
-          "red_cards": 0.1,
-          "btts_pct": 0.6,
-          "over_2_5_pct": 0.6,
+          "xg_against": 1.76,
+          "shots_for": 11.91,
+          "shots_against": 14.27,
+          "shots_on_target_for": 4.55,
+          "shots_on_target_against": 4.36,
+          "corners_for": 4.55,
+          "corners_against": 4.27,
+          "yellow_cards": 2.55,
+          "red_cards": 0.09,
+          "btts_pct": 0.545,
+          "over_2_5_pct": 0.545,
           "clean_sheets": 3
         },
         "home": {
-          "matches": 4,
-          "position": 15,
+          "matches": 5,
+          "position": 17,
           "points": 10,
           "won": 0,
           "drawn": 1,
-          "lost": 3,
-          "goals_for": 1.0,
-          "goals_against": 2.75,
-          "xg_for": 1.18,
-          "xg_against": 2.26,
-          "shots_for": 12.75,
-          "shots_against": 12.75,
-          "shots_on_target_for": 4.25,
-          "shots_on_target_against": 4.25,
-          "corners_for": 4.0,
-          "corners_against": 3.75,
-          "yellow_cards": 2.5,
+          "lost": 4,
+          "goals_for": 0.8,
+          "goals_against": 2.4,
+          "xg_for": 1.2,
+          "xg_against": 1.99,
+          "shots_for": 13.4,
+          "shots_against": 11.2,
+          "shots_on_target_for": 4.0,
+          "shots_on_target_against": 4.0,
+          "corners_for": 4.4,
+          "corners_against": 3.4,
+          "yellow_cards": 2.6,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.4,
+          "over_2_5_pct": 0.6,
           "clean_sheets": 1
         },
         "away": {
           "matches": 6,
-          "position": 15,
+          "position": 17,
           "points": 10,
           "won": 2,
           "drawn": 3,
@@ -1905,6 +1905,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Valencia",
+          "goals_for": 0,
+          "goals_against": 1,
+          "result": "L",
+          "xg_for": 1.25,
+          "xg_against": 0.9,
+          "shots_for": 16,
+          "shots_against": 5,
+          "shots_on_target_for": 3,
+          "shots_on_target_against": 3,
+          "corners_for": 6,
+          "corners_against": 2,
+          "cards_for": 3,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-24",
           "league": "SP1",
@@ -1999,57 +2018,38 @@
           "corners_against": 5,
           "cards_for": 4,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-12",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Ath Bilbao",
-          "goals_for": 1,
-          "goals_against": 1,
-          "result": "D",
-          "xg_for": 0.84,
-          "xg_against": 2.4,
-          "shots_for": 3,
-          "shots_against": 19,
-          "shots_on_target_for": 1,
-          "shots_on_target_against": 3,
-          "corners_for": 1,
-          "corners_against": 7,
-          "cards_for": 3,
-          "cards_against": 3
         }
       ]
     },
     "Espanol": {
       "season": {
         "all": {
-          "matches": 10,
-          "position": 18,
-          "points": 8,
-          "won": 2,
+          "matches": 11,
+          "position": 14,
+          "points": 11,
+          "won": 3,
           "drawn": 2,
           "lost": 6,
-          "goals_for": 1.2,
-          "goals_against": 1.4,
-          "xg_for": 1.07,
-          "xg_against": 1.37,
-          "shots_for": 12.5,
-          "shots_against": 14.1,
-          "shots_on_target_for": 3.4,
-          "shots_on_target_against": 5.5,
-          "corners_for": 2.5,
-          "corners_against": 5.8,
-          "yellow_cards": 3.1,
-          "red_cards": 0.1,
-          "btts_pct": 0.7,
-          "over_2_5_pct": 0.6,
-          "clean_sheets": 2
+          "goals_for": 1.18,
+          "goals_against": 1.27,
+          "xg_for": 1.0,
+          "xg_against": 1.33,
+          "shots_for": 11.82,
+          "shots_against": 14.09,
+          "shots_on_target_for": 3.36,
+          "shots_on_target_against": 5.36,
+          "corners_for": 2.55,
+          "corners_against": 5.91,
+          "yellow_cards": 3.09,
+          "red_cards": 0.09,
+          "btts_pct": 0.636,
+          "over_2_5_pct": 0.545,
+          "clean_sheets": 3
         },
         "home": {
           "matches": 5,
-          "position": 18,
-          "points": 8,
+          "position": 14,
+          "points": 11,
           "won": 1,
           "drawn": 1,
           "lost": 3,
@@ -2070,30 +2070,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 5,
-          "position": 18,
-          "points": 8,
-          "won": 1,
+          "matches": 6,
+          "position": 14,
+          "points": 11,
+          "won": 2,
           "drawn": 1,
           "lost": 3,
-          "goals_for": 1.2,
-          "goals_against": 1.4,
-          "xg_for": 1.07,
-          "xg_against": 1.46,
-          "shots_for": 11.2,
-          "shots_against": 16.4,
-          "shots_on_target_for": 3.2,
-          "shots_on_target_against": 6.4,
-          "corners_for": 3.6,
-          "corners_against": 6.0,
-          "yellow_cards": 3.4,
-          "red_cards": 0.2,
-          "btts_pct": 0.8,
-          "over_2_5_pct": 0.6,
-          "clean_sheets": 1
+          "goals_for": 1.17,
+          "goals_against": 1.17,
+          "xg_for": 0.93,
+          "xg_against": 1.36,
+          "shots_for": 10.17,
+          "shots_against": 16.0,
+          "shots_on_target_for": 3.17,
+          "shots_on_target_against": 6.0,
+          "corners_for": 3.5,
+          "corners_against": 6.17,
+          "yellow_cards": 3.33,
+          "red_cards": 0.17,
+          "btts_pct": 0.667,
+          "over_2_5_pct": 0.5,
+          "clean_sheets": 2
         }
       },
       "last6": [
+        {
+          "date": "2026-10-30",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "Villarreal",
+          "goals_for": 1,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 0.22,
+          "xg_against": 0.88,
+          "shots_for": 5,
+          "shots_against": 14,
+          "shots_on_target_for": 3,
+          "shots_on_target_against": 4,
+          "corners_for": 3,
+          "corners_against": 7,
+          "cards_for": 3,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-24",
           "league": "SP1",
@@ -2188,80 +2207,61 @@
           "corners_against": 3,
           "cards_for": 3,
           "cards_against": 5
-        },
-        {
-          "date": "2026-09-12",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Osasuna",
-          "goals_for": 2,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 1.43,
-          "xg_against": 1.05,
-          "shots_for": 6,
-          "shots_against": 11,
-          "shots_on_target_for": 3,
-          "shots_on_target_against": 4,
-          "corners_for": 4,
-          "corners_against": 3,
-          "cards_for": 3,
-          "cards_against": 2
         }
       ]
     },
     "Getafe": {
       "season": {
         "all": {
-          "matches": 10,
-          "position": 17,
-          "points": 9,
-          "won": 2,
+          "matches": 11,
+          "position": 12,
+          "points": 12,
+          "won": 3,
           "drawn": 3,
           "lost": 5,
-          "goals_for": 0.5,
-          "goals_against": 1.5,
-          "xg_for": 0.62,
-          "xg_against": 1.36,
-          "shots_for": 10.5,
-          "shots_against": 14.8,
-          "shots_on_target_for": 2.5,
-          "shots_on_target_against": 4.8,
-          "corners_for": 4.2,
-          "corners_against": 5.6,
-          "yellow_cards": 3.2,
-          "red_cards": 0.4,
-          "btts_pct": 0.3,
-          "over_2_5_pct": 0.3,
+          "goals_for": 0.73,
+          "goals_against": 1.45,
+          "xg_for": 0.7,
+          "xg_against": 1.3,
+          "shots_for": 10.55,
+          "shots_against": 14.55,
+          "shots_on_target_for": 2.73,
+          "shots_on_target_against": 4.73,
+          "corners_for": 4.0,
+          "corners_against": 5.27,
+          "yellow_cards": 3.09,
+          "red_cards": 0.36,
+          "btts_pct": 0.364,
+          "over_2_5_pct": 0.364,
           "clean_sheets": 2
         },
         "home": {
-          "matches": 5,
-          "position": 17,
-          "points": 9,
-          "won": 2,
+          "matches": 6,
+          "position": 12,
+          "points": 12,
+          "won": 3,
           "drawn": 3,
           "lost": 0,
-          "goals_for": 1.0,
-          "goals_against": 0.6,
-          "xg_for": 0.88,
-          "xg_against": 1.16,
-          "shots_for": 13.8,
-          "shots_against": 12.8,
-          "shots_on_target_for": 3.6,
-          "shots_on_target_against": 3.6,
-          "corners_for": 5.4,
-          "corners_against": 7.0,
-          "yellow_cards": 3.6,
-          "red_cards": 0.4,
-          "btts_pct": 0.6,
-          "over_2_5_pct": 0.0,
+          "goals_for": 1.33,
+          "goals_against": 0.67,
+          "xg_for": 1.0,
+          "xg_against": 1.09,
+          "shots_for": 13.33,
+          "shots_against": 12.67,
+          "shots_on_target_for": 3.83,
+          "shots_on_target_against": 3.67,
+          "corners_for": 4.83,
+          "corners_against": 6.17,
+          "yellow_cards": 3.33,
+          "red_cards": 0.33,
+          "btts_pct": 0.667,
+          "over_2_5_pct": 0.167,
           "clean_sheets": 2
         },
         "away": {
           "matches": 5,
-          "position": 17,
-          "points": 9,
+          "position": 12,
+          "points": 12,
           "won": 0,
           "drawn": 0,
           "lost": 5,
@@ -2283,6 +2283,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Sevilla",
+          "goals_for": 3,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 1.58,
+          "xg_against": 0.77,
+          "shots_for": 11,
+          "shots_against": 12,
+          "shots_on_target_for": 5,
+          "shots_on_target_against": 4,
+          "corners_for": 2,
+          "corners_against": 2,
+          "cards_for": 2,
+          "cards_against": 6
+        },
         {
           "date": "2026-10-25",
           "league": "SP1",
@@ -2377,25 +2396,6 @@
           "corners_against": 4,
           "cards_for": 0,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-13",
-          "league": "SP1",
-          "venue": "H",
-          "opponent": "La Coruna",
-          "goals_for": 1,
-          "goals_against": 1,
-          "result": "D",
-          "xg_for": 0.77,
-          "xg_against": 0.86,
-          "shots_for": 15,
-          "shots_against": 10,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 3,
-          "corners_for": 3,
-          "corners_against": 7,
-          "cards_for": 3,
-          "cards_against": 1
         }
       ]
     },
@@ -2403,7 +2403,7 @@
       "season": {
         "all": {
           "matches": 10,
-          "position": 11,
+          "position": 13,
           "points": 11,
           "won": 2,
           "drawn": 5,
@@ -2426,7 +2426,7 @@
         },
         "home": {
           "matches": 5,
-          "position": 11,
+          "position": 13,
           "points": 11,
           "won": 1,
           "drawn": 3,
@@ -2449,7 +2449,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 11,
+          "position": 13,
           "points": 11,
           "won": 1,
           "drawn": 2,
@@ -2591,54 +2591,54 @@
     "Levante": {
       "season": {
         "all": {
-          "matches": 10,
-          "position": 14,
+          "matches": 11,
+          "position": 18,
           "points": 10,
           "won": 2,
           "drawn": 4,
-          "lost": 4,
-          "goals_for": 1.6,
-          "goals_against": 1.9,
-          "xg_for": 1.34,
-          "xg_against": 2.03,
-          "shots_for": 11.3,
-          "shots_against": 16.0,
-          "shots_on_target_for": 4.3,
-          "shots_on_target_against": 5.2,
-          "corners_for": 3.4,
-          "corners_against": 5.1,
-          "yellow_cards": 1.5,
+          "lost": 5,
+          "goals_for": 1.45,
+          "goals_against": 1.91,
+          "xg_for": 1.35,
+          "xg_against": 1.91,
+          "shots_for": 12.09,
+          "shots_against": 15.55,
+          "shots_on_target_for": 4.27,
+          "shots_on_target_against": 5.18,
+          "corners_for": 3.55,
+          "corners_against": 4.91,
+          "yellow_cards": 1.36,
           "red_cards": 0.0,
-          "btts_pct": 0.7,
-          "over_2_5_pct": 0.7,
+          "btts_pct": 0.636,
+          "over_2_5_pct": 0.636,
           "clean_sheets": 2
         },
         "home": {
-          "matches": 4,
-          "position": 14,
+          "matches": 5,
+          "position": 18,
           "points": 10,
           "won": 2,
           "drawn": 1,
-          "lost": 1,
-          "goals_for": 3.25,
-          "goals_against": 2.5,
-          "xg_for": 2.28,
-          "xg_against": 2.23,
-          "shots_for": 16.0,
-          "shots_against": 17.75,
-          "shots_on_target_for": 8.0,
-          "shots_on_target_against": 5.25,
-          "corners_for": 4.0,
-          "corners_against": 6.0,
-          "yellow_cards": 1.5,
+          "lost": 2,
+          "goals_for": 2.6,
+          "goals_against": 2.4,
+          "xg_for": 2.1,
+          "xg_against": 1.93,
+          "shots_for": 16.8,
+          "shots_against": 16.4,
+          "shots_on_target_for": 7.2,
+          "shots_on_target_against": 5.2,
+          "corners_for": 4.2,
+          "corners_against": 5.4,
+          "yellow_cards": 1.2,
           "red_cards": 0.0,
-          "btts_pct": 1.0,
-          "over_2_5_pct": 1.0,
+          "btts_pct": 0.8,
+          "over_2_5_pct": 0.8,
           "clean_sheets": 0
         },
         "away": {
           "matches": 6,
-          "position": 14,
+          "position": 18,
           "points": 10,
           "won": 0,
           "drawn": 3,
@@ -2661,6 +2661,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Ath Madrid",
+          "goals_for": 0,
+          "goals_against": 2,
+          "result": "L",
+          "xg_for": 1.4,
+          "xg_against": 0.7,
+          "shots_for": 20,
+          "shots_against": 11,
+          "shots_on_target_for": 4,
+          "shots_on_target_against": 5,
+          "corners_for": 5,
+          "corners_against": 3,
+          "cards_for": 0,
+          "cards_against": 0
+        },
         {
           "date": "2026-10-25",
           "league": "SP1",
@@ -2755,51 +2774,32 @@
           "corners_against": 7,
           "cards_for": 1,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-13",
-          "league": "SP1",
-          "venue": "H",
-          "opponent": "Barcelona",
-          "goals_for": 2,
-          "goals_against": 4,
-          "result": "L",
-          "xg_for": 2.42,
-          "xg_against": 2.59,
-          "shots_for": 13,
-          "shots_against": 12,
-          "shots_on_target_for": 7,
-          "shots_on_target_against": 6,
-          "corners_for": 3,
-          "corners_against": 5,
-          "cards_for": 1,
-          "cards_against": 1
         }
       ]
     },
     "Malaga": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 20,
           "points": 5,
           "won": 0,
           "drawn": 5,
-          "lost": 5,
-          "goals_for": 0.7,
-          "goals_against": 1.9,
-          "xg_for": 0.85,
-          "xg_against": 1.69,
-          "shots_for": 10.9,
-          "shots_against": 15.2,
-          "shots_on_target_for": 3.0,
-          "shots_on_target_against": 5.7,
-          "corners_for": 5.2,
-          "corners_against": 5.1,
-          "yellow_cards": 1.9,
+          "lost": 6,
+          "goals_for": 0.73,
+          "goals_against": 1.91,
+          "xg_for": 0.88,
+          "xg_against": 1.7,
+          "shots_for": 10.82,
+          "shots_against": 16.0,
+          "shots_on_target_for": 3.18,
+          "shots_on_target_against": 5.73,
+          "corners_for": 5.0,
+          "corners_against": 5.55,
+          "yellow_cards": 1.91,
           "red_cards": 0.0,
-          "btts_pct": 0.6,
-          "over_2_5_pct": 0.3,
+          "btts_pct": 0.636,
+          "over_2_5_pct": 0.364,
           "clean_sheets": 1
         },
         "home": {
@@ -2826,30 +2826,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 5,
+          "matches": 6,
           "position": 20,
           "points": 5,
           "won": 0,
           "drawn": 2,
-          "lost": 3,
-          "goals_for": 0.4,
-          "goals_against": 1.8,
-          "xg_for": 0.5,
-          "xg_against": 1.6,
-          "shots_for": 9.8,
-          "shots_against": 17.8,
-          "shots_on_target_for": 2.2,
+          "lost": 4,
+          "goals_for": 0.5,
+          "goals_against": 1.83,
+          "xg_for": 0.61,
+          "xg_against": 1.64,
+          "shots_for": 9.83,
+          "shots_against": 18.83,
+          "shots_on_target_for": 2.67,
           "shots_on_target_against": 6.0,
-          "corners_for": 4.6,
-          "corners_against": 5.6,
-          "yellow_cards": 1.8,
+          "corners_for": 4.33,
+          "corners_against": 6.33,
+          "yellow_cards": 1.83,
           "red_cards": 0.0,
-          "btts_pct": 0.4,
-          "over_2_5_pct": 0.2,
+          "btts_pct": 0.5,
+          "over_2_5_pct": 0.333,
           "clean_sheets": 0
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "Betis",
+          "goals_for": 1,
+          "goals_against": 2,
+          "result": "L",
+          "xg_for": 1.16,
+          "xg_against": 1.8,
+          "shots_for": 10,
+          "shots_against": 24,
+          "shots_on_target_for": 5,
+          "shots_on_target_against": 6,
+          "corners_for": 3,
+          "corners_against": 10,
+          "cards_for": 2,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-23",
           "league": "SP1",
@@ -2944,25 +2963,6 @@
           "corners_against": 8,
           "cards_for": 0,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-13",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Celta",
-          "goals_for": 1,
-          "goals_against": 1,
-          "result": "D",
-          "xg_for": 0.42,
-          "xg_against": 1.9,
-          "shots_for": 12,
-          "shots_against": 17,
-          "shots_on_target_for": 2,
-          "shots_on_target_against": 5,
-          "corners_for": 5,
-          "corners_against": 1,
-          "cards_for": 1,
-          "cards_against": 1
         }
       ]
     },
@@ -2970,7 +2970,7 @@
       "season": {
         "all": {
           "matches": 10,
-          "position": 12,
+          "position": 15,
           "points": 11,
           "won": 3,
           "drawn": 2,
@@ -2993,7 +2993,7 @@
         },
         "home": {
           "matches": 5,
-          "position": 12,
+          "position": 15,
           "points": 11,
           "won": 2,
           "drawn": 2,
@@ -3016,7 +3016,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 12,
+          "position": 15,
           "points": 11,
           "won": 1,
           "drawn": 0,
@@ -3158,32 +3158,32 @@
     "Real Madrid": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 3,
-          "points": 24,
-          "won": 8,
+          "points": 27,
+          "won": 9,
           "drawn": 0,
           "lost": 2,
-          "goals_for": 2.5,
-          "goals_against": 1.0,
-          "xg_for": 2.39,
+          "goals_for": 2.55,
+          "goals_against": 0.91,
+          "xg_for": 2.48,
           "xg_against": 1.01,
-          "shots_for": 16.8,
-          "shots_against": 13.3,
+          "shots_for": 17.27,
+          "shots_against": 13.0,
           "shots_on_target_for": 7.0,
-          "shots_on_target_against": 4.6,
-          "corners_for": 6.4,
+          "shots_on_target_against": 4.27,
+          "corners_for": 6.36,
           "corners_against": 4.0,
-          "yellow_cards": 2.3,
-          "red_cards": 0.2,
-          "btts_pct": 0.7,
-          "over_2_5_pct": 0.8,
-          "clean_sheets": 2
+          "yellow_cards": 2.09,
+          "red_cards": 0.18,
+          "btts_pct": 0.636,
+          "over_2_5_pct": 0.818,
+          "clean_sheets": 3
         },
         "home": {
           "matches": 5,
           "position": 3,
-          "points": 24,
+          "points": 27,
           "won": 5,
           "drawn": 0,
           "lost": 0,
@@ -3204,30 +3204,49 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 5,
+          "matches": 6,
           "position": 3,
-          "points": 24,
-          "won": 3,
+          "points": 27,
+          "won": 4,
           "drawn": 0,
           "lost": 2,
-          "goals_for": 1.6,
-          "goals_against": 1.4,
-          "xg_for": 2.4,
-          "xg_against": 1.26,
-          "shots_for": 15.8,
-          "shots_against": 13.0,
-          "shots_on_target_for": 5.6,
-          "shots_on_target_against": 5.2,
+          "goals_for": 1.83,
+          "goals_against": 1.17,
+          "xg_for": 2.56,
+          "xg_against": 1.21,
+          "shots_for": 16.83,
+          "shots_against": 12.5,
+          "shots_on_target_for": 5.83,
+          "shots_on_target_against": 4.5,
           "corners_for": 6.0,
-          "corners_against": 3.4,
-          "yellow_cards": 2.6,
-          "red_cards": 0.2,
-          "btts_pct": 0.8,
-          "over_2_5_pct": 0.8,
-          "clean_sheets": 0
+          "corners_against": 3.5,
+          "yellow_cards": 2.17,
+          "red_cards": 0.17,
+          "btts_pct": 0.667,
+          "over_2_5_pct": 0.833,
+          "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "Santander",
+          "goals_for": 3,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 3.36,
+          "xg_against": 0.97,
+          "shots_for": 22,
+          "shots_against": 10,
+          "shots_on_target_for": 7,
+          "shots_on_target_against": 1,
+          "corners_for": 6,
+          "corners_against": 4,
+          "cards_for": 0,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-25",
           "league": "SP1",
@@ -3322,79 +3341,60 @@
           "corners_against": 2,
           "cards_for": 2,
           "cards_against": 4
-        },
-        {
-          "date": "2026-09-12",
-          "league": "SP1",
-          "venue": "H",
-          "opponent": "Vallecano",
-          "goals_for": 4,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": 2.61,
-          "xg_against": 1.22,
-          "shots_for": 24,
-          "shots_against": 18,
-          "shots_on_target_for": 11,
-          "shots_on_target_against": 7,
-          "corners_for": 11,
-          "corners_against": 5,
-          "cards_for": 0,
-          "cards_against": 1
         }
       ]
     },
     "Santander": {
       "season": {
         "all": {
-          "matches": 10,
-          "position": 13,
+          "matches": 11,
+          "position": 16,
           "points": 11,
           "won": 3,
           "drawn": 2,
-          "lost": 5,
-          "goals_for": 1.5,
-          "goals_against": 2.6,
-          "xg_for": 1.38,
-          "xg_against": 2.13,
-          "shots_for": 12.4,
-          "shots_against": 15.8,
-          "shots_on_target_for": 4.9,
-          "shots_on_target_against": 6.1,
-          "corners_for": 5.1,
-          "corners_against": 7.8,
-          "yellow_cards": 2.7,
-          "red_cards": 0.1,
-          "btts_pct": 0.7,
-          "over_2_5_pct": 0.8,
+          "lost": 6,
+          "goals_for": 1.36,
+          "goals_against": 2.64,
+          "xg_for": 1.34,
+          "xg_against": 2.24,
+          "shots_for": 12.18,
+          "shots_against": 16.36,
+          "shots_on_target_for": 4.55,
+          "shots_on_target_against": 6.18,
+          "corners_for": 5.0,
+          "corners_against": 7.64,
+          "yellow_cards": 2.64,
+          "red_cards": 0.09,
+          "btts_pct": 0.636,
+          "over_2_5_pct": 0.818,
           "clean_sheets": 0
         },
         "home": {
-          "matches": 5,
-          "position": 13,
+          "matches": 6,
+          "position": 16,
           "points": 11,
           "won": 3,
           "drawn": 2,
-          "lost": 0,
-          "goals_for": 2.2,
-          "goals_against": 1.6,
-          "xg_for": 1.83,
-          "xg_against": 1.2,
-          "shots_for": 16.8,
-          "shots_against": 13.4,
-          "shots_on_target_for": 6.6,
-          "shots_on_target_against": 5.0,
-          "corners_for": 6.4,
-          "corners_against": 6.6,
-          "yellow_cards": 2.4,
-          "red_cards": 0.2,
-          "btts_pct": 1.0,
+          "lost": 1,
+          "goals_for": 1.83,
+          "goals_against": 1.83,
+          "xg_for": 1.69,
+          "xg_against": 1.56,
+          "shots_for": 15.67,
+          "shots_against": 14.83,
+          "shots_on_target_for": 5.67,
+          "shots_on_target_against": 5.33,
+          "corners_for": 6.0,
+          "corners_against": 6.5,
+          "yellow_cards": 2.33,
+          "red_cards": 0.17,
+          "btts_pct": 0.833,
           "over_2_5_pct": 1.0,
           "clean_sheets": 0
         },
         "away": {
           "matches": 5,
-          "position": 13,
+          "position": 16,
           "points": 11,
           "won": 0,
           "drawn": 0,
@@ -3417,6 +3417,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Real Madrid",
+          "goals_for": 0,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 0.97,
+          "xg_against": 3.36,
+          "shots_for": 10,
+          "shots_against": 22,
+          "shots_on_target_for": 1,
+          "shots_on_target_against": 7,
+          "corners_for": 4,
+          "corners_against": 6,
+          "cards_for": 2,
+          "cards_against": 0
+        },
         {
           "date": "2026-10-24",
           "league": "SP1",
@@ -3511,51 +3530,32 @@
           "corners_against": 18,
           "cards_for": 2,
           "cards_against": 3
-        },
-        {
-          "date": "2026-09-12",
-          "league": "SP1",
-          "venue": "H",
-          "opponent": "Alaves",
-          "goals_for": 2,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": 2.02,
-          "xg_against": 1.98,
-          "shots_for": 11,
-          "shots_against": 16,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 8,
-          "corners_for": 4,
-          "corners_against": 6,
-          "cards_for": 4,
-          "cards_against": 3
         }
       ]
     },
     "Sevilla": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 6,
           "points": 17,
           "won": 5,
           "drawn": 2,
-          "lost": 3,
-          "goals_for": 1.6,
-          "goals_against": 1.6,
-          "xg_for": 1.05,
-          "xg_against": 1.38,
-          "shots_for": 12.3,
-          "shots_against": 12.4,
-          "shots_on_target_for": 4.6,
-          "shots_on_target_against": 4.7,
-          "corners_for": 3.4,
-          "corners_against": 3.5,
-          "yellow_cards": 2.7,
-          "red_cards": 0.3,
-          "btts_pct": 0.7,
-          "over_2_5_pct": 0.6,
+          "lost": 4,
+          "goals_for": 1.55,
+          "goals_against": 1.73,
+          "xg_for": 1.03,
+          "xg_against": 1.4,
+          "shots_for": 12.27,
+          "shots_against": 12.27,
+          "shots_on_target_for": 4.55,
+          "shots_on_target_against": 4.73,
+          "corners_for": 3.27,
+          "corners_against": 3.36,
+          "yellow_cards": 2.82,
+          "red_cards": 0.36,
+          "btts_pct": 0.727,
+          "over_2_5_pct": 0.636,
           "clean_sheets": 3
         },
         "home": {
@@ -3582,30 +3582,49 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 5,
+          "matches": 6,
           "position": 6,
           "points": 17,
           "won": 2,
           "drawn": 2,
-          "lost": 1,
-          "goals_for": 1.8,
-          "goals_against": 1.8,
-          "xg_for": 0.99,
-          "xg_against": 1.37,
-          "shots_for": 10.6,
-          "shots_against": 13.8,
-          "shots_on_target_for": 4.6,
-          "shots_on_target_against": 6.0,
-          "corners_for": 3.0,
-          "corners_against": 4.0,
-          "yellow_cards": 3.6,
-          "red_cards": 0.4,
-          "btts_pct": 0.8,
-          "over_2_5_pct": 0.6,
+          "lost": 2,
+          "goals_for": 1.67,
+          "goals_against": 2.0,
+          "xg_for": 0.95,
+          "xg_against": 1.4,
+          "shots_for": 10.83,
+          "shots_against": 13.33,
+          "shots_on_target_for": 4.5,
+          "shots_on_target_against": 5.83,
+          "corners_for": 2.83,
+          "corners_against": 3.67,
+          "yellow_cards": 3.67,
+          "red_cards": 0.5,
+          "btts_pct": 0.833,
+          "over_2_5_pct": 0.667,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "Getafe",
+          "goals_for": 1,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 0.77,
+          "xg_against": 1.58,
+          "shots_for": 12,
+          "shots_against": 11,
+          "shots_on_target_for": 4,
+          "shots_on_target_against": 5,
+          "corners_for": 2,
+          "corners_against": 2,
+          "cards_for": 6,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-26",
           "league": "SP1",
@@ -3700,51 +3719,32 @@
           "corners_against": 4,
           "cards_for": 4,
           "cards_against": 3
-        },
-        {
-          "date": "2026-09-11",
-          "league": "SP1",
-          "venue": "H",
-          "opponent": "Valencia",
-          "goals_for": 1,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 0.93,
-          "xg_against": 0.1,
-          "shots_for": 13,
-          "shots_against": 3,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 0,
-          "corners_for": 6,
-          "corners_against": 4,
-          "cards_for": 1,
-          "cards_against": 2
         }
       ]
     },
     "Sociedad": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 5,
           "points": 19,
           "won": 6,
           "drawn": 1,
-          "lost": 3,
-          "goals_for": 1.9,
-          "goals_against": 1.8,
-          "xg_for": 1.42,
-          "xg_against": 1.54,
-          "shots_for": 14.4,
-          "shots_against": 15.5,
-          "shots_on_target_for": 5.2,
-          "shots_on_target_against": 5.8,
-          "corners_for": 6.5,
-          "corners_against": 4.7,
-          "yellow_cards": 1.9,
-          "red_cards": 0.3,
-          "btts_pct": 0.7,
-          "over_2_5_pct": 0.8,
+          "lost": 4,
+          "goals_for": 1.82,
+          "goals_against": 1.82,
+          "xg_for": 1.39,
+          "xg_against": 1.68,
+          "shots_for": 14.36,
+          "shots_against": 15.27,
+          "shots_on_target_for": 5.18,
+          "shots_on_target_against": 5.55,
+          "corners_for": 6.64,
+          "corners_against": 4.73,
+          "yellow_cards": 2.09,
+          "red_cards": 0.27,
+          "btts_pct": 0.727,
+          "over_2_5_pct": 0.818,
           "clean_sheets": 1
         },
         "home": {
@@ -3771,30 +3771,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 5,
+          "matches": 6,
           "position": 5,
           "points": 19,
           "won": 3,
           "drawn": 0,
-          "lost": 2,
-          "goals_for": 2.4,
-          "goals_against": 2.2,
-          "xg_for": 1.52,
-          "xg_against": 1.93,
-          "shots_for": 14.8,
-          "shots_against": 19.4,
-          "shots_on_target_for": 5.4,
-          "shots_on_target_against": 7.8,
-          "corners_for": 5.8,
+          "lost": 3,
+          "goals_for": 2.17,
+          "goals_against": 2.17,
+          "xg_for": 1.46,
+          "xg_against": 2.12,
+          "shots_for": 14.67,
+          "shots_against": 18.33,
+          "shots_on_target_for": 5.33,
+          "shots_on_target_against": 7.0,
+          "corners_for": 6.17,
           "corners_against": 5.0,
-          "yellow_cards": 2.0,
-          "red_cards": 0.4,
-          "btts_pct": 0.8,
-          "over_2_5_pct": 0.8,
+          "yellow_cards": 2.33,
+          "red_cards": 0.33,
+          "btts_pct": 0.833,
+          "over_2_5_pct": 0.833,
           "clean_sheets": 0
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "Ath Bilbao",
+          "goals_for": 1,
+          "goals_against": 2,
+          "result": "L",
+          "xg_for": 1.15,
+          "xg_against": 3.08,
+          "shots_for": 14,
+          "shots_against": 13,
+          "shots_on_target_for": 5,
+          "shots_on_target_against": 3,
+          "corners_for": 8,
+          "corners_against": 5,
+          "cards_for": 4,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-25",
           "league": "SP1",
@@ -3889,57 +3908,38 @@
           "corners_against": 3,
           "cards_for": 3,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-07",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Elche",
-          "goals_for": 3,
-          "goals_against": 2,
-          "result": "W",
-          "xg_for": 0.58,
-          "xg_against": 2.47,
-          "shots_for": 13,
-          "shots_against": 20,
-          "shots_on_target_for": 6,
-          "shots_on_target_against": 10,
-          "corners_for": 7,
-          "corners_against": 6,
-          "cards_for": 3,
-          "cards_against": 4
         }
       ]
     },
     "Valencia": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 19,
-          "points": 6,
-          "won": 1,
+          "points": 9,
+          "won": 2,
           "drawn": 3,
           "lost": 6,
-          "goals_for": 0.7,
-          "goals_against": 1.7,
-          "xg_for": 1.03,
-          "xg_against": 1.49,
-          "shots_for": 10.9,
-          "shots_against": 15.5,
-          "shots_on_target_for": 2.9,
-          "shots_on_target_against": 4.9,
-          "corners_for": 4.2,
-          "corners_against": 4.9,
-          "yellow_cards": 2.5,
-          "red_cards": 0.1,
-          "btts_pct": 0.4,
-          "over_2_5_pct": 0.5,
-          "clean_sheets": 3
+          "goals_for": 0.73,
+          "goals_against": 1.55,
+          "xg_for": 1.02,
+          "xg_against": 1.47,
+          "shots_for": 10.36,
+          "shots_against": 15.55,
+          "shots_on_target_for": 2.91,
+          "shots_on_target_against": 4.73,
+          "corners_for": 4.0,
+          "corners_against": 5.0,
+          "yellow_cards": 2.45,
+          "red_cards": 0.09,
+          "btts_pct": 0.364,
+          "over_2_5_pct": 0.455,
+          "clean_sheets": 4
         },
         "home": {
           "matches": 6,
           "position": 19,
-          "points": 6,
+          "points": 9,
           "won": 0,
           "drawn": 2,
           "lost": 4,
@@ -3960,30 +3960,49 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 4,
+          "matches": 5,
           "position": 19,
-          "points": 6,
-          "won": 1,
+          "points": 9,
+          "won": 2,
           "drawn": 1,
           "lost": 2,
           "goals_for": 1.0,
-          "goals_against": 1.5,
-          "xg_for": 0.97,
-          "xg_against": 1.17,
-          "shots_for": 8.75,
-          "shots_against": 14.75,
-          "shots_on_target_for": 2.25,
-          "shots_on_target_against": 5.5,
-          "corners_for": 4.25,
-          "corners_against": 5.25,
-          "yellow_cards": 2.5,
+          "goals_against": 1.2,
+          "xg_for": 0.96,
+          "xg_against": 1.19,
+          "shots_for": 8.0,
+          "shots_against": 15.0,
+          "shots_on_target_for": 2.4,
+          "shots_on_target_against": 5.0,
+          "corners_for": 3.8,
+          "corners_against": 5.4,
+          "yellow_cards": 2.4,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.5,
-          "clean_sheets": 1
+          "btts_pct": 0.4,
+          "over_2_5_pct": 0.4,
+          "clean_sheets": 2
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "Elche",
+          "goals_for": 1,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 0.9,
+          "xg_against": 1.25,
+          "shots_for": 5,
+          "shots_against": 16,
+          "shots_on_target_for": 3,
+          "shots_on_target_against": 3,
+          "corners_for": 2,
+          "corners_against": 6,
+          "cards_for": 2,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-24",
           "league": "SP1",
@@ -4078,80 +4097,61 @@
           "corners_against": 2,
           "cards_for": 4,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-11",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Sevilla",
-          "goals_for": 0,
-          "goals_against": 1,
-          "result": "L",
-          "xg_for": 0.1,
-          "xg_against": 0.93,
-          "shots_for": 3,
-          "shots_against": 13,
-          "shots_on_target_for": 0,
-          "shots_on_target_against": 4,
-          "corners_for": 4,
-          "corners_against": 6,
-          "cards_for": 2,
-          "cards_against": 1
         }
       ]
     },
     "Vallecano": {
       "season": {
         "all": {
-          "matches": 9,
-          "position": 16,
-          "points": 9,
-          "won": 2,
+          "matches": 10,
+          "position": 11,
+          "points": 12,
+          "won": 3,
           "drawn": 3,
           "lost": 4,
-          "goals_for": 1.33,
-          "goals_against": 2.22,
-          "xg_for": 1.4,
-          "xg_against": 1.72,
-          "shots_for": 14.78,
-          "shots_against": 16.0,
-          "shots_on_target_for": 4.67,
-          "shots_on_target_against": 5.78,
-          "corners_for": 5.33,
-          "corners_against": 6.0,
-          "yellow_cards": 2.56,
-          "red_cards": 0.22,
-          "btts_pct": 0.889,
-          "over_2_5_pct": 0.667,
-          "clean_sheets": 0
+          "goals_for": 1.5,
+          "goals_against": 2.0,
+          "xg_for": 1.37,
+          "xg_against": 1.68,
+          "shots_for": 14.7,
+          "shots_against": 15.5,
+          "shots_on_target_for": 5.0,
+          "shots_on_target_against": 5.2,
+          "corners_for": 5.2,
+          "corners_against": 5.7,
+          "yellow_cards": 2.5,
+          "red_cards": 0.2,
+          "btts_pct": 0.8,
+          "over_2_5_pct": 0.7,
+          "clean_sheets": 1
         },
         "home": {
-          "matches": 4,
-          "position": 16,
-          "points": 9,
-          "won": 2,
+          "matches": 5,
+          "position": 11,
+          "points": 12,
+          "won": 3,
           "drawn": 1,
           "lost": 1,
-          "goals_for": 1.5,
-          "goals_against": 1.75,
-          "xg_for": 1.31,
-          "xg_against": 1.67,
-          "shots_for": 14.5,
-          "shots_against": 14.75,
-          "shots_on_target_for": 5.0,
-          "shots_on_target_against": 5.25,
-          "corners_for": 6.0,
-          "corners_against": 5.25,
-          "yellow_cards": 3.0,
-          "red_cards": 0.5,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.75,
-          "clean_sheets": 0
+          "goals_for": 1.8,
+          "goals_against": 1.4,
+          "xg_for": 1.27,
+          "xg_against": 1.61,
+          "shots_for": 14.4,
+          "shots_against": 14.0,
+          "shots_on_target_for": 5.6,
+          "shots_on_target_against": 4.2,
+          "corners_for": 5.6,
+          "corners_against": 4.8,
+          "yellow_cards": 2.8,
+          "red_cards": 0.4,
+          "btts_pct": 0.6,
+          "over_2_5_pct": 0.8,
+          "clean_sheets": 1
         },
         "away": {
           "matches": 5,
-          "position": 16,
-          "points": 9,
+          "position": 11,
+          "points": 12,
           "won": 0,
           "drawn": 2,
           "lost": 3,
@@ -4173,6 +4173,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Celta",
+          "goals_for": 3,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 1.09,
+          "xg_against": 1.39,
+          "shots_for": 14,
+          "shots_against": 11,
+          "shots_on_target_for": 8,
+          "shots_on_target_against": 0,
+          "corners_for": 4,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-24",
           "league": "SP1",
@@ -4267,79 +4286,60 @@
           "corners_against": 11,
           "cards_for": 1,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-05",
-          "league": "SP1",
-          "venue": "H",
-          "opponent": "Santander",
-          "goals_for": 3,
-          "goals_against": 2,
-          "result": "W",
-          "xg_for": 1.61,
-          "xg_against": 0.48,
-          "shots_for": 16,
-          "shots_against": 9,
-          "shots_on_target_for": 10,
-          "shots_on_target_against": 4,
-          "corners_for": 9,
-          "corners_against": 6,
-          "cards_for": 7,
-          "cards_against": 2
         }
       ]
     },
     "Villarreal": {
       "season": {
         "all": {
-          "matches": 10,
-          "position": 10,
+          "matches": 11,
+          "position": 8,
           "points": 12,
           "won": 3,
           "drawn": 3,
-          "lost": 4,
-          "goals_for": 1.5,
-          "goals_against": 1.4,
-          "xg_for": 2.08,
-          "xg_against": 1.18,
-          "shots_for": 16.6,
-          "shots_against": 11.7,
-          "shots_on_target_for": 6.0,
-          "shots_on_target_against": 3.6,
-          "corners_for": 7.3,
-          "corners_against": 4.6,
-          "yellow_cards": 1.8,
-          "red_cards": 0.1,
-          "btts_pct": 0.7,
-          "over_2_5_pct": 0.7,
+          "lost": 5,
+          "goals_for": 1.36,
+          "goals_against": 1.36,
+          "xg_for": 1.97,
+          "xg_against": 1.09,
+          "shots_for": 16.36,
+          "shots_against": 11.09,
+          "shots_on_target_for": 5.82,
+          "shots_on_target_against": 3.55,
+          "corners_for": 7.27,
+          "corners_against": 4.45,
+          "yellow_cards": 1.91,
+          "red_cards": 0.09,
+          "btts_pct": 0.636,
+          "over_2_5_pct": 0.636,
           "clean_sheets": 1
         },
         "home": {
-          "matches": 4,
-          "position": 10,
+          "matches": 5,
+          "position": 8,
           "points": 12,
           "won": 1,
           "drawn": 1,
-          "lost": 2,
-          "goals_for": 1.5,
-          "goals_against": 1.5,
-          "xg_for": 2.44,
-          "xg_against": 1.27,
-          "shots_for": 18.0,
-          "shots_against": 11.75,
-          "shots_on_target_for": 6.75,
-          "shots_on_target_against": 4.25,
-          "corners_for": 7.75,
-          "corners_against": 2.75,
-          "yellow_cards": 1.5,
+          "lost": 3,
+          "goals_for": 1.2,
+          "goals_against": 1.4,
+          "xg_for": 2.13,
+          "xg_against": 1.06,
+          "shots_for": 17.2,
+          "shots_against": 10.4,
+          "shots_on_target_for": 6.2,
+          "shots_on_target_against": 4.0,
+          "corners_for": 7.6,
+          "corners_against": 2.8,
+          "yellow_cards": 1.8,
           "red_cards": 0.0,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.6,
+          "over_2_5_pct": 0.6,
           "clean_sheets": 1
         },
         "away": {
           "matches": 6,
-          "position": 10,
+          "position": 8,
           "points": 12,
           "won": 2,
           "drawn": 2,
@@ -4362,6 +4362,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-30",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Espanol",
+          "goals_for": 0,
+          "goals_against": 1,
+          "result": "L",
+          "xg_for": 0.88,
+          "xg_against": 0.22,
+          "shots_for": 14,
+          "shots_against": 5,
+          "shots_on_target_for": 4,
+          "shots_on_target_against": 3,
+          "corners_for": 7,
+          "corners_against": 3,
+          "cards_for": 3,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-24",
           "league": "SP1",
@@ -4455,25 +4474,6 @@
           "corners_for": 8,
           "corners_against": 4,
           "cards_for": 0,
-          "cards_against": 0
-        },
-        {
-          "date": "2026-09-14",
-          "league": "SP1",
-          "venue": "H",
-          "opponent": "Betis",
-          "goals_for": 1,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": 1.9,
-          "xg_against": 3.52,
-          "shots_for": 14,
-          "shots_against": 26,
-          "shots_on_target_for": 8,
-          "shots_on_target_against": 12,
-          "corners_for": 7,
-          "corners_against": 4,
-          "cards_for": 1,
           "cards_against": 0
         }
       ]
