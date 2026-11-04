@@ -2,693 +2,693 @@
   "league": "E0",
   "season": "2026/27",
   "goals": {
-    "home_advantage": 0.1751,
-    "rho": -0.0928,
+    "home_advantage": 0.173,
+    "rho": -0.0858,
     "teams": {
       "Arsenal": {
-        "attack": 0.3089,
-        "defense": -0.4897
+        "attack": 0.3104,
+        "defense": -0.4866
       },
       "Aston Villa": {
-        "attack": 0.1316,
-        "defense": 0.1039
+        "attack": 0.1325,
+        "defense": 0.1064
       },
       "Bournemouth": {
-        "attack": 0.1854,
-        "defense": 0.1127
+        "attack": 0.1868,
+        "defense": 0.1145
       },
       "Brentford": {
-        "attack": 0.2212,
-        "defense": 0.1115
+        "attack": 0.2215,
+        "defense": 0.1126
       },
       "Brighton": {
-        "attack": 0.3056,
-        "defense": 0.0076
+        "attack": 0.3064,
+        "defense": 0.0094
       },
       "Burnley": {
-        "attack": -0.2242,
-        "defense": 0.4871
+        "attack": -0.223,
+        "defense": 0.4885
       },
       "Chelsea": {
-        "attack": 0.2641,
-        "defense": 0.1535
+        "attack": 0.2657,
+        "defense": 0.1551
       },
       "Coventry": {
-        "attack": -0.1432,
-        "defense": 0.3603
+        "attack": -0.141,
+        "defense": 0.3639
       },
       "Crystal Palace": {
-        "attack": -0.1034,
-        "defense": 0.2794
+        "attack": -0.1027,
+        "defense": 0.2814
       },
       "Everton": {
-        "attack": -0.0995,
-        "defense": 0.0373
+        "attack": -0.1027,
+        "defense": 0.0069
       },
       "Fulham": {
-        "attack": -0.0685,
-        "defense": 0.1019
+        "attack": -0.0675,
+        "defense": 0.1036
       },
       "Hull": {
-        "attack": -0.1203,
-        "defense": -0.0257
+        "attack": -0.1173,
+        "defense": -0.0221
       },
       "Ipswich": {
-        "attack": -0.034,
-        "defense": 0.5824
+        "attack": -0.0316,
+        "defense": 0.5836
       },
       "Leeds": {
         "attack": -0.0239,
-        "defense": 0.054
+        "defense": 0.0556
       },
       "Leicester": {
-        "attack": -0.4547,
-        "defense": 0.5466
+        "attack": -0.4536,
+        "defense": 0.5485
       },
       "Liverpool": {
-        "attack": 0.2997,
-        "defense": 0.0362
+        "attack": 0.3005,
+        "defense": 0.0385
       },
       "Man City": {
-        "attack": 0.4219,
-        "defense": -0.1453
+        "attack": 0.4228,
+        "defense": -0.1435
       },
       "Man United": {
-        "attack": 0.1565,
-        "defense": 0.1646
+        "attack": 0.1582,
+        "defense": 0.1665
       },
       "Newcastle": {
-        "attack": 0.1772,
-        "defense": 0.2189
+        "attack": 0.1519,
+        "defense": 0.2168
       },
       "Nott'm Forest": {
-        "attack": -0.0462,
-        "defense": 0.0758
+        "attack": -0.045,
+        "defense": 0.0772
       },
       "Southampton": {
-        "attack": -0.6321,
-        "defense": 0.6313
+        "attack": -0.6306,
+        "defense": 0.6328
       },
       "Sunderland": {
-        "attack": -0.1919,
-        "defense": 0.1752
+        "attack": -0.1917,
+        "defense": 0.1768
       },
       "Tottenham": {
-        "attack": 0.0137,
-        "defense": 0.2323
+        "attack": 0.0153,
+        "defense": 0.2342
       },
       "West Ham": {
-        "attack": -0.0417,
-        "defense": 0.3114
+        "attack": -0.0406,
+        "defense": 0.3133
       },
       "Wolves": {
-        "attack": -0.3022,
-        "defense": 0.3723
+        "attack": -0.3008,
+        "defense": 0.374
       }
     }
   },
   "stats": {
     "corners": {
-      "avg_home": 5.2867,
-      "avg_away": 4.586,
-      "dispersion_team": 21.761,
+      "avg_home": 5.2821,
+      "avg_away": 4.5875,
+      "dispersion_team": 21.7876,
       "dispersion_total": null,
       "teams": {
         "Arsenal": {
-          "home_for": 1.1189,
-          "home_against": 0.7358,
-          "away_for": 1.0839,
-          "away_against": 0.8627
+          "home_for": 1.1196,
+          "home_against": 0.7357,
+          "away_for": 1.0836,
+          "away_against": 0.8632
         },
         "Aston Villa": {
-          "home_for": 0.9694,
-          "home_against": 1.0168,
-          "away_for": 0.9657,
-          "away_against": 0.9809
+          "home_for": 0.97,
+          "home_against": 1.0166,
+          "away_for": 0.9655,
+          "away_against": 0.9815
         },
         "Bournemouth": {
-          "home_for": 1.0421,
-          "home_against": 0.8826,
-          "away_for": 1.0482,
-          "away_against": 1.0985
+          "home_for": 1.0428,
+          "home_against": 0.8824,
+          "away_for": 1.0479,
+          "away_against": 1.0992
         },
         "Brentford": {
-          "home_for": 0.8627,
-          "home_against": 1.0951,
-          "away_for": 1.0305,
-          "away_against": 1.0064
+          "home_for": 0.8632,
+          "home_against": 1.0948,
+          "away_for": 1.0303,
+          "away_against": 1.0071
         },
         "Brighton": {
-          "home_for": 1.0064,
-          "home_against": 1.001,
-          "away_for": 0.9777,
-          "away_against": 0.9985
+          "home_for": 1.0071,
+          "home_against": 1.0008,
+          "away_for": 0.9774,
+          "away_against": 0.9991
         },
         "Burnley": {
-          "home_for": 0.8079,
-          "home_against": 1.1945,
-          "away_for": 0.8486,
-          "away_against": 1.0949
+          "home_for": 0.8083,
+          "home_against": 1.1942,
+          "away_for": 0.8484,
+          "away_against": 1.0956
         },
         "Chelsea": {
-          "home_for": 1.1488,
-          "home_against": 1.0168,
-          "away_for": 1.172,
-          "away_against": 0.9349
+          "home_for": 1.1496,
+          "home_against": 1.0166,
+          "away_for": 1.1717,
+          "away_against": 0.9354
         },
         "Coventry": {
-          "home_for": 0.8972,
-          "home_against": 0.9579,
-          "away_for": 0.8705,
-          "away_against": 1.0179
+          "home_for": 0.8976,
+          "home_against": 0.9578,
+          "away_for": 0.8704,
+          "away_against": 1.0183
         },
         "Crystal Palace": {
-          "home_for": 0.8991,
-          "home_against": 1.0069,
-          "away_for": 0.7876,
-          "away_against": 1.2264
+          "home_for": 0.8996,
+          "home_against": 1.0067,
+          "away_for": 0.7874,
+          "away_against": 1.2273
         },
         "Everton": {
-          "home_for": 0.9246,
-          "home_against": 0.9539,
-          "away_for": 0.9362,
-          "away_against": 1.1598
+          "home_for": 0.9252,
+          "home_against": 0.9537,
+          "away_for": 0.9439,
+          "away_against": 1.1399
         },
         "Fulham": {
-          "home_for": 1.0729,
-          "home_against": 1.1425,
-          "away_for": 1.0559,
-          "away_against": 0.9548
+          "home_for": 1.0736,
+          "home_against": 1.1422,
+          "away_for": 1.0557,
+          "away_against": 0.9554
         },
         "Hull": {
-          "home_for": 0.9161,
-          "home_against": 1.0451,
-          "away_for": 0.919,
-          "away_against": 1.1861
+          "home_for": 0.9165,
+          "home_against": 1.045,
+          "away_for": 0.9189,
+          "away_against": 1.1866
         },
         "Ipswich": {
-          "home_for": 0.7447,
-          "home_against": 0.9917,
-          "away_for": 0.8707,
-          "away_against": 0.9918
+          "home_for": 0.7449,
+          "home_against": 0.9915,
+          "away_for": 0.8706,
+          "away_against": 0.9922
         },
         "Leeds": {
-          "home_for": 0.9758,
-          "home_against": 0.9421,
-          "away_for": 0.8379,
-          "away_against": 0.9985
+          "home_for": 0.9764,
+          "home_against": 0.9419,
+          "away_for": 0.8377,
+          "away_against": 0.9991
         },
         "Liverpool": {
-          "home_for": 1.0664,
-          "home_against": 1.0448,
-          "away_for": 1.1837,
-          "away_against": 0.7815
+          "home_for": 1.0671,
+          "home_against": 1.0445,
+          "away_for": 1.1834,
+          "away_against": 0.7819
         },
         "Man City": {
-          "home_for": 1.1876,
-          "home_against": 0.8099,
-          "away_for": 1.2309,
-          "away_against": 0.8633
+          "home_for": 1.1884,
+          "home_against": 0.8098,
+          "away_for": 1.2306,
+          "away_against": 0.8638
         },
         "Man United": {
-          "home_for": 1.0167,
-          "home_against": 0.9952,
-          "away_for": 1.0727,
-          "away_against": 0.9209
+          "home_for": 1.0173,
+          "home_against": 0.9949,
+          "away_for": 1.0725,
+          "away_against": 0.9214
         },
         "Newcastle": {
-          "home_for": 1.0729,
-          "home_against": 1.0718,
-          "away_for": 1.1307,
-          "away_against": 0.9809
+          "home_for": 1.0574,
+          "home_against": 1.0725,
+          "away_for": 1.1304,
+          "away_against": 0.9815
         },
         "Nott'm Forest": {
-          "home_for": 1.0473,
-          "home_against": 0.9421,
-          "away_for": 0.9888,
-          "away_against": 0.95
+          "home_for": 1.048,
+          "home_against": 0.9419,
+          "away_for": 0.9886,
+          "away_against": 0.9506
         },
         "Sunderland": {
-          "home_for": 0.848,
-          "home_against": 1.0187,
-          "away_for": 0.8379,
-          "away_against": 0.9839
+          "home_for": 0.8485,
+          "home_against": 1.0185,
+          "away_for": 0.8377,
+          "away_against": 0.9846
         },
         "Tottenham": {
-          "home_for": 1.2895,
-          "home_against": 0.9944,
-          "away_for": 1.0777,
-          "away_against": 0.8633
+          "home_for": 1.2904,
+          "home_against": 0.9942,
+          "away_for": 1.0774,
+          "away_against": 0.8638
         },
         "West Ham": {
-          "home_for": 1.0036,
-          "home_against": 1.1268,
-          "away_for": 0.9915,
-          "away_against": 1.1797
+          "home_for": 1.0042,
+          "home_against": 1.1266,
+          "away_for": 0.9913,
+          "away_against": 1.1804
         },
         "Wolves": {
-          "home_for": 0.7362,
-          "home_against": 1.1118,
-          "away_for": 0.8712,
-          "away_against": 1.1667
+          "home_for": 0.7365,
+          "home_against": 1.1115,
+          "away_for": 0.871,
+          "away_against": 1.1674
         }
       }
     },
     "cards": {
-      "avg_home": 1.8369,
-      "avg_away": 2.2706,
+      "avg_home": 1.8518,
+      "avg_away": 2.2696,
       "dispersion_team": null,
       "dispersion_total": null,
       "teams": {
         "Arsenal": {
-          "home_for": 0.6675,
-          "home_against": 1.0202,
-          "away_for": 0.8436,
-          "away_against": 1.3033
+          "home_for": 0.6643,
+          "home_against": 1.0205,
+          "away_for": 0.8439,
+          "away_against": 1.2949
         },
         "Aston Villa": {
-          "home_for": 0.9683,
-          "home_against": 1.2163,
-          "away_for": 0.8773,
-          "away_against": 1.2266
+          "home_for": 0.9626,
+          "home_against": 1.2167,
+          "away_for": 0.8776,
+          "away_against": 1.219
         },
         "Bournemouth": {
-          "home_for": 1.2196,
-          "home_against": 0.934,
-          "away_for": 1.1154,
-          "away_against": 1.0648
+          "home_for": 1.2118,
+          "home_against": 0.9343,
+          "away_for": 1.1157,
+          "away_against": 1.0584
         },
         "Brentford": {
-          "home_for": 1.066,
-          "home_against": 0.8549,
-          "away_for": 1.0202,
-          "away_against": 1.0206
+          "home_for": 1.0595,
+          "home_against": 0.8552,
+          "away_for": 1.0205,
+          "away_against": 1.0146
         },
         "Brighton": {
-          "home_for": 1.0942,
-          "home_against": 0.9844,
-          "away_for": 1.0921,
-          "away_against": 0.8846
+          "home_for": 1.0876,
+          "home_against": 0.9848,
+          "away_for": 1.0924,
+          "away_against": 0.8795
         },
         "Burnley": {
-          "home_for": 0.7954,
-          "home_against": 0.6637,
-          "away_for": 1.013,
-          "away_against": 0.8329
+          "home_for": 0.7917,
+          "home_against": 0.6639,
+          "away_for": 1.0133,
+          "away_against": 0.829
         },
         "Chelsea": {
-          "home_for": 1.1777,
-          "home_against": 1.3066,
-          "away_for": 1.1868,
-          "away_against": 1.0942
+          "home_for": 1.1703,
+          "home_against": 1.3071,
+          "away_for": 1.1872,
+          "away_against": 1.0876
         },
         "Coventry": {
-          "home_for": 0.8266,
-          "home_against": 0.9845,
-          "away_for": 0.8492,
-          "away_against": 0.858
+          "home_for": 0.824,
+          "home_against": 0.9847,
+          "away_for": 0.8493,
+          "away_against": 0.8556
         },
         "Crystal Palace": {
-          "home_for": 1.0059,
-          "home_against": 1.0202,
-          "away_for": 0.9565,
-          "away_against": 0.745
+          "home_for": 1.0,
+          "home_against": 1.0205,
+          "away_for": 0.9568,
+          "away_against": 0.741
         },
         "Everton": {
-          "home_for": 1.1089,
-          "home_against": 0.9844,
-          "away_for": 0.9368,
-          "away_against": 0.8147
+          "home_for": 1.1022,
+          "home_against": 0.9848,
+          "away_for": 0.9343,
+          "away_against": 0.9349
         },
         "Fulham": {
-          "home_for": 1.0942,
-          "home_against": 0.9606,
-          "away_for": 0.9678,
-          "away_against": 0.6612
+          "home_for": 1.0876,
+          "home_against": 0.9609,
+          "away_for": 0.9681,
+          "away_against": 0.658
         },
         "Hull": {
-          "home_for": 0.99,
-          "home_against": 0.7202,
-          "away_for": 1.2896,
-          "away_against": 0.979
+          "home_for": 0.986,
+          "home_against": 0.7203,
+          "away_for": 1.2899,
+          "away_against": 0.9756
         },
         "Ipswich": {
-          "home_for": 0.7975,
-          "home_against": 1.0938,
-          "away_for": 1.1166,
-          "away_against": 1.0444
+          "home_for": 0.7956,
+          "home_against": 1.0941,
+          "away_for": 1.1168,
+          "away_against": 1.04
         },
         "Leeds": {
-          "home_for": 0.8735,
-          "home_against": 0.9725,
-          "away_for": 0.9001,
-          "away_against": 0.9543
+          "home_for": 0.8687,
+          "home_against": 0.9728,
+          "away_for": 0.9004,
+          "away_against": 0.9487
         },
         "Liverpool": {
-          "home_for": 0.9823,
-          "home_against": 0.9453,
-          "away_for": 0.9487,
-          "away_against": 1.3591
+          "home_for": 0.9764,
+          "home_against": 0.9456,
+          "away_for": 0.949,
+          "away_against": 1.3503
         },
         "Man City": {
-          "home_for": 0.745,
-          "home_against": 1.013,
-          "away_for": 1.0083,
-          "away_against": 1.1384
+          "home_for": 0.741,
+          "home_against": 1.0133,
+          "away_for": 1.0086,
+          "away_against": 1.1314
         },
         "Man United": {
-          "home_for": 1.0942,
-          "home_against": 1.2344,
-          "away_for": 0.934,
-          "away_against": 0.9823
+          "home_for": 1.0876,
+          "home_against": 1.2348,
+          "away_for": 0.9343,
+          "away_against": 0.9764
         },
         "Newcastle": {
-          "home_for": 1.1678,
-          "home_against": 1.282,
-          "away_for": 0.8654,
-          "away_against": 0.9471
+          "home_for": 1.2672,
+          "home_against": 1.2619,
+          "away_for": 0.8657,
+          "away_against": 0.9416
         },
         "Nott'm Forest": {
-          "home_for": 0.8294,
-          "home_against": 0.7226,
-          "away_for": 0.9565,
-          "away_against": 1.066
+          "home_for": 0.8249,
+          "home_against": 0.7228,
+          "away_for": 0.9568,
+          "away_against": 1.0595
         },
         "Sunderland": {
-          "home_for": 1.1089,
-          "home_against": 0.9844,
-          "away_for": 1.1034,
-          "away_against": 0.9125
+          "home_for": 1.1022,
+          "home_against": 0.9848,
+          "away_for": 1.1037,
+          "away_against": 0.9072
         },
         "Tottenham": {
-          "home_for": 1.1916,
-          "home_against": 0.9904,
-          "away_for": 1.1035,
-          "away_against": 1.1531
+          "home_for": 1.1841,
+          "home_against": 0.9907,
+          "away_for": 1.1038,
+          "away_against": 1.146
         },
         "West Ham": {
-          "home_for": 0.9831,
-          "home_against": 0.9675,
-          "away_for": 0.9371,
-          "away_against": 0.9831
+          "home_for": 0.978,
+          "home_against": 0.9677,
+          "away_for": 0.9374,
+          "away_against": 0.978
         },
         "Wolves": {
-          "home_for": 0.9455,
-          "home_against": 0.9523,
-          "away_for": 1.1345,
-          "away_against": 0.8704
+          "home_for": 0.9407,
+          "home_against": 0.9525,
+          "away_for": 1.1349,
+          "away_against": 0.8662
         }
       }
     },
     "shots": {
-      "avg_home": 14.0771,
-      "avg_away": 11.6595,
-      "dispersion_team": 36.2607,
-      "dispersion_total": 887.9203,
+      "avg_home": 14.0875,
+      "avg_away": 11.675,
+      "dispersion_team": 36.5857,
+      "dispersion_total": 939.0458,
       "teams": {
         "Arsenal": {
-          "home_for": 1.1208,
-          "home_against": 0.7431,
-          "away_for": 1.0107,
-          "away_against": 0.8247
+          "home_for": 1.1202,
+          "home_against": 0.7425,
+          "away_for": 1.0097,
+          "away_against": 0.8243
         },
         "Aston Villa": {
-          "home_for": 0.9431,
-          "home_against": 1.0481,
-          "away_for": 1.012,
-          "away_against": 1.0574
+          "home_for": 0.9426,
+          "home_against": 1.0471,
+          "away_for": 1.0111,
+          "away_against": 1.0569
         },
         "Bournemouth": {
-          "home_for": 1.0706,
-          "home_against": 0.8458,
-          "away_for": 1.0399,
-          "away_against": 1.0382
+          "home_for": 1.07,
+          "home_against": 0.845,
+          "away_for": 1.0388,
+          "away_against": 1.0377
         },
         "Brentford": {
-          "home_for": 0.9194,
-          "home_against": 1.0877,
-          "away_for": 0.9495,
-          "away_against": 1.0306
+          "home_for": 0.9189,
+          "home_against": 1.0866,
+          "away_for": 0.9486,
+          "away_against": 1.03
         },
         "Brighton": {
-          "home_for": 1.0613,
-          "home_against": 0.8521,
-          "away_for": 1.0943,
-          "away_against": 1.0032
+          "home_for": 1.0607,
+          "home_against": 0.8513,
+          "away_for": 1.0932,
+          "away_against": 1.0027
         },
         "Burnley": {
-          "home_for": 0.8494,
-          "home_against": 1.2616,
-          "away_for": 0.7855,
-          "away_against": 1.1434
+          "home_for": 0.8491,
+          "home_against": 1.2604,
+          "away_for": 0.7849,
+          "away_against": 1.1428
         },
         "Chelsea": {
-          "home_for": 1.0178,
-          "home_against": 0.9667,
-          "away_for": 1.07,
-          "away_against": 0.8846
+          "home_for": 1.0172,
+          "home_against": 0.9658,
+          "away_for": 1.0689,
+          "away_against": 0.8842
         },
         "Coventry": {
-          "home_for": 0.9191,
-          "home_against": 1.1518,
-          "away_for": 0.9177,
-          "away_against": 1.1475
+          "home_for": 0.9188,
+          "home_against": 1.151,
+          "away_for": 0.9172,
+          "away_against": 1.1471
         },
         "Crystal Palace": {
-          "home_for": 0.948,
-          "home_against": 1.0375,
-          "away_for": 0.848,
-          "away_against": 1.0797
+          "home_for": 0.9475,
+          "home_against": 1.0365,
+          "away_for": 0.8472,
+          "away_against": 1.0791
         },
         "Everton": {
-          "home_for": 0.9499,
-          "home_against": 1.0306,
-          "away_for": 0.9286,
-          "away_against": 1.1093
+          "home_for": 0.9494,
+          "home_against": 1.0296,
+          "away_for": 0.9504,
+          "away_against": 1.1137
         },
         "Fulham": {
-          "home_for": 1.0517,
-          "home_against": 1.0167,
-          "away_for": 0.9865,
-          "away_against": 0.9522
+          "home_for": 1.0511,
+          "home_against": 1.0157,
+          "away_for": 0.9856,
+          "away_against": 0.9517
         },
         "Hull": {
-          "home_for": 0.8481,
-          "home_against": 1.169,
-          "away_for": 1.0034,
-          "away_against": 0.9739
+          "home_for": 0.8478,
+          "home_against": 1.1681,
+          "away_for": 1.0029,
+          "away_against": 0.9736
         },
         "Ipswich": {
-          "home_for": 0.8871,
-          "home_against": 1.0416,
-          "away_for": 0.9889,
-          "away_against": 1.1606
+          "home_for": 0.8868,
+          "home_against": 1.0409,
+          "away_for": 0.9882,
+          "away_against": 1.1602
         },
         "Leeds": {
-          "home_for": 0.9922,
-          "home_against": 1.0051,
-          "away_for": 0.9425,
-          "away_against": 1.0014
+          "home_for": 0.9916,
+          "home_against": 1.0041,
+          "away_for": 0.9416,
+          "away_against": 1.0008
         },
         "Liverpool": {
-          "home_for": 1.107,
-          "home_against": 0.9975,
-          "away_for": 1.1998,
-          "away_against": 0.8808
+          "home_for": 1.1064,
+          "home_against": 0.9965,
+          "away_for": 1.1986,
+          "away_against": 0.8804
         },
         "Man City": {
-          "home_for": 1.1307,
-          "home_against": 0.8436,
-          "away_for": 1.1766,
-          "away_against": 0.8309
+          "home_for": 1.1301,
+          "home_against": 0.8428,
+          "away_for": 1.1754,
+          "away_against": 0.8305
         },
         "Man United": {
-          "home_for": 1.2226,
-          "home_against": 0.8961,
-          "away_for": 1.2108,
-          "away_against": 0.954
+          "home_for": 1.2219,
+          "home_against": 0.8953,
+          "away_for": 1.2096,
+          "away_against": 0.9535
         },
         "Newcastle": {
-          "home_for": 0.9806,
-          "home_against": 1.172,
-          "away_for": 0.9981,
-          "away_against": 0.9595
+          "home_for": 0.9917,
+          "home_against": 1.181,
+          "away_for": 0.9972,
+          "away_against": 0.959
         },
         "Nott'm Forest": {
-          "home_for": 1.0555,
-          "home_against": 0.9889,
-          "away_for": 1.0723,
-          "away_against": 0.9322
+          "home_for": 1.0549,
+          "home_against": 0.9879,
+          "away_for": 1.0712,
+          "away_against": 0.9317
         },
         "Sunderland": {
-          "home_for": 0.9038,
-          "home_against": 1.0097,
-          "away_for": 0.8964,
-          "away_against": 1.118
+          "home_for": 0.9034,
+          "home_against": 1.0087,
+          "away_for": 0.8955,
+          "away_against": 1.1173
         },
         "Tottenham": {
-          "home_for": 1.0633,
-          "home_against": 0.9667,
-          "away_for": 0.9402,
-          "away_against": 0.9614
+          "home_for": 1.0627,
+          "home_against": 0.9658,
+          "away_for": 0.9393,
+          "away_against": 0.9609
         },
         "West Ham": {
-          "home_for": 0.8592,
-          "home_against": 1.1049,
-          "away_for": 0.9186,
-          "away_against": 1.0968
+          "home_for": 0.8589,
+          "home_against": 1.1039,
+          "away_for": 0.9178,
+          "away_against": 1.0963
         },
         "Wolves": {
-          "home_for": 0.8176,
-          "home_against": 1.031,
-          "away_for": 0.8683,
-          "away_against": 1.0699
+          "home_for": 0.8172,
+          "home_against": 1.0301,
+          "away_for": 0.8676,
+          "away_against": 1.0694
         }
       }
     },
     "shots_on_target": {
-      "avg_home": 4.5251,
-      "avg_away": 3.862,
+      "avg_home": 4.5161,
+      "avg_away": 3.8661,
       "dispersion_team": null,
       "dispersion_total": null,
       "teams": {
         "Arsenal": {
-          "home_for": 1.1363,
-          "home_against": 0.7182,
-          "away_for": 1.0332,
-          "away_against": 0.6757
+          "home_for": 1.138,
+          "home_against": 0.7177,
+          "away_for": 1.0324,
+          "away_against": 0.6766
         },
         "Aston Villa": {
-          "home_for": 0.9704,
-          "home_against": 1.1394,
-          "away_for": 0.9561,
-          "away_against": 0.993
+          "home_for": 0.9718,
+          "home_against": 1.1385,
+          "away_for": 0.9554,
+          "away_against": 0.9944
         },
         "Bournemouth": {
-          "home_for": 1.061,
-          "home_against": 0.8208,
-          "away_for": 1.152,
-          "away_against": 1.1124
+          "home_for": 1.0626,
+          "home_against": 0.8202,
+          "away_for": 1.1511,
+          "away_against": 1.1141
         },
         "Brentford": {
-          "home_for": 0.9137,
-          "home_against": 0.9934,
-          "away_for": 0.9911,
-          "away_against": 1.0288
+          "home_for": 0.915,
+          "home_against": 0.9926,
+          "away_for": 0.9903,
+          "away_against": 1.0303
         },
         "Brighton": {
-          "home_for": 1.1303,
-          "home_against": 0.8721,
-          "away_for": 1.0797,
-          "away_against": 0.9817
+          "home_for": 1.1321,
+          "home_against": 0.8715,
+          "away_for": 1.0788,
+          "away_against": 0.9832
         },
         "Burnley": {
-          "home_for": 0.8249,
-          "home_against": 1.3538,
-          "away_for": 0.8359,
-          "away_against": 1.1297
+          "home_for": 0.8259,
+          "home_against": 1.3527,
+          "away_for": 0.8354,
+          "away_against": 1.1313
         },
         "Chelsea": {
-          "home_for": 1.0837,
-          "home_against": 1.0664,
-          "away_for": 1.138,
-          "away_against": 1.0706
+          "home_for": 1.0854,
+          "home_against": 1.0656,
+          "away_for": 1.1371,
+          "away_against": 1.0722
         },
         "Coventry": {
-          "home_for": 0.9641,
-          "home_against": 1.0179,
-          "away_for": 0.7857,
-          "away_against": 0.9975
+          "home_for": 0.965,
+          "home_against": 1.0173,
+          "away_for": 0.7855,
+          "away_against": 0.9984
         },
         "Crystal Palace": {
-          "home_for": 0.9034,
-          "home_against": 1.138,
-          "away_for": 0.9004,
-          "away_against": 1.0837
+          "home_for": 0.9046,
+          "home_against": 1.1371,
+          "away_for": 0.8997,
+          "away_against": 1.0854
         },
         "Everton": {
-          "home_for": 0.975,
-          "home_against": 1.0681,
-          "away_for": 0.9841,
-          "away_against": 0.9631
+          "home_for": 0.9765,
+          "home_against": 1.0672,
+          "away_for": 0.9992,
+          "away_against": 0.9377
         },
         "Fulham": {
-          "home_for": 1.0109,
-          "home_against": 0.9421,
-          "away_for": 0.8938,
-          "away_against": 0.942
+          "home_for": 1.0124,
+          "home_against": 0.9414,
+          "away_for": 0.8931,
+          "away_against": 0.9434
         },
         "Hull": {
-          "home_for": 0.8978,
-          "home_against": 1.0697,
-          "away_for": 0.872,
-          "away_against": 1.0712
+          "home_for": 0.8986,
+          "home_against": 1.0691,
+          "away_for": 0.8717,
+          "away_against": 1.0722
         },
         "Ipswich": {
-          "home_for": 0.9484,
-          "home_against": 1.1597,
-          "away_for": 1.0438,
-          "away_against": 1.0746
+          "home_for": 0.9492,
+          "home_against": 1.1591,
+          "away_for": 1.0432,
+          "away_against": 1.0757
         },
         "Leeds": {
-          "home_for": 0.9452,
-          "home_against": 0.9771,
-          "away_for": 0.9469,
-          "away_against": 1.044
+          "home_for": 0.9465,
+          "home_against": 0.9763,
+          "away_for": 0.9462,
+          "away_against": 1.0456
         },
         "Liverpool": {
-          "home_for": 1.0044,
-          "home_against": 0.9203,
-          "away_for": 1.1171,
-          "away_against": 0.9213
+          "home_for": 1.0059,
+          "home_against": 0.9196,
+          "away_for": 1.1162,
+          "away_against": 0.9226
         },
         "Man City": {
-          "home_for": 1.231,
-          "home_against": 0.927,
-          "away_for": 1.201,
-          "away_against": 0.8317
+          "home_for": 1.233,
+          "home_against": 0.9263,
+          "away_for": 1.2,
+          "away_against": 0.8328
         },
         "Man United": {
-          "home_for": 1.3215,
-          "home_against": 0.9351,
-          "away_for": 1.1195,
-          "away_against": 1.027
+          "home_for": 1.3236,
+          "home_against": 0.9344,
+          "away_for": 1.1186,
+          "away_against": 1.0286
         },
         "Newcastle": {
-          "home_for": 1.0407,
-          "home_against": 1.152,
-          "away_for": 0.9771,
-          "away_against": 1.0109
+          "home_for": 1.0115,
+          "home_against": 1.1584,
+          "away_for": 0.9763,
+          "away_against": 1.0124
         },
         "Nott'm Forest": {
-          "home_for": 0.8317,
-          "home_against": 0.9001,
-          "away_for": 1.0797,
-          "away_against": 0.9704
+          "home_for": 0.8328,
+          "home_against": 0.8994,
+          "away_for": 1.0788,
+          "away_against": 0.9718
         },
         "Sunderland": {
-          "home_for": 0.8257,
-          "home_against": 0.9281,
-          "away_for": 0.927,
-          "away_against": 1.0554
+          "home_for": 0.8268,
+          "home_against": 0.9274,
+          "away_for": 0.9263,
+          "away_against": 1.057
         },
         "Tottenham": {
-          "home_for": 1.0214,
-          "home_against": 0.9403,
-          "away_for": 0.9351,
-          "away_against": 0.9452
+          "home_for": 1.0229,
+          "home_against": 0.9395,
+          "away_for": 0.9344,
+          "away_against": 0.9465
         },
         "West Ham": {
-          "home_for": 0.9011,
-          "home_against": 1.1127,
-          "away_for": 0.9609,
-          "away_against": 1.1678
+          "home_for": 0.9022,
+          "home_against": 1.1119,
+          "away_for": 0.9603,
+          "away_against": 1.1695
         },
         "Wolves": {
-          "home_for": 0.863,
-          "home_against": 1.1038,
-          "away_for": 0.8359,
-          "away_against": 1.0611
+          "home_for": 0.864,
+          "home_against": 1.103,
+          "away_for": 0.8354,
+          "away_against": 1.0626
         }
       }
     }
@@ -887,7 +887,7 @@
       "season": {
         "all": {
           "matches": 9,
-          "position": 9,
+          "position": 10,
           "points": 12,
           "won": 3,
           "drawn": 3,
@@ -910,7 +910,7 @@
         },
         "home": {
           "matches": 5,
-          "position": 9,
+          "position": 10,
           "points": 12,
           "won": 1,
           "drawn": 2,
@@ -933,7 +933,7 @@
         },
         "away": {
           "matches": 4,
-          "position": 9,
+          "position": 10,
           "points": 12,
           "won": 2,
           "drawn": 1,
@@ -1076,7 +1076,7 @@
       "season": {
         "all": {
           "matches": 9,
-          "position": 7,
+          "position": 8,
           "points": 12,
           "won": 3,
           "drawn": 3,
@@ -1099,7 +1099,7 @@
         },
         "home": {
           "matches": 5,
-          "position": 7,
+          "position": 8,
           "points": 12,
           "won": 2,
           "drawn": 2,
@@ -1122,7 +1122,7 @@
         },
         "away": {
           "matches": 4,
-          "position": 7,
+          "position": 8,
           "points": 12,
           "won": 1,
           "drawn": 1,
@@ -2209,32 +2209,32 @@
     "Everton": {
       "season": {
         "all": {
-          "matches": 8,
-          "position": 14,
-          "points": 10,
-          "won": 2,
+          "matches": 9,
+          "position": 7,
+          "points": 13,
+          "won": 3,
           "drawn": 4,
           "lost": 2,
           "goals_for": 1.0,
-          "goals_against": 1.12,
-          "xg_for": 1.26,
+          "goals_against": 1.0,
+          "xg_for": 1.36,
           "xg_against": 1.46,
-          "shots_for": 13.62,
-          "shots_against": 14.5,
-          "shots_on_target_for": 4.75,
-          "shots_on_target_against": 4.25,
-          "corners_for": 4.88,
-          "corners_against": 6.0,
-          "yellow_cards": 1.88,
+          "shots_for": 13.89,
+          "shots_against": 14.78,
+          "shots_on_target_for": 4.78,
+          "shots_on_target_against": 4.0,
+          "corners_for": 4.89,
+          "corners_against": 5.78,
+          "yellow_cards": 1.89,
           "red_cards": 0.0,
-          "btts_pct": 0.375,
-          "over_2_5_pct": 0.25,
-          "clean_sheets": 3
+          "btts_pct": 0.333,
+          "over_2_5_pct": 0.222,
+          "clean_sheets": 4
         },
         "home": {
           "matches": 4,
-          "position": 14,
-          "points": 10,
+          "position": 7,
+          "points": 13,
           "won": 2,
           "drawn": 1,
           "lost": 1,
@@ -2255,30 +2255,49 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 4,
-          "position": 14,
-          "points": 10,
-          "won": 0,
+          "matches": 5,
+          "position": 7,
+          "points": 13,
+          "won": 1,
           "drawn": 3,
           "lost": 1,
-          "goals_for": 0.75,
-          "goals_against": 1.25,
-          "xg_for": 1.31,
-          "xg_against": 1.53,
-          "shots_for": 12.0,
-          "shots_against": 15.0,
+          "goals_for": 0.8,
+          "goals_against": 1.0,
+          "xg_for": 1.48,
+          "xg_against": 1.52,
+          "shots_for": 12.8,
+          "shots_against": 15.4,
           "shots_on_target_for": 5.0,
-          "shots_on_target_against": 4.0,
-          "corners_for": 5.5,
-          "corners_against": 8.5,
-          "yellow_cards": 1.75,
+          "shots_on_target_against": 3.6,
+          "corners_for": 5.4,
+          "corners_against": 7.6,
+          "yellow_cards": 1.8,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.25,
-          "clean_sheets": 1
+          "btts_pct": 0.4,
+          "over_2_5_pct": 0.2,
+          "clean_sheets": 2
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "E0",
+          "venue": "A",
+          "opponent": "Newcastle",
+          "goals_for": 1,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 2.15,
+          "xg_against": 1.47,
+          "shots_for": 16,
+          "shots_against": 17,
+          "shots_on_target_for": 5,
+          "shots_on_target_against": 2,
+          "corners_for": 5,
+          "corners_against": 4,
+          "cards_for": 2,
+          "cards_against": 6
+        },
         {
           "date": "2026-10-24",
           "league": "E0",
@@ -2373,25 +2392,6 @@
           "corners_against": 5,
           "cards_for": 2,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-06",
-          "league": "E0",
-          "venue": "H",
-          "opponent": "Man United",
-          "goals_for": 2,
-          "goals_against": 2,
-          "result": "D",
-          "xg_for": 1.01,
-          "xg_against": 0.69,
-          "shots_for": 18,
-          "shots_against": 14,
-          "shots_on_target_for": 6,
-          "shots_on_target_against": 3,
-          "corners_for": 4,
-          "corners_against": 3,
-          "cards_for": 3,
-          "cards_against": 3
         }
       ]
     },
@@ -2588,7 +2588,7 @@
       "season": {
         "all": {
           "matches": 9,
-          "position": 10,
+          "position": 11,
           "points": 11,
           "won": 2,
           "drawn": 5,
@@ -2611,7 +2611,7 @@
         },
         "home": {
           "matches": 5,
-          "position": 10,
+          "position": 11,
           "points": 11,
           "won": 1,
           "drawn": 4,
@@ -2634,7 +2634,7 @@
         },
         "away": {
           "matches": 4,
-          "position": 10,
+          "position": 11,
           "points": 11,
           "won": 1,
           "drawn": 1,
@@ -2777,7 +2777,7 @@
       "season": {
         "all": {
           "matches": 9,
-          "position": 13,
+          "position": 14,
           "points": 11,
           "won": 3,
           "drawn": 2,
@@ -2800,7 +2800,7 @@
         },
         "home": {
           "matches": 4,
-          "position": 13,
+          "position": 14,
           "points": 11,
           "won": 2,
           "drawn": 1,
@@ -2823,7 +2823,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 13,
+          "position": 14,
           "points": 11,
           "won": 1,
           "drawn": 1,
@@ -2966,7 +2966,7 @@
       "season": {
         "all": {
           "matches": 9,
-          "position": 11,
+          "position": 12,
           "points": 11,
           "won": 2,
           "drawn": 5,
@@ -2989,7 +2989,7 @@
         },
         "home": {
           "matches": 4,
-          "position": 11,
+          "position": 12,
           "points": 11,
           "won": 1,
           "drawn": 3,
@@ -3012,7 +3012,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 11,
+          "position": 12,
           "points": 11,
           "won": 1,
           "drawn": 2,
@@ -3721,54 +3721,54 @@
     "Newcastle": {
       "season": {
         "all": {
-          "matches": 8,
-          "position": 12,
+          "matches": 9,
+          "position": 13,
           "points": 11,
           "won": 3,
           "drawn": 2,
-          "lost": 3,
-          "goals_for": 1.5,
-          "goals_against": 1.75,
-          "xg_for": 1.14,
-          "xg_against": 1.69,
-          "shots_for": 12.0,
-          "shots_against": 17.38,
-          "shots_on_target_for": 3.38,
-          "shots_on_target_against": 5.12,
-          "corners_for": 4.5,
-          "corners_against": 5.5,
-          "yellow_cards": 2.75,
-          "red_cards": 0.0,
-          "btts_pct": 0.625,
-          "over_2_5_pct": 0.625,
+          "lost": 4,
+          "goals_for": 1.33,
+          "goals_against": 1.67,
+          "xg_for": 1.17,
+          "xg_against": 1.74,
+          "shots_for": 12.56,
+          "shots_against": 17.22,
+          "shots_on_target_for": 3.22,
+          "shots_on_target_against": 5.11,
+          "corners_for": 4.44,
+          "corners_against": 5.44,
+          "yellow_cards": 2.89,
+          "red_cards": 0.11,
+          "btts_pct": 0.556,
+          "over_2_5_pct": 0.556,
           "clean_sheets": 2
         },
         "home": {
-          "matches": 4,
-          "position": 12,
+          "matches": 5,
+          "position": 13,
           "points": 11,
           "won": 1,
           "drawn": 2,
-          "lost": 1,
-          "goals_for": 1.5,
-          "goals_against": 1.5,
-          "xg_for": 1.18,
-          "xg_against": 1.88,
-          "shots_for": 12.25,
-          "shots_against": 20.25,
-          "shots_on_target_for": 3.0,
-          "shots_on_target_against": 4.75,
-          "corners_for": 3.5,
-          "corners_against": 5.25,
-          "yellow_cards": 3.5,
-          "red_cards": 0.0,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.75,
+          "lost": 2,
+          "goals_for": 1.2,
+          "goals_against": 1.4,
+          "xg_for": 1.24,
+          "xg_against": 1.93,
+          "shots_for": 13.2,
+          "shots_against": 19.4,
+          "shots_on_target_for": 2.8,
+          "shots_on_target_against": 4.8,
+          "corners_for": 3.6,
+          "corners_against": 5.2,
+          "yellow_cards": 3.6,
+          "red_cards": 0.2,
+          "btts_pct": 0.6,
+          "over_2_5_pct": 0.6,
           "clean_sheets": 0
         },
         "away": {
           "matches": 4,
-          "position": 12,
+          "position": 13,
           "points": 11,
           "won": 2,
           "drawn": 0,
@@ -3791,6 +3791,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "E0",
+          "venue": "H",
+          "opponent": "Everton",
+          "goals_for": 0,
+          "goals_against": 1,
+          "result": "L",
+          "xg_for": 1.47,
+          "xg_against": 2.15,
+          "shots_for": 17,
+          "shots_against": 16,
+          "shots_on_target_for": 2,
+          "shots_on_target_against": 5,
+          "corners_for": 4,
+          "corners_against": 5,
+          "cards_for": 6,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-25",
           "league": "E0",
@@ -3885,25 +3904,6 @@
           "corners_against": 5,
           "cards_for": 2,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-05",
-          "league": "E0",
-          "venue": "H",
-          "opponent": "Bournemouth",
-          "goals_for": 2,
-          "goals_against": 2,
-          "result": "D",
-          "xg_for": 0.71,
-          "xg_against": 1.37,
-          "shots_for": 8,
-          "shots_against": 17,
-          "shots_on_target_for": 2,
-          "shots_on_target_against": 5,
-          "corners_for": 4,
-          "corners_against": 3,
-          "cards_for": 2,
-          "cards_against": 3
         }
       ]
     },
@@ -4289,7 +4289,7 @@
       "season": {
         "all": {
           "matches": 9,
-          "position": 8,
+          "position": 9,
           "points": 12,
           "won": 3,
           "drawn": 3,
@@ -4312,7 +4312,7 @@
         },
         "home": {
           "matches": 5,
-          "position": 8,
+          "position": 9,
           "points": 12,
           "won": 2,
           "drawn": 1,
@@ -4335,7 +4335,7 @@
         },
         "away": {
           "matches": 4,
-          "position": 8,
+          "position": 9,
           "points": 12,
           "won": 1,
           "drawn": 2,

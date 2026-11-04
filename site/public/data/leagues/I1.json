@@ -2,689 +2,689 @@
   "league": "I1",
   "season": "2026/27",
   "goals": {
-    "home_advantage": 0.087,
-    "rho": 0.0054,
+    "home_advantage": 0.0758,
+    "rho": 0.0034,
     "teams": {
       "Atalanta": {
-        "attack": 0.2792,
-        "defense": 0.0236
+        "attack": 0.2504,
+        "defense": 0.0756
       },
       "Bologna": {
-        "attack": 0.1084,
-        "defense": 0.1048
+        "attack": 0.1028,
+        "defense": 0.1121
       },
       "Cagliari": {
-        "attack": -0.1648,
-        "defense": 0.237
+        "attack": -0.1687,
+        "defense": 0.2443
       },
       "Como": {
-        "attack": 0.2829,
-        "defense": -0.1966
+        "attack": 0.2785,
+        "defense": -0.1913
       },
       "Cremonese": {
-        "attack": -0.3735,
-        "defense": 0.3115
+        "attack": -0.378,
+        "defense": 0.3176
       },
       "Empoli": {
-        "attack": -0.3193,
-        "defense": 0.3606
+        "attack": -0.3212,
+        "defense": 0.3673
       },
       "Fiorentina": {
-        "attack": 0.0385,
-        "defense": 0.2203
+        "attack": 0.0816,
+        "defense": 0.2384
       },
       "Frosinone": {
-        "attack": 0.6947,
-        "defense": 0.2669
+        "attack": 0.6834,
+        "defense": 0.2733
       },
       "Genoa": {
-        "attack": -0.1378,
-        "defense": 0.1501
+        "attack": -0.141,
+        "defense": 0.1555
       },
       "Inter": {
-        "attack": 0.6305,
-        "defense": -0.053
+        "attack": 0.6277,
+        "defense": -0.0482
       },
       "Juventus": {
-        "attack": 0.2037,
-        "defense": -0.1701
+        "attack": 0.1985,
+        "defense": -0.1634
       },
       "Lazio": {
-        "attack": 0.1919,
-        "defense": -0.0058
+        "attack": 0.1882,
+        "defense": -0.0003
       },
       "Lecce": {
-        "attack": -0.3856,
-        "defense": 0.2937
+        "attack": -0.3891,
+        "defense": 0.3014
       },
       "Milan": {
-        "attack": 0.2611,
-        "defense": -0.0418
+        "attack": 0.2552,
+        "defense": -0.0345
       },
       "Monza": {
-        "attack": -0.0124,
-        "defense": 0.6418
+        "attack": -0.016,
+        "defense": 0.6481
       },
       "Napoli": {
-        "attack": 0.2474,
-        "defense": -0.1601
+        "attack": 0.2439,
+        "defense": -0.1538
       },
       "Parma": {
-        "attack": -0.4121,
-        "defense": 0.1812
+        "attack": -0.3493,
+        "defense": 0.16
       },
       "Pisa": {
-        "attack": -0.558,
-        "defense": 0.5351
+        "attack": -0.5629,
+        "defense": 0.5411
       },
       "Roma": {
-        "attack": 0.4219,
-        "defense": -0.2046
+        "attack": 0.4174,
+        "defense": -0.1982
       },
       "Sassuolo": {
-        "attack": 0.0876,
-        "defense": 0.3416
+        "attack": 0.0973,
+        "defense": 0.3984
       },
       "Torino": {
-        "attack": -0.0285,
-        "defense": 0.287
+        "attack": -0.0326,
+        "defense": 0.292
       },
       "Udinese": {
-        "attack": -0.0632,
-        "defense": 0.3099
+        "attack": -0.0657,
+        "defense": 0.3156
       },
       "Venezia": {
-        "attack": -0.47,
-        "defense": 0.3195
+        "attack": -0.4739,
+        "defense": 0.328
       },
       "Verona": {
-        "attack": -0.5226,
-        "defense": 0.3475
+        "attack": -0.5265,
+        "defense": 0.3539
       }
     }
   },
   "stats": {
     "corners": {
-      "avg_home": 4.9826,
-      "avg_away": 4.1042,
-      "dispersion_team": 13.7962,
-      "dispersion_total": 139.6083,
+      "avg_home": 4.9931,
+      "avg_away": 4.1,
+      "dispersion_team": 14.0559,
+      "dispersion_total": 151.7179,
       "teams": {
         "Atalanta": {
-          "home_for": 1.1724,
-          "home_against": 0.9811,
-          "away_for": 0.9617,
-          "away_against": 1.0622
+          "home_for": 1.1916,
+          "home_against": 0.9816,
+          "away_for": 0.9624,
+          "away_against": 1.0605
         },
         "Bologna": {
-          "home_for": 1.0335,
-          "home_against": 1.0436,
-          "away_for": 0.8749,
-          "away_against": 0.9614
+          "home_for": 1.0318,
+          "home_against": 1.0444,
+          "away_for": 0.8755,
+          "away_against": 0.9599
         },
         "Cagliari": {
-          "home_for": 0.8995,
-          "home_against": 1.2449,
-          "away_for": 0.8917,
-          "away_against": 1.0565
+          "home_for": 0.8982,
+          "home_against": 1.2459,
+          "away_for": 0.8923,
+          "away_against": 1.0548
         },
         "Como": {
-          "home_for": 1.1219,
-          "home_against": 0.672,
-          "away_for": 1.165,
-          "away_against": 0.9537
+          "home_for": 1.1201,
+          "home_against": 0.6724,
+          "away_for": 1.166,
+          "away_against": 0.9522
         },
         "Cremonese": {
-          "home_for": 0.8154,
-          "home_against": 1.1598,
-          "away_for": 0.891,
-          "away_against": 1.2445
+          "home_for": 0.8144,
+          "home_against": 1.1606,
+          "away_for": 0.8915,
+          "away_against": 1.2426
         },
         "Fiorentina": {
-          "home_for": 1.1415,
-          "home_against": 1.0061,
-          "away_for": 0.8564,
-          "away_against": 0.9429
+          "home_for": 1.1397,
+          "home_against": 1.0069,
+          "away_for": 0.8505,
+          "away_against": 0.9445
         },
         "Frosinone": {
-          "home_for": 1.1296,
-          "home_against": 1.252,
-          "away_for": 1.2865,
-          "away_against": 1.2245
+          "home_for": 1.1282,
+          "home_against": 1.2528,
+          "away_for": 1.2873,
+          "away_against": 1.2231
         },
         "Genoa": {
-          "home_for": 0.8656,
-          "home_against": 1.1769,
-          "away_for": 0.909,
-          "away_against": 1.0514
+          "home_for": 0.8643,
+          "home_against": 1.1779,
+          "away_for": 0.9097,
+          "away_against": 1.0497
         },
         "Inter": {
-          "home_for": 1.3062,
-          "home_against": 0.7437,
-          "away_for": 1.2748,
-          "away_against": 0.7401
+          "home_for": 1.304,
+          "home_against": 0.7442,
+          "away_for": 1.2758,
+          "away_against": 0.7391
         },
         "Juventus": {
-          "home_for": 1.2908,
-          "home_against": 0.8937,
-          "away_for": 1.3122,
-          "away_against": 0.8482
+          "home_for": 1.2886,
+          "home_against": 0.8943,
+          "away_for": 1.3133,
+          "away_against": 0.847
         },
         "Lazio": {
-          "home_for": 0.9408,
-          "home_against": 0.9062,
-          "away_for": 0.8999,
-          "away_against": 0.9717
+          "home_for": 0.9394,
+          "home_against": 0.9068,
+          "away_for": 0.9006,
+          "away_against": 0.9702
         },
         "Lecce": {
-          "home_for": 0.946,
-          "home_against": 0.9874,
-          "away_for": 0.9999,
-          "away_against": 1.121
+          "home_for": 0.9445,
+          "home_against": 0.9881,
+          "away_for": 1.0006,
+          "away_against": 1.1191
         },
         "Milan": {
-          "home_for": 0.8534,
-          "home_against": 0.9686,
-          "away_for": 0.9187,
-          "away_against": 0.9305
+          "home_for": 0.8521,
+          "home_against": 0.9694,
+          "away_for": 0.9193,
+          "away_against": 0.9291
         },
         "Monza": {
-          "home_for": 0.8678,
-          "home_against": 1.0158,
-          "away_for": 0.9862,
-          "away_against": 0.9654
+          "home_for": 0.8671,
+          "home_against": 1.0163,
+          "away_for": 0.9867,
+          "away_against": 0.9643
         },
         "Napoli": {
-          "home_for": 1.1327,
-          "home_against": 0.8827,
-          "away_for": 1.165,
-          "away_against": 0.8509
+          "home_for": 1.1309,
+          "home_against": 0.8833,
+          "away_for": 1.166,
+          "away_against": 0.8496
         },
         "Parma": {
-          "home_for": 0.8688,
-          "home_against": 0.9561,
-          "away_for": 0.8432,
-          "away_against": 1.2304
+          "home_for": 0.8675,
+          "home_against": 0.9568,
+          "away_for": 0.8505,
+          "away_against": 1.2475
         },
         "Pisa": {
-          "home_for": 0.8431,
-          "home_against": 1.0338,
-          "away_for": 0.8741,
-          "away_against": 1.0438
+          "home_for": 0.8421,
+          "home_against": 1.0345,
+          "away_for": 0.8747,
+          "away_against": 1.0423
         },
         "Roma": {
-          "home_for": 1.1467,
-          "home_against": 0.7999,
-          "away_for": 1.1248,
-          "away_against": 0.8482
+          "home_for": 1.1448,
+          "home_against": 0.8005,
+          "away_for": 1.1257,
+          "away_against": 0.847
         },
         "Sassuolo": {
-          "home_for": 0.791,
-          "home_against": 1.1461,
-          "away_for": 0.9999,
-          "away_against": 1.0695
+          "home_for": 0.8008,
+          "home_against": 1.1257,
+          "away_for": 1.0006,
+          "away_against": 1.0678
         },
         "Torino": {
-          "home_for": 0.8328,
-          "home_against": 1.1186,
-          "away_for": 0.9436,
-          "away_against": 0.9357
+          "home_for": 0.8316,
+          "home_against": 1.1194,
+          "away_for": 0.9443,
+          "away_against": 0.9343
         },
         "Udinese": {
-          "home_for": 0.9977,
-          "home_against": 1.0937,
-          "away_for": 0.9683,
-          "away_against": 1.0351
+          "home_for": 0.9962,
+          "home_against": 1.0946,
+          "away_for": 0.969,
+          "away_against": 1.0335
         },
         "Venezia": {
-          "home_for": 0.8412,
-          "home_against": 1.1579,
-          "away_for": 1.0604,
-          "away_against": 1.0017
+          "home_for": 0.8405,
+          "home_against": 1.1585,
+          "away_for": 1.061,
+          "away_against": 1.0007
         },
         "Verona": {
-          "home_for": 0.9815,
-          "home_against": 0.9834,
-          "away_for": 0.8321,
-          "away_against": 1.1545
+          "home_for": 0.9802,
+          "home_against": 0.984,
+          "away_for": 0.8326,
+          "away_against": 1.1528
         }
       }
     },
     "cards": {
-      "avg_home": 1.8264,
-      "avg_away": 2.0208,
+      "avg_home": 1.8207,
+      "avg_away": 2.0172,
       "dispersion_team": null,
-      "dispersion_total": 100.6376,
+      "dispersion_total": 98.5074,
       "teams": {
         "Atalanta": {
-          "home_for": 0.7057,
-          "home_against": 0.7766,
-          "away_for": 1.046,
-          "away_against": 0.8622
+          "home_for": 0.6726,
+          "home_against": 0.7396,
+          "away_for": 1.0474,
+          "away_against": 0.864
         },
         "Bologna": {
-          "home_for": 1.0847,
-          "home_against": 1.1192,
-          "away_for": 1.0431,
-          "away_against": 1.0566
+          "home_for": 1.0873,
+          "home_against": 1.1208,
+          "away_for": 1.0445,
+          "away_against": 1.0591
         },
         "Cagliari": {
-          "home_for": 1.0398,
-          "home_against": 0.9122,
-          "away_for": 1.1008,
-          "away_against": 0.8048
+          "home_for": 1.0422,
+          "home_against": 0.9134,
+          "away_for": 1.1024,
+          "away_against": 0.8065
         },
         "Como": {
-          "home_for": 1.0842,
-          "home_against": 1.153,
-          "away_for": 0.9077,
-          "away_against": 1.1921
+          "home_for": 1.0867,
+          "home_against": 1.1545,
+          "away_for": 0.9089,
+          "away_against": 1.195
         },
         "Cremonese": {
-          "home_for": 1.1756,
-          "home_against": 0.9079,
-          "away_for": 1.0444,
-          "away_against": 0.949
+          "home_for": 1.1782,
+          "home_against": 0.9089,
+          "away_for": 1.0457,
+          "away_against": 0.9509
         },
         "Fiorentina": {
-          "home_for": 1.1128,
-          "home_against": 1.0812,
-          "away_for": 1.1663,
-          "away_against": 1.1582
+          "home_for": 1.1155,
+          "home_against": 1.0826,
+          "away_for": 1.1843,
+          "away_against": 1.1577
         },
         "Frosinone": {
-          "home_for": 0.8527,
-          "home_against": 1.1293,
-          "away_for": 1.0504,
-          "away_against": 1.2248
+          "home_for": 0.854,
+          "home_against": 1.1305,
+          "away_for": 1.0513,
+          "away_against": 1.2269
         },
         "Genoa": {
-          "home_for": 1.1386,
-          "home_against": 1.2215,
-          "away_for": 0.939,
-          "away_against": 1.099
+          "home_for": 1.1414,
+          "home_against": 1.2233,
+          "away_for": 0.9402,
+          "away_against": 1.1016
         },
         "Inter": {
-          "home_for": 0.7337,
-          "home_against": 0.8908,
-          "away_for": 0.9796,
-          "away_against": 1.0847
+          "home_for": 0.7352,
+          "home_against": 0.892,
+          "away_for": 0.9809,
+          "away_against": 1.0873
         },
         "Juventus": {
-          "home_for": 0.7618,
-          "home_against": 1.2207,
-          "away_for": 0.8401,
-          "away_against": 1.0286
+          "home_for": 0.7634,
+          "home_against": 1.2224,
+          "away_for": 0.8411,
+          "away_against": 1.031
         },
         "Lazio": {
-          "home_for": 1.2392,
-          "home_against": 1.2334,
-          "away_for": 0.9923,
-          "away_against": 1.5059
+          "home_for": 1.2422,
+          "home_against": 1.2352,
+          "away_for": 0.9936,
+          "away_against": 1.5098
         },
         "Lecce": {
-          "home_for": 1.0988,
-          "home_against": 0.8655,
-          "away_for": 0.9543,
-          "away_against": 0.6916
+          "home_for": 1.1014,
+          "home_against": 0.8665,
+          "away_for": 0.9555,
+          "away_against": 0.693
         },
         "Milan": {
-          "home_for": 0.9022,
-          "home_against": 1.0177,
-          "away_for": 0.9923,
-          "away_against": 0.8882
+          "home_for": 0.9042,
+          "home_against": 1.0191,
+          "away_for": 0.9936,
+          "away_against": 0.8902
         },
         "Monza": {
-          "home_for": 1.1031,
-          "home_against": 0.7205,
-          "away_for": 0.9044,
-          "away_against": 1.1514
+          "home_for": 1.1048,
+          "home_against": 0.7208,
+          "away_for": 0.9052,
+          "away_against": 1.1536
         },
         "Napoli": {
-          "home_for": 0.6698,
-          "home_against": 0.9256,
-          "away_for": 0.8474,
-          "away_against": 1.1654
+          "home_for": 0.6711,
+          "home_against": 0.9268,
+          "away_for": 0.8484,
+          "away_against": 1.1682
         },
         "Parma": {
-          "home_for": 1.0707,
-          "home_against": 1.0938,
-          "away_for": 0.832,
-          "away_against": 1.0102
+          "home_for": 1.0732,
+          "home_against": 1.0953,
+          "away_for": 0.7903,
+          "away_against": 0.9606
         },
         "Pisa": {
-          "home_for": 1.1567,
-          "home_against": 1.0103,
-          "away_for": 1.1127,
-          "away_against": 0.8357
+          "home_for": 1.1592,
+          "home_against": 1.0115,
+          "away_for": 1.1141,
+          "away_against": 0.8373
         },
         "Roma": {
-          "home_for": 0.9303,
-          "home_against": 1.1319,
-          "away_for": 1.1192,
-          "away_against": 1.0286
+          "home_for": 0.9324,
+          "home_against": 1.1335,
+          "away_for": 1.1208,
+          "away_against": 1.031
         },
         "Sassuolo": {
-          "home_for": 1.2025,
-          "home_against": 1.0593,
-          "away_for": 0.9796,
-          "away_against": 1.0426
+          "home_for": 1.2,
+          "home_against": 1.0826,
+          "away_for": 0.9809,
+          "away_against": 1.0451
         },
         "Torino": {
-          "home_for": 0.7899,
-          "home_against": 0.7386,
-          "away_for": 0.9796,
-          "away_against": 0.7899
+          "home_for": 0.7916,
+          "home_against": 0.7394,
+          "away_for": 0.9809,
+          "away_against": 0.7916
         },
         "Udinese": {
-          "home_for": 1.0318,
-          "home_against": 0.7991,
-          "away_for": 0.9657,
-          "away_against": 0.7882
+          "home_for": 1.0343,
+          "home_against": 0.8001,
+          "away_for": 0.967,
+          "away_against": 0.7898
         },
         "Venezia": {
-          "home_for": 1.1023,
-          "home_against": 0.7969,
-          "away_for": 1.0443,
-          "away_against": 0.8833
+          "home_for": 1.1042,
+          "home_against": 0.7974,
+          "away_for": 1.0453,
+          "away_against": 0.8845
         },
         "Verona": {
-          "home_for": 1.1756,
-          "home_against": 0.9762,
-          "away_for": 1.2833,
-          "away_against": 0.7602
+          "home_for": 1.1782,
+          "home_against": 0.9773,
+          "away_for": 1.285,
+          "away_against": 0.7615
         }
       }
     },
     "shots": {
-      "avg_home": 14.1545,
-      "avg_away": 11.9271,
-      "dispersion_team": 26.1054,
-      "dispersion_total": 108.2631,
+      "avg_home": 14.15,
+      "avg_away": 11.9172,
+      "dispersion_team": 26.202,
+      "dispersion_total": 109.5095,
       "teams": {
         "Atalanta": {
-          "home_for": 1.1567,
-          "home_against": 1.0389,
-          "away_for": 0.9478,
-          "away_against": 1.055
+          "home_for": 1.1695,
+          "home_against": 1.0134,
+          "away_for": 0.9484,
+          "away_against": 1.0553
         },
         "Bologna": {
-          "home_for": 1.0064,
-          "home_against": 0.8842,
-          "away_for": 0.9164,
-          "away_against": 0.8415
+          "home_for": 1.0066,
+          "home_against": 0.8847,
+          "away_for": 0.9169,
+          "away_against": 0.8417
         },
         "Cagliari": {
-          "home_for": 0.8049,
-          "home_against": 1.1042,
-          "away_for": 0.9535,
-          "away_against": 1.0727
+          "home_for": 0.8051,
+          "home_against": 1.1049,
+          "away_for": 0.9541,
+          "away_against": 1.073
         },
         "Como": {
-          "home_for": 1.1868,
-          "home_against": 0.7484,
-          "away_for": 1.2153,
-          "away_against": 0.9125
+          "home_for": 1.1871,
+          "home_against": 0.7488,
+          "away_for": 1.2161,
+          "away_against": 0.9127
         },
         "Cremonese": {
-          "home_for": 0.8223,
-          "home_against": 1.0676,
-          "away_for": 0.7814,
-          "away_against": 1.1829
+          "home_for": 0.8225,
+          "home_against": 1.0682,
+          "away_for": 0.7817,
+          "away_against": 1.1831
         },
         "Fiorentina": {
-          "home_for": 1.1187,
-          "home_against": 0.9465,
-          "away_for": 0.9206,
-          "away_against": 1.0971
+          "home_for": 1.119,
+          "home_against": 0.9471,
+          "away_for": 0.9385,
+          "away_against": 1.0664
         },
         "Frosinone": {
-          "home_for": 1.1803,
-          "home_against": 1.2396,
-          "away_for": 1.2915,
-          "away_against": 1.2071
+          "home_for": 1.1805,
+          "home_against": 1.2403,
+          "away_for": 1.2921,
+          "away_against": 1.2073
         },
         "Genoa": {
-          "home_for": 0.8797,
-          "home_against": 1.0966,
-          "away_for": 0.9297,
-          "away_against": 1.0207
+          "home_for": 0.8799,
+          "home_against": 1.0973,
+          "away_for": 0.9302,
+          "away_against": 1.0209
         },
         "Inter": {
-          "home_for": 1.3216,
-          "home_against": 0.8089,
-          "away_for": 1.3356,
-          "away_against": 0.7944
+          "home_for": 1.3219,
+          "home_against": 0.8094,
+          "away_for": 1.3365,
+          "away_against": 0.7946
         },
         "Juventus": {
-          "home_for": 1.2111,
-          "home_against": 0.7939,
-          "away_for": 1.1959,
-          "away_against": 0.8343
+          "home_for": 1.2114,
+          "home_against": 0.7943,
+          "away_for": 1.1967,
+          "away_against": 0.8345
         },
         "Lazio": {
-          "home_for": 0.9357,
-          "home_against": 0.9938,
-          "away_for": 0.9422,
-          "away_against": 0.972
+          "home_for": 0.9359,
+          "home_against": 0.9944,
+          "away_for": 0.9428,
+          "away_against": 0.9722
         },
         "Lecce": {
-          "home_for": 0.8651,
-          "home_against": 0.9938,
-          "away_for": 0.8842,
-          "away_against": 1.0662
+          "home_for": 0.8653,
+          "home_against": 0.9944,
+          "away_for": 0.8847,
+          "away_against": 1.0664
         },
         "Milan": {
-          "home_for": 0.9991,
-          "home_against": 0.9293,
-          "away_for": 0.9744,
-          "away_against": 0.8723
+          "home_for": 0.9994,
+          "home_against": 0.9299,
+          "away_for": 0.975,
+          "away_against": 0.8725
         },
         "Monza": {
-          "home_for": 0.9951,
-          "home_against": 1.1518,
-          "away_for": 0.9805,
-          "away_against": 0.9106
+          "home_for": 0.9953,
+          "home_against": 1.1523,
+          "away_for": 0.9809,
+          "away_against": 0.9107
         },
         "Napoli": {
-          "home_for": 1.0054,
-          "home_against": 1.0385,
-          "away_for": 1.1253,
-          "away_against": 0.8918
+          "home_for": 1.0056,
+          "home_against": 1.0391,
+          "away_for": 1.126,
+          "away_against": 0.892
         },
         "Parma": {
-          "home_for": 0.8941,
-          "home_against": 1.0991,
-          "away_for": 0.8164,
-          "away_against": 1.1658
+          "home_for": 0.8943,
+          "home_against": 1.0998,
+          "away_for": 0.8008,
+          "away_against": 1.1788
         },
         "Pisa": {
-          "home_for": 0.8199,
-          "home_against": 1.0127,
-          "away_for": 0.8363,
-          "away_against": 1.1195
+          "home_for": 0.82,
+          "home_against": 1.0132,
+          "away_for": 0.8367,
+          "away_against": 1.1198
         },
         "Roma": {
-          "home_for": 1.1785,
-          "home_against": 0.8412,
-          "away_for": 1.0389,
-          "away_against": 0.8832
+          "home_for": 1.1788,
+          "home_against": 0.8416,
+          "away_for": 1.0396,
+          "away_against": 0.8834
         },
         "Sassuolo": {
-          "home_for": 0.8431,
-          "home_against": 1.111,
-          "away_for": 1.026,
-          "away_against": 1.0879
+          "home_for": 0.8254,
+          "home_against": 1.1192,
+          "away_for": 1.0267,
+          "away_against": 1.0882
         },
         "Torino": {
-          "home_for": 0.8904,
-          "home_against": 1.1099,
-          "away_for": 0.9336,
-          "away_against": 1.077
+          "home_for": 0.8906,
+          "home_against": 1.1106,
+          "away_for": 0.9342,
+          "away_against": 1.0773
         },
         "Udinese": {
-          "home_for": 0.99,
-          "home_against": 1.0557,
-          "away_for": 0.9546,
-          "away_against": 1.0665
+          "home_for": 0.9903,
+          "home_against": 1.0564,
+          "away_for": 0.9552,
+          "away_against": 1.0668
         },
         "Venezia": {
-          "home_for": 0.9733,
-          "home_against": 1.2378,
-          "away_for": 1.0785,
-          "away_against": 1.044
+          "home_for": 0.9735,
+          "home_against": 1.2384,
+          "away_for": 1.079,
+          "away_against": 1.0442
         },
         "Verona": {
-          "home_for": 0.854,
-          "home_against": 1.0156,
-          "away_for": 0.9635,
-          "away_against": 1.0318
+          "home_for": 0.8541,
+          "home_against": 1.0161,
+          "away_for": 0.964,
+          "away_against": 1.032
         }
       }
     },
     "shots_on_target": {
-      "avg_home": 4.6285,
-      "avg_away": 4.0365,
+      "avg_home": 4.6241,
+      "avg_away": 4.0397,
       "dispersion_team": null,
       "dispersion_total": null,
       "teams": {
         "Atalanta": {
-          "home_for": 1.1539,
-          "home_against": 0.9679,
-          "away_for": 0.9733,
-          "away_against": 1.1462
+          "home_for": 1.1617,
+          "home_against": 0.9564,
+          "away_for": 0.9728,
+          "away_against": 1.147
         },
         "Bologna": {
-          "home_for": 0.8769,
-          "home_against": 0.9298,
-          "away_for": 0.9679,
-          "away_against": 0.8492
+          "home_for": 0.8775,
+          "home_against": 0.9292,
+          "away_for": 0.9673,
+          "away_against": 0.8497
         },
         "Cagliari": {
-          "home_for": 0.79,
-          "home_against": 1.1273,
-          "away_for": 0.9871,
-          "away_against": 1.066
+          "home_for": 0.7905,
+          "home_against": 1.1266,
+          "away_for": 0.9865,
+          "away_against": 1.0667
         },
         "Como": {
-          "home_for": 1.2162,
-          "home_against": 0.7122,
-          "away_for": 1.1986,
-          "away_against": 0.8604
+          "home_for": 1.2171,
+          "home_against": 0.7118,
+          "away_for": 1.1979,
+          "away_against": 0.861
         },
         "Cremonese": {
-          "home_for": 0.8663,
-          "home_against": 1.0624,
-          "away_for": 0.8147,
-          "away_against": 1.1792
+          "home_for": 0.8668,
+          "home_against": 1.0619,
+          "away_for": 0.8143,
+          "away_against": 1.18
         },
         "Fiorentina": {
-          "home_for": 0.9655,
-          "home_against": 1.0759,
-          "away_for": 0.8796,
-          "away_against": 1.1812
+          "home_for": 0.9662,
+          "home_against": 1.0752,
+          "away_for": 0.9102,
+          "away_against": 1.1436
         },
         "Frosinone": {
-          "home_for": 1.2991,
-          "home_against": 1.1752,
-          "away_for": 1.1887,
-          "away_against": 1.1797
+          "home_for": 1.2999,
+          "home_against": 1.1747,
+          "away_for": 1.1882,
+          "away_against": 1.1803
         },
         "Genoa": {
-          "home_for": 0.8341,
-          "home_against": 1.0294,
-          "away_for": 0.8662,
-          "away_against": 1.006
+          "home_for": 0.8347,
+          "home_against": 1.0288,
+          "away_for": 0.8657,
+          "away_against": 1.0067
         },
         "Inter": {
-          "home_for": 1.4419,
-          "home_against": 0.8789,
-          "away_for": 1.2664,
-          "away_against": 0.7162
+          "home_for": 1.443,
+          "home_against": 0.8784,
+          "away_for": 1.2656,
+          "away_against": 0.7166
         },
         "Juventus": {
-          "home_for": 1.2203,
-          "home_against": 0.6757,
-          "away_for": 1.241,
-          "away_against": 0.7716
+          "home_for": 1.2212,
+          "home_against": 0.6753,
+          "away_for": 1.2402,
+          "away_against": 0.7721
         },
         "Lazio": {
-          "home_for": 1.0154,
-          "home_against": 1.0632,
-          "away_for": 0.9615,
-          "away_against": 0.8935
+          "home_for": 1.0161,
+          "home_against": 1.0625,
+          "away_for": 0.961,
+          "away_against": 0.8941
         },
         "Lecce": {
-          "home_for": 0.7993,
-          "home_against": 1.0886,
-          "away_for": 0.8853,
-          "away_against": 1.0929
+          "home_for": 0.7998,
+          "home_against": 1.0879,
+          "away_for": 0.8848,
+          "away_against": 1.0937
         },
         "Milan": {
-          "home_for": 1.0154,
-          "home_against": 0.9869,
-          "away_for": 1.0123,
-          "away_against": 0.8713
+          "home_for": 1.0161,
+          "home_against": 0.9864,
+          "away_for": 1.0117,
+          "away_against": 0.8719
         },
         "Monza": {
-          "home_for": 1.0837,
-          "home_against": 1.2437,
-          "away_for": 1.1752,
-          "away_against": 1.0438
+          "home_for": 1.0842,
+          "home_against": 1.2432,
+          "away_for": 1.1747,
+          "away_against": 1.0443
         },
         "Napoli": {
-          "home_for": 1.1053,
-          "home_against": 0.8394,
-          "away_for": 1.1382,
-          "away_against": 0.8236
+          "home_for": 1.1061,
+          "home_against": 0.839,
+          "away_for": 1.1375,
+          "away_against": 0.8241
         },
         "Parma": {
-          "home_for": 0.755,
-          "home_against": 1.0759,
-          "away_for": 0.7658,
-          "away_against": 1.0235
+          "home_for": 0.7555,
+          "home_against": 1.0752,
+          "away_for": 0.7642,
+          "away_against": 1.0383
         },
         "Pisa": {
-          "home_for": 0.7844,
-          "home_against": 0.9685,
-          "away_for": 0.7463,
-          "away_against": 1.1345
+          "home_for": 0.7848,
+          "home_against": 0.968,
+          "away_for": 0.746,
+          "away_against": 1.1353
         },
         "Roma": {
-          "home_for": 1.1926,
-          "home_against": 0.8472,
-          "away_for": 1.114,
-          "away_against": 1.0154
+          "home_for": 1.1935,
+          "home_against": 0.8467,
+          "away_for": 1.1133,
+          "away_against": 1.0161
         },
         "Sassuolo": {
-          "home_for": 0.8892,
-          "home_against": 1.2077,
-          "away_for": 1.0695,
-          "away_against": 1.1871
+          "home_for": 0.8664,
+          "home_against": 1.2212,
+          "away_for": 1.0689,
+          "away_against": 1.188
         },
         "Torino": {
-          "home_for": 0.9267,
-          "home_against": 1.0123,
-          "away_for": 0.9171,
-          "away_against": 1.0763
+          "home_for": 0.9274,
+          "home_against": 1.0117,
+          "away_for": 0.9165,
+          "away_against": 1.0771
         },
         "Udinese": {
-          "home_for": 0.929,
-          "home_against": 1.1201,
-          "away_for": 0.9733,
-          "away_against": 1.0411
+          "home_for": 0.9296,
+          "home_against": 1.1194,
+          "away_for": 0.9728,
+          "away_against": 1.0418
         },
         "Venezia": {
-          "home_for": 1.0185,
-          "home_against": 1.2185,
-          "away_for": 0.8964,
-          "away_against": 1.1914
+          "home_for": 1.019,
+          "home_against": 1.2179,
+          "away_for": 0.8961,
+          "away_against": 1.192
         },
         "Verona": {
-          "home_for": 0.9036,
-          "home_against": 1.0026,
-          "away_for": 0.9087,
-          "away_against": 0.9632
+          "home_for": 0.9041,
+          "home_against": 1.0021,
+          "away_for": 0.9082,
+          "away_against": 0.9638
         }
       }
     }
@@ -693,49 +693,49 @@
     "Atalanta": {
       "season": {
         "all": {
-          "matches": 9,
+          "matches": 10,
           "position": 13,
           "points": 11,
           "won": 3,
           "drawn": 2,
-          "lost": 4,
-          "goals_for": 1.78,
-          "goals_against": 1.89,
-          "xg_for": 1.39,
-          "xg_against": 2.05,
-          "shots_for": 13.0,
-          "shots_against": 18.22,
-          "shots_on_target_for": 5.11,
-          "shots_on_target_against": 6.11,
-          "corners_for": 3.78,
-          "corners_against": 5.78,
-          "yellow_cards": 1.0,
-          "red_cards": 0.22,
-          "btts_pct": 0.778,
-          "over_2_5_pct": 0.778,
+          "lost": 5,
+          "goals_for": 1.6,
+          "goals_against": 2.0,
+          "xg_for": 1.53,
+          "xg_against": 1.88,
+          "shots_for": 13.7,
+          "shots_against": 17.0,
+          "shots_on_target_for": 5.2,
+          "shots_on_target_against": 5.8,
+          "corners_for": 4.2,
+          "corners_against": 5.6,
+          "yellow_cards": 0.9,
+          "red_cards": 0.2,
+          "btts_pct": 0.7,
+          "over_2_5_pct": 0.8,
           "clean_sheets": 1
         },
         "home": {
-          "matches": 5,
+          "matches": 6,
           "position": 13,
           "points": 11,
           "won": 3,
           "drawn": 1,
-          "lost": 1,
-          "goals_for": 2.2,
-          "goals_against": 1.6,
-          "xg_for": 1.66,
-          "xg_against": 1.99,
-          "shots_for": 17.2,
-          "shots_against": 17.2,
-          "shots_on_target_for": 6.6,
-          "shots_on_target_against": 6.0,
-          "corners_for": 4.8,
-          "corners_against": 4.8,
-          "yellow_cards": 0.4,
-          "red_cards": 0.2,
-          "btts_pct": 0.8,
-          "over_2_5_pct": 0.8,
+          "lost": 2,
+          "goals_for": 1.83,
+          "goals_against": 1.83,
+          "xg_for": 1.85,
+          "xg_against": 1.72,
+          "shots_for": 17.67,
+          "shots_against": 15.33,
+          "shots_on_target_for": 6.5,
+          "shots_on_target_against": 5.5,
+          "corners_for": 5.33,
+          "corners_against": 4.67,
+          "yellow_cards": 0.33,
+          "red_cards": 0.17,
+          "btts_pct": 0.667,
+          "over_2_5_pct": 0.833,
           "clean_sheets": 1
         },
         "away": {
@@ -763,6 +763,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "I1",
+          "venue": "H",
+          "opponent": "Parma",
+          "goals_for": 0,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": 2.8,
+          "xg_against": 0.36,
+          "shots_for": 20,
+          "shots_against": 6,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 3,
+          "corners_for": 8,
+          "corners_against": 4,
+          "cards_for": 0,
+          "cards_against": 0
+        },
         {
           "date": "2026-10-29",
           "league": "I1",
@@ -857,25 +876,6 @@
           "corners_against": 4,
           "cards_for": 2,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-12",
-          "league": "I1",
-          "venue": "H",
-          "opponent": "Cagliari",
-          "goals_for": 1,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": 1.31,
-          "xg_against": 1.32,
-          "shots_for": 22,
-          "shots_against": 5,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 5,
-          "corners_for": 3,
-          "corners_against": 2,
-          "cards_for": 0,
-          "cards_against": 0
         }
       ]
     },
@@ -1449,32 +1449,32 @@
     "Fiorentina": {
       "season": {
         "all": {
-          "matches": 9,
-          "position": 17,
-          "points": 5,
-          "won": 1,
+          "matches": 10,
+          "position": 16,
+          "points": 8,
+          "won": 2,
           "drawn": 2,
           "lost": 6,
-          "goals_for": 1.22,
-          "goals_against": 2.33,
-          "xg_for": 1.46,
-          "xg_against": 1.52,
-          "shots_for": 15.22,
-          "shots_against": 13.33,
-          "shots_on_target_for": 4.89,
-          "shots_on_target_against": 6.0,
-          "corners_for": 5.11,
-          "corners_against": 3.89,
-          "yellow_cards": 2.22,
+          "goals_for": 1.5,
+          "goals_against": 2.3,
+          "xg_for": 1.56,
+          "xg_against": 1.46,
+          "shots_for": 15.2,
+          "shots_against": 12.7,
+          "shots_on_target_for": 5.0,
+          "shots_on_target_against": 5.6,
+          "corners_for": 4.9,
+          "corners_against": 4.0,
+          "yellow_cards": 2.3,
           "red_cards": 0.0,
-          "btts_pct": 0.778,
-          "over_2_5_pct": 0.889,
+          "btts_pct": 0.8,
+          "over_2_5_pct": 0.9,
           "clean_sheets": 0
         },
         "home": {
           "matches": 5,
-          "position": 17,
-          "points": 5,
+          "position": 16,
+          "points": 8,
           "won": 0,
           "drawn": 2,
           "lost": 3,
@@ -1495,30 +1495,49 @@
           "clean_sheets": 0
         },
         "away": {
-          "matches": 4,
-          "position": 17,
-          "points": 5,
-          "won": 1,
+          "matches": 5,
+          "position": 16,
+          "points": 8,
+          "won": 2,
           "drawn": 0,
           "lost": 3,
-          "goals_for": 1.5,
-          "goals_against": 2.5,
-          "xg_for": 1.16,
-          "xg_against": 1.98,
-          "shots_for": 12.0,
-          "shots_against": 17.5,
-          "shots_on_target_for": 4.75,
-          "shots_on_target_against": 6.5,
+          "goals_for": 2.0,
+          "goals_against": 2.4,
+          "xg_for": 1.44,
+          "xg_against": 1.76,
+          "shots_for": 12.6,
+          "shots_against": 15.4,
+          "shots_on_target_for": 5.0,
+          "shots_on_target_against": 5.6,
           "corners_for": 3.0,
-          "corners_against": 3.25,
-          "yellow_cards": 2.25,
+          "corners_against": 3.6,
+          "yellow_cards": 2.4,
           "red_cards": 0.0,
-          "btts_pct": 0.75,
+          "btts_pct": 0.8,
           "over_2_5_pct": 1.0,
           "clean_sheets": 0
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "I1",
+          "venue": "A",
+          "opponent": "Sassuolo",
+          "goals_for": 4,
+          "goals_against": 2,
+          "result": "W",
+          "xg_for": 2.54,
+          "xg_against": 0.87,
+          "shots_for": 15,
+          "shots_against": 7,
+          "shots_on_target_for": 6,
+          "shots_on_target_against": 2,
+          "corners_for": 3,
+          "corners_against": 5,
+          "cards_for": 3,
+          "cards_against": 2
+        },
         {
           "date": "2026-10-29",
           "league": "I1",
@@ -1613,25 +1632,6 @@
           "corners_against": 5,
           "cards_for": 3,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-11",
-          "league": "I1",
-          "venue": "A",
-          "opponent": "Venezia",
-          "goals_for": 4,
-          "goals_against": 2,
-          "result": "W",
-          "xg_for": 3.31,
-          "xg_against": 0.48,
-          "shots_for": 19,
-          "shots_against": 10,
-          "shots_on_target_for": 10,
-          "shots_on_target_against": 3,
-          "corners_for": 4,
-          "corners_against": 2,
-          "cards_for": 1,
-          "cards_against": 2
         }
       ]
     },
@@ -2962,7 +2962,7 @@
       "season": {
         "all": {
           "matches": 10,
-          "position": 16,
+          "position": 18,
           "points": 7,
           "won": 2,
           "drawn": 1,
@@ -2985,7 +2985,7 @@
         },
         "home": {
           "matches": 4,
-          "position": 16,
+          "position": 18,
           "points": 7,
           "won": 2,
           "drawn": 0,
@@ -3008,7 +3008,7 @@
         },
         "away": {
           "matches": 6,
-          "position": 16,
+          "position": 18,
           "points": 7,
           "won": 0,
           "drawn": 1,
@@ -3339,32 +3339,32 @@
     "Parma": {
       "season": {
         "all": {
-          "matches": 9,
-          "position": 18,
-          "points": 5,
-          "won": 1,
+          "matches": 10,
+          "position": 15,
+          "points": 8,
+          "won": 2,
           "drawn": 2,
           "lost": 6,
-          "goals_for": 0.56,
-          "goals_against": 1.67,
-          "xg_for": 0.8,
-          "xg_against": 1.69,
-          "shots_for": 10.33,
-          "shots_against": 17.89,
-          "shots_on_target_for": 3.33,
-          "shots_on_target_against": 5.22,
-          "corners_for": 3.33,
-          "corners_against": 5.56,
-          "yellow_cards": 1.44,
+          "goals_for": 0.8,
+          "goals_against": 1.5,
+          "xg_for": 0.76,
+          "xg_against": 1.8,
+          "shots_for": 9.9,
+          "shots_against": 18.1,
+          "shots_on_target_for": 3.3,
+          "shots_on_target_against": 5.3,
+          "corners_for": 3.4,
+          "corners_against": 5.8,
+          "yellow_cards": 1.3,
           "red_cards": 0.0,
-          "btts_pct": 0.444,
-          "over_2_5_pct": 0.556,
-          "clean_sheets": 1
+          "btts_pct": 0.4,
+          "over_2_5_pct": 0.6,
+          "clean_sheets": 2
         },
         "home": {
           "matches": 5,
-          "position": 18,
-          "points": 5,
+          "position": 15,
+          "points": 8,
           "won": 1,
           "drawn": 2,
           "lost": 2,
@@ -3385,30 +3385,49 @@
           "clean_sheets": 1
         },
         "away": {
-          "matches": 4,
-          "position": 18,
-          "points": 5,
-          "won": 0,
+          "matches": 5,
+          "position": 15,
+          "points": 8,
+          "won": 1,
           "drawn": 0,
           "lost": 4,
-          "goals_for": 0.5,
-          "goals_against": 2.25,
-          "xg_for": 0.68,
-          "xg_against": 2.27,
-          "shots_for": 8.75,
-          "shots_against": 22.5,
-          "shots_on_target_for": 3.25,
+          "goals_for": 1.0,
+          "goals_against": 1.8,
+          "xg_for": 0.61,
+          "xg_against": 2.38,
+          "shots_for": 8.2,
+          "shots_against": 22.0,
+          "shots_on_target_for": 3.2,
           "shots_on_target_against": 6.0,
-          "corners_for": 2.5,
+          "corners_for": 2.8,
           "corners_against": 8.0,
-          "yellow_cards": 1.0,
+          "yellow_cards": 0.8,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.75,
-          "clean_sheets": 0
+          "btts_pct": 0.4,
+          "over_2_5_pct": 0.8,
+          "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "I1",
+          "venue": "A",
+          "opponent": "Atalanta",
+          "goals_for": 3,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 0.36,
+          "xg_against": 2.8,
+          "shots_for": 6,
+          "shots_against": 20,
+          "shots_on_target_for": 3,
+          "shots_on_target_against": 6,
+          "corners_for": 4,
+          "corners_against": 8,
+          "cards_for": 0,
+          "cards_against": 0
+        },
         {
           "date": "2026-10-28",
           "league": "I1",
@@ -3503,25 +3522,6 @@
           "corners_against": 5,
           "cards_for": 3,
           "cards_against": 3
-        },
-        {
-          "date": "2026-09-14",
-          "league": "I1",
-          "venue": "A",
-          "opponent": "Como",
-          "goals_for": 1,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": 1.22,
-          "xg_against": 3.24,
-          "shots_for": 12,
-          "shots_against": 29,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 7,
-          "corners_for": 4,
-          "corners_against": 11,
-          "cards_for": 0,
-          "cards_against": 1
         }
       ]
     },
@@ -3717,54 +3717,54 @@
     "Sassuolo": {
       "season": {
         "all": {
-          "matches": 9,
-          "position": 15,
+          "matches": 10,
+          "position": 17,
           "points": 8,
           "won": 2,
           "drawn": 2,
-          "lost": 5,
-          "goals_for": 1.56,
-          "goals_against": 2.44,
-          "xg_for": 1.44,
-          "xg_against": 1.72,
-          "shots_for": 14.0,
-          "shots_against": 15.67,
-          "shots_on_target_for": 5.11,
-          "shots_on_target_against": 6.67,
-          "corners_for": 4.0,
-          "corners_against": 5.67,
-          "yellow_cards": 1.33,
-          "red_cards": 0.11,
-          "btts_pct": 0.889,
-          "over_2_5_pct": 0.778,
+          "lost": 6,
+          "goals_for": 1.6,
+          "goals_against": 2.6,
+          "xg_for": 1.39,
+          "xg_against": 1.8,
+          "shots_for": 13.3,
+          "shots_against": 15.6,
+          "shots_on_target_for": 4.8,
+          "shots_on_target_against": 6.6,
+          "corners_for": 4.1,
+          "corners_against": 5.4,
+          "yellow_cards": 1.4,
+          "red_cards": 0.1,
+          "btts_pct": 0.9,
+          "over_2_5_pct": 0.8,
           "clean_sheets": 0
         },
         "home": {
-          "matches": 4,
-          "position": 15,
+          "matches": 5,
+          "position": 17,
           "points": 8,
           "won": 2,
           "drawn": 1,
-          "lost": 1,
+          "lost": 2,
           "goals_for": 2.0,
-          "goals_against": 2.5,
-          "xg_for": 1.21,
-          "xg_against": 1.78,
-          "shots_for": 12.0,
-          "shots_against": 14.0,
-          "shots_on_target_for": 4.5,
-          "shots_on_target_against": 6.5,
-          "corners_for": 3.0,
-          "corners_against": 4.75,
-          "yellow_cards": 1.75,
-          "red_cards": 0.25,
+          "goals_against": 2.8,
+          "xg_for": 1.14,
+          "xg_against": 1.93,
+          "shots_for": 11.0,
+          "shots_against": 14.2,
+          "shots_on_target_for": 4.0,
+          "shots_on_target_against": 6.4,
+          "corners_for": 3.4,
+          "corners_against": 4.4,
+          "yellow_cards": 1.8,
+          "red_cards": 0.2,
           "btts_pct": 1.0,
-          "over_2_5_pct": 0.75,
+          "over_2_5_pct": 0.8,
           "clean_sheets": 0
         },
         "away": {
           "matches": 5,
-          "position": 15,
+          "position": 17,
           "points": 8,
           "won": 0,
           "drawn": 1,
@@ -3787,6 +3787,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "I1",
+          "venue": "H",
+          "opponent": "Fiorentina",
+          "goals_for": 2,
+          "goals_against": 4,
+          "result": "L",
+          "xg_for": 0.87,
+          "xg_against": 2.54,
+          "shots_for": 7,
+          "shots_against": 15,
+          "shots_on_target_for": 2,
+          "shots_on_target_against": 6,
+          "corners_for": 5,
+          "corners_against": 3,
+          "cards_for": 2,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-27",
           "league": "I1",
@@ -3881,25 +3900,6 @@
           "corners_against": 7,
           "cards_for": 1,
           "cards_against": 4
-        },
-        {
-          "date": "2026-09-13",
-          "league": "I1",
-          "venue": "H",
-          "opponent": "Juventus",
-          "goals_for": 3,
-          "goals_against": 2,
-          "result": "W",
-          "xg_for": 1.03,
-          "xg_against": 1.1,
-          "shots_for": 10,
-          "shots_against": 19,
-          "shots_on_target_for": 6,
-          "shots_on_target_against": 8,
-          "corners_for": 3,
-          "corners_against": 10,
-          "cards_for": 2,
-          "cards_against": 2
         }
       ]
     },

@@ -2,613 +2,613 @@
   "league": "F1",
   "season": "2026/27",
   "goals": {
-    "home_advantage": 0.2275,
-    "rho": -0.0561,
+    "home_advantage": 0.2226,
+    "rho": -0.0553,
     "teams": {
       "Angers": {
-        "attack": -0.3672,
-        "defense": 0.2151
+        "attack": -0.3659,
+        "defense": 0.2173
       },
       "Auxerre": {
-        "attack": -0.0548,
-        "defense": 0.2334
+        "attack": -0.0526,
+        "defense": 0.2351
       },
       "Brest": {
-        "attack": 0.1008,
-        "defense": 0.2694
+        "attack": 0.1174,
+        "defense": 0.2455
       },
       "Le Havre": {
-        "attack": -0.1981,
-        "defense": 0.2834
+        "attack": -0.1959,
+        "defense": 0.2849
       },
       "Le Mans": {
-        "attack": -0.0562,
-        "defense": 0.4245
+        "attack": -0.0557,
+        "defense": 0.4286
       },
       "Lens": {
-        "attack": 0.2921,
-        "defense": -0.0564
+        "attack": 0.2926,
+        "defense": -0.0535
       },
       "Lille": {
-        "attack": 0.086,
-        "defense": -0.272
+        "attack": 0.0881,
+        "defense": -0.2704
       },
       "Lorient": {
-        "attack": -0.0184,
-        "defense": -0.005
+        "attack": -0.0627,
+        "defense": 0.0212
       },
       "Lyon": {
-        "attack": 0.2537,
-        "defense": -0.0848
+        "attack": 0.255,
+        "defense": -0.0829
       },
       "Marseille": {
-        "attack": 0.4159,
-        "defense": 0.1152
+        "attack": 0.4172,
+        "defense": 0.117
       },
       "Metz": {
-        "attack": -0.2703,
-        "defense": 0.5417
+        "attack": -0.2694,
+        "defense": 0.5445
       },
       "Monaco": {
-        "attack": 0.2914,
-        "defense": 0.0828
+        "attack": 0.2923,
+        "defense": 0.0857
       },
       "Montpellier": {
-        "attack": -0.7118,
-        "defense": 0.5943
+        "attack": -0.7092,
+        "defense": 0.5945
       },
       "Nantes": {
-        "attack": -0.3182,
-        "defense": 0.1556
+        "attack": -0.3167,
+        "defense": 0.1574
       },
       "Nice": {
-        "attack": 0.0593,
-        "defense": 0.1788
+        "attack": 0.0607,
+        "defense": 0.1809
       },
       "Paris FC": {
-        "attack": 0.1743,
-        "defense": 0.0275
+        "attack": 0.1745,
+        "defense": 0.0311
       },
       "Paris SG": {
-        "attack": 0.576,
-        "defense": -0.2775
+        "attack": 0.5778,
+        "defense": -0.2758
       },
       "Reims": {
-        "attack": -0.3933,
-        "defense": 0.0888
+        "attack": -0.3908,
+        "defense": 0.0891
       },
       "Rennes": {
-        "attack": 0.3395,
-        "defense": 0.251
+        "attack": 0.3409,
+        "defense": 0.2527
       },
       "St Etienne": {
-        "attack": -0.0826,
-        "defense": 0.5942
+        "attack": -0.0799,
+        "defense": 0.5946
       },
       "Strasbourg": {
-        "attack": 0.3078,
-        "defense": 0.1825
+        "attack": 0.3089,
+        "defense": 0.1843
       },
       "Toulouse": {
-        "attack": 0.0352,
-        "defense": 0.0737
+        "attack": 0.0363,
+        "defense": 0.0765
       },
       "Troyes": {
-        "attack": -0.4611,
-        "defense": 0.3571
+        "attack": -0.4629,
+        "defense": 0.3626
       }
     }
   },
   "stats": {
     "corners": {
-      "avg_home": 5.1073,
-      "avg_away": 4.3219,
-      "dispersion_team": 12.0001,
-      "dispersion_total": 68.4157,
+      "avg_home": 5.1197,
+      "avg_away": 4.312,
+      "dispersion_team": 11.965,
+      "dispersion_total": 69.8716,
       "teams": {
         "Angers": {
-          "home_for": 0.9582,
-          "home_against": 1.1708,
-          "away_for": 0.9402,
-          "away_against": 1.0409
+          "home_for": 0.9565,
+          "home_against": 1.1728,
+          "away_for": 0.9417,
+          "away_against": 1.0391
         },
         "Auxerre": {
-          "home_for": 1.0857,
-          "home_against": 1.079,
-          "away_for": 0.9644,
-          "away_against": 1.1117
+          "home_for": 1.0838,
+          "home_against": 1.0808,
+          "away_for": 0.966,
+          "away_against": 1.1096
         },
         "Brest": {
-          "home_for": 0.9179,
-          "home_against": 0.9402,
-          "away_for": 0.8939,
-          "away_against": 1.2311
+          "home_for": 0.9163,
+          "home_against": 0.9417,
+          "away_for": 0.872,
+          "away_against": 1.2469
         },
         "Le Havre": {
-          "home_for": 1.0005,
-          "home_against": 0.9081,
-          "away_for": 0.9666,
-          "away_against": 1.0913
+          "home_for": 0.9988,
+          "home_against": 0.9096,
+          "away_for": 0.9682,
+          "away_against": 1.0893
         },
         "Le Mans": {
-          "home_for": 0.7078,
-          "home_against": 1.1726,
-          "away_for": 0.8471,
-          "away_against": 1.0482
+          "home_for": 0.7075,
+          "home_against": 1.174,
+          "away_for": 0.8479,
+          "away_against": 1.0469
         },
         "Lens": {
-          "home_for": 1.2144,
-          "home_against": 0.9071,
-          "away_for": 1.2333,
-          "away_against": 0.9
+          "home_for": 1.2121,
+          "home_against": 0.9086,
+          "away_for": 1.2355,
+          "away_against": 0.8985
         },
         "Lille": {
-          "home_for": 1.064,
-          "home_against": 0.8894,
-          "away_for": 1.0261,
-          "away_against": 0.9235
+          "home_for": 1.0621,
+          "home_against": 0.8908,
+          "away_for": 1.0278,
+          "away_against": 0.9219
         },
         "Lorient": {
-          "home_for": 0.7277,
-          "home_against": 1.1583,
-          "away_for": 0.8873,
-          "away_against": 1.0745
+          "home_for": 0.7718,
+          "home_against": 1.1227,
+          "away_for": 0.8887,
+          "away_against": 1.0726
         },
         "Lyon": {
-          "home_for": 1.0905,
-          "home_against": 1.077,
-          "away_for": 1.0856,
-          "away_against": 1.1193
+          "home_for": 1.0885,
+          "home_against": 1.0788,
+          "away_for": 1.0875,
+          "away_against": 1.1172
         },
         "Marseille": {
-          "home_for": 0.9741,
-          "home_against": 0.8706,
-          "away_for": 1.0856,
-          "away_against": 0.8507
+          "home_for": 0.9724,
+          "home_against": 0.872,
+          "away_for": 1.0875,
+          "away_against": 0.8494
         },
         "Metz": {
-          "home_for": 0.9795,
-          "home_against": 0.996,
-          "away_for": 0.8845,
-          "away_against": 1.1391
+          "home_for": 0.978,
+          "home_against": 0.9974,
+          "away_for": 0.8857,
+          "away_against": 1.1372
         },
         "Monaco": {
-          "home_for": 0.9458,
-          "home_against": 1.0063,
-          "away_for": 1.0332,
-          "away_against": 0.9053
+          "home_for": 0.9442,
+          "home_against": 1.008,
+          "away_for": 1.035,
+          "away_against": 0.9038
         },
         "Nantes": {
-          "home_for": 0.849,
-          "home_against": 1.0902,
-          "away_for": 0.8674,
-          "away_against": 1.1391
+          "home_for": 0.8478,
+          "home_against": 1.0919,
+          "away_for": 0.8686,
+          "away_against": 1.1372
         },
         "Nice": {
-          "home_for": 1.0111,
-          "home_against": 1.1583,
-          "away_for": 1.1782,
-          "away_against": 0.9235
+          "home_for": 1.0093,
+          "home_against": 1.1603,
+          "away_for": 1.1802,
+          "away_against": 0.9219
         },
         "Paris FC": {
-          "home_for": 0.9265,
-          "home_against": 0.8956,
-          "away_for": 0.8609,
-          "away_against": 1.1528
+          "home_for": 0.9249,
+          "home_against": 0.8971,
+          "away_for": 0.8622,
+          "away_against": 1.1507
         },
         "Paris SG": {
-          "home_for": 1.2583,
-          "home_against": 0.7377,
-          "away_for": 1.176,
-          "away_against": 0.7032
+          "home_for": 1.256,
+          "home_against": 0.7387,
+          "away_for": 1.1781,
+          "away_against": 0.7022
         },
         "Rennes": {
-          "home_for": 1.117,
-          "home_against": 1.1333,
-          "away_for": 1.2377,
-          "away_against": 0.9682
+          "home_for": 1.1149,
+          "home_against": 1.1352,
+          "away_for": 1.2399,
+          "away_against": 0.9666
         },
         "Strasbourg": {
-          "home_for": 0.9011,
-          "home_against": 1.046,
-          "away_for": 0.7831,
-          "away_against": 0.9159
+          "home_for": 0.8996,
+          "home_against": 1.0477,
+          "away_for": 0.7842,
+          "away_against": 0.9143
         },
         "Toulouse": {
-          "home_for": 1.013,
-          "home_against": 0.9865,
-          "away_for": 0.8393,
-          "away_against": 1.0058
+          "home_for": 1.0112,
+          "home_against": 0.9881,
+          "away_for": 0.8407,
+          "away_against": 1.0041
         },
         "Troyes": {
-          "home_for": 1.1461,
-          "home_against": 0.7545,
-          "away_for": 1.1469,
-          "away_against": 0.7731
+          "home_for": 1.1446,
+          "home_against": 0.7551,
+          "away_for": 1.1482,
+          "away_against": 0.7726
         }
       }
     },
     "cards": {
-      "avg_home": 1.9206,
-      "avg_away": 2.1738,
+      "avg_home": 1.9167,
+      "avg_away": 2.1688,
       "dispersion_team": null,
-      "dispersion_total": 63.178,
+      "dispersion_total": 61.6408,
       "teams": {
         "Angers": {
-          "home_for": 0.9176,
-          "home_against": 0.8546,
-          "away_for": 0.7983,
-          "away_against": 0.6874
+          "home_for": 0.9189,
+          "home_against": 0.856,
+          "away_for": 0.7995,
+          "away_against": 0.6882
         },
         "Auxerre": {
-          "home_for": 1.0742,
-          "home_against": 1.3109,
-          "away_for": 1.1157,
-          "away_against": 0.9317
+          "home_for": 1.0758,
+          "home_against": 1.3133,
+          "away_for": 1.1177,
+          "away_against": 0.933
         },
         "Brest": {
-          "home_for": 0.9403,
-          "home_against": 1.1269,
-          "away_for": 0.8903,
-          "away_against": 0.8659
+          "home_for": 0.9416,
+          "home_against": 1.1288,
+          "away_for": 0.8684,
+          "away_against": 0.8484
         },
         "Le Havre": {
-          "home_for": 0.9739,
-          "home_against": 0.9789,
-          "away_for": 1.048,
-          "away_against": 0.9403
+          "home_for": 0.9753,
+          "home_against": 0.9806,
+          "away_for": 1.0498,
+          "away_against": 0.9416
         },
         "Le Mans": {
-          "home_for": 1.0184,
-          "home_against": 0.9645,
-          "away_for": 1.282,
-          "away_against": 0.9686
+          "home_for": 1.0193,
+          "home_against": 0.9654,
+          "away_for": 1.2838,
+          "away_against": 0.9696
         },
         "Lens": {
-          "home_for": 1.1039,
-          "home_against": 1.048,
-          "away_for": 1.0784,
-          "away_against": 1.0302
+          "home_for": 1.1056,
+          "home_against": 1.0498,
+          "away_for": 1.0803,
+          "away_against": 1.0317
         },
         "Lille": {
-          "home_for": 0.988,
-          "home_against": 0.8546,
-          "away_for": 1.1926,
-          "away_against": 1.2229
+          "home_for": 0.9894,
+          "home_against": 0.856,
+          "away_for": 1.1947,
+          "away_against": 1.2248
         },
         "Lorient": {
-          "home_for": 0.8361,
-          "home_against": 1.14,
-          "away_for": 0.7852,
-          "away_against": 1.1188
+          "home_for": 0.8202,
+          "home_against": 1.1052,
+          "away_for": 0.7863,
+          "away_against": 1.1205
         },
         "Lyon": {
-          "home_for": 0.9457,
-          "home_against": 1.1281,
-          "away_for": 0.9823,
-          "away_against": 1.3419
+          "home_for": 0.9471,
+          "home_against": 1.1301,
+          "away_for": 0.9839,
+          "away_against": 1.3441
         },
         "Marseille": {
-          "home_for": 1.0724,
-          "home_against": 0.9168,
-          "away_for": 1.048,
-          "away_against": 1.0742
+          "home_for": 1.074,
+          "home_against": 0.9183,
+          "away_for": 1.0498,
+          "away_against": 1.0758
         },
         "Metz": {
-          "home_for": 0.8525,
-          "home_against": 0.8985,
-          "away_for": 1.0178,
-          "away_against": 0.8332
+          "home_for": 0.8535,
+          "home_against": 0.8998,
+          "away_for": 1.0193,
+          "away_against": 0.8341
         },
         "Monaco": {
-          "home_for": 1.1485,
-          "home_against": 1.0086,
-          "away_for": 1.0908,
-          "away_against": 0.9739
+          "home_for": 1.1503,
+          "home_against": 1.0103,
+          "away_for": 1.0927,
+          "away_against": 0.9753
         },
         "Nantes": {
-          "home_for": 1.0067,
-          "home_against": 1.0519,
-          "away_for": 1.0348,
-          "away_against": 1.2382
+          "home_for": 1.0081,
+          "home_against": 1.0535,
+          "away_for": 1.0364,
+          "away_against": 1.2399
         },
         "Nice": {
-          "home_for": 1.0724,
-          "home_against": 0.8795,
-          "away_for": 1.0875,
-          "away_against": 1.0147
+          "home_for": 1.074,
+          "home_against": 0.8809,
+          "away_for": 1.0893,
+          "away_against": 1.0161
         },
         "Paris FC": {
-          "home_for": 1.2413,
-          "home_against": 0.9541,
-          "away_for": 0.9955,
-          "away_against": 0.7915
+          "home_for": 1.2432,
+          "home_against": 0.9557,
+          "away_for": 0.9971,
+          "away_against": 0.7925
         },
         "Paris SG": {
-          "home_for": 0.729,
-          "home_against": 0.8328,
-          "away_for": 0.6221,
-          "away_against": 0.9373
+          "home_for": 0.7299,
+          "home_against": 0.834,
+          "away_for": 0.6229,
+          "away_against": 0.9387
         },
         "Rennes": {
-          "home_for": 0.9739,
-          "home_against": 1.1406,
-          "away_for": 1.048,
-          "away_against": 1.1783
+          "home_for": 0.9753,
+          "home_against": 1.1426,
+          "away_for": 1.0498,
+          "away_against": 1.1801
         },
         "Strasbourg": {
-          "home_for": 0.8064,
-          "home_against": 0.9955,
-          "away_for": 1.1033,
-          "away_against": 0.9035
+          "home_for": 0.8075,
+          "home_against": 0.9971,
+          "away_for": 1.1052,
+          "away_against": 0.9048
         },
         "Toulouse": {
-          "home_for": 1.1783,
-          "home_against": 0.9429,
-          "away_for": 1.0535,
-          "away_against": 0.9035
+          "home_for": 1.1801,
+          "home_against": 0.9444,
+          "away_for": 1.0554,
+          "away_against": 0.9048
         },
         "Troyes": {
-          "home_for": 1.1248,
-          "home_against": 0.914,
-          "away_for": 0.76,
-          "away_against": 1.1341
+          "home_for": 1.1261,
+          "home_against": 0.915,
+          "away_for": 0.7605,
+          "away_against": 1.1353
         }
       }
     },
     "shots": {
-      "avg_home": 14.0064,
-      "avg_away": 11.515,
-      "dispersion_team": 20.2777,
-      "dispersion_total": 91.6845,
+      "avg_home": 14.0107,
+      "avg_away": 11.5171,
+      "dispersion_team": 20.3933,
+      "dispersion_total": 92.2991,
       "teams": {
         "Angers": {
-          "home_for": 0.88,
-          "home_against": 1.1809,
-          "away_for": 0.844,
-          "away_against": 1.118
+          "home_for": 0.8798,
+          "home_against": 1.1808,
+          "away_for": 0.8439,
+          "away_against": 1.1177
         },
         "Auxerre": {
-          "home_for": 0.9079,
-          "home_against": 0.9631,
-          "away_for": 0.8969,
-          "away_against": 1.0479
+          "home_for": 0.9077,
+          "home_against": 0.963,
+          "away_for": 0.8968,
+          "away_against": 1.0477
         },
         "Brest": {
-          "home_for": 1.067,
-          "home_against": 0.9829,
-          "away_for": 0.9507,
-          "away_against": 1.0568
+          "home_for": 1.0668,
+          "home_against": 0.9828,
+          "away_for": 0.9555,
+          "away_against": 1.0573
         },
         "Le Havre": {
-          "home_for": 0.9611,
-          "home_against": 1.0378,
-          "away_for": 1.0475,
-          "away_against": 0.9976
+          "home_for": 0.9609,
+          "home_against": 1.0376,
+          "away_for": 1.0473,
+          "away_against": 0.9974
         },
         "Le Mans": {
-          "home_for": 0.8967,
-          "home_against": 1.1731,
-          "away_for": 0.8908,
-          "away_against": 1.064
+          "home_for": 0.8966,
+          "home_against": 1.173,
+          "away_for": 0.8907,
+          "away_against": 1.0639
         },
         "Lens": {
-          "home_for": 1.1363,
-          "home_against": 0.9011,
-          "away_for": 1.1504,
-          "away_against": 0.9109
+          "home_for": 1.1361,
+          "home_against": 0.9009,
+          "away_for": 1.1503,
+          "away_against": 0.9107
         },
         "Lille": {
-          "home_for": 0.9862,
-          "home_against": 0.8617,
-          "away_for": 1.0425,
-          "away_against": 0.9385
+          "home_for": 0.9859,
+          "home_against": 0.8616,
+          "away_for": 1.0424,
+          "away_against": 0.9383
         },
         "Lorient": {
-          "home_for": 0.8712,
-          "home_against": 0.9953,
-          "away_for": 0.9184,
-          "away_against": 0.9058
+          "home_for": 0.8818,
+          "home_against": 0.9977,
+          "away_for": 0.9183,
+          "away_against": 0.9056
         },
         "Lyon": {
-          "home_for": 1.0305,
-          "home_against": 0.9322,
-          "away_for": 0.9333,
-          "away_against": 0.9813
+          "home_for": 1.0303,
+          "home_against": 0.932,
+          "away_for": 0.9332,
+          "away_against": 0.9811
         },
         "Marseille": {
-          "home_for": 1.0383,
-          "home_against": 1.1035,
-          "away_for": 1.1492,
-          "away_against": 0.8977
+          "home_for": 1.038,
+          "home_against": 1.1033,
+          "away_for": 1.149,
+          "away_against": 0.8975
         },
         "Metz": {
-          "home_for": 0.8992,
-          "home_against": 1.0587,
-          "away_for": 0.8271,
-          "away_against": 1.1875
+          "home_for": 0.8991,
+          "home_against": 1.0586,
+          "away_for": 0.827,
+          "away_against": 1.1872
         },
         "Monaco": {
-          "home_for": 0.9385,
-          "home_against": 0.9631,
-          "away_for": 1.0448,
-          "away_against": 1.073
+          "home_for": 0.9383,
+          "home_against": 0.963,
+          "away_for": 1.0447,
+          "away_against": 1.0727
         },
         "Nantes": {
-          "home_for": 0.8913,
-          "home_against": 1.0201,
-          "away_for": 0.9493,
-          "away_against": 1.0182
+          "home_for": 0.8911,
+          "home_against": 1.02,
+          "away_for": 0.9492,
+          "away_against": 1.018
         },
         "Nice": {
-          "home_for": 0.9283,
-          "home_against": 1.1504,
-          "away_for": 0.9234,
-          "away_against": 1.0303
+          "home_for": 0.9281,
+          "home_against": 1.1503,
+          "away_for": 0.9233,
+          "away_against": 1.03
         },
         "Paris FC": {
-          "home_for": 1.0035,
-          "home_against": 0.9486,
-          "away_for": 0.9482,
-          "away_against": 0.914
+          "home_for": 1.0033,
+          "home_against": 0.9485,
+          "away_for": 0.9481,
+          "away_against": 0.9138
         },
         "Paris SG": {
-          "home_for": 1.3134,
-          "home_against": 0.7583,
-          "away_for": 1.3497,
-          "away_against": 0.855
+          "home_for": 1.3131,
+          "home_against": 0.7582,
+          "away_for": 1.3495,
+          "away_against": 0.8549
         },
         "Rennes": {
-          "home_for": 1.127,
-          "home_against": 1.0753,
-          "away_for": 1.112,
-          "away_against": 1.0853
+          "home_for": 1.1268,
+          "home_against": 1.0752,
+          "away_for": 1.1118,
+          "away_against": 1.0851
         },
         "Strasbourg": {
-          "home_for": 0.9691,
-          "home_against": 1.0524,
-          "away_for": 0.9486,
-          "away_against": 1.0325
+          "home_for": 0.9689,
+          "home_against": 1.0523,
+          "away_for": 0.9485,
+          "away_against": 1.0322
         },
         "Toulouse": {
-          "home_for": 1.0486,
-          "home_against": 0.9507,
-          "away_for": 0.9368,
-          "away_against": 1.0093
+          "home_for": 1.0484,
+          "home_against": 0.9506,
+          "away_for": 0.9367,
+          "away_against": 1.0091
         },
         "Troyes": {
-          "home_for": 1.0497,
-          "home_against": 0.9342,
-          "away_for": 0.9994,
-          "away_against": 0.9284
+          "home_for": 1.0496,
+          "home_against": 0.9341,
+          "away_for": 0.9993,
+          "away_against": 0.9283
         }
       }
     },
     "shots_on_target": {
-      "avg_home": 4.9785,
+      "avg_home": 4.9573,
       "avg_away": 3.985,
-      "dispersion_team": 154.5691,
-      "dispersion_total": 151.0024,
+      "dispersion_team": 125.6954,
+      "dispersion_total": 142.2028,
       "teams": {
         "Angers": {
-          "home_for": 0.7969,
+          "home_for": 0.7991,
           "home_against": 1.2537,
           "away_for": 0.7948,
-          "away_against": 1.1236
+          "away_against": 1.1272
         },
         "Auxerre": {
-          "home_for": 0.917,
+          "home_for": 0.9197,
           "home_against": 0.9955,
           "away_for": 0.9146,
-          "away_against": 1.1443
+          "away_against": 1.148
         },
         "Brest": {
-          "home_for": 1.0375,
+          "home_for": 1.0407,
           "home_against": 0.931,
-          "away_for": 0.8808,
-          "away_against": 1.0433
+          "away_for": 0.8874,
+          "away_against": 0.9899
         },
         "Le Havre": {
-          "home_for": 0.9,
+          "home_for": 0.9027,
           "home_against": 1.1316,
-          "away_for": 0.9884,
-          "away_against": 0.9342
+          "away_for": 0.9883,
+          "away_against": 0.937
         },
         "Le Mans": {
-          "home_for": 0.9573,
+          "home_for": 0.959,
           "home_against": 1.1132,
           "away_for": 0.8262,
-          "away_against": 1.1227
+          "away_against": 1.1253
         },
         "Lens": {
-          "home_for": 1.1982,
+          "home_for": 1.2021,
           "home_against": 0.7804,
           "away_for": 1.1248,
-          "away_against": 1.0031
+          "away_against": 1.0063
         },
         "Lille": {
-          "home_for": 0.9597,
-          "home_against": 0.7722,
+          "home_for": 0.9627,
+          "home_against": 0.7721,
           "away_for": 1.1748,
-          "away_against": 0.8998
+          "away_against": 0.9024
         },
         "Lorient": {
-          "home_for": 0.9113,
-          "home_against": 0.9453,
+          "home_for": 0.8645,
+          "home_against": 0.9485,
           "away_for": 0.8234,
-          "away_against": 0.894
+          "away_against": 0.8967
         },
         "Lyon": {
-          "home_for": 1.0303,
+          "home_for": 1.0336,
           "home_against": 0.9146,
           "away_for": 1.0457,
-          "away_against": 0.9801
+          "away_against": 0.9831
         },
         "Marseille": {
-          "home_for": 1.128,
-          "home_against": 1.1927,
-          "away_for": 1.1533,
-          "away_against": 0.8653
+          "home_for": 1.1317,
+          "home_against": 1.1926,
+          "away_for": 1.1532,
+          "away_against": 0.8678
         },
         "Metz": {
-          "home_for": 0.8539,
+          "home_for": 0.856,
           "home_against": 1.0767,
           "away_for": 0.77,
-          "away_against": 1.2482
+          "away_against": 1.252
         },
         "Monaco": {
-          "home_for": 0.9686,
+          "home_for": 0.9716,
           "home_against": 0.974,
           "away_for": 1.0163,
-          "away_against": 1.0194
+          "away_against": 1.0226
         },
         "Nantes": {
-          "home_for": 0.7944,
+          "home_for": 0.7962,
           "home_against": 1.0674,
           "away_for": 0.863,
-          "away_against": 1.0102
+          "away_against": 1.0129
         },
         "Nice": {
-          "home_for": 0.8946,
-          "home_against": 1.1927,
+          "home_for": 0.8973,
+          "home_against": 1.1926,
           "away_for": 0.931,
-          "away_against": 1.0547
+          "away_against": 1.058
         },
         "Paris FC": {
-          "home_for": 1.0574,
+          "home_for": 1.0608,
           "home_against": 0.8671,
           "away_for": 0.8736,
-          "away_against": 0.9055
+          "away_against": 0.9082
         },
         "Paris SG": {
-          "home_for": 1.3682,
+          "home_for": 1.3728,
           "home_against": 0.8505,
           "away_for": 1.5047,
-          "away_against": 0.8435
+          "away_against": 0.8461
         },
         "Rennes": {
-          "home_for": 1.1334,
+          "home_for": 1.1371,
           "home_against": 1.0231,
           "away_for": 1.1891,
-          "away_against": 1.0949
+          "away_against": 1.0984
         },
         "Strasbourg": {
-          "home_for": 1.0433,
+          "home_for": 1.0465,
           "home_against": 1.0242,
           "away_for": 1.057,
-          "away_against": 1.1063
+          "away_against": 1.1099
         },
         "Toulouse": {
-          "home_for": 0.9859,
+          "home_for": 0.9889,
           "home_against": 0.9668,
           "away_for": 0.9892,
-          "away_against": 0.8511
+          "away_against": 0.8536
         },
         "Troyes": {
-          "home_for": 0.9821,
+          "home_for": 0.9841,
           "home_against": 0.9768,
-          "away_for": 0.7229,
-          "away_against": 0.9573
+          "away_for": 0.7228,
+          "away_against": 0.959
         }
       }
     }
@@ -807,7 +807,7 @@
       "season": {
         "all": {
           "matches": 9,
-          "position": 13,
+          "position": 14,
           "points": 10,
           "won": 3,
           "drawn": 1,
@@ -830,7 +830,7 @@
         },
         "home": {
           "matches": 4,
-          "position": 13,
+          "position": 14,
           "points": 10,
           "won": 2,
           "drawn": 1,
@@ -853,7 +853,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 13,
+          "position": 14,
           "points": 10,
           "won": 1,
           "drawn": 0,
@@ -995,32 +995,32 @@
     "Brest": {
       "season": {
         "all": {
-          "matches": 8,
-          "position": 14,
-          "points": 9,
-          "won": 2,
+          "matches": 9,
+          "position": 10,
+          "points": 12,
+          "won": 3,
           "drawn": 3,
           "lost": 3,
-          "goals_for": 1.75,
-          "goals_against": 1.5,
-          "xg_for": 2.06,
-          "xg_against": 1.24,
-          "shots_for": 16.88,
-          "shots_against": 11.62,
-          "shots_on_target_for": 5.88,
-          "shots_on_target_against": 4.0,
-          "corners_for": 4.62,
-          "corners_against": 4.38,
-          "yellow_cards": 1.5,
+          "goals_for": 1.78,
+          "goals_against": 1.33,
+          "xg_for": 1.98,
+          "xg_against": 1.3,
+          "shots_for": 16.33,
+          "shots_against": 12.0,
+          "shots_on_target_for": 5.67,
+          "shots_on_target_against": 3.56,
+          "corners_for": 4.33,
+          "corners_against": 4.78,
+          "yellow_cards": 1.44,
           "red_cards": 0.0,
-          "btts_pct": 0.875,
-          "over_2_5_pct": 0.75,
-          "clean_sheets": 0
+          "btts_pct": 0.778,
+          "over_2_5_pct": 0.667,
+          "clean_sheets": 1
         },
         "home": {
           "matches": 4,
-          "position": 14,
-          "points": 9,
+          "position": 10,
+          "points": 12,
           "won": 1,
           "drawn": 1,
           "lost": 2,
@@ -1041,30 +1041,49 @@
           "clean_sheets": 0
         },
         "away": {
-          "matches": 4,
-          "position": 14,
-          "points": 9,
-          "won": 1,
+          "matches": 5,
+          "position": 10,
+          "points": 12,
+          "won": 2,
           "drawn": 2,
           "lost": 1,
-          "goals_for": 1.5,
-          "goals_against": 1.5,
-          "xg_for": 1.55,
-          "xg_against": 1.45,
-          "shots_for": 15.25,
-          "shots_against": 13.5,
-          "shots_on_target_for": 5.0,
-          "shots_on_target_against": 4.5,
-          "corners_for": 5.0,
-          "corners_against": 4.75,
-          "yellow_cards": 1.25,
+          "goals_for": 1.6,
+          "goals_against": 1.2,
+          "xg_for": 1.51,
+          "xg_against": 1.51,
+          "shots_for": 14.6,
+          "shots_against": 13.8,
+          "shots_on_target_for": 4.8,
+          "shots_on_target_against": 3.6,
+          "corners_for": 4.4,
+          "corners_against": 5.4,
+          "yellow_cards": 1.2,
           "red_cards": 0.0,
-          "btts_pct": 1.0,
-          "over_2_5_pct": 0.75,
-          "clean_sheets": 0
+          "btts_pct": 0.8,
+          "over_2_5_pct": 0.6,
+          "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "F1",
+          "venue": "A",
+          "opponent": "Lorient",
+          "goals_for": 2,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 1.31,
+          "xg_against": 1.74,
+          "shots_for": 12,
+          "shots_against": 15,
+          "shots_on_target_for": 4,
+          "shots_on_target_against": 0,
+          "corners_for": 2,
+          "corners_against": 8,
+          "cards_for": 1,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-23",
           "league": "F1",
@@ -1159,25 +1178,6 @@
           "corners_against": 2,
           "cards_for": 1,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-05",
-          "league": "F1",
-          "venue": "A",
-          "opponent": "Le Havre",
-          "goals_for": 2,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": 2.37,
-          "xg_against": 2.01,
-          "shots_for": 19,
-          "shots_against": 18,
-          "shots_on_target_for": 9,
-          "shots_on_target_against": 4,
-          "corners_for": 5,
-          "corners_against": 5,
-          "cards_for": 1,
-          "cards_against": 3
         }
       ]
     },
@@ -1940,54 +1940,54 @@
     "Lorient": {
       "season": {
         "all": {
-          "matches": 8,
-          "position": 10,
+          "matches": 9,
+          "position": 11,
           "points": 12,
           "won": 3,
           "drawn": 3,
-          "lost": 2,
-          "goals_for": 0.88,
-          "goals_against": 0.75,
-          "xg_for": 1.09,
-          "xg_against": 1.03,
-          "shots_for": 9.75,
-          "shots_against": 13.25,
-          "shots_on_target_for": 3.12,
+          "lost": 3,
+          "goals_for": 0.78,
+          "goals_against": 0.89,
+          "xg_for": 1.16,
+          "xg_against": 1.06,
+          "shots_for": 10.33,
+          "shots_against": 13.11,
+          "shots_on_target_for": 2.78,
           "shots_on_target_against": 4.0,
-          "corners_for": 3.12,
-          "corners_against": 5.62,
-          "yellow_cards": 1.12,
+          "corners_for": 3.67,
+          "corners_against": 5.22,
+          "yellow_cards": 1.11,
           "red_cards": 0.0,
-          "btts_pct": 0.375,
-          "over_2_5_pct": 0.375,
+          "btts_pct": 0.333,
+          "over_2_5_pct": 0.333,
           "clean_sheets": 5
         },
         "home": {
-          "matches": 4,
-          "position": 10,
+          "matches": 5,
+          "position": 11,
           "points": 12,
           "won": 2,
           "drawn": 1,
-          "lost": 1,
-          "goals_for": 1.25,
-          "goals_against": 1.0,
-          "xg_for": 1.07,
-          "xg_against": 1.19,
-          "shots_for": 10.5,
-          "shots_against": 14.0,
-          "shots_on_target_for": 4.25,
-          "shots_on_target_against": 3.25,
-          "corners_for": 3.0,
-          "corners_against": 5.25,
+          "lost": 2,
+          "goals_for": 1.0,
+          "goals_against": 1.2,
+          "xg_for": 1.21,
+          "xg_against": 1.22,
+          "shots_for": 11.4,
+          "shots_against": 13.6,
+          "shots_on_target_for": 3.4,
+          "shots_on_target_against": 3.4,
+          "corners_for": 4.0,
+          "corners_against": 4.6,
           "yellow_cards": 1.0,
           "red_cards": 0.0,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.5,
+          "btts_pct": 0.4,
+          "over_2_5_pct": 0.4,
           "clean_sheets": 2
         },
         "away": {
           "matches": 4,
-          "position": 10,
+          "position": 11,
           "points": 12,
           "won": 1,
           "drawn": 2,
@@ -2010,6 +2010,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "F1",
+          "venue": "H",
+          "opponent": "Brest",
+          "goals_for": 0,
+          "goals_against": 2,
+          "result": "L",
+          "xg_for": 1.74,
+          "xg_against": 1.31,
+          "shots_for": 15,
+          "shots_against": 12,
+          "shots_on_target_for": 0,
+          "shots_on_target_against": 4,
+          "corners_for": 8,
+          "corners_against": 2,
+          "cards_for": 1,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-25",
           "league": "F1",
@@ -2104,25 +2123,6 @@
           "corners_against": 3,
           "cards_for": 1,
           "cards_against": 0
-        },
-        {
-          "date": "2026-09-05",
-          "league": "F1",
-          "venue": "A",
-          "opponent": "Lens",
-          "goals_for": 1,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 1.6,
-          "xg_against": 1.24,
-          "shots_for": 8,
-          "shots_against": 17,
-          "shots_on_target_for": 3,
-          "shots_on_target_against": 6,
-          "corners_for": 0,
-          "corners_against": 8,
-          "cards_for": 1,
-          "cards_against": 6
         }
       ]
     },
@@ -3453,7 +3453,7 @@
       "season": {
         "all": {
           "matches": 9,
-          "position": 12,
+          "position": 13,
           "points": 10,
           "won": 3,
           "drawn": 1,
@@ -3476,7 +3476,7 @@
         },
         "home": {
           "matches": 4,
-          "position": 12,
+          "position": 13,
           "points": 10,
           "won": 2,
           "drawn": 1,
@@ -3499,7 +3499,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 12,
+          "position": 13,
           "points": 10,
           "won": 1,
           "drawn": 0,
@@ -3642,7 +3642,7 @@
       "season": {
         "all": {
           "matches": 9,
-          "position": 11,
+          "position": 12,
           "points": 10,
           "won": 2,
           "drawn": 4,
@@ -3665,7 +3665,7 @@
         },
         "home": {
           "matches": 4,
-          "position": 11,
+          "position": 12,
           "points": 10,
           "won": 1,
           "drawn": 1,
@@ -3688,7 +3688,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 11,
+          "position": 12,
           "points": 10,
           "won": 1,
           "drawn": 3,

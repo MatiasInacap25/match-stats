@@ -28002,6 +28002,22 @@
     ],
     "La Coruna|Osasuna": [
       {
+        "date": "2026-11-02",
+        "league": "SP1",
+        "home": "La Coruna",
+        "away": "Osasuna",
+        "home_goals": 2,
+        "away_goals": 1,
+        "home_shots": 18,
+        "away_shots": 11,
+        "home_shots_on_target": 7,
+        "away_shots_on_target": 2,
+        "home_corners": 8,
+        "away_corners": 2,
+        "home_cards": 0,
+        "away_cards": 4
+      },
+      {
         "date": "2019-04-13",
         "league": "SP2",
         "home": "Osasuna",

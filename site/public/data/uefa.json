@@ -11,7 +11,7 @@
       "defense": 0.2853
     },
     "I1": {
-      "attack": -0.2253,
+      "attack": -0.2254,
       "defense": 0.1101
     },
     "D1": {
@@ -31,7 +31,7 @@
       "defense": 0.3739
     },
     "N1": {
-      "attack": -0.4784,
+      "attack": -0.4785,
       "defense": 0.3843
     },
     "B1": {
@@ -51,7 +51,7 @@
       "defense": 0.2943
     },
     "AUT": {
-      "attack": -0.8652,
+      "attack": -0.8653,
       "defense": 0.5778
     }
   },
@@ -63,7 +63,7 @@
   "backtest": {
     "held_out": 2025,
     "matches": 236,
-    "log_loss": 0.982,
+    "log_loss": 0.9819,
     "log_loss_unadjusted": 1.0766,
     "log_loss_baseline": 0.9864
   }

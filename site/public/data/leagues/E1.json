@@ -46,7 +46,7 @@
         "defense": 0.1812
       },
       "Ipswich": {
-        "attack": 0.2749,
+        "attack": 0.275,
         "defense": -0.0721
       },
       "Leeds": {
@@ -74,7 +74,7 @@
         "defense": 0.0453
       },
       "Norwich": {
-        "attack": 0.1453,
+        "attack": 0.1452,
         "defense": 0.2507
       },
       "Oxford": {
@@ -99,7 +99,7 @@
       },
       "Sheffield United": {
         "attack": 0.0455,
-        "defense": 0.0901
+        "defense": 0.09
       },
       "Sheffield Weds": {
         "attack": -0.4316,
@@ -115,7 +115,7 @@
       },
       "Sunderland": {
         "attack": -0.1129,
-        "defense": -0.1133
+        "defense": -0.1134
       },
       "Swansea": {
         "attack": -0.0228,

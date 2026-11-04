@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T09:02:13Z",
+  "generated_at": "2026-11-04T08:37:29Z",
   "season": "2026/27",
   "leagues": [
     {
@@ -275,108 +275,30 @@
       ]
     }
   ],
-  "today": [],
+  "today": [
+    {
+      "league": "E1",
+      "date": "2026-11-04",
+      "time": "19:45",
+      "home": "Cardiff",
+      "away": "West Ham"
+    },
+    {
+      "league": "E1",
+      "date": "2026-11-04",
+      "time": "19:45",
+      "home": "Wrexham",
+      "away": "Middlesbrough"
+    },
+    {
+      "league": "E1",
+      "date": "2026-11-04",
+      "time": "20:00",
+      "home": "Bristol City",
+      "away": "Wolves"
+    }
+  ],
   "upcoming": [
-    {
-      "competition": "G1",
-      "competition_name": "Super League Greece",
-      "kickoff_utc": "2026-11-02T16:00:00Z",
-      "home": "Atromitos",
-      "away": "Volos NFC",
-      "league": "G1",
-      "home_league": "G1",
-      "away_league": "G1"
-    },
-    {
-      "competition": "T1",
-      "competition_name": "Süper Lig",
-      "kickoff_utc": "2026-11-02T17:00:00Z",
-      "home": "Genclerbirligi",
-      "away": "Alanyaspor",
-      "league": "T1",
-      "home_league": "T1",
-      "away_league": "T1"
-    },
-    {
-      "competition": "I1",
-      "competition_name": "Serie A",
-      "kickoff_utc": "2026-11-02T17:30:00Z",
-      "home": "Sassuolo",
-      "away": "Fiorentina",
-      "league": "I1",
-      "home_league": "I1",
-      "away_league": "I1"
-    },
-    {
-      "competition": "G1",
-      "competition_name": "Super League Greece",
-      "kickoff_utc": "2026-11-02T17:30:00Z",
-      "home": "Kalamata",
-      "away": "Iraklis",
-      "league": "G1",
-      "home_league": "G1",
-      "away_league": "G1"
-    },
-    {
-      "competition": "I1",
-      "competition_name": "Serie A",
-      "kickoff_utc": "2026-11-02T19:45:00Z",
-      "home": "Atalanta",
-      "away": "Parma",
-      "league": "I1",
-      "home_league": "I1",
-      "away_league": "I1"
-    },
-    {
-      "competition": "F1",
-      "competition_name": "Ligue 1",
-      "kickoff_utc": "2026-11-02T19:45:00Z",
-      "home": "Lorient",
-      "away": "Brest",
-      "league": "F1",
-      "home_league": "F1",
-      "away_league": "F1"
-    },
-    {
-      "competition": "E0",
-      "competition_name": "Premier League",
-      "kickoff_utc": "2026-11-02T20:00:00Z",
-      "home": "Newcastle",
-      "away": "Everton",
-      "league": "E0",
-      "home_league": "E0",
-      "away_league": "E0"
-    },
-    {
-      "competition": "SP1",
-      "competition_name": "La Liga",
-      "kickoff_utc": "2026-11-02T20:00:00Z",
-      "home": "La Coruna",
-      "away": "Osasuna",
-      "league": "SP1",
-      "home_league": "SP1",
-      "away_league": "SP1"
-    },
-    {
-      "competition": "P1",
-      "competition_name": "Primeira Liga",
-      "kickoff_utc": "2026-11-02T20:15:00Z",
-      "home": "Benfica",
-      "away": "Alverca",
-      "league": "P1",
-      "home_league": "P1",
-      "away_league": "P1"
-    },
-    {
-      "competition": "P1",
-      "competition_name": "Primeira Liga",
-      "kickoff_utc": "2026-11-02T20:15:00Z",
-      "home": "Gil Vicente",
-      "away": "Guimaraes",
-      "league": "P1",
-      "home_league": "P1",
-      "away_league": "P1"
-    },
     {
       "competition": "UCL",
       "competition_name": "Champions League",
@@ -586,6 +508,16 @@
       "league": null,
       "home_league": "T1",
       "away_league": "E0"
+    },
+    {
+      "competition": "B1",
+      "competition_name": "Jupiler Pro League",
+      "kickoff_utc": "2026-11-04T19:30:00Z",
+      "home": "Kortrijk",
+      "away": "KV Mechelen",
+      "league": "B1",
+      "home_league": "B1",
+      "away_league": "B1"
     },
     {
       "competition": "E1",
@@ -1036,6 +968,96 @@
       "league": null,
       "home_league": null,
       "away_league": null
+    },
+    {
+      "competition": "T1",
+      "competition_name": "Süper Lig",
+      "kickoff_utc": "2026-11-06T17:00:00Z",
+      "home": "Gaziantep",
+      "away": "Kasimpasa",
+      "league": "T1",
+      "home_league": "T1",
+      "away_league": "T1"
+    },
+    {
+      "competition": "N1",
+      "competition_name": "Eredivisie",
+      "kickoff_utc": "2026-11-06T19:00:00Z",
+      "home": "Willem II",
+      "away": "Zwolle",
+      "league": "N1",
+      "home_league": "N1",
+      "away_league": "N1"
+    },
+    {
+      "competition": "D1",
+      "competition_name": "Bundesliga",
+      "kickoff_utc": "2026-11-06T19:30:00Z",
+      "home": "Hamburg",
+      "away": "M'gladbach",
+      "league": "D1",
+      "home_league": "D1",
+      "away_league": "D1"
+    },
+    {
+      "competition": "I1",
+      "competition_name": "Serie A",
+      "kickoff_utc": "2026-11-06T19:45:00Z",
+      "home": "Venezia",
+      "away": "Udinese",
+      "league": "I1",
+      "home_league": "I1",
+      "away_league": "I1"
+    },
+    {
+      "competition": "F1",
+      "competition_name": "Ligue 1",
+      "kickoff_utc": "2026-11-06T19:45:00Z",
+      "home": "Toulouse",
+      "away": "Strasbourg",
+      "league": "F1",
+      "home_league": "F1",
+      "away_league": "F1"
+    },
+    {
+      "competition": "E0",
+      "competition_name": "Premier League",
+      "kickoff_utc": "2026-11-06T20:00:00Z",
+      "home": "Everton",
+      "away": "Coventry",
+      "league": "E0",
+      "home_league": "E0",
+      "away_league": "E0"
+    },
+    {
+      "competition": "SP1",
+      "competition_name": "La Liga",
+      "kickoff_utc": "2026-11-06T20:00:00Z",
+      "home": "Sevilla",
+      "away": "Alaves",
+      "league": "SP1",
+      "home_league": "SP1",
+      "away_league": "SP1"
+    },
+    {
+      "competition": "E1",
+      "competition_name": "Championship",
+      "kickoff_utc": "2026-11-06T20:00:00Z",
+      "home": "Derby",
+      "away": "Bolton",
+      "league": "E1",
+      "home_league": "E1",
+      "away_league": "E1"
+    },
+    {
+      "competition": "P1",
+      "competition_name": "Primeira Liga",
+      "kickoff_utc": "2026-11-06T20:45:00Z",
+      "home": "Famalicao",
+      "away": "Arouca",
+      "league": "P1",
+      "home_league": "P1",
+      "away_league": "P1"
     }
   ]
 }

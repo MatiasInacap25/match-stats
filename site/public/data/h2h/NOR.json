@@ -869,6 +869,22 @@
     ],
     "Aalesund|Sandefjord": [
       {
+        "date": "2026-10-31",
+        "league": "NOR",
+        "home": "Aalesund",
+        "away": "Sandefjord",
+        "home_goals": 3,
+        "away_goals": 4,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
+      {
         "date": "2026-05-03",
         "league": "NOR",
         "home": "Sandefjord",
@@ -4411,6 +4427,22 @@
     ],
     "Bodo/Glimt|Viking": [
       {
+        "date": "2026-10-30",
+        "league": "NOR",
+        "home": "Bodo/Glimt",
+        "away": "Viking",
+        "home_goals": 3,
+        "away_goals": 2,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
+      {
         "date": "2026-04-11",
         "league": "NOR",
         "home": "Viking",
@@ -5382,6 +5414,22 @@
       }
     ],
     "Brann|Molde": [
+      {
+        "date": "2026-11-01",
+        "league": "NOR",
+        "home": "Brann",
+        "away": "Molde",
+        "home_goals": 3,
+        "away_goals": 2,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
       {
         "date": "2026-07-18",
         "league": "NOR",
@@ -7761,6 +7809,22 @@
     ],
     "Fredrikstad|Rosenborg": [
       {
+        "date": "2026-10-31",
+        "league": "NOR",
+        "home": "Fredrikstad",
+        "away": "Rosenborg",
+        "home_goals": 0,
+        "away_goals": 3,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
+      {
         "date": "2026-07-27",
         "league": "NOR",
         "home": "Rosenborg",
@@ -8334,6 +8398,22 @@
       }
     ],
     "HamKam|KFUM Oslo": [
+      {
+        "date": "2026-11-01",
+        "league": "NOR",
+        "home": "KFUM Oslo",
+        "away": "HamKam",
+        "home_goals": 2,
+        "away_goals": 2,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
       {
         "date": "2026-04-19",
         "league": "NOR",
@@ -11153,6 +11233,22 @@
     ],
     "Kristiansund|Sarpsborg 08": [
       {
+        "date": "2026-11-01",
+        "league": "NOR",
+        "home": "Sarpsborg 08",
+        "away": "Kristiansund",
+        "home_goals": 2,
+        "away_goals": 4,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
+      {
         "date": "2026-07-18",
         "league": "NOR",
         "home": "Kristiansund",
@@ -13282,6 +13378,22 @@
       }
     ],
     "Lillestrom|Start": [
+      {
+        "date": "2026-11-01",
+        "league": "NOR",
+        "home": "Start",
+        "away": "Lillestrom",
+        "home_goals": 0,
+        "away_goals": 1,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
       {
         "date": "2026-04-11",
         "league": "NOR",
@@ -19740,6 +19852,22 @@
       }
     ],
     "Tromso|Valerenga": [
+      {
+        "date": "2026-11-01",
+        "league": "NOR",
+        "home": "Valerenga",
+        "away": "Tromso",
+        "home_goals": 4,
+        "away_goals": 0,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
       {
         "date": "2026-07-11",
         "league": "NOR",

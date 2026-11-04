@@ -2,645 +2,645 @@
   "league": "T1",
   "season": "2026/27",
   "goals": {
-    "home_advantage": 0.2477,
-    "rho": -0.1017,
+    "home_advantage": 0.2559,
+    "rho": -0.0987,
     "teams": {
       "Ad. Demirspor": {
-        "attack": -0.3145,
-        "defense": 0.7756
+        "attack": -0.3198,
+        "defense": 0.7765
       },
       "Alanyaspor": {
-        "attack": -0.0928,
-        "defense": 0.0355
+        "attack": -0.1165,
+        "defense": 0.1085
       },
       "Amedspor": {
-        "attack": 0.6799,
-        "defense": -0.0032
+        "attack": 0.6807,
+        "defense": -0.0154
       },
       "Antalyaspor": {
-        "attack": -0.2726,
-        "defense": 0.2927
+        "attack": -0.2777,
+        "defense": 0.2896
       },
       "Besiktas": {
-        "attack": 0.3047,
-        "defense": -0.1022
+        "attack": 0.2996,
+        "defense": -0.1046
       },
       "Bodrumspor": {
-        "attack": -0.6516,
-        "defense": -0.0523
+        "attack": -0.6573,
+        "defense": -0.0513
       },
       "Buyuksehyr": {
-        "attack": 0.2854,
-        "defense": 0.0688
+        "attack": 0.2821,
+        "defense": 0.0635
       },
       "Corum": {
-        "attack": 0.4942,
+        "attack": 0.4862,
         "defense": 0.2214
       },
       "Erzurumspor": {
-        "attack": -0.3142,
-        "defense": 0.0763
+        "attack": -0.3203,
+        "defense": 0.0683
       },
       "Eyupspor": {
-        "attack": -0.312,
-        "defense": 0.3013
+        "attack": -0.3167,
+        "defense": 0.299
       },
       "Fenerbahce": {
-        "attack": 0.5874,
-        "defense": -0.0604
+        "attack": 0.5821,
+        "defense": -0.0655
       },
       "Galatasaray": {
-        "attack": 0.5882,
-        "defense": -0.2164
+        "attack": 0.5853,
+        "defense": -0.2223
       },
       "Gaziantep": {
-        "attack": -0.1068,
-        "defense": 0.2752
+        "attack": -0.1129,
+        "defense": 0.2734
       },
       "Genclerbirligi": {
-        "attack": -0.2498,
-        "defense": 0.1704
+        "attack": -0.1204,
+        "defense": 0.1467
       },
       "Goztep": {
-        "attack": 0.1673,
-        "defense": 0.0408
+        "attack": 0.1623,
+        "defense": 0.036
       },
       "Hatayspor": {
-        "attack": 0.012,
-        "defense": 0.5526
+        "attack": 0.0071,
+        "defense": 0.5534
       },
       "Karagumruk": {
-        "attack": -0.3142,
-        "defense": 0.2152
+        "attack": -0.3188,
+        "defense": 0.2091
       },
       "Kasimpasa": {
-        "attack": 0.0274,
-        "defense": 0.1199
+        "attack": 0.024,
+        "defense": 0.1147
       },
       "Kayserispor": {
-        "attack": -0.2935,
-        "defense": 0.3286
+        "attack": -0.2984,
+        "defense": 0.3259
       },
       "Kocaelispor": {
-        "attack": -0.3996,
-        "defense": -0.2064
+        "attack": -0.4042,
+        "defense": -0.2102
       },
       "Konyaspor": {
-        "attack": -0.1615,
-        "defense": 0.0903
+        "attack": -0.1645,
+        "defense": 0.0855
       },
       "Rizespor": {
-        "attack": 0.0476,
-        "defense": 0.2352
+        "attack": 0.0422,
+        "defense": 0.2331
       },
       "Samsunspor": {
-        "attack": 0.0401,
-        "defense": 0.2488
+        "attack": 0.0362,
+        "defense": 0.2468
       },
       "Sivasspor": {
-        "attack": -0.1195,
-        "defense": 0.3276
+        "attack": -0.1256,
+        "defense": 0.328
       },
       "Trabzonspor": {
-        "attack": 0.3684,
-        "defense": -0.1087
+        "attack": 0.3653,
+        "defense": -0.1137
       }
     }
   },
   "stats": {
     "corners": {
-      "avg_home": 5.2045,
-      "avg_away": 4.2872,
-      "dispersion_team": 16.5311,
-      "dispersion_total": 267.7692,
+      "avg_home": 5.1955,
+      "avg_away": 4.2737,
+      "dispersion_team": 16.2776,
+      "dispersion_total": 235.5314,
       "teams": {
         "Alanyaspor": {
-          "home_for": 1.0982,
-          "home_against": 0.9455,
-          "away_for": 0.9322,
-          "away_against": 0.7792
+          "home_for": 1.0996,
+          "home_against": 0.9476,
+          "away_for": 0.8984,
+          "away_against": 0.7697
         },
         "Amedspor": {
-          "home_for": 0.8738,
-          "home_against": 1.0059,
-          "away_for": 1.2553,
-          "away_against": 0.8331
+          "home_for": 0.8745,
+          "home_against": 1.0076,
+          "away_for": 1.2575,
+          "away_against": 0.8336
         },
         "Antalyaspor": {
-          "home_for": 0.9681,
-          "home_against": 1.1392,
-          "away_for": 0.8455,
-          "away_against": 1.1247
+          "home_for": 0.9692,
+          "home_against": 1.1417,
+          "away_for": 0.847,
+          "away_against": 1.126
         },
         "Besiktas": {
-          "home_for": 1.1894,
-          "home_against": 0.8944,
-          "away_for": 1.1718,
-          "away_against": 0.9661
+          "home_for": 1.191,
+          "home_against": 0.8964,
+          "away_for": 1.1746,
+          "away_against": 0.9673
         },
         "Buyuksehyr": {
-          "home_for": 0.9609,
-          "home_against": 1.004,
-          "away_for": 1.0255,
-          "away_against": 1.0049
+          "home_for": 0.9622,
+          "home_against": 1.0064,
+          "away_for": 1.0278,
+          "away_against": 1.0061
         },
         "Corum": {
-          "home_for": 0.9825,
-          "home_against": 0.9184,
-          "away_for": 0.815,
-          "away_against": 1.2056
+          "home_for": 0.9833,
+          "home_against": 0.9195,
+          "away_for": 0.8162,
+          "away_against": 1.2069
         },
         "Erzurumspor": {
-          "home_for": 0.8843,
-          "home_against": 0.7799,
-          "away_for": 0.8499,
-          "away_against": 1.0188
+          "home_for": 0.885,
+          "home_against": 0.7808,
+          "away_for": 0.851,
+          "away_against": 1.0197
         },
         "Eyupspor": {
-          "home_for": 0.8415,
-          "home_against": 1.0457,
-          "away_for": 0.7809,
-          "away_against": 1.2102
+          "home_for": 0.8425,
+          "home_against": 1.0481,
+          "away_for": 0.7825,
+          "away_against": 1.2118
         },
         "Fenerbahce": {
-          "home_for": 1.1998,
-          "home_against": 0.9574,
-          "away_for": 1.3735,
-          "away_against": 0.9194
+          "home_for": 1.2014,
+          "home_against": 0.9596,
+          "away_for": 1.377,
+          "away_against": 0.9205
         },
         "Galatasaray": {
-          "home_for": 1.3452,
-          "home_against": 0.7242,
-          "away_for": 1.1402,
-          "away_against": 0.8207
+          "home_for": 1.3471,
+          "home_against": 0.7256,
+          "away_for": 1.143,
+          "away_against": 0.8217
         },
         "Gaziantep": {
-          "home_for": 1.1427,
-          "home_against": 0.9952,
-          "away_for": 0.8187,
-          "away_against": 0.9817
+          "home_for": 1.1442,
+          "home_against": 0.9975,
+          "away_for": 0.8205,
+          "away_against": 0.9829
         },
         "Genclerbirligi": {
-          "home_for": 0.9505,
-          "home_against": 1.3231,
-          "away_for": 0.9055,
-          "away_against": 1.0653
+          "home_for": 0.9325,
+          "home_against": 1.2704,
+          "away_for": 0.9075,
+          "away_against": 1.0666
         },
         "Goztep": {
-          "home_for": 0.9774,
-          "home_against": 0.9855,
-          "away_for": 1.004,
-          "away_against": 1.0102
+          "home_for": 0.9786,
+          "home_against": 0.9877,
+          "away_for": 1.0064,
+          "away_against": 1.0115
         },
         "Karagumruk": {
-          "home_for": 0.7475,
-          "home_against": 1.1911,
-          "away_for": 0.9578,
-          "away_against": 0.9753
+          "home_for": 0.7482,
+          "home_against": 1.1937,
+          "away_for": 0.9597,
+          "away_against": 0.9763
         },
         "Kasimpasa": {
-          "home_for": 0.9557,
-          "home_against": 1.0646,
-          "away_for": 0.8818,
-          "away_against": 1.0804
+          "home_for": 0.9569,
+          "home_against": 1.0671,
+          "away_for": 0.8837,
+          "away_against": 1.0818
         },
         "Kayserispor": {
-          "home_for": 1.0607,
-          "home_against": 0.9837,
-          "away_for": 1.0615,
-          "away_against": 0.961
+          "home_for": 1.0619,
+          "home_against": 0.9857,
+          "away_for": 1.0637,
+          "away_against": 0.9621
         },
         "Kocaelispor": {
-          "home_for": 0.8778,
-          "home_against": 0.907,
-          "away_for": 0.97,
-          "away_against": 0.9973
+          "home_for": 0.8789,
+          "home_against": 0.909,
+          "away_for": 0.9722,
+          "away_against": 0.9986
         },
         "Konyaspor": {
-          "home_for": 0.9215,
-          "home_against": 1.0459,
-          "away_for": 0.9255,
-          "away_against": 1.0817
+          "home_for": 0.9227,
+          "home_against": 1.0484,
+          "away_for": 0.9275,
+          "away_against": 1.0831
         },
         "Rizespor": {
-          "home_for": 0.939,
-          "home_against": 1.0255,
-          "away_for": 0.9801,
-          "away_against": 0.9412
+          "home_for": 0.9401,
+          "home_against": 1.0278,
+          "away_for": 0.9824,
+          "away_against": 0.9424
         },
         "Samsunspor": {
-          "home_for": 1.0284,
-          "home_against": 0.9952,
-          "away_for": 1.0961,
-          "away_against": 1.0856
+          "home_for": 1.0298,
+          "home_against": 0.9975,
+          "away_for": 1.0987,
+          "away_against": 1.087
         },
         "Trabzonspor": {
-          "home_for": 0.8882,
-          "home_against": 1.0079,
-          "away_for": 1.1528,
-          "away_against": 0.9713
+          "home_for": 0.8893,
+          "home_against": 1.0102,
+          "away_for": 1.1556,
+          "away_against": 0.9725
         }
       }
     },
     "cards": {
-      "avg_home": 2.25,
-      "avg_away": 2.5331,
-      "dispersion_team": 15.0203,
-      "dispersion_total": 8.7938,
+      "avg_home": 2.2449,
+      "avg_away": 2.535,
+      "dispersion_team": 15.0918,
+      "dispersion_total": 8.822,
       "teams": {
         "Alanyaspor": {
-          "home_for": 0.9206,
-          "home_against": 0.8948,
-          "away_for": 0.9105,
-          "away_against": 1.1111
+          "home_for": 0.9221,
+          "home_against": 0.8943,
+          "away_for": 0.924,
+          "away_against": 1.0788
         },
         "Amedspor": {
-          "home_for": 1.2222,
-          "home_against": 0.957,
-          "away_for": 1.2135,
-          "away_against": 1.3457
+          "home_for": 1.224,
+          "home_against": 0.9566,
+          "away_for": 1.213,
+          "away_against": 1.3475
         },
         "Antalyaspor": {
-          "home_for": 1.1934,
-          "home_against": 1.1746,
-          "away_for": 0.9991,
-          "away_against": 1.0782
+          "home_for": 1.1953,
+          "home_against": 1.1739,
+          "away_for": 0.9986,
+          "away_against": 1.0798
         },
         "Besiktas": {
-          "home_for": 0.991,
-          "home_against": 1.2412,
-          "away_for": 0.9851,
-          "away_against": 1.1231
+          "home_for": 0.9926,
+          "home_against": 1.2405,
+          "away_for": 0.9846,
+          "away_against": 1.1251
         },
         "Buyuksehyr": {
-          "home_for": 1.0541,
-          "home_against": 0.965,
-          "away_for": 0.9399,
-          "away_against": 0.9333
+          "home_for": 1.056,
+          "home_against": 0.9645,
+          "away_for": 0.9394,
+          "away_against": 0.9348
         },
         "Corum": {
-          "home_for": 1.0,
-          "home_against": 0.8626,
-          "away_for": 0.9211,
-          "away_against": 0.7778
+          "home_for": 1.001,
+          "home_against": 0.8624,
+          "away_for": 0.9207,
+          "away_against": 0.7785
         },
         "Erzurumspor": {
-          "home_for": 0.8111,
-          "home_against": 0.8158,
-          "away_for": 0.7369,
-          "away_against": 1.0333
+          "home_for": 0.8118,
+          "home_against": 0.8156,
+          "away_for": 0.7367,
+          "away_against": 1.0346
         },
         "Eyupspor": {
-          "home_for": 0.9429,
-          "home_against": 0.8784,
-          "away_for": 1.0065,
-          "away_against": 0.8949
+          "home_for": 0.9445,
+          "home_against": 0.878,
+          "away_for": 1.0059,
+          "away_against": 0.8963
         },
         "Fenerbahce": {
-          "home_for": 0.9429,
-          "home_against": 1.2732,
-          "away_for": 1.0065,
-          "away_against": 1.027
+          "home_for": 0.9445,
+          "home_against": 1.2725,
+          "away_for": 1.0059,
+          "away_against": 1.0288
         },
         "Galatasaray": {
-          "home_for": 0.9189,
-          "home_against": 1.2092,
-          "away_for": 0.9318,
-          "away_against": 0.955
+          "home_for": 0.9204,
+          "home_against": 1.2085,
+          "away_for": 0.9313,
+          "away_against": 0.9565
         },
         "Gaziantep": {
-          "home_for": 1.1952,
-          "home_against": 1.1345,
-          "away_for": 1.0812,
-          "away_against": 1.0511
+          "home_for": 1.1973,
+          "home_against": 1.1339,
+          "away_for": 1.0806,
+          "away_against": 1.0528
         },
         "Genclerbirligi": {
-          "home_for": 1.015,
-          "home_against": 1.0065,
-          "away_for": 0.9399,
-          "away_against": 0.8952
+          "home_for": 0.9874,
+          "home_against": 1.015,
+          "away_for": 0.9394,
+          "away_against": 0.8966
         },
         "Goztep": {
-          "home_for": 1.1619,
-          "home_against": 0.9286,
-          "away_for": 1.0865,
-          "away_against": 1.0883
+          "home_for": 1.1639,
+          "home_against": 0.9282,
+          "away_for": 1.0858,
+          "away_against": 1.0902
         },
         "Karagumruk": {
-          "home_for": 0.7984,
-          "home_against": 1.0283,
-          "away_for": 0.9552,
-          "away_against": 0.9136
+          "home_for": 0.7993,
+          "home_against": 1.0278,
+          "away_for": 0.9548,
+          "away_against": 0.9148
         },
         "Kasimpasa": {
-          "home_for": 1.027,
-          "home_against": 0.8998,
-          "away_for": 1.2626,
-          "away_against": 1.0871
+          "home_for": 1.0288,
+          "home_against": 0.8993,
+          "away_for": 1.2618,
+          "away_against": 1.089
         },
         "Kayserispor": {
-          "home_for": 1.0617,
-          "home_against": 0.8529,
-          "away_for": 1.043,
-          "away_against": 0.9136
+          "home_for": 1.0633,
+          "home_against": 0.8525,
+          "away_for": 1.0424,
+          "away_against": 0.9148
         },
         "Kocaelispor": {
-          "home_for": 0.9429,
-          "home_against": 0.8891,
-          "away_for": 1.0278,
-          "away_against": 0.991
+          "home_for": 0.9445,
+          "home_against": 0.8886,
+          "away_for": 1.0272,
+          "away_against": 0.9926
         },
         "Konyaspor": {
-          "home_for": 1.0199,
-          "home_against": 0.9144,
-          "away_for": 1.1317,
-          "away_against": 0.9333
+          "home_for": 1.0217,
+          "home_against": 0.9139,
+          "away_for": 1.131,
+          "away_against": 0.9348
         },
         "Rizespor": {
-          "home_for": 0.9206,
-          "home_against": 0.8046,
-          "away_for": 1.0662,
-          "away_against": 0.8832
+          "home_for": 0.9221,
+          "home_against": 0.8042,
+          "away_for": 1.0656,
+          "away_against": 0.8846
         },
         "Samsunspor": {
-          "home_for": 0.9309,
-          "home_against": 1.0172,
-          "away_for": 0.8998,
-          "away_against": 0.8589
+          "home_for": 0.9324,
+          "home_against": 1.0166,
+          "away_for": 0.8993,
+          "away_against": 0.8602
         },
         "Trabzonspor": {
-          "home_for": 0.9429,
-          "home_against": 1.0812,
-          "away_for": 0.8038,
-          "away_against": 1.1712
+          "home_for": 0.9445,
+          "home_against": 1.0806,
+          "away_for": 0.8034,
+          "away_against": 1.1732
         }
       }
     },
     "shots": {
-      "avg_home": 14.8017,
-      "avg_away": 11.688,
-      "dispersion_team": 30.7648,
-      "dispersion_total": 276.4496,
+      "avg_home": 14.7901,
+      "avg_away": 11.677,
+      "dispersion_team": 30.7985,
+      "dispersion_total": 278.2972,
       "teams": {
         "Alanyaspor": {
-          "home_for": 0.9304,
-          "home_against": 1.0215,
-          "away_for": 0.957,
-          "away_against": 0.9294
+          "home_for": 0.9309,
+          "home_against": 1.0222,
+          "away_for": 0.9481,
+          "away_against": 0.9239
         },
         "Amedspor": {
-          "home_for": 1.038,
-          "home_against": 0.8668,
-          "away_for": 1.1925,
-          "away_against": 0.9009
+          "home_for": 1.0385,
+          "home_against": 0.8672,
+          "away_for": 1.1931,
+          "away_against": 0.9011
         },
         "Antalyaspor": {
-          "home_for": 0.8533,
-          "home_against": 1.0453,
-          "away_for": 0.8045,
-          "away_against": 1.0285
+          "home_for": 0.8537,
+          "home_against": 1.046,
+          "away_for": 0.8049,
+          "away_against": 1.029
         },
         "Besiktas": {
-          "home_for": 1.1796,
-          "home_against": 0.8877,
-          "away_for": 1.2183,
-          "away_against": 0.913
+          "home_for": 1.1803,
+          "home_against": 0.8883,
+          "away_for": 1.2192,
+          "away_against": 0.9135
         },
         "Buyuksehyr": {
-          "home_for": 0.9857,
-          "home_against": 0.9869,
-          "away_for": 1.024,
-          "away_against": 0.9652
+          "home_for": 0.9863,
+          "home_against": 0.9876,
+          "away_for": 1.0247,
+          "away_against": 0.9657
         },
         "Corum": {
-          "home_for": 0.9834,
-          "home_against": 0.9168,
-          "away_for": 0.9523,
-          "away_against": 1.1547
+          "home_for": 0.9838,
+          "home_against": 0.9171,
+          "away_for": 0.9528,
+          "away_against": 1.1553
         },
         "Erzurumspor": {
-          "home_for": 0.8513,
-          "home_against": 0.9192,
-          "away_for": 0.9021,
-          "away_against": 1.081
+          "home_for": 0.8516,
+          "home_against": 0.9196,
+          "away_for": 0.9025,
+          "away_against": 1.0815
         },
         "Eyupspor": {
-          "home_for": 0.8601,
-          "home_against": 1.0542,
-          "away_for": 0.8715,
-          "away_against": 1.0591
+          "home_for": 0.8605,
+          "home_against": 1.0549,
+          "away_for": 0.8721,
+          "away_against": 1.0597
         },
         "Fenerbahce": {
-          "home_for": 1.2252,
-          "home_against": 0.9709,
-          "away_for": 1.1906,
-          "away_against": 0.8838
+          "home_for": 1.226,
+          "home_against": 0.9716,
+          "away_for": 1.1915,
+          "away_against": 0.8843
         },
         "Galatasaray": {
-          "home_for": 1.4316,
-          "home_against": 0.7929,
-          "away_for": 1.0981,
-          "away_against": 0.8564
+          "home_for": 1.4325,
+          "home_against": 0.7934,
+          "away_for": 1.0989,
+          "away_against": 0.8569
         },
         "Gaziantep": {
-          "home_for": 1.0153,
-          "home_against": 0.9987,
-          "away_for": 0.9871,
-          "away_against": 1.0938
+          "home_for": 1.0158,
+          "home_against": 0.9994,
+          "away_for": 0.9878,
+          "away_against": 1.0944
         },
         "Genclerbirligi": {
-          "home_for": 0.9148,
-          "home_against": 1.2045,
-          "away_for": 0.8504,
-          "away_against": 1.0713
+          "home_for": 0.91,
+          "home_against": 1.1831,
+          "away_for": 0.8509,
+          "away_against": 1.072
         },
         "Goztep": {
-          "home_for": 1.0578,
-          "home_against": 0.9971,
-          "away_for": 1.1273,
-          "away_against": 1.0394
+          "home_for": 1.0584,
+          "home_against": 0.9977,
+          "away_for": 1.1282,
+          "away_against": 1.04
         },
         "Karagumruk": {
-          "home_for": 0.8083,
-          "home_against": 1.0675,
-          "away_for": 0.9408,
-          "away_against": 0.9984
+          "home_for": 0.8086,
+          "home_against": 1.0682,
+          "away_for": 0.9413,
+          "away_against": 0.9989
         },
         "Kasimpasa": {
-          "home_for": 0.8984,
-          "home_against": 0.9224,
-          "away_for": 0.8206,
-          "away_against": 1.008
+          "home_for": 0.8989,
+          "home_against": 0.923,
+          "away_for": 0.8211,
+          "away_against": 1.0085
         },
         "Kayserispor": {
-          "home_for": 0.9484,
-          "home_against": 1.0295,
-          "away_for": 0.9788,
-          "away_against": 1.0885
+          "home_for": 0.9488,
+          "home_against": 1.0301,
+          "away_for": 0.9794,
+          "away_against": 1.0891
         },
         "Kocaelispor": {
-          "home_for": 0.882,
-          "home_against": 0.9871,
-          "away_for": 0.8854,
-          "away_against": 0.9733
+          "home_for": 0.8824,
+          "home_against": 0.9878,
+          "away_for": 0.8859,
+          "away_against": 0.9738
         },
         "Konyaspor": {
-          "home_for": 0.8731,
-          "home_against": 0.9891,
-          "away_for": 1.0288,
-          "away_against": 1.0057
+          "home_for": 0.8736,
+          "home_against": 0.9898,
+          "away_for": 1.0295,
+          "away_against": 1.0063
         },
         "Rizespor": {
-          "home_for": 1.0559,
-          "home_against": 1.0924,
-          "away_for": 1.022,
-          "away_against": 1.003
+          "home_for": 1.0565,
+          "home_against": 1.0932,
+          "away_for": 1.0228,
+          "away_against": 1.0036
         },
         "Samsunspor": {
-          "home_for": 0.9952,
-          "home_against": 1.0634,
-          "away_for": 0.9848,
-          "away_against": 1.0481
+          "home_for": 0.9957,
+          "home_against": 1.0642,
+          "away_for": 0.9855,
+          "away_against": 1.0487
         },
         "Trabzonspor": {
-          "home_for": 1.0554,
-          "home_against": 1.0981,
-          "away_for": 1.1097,
-          "away_against": 0.9787
+          "home_for": 1.056,
+          "home_against": 1.0989,
+          "away_for": 1.1105,
+          "away_against": 0.9793
         }
       }
     },
     "shots_on_target": {
-      "avg_home": 4.9855,
-      "avg_away": 3.907,
-      "dispersion_team": 90.4343,
-      "dispersion_total": 208.7546,
+      "avg_home": 4.9938,
+      "avg_away": 3.9033,
+      "dispersion_team": 91.9567,
+      "dispersion_total": 218.5707,
       "teams": {
         "Alanyaspor": {
-          "home_for": 0.9218,
-          "home_against": 1.0389,
-          "away_for": 0.9067,
-          "away_against": 0.9533
+          "home_for": 0.9208,
+          "home_against": 1.0397,
+          "away_for": 0.9002,
+          "away_against": 0.9752
         },
         "Amedspor": {
-          "home_for": 1.1292,
-          "home_against": 0.8734,
-          "away_for": 1.0106,
-          "away_against": 0.9344
+          "home_for": 1.1281,
+          "home_against": 0.8738,
+          "away_for": 1.011,
+          "away_against": 0.9338
         },
         "Antalyaspor": {
-          "home_for": 0.8978,
-          "home_against": 1.0908,
-          "away_for": 0.8254,
-          "away_against": 1.091
+          "home_for": 0.8969,
+          "home_against": 1.0915,
+          "away_for": 0.8258,
+          "away_against": 1.0898
         },
         "Besiktas": {
-          "home_for": 1.2406,
-          "home_against": 0.879,
-          "away_for": 1.3425,
-          "away_against": 0.9262
+          "home_for": 1.239,
+          "home_against": 0.8796,
+          "away_for": 1.3435,
+          "away_against": 0.9251
         },
         "Buyuksehyr": {
-          "home_for": 1.0844,
-          "home_against": 1.0177,
-          "away_for": 0.9731,
-          "away_against": 0.939
+          "home_for": 1.0831,
+          "home_against": 1.0184,
+          "away_for": 0.9738,
+          "away_against": 0.9379
         },
         "Corum": {
-          "home_for": 1.0013,
-          "home_against": 0.9537,
-          "away_for": 1.1293,
-          "away_against": 1.111
+          "home_for": 1.0005,
+          "home_against": 0.9541,
+          "away_for": 1.13,
+          "away_against": 1.1099
         },
         "Erzurumspor": {
-          "home_for": 0.8209,
-          "home_against": 0.8583,
-          "away_for": 0.8327,
-          "away_against": 1.0616
+          "home_for": 0.8204,
+          "home_against": 0.8587,
+          "away_for": 0.8331,
+          "away_against": 1.0607
         },
         "Eyupspor": {
-          "home_for": 0.8395,
-          "home_against": 1.052,
-          "away_for": 0.8513,
-          "away_against": 1.1593
+          "home_for": 0.8385,
+          "home_against": 1.0527,
+          "away_for": 0.8519,
+          "away_against": 1.1579
         },
         "Fenerbahce": {
-          "home_for": 1.3165,
-          "home_against": 1.0658,
-          "away_for": 1.3287,
-          "away_against": 0.7799
+          "home_for": 1.3148,
+          "home_against": 1.0665,
+          "away_for": 1.3297,
+          "away_against": 0.779
         },
         "Galatasaray": {
-          "home_for": 1.4846,
-          "home_against": 0.8375,
-          "away_for": 1.1211,
-          "away_against": 0.8124
+          "home_for": 1.4826,
+          "home_against": 0.8381,
+          "away_for": 1.1219,
+          "away_against": 0.8115
         },
         "Gaziantep": {
-          "home_for": 0.9316,
-          "home_against": 1.1142,
-          "away_for": 1.0104,
-          "away_against": 1.0292
+          "home_for": 0.9305,
+          "home_against": 1.115,
+          "away_for": 1.0112,
+          "away_against": 1.028
         },
         "Genclerbirligi": {
-          "home_for": 0.9208,
-          "home_against": 1.1004,
-          "away_for": 0.7464,
-          "away_against": 1.2084
+          "home_for": 0.9444,
+          "home_against": 1.0841,
+          "away_for": 0.7469,
+          "away_against": 1.2069
         },
         "Goztep": {
-          "home_for": 1.0651,
-          "home_against": 0.8927,
-          "away_for": 1.1424,
-          "away_against": 0.9713
+          "home_for": 1.0638,
+          "home_against": 0.8933,
+          "away_for": 1.1432,
+          "away_against": 0.9701
         },
         "Karagumruk": {
-          "home_for": 0.779,
-          "home_against": 1.1382,
-          "away_for": 0.8917,
-          "away_against": 1.1058
+          "home_for": 0.7783,
+          "home_against": 1.139,
+          "away_for": 0.8922,
+          "away_against": 1.1046
         },
         "Kasimpasa": {
-          "home_for": 0.8666,
-          "home_against": 0.9689,
-          "away_for": 0.7337,
-          "away_against": 0.9913
+          "home_for": 0.8656,
+          "home_against": 0.9696,
+          "away_for": 0.7342,
+          "away_against": 0.9901
         },
         "Kayserispor": {
-          "home_for": 0.8904,
-          "home_against": 1.1098,
-          "away_for": 1.0434,
-          "away_against": 1.1207
+          "home_for": 0.8895,
+          "home_against": 1.1105,
+          "away_for": 1.0441,
+          "away_against": 1.1194
         },
         "Kocaelispor": {
-          "home_for": 0.8015,
-          "home_against": 0.796,
-          "away_for": 0.8513,
-          "away_against": 0.872
+          "home_for": 0.8007,
+          "home_against": 0.7965,
+          "away_for": 0.8519,
+          "away_against": 0.871
         },
         "Konyaspor": {
-          "home_for": 0.8221,
-          "home_against": 0.9324,
-          "away_for": 0.9951,
-          "away_against": 1.0594
+          "home_for": 0.8212,
+          "home_against": 0.933,
+          "away_for": 0.9957,
+          "away_against": 1.0581
         },
         "Rizespor": {
-          "home_for": 0.9849,
-          "home_against": 1.0828,
-          "away_for": 0.9718,
-          "away_against": 1.0124
+          "home_for": 0.9837,
+          "home_against": 1.0836,
+          "away_for": 0.9724,
+          "away_against": 1.0112
         },
         "Samsunspor": {
-          "home_for": 0.8666,
-          "home_against": 1.1142,
-          "away_for": 0.9274,
-          "away_against": 1.0238
+          "home_for": 0.8656,
+          "home_against": 1.115,
+          "away_for": 0.9281,
+          "away_against": 1.0226
         },
         "Trabzonspor": {
-          "home_for": 1.1919,
-          "home_against": 1.0381,
-          "away_for": 1.2595,
-          "away_against": 0.975
+          "home_for": 1.1903,
+          "home_against": 1.0389,
+          "away_for": 1.2604,
+          "away_against": 0.9738
         }
       }
     }
@@ -649,26 +649,26 @@
     "Alanyaspor": {
       "season": {
         "all": {
-          "matches": 9,
+          "matches": 10,
           "position": 12,
           "points": 12,
           "won": 3,
           "drawn": 3,
-          "lost": 3,
-          "goals_for": 1.0,
-          "goals_against": 1.22,
-          "xg_for": 1.09,
-          "xg_against": 1.64,
-          "shots_for": 11.56,
-          "shots_against": 15.67,
-          "shots_on_target_for": 3.56,
-          "shots_on_target_against": 5.11,
-          "corners_for": 5.22,
-          "corners_against": 4.0,
-          "yellow_cards": 1.44,
+          "lost": 4,
+          "goals_for": 0.9,
+          "goals_against": 1.6,
+          "xg_for": 1.03,
+          "xg_against": 1.67,
+          "shots_for": 11.3,
+          "shots_against": 15.3,
+          "shots_on_target_for": 3.5,
+          "shots_on_target_against": 5.3,
+          "corners_for": 4.8,
+          "corners_against": 3.9,
+          "yellow_cards": 1.6,
           "red_cards": 0.0,
-          "btts_pct": 0.556,
-          "over_2_5_pct": 0.556,
+          "btts_pct": 0.5,
+          "over_2_5_pct": 0.6,
           "clean_sheets": 3
         },
         "home": {
@@ -695,30 +695,49 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 5,
+          "matches": 6,
           "position": 12,
           "points": 12,
           "won": 2,
           "drawn": 1,
-          "lost": 2,
-          "goals_for": 1.0,
-          "goals_against": 1.4,
-          "xg_for": 1.22,
-          "xg_against": 1.8,
-          "shots_for": 9.8,
-          "shots_against": 16.2,
-          "shots_on_target_for": 3.2,
-          "shots_on_target_against": 5.2,
-          "corners_for": 3.8,
-          "corners_against": 3.2,
-          "yellow_cards": 1.0,
+          "lost": 3,
+          "goals_for": 0.83,
+          "goals_against": 2.0,
+          "xg_for": 1.1,
+          "xg_against": 1.82,
+          "shots_for": 9.67,
+          "shots_against": 15.5,
+          "shots_on_target_for": 3.17,
+          "shots_on_target_against": 5.5,
+          "corners_for": 3.33,
+          "corners_against": 3.17,
+          "yellow_cards": 1.33,
           "red_cards": 0.0,
-          "btts_pct": 0.6,
-          "over_2_5_pct": 0.6,
+          "btts_pct": 0.5,
+          "over_2_5_pct": 0.667,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "T1",
+          "venue": "A",
+          "opponent": "Genclerbirligi",
+          "goals_for": 0,
+          "goals_against": 5,
+          "result": "L",
+          "xg_for": 0.5,
+          "xg_against": 1.91,
+          "shots_for": 9,
+          "shots_against": 12,
+          "shots_on_target_for": 3,
+          "shots_on_target_against": 7,
+          "corners_for": 1,
+          "corners_against": 3,
+          "cards_for": 3,
+          "cards_against": 1
+        },
         {
           "date": "2026-10-23",
           "league": "T1",
@@ -813,25 +832,6 @@
           "corners_against": 3,
           "cards_for": 2,
           "cards_against": 2
-        },
-        {
-          "date": "2026-09-07",
-          "league": "T1",
-          "venue": "A",
-          "opponent": "Rizespor",
-          "goals_for": 1,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": 2.06,
-          "xg_against": 1.29,
-          "shots_for": 9,
-          "shots_against": 21,
-          "shots_on_target_for": 2,
-          "shots_on_target_against": 5,
-          "corners_for": 7,
-          "corners_against": 8,
-          "cards_for": 1,
-          "cards_against": 1
         }
       ]
     },
@@ -2351,7 +2351,7 @@
       "season": {
         "all": {
           "matches": 10,
-          "position": 15,
+          "position": 16,
           "points": 8,
           "won": 2,
           "drawn": 2,
@@ -2374,7 +2374,7 @@
         },
         "home": {
           "matches": 5,
-          "position": 15,
+          "position": 16,
           "points": 8,
           "won": 0,
           "drawn": 2,
@@ -2397,7 +2397,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 15,
+          "position": 16,
           "points": 8,
           "won": 2,
           "drawn": 0,
@@ -2539,55 +2539,55 @@
     "Genclerbirligi": {
       "season": {
         "all": {
-          "matches": 9,
-          "position": 16,
-          "points": 8,
-          "won": 2,
+          "matches": 10,
+          "position": 14,
+          "points": 11,
+          "won": 3,
           "drawn": 2,
           "lost": 5,
-          "goals_for": 0.78,
-          "goals_against": 2.0,
-          "xg_for": 1.04,
-          "xg_against": 2.15,
-          "shots_for": 12.11,
-          "shots_against": 18.0,
-          "shots_on_target_for": 3.67,
-          "shots_on_target_against": 7.11,
-          "corners_for": 5.0,
-          "corners_against": 7.0,
-          "yellow_cards": 2.0,
+          "goals_for": 1.2,
+          "goals_against": 1.8,
+          "xg_for": 1.13,
+          "xg_against": 1.98,
+          "shots_for": 12.1,
+          "shots_against": 17.1,
+          "shots_on_target_for": 4.0,
+          "shots_on_target_against": 6.7,
+          "corners_for": 4.8,
+          "corners_against": 6.4,
+          "yellow_cards": 1.9,
           "red_cards": 0.0,
-          "btts_pct": 0.444,
-          "over_2_5_pct": 0.556,
-          "clean_sheets": 1
+          "btts_pct": 0.4,
+          "over_2_5_pct": 0.6,
+          "clean_sheets": 2
         },
         "home": {
-          "matches": 5,
-          "position": 16,
-          "points": 8,
-          "won": 1,
+          "matches": 6,
+          "position": 14,
+          "points": 11,
+          "won": 2,
           "drawn": 2,
           "lost": 2,
-          "goals_for": 1.2,
-          "goals_against": 1.4,
-          "xg_for": 1.07,
-          "xg_against": 1.83,
-          "shots_for": 14.2,
-          "shots_against": 17.8,
-          "shots_on_target_for": 4.6,
-          "shots_on_target_against": 5.4,
-          "corners_for": 5.4,
-          "corners_against": 7.8,
-          "yellow_cards": 2.2,
+          "goals_for": 1.83,
+          "goals_against": 1.17,
+          "xg_for": 1.21,
+          "xg_against": 1.61,
+          "shots_for": 13.83,
+          "shots_against": 16.33,
+          "shots_on_target_for": 5.0,
+          "shots_on_target_against": 5.0,
+          "corners_for": 5.0,
+          "corners_against": 6.67,
+          "yellow_cards": 2.0,
           "red_cards": 0.0,
-          "btts_pct": 0.8,
-          "over_2_5_pct": 0.6,
-          "clean_sheets": 0
+          "btts_pct": 0.667,
+          "over_2_5_pct": 0.667,
+          "clean_sheets": 1
         },
         "away": {
           "matches": 4,
-          "position": 16,
-          "points": 8,
+          "position": 14,
+          "points": 11,
           "won": 1,
           "drawn": 0,
           "lost": 3,
@@ -2609,6 +2609,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "T1",
+          "venue": "H",
+          "opponent": "Alanyaspor",
+          "goals_for": 5,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": 1.91,
+          "xg_against": 0.5,
+          "shots_for": 12,
+          "shots_against": 9,
+          "shots_on_target_for": 7,
+          "shots_on_target_against": 3,
+          "corners_for": 3,
+          "corners_against": 1,
+          "cards_for": 1,
+          "cards_against": 3
+        },
         {
           "date": "2026-10-25",
           "league": "T1",
@@ -2702,25 +2721,6 @@
           "corners_for": 8,
           "corners_against": 9,
           "cards_for": 4,
-          "cards_against": 3
-        },
-        {
-          "date": "2026-09-06",
-          "league": "T1",
-          "venue": "A",
-          "opponent": "Trabzonspor",
-          "goals_for": 0,
-          "goals_against": 5,
-          "result": "L",
-          "xg_for": 0.86,
-          "xg_against": 3.2,
-          "shots_for": 14,
-          "shots_against": 23,
-          "shots_on_target_for": 6,
-          "shots_on_target_against": 13,
-          "corners_for": 3,
-          "corners_against": 6,
-          "cards_for": 1,
           "cards_against": 3
         }
       ]
@@ -3296,7 +3296,7 @@
       "season": {
         "all": {
           "matches": 10,
-          "position": 14,
+          "position": 15,
           "points": 8,
           "won": 2,
           "drawn": 2,
@@ -3319,7 +3319,7 @@
         },
         "home": {
           "matches": 6,
-          "position": 14,
+          "position": 15,
           "points": 8,
           "won": 2,
           "drawn": 1,
@@ -3342,7 +3342,7 @@
         },
         "away": {
           "matches": 4,
-          "position": 14,
+          "position": 15,
           "points": 8,
           "won": 0,
           "drawn": 1,

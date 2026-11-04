@@ -11691,6 +11691,22 @@
     ],
     "Atromitos|Volos NFC": [
       {
+        "date": "2026-11-02",
+        "league": "G1",
+        "home": "Atromitos",
+        "away": "Volos NFC",
+        "home_goals": 3,
+        "away_goals": 0,
+        "home_shots": 12,
+        "away_shots": 5,
+        "home_shots_on_target": 5,
+        "away_shots_on_target": 3,
+        "home_corners": 1,
+        "away_corners": 2,
+        "home_cards": 1,
+        "away_cards": 9
+      },
+      {
         "date": "2026-01-19",
         "league": "G1",
         "home": "Volos NFC",
@@ -11979,7 +11995,24 @@
         "away_cards": 3
       }
     ],
-    "Iraklis|Kalamata": [],
+    "Iraklis|Kalamata": [
+      {
+        "date": "2026-11-02",
+        "league": "G1",
+        "home": "Kalamata",
+        "away": "Iraklis",
+        "home_goals": 1,
+        "away_goals": 1,
+        "home_shots": 13,
+        "away_shots": 18,
+        "home_shots_on_target": 4,
+        "away_shots_on_target": 4,
+        "home_corners": 4,
+        "away_corners": 5,
+        "home_cards": 1,
+        "away_cards": 2
+      }
+    ],
     "Iraklis|Kifisia": [
       {
         "date": "2026-10-24",

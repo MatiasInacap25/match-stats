@@ -2,92 +2,92 @@
   "league": "NOR",
   "season": "2026",
   "goals": {
-    "home_advantage": 0.26,
-    "rho": 0.0031,
+    "home_advantage": 0.2509,
+    "rho": 0.0107,
     "teams": {
       "Aalesund": {
-        "attack": 0.2391,
-        "defense": 0.4804
+        "attack": 0.272,
+        "defense": 0.5369
       },
       "Bodo/Glimt": {
-        "attack": 0.6077,
-        "defense": -0.3094
+        "attack": 0.6141,
+        "defense": -0.2898
       },
       "Brann": {
-        "attack": 0.2796,
-        "defense": 0.1277
+        "attack": 0.2907,
+        "defense": 0.1347
       },
       "Bryne": {
-        "attack": -0.0891,
-        "defense": 0.3375
+        "attack": -0.0964,
+        "defense": 0.3378
       },
       "Fredrikstad": {
-        "attack": -0.0813,
-        "defense": 0.0518
+        "attack": -0.1117,
+        "defense": 0.0808
       },
       "HamKam": {
-        "attack": 0.0002,
-        "defense": 0.2916
+        "attack": 0.011,
+        "defense": 0.2988
       },
       "Haugesund": {
-        "attack": -0.4429,
-        "defense": 0.533
+        "attack": -0.4506,
+        "defense": 0.5341
       },
       "KFUM Oslo": {
-        "attack": -0.064,
-        "defense": 0.0962
+        "attack": -0.0641,
+        "defense": 0.1129
       },
       "Kristiansund": {
-        "attack": -0.1715,
-        "defense": 0.3551
+        "attack": -0.1139,
+        "defense": 0.36
       },
       "Lillestrom": {
-        "attack": 0.0569,
-        "defense": 0.1193
+        "attack": 0.0304,
+        "defense": 0.0908
       },
       "Molde": {
-        "attack": 0.4247,
-        "defense": 0.1111
+        "attack": 0.4215,
+        "defense": 0.1324
       },
       "Moss": {
-        "attack": -1.3484,
-        "defense": 0.248
+        "attack": -1.3512,
+        "defense": 0.2637
       },
       "Odd": {
-        "attack": -0.44,
-        "defense": 0.3047
+        "attack": -0.4484,
+        "defense": 0.3083
       },
       "Rosenborg": {
-        "attack": 0.3165,
-        "defense": -0.0146
+        "attack": 0.3284,
+        "defense": -0.0356
       },
       "Sandefjord": {
-        "attack": -0.0381,
-        "defense": -0.0099
+        "attack": 0.0038,
+        "defense": 0.0215
       },
       "Sarpsborg 08": {
-        "attack": 0.0451,
-        "defense": 0.1644
+        "attack": 0.0388,
+        "defense": 0.2119
       },
       "Start": {
-        "attack": -0.1627,
-        "defense": 0.4664
+        "attack": -0.2304,
+        "defense": 0.4493
       },
       "Stromsgodset": {
-        "attack": -0.1341,
-        "defense": 0.4428
+        "attack": -0.1421,
+        "defense": 0.4438
       },
       "Tromso": {
-        "attack": 0.1879,
-        "defense": 0.0294
+        "attack": 0.1534,
+        "defense": 0.0709
       },
       "Valerenga": {
-        "attack": 0.2211,
-        "defense": 0.3229
+        "attack": 0.2519,
+        "defense": 0.3001
       },
       "Viking": {
-        "attack": 0.5933,
-        "defense": -0.1629
+        "attack": 0.5928,
+        "defense": -0.1381
       }
     }
   },
@@ -95,14 +95,14 @@
     "Aalesund": {
       "season": {
         "all": {
-          "matches": 24,
+          "matches": 25,
           "position": 14,
           "points": 24,
           "won": 5,
           "drawn": 9,
-          "lost": 10,
-          "goals_for": 1.67,
-          "goals_against": 2.21,
+          "lost": 11,
+          "goals_for": 1.72,
+          "goals_against": 2.28,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -113,19 +113,19 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.875,
-          "over_2_5_pct": 0.708,
+          "btts_pct": 0.88,
+          "over_2_5_pct": 0.72,
           "clean_sheets": 1
         },
         "home": {
-          "matches": 12,
+          "matches": 13,
           "position": 14,
           "points": 24,
           "won": 2,
           "drawn": 6,
-          "lost": 4,
-          "goals_for": 2.0,
-          "goals_against": 2.5,
+          "lost": 5,
+          "goals_for": 2.08,
+          "goals_against": 2.62,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -136,8 +136,8 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.917,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.923,
+          "over_2_5_pct": 0.769,
           "clean_sheets": 1
         },
         "away": {
@@ -165,6 +165,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "NOR",
+          "venue": "H",
+          "opponent": "Sandefjord",
+          "goals_for": 3,
+          "goals_against": 4,
+          "result": "L",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -259,39 +278,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-04",
-          "league": "NOR",
-          "venue": "H",
-          "opponent": "Start",
-          "goals_for": 2,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Bodo/Glimt": {
       "season": {
         "all": {
-          "matches": 24,
+          "matches": 25,
           "position": 2,
-          "points": 56,
-          "won": 18,
+          "points": 59,
+          "won": 19,
           "drawn": 2,
           "lost": 4,
-          "goals_for": 2.42,
-          "goals_against": 0.88,
+          "goals_for": 2.44,
+          "goals_against": 0.92,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -302,19 +302,19 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.417,
-          "over_2_5_pct": 0.708,
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.72,
           "clean_sheets": 11
         },
         "home": {
-          "matches": 12,
+          "matches": 13,
           "position": 2,
-          "points": 56,
-          "won": 10,
+          "points": 59,
+          "won": 11,
           "drawn": 0,
           "lost": 2,
-          "goals_for": 2.83,
-          "goals_against": 0.67,
+          "goals_for": 2.85,
+          "goals_against": 0.77,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -325,14 +325,14 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.333,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.385,
+          "over_2_5_pct": 0.769,
           "clean_sheets": 6
         },
         "away": {
           "matches": 12,
           "position": 2,
-          "points": 56,
+          "points": 59,
           "won": 8,
           "drawn": 2,
           "lost": 2,
@@ -354,6 +354,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-30",
+          "league": "NOR",
+          "venue": "H",
+          "opponent": "Viking",
+          "goals_for": 3,
+          "goals_against": 2,
+          "result": "W",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-24",
           "league": "NOR",
@@ -448,39 +467,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-04",
-          "league": "NOR",
-          "venue": "A",
-          "opponent": "Fredrikstad",
-          "goals_for": 2,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Brann": {
       "season": {
         "all": {
-          "matches": 24,
-          "position": 9,
-          "points": 29,
-          "won": 9,
+          "matches": 25,
+          "position": 7,
+          "points": 32,
+          "won": 10,
           "drawn": 2,
           "lost": 13,
-          "goals_for": 1.75,
-          "goals_against": 1.67,
+          "goals_for": 1.8,
+          "goals_against": 1.68,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -491,19 +491,19 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.792,
+          "btts_pct": 0.76,
+          "over_2_5_pct": 0.8,
           "clean_sheets": 3
         },
         "home": {
-          "matches": 12,
-          "position": 9,
-          "points": 29,
-          "won": 6,
+          "matches": 13,
+          "position": 7,
+          "points": 32,
+          "won": 7,
           "drawn": 0,
           "lost": 6,
-          "goals_for": 1.67,
-          "goals_against": 1.5,
+          "goals_for": 1.77,
+          "goals_against": 1.54,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -514,14 +514,14 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.833,
+          "btts_pct": 0.769,
+          "over_2_5_pct": 0.846,
           "clean_sheets": 1
         },
         "away": {
           "matches": 12,
-          "position": 9,
-          "points": 29,
+          "position": 7,
+          "points": 32,
           "won": 3,
           "drawn": 2,
           "lost": 7,
@@ -543,6 +543,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "H",
+          "opponent": "Molde",
+          "goals_for": 3,
+          "goals_against": 2,
+          "result": "W",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -637,15 +656,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-05",
-          "league": "NOR",
-          "venue": "H",
-          "opponent": "Lillestrom",
-          "goals_for": 1,
-          "goals_against": 2,
-          "result": "L",
+        }
+      ]
+    },
+    "Fredrikstad": {
+      "season": {
+        "all": {
+          "matches": 25,
+          "position": 11,
+          "points": 29,
+          "won": 8,
+          "drawn": 5,
+          "lost": 12,
+          "goals_for": 1.16,
+          "goals_against": 1.76,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -654,22 +678,21 @@
           "shots_on_target_against": null,
           "corners_for": null,
           "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
-        }
-      ]
-    },
-    "Fredrikstad": {
-      "season": {
-        "all": {
-          "matches": 24,
+          "yellow_cards": null,
+          "red_cards": null,
+          "btts_pct": 0.64,
+          "over_2_5_pct": 0.56,
+          "clean_sheets": 3
+        },
+        "home": {
+          "matches": 12,
           "position": 11,
           "points": 29,
-          "won": 8,
-          "drawn": 5,
-          "lost": 11,
-          "goals_for": 1.21,
-          "goals_against": 1.71,
+          "won": 5,
+          "drawn": 3,
+          "lost": 4,
+          "goals_for": 1.17,
+          "goals_against": 1.25,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -681,30 +704,7 @@
           "yellow_cards": null,
           "red_cards": null,
           "btts_pct": 0.667,
-          "over_2_5_pct": 0.542,
-          "clean_sheets": 3
-        },
-        "home": {
-          "matches": 11,
-          "position": 11,
-          "points": 29,
-          "won": 5,
-          "drawn": 3,
-          "lost": 3,
-          "goals_for": 1.27,
-          "goals_against": 1.09,
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "yellow_cards": null,
-          "red_cards": null,
-          "btts_pct": 0.727,
-          "over_2_5_pct": 0.455,
+          "over_2_5_pct": 0.5,
           "clean_sheets": 2
         },
         "away": {
@@ -732,6 +732,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "NOR",
+          "venue": "H",
+          "opponent": "Rosenborg",
+          "goals_for": 0,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -826,38 +845,19 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-04",
-          "league": "NOR",
-          "venue": "H",
-          "opponent": "Bodo/Glimt",
-          "goals_for": 1,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "HamKam": {
       "season": {
         "all": {
-          "matches": 24,
-          "position": 12,
-          "points": 26,
+          "matches": 25,
+          "position": 13,
+          "points": 27,
           "won": 7,
-          "drawn": 5,
+          "drawn": 6,
           "lost": 12,
-          "goals_for": 1.38,
+          "goals_for": 1.4,
           "goals_against": 2.12,
           "xg_for": null,
           "xg_against": null,
@@ -869,14 +869,14 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.6,
+          "over_2_5_pct": 0.76,
           "clean_sheets": 4
         },
         "home": {
           "matches": 12,
-          "position": 12,
-          "points": 26,
+          "position": 13,
+          "points": 27,
           "won": 5,
           "drawn": 2,
           "lost": 5,
@@ -897,14 +897,14 @@
           "clean_sheets": 3
         },
         "away": {
-          "matches": 12,
-          "position": 12,
-          "points": 26,
+          "matches": 13,
+          "position": 13,
+          "points": 27,
           "won": 2,
-          "drawn": 3,
+          "drawn": 4,
           "lost": 7,
-          "goals_for": 1.33,
-          "goals_against": 2.25,
+          "goals_for": 1.38,
+          "goals_against": 2.23,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -915,12 +915,31 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.833,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.846,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "A",
+          "opponent": "KFUM Oslo",
+          "goals_for": 2,
+          "goals_against": 2,
+          "result": "D",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-24",
           "league": "NOR",
@@ -1015,39 +1034,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-05",
-          "league": "NOR",
-          "venue": "A",
-          "opponent": "Rosenborg",
-          "goals_for": 0,
-          "goals_against": 4,
-          "result": "L",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "KFUM Oslo": {
       "season": {
         "all": {
-          "matches": 24,
-          "position": 8,
-          "points": 30,
+          "matches": 25,
+          "position": 10,
+          "points": 31,
           "won": 8,
-          "drawn": 6,
+          "drawn": 7,
           "lost": 10,
-          "goals_for": 1.25,
-          "goals_against": 1.62,
+          "goals_for": 1.28,
+          "goals_against": 1.64,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -1058,19 +1058,19 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.625,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.64,
+          "over_2_5_pct": 0.6,
           "clean_sheets": 5
         },
         "home": {
-          "matches": 12,
-          "position": 8,
-          "points": 30,
+          "matches": 13,
+          "position": 10,
+          "points": 31,
           "won": 6,
-          "drawn": 2,
+          "drawn": 3,
           "lost": 4,
-          "goals_for": 1.25,
-          "goals_against": 1.17,
+          "goals_for": 1.31,
+          "goals_against": 1.23,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -1081,14 +1081,14 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.417,
+          "btts_pct": 0.538,
+          "over_2_5_pct": 0.462,
           "clean_sheets": 4
         },
         "away": {
           "matches": 12,
-          "position": 8,
-          "points": 30,
+          "position": 10,
+          "points": 31,
           "won": 2,
           "drawn": 4,
           "lost": 6,
@@ -1110,6 +1110,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "H",
+          "opponent": "HamKam",
+          "goals_for": 2,
+          "goals_against": 2,
+          "result": "D",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -1204,38 +1223,19 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-06",
-          "league": "NOR",
-          "venue": "A",
-          "opponent": "Molde",
-          "goals_for": 0,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Kristiansund": {
       "season": {
         "all": {
-          "matches": 24,
+          "matches": 25,
           "position": 15,
-          "points": 20,
-          "won": 5,
+          "points": 23,
+          "won": 6,
           "drawn": 5,
           "lost": 14,
-          "goals_for": 1.04,
+          "goals_for": 1.16,
           "goals_against": 2.04,
           "xg_for": null,
           "xg_against": null,
@@ -1247,14 +1247,14 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.625,
-          "over_2_5_pct": 0.625,
+          "btts_pct": 0.64,
+          "over_2_5_pct": 0.64,
           "clean_sheets": 3
         },
         "home": {
           "matches": 12,
           "position": 15,
-          "points": 20,
+          "points": 23,
           "won": 4,
           "drawn": 3,
           "lost": 5,
@@ -1275,14 +1275,14 @@
           "clean_sheets": 3
         },
         "away": {
-          "matches": 12,
+          "matches": 13,
           "position": 15,
-          "points": 20,
-          "won": 1,
+          "points": 23,
+          "won": 2,
           "drawn": 2,
           "lost": 9,
-          "goals_for": 0.75,
-          "goals_against": 2.42,
+          "goals_for": 1.0,
+          "goals_against": 2.38,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -1293,12 +1293,31 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.615,
           "clean_sheets": 0
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "A",
+          "opponent": "Sarpsborg 08",
+          "goals_for": 4,
+          "goals_against": 2,
+          "result": "W",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -1393,39 +1412,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-06",
-          "league": "NOR",
-          "venue": "H",
-          "opponent": "Tromso",
-          "goals_for": 2,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Lillestrom": {
       "season": {
         "all": {
-          "matches": 24,
-          "position": 6,
-          "points": 39,
-          "won": 12,
+          "matches": 25,
+          "position": 5,
+          "points": 42,
+          "won": 13,
           "drawn": 3,
           "lost": 9,
-          "goals_for": 1.46,
-          "goals_against": 1.38,
+          "goals_for": 1.44,
+          "goals_against": 1.32,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -1436,14 +1436,14 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.458,
-          "over_2_5_pct": 0.542,
-          "clean_sheets": 7
+          "btts_pct": 0.44,
+          "over_2_5_pct": 0.52,
+          "clean_sheets": 8
         },
         "home": {
           "matches": 12,
-          "position": 6,
-          "points": 39,
+          "position": 5,
+          "points": 42,
           "won": 6,
           "drawn": 1,
           "lost": 5,
@@ -1464,14 +1464,14 @@
           "clean_sheets": 2
         },
         "away": {
-          "matches": 12,
-          "position": 6,
-          "points": 39,
-          "won": 6,
+          "matches": 13,
+          "position": 5,
+          "points": 42,
+          "won": 7,
           "drawn": 2,
           "lost": 4,
           "goals_for": 1.08,
-          "goals_against": 1.17,
+          "goals_against": 1.08,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -1482,12 +1482,31 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.25,
-          "over_2_5_pct": 0.333,
-          "clean_sheets": 5
+          "btts_pct": 0.231,
+          "over_2_5_pct": 0.308,
+          "clean_sheets": 6
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "A",
+          "opponent": "Start",
+          "goals_for": 1,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -1582,39 +1601,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-05",
-          "league": "NOR",
-          "venue": "A",
-          "opponent": "Brann",
-          "goals_for": 2,
-          "goals_against": 1,
-          "result": "W",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Molde": {
       "season": {
         "all": {
-          "matches": 24,
+          "matches": 25,
           "position": 3,
           "points": 43,
           "won": 13,
           "drawn": 4,
-          "lost": 7,
-          "goals_for": 2.38,
-          "goals_against": 1.5,
+          "lost": 8,
+          "goals_for": 2.36,
+          "goals_against": 1.56,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -1625,8 +1625,8 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.75,
-          "over_2_5_pct": 0.708,
+          "btts_pct": 0.76,
+          "over_2_5_pct": 0.72,
           "clean_sheets": 4
         },
         "home": {
@@ -1653,14 +1653,14 @@
           "clean_sheets": 3
         },
         "away": {
-          "matches": 11,
+          "matches": 12,
           "position": 3,
           "points": 43,
           "won": 4,
           "drawn": 3,
-          "lost": 4,
+          "lost": 5,
           "goals_for": 2.0,
-          "goals_against": 1.91,
+          "goals_against": 2.0,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -1671,12 +1671,31 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.818,
-          "over_2_5_pct": 0.727,
+          "btts_pct": 0.833,
+          "over_2_5_pct": 0.75,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "A",
+          "opponent": "Brann",
+          "goals_for": 2,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -1771,39 +1790,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-06",
-          "league": "NOR",
-          "venue": "H",
-          "opponent": "KFUM Oslo",
-          "goals_for": 2,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Rosenborg": {
       "season": {
         "all": {
-          "matches": 24,
+          "matches": 25,
           "position": 4,
-          "points": 40,
-          "won": 12,
+          "points": 43,
+          "won": 13,
           "drawn": 4,
           "lost": 8,
-          "goals_for": 1.92,
-          "goals_against": 1.29,
+          "goals_for": 1.96,
+          "goals_against": 1.24,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -1814,14 +1814,14 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.417,
-          "over_2_5_pct": 0.625,
-          "clean_sheets": 9
+          "btts_pct": 0.4,
+          "over_2_5_pct": 0.64,
+          "clean_sheets": 10
         },
         "home": {
           "matches": 12,
           "position": 4,
-          "points": 40,
+          "points": 43,
           "won": 7,
           "drawn": 3,
           "lost": 2,
@@ -1842,14 +1842,14 @@
           "clean_sheets": 4
         },
         "away": {
-          "matches": 12,
+          "matches": 13,
           "position": 4,
-          "points": 40,
-          "won": 5,
+          "points": 43,
+          "won": 6,
           "drawn": 1,
           "lost": 6,
-          "goals_for": 1.5,
-          "goals_against": 1.42,
+          "goals_for": 1.62,
+          "goals_against": 1.31,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -1860,12 +1860,31 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.25,
-          "over_2_5_pct": 0.583,
-          "clean_sheets": 5
+          "btts_pct": 0.231,
+          "over_2_5_pct": 0.615,
+          "clean_sheets": 6
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "NOR",
+          "venue": "A",
+          "opponent": "Fredrikstad",
+          "goals_for": 3,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-24",
           "league": "NOR",
@@ -1960,39 +1979,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-05",
-          "league": "NOR",
-          "venue": "H",
-          "opponent": "HamKam",
-          "goals_for": 4,
-          "goals_against": 0,
-          "result": "W",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Sandefjord": {
       "season": {
         "all": {
-          "matches": 24,
-          "position": 13,
-          "points": 24,
-          "won": 6,
+          "matches": 25,
+          "position": 12,
+          "points": 27,
+          "won": 7,
           "drawn": 6,
           "lost": 12,
-          "goals_for": 0.92,
-          "goals_against": 1.29,
+          "goals_for": 1.04,
+          "goals_against": 1.36,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2003,14 +2003,14 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.458,
-          "over_2_5_pct": 0.417,
+          "btts_pct": 0.48,
+          "over_2_5_pct": 0.44,
           "clean_sheets": 6
         },
         "home": {
           "matches": 12,
-          "position": 13,
-          "points": 24,
+          "position": 12,
+          "points": 27,
           "won": 3,
           "drawn": 5,
           "lost": 4,
@@ -2031,14 +2031,14 @@
           "clean_sheets": 5
         },
         "away": {
-          "matches": 12,
-          "position": 13,
-          "points": 24,
-          "won": 3,
+          "matches": 13,
+          "position": 12,
+          "points": 27,
+          "won": 4,
           "drawn": 1,
           "lost": 8,
-          "goals_for": 1.0,
-          "goals_against": 1.58,
+          "goals_for": 1.23,
+          "goals_against": 1.69,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2049,12 +2049,31 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.692,
+          "over_2_5_pct": 0.615,
           "clean_sheets": 1
         }
       },
       "last6": [
+        {
+          "date": "2026-10-31",
+          "league": "NOR",
+          "venue": "A",
+          "opponent": "Aalesund",
+          "goals_for": 4,
+          "goals_against": 3,
+          "result": "W",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -2149,39 +2168,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-04",
-          "league": "NOR",
-          "venue": "H",
-          "opponent": "Viking",
-          "goals_for": 1,
-          "goals_against": 1,
-          "result": "D",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Sarpsborg 08": {
       "season": {
         "all": {
-          "matches": 24,
-          "position": 7,
+          "matches": 25,
+          "position": 9,
           "points": 31,
           "won": 8,
           "drawn": 7,
-          "lost": 9,
-          "goals_for": 1.25,
-          "goals_against": 1.46,
+          "lost": 10,
+          "goals_for": 1.28,
+          "goals_against": 1.56,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2192,19 +2192,19 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.625,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.64,
+          "over_2_5_pct": 0.6,
           "clean_sheets": 5
         },
         "home": {
-          "matches": 12,
-          "position": 7,
+          "matches": 13,
+          "position": 9,
           "points": 31,
           "won": 5,
           "drawn": 3,
-          "lost": 4,
-          "goals_for": 1.17,
-          "goals_against": 1.33,
+          "lost": 5,
+          "goals_for": 1.23,
+          "goals_against": 1.54,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2215,13 +2215,13 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.692,
+          "over_2_5_pct": 0.615,
           "clean_sheets": 2
         },
         "away": {
           "matches": 12,
-          "position": 7,
+          "position": 9,
           "points": 31,
           "won": 3,
           "drawn": 4,
@@ -2244,6 +2244,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "H",
+          "opponent": "Kristiansund",
+          "goals_for": 2,
+          "goals_against": 4,
+          "result": "L",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -2338,39 +2357,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-06",
-          "league": "NOR",
-          "venue": "H",
-          "opponent": "Valerenga",
-          "goals_for": 2,
-          "goals_against": 2,
-          "result": "D",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Start": {
       "season": {
         "all": {
-          "matches": 24,
+          "matches": 25,
           "position": 16,
           "points": 19,
           "won": 5,
           "drawn": 4,
-          "lost": 15,
-          "goals_for": 1.08,
-          "goals_against": 2.25,
+          "lost": 16,
+          "goals_for": 1.04,
+          "goals_against": 2.2,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2381,19 +2381,19 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.56,
+          "over_2_5_pct": 0.56,
           "clean_sheets": 3
         },
         "home": {
-          "matches": 12,
+          "matches": 13,
           "position": 16,
           "points": 19,
           "won": 4,
           "drawn": 3,
-          "lost": 5,
-          "goals_for": 1.25,
-          "goals_against": 1.58,
+          "lost": 6,
+          "goals_for": 1.15,
+          "goals_against": 1.54,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2404,8 +2404,8 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.417,
+          "btts_pct": 0.462,
+          "over_2_5_pct": 0.385,
           "clean_sheets": 3
         },
         "away": {
@@ -2433,6 +2433,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "H",
+          "opponent": "Lillestrom",
+          "goals_for": 0,
+          "goals_against": 1,
+          "result": "L",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -2527,39 +2546,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-04",
-          "league": "NOR",
-          "venue": "A",
-          "opponent": "Aalesund",
-          "goals_for": 0,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Tromso": {
       "season": {
         "all": {
-          "matches": 24,
-          "position": 5,
+          "matches": 25,
+          "position": 6,
           "points": 40,
           "won": 11,
           "drawn": 7,
-          "lost": 6,
-          "goals_for": 1.79,
-          "goals_against": 1.42,
+          "lost": 7,
+          "goals_for": 1.72,
+          "goals_against": 1.52,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2570,13 +2570,13 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.5,
-          "over_2_5_pct": 0.5,
+          "btts_pct": 0.48,
+          "over_2_5_pct": 0.52,
           "clean_sheets": 9
         },
         "home": {
           "matches": 12,
-          "position": 5,
+          "position": 6,
           "points": 40,
           "won": 7,
           "drawn": 4,
@@ -2598,14 +2598,14 @@
           "clean_sheets": 7
         },
         "away": {
-          "matches": 12,
-          "position": 5,
+          "matches": 13,
+          "position": 6,
           "points": 40,
           "won": 4,
           "drawn": 3,
-          "lost": 5,
-          "goals_for": 1.75,
-          "goals_against": 2.0,
+          "lost": 6,
+          "goals_for": 1.62,
+          "goals_against": 2.15,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2616,12 +2616,31 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.583,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.615,
           "clean_sheets": 2
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "A",
+          "opponent": "Valerenga",
+          "goals_for": 0,
+          "goals_against": 4,
+          "result": "L",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -2716,39 +2735,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-06",
-          "league": "NOR",
-          "venue": "A",
-          "opponent": "Kristiansund",
-          "goals_for": 0,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Valerenga": {
       "season": {
         "all": {
-          "matches": 24,
-          "position": 10,
-          "points": 29,
-          "won": 8,
+          "matches": 25,
+          "position": 8,
+          "points": 32,
+          "won": 9,
           "drawn": 5,
           "lost": 11,
-          "goals_for": 1.62,
-          "goals_against": 1.92,
+          "goals_for": 1.72,
+          "goals_against": 1.84,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2759,19 +2759,19 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.583,
-          "clean_sheets": 3
+          "btts_pct": 0.56,
+          "over_2_5_pct": 0.6,
+          "clean_sheets": 4
         },
         "home": {
-          "matches": 12,
-          "position": 10,
-          "points": 29,
-          "won": 5,
+          "matches": 13,
+          "position": 8,
+          "points": 32,
+          "won": 6,
           "drawn": 2,
           "lost": 5,
-          "goals_for": 1.92,
-          "goals_against": 1.67,
+          "goals_for": 2.08,
+          "goals_against": 1.54,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2782,14 +2782,14 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.667,
-          "clean_sheets": 1
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.692,
+          "clean_sheets": 2
         },
         "away": {
           "matches": 12,
-          "position": 10,
-          "points": 29,
+          "position": 8,
+          "points": 32,
           "won": 3,
           "drawn": 3,
           "lost": 6,
@@ -2811,6 +2811,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-01",
+          "league": "NOR",
+          "venue": "H",
+          "opponent": "Tromso",
+          "goals_for": 4,
+          "goals_against": 0,
+          "result": "W",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-24",
           "league": "NOR",
@@ -2905,39 +2924,20 @@
           "corners_against": null,
           "cards_for": null,
           "cards_against": null
-        },
-        {
-          "date": "2026-09-06",
-          "league": "NOR",
-          "venue": "A",
-          "opponent": "Sarpsborg 08",
-          "goals_for": 2,
-          "goals_against": 2,
-          "result": "D",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
         }
       ]
     },
     "Viking": {
       "season": {
         "all": {
-          "matches": 24,
+          "matches": 25,
           "position": 1,
           "points": 59,
           "won": 19,
           "drawn": 2,
-          "lost": 3,
-          "goals_for": 2.58,
-          "goals_against": 0.96,
+          "lost": 4,
+          "goals_for": 2.56,
+          "goals_against": 1.04,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2948,8 +2948,8 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.667,
-          "over_2_5_pct": 0.75,
+          "btts_pct": 0.68,
+          "over_2_5_pct": 0.76,
           "clean_sheets": 7
         },
         "home": {
@@ -2976,14 +2976,14 @@
           "clean_sheets": 3
         },
         "away": {
-          "matches": 12,
+          "matches": 13,
           "position": 1,
           "points": 59,
           "won": 7,
           "drawn": 2,
-          "lost": 3,
-          "goals_for": 1.5,
-          "goals_against": 0.83,
+          "lost": 4,
+          "goals_for": 1.54,
+          "goals_against": 1.0,
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,
@@ -2994,12 +2994,31 @@
           "corners_against": null,
           "yellow_cards": null,
           "red_cards": null,
-          "btts_pct": 0.583,
-          "over_2_5_pct": 0.5,
+          "btts_pct": 0.615,
+          "over_2_5_pct": 0.538,
           "clean_sheets": 4
         }
       },
       "last6": [
+        {
+          "date": "2026-10-30",
+          "league": "NOR",
+          "venue": "A",
+          "opponent": "Bodo/Glimt",
+          "goals_for": 2,
+          "goals_against": 3,
+          "result": "L",
+          "xg_for": null,
+          "xg_against": null,
+          "shots_for": null,
+          "shots_against": null,
+          "shots_on_target_for": null,
+          "shots_on_target_against": null,
+          "corners_for": null,
+          "corners_against": null,
+          "cards_for": null,
+          "cards_against": null
+        },
         {
           "date": "2026-10-25",
           "league": "NOR",
@@ -3084,25 +3103,6 @@
           "goals_for": 8,
           "goals_against": 1,
           "result": "W",
-          "xg_for": null,
-          "xg_against": null,
-          "shots_for": null,
-          "shots_against": null,
-          "shots_on_target_for": null,
-          "shots_on_target_against": null,
-          "corners_for": null,
-          "corners_against": null,
-          "cards_for": null,
-          "cards_against": null
-        },
-        {
-          "date": "2026-09-04",
-          "league": "NOR",
-          "venue": "A",
-          "opponent": "Sandefjord",
-          "goals_for": 1,
-          "goals_against": 1,
-          "result": "D",
           "xg_for": null,
           "xg_against": null,
           "shots_for": null,

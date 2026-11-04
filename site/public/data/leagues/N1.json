@@ -14,7 +14,7 @@
         "defense": -0.034
       },
       "Almere City": {
-        "attack": -0.7476,
+        "attack": -0.7475,
         "defense": 0.4145
       },
       "Cambuur": {
@@ -30,7 +30,7 @@
         "defense": 0.465
       },
       "Feyenoord": {
-        "attack": 0.4355,
+        "attack": 0.4354,
         "defense": -0.0024
       },
       "For Sittard": {
@@ -87,11 +87,11 @@
       },
       "Waalwijk": {
         "attack": -0.1009,
-        "defense": 0.6062
+        "defense": 0.6061
       },
       "Willem II": {
         "attack": -0.4516,
-        "defense": 0.7522
+        "defense": 0.7521
       },
       "Zwolle": {
         "attack": -0.1641,

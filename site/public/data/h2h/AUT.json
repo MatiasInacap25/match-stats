@@ -673,6 +673,22 @@
     ],
     "A. Lustenau|Salzburg": [
       {
+        "date": "2026-11-01",
+        "league": "AUT",
+        "home": "Salzburg",
+        "away": "A. Lustenau",
+        "home_goals": 5,
+        "away_goals": 1,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
+      {
         "date": "2024-02-24",
         "league": "AUT",
         "home": "Salzburg",
@@ -2560,6 +2576,22 @@
       }
     ],
     "Altach|Ried": [
+      {
+        "date": "2026-10-31",
+        "league": "AUT",
+        "home": "Altach",
+        "away": "Ried",
+        "home_goals": 1,
+        "away_goals": 1,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
       {
         "date": "2026-05-16",
         "league": "AUT",
@@ -5845,6 +5877,22 @@
     ],
     "Austria Vienna|SK Rapid": [
       {
+        "date": "2026-11-01",
+        "league": "AUT",
+        "home": "Austria Vienna",
+        "away": "SK Rapid",
+        "home_goals": 0,
+        "away_goals": 2,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
+      {
         "date": "2026-05-10",
         "league": "AUT",
         "home": "SK Rapid",
@@ -8110,6 +8158,22 @@
       }
     ],
     "Grazer AK|Hartberg": [
+      {
+        "date": "2026-10-30",
+        "league": "AUT",
+        "home": "Grazer AK",
+        "away": "Hartberg",
+        "home_goals": 0,
+        "away_goals": 4,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
       {
         "date": "2026-02-21",
         "league": "AUT",
@@ -13140,6 +13204,22 @@
       }
     ],
     "LASK|Tirol": [
+      {
+        "date": "2026-10-31",
+        "league": "AUT",
+        "home": "LASK",
+        "away": "Tirol",
+        "home_goals": 2,
+        "away_goals": 1,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
       {
         "date": "2026-02-07",
         "league": "AUT",
@@ -18370,6 +18450,22 @@
       }
     ],
     "Sturm Graz|Wolfsberger AC": [
+      {
+        "date": "2026-11-01",
+        "league": "AUT",
+        "home": "Wolfsberger AC",
+        "away": "Sturm Graz",
+        "home_goals": 1,
+        "away_goals": 1,
+        "home_shots": null,
+        "away_shots": null,
+        "home_shots_on_target": null,
+        "away_shots_on_target": null,
+        "home_corners": null,
+        "away_corners": null,
+        "home_cards": null,
+        "away_cards": null
+      },
       {
         "date": "2026-03-01",
         "league": "AUT",

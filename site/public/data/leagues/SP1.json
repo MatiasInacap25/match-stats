@@ -2,697 +2,697 @@
   "league": "SP1",
   "season": "2026/27",
   "goals": {
-    "home_advantage": 0.2953,
-    "rho": -0.027,
+    "home_advantage": 0.2958,
+    "rho": -0.0268,
     "teams": {
       "Alaves": {
-        "attack": -0.0476,
-        "defense": 0.1009
+        "attack": -0.049,
+        "defense": 0.1019
       },
       "Ath Bilbao": {
-        "attack": 0.0296,
-        "defense": -0.0667
+        "attack": 0.0283,
+        "defense": -0.0657
       },
       "Ath Madrid": {
-        "attack": 0.3404,
-        "defense": -0.2567
+        "attack": 0.339,
+        "defense": -0.2563
       },
       "Barcelona": {
-        "attack": 0.8405,
-        "defense": -0.2088
+        "attack": 0.8392,
+        "defense": -0.2078
       },
       "Betis": {
-        "attack": 0.2484,
-        "defense": 0.0096
+        "attack": 0.2469,
+        "defense": 0.0098
       },
       "Celta": {
-        "attack": 0.0467,
-        "defense": -0.0205
+        "attack": 0.0453,
+        "defense": -0.0195
       },
       "Elche": {
-        "attack": 0.0615,
-        "defense": 0.14
+        "attack": 0.0602,
+        "defense": 0.1401
       },
       "Espanol": {
-        "attack": -0.1144,
-        "defense": 0.0408
+        "attack": -0.1156,
+        "defense": 0.0417
       },
       "Getafe": {
-        "attack": -0.4224,
-        "defense": -0.1704
+        "attack": -0.4238,
+        "defense": -0.1699
       },
       "Girona": {
-        "attack": -0.1396,
-        "defense": 0.1035
+        "attack": -0.1409,
+        "defense": 0.1045
       },
       "La Coruna": {
-        "attack": -0.009,
-        "defense": 0.0331
+        "attack": 0.0232,
+        "defense": 0.0367
       },
       "Las Palmas": {
-        "attack": -0.2002,
-        "defense": 0.2097
+        "attack": -0.2016,
+        "defense": 0.2107
       },
       "Leganes": {
-        "attack": -0.1595,
-        "defense": 0.1282
+        "attack": -0.1609,
+        "defense": 0.1292
       },
       "Levante": {
-        "attack": 0.0952,
-        "defense": 0.2385
+        "attack": 0.0938,
+        "defense": 0.2384
       },
       "Malaga": {
-        "attack": -0.4445,
-        "defense": 0.3386
+        "attack": -0.4457,
+        "defense": 0.3375
       },
       "Mallorca": {
-        "attack": -0.0665,
-        "defense": 0.0611
+        "attack": -0.0678,
+        "defense": 0.0621
       },
       "Osasuna": {
-        "attack": -0.0683,
-        "defense": 0.1464
+        "attack": -0.0685,
+        "defense": 0.1539
       },
       "Oviedo": {
-        "attack": -0.5326,
-        "defense": 0.1643
+        "attack": -0.5338,
+        "defense": 0.1653
       },
       "Real Madrid": {
-        "attack": 0.5264,
-        "defense": -0.3339
+        "attack": 0.5253,
+        "defense": -0.3329
       },
       "Santander": {
-        "attack": 0.1252,
-        "defense": 0.6646
+        "attack": 0.1236,
+        "defense": 0.6655
       },
       "Sevilla": {
-        "attack": 0.0462,
-        "defense": 0.1802
+        "attack": 0.0447,
+        "defense": 0.1804
       },
       "Sociedad": {
-        "attack": 0.2066,
-        "defense": 0.2118
+        "attack": 0.2054,
+        "defense": 0.2122
       },
       "Valencia": {
-        "attack": -0.1106,
-        "defense": 0.079
+        "attack": -0.1119,
+        "defense": 0.0793
       },
       "Valladolid": {
-        "attack": -0.5458,
-        "defense": 0.6113
+        "attack": -0.5472,
+        "defense": 0.6123
       },
       "Vallecano": {
-        "attack": -0.0457,
-        "defense": 0.0187
+        "attack": -0.047,
+        "defense": 0.0196
       },
       "Villarreal": {
-        "attack": 0.34,
-        "defense": -0.0003
+        "attack": 0.3388,
+        "defense": 0.0002
       }
     }
   },
   "stats": {
     "corners": {
-      "avg_home": 5.349,
-      "avg_away": 4.3104,
-      "dispersion_team": 14.8556,
-      "dispersion_total": 68.0497,
+      "avg_home": 5.3579,
+      "avg_away": 4.3027,
+      "dispersion_team": 14.9287,
+      "dispersion_total": 69.1293,
       "teams": {
         "Alaves": {
-          "home_for": 0.9871,
-          "home_against": 1.0417,
-          "away_for": 0.9524,
-          "away_against": 0.9802
+          "home_for": 0.9859,
+          "home_against": 1.0432,
+          "away_for": 0.9537,
+          "away_against": 0.979
         },
         "Ath Bilbao": {
-          "home_for": 1.0829,
-          "home_against": 0.9229,
-          "away_for": 1.2296,
-          "away_against": 0.8665
+          "home_for": 1.0815,
+          "home_against": 0.9241,
+          "away_for": 1.2313,
+          "away_against": 0.8655
         },
         "Ath Madrid": {
-          "home_for": 1.2055,
-          "home_against": 0.7918,
-          "away_for": 1.2285,
-          "away_against": 0.8868
+          "home_for": 1.204,
+          "home_against": 0.7927,
+          "away_for": 1.2302,
+          "away_against": 0.8858
         },
         "Barcelona": {
-          "home_for": 1.3793,
-          "home_against": 0.9116,
-          "away_for": 1.226,
-          "away_against": 0.7933
+          "home_for": 1.3774,
+          "home_against": 0.9128,
+          "away_for": 1.2278,
+          "away_against": 0.7924
         },
         "Betis": {
-          "home_for": 0.9552,
-          "home_against": 1.07,
-          "away_for": 1.0238,
-          "away_against": 1.1049
+          "home_for": 0.9541,
+          "home_against": 1.0715,
+          "away_for": 1.0252,
+          "away_against": 1.1035
         },
         "Celta": {
-          "home_for": 0.782,
-          "home_against": 0.9512,
-          "away_for": 0.7799,
-          "away_against": 0.9755
+          "home_for": 0.7811,
+          "home_against": 0.9525,
+          "away_for": 0.7808,
+          "away_against": 0.9743
         },
         "Elche": {
-          "home_for": 0.9035,
-          "home_against": 0.8632,
-          "away_for": 0.8607,
-          "away_against": 0.9871
+          "home_for": 0.9025,
+          "home_against": 0.8643,
+          "away_for": 0.8618,
+          "away_against": 0.9859
         },
         "Espanol": {
-          "home_for": 0.7933,
-          "home_against": 1.1249,
-          "away_for": 0.9342,
-          "away_against": 1.0099
+          "home_for": 0.7924,
+          "home_against": 1.1265,
+          "away_for": 0.9355,
+          "away_against": 1.0087
         },
         "Getafe": {
-          "home_for": 0.8686,
-          "home_against": 1.0757,
-          "away_for": 0.9346,
-          "away_against": 0.9515
+          "home_for": 0.8676,
+          "home_against": 1.0772,
+          "away_for": 0.9358,
+          "away_against": 0.9503
         },
         "Girona": {
-          "home_for": 0.9315,
-          "home_against": 0.9368,
-          "away_for": 0.8888,
-          "away_against": 1.1378
+          "home_for": 0.9305,
+          "home_against": 0.9379,
+          "away_for": 0.8898,
+          "away_against": 1.1364
         },
         "La Coruna": {
-          "home_for": 0.9674,
-          "home_against": 1.08,
-          "away_for": 1.1032,
-          "away_against": 1.0048
+          "home_for": 1.0145,
+          "home_against": 1.025,
+          "away_for": 1.1043,
+          "away_against": 1.0039
         },
         "Levante": {
-          "home_for": 0.9323,
-          "home_against": 1.113,
-          "away_for": 0.8041,
-          "away_against": 1.1057
+          "home_for": 0.9312,
+          "home_against": 1.1146,
+          "away_for": 0.8051,
+          "away_against": 1.1043
         },
         "Malaga": {
-          "home_for": 1.0422,
-          "home_against": 1.0336,
-          "away_for": 1.0029,
-          "away_against": 1.1004
+          "home_for": 1.0413,
+          "home_against": 1.0346,
+          "away_for": 1.0039,
+          "away_against": 1.0993
         },
         "Mallorca": {
-          "home_for": 0.8348,
-          "home_against": 1.2408,
-          "away_for": 0.8568,
-          "away_against": 1.1635
+          "home_for": 0.834,
+          "home_against": 1.2424,
+          "away_for": 0.8577,
+          "away_against": 1.1622
         },
         "Osasuna": {
-          "home_for": 0.9035,
-          "home_against": 0.9167,
-          "away_for": 0.7323,
-          "away_against": 1.0905
+          "home_for": 0.9025,
+          "home_against": 0.9179,
+          "away_for": 0.7201,
+          "away_against": 1.1088
         },
         "Oviedo": {
-          "home_for": 0.9121,
-          "home_against": 1.0808,
-          "away_for": 0.8408,
-          "away_against": 1.112
+          "home_for": 0.9112,
+          "home_against": 1.0821,
+          "away_for": 0.8417,
+          "away_against": 1.1107
         },
         "Real Madrid": {
-          "home_for": 1.172,
-          "home_against": 0.8691,
-          "away_for": 1.3077,
-          "away_against": 0.8093
+          "home_for": 1.1705,
+          "home_against": 0.8702,
+          "away_for": 1.3096,
+          "away_against": 0.8084
         },
         "Santander": {
-          "home_for": 1.0664,
-          "home_against": 1.2771,
-          "away_for": 0.9408,
-          "away_against": 1.3413
+          "home_for": 1.0654,
+          "home_against": 1.2786,
+          "away_for": 0.9416,
+          "away_against": 1.3399
         },
         "Sevilla": {
-          "home_for": 0.8556,
-          "home_against": 0.8513,
-          "away_for": 0.9738,
-          "away_against": 0.9142
+          "home_for": 0.8546,
+          "home_against": 0.8523,
+          "away_for": 0.9752,
+          "away_against": 0.9131
         },
         "Sociedad": {
-          "home_for": 1.1432,
-          "home_against": 1.0238,
-          "away_for": 1.2172,
-          "away_against": 0.9096
+          "home_for": 1.1418,
+          "home_against": 1.0252,
+          "away_for": 1.2189,
+          "away_against": 0.9085
         },
         "Valencia": {
-          "home_for": 0.9917,
-          "home_against": 1.0248,
-          "away_for": 0.9524,
-          "away_against": 0.9946
+          "home_for": 0.9905,
+          "home_against": 1.0262,
+          "away_for": 0.9537,
+          "away_against": 0.9934
         },
         "Vallecano": {
-          "home_for": 1.1288,
-          "home_against": 1.0952,
-          "away_for": 1.0773,
-          "away_against": 1.0809
+          "home_for": 1.1274,
+          "home_against": 1.0967,
+          "away_for": 1.0788,
+          "away_against": 1.0795
         },
         "Villarreal": {
-          "home_for": 1.1097,
-          "home_against": 0.9465,
-          "away_for": 1.0417,
-          "away_against": 1.0099
+          "home_for": 1.1083,
+          "home_against": 0.9477,
+          "away_for": 1.0432,
+          "away_against": 1.0087
         }
       }
     },
     "cards": {
-      "avg_home": 2.3456,
-      "avg_away": 2.5889,
-      "dispersion_team": 18.4888,
-      "dispersion_total": 14.8444,
+      "avg_home": 2.3378,
+      "avg_away": 2.5936,
+      "dispersion_team": 18.3834,
+      "dispersion_total": 14.9357,
       "teams": {
         "Alaves": {
-          "home_for": 0.9926,
-          "home_against": 1.0353,
-          "away_for": 1.019,
-          "away_against": 0.9123
+          "home_for": 0.9951,
+          "home_against": 1.0338,
+          "away_for": 1.0176,
+          "away_against": 0.9145
         },
         "Ath Bilbao": {
-          "home_for": 0.951,
-          "home_against": 1.0447,
-          "away_for": 1.0115,
-          "away_against": 0.7888
+          "home_for": 0.9533,
+          "home_against": 1.0432,
+          "away_for": 1.0101,
+          "away_against": 0.7905
         },
         "Ath Madrid": {
-          "home_for": 0.9779,
-          "home_against": 0.8903,
-          "away_for": 0.9505,
-          "away_against": 0.847
+          "home_for": 0.9803,
+          "home_against": 0.8891,
+          "away_for": 0.9492,
+          "away_against": 0.849
         },
         "Barcelona": {
-          "home_for": 0.7014,
-          "home_against": 0.9128,
-          "away_for": 0.7912,
-          "away_against": 1.1856
+          "home_for": 0.703,
+          "home_against": 0.9116,
+          "away_for": 0.7903,
+          "away_against": 1.1887
         },
         "Betis": {
-          "home_for": 0.9302,
-          "home_against": 1.1012,
-          "away_for": 0.7417,
-          "away_against": 0.8576
+          "home_for": 0.9325,
+          "home_against": 1.0997,
+          "away_for": 0.7408,
+          "away_against": 0.8597
         },
         "Celta": {
-          "home_for": 0.743,
-          "home_against": 0.9599,
-          "away_for": 0.92,
-          "away_against": 1.0872
+          "home_for": 0.7447,
+          "home_against": 0.9586,
+          "away_for": 0.9188,
+          "away_against": 1.09
         },
         "Elche": {
-          "home_for": 0.9669,
-          "home_against": 0.9794,
-          "away_for": 1.0541,
-          "away_against": 0.9302
+          "home_for": 0.9693,
+          "home_against": 0.9781,
+          "away_for": 1.0526,
+          "away_against": 0.9325
         },
         "Espanol": {
-          "home_for": 1.0763,
-          "home_against": 1.1181,
-          "away_for": 1.1672,
-          "away_against": 1.0862
+          "home_for": 1.079,
+          "home_against": 1.1165,
+          "away_for": 1.1655,
+          "away_against": 1.089
         },
         "Getafe": {
-          "home_for": 1.2733,
-          "home_against": 1.0258,
-          "away_for": 1.3657,
-          "away_against": 1.0544
+          "home_for": 1.2768,
+          "home_against": 1.0244,
+          "away_for": 1.3637,
+          "away_against": 1.0571
         },
         "Girona": {
-          "home_for": 1.1534,
-          "home_against": 0.9708,
-          "away_for": 0.851,
-          "away_against": 0.8594
+          "home_for": 1.1561,
+          "home_against": 0.9697,
+          "away_for": 0.85,
+          "away_against": 0.8611
         },
         "La Coruna": {
-          "home_for": 1.0116,
-          "home_against": 0.8863,
-          "away_for": 1.0021,
-          "away_against": 1.0542
+          "home_for": 0.9212,
+          "home_against": 0.9453,
+          "away_for": 1.0012,
+          "away_against": 1.0561
         },
         "Levante": {
-          "home_for": 0.9342,
-          "home_against": 0.9992,
-          "away_for": 0.828,
-          "away_against": 1.055
+          "home_for": 0.9364,
+          "home_against": 0.9979,
+          "away_for": 0.8269,
+          "away_against": 1.0577
         },
         "Malaga": {
-          "home_for": 0.9263,
-          "home_against": 1.0021,
-          "away_for": 0.8408,
-          "away_against": 0.8809
+          "home_for": 0.9278,
+          "home_against": 1.0012,
+          "away_for": 0.8401,
+          "away_against": 0.8823
         },
         "Mallorca": {
-          "home_for": 0.9476,
-          "home_against": 0.9708,
-          "away_for": 1.0108,
-          "away_against": 1.0799
+          "home_for": 0.9496,
+          "home_against": 0.9697,
+          "away_for": 1.0096,
+          "away_against": 1.0823
         },
         "Osasuna": {
-          "home_for": 1.1091,
-          "home_against": 1.0983,
-          "away_for": 1.019,
-          "away_against": 0.8795
+          "home_for": 1.1119,
+          "home_against": 1.0967,
+          "away_for": 1.0432,
+          "away_against": 0.8386
         },
         "Oviedo": {
-          "home_for": 1.0946,
-          "home_against": 0.7844,
-          "away_for": 1.0108,
-          "away_against": 0.8006
+          "home_for": 1.0971,
+          "home_against": 0.7836,
+          "away_for": 1.0096,
+          "away_against": 0.8021
         },
         "Real Madrid": {
-          "home_for": 1.0653,
-          "home_against": 1.0091,
-          "away_for": 0.8374,
-          "away_against": 1.2109
+          "home_for": 1.068,
+          "home_against": 1.0078,
+          "away_for": 0.8363,
+          "away_against": 1.2142
         },
         "Santander": {
-          "home_for": 1.0747,
-          "home_against": 0.9813,
-          "away_for": 1.0794,
-          "away_against": 1.1395
+          "home_for": 1.0767,
+          "home_against": 0.9803,
+          "away_for": 1.0783,
+          "away_against": 1.1416
         },
         "Sevilla": {
-          "home_for": 1.2184,
-          "home_against": 0.9398,
-          "away_for": 1.2708,
-          "away_against": 0.9614
+          "home_for": 1.2216,
+          "home_against": 0.9386,
+          "away_for": 1.2689,
+          "away_against": 0.9638
         },
         "Sociedad": {
-          "home_for": 0.9997,
-          "home_against": 1.0884,
-          "away_for": 1.0541,
-          "away_against": 1.0654
+          "home_for": 1.0022,
+          "home_against": 1.0868,
+          "away_for": 1.0526,
+          "away_against": 1.0681
         },
         "Valencia": {
-          "home_for": 0.951,
-          "home_against": 1.1766,
-          "away_for": 0.92,
-          "away_against": 0.956
+          "home_for": 0.9533,
+          "home_against": 1.1749,
+          "away_for": 0.9188,
+          "away_against": 0.9584
         },
         "Vallecano": {
-          "home_for": 1.1746,
-          "home_against": 0.9794,
-          "away_for": 1.1874,
-          "away_against": 1.0981
+          "home_for": 1.1777,
+          "home_against": 0.9781,
+          "away_for": 1.1857,
+          "away_against": 1.101
         },
         "Villarreal": {
-          "home_for": 0.803,
-          "home_against": 0.9002,
-          "away_for": 0.9976,
-          "away_against": 1.1589
+          "home_for": 0.8048,
+          "home_against": 0.899,
+          "away_for": 0.9962,
+          "away_against": 1.162
         }
       }
     },
     "shots": {
-      "avg_home": 14.25,
-      "avg_away": 11.4413,
-      "dispersion_team": 24.8875,
-      "dispersion_total": 219.6686,
+      "avg_home": 14.2625,
+      "avg_away": 11.4398,
+      "dispersion_team": 24.9764,
+      "dispersion_total": 219.4339,
       "teams": {
         "Alaves": {
-          "home_for": 0.9371,
-          "home_against": 0.9879,
-          "away_for": 1.0117,
-          "away_against": 0.96
+          "home_for": 0.9365,
+          "home_against": 0.988,
+          "away_for": 1.0118,
+          "away_against": 0.9593
         },
         "Ath Bilbao": {
-          "home_for": 1.062,
-          "home_against": 0.7534,
-          "away_for": 1.0734,
-          "away_against": 0.9037
+          "home_for": 1.0613,
+          "home_against": 0.7535,
+          "away_for": 1.0735,
+          "away_against": 0.9032
         },
         "Ath Madrid": {
-          "home_for": 1.1399,
-          "home_against": 0.8682,
-          "away_for": 1.0732,
-          "away_against": 0.9474
+          "home_for": 1.1391,
+          "home_against": 0.8683,
+          "away_for": 1.0733,
+          "away_against": 0.9467
         },
         "Barcelona": {
-          "home_for": 1.2931,
-          "home_against": 0.7278,
-          "away_for": 1.4285,
-          "away_against": 0.753
+          "home_for": 1.2922,
+          "home_against": 0.7279,
+          "away_for": 1.4287,
+          "away_against": 0.7526
         },
         "Betis": {
-          "home_for": 1.1031,
-          "home_against": 1.0604,
-          "away_for": 1.1797,
-          "away_against": 0.9906
+          "home_for": 1.1024,
+          "home_against": 1.0605,
+          "away_for": 1.1799,
+          "away_against": 0.9899
         },
         "Celta": {
-          "home_for": 0.8224,
-          "home_against": 1.0838,
-          "away_for": 0.8413,
-          "away_against": 0.9438
+          "home_for": 0.8219,
+          "home_against": 1.0839,
+          "away_for": 0.8414,
+          "away_against": 0.9432
         },
         "Elche": {
-          "home_for": 0.9546,
-          "home_against": 1.052,
-          "away_for": 0.8493,
-          "away_against": 1.074
+          "home_for": 0.954,
+          "home_against": 1.0521,
+          "away_for": 0.8494,
+          "away_against": 1.0733
         },
         "Espanol": {
-          "home_for": 0.9654,
-          "home_against": 1.0184,
-          "away_for": 0.9836,
-          "away_against": 1.0826
+          "home_for": 0.9647,
+          "home_against": 1.0185,
+          "away_for": 0.9837,
+          "away_against": 1.0818
         },
         "Getafe": {
-          "home_for": 0.8087,
-          "home_against": 0.9623,
-          "away_for": 0.8234,
-          "away_against": 0.9816
+          "home_for": 0.8082,
+          "home_against": 0.9624,
+          "away_for": 0.8235,
+          "away_against": 0.9809
         },
         "Girona": {
-          "home_for": 0.8796,
-          "home_against": 1.1073,
+          "home_for": 0.8791,
+          "home_against": 1.1074,
           "away_for": 0.9597,
-          "away_against": 1.0708
+          "away_against": 1.0701
         },
         "La Coruna": {
-          "home_for": 0.9211,
-          "home_against": 0.9895,
-          "away_for": 1.0244,
-          "away_against": 1.0404
+          "home_for": 0.9517,
+          "home_against": 0.987,
+          "away_for": 1.0245,
+          "away_against": 1.0399
         },
         "Levante": {
-          "home_for": 1.0607,
-          "home_against": 1.2268,
-          "away_for": 0.8749,
-          "away_against": 1.086
+          "home_for": 1.06,
+          "home_against": 1.2269,
+          "away_for": 0.875,
+          "away_against": 1.0853
         },
         "Malaga": {
-          "home_for": 0.9211,
-          "home_against": 1.0506,
-          "away_for": 0.9233,
-          "away_against": 1.1754
+          "home_for": 0.9207,
+          "home_against": 1.0507,
+          "away_for": 0.9234,
+          "away_against": 1.1748
         },
         "Mallorca": {
-          "home_for": 0.9425,
-          "home_against": 1.0862,
-          "away_for": 0.8481,
-          "away_against": 1.0587
+          "home_for": 0.942,
+          "home_against": 1.0863,
+          "away_for": 0.8482,
+          "away_against": 1.0581
         },
         "Osasuna": {
-          "home_for": 0.9888,
-          "home_against": 0.9377,
-          "away_for": 0.8346,
-          "away_against": 1.0499
+          "home_for": 0.9881,
+          "home_against": 0.9378,
+          "away_for": 0.8409,
+          "away_against": 1.0596
         },
         "Oviedo": {
-          "home_for": 0.8143,
-          "home_against": 1.1013,
-          "away_for": 0.9054,
-          "away_against": 1.1047
+          "home_for": 0.8139,
+          "home_against": 1.1014,
+          "away_for": 0.9055,
+          "away_against": 1.104
         },
         "Real Madrid": {
-          "home_for": 1.2263,
-          "home_against": 0.996,
-          "away_for": 1.3204,
-          "away_against": 0.8686
+          "home_for": 1.2254,
+          "home_against": 0.9961,
+          "away_for": 1.3206,
+          "away_against": 0.8681
         },
         "Santander": {
-          "home_for": 1.0542,
-          "home_against": 1.1617,
-          "away_for": 0.8496,
-          "away_against": 1.1386
+          "home_for": 1.0537,
+          "home_against": 1.1618,
+          "away_for": 0.8497,
+          "away_against": 1.138
         },
         "Sevilla": {
-          "home_for": 0.9204,
-          "home_against": 0.9265,
-          "away_for": 0.9644,
-          "away_against": 0.884
+          "home_for": 0.9198,
+          "home_against": 0.9266,
+          "away_for": 0.9645,
+          "away_against": 0.8835
         },
         "Sociedad": {
-          "home_for": 0.9528,
-          "home_against": 1.0251,
-          "away_for": 1.0966,
-          "away_against": 1.1374
+          "home_for": 0.9522,
+          "home_against": 1.0252,
+          "away_for": 1.0967,
+          "away_against": 1.1366
         },
         "Valencia": {
-          "home_for": 0.9457,
-          "home_against": 1.0476,
-          "away_for": 0.8548,
-          "away_against": 0.9996
+          "home_for": 0.945,
+          "home_against": 1.0477,
+          "away_for": 0.8549,
+          "away_against": 0.9989
         },
         "Vallecano": {
-          "home_for": 1.0787,
-          "home_against": 1.0565,
-          "away_for": 1.0789,
-          "away_against": 1.0085
+          "home_for": 1.078,
+          "home_against": 1.0566,
+          "away_for": 1.079,
+          "away_against": 1.0079
         },
         "Villarreal": {
-          "home_for": 1.0625,
-          "home_against": 0.9579,
-          "away_for": 1.0263,
-          "away_against": 0.9576
+          "home_for": 1.0618,
+          "home_against": 0.958,
+          "away_for": 1.0264,
+          "away_against": 0.957
         }
       }
     },
     "shots_on_target": {
-      "avg_home": 5.0319,
-      "avg_away": 3.8826,
+      "avg_home": 5.0385,
+      "avg_away": 3.8763,
       "dispersion_team": null,
       "dispersion_total": null,
       "teams": {
         "Alaves": {
-          "home_for": 0.9177,
-          "home_against": 1.0229,
-          "away_for": 1.0093,
-          "away_against": 0.9087
+          "home_for": 0.9168,
+          "home_against": 1.0241,
+          "away_for": 1.0105,
+          "away_against": 0.9078
         },
         "Ath Bilbao": {
-          "home_for": 0.971,
-          "home_against": 0.8533,
-          "away_for": 0.9873,
-          "away_against": 1.0222
+          "home_for": 0.97,
+          "home_against": 0.8542,
+          "away_for": 0.9884,
+          "away_against": 1.0213
         },
         "Ath Madrid": {
-          "home_for": 1.2093,
-          "home_against": 0.831,
-          "away_for": 1.1234,
-          "away_against": 0.8692
+          "home_for": 1.2081,
+          "home_against": 0.8319,
+          "away_for": 1.1248,
+          "away_against": 0.8684
         },
         "Barcelona": {
-          "home_for": 1.4024,
-          "home_against": 0.7465,
-          "away_for": 1.5508,
-          "away_against": 0.8883
+          "home_for": 1.4009,
+          "home_against": 0.7473,
+          "away_for": 1.5529,
+          "away_against": 0.8875
         },
         "Betis": {
-          "home_for": 1.1018,
-          "home_against": 1.1548,
-          "away_for": 1.1546,
-          "away_against": 1.0513
+          "home_for": 1.1007,
+          "home_against": 1.1563,
+          "away_for": 1.156,
+          "away_against": 1.0503
         },
         "Celta": {
-          "home_for": 0.8886,
-          "home_against": 1.0794,
-          "away_for": 0.8244,
-          "away_against": 0.8934
+          "home_for": 0.8877,
+          "home_against": 1.0808,
+          "away_for": 0.8253,
+          "away_against": 0.8925
         },
         "Elche": {
-          "home_for": 0.9189,
-          "home_against": 1.0555,
-          "away_for": 0.9663,
-          "away_against": 1.0098
+          "home_for": 0.918,
+          "home_against": 1.0568,
+          "away_for": 0.9675,
+          "away_against": 1.0088
         },
         "Espanol": {
-          "home_for": 0.9087,
-          "home_against": 1.115,
-          "away_for": 0.8972,
-          "away_against": 1.1309
+          "home_for": 0.9078,
+          "home_against": 1.1163,
+          "away_for": 0.8983,
+          "away_against": 1.1298
         },
         "Getafe": {
-          "home_for": 0.7335,
-          "home_against": 0.9475,
-          "away_for": 0.6791,
-          "away_against": 1.0004
+          "home_for": 0.7328,
+          "home_against": 0.9486,
+          "away_for": 0.6798,
+          "away_against": 0.9994
         },
         "Girona": {
-          "home_for": 0.8794,
-          "home_against": 1.0376,
-          "away_for": 1.0465,
-          "away_against": 1.0438
+          "home_for": 0.8787,
+          "home_against": 1.0387,
+          "away_for": 1.0476,
+          "away_against": 1.0429
         },
         "La Coruna": {
-          "home_for": 0.9372,
-          "home_against": 1.1182,
-          "away_for": 1.0666,
-          "away_against": 0.8776
+          "home_for": 0.9778,
+          "home_against": 1.0643,
+          "away_for": 1.0676,
+          "away_against": 0.8771
         },
         "Levante": {
-          "home_for": 1.0157,
-          "home_against": 1.1876,
-          "away_for": 0.8281,
-          "away_against": 1.0631
+          "home_for": 1.0147,
+          "home_against": 1.1891,
+          "away_for": 0.8291,
+          "away_against": 1.062
         },
         "Malaga": {
-          "home_for": 0.8776,
-          "home_against": 1.1954,
-          "away_for": 0.8292,
-          "away_against": 1.1049
+          "home_for": 0.8771,
+          "home_against": 1.1965,
+          "away_for": 0.8298,
+          "away_against": 1.1041
         },
         "Mallorca": {
-          "home_for": 0.989,
-          "home_against": 1.0198,
-          "away_for": 0.9132,
-          "away_against": 0.989
+          "home_for": 0.9882,
+          "home_against": 1.0209,
+          "away_for": 0.9142,
+          "away_against": 0.9882
         },
         "Osasuna": {
-          "home_for": 1.0004,
-          "home_against": 0.8574,
-          "away_for": 0.8376,
-          "away_against": 1.0921
+          "home_for": 0.9994,
+          "home_against": 0.8584,
+          "away_for": 0.8228,
+          "away_against": 1.1056
         },
         "Oviedo": {
-          "home_for": 0.7491,
-          "home_against": 1.082,
-          "away_for": 0.8777,
-          "away_against": 1.2151
+          "home_for": 0.7486,
+          "home_against": 1.0832,
+          "away_for": 0.8786,
+          "away_against": 1.214
         },
         "Real Madrid": {
-          "home_for": 1.4284,
-          "home_against": 0.9036,
-          "away_for": 1.3558,
-          "away_against": 0.8159
+          "home_for": 1.4269,
+          "home_against": 0.9047,
+          "away_for": 1.3576,
+          "away_against": 0.8151
         },
         "Santander": {
-          "home_for": 1.0688,
-          "home_against": 1.2038,
-          "away_for": 0.9121,
-          "away_against": 1.2154
+          "home_for": 1.068,
+          "home_against": 1.205,
+          "away_for": 0.9128,
+          "away_against": 1.2145
         },
         "Sevilla": {
-          "home_for": 0.873,
-          "home_against": 0.9432,
-          "away_for": 0.9726,
-          "away_against": 1.0194
+          "home_for": 0.8722,
+          "home_against": 0.9444,
+          "away_for": 0.9738,
+          "away_against": 1.0184
         },
         "Sociedad": {
-          "home_for": 0.9902,
-          "home_against": 1.0093,
-          "away_for": 1.1548,
-          "away_against": 1.1018
+          "home_for": 0.9892,
+          "home_against": 1.0105,
+          "away_for": 1.1563,
+          "away_against": 1.1007
         },
         "Valencia": {
-          "home_for": 0.7529,
-          "home_against": 0.9726,
-          "away_for": 0.798,
-          "away_against": 1.0055
+          "home_for": 0.7522,
+          "home_against": 0.9738,
+          "away_for": 0.7988,
+          "away_against": 1.0045
         },
         "Vallecano": {
-          "home_for": 1.1023,
-          "home_against": 0.9961,
-          "away_for": 1.0291,
-          "away_against": 1.0259
+          "home_for": 1.1012,
+          "home_against": 0.9973,
+          "away_for": 1.0304,
+          "away_against": 1.0249
         },
         "Villarreal": {
-          "home_for": 1.138,
-          "home_against": 0.9565,
-          "away_for": 1.0417,
-          "away_against": 0.8207
+          "home_for": 1.1368,
+          "home_against": 0.9576,
+          "away_for": 1.043,
+          "away_against": 0.82
         }
       }
     }
@@ -702,7 +702,7 @@
       "season": {
         "all": {
           "matches": 11,
-          "position": 10,
+          "position": 11,
           "points": 12,
           "won": 3,
           "drawn": 3,
@@ -725,7 +725,7 @@
         },
         "home": {
           "matches": 6,
-          "position": 10,
+          "position": 11,
           "points": 12,
           "won": 3,
           "drawn": 1,
@@ -748,7 +748,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 10,
+          "position": 11,
           "points": 12,
           "won": 0,
           "drawn": 2,
@@ -1647,7 +1647,7 @@
       "season": {
         "all": {
           "matches": 11,
-          "position": 9,
+          "position": 10,
           "points": 12,
           "won": 2,
           "drawn": 6,
@@ -1670,7 +1670,7 @@
         },
         "home": {
           "matches": 6,
-          "position": 9,
+          "position": 10,
           "points": 12,
           "won": 2,
           "drawn": 2,
@@ -1693,7 +1693,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 9,
+          "position": 10,
           "points": 12,
           "won": 0,
           "drawn": 4,
@@ -2214,7 +2214,7 @@
       "season": {
         "all": {
           "matches": 11,
-          "position": 12,
+          "position": 13,
           "points": 12,
           "won": 3,
           "drawn": 3,
@@ -2237,7 +2237,7 @@
         },
         "home": {
           "matches": 6,
-          "position": 12,
+          "position": 13,
           "points": 12,
           "won": 3,
           "drawn": 3,
@@ -2260,7 +2260,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 12,
+          "position": 13,
           "points": 12,
           "won": 0,
           "drawn": 0,
@@ -2402,55 +2402,55 @@
     "La Coruna": {
       "season": {
         "all": {
-          "matches": 10,
-          "position": 13,
-          "points": 11,
-          "won": 2,
+          "matches": 11,
+          "position": 8,
+          "points": 14,
+          "won": 3,
           "drawn": 5,
           "lost": 3,
-          "goals_for": 1.3,
-          "goals_against": 1.3,
-          "xg_for": 1.17,
-          "xg_against": 1.19,
-          "shots_for": 12.0,
-          "shots_against": 13.3,
-          "shots_on_target_for": 4.4,
-          "shots_on_target_against": 4.3,
-          "corners_for": 5.1,
-          "corners_against": 5.2,
-          "yellow_cards": 1.9,
-          "red_cards": 0.3,
-          "btts_pct": 0.8,
-          "over_2_5_pct": 0.3,
+          "goals_for": 1.36,
+          "goals_against": 1.27,
+          "xg_for": 1.27,
+          "xg_against": 1.18,
+          "shots_for": 12.55,
+          "shots_against": 13.09,
+          "shots_on_target_for": 4.64,
+          "shots_on_target_against": 4.09,
+          "corners_for": 5.36,
+          "corners_against": 4.91,
+          "yellow_cards": 1.73,
+          "red_cards": 0.27,
+          "btts_pct": 0.818,
+          "over_2_5_pct": 0.364,
           "clean_sheets": 0
         },
         "home": {
-          "matches": 5,
-          "position": 13,
-          "points": 11,
-          "won": 1,
+          "matches": 6,
+          "position": 8,
+          "points": 14,
+          "won": 2,
           "drawn": 3,
           "lost": 1,
-          "goals_for": 1.2,
+          "goals_for": 1.33,
           "goals_against": 1.0,
-          "xg_for": 1.01,
-          "xg_against": 1.02,
-          "shots_for": 12.0,
-          "shots_against": 11.2,
-          "shots_on_target_for": 4.4,
-          "shots_on_target_against": 4.8,
-          "corners_for": 5.0,
-          "corners_against": 5.0,
-          "yellow_cards": 1.6,
-          "red_cards": 0.4,
-          "btts_pct": 0.8,
-          "over_2_5_pct": 0.2,
+          "xg_for": 1.24,
+          "xg_against": 1.03,
+          "shots_for": 13.0,
+          "shots_against": 11.17,
+          "shots_on_target_for": 4.83,
+          "shots_on_target_against": 4.33,
+          "corners_for": 5.5,
+          "corners_against": 4.5,
+          "yellow_cards": 1.33,
+          "red_cards": 0.33,
+          "btts_pct": 0.833,
+          "over_2_5_pct": 0.333,
           "clean_sheets": 0
         },
         "away": {
           "matches": 5,
-          "position": 13,
-          "points": 11,
+          "position": 8,
+          "points": 14,
           "won": 1,
           "drawn": 2,
           "lost": 2,
@@ -2472,6 +2472,25 @@
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "SP1",
+          "venue": "H",
+          "opponent": "Osasuna",
+          "goals_for": 2,
+          "goals_against": 1,
+          "result": "W",
+          "xg_for": 2.35,
+          "xg_against": 1.1,
+          "shots_for": 18,
+          "shots_against": 11,
+          "shots_on_target_for": 7,
+          "shots_on_target_against": 2,
+          "corners_for": 8,
+          "corners_against": 2,
+          "cards_for": 0,
+          "cards_against": 4
+        },
         {
           "date": "2026-10-24",
           "league": "SP1",
@@ -2566,25 +2585,6 @@
           "corners_against": 4,
           "cards_for": 3,
           "cards_against": 4
-        },
-        {
-          "date": "2026-09-13",
-          "league": "SP1",
-          "venue": "A",
-          "opponent": "Getafe",
-          "goals_for": 1,
-          "goals_against": 1,
-          "result": "D",
-          "xg_for": 0.86,
-          "xg_against": 0.77,
-          "shots_for": 10,
-          "shots_against": 15,
-          "shots_on_target_for": 3,
-          "shots_on_target_against": 4,
-          "corners_for": 7,
-          "corners_against": 3,
-          "cards_for": 1,
-          "cards_against": 3
         }
       ]
     },
@@ -2969,26 +2969,26 @@
     "Osasuna": {
       "season": {
         "all": {
-          "matches": 10,
+          "matches": 11,
           "position": 15,
           "points": 11,
           "won": 3,
           "drawn": 2,
-          "lost": 5,
+          "lost": 6,
           "goals_for": 1.0,
           "goals_against": 2.0,
-          "xg_for": 1.51,
-          "xg_against": 1.4,
-          "shots_for": 10.7,
-          "shots_against": 13.6,
-          "shots_on_target_for": 4.1,
-          "shots_on_target_against": 4.2,
-          "corners_for": 3.6,
-          "corners_against": 5.1,
-          "yellow_cards": 2.6,
+          "xg_for": 1.47,
+          "xg_against": 1.49,
+          "shots_for": 10.73,
+          "shots_against": 14.0,
+          "shots_on_target_for": 3.91,
+          "shots_on_target_against": 4.45,
+          "corners_for": 3.45,
+          "corners_against": 5.36,
+          "yellow_cards": 2.73,
           "red_cards": 0.0,
-          "btts_pct": 0.4,
-          "over_2_5_pct": 0.4,
+          "btts_pct": 0.455,
+          "over_2_5_pct": 0.455,
           "clean_sheets": 3
         },
         "home": {
@@ -3015,30 +3015,49 @@
           "clean_sheets": 3
         },
         "away": {
-          "matches": 5,
+          "matches": 6,
           "position": 15,
           "points": 11,
           "won": 1,
           "drawn": 0,
-          "lost": 4,
-          "goals_for": 1.2,
-          "goals_against": 3.4,
-          "xg_for": 1.5,
-          "xg_against": 1.87,
-          "shots_for": 8.8,
-          "shots_against": 16.0,
-          "shots_on_target_for": 3.6,
-          "shots_on_target_against": 6.8,
-          "corners_for": 2.4,
-          "corners_against": 6.4,
-          "yellow_cards": 2.4,
+          "lost": 5,
+          "goals_for": 1.17,
+          "goals_against": 3.17,
+          "xg_for": 1.43,
+          "xg_against": 1.95,
+          "shots_for": 9.17,
+          "shots_against": 16.33,
+          "shots_on_target_for": 3.33,
+          "shots_on_target_against": 6.83,
+          "corners_for": 2.33,
+          "corners_against": 6.67,
+          "yellow_cards": 2.67,
           "red_cards": 0.0,
-          "btts_pct": 0.6,
-          "over_2_5_pct": 0.8,
+          "btts_pct": 0.667,
+          "over_2_5_pct": 0.833,
           "clean_sheets": 0
         }
       },
       "last6": [
+        {
+          "date": "2026-11-02",
+          "league": "SP1",
+          "venue": "A",
+          "opponent": "La Coruna",
+          "goals_for": 1,
+          "goals_against": 2,
+          "result": "L",
+          "xg_for": 1.1,
+          "xg_against": 2.35,
+          "shots_for": 11,
+          "shots_against": 18,
+          "shots_on_target_for": 2,
+          "shots_on_target_against": 7,
+          "corners_for": 2,
+          "corners_against": 8,
+          "cards_for": 4,
+          "cards_against": 0
+        },
         {
           "date": "2026-10-26",
           "league": "SP1",
@@ -3133,25 +3152,6 @@
           "corners_against": 8,
           "cards_for": 2,
           "cards_against": 1
-        },
-        {
-          "date": "2026-09-12",
-          "league": "SP1",
-          "venue": "H",
-          "opponent": "Espanol",
-          "goals_for": 0,
-          "goals_against": 2,
-          "result": "L",
-          "xg_for": 1.05,
-          "xg_against": 1.43,
-          "shots_for": 11,
-          "shots_against": 6,
-          "shots_on_target_for": 4,
-          "shots_on_target_against": 3,
-          "corners_for": 3,
-          "corners_against": 4,
-          "cards_for": 2,
-          "cards_against": 3
         }
       ]
     },
@@ -4104,7 +4104,7 @@
       "season": {
         "all": {
           "matches": 10,
-          "position": 11,
+          "position": 12,
           "points": 12,
           "won": 3,
           "drawn": 3,
@@ -4127,7 +4127,7 @@
         },
         "home": {
           "matches": 5,
-          "position": 11,
+          "position": 12,
           "points": 12,
           "won": 3,
           "drawn": 1,
@@ -4150,7 +4150,7 @@
         },
         "away": {
           "matches": 5,
-          "position": 11,
+          "position": 12,
           "points": 12,
           "won": 0,
           "drawn": 2,
@@ -4293,7 +4293,7 @@
       "season": {
         "all": {
           "matches": 11,
-          "position": 8,
+          "position": 9,
           "points": 12,
           "won": 3,
           "drawn": 3,
@@ -4316,7 +4316,7 @@
         },
         "home": {
           "matches": 5,
-          "position": 8,
+          "position": 9,
           "points": 12,
           "won": 1,
           "drawn": 1,
@@ -4339,7 +4339,7 @@
         },
         "away": {
           "matches": 6,
-          "position": 8,
+          "position": 9,
           "points": 12,
           "won": 2,
           "drawn": 2,
