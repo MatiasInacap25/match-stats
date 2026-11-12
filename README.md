@@ -10,8 +10,8 @@ matches, and head to head.
   writes JSON files to `site/public/data/` (format in `contract/data-contract.md`).
 - **Site** (`site/`): Astro. It reads those JSON files and computes every
   probability in the browser. No odds, no bookmaker data, no accounts.
-- **Nightly job** (`.github/workflows/nightly.yml`): rebuilds the data once per
-  night and commits it. Vercel redeploys on that commit.
+- **Data updates**: run the build locally and push `site/public/data`; Vercel
+  redeploys on that commit. (The GitHub Actions nightly job was removed.)
 
 ## Local use
 
@@ -58,9 +58,7 @@ Parallel Claude Code workers are launched with `orchestra`. See
 ## Setup you do once (user steps)
 
 1. Create a GitHub repository under your account and push this code to it.
-2. In the repository settings, go to **Actions → General → Workflow permissions**
-   and choose **Read and write permissions**, so the nightly job can push data.
-3. In Vercel, import the repository and set **Root Directory** to `site`.
+2. In Vercel, import the repository and set **Root Directory** to `site`.
    Vercel reads `site/vercel.json` for the build settings.
 
 ## Known limitation
