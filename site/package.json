@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "dev:example": "node scripts/use-example-data.mjs && astro dev",
     "build": "astro build",
+    "build:vercel": "node scripts/refresh-data.mjs && astro build",
     "test": "tsc --noEmit && vitest run",
     "preview": "astro preview",
     "astro": "astro"

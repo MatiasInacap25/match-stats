@@ -10,8 +10,12 @@ matches, and head to head.
   writes JSON files to `site/public/data/` (format in `contract/data-contract.md`).
 - **Site** (`site/`): Astro. It reads those JSON files and computes every
   probability in the browser. No odds, no bookmaker data, no accounts.
-- **Data updates**: run the build locally and push `site/public/data`; Vercel
-  redeploys on that commit. (The GitHub Actions nightly job was removed.)
+- **Data updates**: a Vercel Cron Job calls `/api/nightly` once a day
+  (`0 6 * * *` UTC), which triggers a Deploy Hook. The Vercel build
+  (`npm run build:vercel`) rebuilds the data with the Python CLI and then runs
+  `astro build`. If the refresh fails, the build keeps the committed data. You
+  can also run the build locally and push `site/public/data`. (The GitHub
+  Actions nightly job was removed.)
 
 ## Local use
 
@@ -59,7 +63,13 @@ Parallel Claude Code workers are launched with `orchestra`. See
 
 1. Create a GitHub repository under your account and push this code to it.
 2. In Vercel, import the repository and set **Root Directory** to `site`.
-   Vercel reads `site/vercel.json` for the build settings.
+   Vercel reads `site/vercel.json` for the build settings and the cron.
+3. In the project settings, turn on **Include files outside the root
+   directory** (the build needs `../src`).
+4. Create a **Deploy Hook** (Settings → Git → Deploy Hooks, branch `main`).
+5. Add two environment variables (Production): `DEPLOY_HOOK_URL` (the hook URL)
+   and `CRON_SECRET` (any long random string; Vercel sends it to the cron route).
+   Redeploy once so the cron registers.
 
 ## Known limitation
 
